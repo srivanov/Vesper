@@ -1,0 +1,14 @@
+WBS en PM
+
+poner los entregables (hitos)
+poner las tareas en cada hito (no tocar ni fechas ni duraciones, solo repartir los entregables)
+
+Hitos
+	iteraciones
+		cada asignatura
+			tareas de cada asignatura (copiarlas tal cual están en el presupuesto) (deberian ser verbo mas sustantivo)
+
+(para el hito 1 NO PONER ITERACION solo las tareas por asignatura)
+en HIto 1 poner “HITO 1: prototipo jugable con mecanicas”
+poner al final del hito “*Entregable:” y duracion de 0 dias
+concretar la tarea para nuestro juego
