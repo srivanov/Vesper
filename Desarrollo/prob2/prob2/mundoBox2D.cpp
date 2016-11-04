@@ -1,21 +1,28 @@
-//
-//  worldBox2D.cpp
-//  prob2
-//
-//  Created by Stoycho Ivanov Atanasov on 4/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "mundoBox2D.hpp"
 
-const float kPixelsPerMeter = 32.0f;
-const float kGravity = -kPixelsPerMeter / 0.7f; // adjust this to taste
+mundoBox2D* mundoBox2D::pinstance = 0;
+
+//para crear y devolver la instancia del Juego
+mundoBox2D* mundoBox2D::Instance(){
+    
+    if(pinstance == 0){ //si no se ha creado nunca, entra y la crea
+        pinstance = new mundoBox2D();
+        
+    }
+    return pinstance; //la devuelve
+}
 
 mundoBox2D::mundoBox2D()
 {
-	i=0;
-	world = new b2World(b2Vec2(0.0f, kGravity));
+	world = new b2World(b2Vec2(0.0f, 0.0f)); //mundo sin gravedad
 	world->SetAllowSleeping(true);
-	world->SetContinuousPhysics(true);
-//	world->SetContactListener(this);
+}
+
+b2World* mundoBox2D::getWorld(){
+    return world;
+}
+
+mundoBox2D:: ~mundoBox2D(){ //borra todos los cuerpos y joints. No usar sus punteros despues
+    delete world;
 }

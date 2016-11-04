@@ -1,5 +1,6 @@
 #include <irrlicht.h>
 #include <Box2D/Box2D.h>
+#include "physicsController.hpp"
 #include <stdio.h>
 
 using namespace irr;
@@ -50,7 +51,7 @@ int main()
 	IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, false, false, false, &receiver);
 	if (!device)
 		return 1;
-	device->setWindowCaption(L"HOLA");
+	device->setWindowCaption(L"HELLO WORLD");
 	
 	IVideoDriver* driver = device->getVideoDriver();
 	ISceneManager* smgr = device->getSceneManager();
@@ -68,10 +69,14 @@ int main()
 	
 	ICameraSceneNode* camera = smgr->addCameraSceneNode(0,vector3df(0,-10,-150),vector3df(0,0,0));
 	
-	
-	
+    physicsController *fisicas = new physicsController();
+    fisicas->Footest();
+    float* p;
 	while (device->run())
 	{
+        
+        p = fisicas->Step();
+        node->setPosition(vector3df(p[0],p[1],0));
 		driver->beginScene(true, true, SColor(255, 255, 255, 255));
 		
 		smgr->drawAll();
@@ -84,20 +89,20 @@ int main()
 			break;
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_W)){
-
-			node->setPosition(node->getPosition() + vector3df(0,1,0));
+            fisicas->setMoveState(0);
+			//node->setPosition(node->getPosition() + vector3df(0,1,0));
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_S)){
 			
-			node->setPosition(node->getPosition() + vector3df(0,-1,0));
+			//node->setPosition(node->getPosition() + vector3df(0,-1,0));
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_A)){
-			
-			node->setPosition(node->getPosition() + vector3df(-1,0,0));
+			fisicas->setMoveState(1);
+			//node->setPosition(node->getPosition() + vector3df(-1,0,0));
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_D)){
-			
-			node->setPosition(node->getPosition() + vector3df(1,0,0));
+			fisicas->setMoveState(2);
+			//node->setPosition(node->getPosition() + vector3df(1,0,0));
 		}
 	}
 	

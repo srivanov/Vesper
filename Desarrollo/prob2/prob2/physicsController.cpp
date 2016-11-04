@@ -7,10 +7,10 @@
 //
 
 #include "physicsController.hpp"
-/*
+
 //enumeration of possible input states
 enum _moveState {
-	MS_STOP,
+	MS_STOP = 0,
 	MS_LEFT,
 	MS_RIGHT,
 };
@@ -19,7 +19,30 @@ enum _moveState {
 b2Body* body;
 _moveState moveState;
 
-FooTest() {
+physicsController::physicsController(){
+    
+}
+
+float* physicsController::Step(){
+    //inside Step()
+    b2Vec2 vel = body->GetLinearVelocity();
+    switch ( moveState )
+    {
+        case MS_LEFT:  vel.x = -1; break;
+        case MS_STOP:  vel.x =  0; break;
+        case MS_RIGHT: vel.x =  1; break;
+    }
+    body->SetLinearVelocity( vel );
+    
+    b2Vec2 pos = body->GetPosition();
+    float p[2] = {pos.x,pos.y};
+    printf("\n%.2f %.2f\n",pos.x,pos.y);
+    return p;
+}
+
+void physicsController::Footest() {
+    b2World* m_world = mundoBox2D::Instance()->getWorld();
+    
 	//body definition
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
@@ -54,4 +77,26 @@ FooTest() {
 	staticBody->CreateFixture(&myFixtureDef);
 	
 	moveState = MS_STOP;
-}*/
+    
+}
+
+void physicsController::setMoveState(int u){
+    switch (u) {
+        case 0:
+            moveState = MS_STOP;
+            break;
+        case 1:
+            moveState = MS_LEFT;
+            break;
+        case 2:
+            moveState = MS_RIGHT;
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
+
+

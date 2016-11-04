@@ -1,10 +1,3 @@
-//
-//  mundoBox2D.hpp
-//  prob2
-//
-//  Created by Stoycho Ivanov Atanasov on 4/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #ifndef mundoBox2D_hpp
 #define mundoBox2D_hpp
@@ -15,11 +8,17 @@
 
 class mundoBox2D {
 	public:
-		mundoBox2D();
+        b2World* getWorld();
+        static mundoBox2D* Instance();
+        virtual ~mundoBox2D();
+    
+    protected:
+        mundoBox2D();
 	
 	private:
 		b2World* world;
-		int i;
+        static mundoBox2D* pinstance;
+		
 };
 
 #endif /* mundoBox2D_hpp */

@@ -11,5 +11,16 @@
 
 #include <stdio.h>
 #include <Box2D/Box2D.h>
+#include "mundoBox2D.hpp"
+
+class physicsController{
+    public:
+        physicsController();
+        void Footest();
+        void setMoveState(int u);
+        float* Step();
+    private:
+};
+
 #endif /* physicsController_hpp */
 
