@@ -18,8 +18,12 @@ class physicsController{
         physicsController();
         void Footest();
         void setMoveState(int u);
-        float* Step();
+        void Step(float* velocidad, float* posicion);
     private:
+	b2World* mundo;
+	float32 timeStep;      //the length of time passed to simulate (seconds)
+	int32 velocityIterations;   //how strongly to correct velocity
+	int32 positionIterations;   //how strongly to correct position
 };
 
 #endif /* physicsController_hpp */

@@ -55,14 +55,14 @@
 		E9DDB0281DCA0BB400740C7F = {
 			isa = PBXGroup;
 			children = (
+				E9DDB0521DCA0C7900740C7F /* Assets.xcassets */,
+				E9DDB0321DCA0BB400740C7F /* Products */,
+				E9DDB0451DCA0BC400740C7F /* Frameworks */,
 				E9876C861DCD00AD00B2D66F /* mundoBox2D.cpp */,
 				E9876C871DCD00AD00B2D66F /* mundoBox2D.hpp */,
 				E9876C831DCCEEA100B2D66F /* physicsController.cpp */,
 				E9876C841DCCEEA100B2D66F /* physicsController.hpp */,
-				E9DDB0521DCA0C7900740C7F /* Assets.xcassets */,
 				E9DDB0501DCA0C6E00740C7F /* main.cpp */,
-				E9DDB0321DCA0BB400740C7F /* Products */,
-				E9DDB0451DCA0BC400740C7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

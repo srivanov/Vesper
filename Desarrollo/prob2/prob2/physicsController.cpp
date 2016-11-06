@@ -13,6 +13,8 @@ enum _moveState {
 	MS_STOP = 0,
 	MS_LEFT,
 	MS_RIGHT,
+	MS_UP,
+	MS_DOWN,
 };
 
 //class member variables
@@ -20,24 +22,35 @@ b2Body* body;
 _moveState moveState;
 
 physicsController::physicsController(){
-    
+	mundo = mundoBox2D::Instance()->getWorld();
+	timeStep = 1/20.0;      //the length of time passed to simulate (seconds)
+	velocityIterations = 8;   //how strongly to correct velocity
+	positionIterations = 3;   //how strongly to correct position
 }
 
-float* physicsController::Step(){
+void physicsController::Step(float* velocidad, float * posicion){
     //inside Step()
-    b2Vec2 vel = body->GetLinearVelocity();
-    switch ( moveState )
-    {
-        case MS_LEFT:  vel.x = -1; break;
-        case MS_STOP:  vel.x =  0; break;
-        case MS_RIGHT: vel.x =  1; break;
-    }
+    b2Vec2 vel;
+	vel.x = velocidad[0];
+	vel.y = velocidad[1];
+//    switch ( moveState )
+//    {
+//		case MS_STOP:	vel.x =	 0; vel.y =  0; break;
+//        case MS_LEFT:	vel.x =	-5; vel.y =  0; break;
+//        case MS_RIGHT:	vel.x =	 5; vel.y =  0; break;
+//		case MS_UP:		vel.x =	 0; vel.y =  5; break;
+//		case MS_DOWN:	vel.x =	 0; vel.y = -5; break;
+//    }
     body->SetLinearVelocity( vel );
-    
-    b2Vec2 pos = body->GetPosition();
-    float p[2] = {pos.x,pos.y};
-    printf("\n%.2f %.2f\n",pos.x,pos.y);
-    return p;
+	
+	mundo->Step( timeStep, velocityIterations, positionIterations);
+	posicion[0] = body->GetPosition().x;
+	posicion[1] = body->GetPosition().y;
+	
+//	printf("\n%u\n",moveState);
+//    float p[2] = {body->GetPosition().x,body->GetPosition().y};
+//    printf("\n%.2f %.2f\n",body->GetPosition().x,body->GetPosition().y);
+//    return p;
 }
 
 void physicsController::Footest() {
@@ -57,7 +70,7 @@ void physicsController::Footest() {
 	myFixtureDef.density = 1;
 	
 	//create dynamic body
-	myBodyDef.position.Set(0, 10);
+	myBodyDef.position.Set(0, 0);
 	body = m_world->CreateBody(&myBodyDef);
 	body->CreateFixture(&myFixtureDef);
 	
@@ -79,7 +92,7 @@ void physicsController::Footest() {
 	moveState = MS_STOP;
     
 }
-
+/*
 void physicsController::setMoveState(int u){
     switch (u) {
         case 0:
@@ -91,12 +104,18 @@ void physicsController::setMoveState(int u){
         case 2:
             moveState = MS_RIGHT;
             break;
-        default:
+		case 3:
+			moveState = MS_UP;
+			break;
+		case 4:
+			moveState = MS_DOWN;
+			break;
+		default:
             break;
     }
     
 }
-
+*/
 
 
 
