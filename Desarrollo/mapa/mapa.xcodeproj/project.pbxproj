@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D29475CA1DCE44F000AD3AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475C91DCE44F000AD3AEF /* Cocoa.framework */; };
+		D29475CC1DCE450100AD3AEF /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475CB1DCE450100AD3AEF /* Carbon.framework */; };
+		D29475CE1DCE451300AD3AEF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475CD1DCE451300AD3AEF /* OpenGL.framework */; };
+		D29475D01DCE452900AD3AEF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475CF1DCE452900AD3AEF /* IOKit.framework */; };
+		D29475D21DCE45DA00AD3AEF /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475D11DCE45DA00AD3AEF /* libIrrlicht.a */; };
+		D29475D41DCE460000AD3AEF /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475D31DCE460000AD3AEF /* libBox2D.a */; };
+		D29475D61DCE479D00AD3AEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D29475D51DCE479D00AD3AEF /* main.cpp */; };
+		D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */; };
+		D29475DF1DCE645B00AD3AEF /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D29475DD1DCE645B00AD3AEF /* tinyxml2.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D29475B41DCE44BB00AD3AEF /* mapa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29475C91DCE44F000AD3AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D29475CB1DCE450100AD3AEF /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		D29475CD1DCE451300AD3AEF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		D29475CF1DCE452900AD3AEF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D29475D11DCE45DA00AD3AEF /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = irrlicht/lib/MacOSX/libIrrlicht.a; sourceTree = "<group>"; };
+		D29475D31DCE460000AD3AEF /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
+		D29475D51DCE479D00AD3AEF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = mapa/main.cpp; sourceTree = "<group>"; };
+		D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cargarMapa.cpp; path = mapa/cargarMapa.cpp; sourceTree = "<group>"; };
+		D29475DB1DCE63C200AD3AEF /* cargarMapa.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cargarMapa.hpp; path = mapa/cargarMapa.hpp; sourceTree = "<group>"; };
+		D29475DD1DCE645B00AD3AEF /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml2.cpp; path = mapa/tinyxml2.cpp; sourceTree = "<group>"; };
+		D29475DE1DCE645B00AD3AEF /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml2.h; path = mapa/tinyxml2.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D29475B11DCE44BA00AD3AEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29475D41DCE460000AD3AEF /* libBox2D.a in Frameworks */,
+				D29475D21DCE45DA00AD3AEF /* libIrrlicht.a in Frameworks */,
+				D29475D01DCE452900AD3AEF /* IOKit.framework in Frameworks */,
+				D29475CE1DCE451300AD3AEF /* OpenGL.framework in Frameworks */,
+				D29475CC1DCE450100AD3AEF /* Carbon.framework in Frameworks */,
+				D29475CA1DCE44F000AD3AEF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D29475AB1DCE44BA00AD3AEF = {
+			isa = PBXGroup;
+			children = (
+				D29475DD1DCE645B00AD3AEF /* tinyxml2.cpp */,
+				D29475DE1DCE645B00AD3AEF /* tinyxml2.h */,
+				D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */,
+				D29475DB1DCE63C200AD3AEF /* cargarMapa.hpp */,
+				D29475D51DCE479D00AD3AEF /* main.cpp */,
+				D29475B51DCE44BB00AD3AEF /* Products */,
+				D29475C81DCE44F000AD3AEF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D29475B51DCE44BB00AD3AEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D29475B41DCE44BB00AD3AEF /* mapa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D29475C81DCE44F000AD3AEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D29475D31DCE460000AD3AEF /* libBox2D.a */,
+				D29475D11DCE45DA00AD3AEF /* libIrrlicht.a */,
+				D29475CF1DCE452900AD3AEF /* IOKit.framework */,
+				D29475CD1DCE451300AD3AEF /* OpenGL.framework */,
+				D29475CB1DCE450100AD3AEF /* Carbon.framework */,
+				D29475C91DCE44F000AD3AEF /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D29475B31DCE44BA00AD3AEF /* mapa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29475C51DCE44BB00AD3AEF /* Build configuration list for PBXNativeTarget "mapa" */;
+			buildPhases = (
+				D29475B01DCE44BA00AD3AEF /* Sources */,
+				D29475B11DCE44BA00AD3AEF /* Frameworks */,
+				D29475B21DCE44BA00AD3AEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mapa;
+			productName = mapa;
+			productReference = D29475B41DCE44BB00AD3AEF /* mapa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D29475AC1DCE44BA00AD3AEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Julia Martínez Valera";
+				TargetAttributes = {
+					D29475B31DCE44BA00AD3AEF = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D29475AF1DCE44BA00AD3AEF /* Build configuration list for PBXProject "mapa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D29475AB1DCE44BA00AD3AEF;
+			productRefGroup = D29475B51DCE44BB00AD3AEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D29475B31DCE44BA00AD3AEF /* mapa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D29475B21DCE44BA00AD3AEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D29475B01DCE44BA00AD3AEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29475DF1DCE645B00AD3AEF /* tinyxml2.cpp in Sources */,
+				D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */,
+				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D29475C31DCE44BB00AD3AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D29475C41DCE44BB00AD3AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D29475C61DCE44BB00AD3AEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/irrlicht/include",
+					"$(PROJECT_DIR)/Box2D",
+				);
+				INFOPLIST_FILE = mapa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
+					"$(PROJECT_DIR)/Box2D/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = julia.mapa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D29475C71DCE44BB00AD3AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/irrlicht/include",
+					"$(PROJECT_DIR)/Box2D",
+				);
+				INFOPLIST_FILE = mapa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
+					"$(PROJECT_DIR)/Box2D/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = julia.mapa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D29475AF1DCE44BA00AD3AEF /* Build configuration list for PBXProject "mapa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29475C31DCE44BB00AD3AEF /* Debug */,
+				D29475C41DCE44BB00AD3AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29475C51DCE44BB00AD3AEF /* Build configuration list for PBXNativeTarget "mapa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29475C61DCE44BB00AD3AEF /* Debug */,
+				D29475C71DCE44BB00AD3AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D29475AC1DCE44BA00AD3AEF /* Project object */;
+}
