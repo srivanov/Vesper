@@ -2,6 +2,7 @@
 #include <Box2D/Box2D.h>
 #include "physicsController.hpp"
 #include <stdio.h>
+#include <SFML/Graphics.hpp>
 
 using namespace irr;
 using namespace io;
@@ -55,7 +56,6 @@ private:
 
 int main()
 {
-	
 	KeyboardEventReceiver receiver;
 	IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, false, false, false, &receiver);
 	if (!device)
@@ -90,6 +90,9 @@ int main()
 	float *vel = vel_aux, *pos = pos_aux;
 	while (device->run())
 	{
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+			printf("%.2f\n",node->getAbsolutePosition().X);
+		
 		//printf("\n%.2f\n",node->getAbsolutePosition().X);
         fisicas->Step(vel,pos);
         node->setPosition(vector3df(pos[0],pos[1],pos[2]));
