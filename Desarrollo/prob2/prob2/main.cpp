@@ -2,7 +2,7 @@
 #include <Box2D/Box2D.h>
 #include "physicsController.hpp"
 #include <stdio.h>
-#include <SFML/Graphics.hpp>
+#include "inputSFML.hpp"
 
 using namespace irr;
 using namespace io;
@@ -57,7 +57,7 @@ private:
 int main()
 {
 	KeyboardEventReceiver receiver;
-	IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, false, false, false, &receiver);
+	IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, false, false, false, 0);
 	if (!device)
 		return 1;
 	device->setWindowCaption(L"HELLO WORLD");
@@ -90,8 +90,6 @@ int main()
 	float *vel = vel_aux, *pos = pos_aux;
 	while (device->run())
 	{
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::K))
-			printf("%.2f\n",node->getAbsolutePosition().X);
 		
 		//printf("\n%.2f\n",node->getAbsolutePosition().X);
         fisicas->Step(vel,pos);
@@ -107,30 +105,30 @@ int main()
 		if(joystickInfo.size() > 0)
 			printf("tengo mando\n");
 		
-		if(receiver.IsKeyDown(irr::KEY_ESCAPE)){
+        if(inputSFML::Instance()->isKeyPressed(36)){
 			device->closeDevice();
 		}
-		if(receiver.IsKeyDown(irr::KEY_KEY_W)){
+		if(inputSFML::Instance()->isKeyPressed(22)){
 			vel[1] =  3;
 //            fisicas->setMoveState(3);
 //			node->setPosition(node->getPosition() + vector3df(0,1,0));
 		}
-		if(receiver.IsKeyDown(irr::KEY_KEY_S)){
+		if(inputSFML::Instance()->isKeyPressed(18)){
 			vel[1] = -3;
 //			fisicas->setMoveState(4);
 //			node->setPosition(node->getPosition() + vector3df(0,-1,0));
 		}
-		if(receiver.IsKeyDown(irr::KEY_KEY_A)){
+		if(inputSFML::Instance()->isKeyPressed(0)){
 			vel[0] = -3;
 //			fisicas->setMoveState(1);
 //			node->setPosition(node->getPosition() + vector3df(-1,0,0));
 		}
-		if(receiver.IsKeyDown(irr::KEY_KEY_D)){
+		if(inputSFML::Instance()->isKeyPressed(3)){
 			vel[0] =  3;
 //			fisicas->setMoveState(2);
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
 		}
-		if(receiver.IsKeyDown(irr::KEY_SPACE)){
+		if(inputSFML::Instance()->isKeyPressed(57)){
 			vel[0] = 0; vel[1] = 0;
 //			fisicas->setMoveState(0);
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
