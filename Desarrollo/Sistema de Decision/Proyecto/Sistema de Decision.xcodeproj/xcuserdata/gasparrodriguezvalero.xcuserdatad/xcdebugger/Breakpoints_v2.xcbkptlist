@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prob2/main.cpp"
+            timestampString = "500238872.456382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyEventReceiver::~MyEventReceiver()"
+                  moduleName = "Sistema de Decision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Sistema%20de%20Decision/Proyecto/prob2/main.cpp"
+                  timestampString = "500238897.913338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyEventReceiver::~MyEventReceiver()"
+                  moduleName = "Sistema de Decision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Sistema%20de%20Decision/Proyecto/prob2/main.cpp"
+                  timestampString = "500238897.916855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyEventReceiver::~MyEventReceiver()"
+                  moduleName = "Sistema de Decision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Sistema%20de%20Decision/Proyecto/prob2/main.cpp"
+                  timestampString = "500238897.918761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
