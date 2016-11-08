@@ -77,7 +77,7 @@ void physicsController::Footest() {
 	//a static body
 	myBodyDef.type = b2_staticBody;
 	myBodyDef.position.Set(0, 0);
-	b2Body* staticBody = m_world->CreateBody(&myBodyDef);
+//	b2Body* staticBody = m_world->CreateBody(&myBodyDef);
 	
 //	//add four walls to the static body
 //	polygonShape.SetAsBox( 20, 1, b2Vec2(0, 0), 0);//ground

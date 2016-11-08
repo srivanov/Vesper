@@ -108,7 +108,7 @@ int main()
 			printf("tengo mando\n");
 		
 		if(receiver.IsKeyDown(irr::KEY_ESCAPE)){
-			break;
+			device->closeDevice();
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_W)){
 			vel[1] =  3;
