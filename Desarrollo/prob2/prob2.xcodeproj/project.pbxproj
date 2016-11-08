@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E93661E21DD1EA9A006598EE /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93661DE1DD1E8C8006598EE /* libBox2D.a */; };
+		E93661E31DD1EAA5006598EE /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93661E01DD1E8D4006598EE /* libIrrlicht.a */; };
 		E9876C851DCCEEA100B2D66F /* physicsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9876C831DCCEEA100B2D66F /* physicsController.cpp */; };
 		E9876C881DCD00AD00B2D66F /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9876C861DCD00AD00B2D66F /* mundoBox2D.cpp */; };
 		E9DDB0471DCA0BC500740C7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0461DCA0BC500740C7F /* Cocoa.framework */; };
 		E9DDB0491DCA0BCB00740C7F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0481DCA0BCB00740C7F /* Carbon.framework */; };
 		E9DDB04B1DCA0BD100740C7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB04A1DCA0BD100740C7F /* IOKit.framework */; };
 		E9DDB04D1DCA0BD700740C7F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB04C1DCA0BD700740C7F /* OpenGL.framework */; };
-		E9DDB04F1DCA0C0600740C7F /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB04E1DCA0C0600740C7F /* libIrrlicht.a */; };
 		E9DDB0511DCA0C6E00740C7F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9DDB0501DCA0C6E00740C7F /* main.cpp */; };
 		E9DDB0531DCA0C7900740C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DDB0521DCA0C7900740C7F /* Assets.xcassets */; };
-		E9DDB0571DCA0EA000740C7F /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0561DCA0EA000740C7F /* libBox2D.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E93661DE1DD1E8C8006598EE /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
+		E93661E01DD1E8D4006598EE /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/irrlicht/lib/MacOSX/libIrrlicht.a; sourceTree = "<group>"; };
 		E9876C831DCCEEA100B2D66F /* physicsController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = physicsController.cpp; path = prob2/physicsController.cpp; sourceTree = "<group>"; };
 		E9876C841DCCEEA100B2D66F /* physicsController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = physicsController.hpp; path = prob2/physicsController.hpp; sourceTree = "<group>"; };
 		E9876C861DCD00AD00B2D66F /* mundoBox2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mundoBox2D.cpp; path = prob2/mundoBox2D.cpp; sourceTree = "<group>"; };
@@ -40,8 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9DDB0571DCA0EA000740C7F /* libBox2D.a in Frameworks */,
-				E9DDB04F1DCA0C0600740C7F /* libIrrlicht.a in Frameworks */,
+				E93661E31DD1EAA5006598EE /* libIrrlicht.a in Frameworks */,
+				E93661E21DD1EA9A006598EE /* libBox2D.a in Frameworks */,
 				E9DDB04D1DCA0BD700740C7F /* OpenGL.framework in Frameworks */,
 				E9DDB04B1DCA0BD100740C7F /* IOKit.framework in Frameworks */,
 				E9DDB0491DCA0BCB00740C7F /* Carbon.framework in Frameworks */,
@@ -77,6 +79,8 @@
 		E9DDB0451DCA0BC400740C7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E93661E01DD1E8D4006598EE /* libIrrlicht.a */,
+				E93661DE1DD1E8C8006598EE /* libBox2D.a */,
 				E9DDB0561DCA0EA000740C7F /* libBox2D.a */,
 				E9DDB04E1DCA0C0600740C7F /* libIrrlicht.a */,
 				E9DDB04C1DCA0BD700740C7F /* OpenGL.framework */,
@@ -261,15 +265,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/irrlicht/include",
-					"$(PROJECT_DIR)/Box2D",
+					"$(PROJECT_DIR)/includes/irrlicht",
+					"$(PROJECT_DIR)/includes/Box2D",
 				);
 				INFOPLIST_FILE = prob2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
-					"$(PROJECT_DIR)/Box2D/lib",
+					"$(PROJECT_DIR)/libs/Box2D/lib",
+					"$(PROJECT_DIR)/libs/irrlicht/lib/MacOSX",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sia.prob2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,15 +286,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/irrlicht/include",
-					"$(PROJECT_DIR)/Box2D",
+					"$(PROJECT_DIR)/includes/irrlicht",
+					"$(PROJECT_DIR)/includes/Box2D",
 				);
 				INFOPLIST_FILE = prob2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
-					"$(PROJECT_DIR)/Box2D/lib",
+					"$(PROJECT_DIR)/libs/Box2D/lib",
+					"$(PROJECT_DIR)/libs/irrlicht/lib/MacOSX",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sia.prob2;

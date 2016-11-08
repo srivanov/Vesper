@@ -108,22 +108,22 @@ int main()
 			break;
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_W)){
-			vel[1] = 10;
+			vel[1] =  3;
 //            fisicas->setMoveState(3);
 //			node->setPosition(node->getPosition() + vector3df(0,1,0));
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_S)){
-			vel[1] = -10;
+			vel[1] = -3;
 //			fisicas->setMoveState(4);
 //			node->setPosition(node->getPosition() + vector3df(0,-1,0));
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_A)){
-			vel[0] = -10;
+			vel[0] = -3;
 //			fisicas->setMoveState(1);
 //			node->setPosition(node->getPosition() + vector3df(-1,0,0));
 		}
 		if(receiver.IsKeyDown(irr::KEY_KEY_D)){
-			vel[0] = 10;
+			vel[0] =  3;
 //			fisicas->setMoveState(2);
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
 		}
