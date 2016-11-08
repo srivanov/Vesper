@@ -18,14 +18,19 @@ using namespace tinyxml2;
 class cargarMapa{
 public:
     cargarMapa();
+    virtual ~cargarMapa();
     void leerMapa();
     int getWidth();
     int getHeight();
     int getTileWidth();
     int getTileHeight();
     int * getLevel();
-    
+    //int getMatriz()[][][] const;
     //virtual ~cargarMapa();
+    int ***_tilemap;
+    void mostrarMatriz();
+    int*** getMatriz();
+    
 private:
     
     int _width;
@@ -35,6 +40,8 @@ private:
     int _numLayers;
     int *_level;
     int ***matrizMapa;
+    
+   // int matrizMapa[][][];
     
     //sf::Vector2f pos_ini;
     XMLElement * objs;

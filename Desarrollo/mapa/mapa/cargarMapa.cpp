@@ -9,6 +9,7 @@
 #include "cargarMapa.hpp"
 
 #include <iostream>
+#include <stdlib.h> //para crear variables dinamicas con new y delete
 //#include "tinyxml2.h"
 using namespace tinyxml2;
 using namespace std;
@@ -62,50 +63,60 @@ void cargarMapa::leerMapa() {
     }
     cout << "NumCapas: "<<_numLayers <<endl;
     
-    int _tilemap[_width][_height][_numLayers];//matriz de enteros para saber donde hay mapa y donde no
+    //int _tilemap[_width][_height][_numLayers];//matriz de enteros para saber donde hay mapa y donde no
     
     //RESERVO MEMORIA PARA LAS CAPAS Y SU TAMAÑO
     //reservo memoria como si fuera un vector y luego la recorro
-    /* _tilemap = new int ** [_numLayers];
-     for(int l = 0; l < _numLayers; l++) {
-     _tilemap[l] = new int * [_height];
+     _tilemap = new int ** [_numLayers];
+     
+     for(int l = 0; l < _numLayers; l++) { //filas
+        _tilemap[l] = new int * [_height];
      }
+     
      for(int l = 0; l < _numLayers; l++) {
-     for(int y = 0; y < _height; y++) {
-     _tilemap[l][y] = new int [_width];
+        for(int y = 0; y < _height; y++) { //columnas
+            _tilemap[l][y] = new int [_width];
+        }
      }
-     }*/
-   
+    
+    //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
     _level = new int [_width*_height];
+    cout<<"**********_LEVEL: " << _level<< endl;
     int cont = 0;
     //cargar los gids de diversas capas
     XMLElement  *data[_width*_height];
     //Carga la primera capa de textura
     data[0] = map->FirstChildElement("layer")->FirstChildElement("data")->FirstChildElement("tile");
-    
+    cout<<"antes del bucle"<<endl;
     for(int l=0; l<_numLayers; l++){
+        cout<<"entra1"<<endl;
         for(int y=0; y<_height; y++){
+            cout<<"entra2"<<endl;
             for(int x=0; x<_width; x++){
+                cout<<"entra3"<<endl;
                 //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
                 _level[cont] = data[l]->IntAttribute("gid")-1; //hasta q llega a 260 desde 1(ancho*alto)
                 
                 cont++;
-                data[l]->QueryIntAttribute("gid", &_tilemap[l][y][x]);
+                data[l]->QueryIntAttribute("gid", &_tilemap[l][x][y]);
                 
                 //avanzo hasta el siguiente tag
                 data[l] = data[l]->NextSiblingElement("tile");
-                
+                cout<<"acaba3"<<endl;
                 // muestra matriz de ints en la consola del mapa1
-                cout<< _tilemap[l][y][x] << " ";
+                ///////////////cout<< _tilemap[l][y][x] << " ";
+//                matrizMapa[l][y][x] = _tilemap[l][y][x];
                // cout<<matrizMapa[l][y][x] << " ";
-                if(x == _width-1){
-                    cout<< endl;
-                }
+//                if(x == _width-1){
+//                    cout<< endl;
+//                }
+              //  matrizMapa = &_tilemap;
             }
+            cout<<"sale4"<<endl;
         }
-        cout << cont << endl;
+        cout << "sale5" << endl;
     }
-    
+    cout<<"fin del bucle"<<endl;
     ////////////////////////////////////////////////////////////////////////////////////
     // AQUI EMPIEZA LA CAPA DE OBJETOS
     ////////////////////////////////////////////////////////////////////////////////////
@@ -196,86 +207,7 @@ void cargarMapa::leerMapa() {
 //        cout <<"Tipo de obj: " << type << endl;//tipos de objetos q hay
 //        
 //        //PRUEBA PARA VER ANIMACIONES
-//        if(type == 1){
-//            
-//            ////////////COPA/////////////                                  //si el tiempo es menor, voy mas rapido
-//            typ_copa = new AnimatedSprite(sf::seconds(0.15), true, true); //tiempo entre un frame y otro
-//            //typ_copa->setPosition(sf::Vector2f(100,100));
-//            typ_copa->setPosition(sf::Vector2f(pos.x, pos.y));
-//            Juego::Instance()->getCopa()->push_back(typ_copa); //para agregar animacionCopa a arr_copa
-//            
-//            
-//        }else if(type == 2){
-//            //////FUEGO INICIO GRANDE
-//            typ_fuegog = new AnimatedSprite(sf::seconds(0.15), true, true); //tiempo entre un frame y otro
-//            typ_fuegog->setPosition(sf::Vector2f(pos.x, pos.y));
-//            
-//            Juego::Instance()->getFuegog()->push_back(typ_fuegog);
-//            
-//            
-//        }else if(type == 3){
-//            ///////FUEGO PEQUEÑO INICIO
-//            typ_fuegop = new AnimatedSprite(sf::seconds(0.15), true, true); //tiempo entre un frame y otro
-//            typ_fuegop->setPosition(sf::Vector2f(pos.x, pos.y));
-//            typ_fuegop->scale(0.25, 0.25);
-//            Juego::Instance()->getFuegop()->push_back(typ_fuegop);
-//            
-//            
-//        }else if(type == 4){
-//            ///////LETRAS PRINCIPAL
-//            typ_letrasp = new AnimatedSprite(sf::seconds(0.15), true, true);
-//            typ_letrasp->setPosition(sf::Vector2f(pos.x-16, pos.y-32));
-//            typ_letrasp->scale(0.25, 0.25);
-//            
-//            Juego::Instance()->getLetrasp()->push_back(typ_letrasp);
-//            
-//        }else if(type == 5){
-//            ////////////ALGAS/////////////
-//            typ_algas = new AnimatedSprite(sf::seconds(0.15), true, true); //tiempo entre un frame y otro
-//            typ_algas->setPosition(sf::Vector2f(pos.x, pos.y));
-//            Juego::Instance()->getAlgas()->push_back(typ_algas);
-//            
-//            
-//        }else if(type == 6){
-//            /////////FUEGO CON RAYA IZQUIERDA
-//            typ_fuegoi = new AnimatedSprite(sf::seconds(0.15), true, true);
-//            typ_fuegoi->setPosition(sf::Vector2f(pos.x, pos.y));
-//            //typ_fuegoi->setScale(0.5);
-//            typ_fuegoi->scale(0.25, 0.25);
-//            Juego::Instance()->getFuegoi()->push_back(typ_fuegoi);
-//            
-//        }else if(type == 7){
-//            //////FUEGO CON RAYA DERECHA
-//            typ_fuegod = new AnimatedSprite(sf::seconds(0.15), true, true);
-//            typ_fuegod->setPosition(sf::Vector2f(pos.x, pos.y));
-//            typ_fuegod->scale(0.25, 0.25);
-//            Juego::Instance()->getFuegod()->push_back(typ_fuegod);
-//            
-//            
-//        }else if(type == 8){ ////////AGUA IZQUIERDA
-//            typ_aguai = new AnimatedSprite(sf::seconds(0.15), true, true);
-//            typ_aguai->setPosition(sf::Vector2f(pos.x, pos.y));
-//            typ_aguai->scale(0.25, 0.25);
-//            Juego::Instance()->getAguai()->push_back(typ_aguai);
-//        }else if(type == 9){
-//            /////AGUA DERECHA
-//            typ_aguad = new AnimatedSprite(sf::seconds(0.15), true, true);
-//            typ_aguad->setPosition(sf::Vector2f(pos.x, pos.y));
-//            typ_aguad->scale(0.25, 0.25);
-//            Juego::Instance()->getAguad()->push_back(typ_aguad);
-//        }else if(type == 10){
-//            ////////////ananya?????????????/////////////
-//            typ_aranya = new AnimatedSprite(sf::seconds(0.15), true, true);
-//            typ_aranya->setPosition(sf::Vector2f(pos.x, pos.y));
-//            Juego::Instance()->getAranya()->push_back(typ_aranya);
-//            
-//        }
-//        /////////Muerte//////////////////////////////////////
-//        
-//        tilesMov = tilesMov->NextSiblingElement("object");
-//    }
-//    cout <<"fin lee mapa"<< std::endl;
-//    //Juego::Instance()->getJugador()->setPosition(pos_ini);
+//
 }
 
 int cargarMapa::getWidth(){
@@ -287,4 +219,32 @@ int cargarMapa::getHeight(){
 }
 
 
+void cargarMapa::mostrarMatriz(){
+    cout<< "*******************"<<endl;
+    for(int l=0; l<_numLayers; l++){
+        for(int y=0; y<_height; y++){
+            for(int x=0; x<_width; x++){
+                // muestra matriz de ints en la consola del mapa1
+                cout<< _tilemap[l][x][y] << " ";
+                if(x == _width-1){
+                    cout<< endl;
+                }
+            }
+        }        
+    }
+    
+}
+
+cargarMapa::~cargarMapa(){
+    delete _tilemap;
+    delete _level;
+    delete matrizMapa;
+    //delete objs;
+    //delete tilesMov;
+}
+
+
+int*** cargarMapa::getMatriz(){
+    return _tilemap;
+}
 
