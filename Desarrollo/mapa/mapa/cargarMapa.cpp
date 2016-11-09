@@ -93,24 +93,26 @@ void cargarMapa::leerMapa() {
         for(int y=0; y<_height; y++){
             cout<<"entra2"<<endl;
             for(int x=0; x<_width; x++){
+                cout<<"y_height: "<< y <<endl; //0
+                cout<<"x_width: "<< x <<endl; //llega hasta 150, 190, 191??
                 cout<<"entra3"<<endl;
                 //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
                 _level[cont] = data[l]->IntAttribute("gid")-1; //hasta q llega a 260 desde 1(ancho*alto)
-                
                 cont++;
-                data[l]->QueryIntAttribute("gid", &_tilemap[l][x][y]);
+                cout<<"cont: "<<cont<<endl;
+                data[l]->QueryIntAttribute("gid", &_tilemap[l][y][x]);
+                cout<<"data["<<l<<"]: "<<data[l]<<endl;
                 
                 //avanzo hasta el siguiente tag
                 data[l] = data[l]->NextSiblingElement("tile");
                 cout<<"acaba3"<<endl;
                 // muestra matriz de ints en la consola del mapa1
                 ///////////////cout<< _tilemap[l][y][x] << " ";
-//                matrizMapa[l][y][x] = _tilemap[l][y][x];
-               // cout<<matrizMapa[l][y][x] << " ";
+
 //                if(x == _width-1){
 //                    cout<< endl;
 //                }
-              //  matrizMapa = &_tilemap;
+              
             }
             cout<<"sale4"<<endl;
         }
@@ -225,7 +227,7 @@ void cargarMapa::mostrarMatriz(){
         for(int y=0; y<_height; y++){
             for(int x=0; x<_width; x++){
                 // muestra matriz de ints en la consola del mapa1
-                cout<< _tilemap[l][x][y] << " ";
+                cout<< _tilemap[l][y][x] << " ";
                 if(x == _width-1){
                     cout<< endl;
                 }
@@ -248,3 +250,10 @@ int*** cargarMapa::getMatriz(){
     return _tilemap;
 }
 
+int cargarMapa::getTileWidth(){
+    return _tileWidth;
+}
+
+int cargarMapa::getTileHeight(){
+    return _tileHeight;
+}

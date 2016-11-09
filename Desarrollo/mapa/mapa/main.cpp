@@ -54,7 +54,7 @@ private:
 int main(){
     MyEventReceiver receiver;
                                                         //primer booleano, true para pantalla completa, false para no.
-    IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, false, false, false, &receiver);
+    IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, true, false, false, &receiver);
     if (!device)
         return 1;
     IVideoDriver* driver = device->getVideoDriver();
@@ -62,6 +62,7 @@ int main(){
     ISceneManager* smgr = device->getSceneManager();
     printf("1\n");
     IMesh* muro = smgr->getMesh("../../../mapa/3d/muro.3ds");
+    IMesh* muro2 = smgr->getMesh("../../../mapa/3d/muro.3ds");
     IMesh* suelo = smgr->getMesh("../../../mapa/3d/suelo.3ds");
      printf("2\n");
     if(!muro){
@@ -71,7 +72,7 @@ int main(){
         printf("suelo no cargado\n");
     }
      printf("3\n");
-    smgr->addCameraSceneNode(0,vector3df(0,-20,-60),vector3df(0,5,0));  /////(0,-5,10)-(0,6,0)////posicion de la camra, y donde tiene q mirar
+    smgr->addCameraSceneNode(0,vector3df(0,-100,-150),vector3df(0,50,-40));  /////(0,-5,10)-(0,6,0)////posicion de la camra, y donde tiene q mirar
     cargarMapa * map = new cargarMapa();
    // map = new cargarMapa();
     map->leerMapa();
@@ -80,6 +81,7 @@ int main(){
      printf("4\n");
     mapita = map->getMatriz();
     IMeshSceneNode* nodo;
+    IMeshSceneNode* nodor;
     IMeshSceneNode* nodo_suelo;
     for(int i=0; i<map->getHeight();i++){
         for(int j=0; j<map->getWidth(); j++){
@@ -89,6 +91,13 @@ int main(){
                 nodo->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/rocas.jpg"));
                 nodo->setPosition(vector3df(i,j,0));
                 nodo = NULL;
+            }
+            if(mapita[0][i][j] == 9){
+                nodor = smgr->addMeshSceneNode(muro2);
+                nodor->setMaterialFlag(EMF_LIGHTING, false);
+                nodor->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/rocas.jpg"));
+                nodor->setPosition(vector3df(i,j,0));
+                nodor = NULL;
             }
             
             if(mapita[0][i][j] == 86){
