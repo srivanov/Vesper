@@ -24,6 +24,14 @@ bool inputSFML::isKeyPressed(uint i){
     return false;
 }
 
+int* inputSFML::posicionRaton(){
+    int pos[2];
+    pos[0] = sf::Mouse::getPosition().x;
+    pos[1] = sf::Mouse::getPosition().y;
+    return pos;
+    
+}
+
 inputSFML::~inputSFML(){
     delete pinstance;
 }

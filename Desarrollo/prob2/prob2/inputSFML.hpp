@@ -11,6 +11,7 @@ class inputSFML{
         static inputSFML* Instance();
         virtual ~inputSFML();
         bool isKeyPressed(uint i);
+        int* posicionRaton();
     private:
         static inputSFML* pinstance;
 };

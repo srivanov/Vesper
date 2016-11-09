@@ -28,7 +28,7 @@ physicsController::physicsController(){
 	positionIterations = 3;   //how strongly to correct position
 }
 
-void physicsController::Step(float* velocidad, float * posicion){
+void physicsController::Step(float* velocidad, float * posicion, float* posmouseFinal, int* rotacion){
     //inside Step()
     b2Vec2 vel;
 	vel.x = velocidad[0];
@@ -41,11 +41,17 @@ void physicsController::Step(float* velocidad, float * posicion){
 //		case MS_UP:		vel.x =	 0; vel.y =  5; break;
 //		case MS_DOWN:	vel.x =	 0; vel.y = -5; break;
 //    }
+    float angulo[2];
+    angulo[0] = (float)rotacion[0] - 1440;
+    angulo[1] = (float)rotacion[1] - 900;
+    posmouseFinal[0] = atan2f(-angulo[0], -angulo[1]);
+//    printf("%.2f, %.2f\n", posmouseFinal[0], posmouseFinal[1]);
     body->SetLinearVelocity( vel );
-	
+    body->SetTransform(body->GetPosition(), atan2f(-angulo[0], -angulo[1]));
 	mundo->Step( timeStep, velocityIterations, positionIterations);
 	posicion[0] = body->GetPosition().x;
 	posicion[1] = body->GetPosition().y;
+    
 	
 //	printf("\n%u\n",moveState);
 //    float p[2] = {body->GetPosition().x,body->GetPosition().y};

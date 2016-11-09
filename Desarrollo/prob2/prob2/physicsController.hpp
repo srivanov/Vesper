@@ -18,7 +18,7 @@ class physicsController{
         physicsController();
         void Footest();
         void setMoveState(int u);
-        void Step(float* velocidad, float* posicion);
+        void Step(float* velocidad, float* posicion,float* posmouseFinal, int* rotacion);
     private:
 	b2World* mundo;
 	float32 timeStep;      //the length of time passed to simulate (seconds)

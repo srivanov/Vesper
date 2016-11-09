@@ -87,13 +87,19 @@ int main()
     fisicas->Footest();
 	float vel_aux[3] = {0,0,0};
 	float pos_aux[3] = {0,0,0};
-	float *vel = vel_aux, *pos = pos_aux;
+    float mFin[2] = {0,0};
+	float *vel = vel_aux, *pos = pos_aux, *posmouseFinal = mFin;
+    int *posmouse;
+
 	while (device->run())
 	{
-		
+        
 		//printf("\n%.2f\n",node->getAbsolutePosition().X);
-        fisicas->Step(vel,pos);
+        fisicas->Step(vel,pos, posmouseFinal, inputSFML::Instance()->posicionRaton());
         node->setPosition(vector3df(pos[0],pos[1],pos[2]));
+//        printf("%.2f\n",posmouseFinal[0]);
+//        node->setRotation(vector3df(0,0,posmouseFinal[0]));
+        
 		driver->beginScene(true, true, SColor(255, 255, 255, 255));
 		
 		smgr->drawAll();
@@ -101,7 +107,7 @@ int main()
 		driver->endScene();
 		vel[0] = 0; vel[1] = 0;
 //		camera->setTarget(node->getAbsolutePosition());
-		
+        printf("%.2f\n",node->getRotation().Z);
 		if(joystickInfo.size() > 0)
 			printf("tengo mando\n");
 		
@@ -129,6 +135,7 @@ int main()
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
 		}
 		if(inputSFML::Instance()->isKeyPressed(57)){
+            node->setRotation(vector3df(0,0,posmouseFinal[0]));
 			vel[0] = 0; vel[1] = 0;
 //			fisicas->setMoveState(0);
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
