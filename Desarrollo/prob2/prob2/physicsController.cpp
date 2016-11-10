@@ -28,23 +28,16 @@ physicsController::physicsController(){
 	positionIterations = 3;   //how strongly to correct position
 }
 
-void physicsController::Step(float* velocidad, float * posicion, float* posmouseFinal, int* rotacion){
+void physicsController::Step(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition){
     //inside Step()
     b2Vec2 vel;
 	vel.x = velocidad[0];
 	vel.y = velocidad[1];
-//    switch ( moveState )
-//    {
-//		case MS_STOP:	vel.x =	 0; vel.y =  0; break;
-//        case MS_LEFT:	vel.x =	-5; vel.y =  0; break;
-//        case MS_RIGHT:	vel.x =	 5; vel.y =  0; break;
-//		case MS_UP:		vel.x =	 0; vel.y =  5; break;
-//		case MS_DOWN:	vel.x =	 0; vel.y = -5; break;
-//    }
+
     float angulo[2];
-    angulo[0] = (float)rotacion[0] - body->GetPosition().x;
-    angulo[1] = (float)rotacion[1] - body->GetPosition().y;
-    posmouseFinal[0] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
+    angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
+    angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
+    anguloFinal[0] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
 //    printf("%d %d\n", rotacion[0],rotacion[1]);
     body->SetLinearVelocity( vel );
     body->SetTransform(body->GetPosition(), atan2f(-angulo[0], -angulo[1]));

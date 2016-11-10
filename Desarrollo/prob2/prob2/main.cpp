@@ -84,11 +84,11 @@ int* mouseTo3D(ISceneManager* smgr, ICameraSceneNode* camera, IAnimatedMeshScene
 	if(plane.getIntersectionWithLine(ray.start, ray.getVector(), mousePosition))
 	{
 		// We now have a mouse position in 3d space; move towards it.
-		core::vector3df toMousePosition(mousePosition - node->getAbsolutePosition());
+//		core::vector3df toMousePosition(mousePosition - node->getAbsolutePosition());
 //		printf("%.2f %.2f\n",toMousePosition.X,toMousePosition.Y);
 		
-		p[0] = toMousePosition.X;
-		p[1] = toMousePosition.Y;
+		p[0] = mousePosition.X;
+		p[1] = mousePosition.Y;
 	}
 	return p;
 }
@@ -133,6 +133,7 @@ int main()
 		posmouse2 = mouseTo3D(smgr, camera, node, posmouse);
         fisicas->Step(vel,pos, posmouseFinal, posmouse2);
 //		printf("%d %d\n",posmouse2[0],posmouse2[1]);
+		
         node->setPosition(vector3df(pos[0],pos[1],pos[2]));
 		
         node->setRotation(vector3df(0,0,posmouseFinal[0]));
