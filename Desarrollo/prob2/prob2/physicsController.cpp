@@ -42,10 +42,10 @@ void physicsController::Step(float* velocidad, float * posicion, float* posmouse
 //		case MS_DOWN:	vel.x =	 0; vel.y = -5; break;
 //    }
     float angulo[2];
-    angulo[0] = (float)rotacion[0] - 1440;
-    angulo[1] = (float)rotacion[1] - 900;
-    posmouseFinal[0] = atan2f(-angulo[0], -angulo[1])* 180 / 3.14159265 + 90;
-    printf("%.2f\n", posmouseFinal[0]);
+    angulo[0] = (float)rotacion[0] - body->GetPosition().x;
+    angulo[1] = (float)rotacion[1] - body->GetPosition().y;
+    posmouseFinal[0] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
+//    printf("%d %d\n", rotacion[0],rotacion[1]);
     body->SetLinearVelocity( vel );
     body->SetTransform(body->GetPosition(), atan2f(-angulo[0], -angulo[1]));
 	mundo->Step( timeStep, velocityIterations, positionIterations);

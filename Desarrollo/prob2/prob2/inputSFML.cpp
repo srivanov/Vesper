@@ -29,7 +29,6 @@ int* inputSFML::posicionRaton(){
     pos[0] = sf::Mouse::getPosition().x;
     pos[1] = sf::Mouse::getPosition().y;
     return pos;
-    
 }
 
 inputSFML::~inputSFML(){
