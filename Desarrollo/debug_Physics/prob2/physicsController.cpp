@@ -17,10 +17,6 @@ enum _moveState {
 	MS_DOWN,
 };
 
-//class member variables
-b2Body* body;
-_moveState moveState;
-
 physicsController::physicsController(){
 	mundo = mundoBox2D::Instance()->getWorld();
 	timeStep = 1/20.0;      //the length of time passed to simulate (seconds)
@@ -28,23 +24,23 @@ physicsController::physicsController(){
 	positionIterations = 3;   //how strongly to correct position
 }
 
-void physicsController::Step(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition){
+void physicsController::Step(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition, int* posicion_bala){
     //inside Step()
     b2Vec2 vel;
 	vel.x = velocidad[0];
 	vel.y = velocidad[1];
 
-    float angulo[2];
     angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
     angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
+
     anguloFinal[0] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
-//    printf("%d %d\n", rotacion[0],rotacion[1]);
+	
     body->SetLinearVelocity( vel );
-    body->SetTransform(body->GetPosition(), atan2f(-angulo[0], -angulo[1]));
+    body->SetTransform(body->GetPosition(), anguloFinal[0]);
 	mundo->Step( timeStep, velocityIterations, positionIterations);
 	posicion[0] = body->GetPosition().x;
 	posicion[1] = body->GetPosition().y;
-    
+	
 	
 //	printf("\n%u\n",moveState);
 //    float p[2] = {body->GetPosition().x,body->GetPosition().y};
@@ -76,11 +72,11 @@ void physicsController::Footest() {
 	//a static body
 	myBodyDef.type = b2_staticBody;
 	myBodyDef.position.Set(0, 0);
-//	b2Body* staticBody = m_world->CreateBody(&myBodyDef);
+	b2Body* staticBody = m_world->CreateBody(&myBodyDef);
 	
-//	//add four walls to the static body
-//	polygonShape.SetAsBox( 20, 1, b2Vec2(0, 0), 0);//ground
-//	staticBody->CreateFixture(&myFixtureDef);
+	//add four walls to the static body
+	polygonShape.SetAsBox( 20, 1, b2Vec2(0, 0), 0);//ground
+	staticBody->CreateFixture(&myFixtureDef);
 //	polygonShape.SetAsBox( 20, 1, b2Vec2(0, 40), 0);//ceiling
 //	staticBody->CreateFixture(&myFixtureDef);
 //	polygonShape.SetAsBox( 1, 20, b2Vec2(-20, 20), 0);//left wall
@@ -88,8 +84,9 @@ void physicsController::Footest() {
 //	polygonShape.SetAsBox( 1, 20, b2Vec2(20, 20), 0);//right wall
 //	staticBody->CreateFixture(&myFixtureDef);
 	
-	moveState = MS_STOP;
-    
+//	moveState = MS_STOP;
+
+	
 }
 /*
 void physicsController::setMoveState(int u){
@@ -116,5 +113,11 @@ void physicsController::setMoveState(int u){
 }
 */
 
-
-
+void physicsController::dispararBala(){
+	b2BodyDef bala;
+	bala.type = b2_kinematicBody;
+	bala.position.Set(body->GetPosition().x, body->GetPosition().y);
+	b2Body* bullet;
+	bullet = mundoBox2D::Instance()->getWorld()->CreateBody(&bala);
+	bullet->SetLinearVelocity(b2Vec2(2,0));
+}

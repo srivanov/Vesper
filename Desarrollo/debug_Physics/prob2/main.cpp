@@ -105,7 +105,16 @@ int main()
 
 	IVideoDriver* driver = device->getVideoDriver();
 	ISceneManager* smgr = device->getSceneManager();
-	IAnimatedMesh* cubo = smgr->getMesh("../../../modelos3D/sphere.3ds");
+	IAnimatedMesh* cubo = smgr->getMesh("../../../modelos3D/cubo.3ds");
+	
+	IMesh* pared = smgr->getMesh("../../../modelos3D/pared.3ds");
+	IMeshSceneNode* nodo_pared = smgr->addMeshSceneNode(pared);
+	nodo_pared->setPosition(vector3df(0,0,0));
+	
+	IMesh* bala = smgr->getMesh("../../../modelos3D/bala.3ds");
+//	nodo_pared = smgr->addMeshSceneNode(bala);
+//	nodo_pared->setPosition(vector3df(0,0,0));
+	nodo_pared = NULL;
 	
 	if(!cubo)
 		printf("\nno se ha cargado el modelo 3D\n");
@@ -119,6 +128,7 @@ int main()
 	}
 	
 	ICameraSceneNode* camera = smgr->addCameraSceneNode(0,vector3df(0,-10,-10),vector3df(0,0,0));
+	camera->setRotation(vector3df(0,0,90));
 	
     physicsController *fisicas = new physicsController();
     fisicas->Footest();
@@ -127,14 +137,21 @@ int main()
     float mFin[2] = {0,0};
 	float *vel = vel_aux, *pos = pos_aux, *posmouseFinal = mFin;
 	int p_aux[2] = {0,0};
-	int *posmouse = p_aux, *posmouse2;
+	int *posmouse = p_aux;
+	int* posmouse2;
+	int aux_bala[2] = {2,2};
+	int* posicion_bala;
+	posicion_bala = aux_bala;
 
 	while (device->run())
 	{
+		camera->setTarget(node->getAbsolutePosition());
+		camera->setPosition(node->getPosition() + vector3df(0,0,-20));
+		
 		posmouse = receiver.getPosicionMouse();
 		posmouse2 = mouseTo3D(smgr, camera, node, posmouse);
-        fisicas->Step(vel,pos, posmouseFinal, posmouse2);
-//		printf("%d %d\n",posmouse2[0],posmouse2[1]);
+        fisicas->Step(vel,pos, posmouseFinal, posmouse2, posicion_bala);
+//		printf("%d %d\n",posicion_bala[0],posicion_bala[1]);w
 		
         node->setPosition(vector3df(pos[0],pos[1],pos[2]));
 		
@@ -168,6 +185,11 @@ int main()
 		}
 		if(inputSFML::Instance()->isKeyPressed(57)){
 			vel[0] = 0; vel[1] = 0;
+			if(nodo_pared == NULL){
+				nodo_pared = smgr->addMeshSceneNode(bala);
+				fisicas->dispararBala();
+				nodo_pared->setPosition(node->getPosition()+vector3df(5,0,0));
+			}
 //			node->setRotation(vector3df(0,0,node->getRotation().Z+1));
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
 		}
