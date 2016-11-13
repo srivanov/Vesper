@@ -139,9 +139,9 @@ int main()
 	int p_aux[2] = {0,0};
 	int *posmouse = p_aux;
 	int* posmouse2;
-	int aux_bala[2] = {2,2};
-	int* posicion_bala;
-	posicion_bala = aux_bala;
+	int aux_bala[2] = {1,1};
+//	int* posicion_bala;
+//	posicion_bala = aux_bala;
 
 	while (device->run())
 	{
@@ -150,7 +150,7 @@ int main()
 		
 		posmouse = receiver.getPosicionMouse();
 		posmouse2 = mouseTo3D(smgr, camera, node, posmouse);
-        fisicas->Step(vel,pos, posmouseFinal, posmouse2, posicion_bala);
+        fisicas->Step(vel,pos, posmouseFinal, posmouse2);
 //		printf("%d %d\n",posicion_bala[0],posicion_bala[1]);w
 		
         node->setPosition(vector3df(pos[0],pos[1],pos[2]));
@@ -187,8 +187,8 @@ int main()
 			vel[0] = 0; vel[1] = 0;
 			if(nodo_pared == NULL){
 				nodo_pared = smgr->addMeshSceneNode(bala);
-				fisicas->dispararBala();
-				nodo_pared->setPosition(node->getPosition()+vector3df(5,0,0));
+				fisicas->dispararBala(aux_bala);
+				nodo_pared->setPosition(vector3df(aux_bala[0],aux_bala[1],0));
 			}
 //			node->setRotation(vector3df(0,0,node->getRotation().Z+1));
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));

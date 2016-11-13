@@ -24,7 +24,7 @@ physicsController::physicsController(){
 	positionIterations = 3;   //how strongly to correct position
 }
 
-void physicsController::Step(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition, int* posicion_bala){
+void physicsController::Step(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition){
     //inside Step()
     b2Vec2 vel;
 	vel.x = velocidad[0];
@@ -113,11 +113,15 @@ void physicsController::setMoveState(int u){
 }
 */
 
-void physicsController::dispararBala(){
+void physicsController::dispararBala(int* posicion_bala){
 	b2BodyDef bala;
 	bala.type = b2_kinematicBody;
 	bala.position.Set(body->GetPosition().x, body->GetPosition().y);
 	b2Body* bullet;
 	bullet = mundoBox2D::Instance()->getWorld()->CreateBody(&bala);
 	bullet->SetLinearVelocity(b2Vec2(2,0));
+	while(bullet->GetPosition().x < body->GetPosition().x + 50){
+		mundoBox2D::Instance()->getWorld()->Step(timeStep, velocityIterations, positionIterations);
+		printf("%.2f %.2f\n",bullet->GetPosition().x,bullet->GetPosition().y);
+	}
 }

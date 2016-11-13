@@ -20,8 +20,8 @@ class physicsController{
         physicsController();
         void Footest();
         void setMoveState(int u);
-        void Step(float* velocidad, float* posicion,float* posmouseFinal, int* rotacion, int* posicion_bala);
-		void dispararBala();
+        void Step(float* velocidad, float* posicion,float* posmouseFinal, int* rotacion);
+		void dispararBala(int* posicion_bala);
 	
     private:
 		b2World* mundo;
