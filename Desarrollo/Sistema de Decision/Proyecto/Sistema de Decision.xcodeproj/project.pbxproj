@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633E62811DD20841002A86A9 /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62721DD20719002A86A9 /* sfml-audio.framework */; };
+		633E62821DD20841002A86A9 /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62731DD20719002A86A9 /* sfml-graphics.framework */; };
+		633E62831DD20841002A86A9 /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62741DD20719002A86A9 /* sfml-network.framework */; };
+		633E62841DD20841002A86A9 /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62751DD20719002A86A9 /* sfml-system.framework */; };
+		633E62851DD20841002A86A9 /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62761DD20719002A86A9 /* sfml-window.framework */; };
+		633E62861DD20841002A86A9 /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62701DD20706002A86A9 /* SFML.framework */; };
+		633E62F81DD22A76002A86A9 /* Vstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633E62F61DD22A76002A86A9 /* Vstate.cpp */; };
+		633E62FB1DD25223002A86A9 /* DecisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633E62F91DD25223002A86A9 /* DecisionSystem.cpp */; };
 		E9DDB0471DCA0BC500740C7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0461DCA0BC500740C7F /* Cocoa.framework */; };
 		E9DDB0491DCA0BCB00740C7F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0481DCA0BCB00740C7F /* Carbon.framework */; };
 		E9DDB04B1DCA0BD100740C7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB04A1DCA0BD100740C7F /* IOKit.framework */; };
@@ -18,6 +26,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633E62701DD20706002A86A9 /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = SFML/Frameworks/SFML.framework; sourceTree = "<group>"; };
+		633E62721DD20719002A86A9 /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "SFML/Frameworks/sfml-audio.framework"; sourceTree = "<group>"; };
+		633E62731DD20719002A86A9 /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "SFML/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
+		633E62741DD20719002A86A9 /* sfml-network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-network.framework"; path = "SFML/Frameworks/sfml-network.framework"; sourceTree = "<group>"; };
+		633E62751DD20719002A86A9 /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "SFML/Frameworks/sfml-system.framework"; sourceTree = "<group>"; };
+		633E62761DD20719002A86A9 /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "SFML/Frameworks/sfml-window.framework"; sourceTree = "<group>"; };
+		633E627C1DD2072D002A86A9 /* SFML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SFML; path = SFML/include/SFML; sourceTree = "<group>"; };
+		633E627F1DD20828002A86A9 /* SFML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SFML; sourceTree = "<group>"; };
+		633E62871DD20DC4002A86A9 /* libsfml-audio.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.1.dylib"; path = "SFML/lib/libsfml-audio.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62881DD20DC4002A86A9 /* libsfml-audio.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.1.dylib"; path = "SFML/lib/libsfml-audio.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62891DD20DC4002A86A9 /* libsfml-audio.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.1.dylib"; path = "SFML/lib/libsfml-audio.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E628A1DD20DC4002A86A9 /* libsfml-graphics.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-graphics.2.4.1.dylib"; path = "SFML/lib/libsfml-graphics.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E628B1DD20DC4002A86A9 /* libsfml-graphics.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-graphics.2.4.1.dylib"; path = "SFML/lib/libsfml-graphics.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E628C1DD20DC4002A86A9 /* libsfml-graphics.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-graphics.2.4.1.dylib"; path = "SFML/lib/libsfml-graphics.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E628D1DD20DC4002A86A9 /* libsfml-network.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.1.dylib"; path = "SFML/lib/libsfml-network.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E628E1DD20DC5002A86A9 /* libsfml-network.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.1.dylib"; path = "SFML/lib/libsfml-network.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E628F1DD20DC5002A86A9 /* libsfml-network.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.1.dylib"; path = "SFML/lib/libsfml-network.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62901DD20DC5002A86A9 /* libsfml-system.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.1.dylib"; path = "SFML/lib/libsfml-system.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62911DD20DC5002A86A9 /* libsfml-system.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.1.dylib"; path = "SFML/lib/libsfml-system.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62921DD20DC5002A86A9 /* libsfml-system.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.1.dylib"; path = "SFML/lib/libsfml-system.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62931DD20DC5002A86A9 /* libsfml-window.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.1.dylib"; path = "SFML/lib/libsfml-window.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62941DD20DC5002A86A9 /* libsfml-window.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.1.dylib"; path = "SFML/lib/libsfml-window.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62951DD20DC5002A86A9 /* libsfml-window.2.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.1.dylib"; path = "SFML/lib/libsfml-window.2.4.1.dylib"; sourceTree = "<group>"; };
+		633E62A51DD20DE4002A86A9 /* FLAC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAC.framework; path = SFML/extlibs/FLAC.framework; sourceTree = "<group>"; };
+		633E62A61DD20DE4002A86A9 /* freetype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = freetype.framework; path = SFML/extlibs/freetype.framework; sourceTree = "<group>"; };
+		633E62A71DD20DE4002A86A9 /* ogg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ogg.framework; path = SFML/extlibs/ogg.framework; sourceTree = "<group>"; };
+		633E62A81DD20DE4002A86A9 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = SFML/extlibs/OpenAL.framework; sourceTree = "<group>"; };
+		633E62A91DD20DE4002A86A9 /* vorbis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vorbis.framework; path = SFML/extlibs/vorbis.framework; sourceTree = "<group>"; };
+		633E62AA1DD20DE4002A86A9 /* vorbisenc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vorbisenc.framework; path = SFML/extlibs/vorbisenc.framework; sourceTree = "<group>"; };
+		633E62AB1DD20DE4002A86A9 /* vorbisfile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vorbisfile.framework; path = SFML/extlibs/vorbisfile.framework; sourceTree = "<group>"; };
+		633E62F61DD22A76002A86A9 /* Vstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vstate.cpp; sourceTree = "<group>"; };
+		633E62F71DD22A76002A86A9 /* Vstate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vstate.hpp; sourceTree = "<group>"; };
+		633E62F91DD25223002A86A9 /* DecisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecisionSystem.cpp; sourceTree = "<group>"; };
+		633E62FA1DD25223002A86A9 /* DecisionSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DecisionSystem.hpp; sourceTree = "<group>"; };
 		E9DDB0311DCA0BB400740C7F /* Sistema de Decision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sistema de Decision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DDB0461DCA0BC500740C7F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9DDB0481DCA0BCB00740C7F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -34,6 +76,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633E62811DD20841002A86A9 /* sfml-audio.framework in Frameworks */,
+				633E62821DD20841002A86A9 /* sfml-graphics.framework in Frameworks */,
+				633E62831DD20841002A86A9 /* sfml-network.framework in Frameworks */,
+				633E62841DD20841002A86A9 /* sfml-system.framework in Frameworks */,
+				633E62851DD20841002A86A9 /* sfml-window.framework in Frameworks */,
+				633E62861DD20841002A86A9 /* SFML.framework in Frameworks */,
 				E9DDB0571DCA0EA000740C7F /* libBox2D.a in Frameworks */,
 				E9DDB04F1DCA0C0600740C7F /* libIrrlicht.a in Frameworks */,
 				E9DDB04D1DCA0BD700740C7F /* OpenGL.framework in Frameworks */,
@@ -51,6 +99,10 @@
 			children = (
 				E9DDB0521DCA0C7900740C7F /* Assets.xcassets */,
 				E9DDB0501DCA0C6E00740C7F /* main.cpp */,
+				633E62F91DD25223002A86A9 /* DecisionSystem.cpp */,
+				633E62FA1DD25223002A86A9 /* DecisionSystem.hpp */,
+				633E62F61DD22A76002A86A9 /* Vstate.cpp */,
+				633E62F71DD22A76002A86A9 /* Vstate.hpp */,
 				E9DDB0321DCA0BB400740C7F /* Products */,
 				E9DDB0451DCA0BC400740C7F /* Frameworks */,
 			);
@@ -67,6 +119,36 @@
 		E9DDB0451DCA0BC400740C7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				633E62A51DD20DE4002A86A9 /* FLAC.framework */,
+				633E62A61DD20DE4002A86A9 /* freetype.framework */,
+				633E62A71DD20DE4002A86A9 /* ogg.framework */,
+				633E62A81DD20DE4002A86A9 /* OpenAL.framework */,
+				633E62A91DD20DE4002A86A9 /* vorbis.framework */,
+				633E62AA1DD20DE4002A86A9 /* vorbisenc.framework */,
+				633E62AB1DD20DE4002A86A9 /* vorbisfile.framework */,
+				633E62871DD20DC4002A86A9 /* libsfml-audio.2.4.1.dylib */,
+				633E62881DD20DC4002A86A9 /* libsfml-audio.2.4.1.dylib */,
+				633E62891DD20DC4002A86A9 /* libsfml-audio.2.4.1.dylib */,
+				633E628A1DD20DC4002A86A9 /* libsfml-graphics.2.4.1.dylib */,
+				633E628B1DD20DC4002A86A9 /* libsfml-graphics.2.4.1.dylib */,
+				633E628C1DD20DC4002A86A9 /* libsfml-graphics.2.4.1.dylib */,
+				633E628D1DD20DC4002A86A9 /* libsfml-network.2.4.1.dylib */,
+				633E628E1DD20DC5002A86A9 /* libsfml-network.2.4.1.dylib */,
+				633E628F1DD20DC5002A86A9 /* libsfml-network.2.4.1.dylib */,
+				633E62901DD20DC5002A86A9 /* libsfml-system.2.4.1.dylib */,
+				633E62911DD20DC5002A86A9 /* libsfml-system.2.4.1.dylib */,
+				633E62921DD20DC5002A86A9 /* libsfml-system.2.4.1.dylib */,
+				633E62931DD20DC5002A86A9 /* libsfml-window.2.4.1.dylib */,
+				633E62941DD20DC5002A86A9 /* libsfml-window.2.4.1.dylib */,
+				633E62951DD20DC5002A86A9 /* libsfml-window.2.4.1.dylib */,
+				633E627F1DD20828002A86A9 /* SFML */,
+				633E627C1DD2072D002A86A9 /* SFML */,
+				633E62721DD20719002A86A9 /* sfml-audio.framework */,
+				633E62731DD20719002A86A9 /* sfml-graphics.framework */,
+				633E62741DD20719002A86A9 /* sfml-network.framework */,
+				633E62751DD20719002A86A9 /* sfml-system.framework */,
+				633E62761DD20719002A86A9 /* sfml-window.framework */,
+				633E62701DD20706002A86A9 /* SFML.framework */,
 				E9DDB0561DCA0EA000740C7F /* libBox2D.a */,
 				E9DDB04E1DCA0C0600740C7F /* libIrrlicht.a */,
 				E9DDB04C1DCA0BD700740C7F /* OpenGL.framework */,
@@ -147,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633E62FB1DD25223002A86A9 /* DecisionSystem.cpp in Sources */,
 				E9DDB0511DCA0C6E00740C7F /* main.cpp in Sources */,
+				633E62F81DD22A76002A86A9 /* Vstate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +335,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CR3ATYJ5ND;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SFML/Frameworks",
+					"$(PROJECT_DIR)/SFML/extlibs",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/irrlicht/include",
 					"$(PROJECT_DIR)/Box2D",
@@ -261,6 +350,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
 					"$(PROJECT_DIR)/Box2D/lib",
+					"$(PROJECT_DIR)/SFML/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sia.decisionsystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +365,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CR3ATYJ5ND;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SFML/Frameworks",
+					"$(PROJECT_DIR)/SFML/extlibs",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/irrlicht/include",
 					"$(PROJECT_DIR)/Box2D",
@@ -285,6 +380,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
 					"$(PROJECT_DIR)/Box2D/lib",
+					"$(PROJECT_DIR)/SFML/lib",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = sia.decisionsystem;
