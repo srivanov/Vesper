@@ -61,7 +61,7 @@ void cargarMapa::leerMapa() {
         _numLayers++;
         layer = layer->NextSiblingElement("layer"); //Creamos a capa
     }
-    cout << "NumCapas: "<<_numLayers <<endl;
+    //cout << "NumCapas: "<<_numLayers <<endl;
     
     //int _tilemap[_width][_height][_numLayers];//matriz de enteros para saber donde hay mapa y donde no
     
@@ -81,31 +81,31 @@ void cargarMapa::leerMapa() {
     
     //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
     _level = new int [_width*_height];
-    cout<<"**********_LEVEL: " << _level<< endl;
+   // cout<<"**********_LEVEL: " << _level<< endl;
     int cont = 0;
     //cargar los gids de diversas capas
     XMLElement  *data[_width*_height];
     //Carga la primera capa de textura
     data[0] = map->FirstChildElement("layer")->FirstChildElement("data")->FirstChildElement("tile");
-    cout<<"antes del bucle"<<endl;
+  //  cout<<"antes del bucle"<<endl;
     for(int l=0; l<_numLayers; l++){
-        cout<<"entra1"<<endl;
+       // cout<<"entra1"<<endl;
         for(int y=0; y<_height; y++){
-            cout<<"entra2"<<endl;
+          //  cout<<"entra2"<<endl;
             for(int x=0; x<_width; x++){
-                cout<<"y_height: "<< y <<endl; //0
-                cout<<"x_width: "<< x <<endl; //llega hasta 150, 190, 191??
-                cout<<"entra3"<<endl;
-                //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
+//                cout<<"y_height: "<< y <<endl; //0
+//                cout<<"x_width: "<< x <<endl; //llega hasta 150, 190, 191??
+//                cout<<"entra3"<<endl;
+//                //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
                 _level[cont] = data[l]->IntAttribute("gid")-1; //hasta q llega a 260 desde 1(ancho*alto)
                 cont++;
-                cout<<"cont: "<<cont<<endl;
+               // cout<<"cont: "<<cont<<endl;
                 data[l]->QueryIntAttribute("gid", &_tilemap[l][y][x]);
-                cout<<"data["<<l<<"]: "<<data[l]<<endl;
+               // cout<<"data["<<l<<"]: "<<data[l]<<endl;
                 
                 //avanzo hasta el siguiente tag
                 data[l] = data[l]->NextSiblingElement("tile");
-                cout<<"acaba3"<<endl;
+               // cout<<"acaba3"<<endl;
                 // muestra matriz de ints en la consola del mapa1
                 ///////////////cout<< _tilemap[l][y][x] << " ";
 
@@ -114,11 +114,11 @@ void cargarMapa::leerMapa() {
 //                }
               
             }
-            cout<<"sale4"<<endl;
+          //  cout<<"sale4"<<endl;
         }
-        cout << "sale5" << endl;
+      //  cout << "sale5" << endl;
     }
-    cout<<"fin del bucle"<<endl;
+   // cout<<"fin del bucle"<<endl;
     ////////////////////////////////////////////////////////////////////////////////////
     // AQUI EMPIEZA LA CAPA DE OBJETOS
     ////////////////////////////////////////////////////////////////////////////////////

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */; };
 		D29475CA1DCE44F000AD3AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475C91DCE44F000AD3AEF /* Cocoa.framework */; };
 		D29475CC1DCE450100AD3AEF /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475CB1DCE450100AD3AEF /* Carbon.framework */; };
 		D29475CE1DCE451300AD3AEF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475CD1DCE451300AD3AEF /* OpenGL.framework */; };
@@ -16,9 +17,12 @@
 		D29475D61DCE479D00AD3AEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D29475D51DCE479D00AD3AEF /* main.cpp */; };
 		D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */; };
 		D29475DF1DCE645B00AD3AEF /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D29475DD1DCE645B00AD3AEF /* tinyxml2.cpp */; };
+		D2F4A43D1DDE31400050A3BC /* nodeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F4A43B1DDE31400050A3BC /* nodeMesh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = engineInterface.cpp; path = mapa/engineInterface.cpp; sourceTree = "<group>"; };
+		D23535701DDE1A6B00A038D8 /* engineInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = engineInterface.hpp; path = mapa/engineInterface.hpp; sourceTree = "<group>"; };
 		D29475B41DCE44BB00AD3AEF /* mapa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29475C91DCE44F000AD3AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D29475CB1DCE450100AD3AEF /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -31,6 +35,8 @@
 		D29475DB1DCE63C200AD3AEF /* cargarMapa.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cargarMapa.hpp; path = mapa/cargarMapa.hpp; sourceTree = "<group>"; };
 		D29475DD1DCE645B00AD3AEF /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml2.cpp; path = mapa/tinyxml2.cpp; sourceTree = "<group>"; };
 		D29475DE1DCE645B00AD3AEF /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml2.h; path = mapa/tinyxml2.h; sourceTree = "<group>"; };
+		D2F4A43B1DDE31400050A3BC /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = nodeMesh.cpp; path = mapa/nodeMesh.cpp; sourceTree = "<group>"; };
+		D2F4A43C1DDE31400050A3BC /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = nodeMesh.hpp; path = mapa/nodeMesh.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,10 @@
 		D29475AB1DCE44BA00AD3AEF = {
 			isa = PBXGroup;
 			children = (
+				D2F4A43B1DDE31400050A3BC /* nodeMesh.cpp */,
+				D2F4A43C1DDE31400050A3BC /* nodeMesh.hpp */,
+				D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */,
+				D23535701DDE1A6B00A038D8 /* engineInterface.hpp */,
 				D29475DD1DCE645B00AD3AEF /* tinyxml2.cpp */,
 				D29475DE1DCE645B00AD3AEF /* tinyxml2.h */,
 				D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */,
@@ -154,7 +164,9 @@
 			files = (
 				D29475DF1DCE645B00AD3AEF /* tinyxml2.cpp in Sources */,
 				D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */,
+				D2F4A43D1DDE31400050A3BC /* nodeMesh.cpp in Sources */,
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
+				D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +321,7 @@
 				D29475C71DCE44BB00AD3AEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

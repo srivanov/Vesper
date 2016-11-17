@@ -7,13 +7,14 @@
 //
 
 #include <stdio.h>
-#include <irrlicht.h>
+//#include <irrlicht.h>
 #include <Box2D/Box2D.h>
+#include "engineInterface.hpp"
+//#include "cargarMapa.hpp"
 
-#include "cargarMapa.hpp"
 //#include "tinyxml2.h"
 
-using namespace irr;
+/*using namespace irr;
 using namespace core;
 using namespace video;
 using namespace io;
@@ -49,10 +50,22 @@ private:
     // We use this array to store the current state of each key
     bool KeyIsDown[KEY_KEY_CODES_COUNT];
 };
-
+*/
 
 int main(){
-    MyEventReceiver receiver;
+    engineInterface* interfaceIrr = new engineInterface();
+    interfaceIrr->_createDevice(640, 480, 18, false, false, false);
+    
+    interfaceIrr->loadMap();
+    
+    while(interfaceIrr->_Run()){
+        interfaceIrr->_beginScene(true, true);
+        interfaceIrr->_drawAll();
+        interfaceIrr->_endScene();
+    }
+    interfaceIrr->_deviceDrop();
+    
+    /*MyEventReceiver receiver;
                                                         //primer booleano, true para pantalla completa, false para no.
     IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, true, false, false, &receiver);
     if (!device)
@@ -129,7 +142,7 @@ int main(){
     
     device->drop();
     return 0;
-    
+    */
 }
 
 
