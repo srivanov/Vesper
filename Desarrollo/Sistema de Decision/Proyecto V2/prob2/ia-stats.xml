@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<var>
+  <estado name="base" vida="100" hambre="0" sed="0" />
+  <estado name="alerta" hambre="60" sed="70" />
+  <estado name="alteracion" miedo="NO" cabreo="NO" />
+  <pos name="posicion" x="0" y="0" z="0" />
+  <pos name="posicion-siguiente" x="0" y="0" z="0" />
+</var>
+<sensor>
+  <distancia name="vision" profundidad="0" ancho="0" alto="0" />
+  <distancia name="radio"  radio="50" />
+</sensor>

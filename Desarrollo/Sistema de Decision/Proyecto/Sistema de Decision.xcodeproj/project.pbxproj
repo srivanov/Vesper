@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6319B1B21DDB68FC00F06417 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6319B1AD1DDB68FC00F06417 /* tinystr.cpp */; };
+		6319B1B31DDB68FC00F06417 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6319B1AE1DDB68FC00F06417 /* tinyxml.cpp */; };
+		6319B1B41DDB68FC00F06417 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6319B1AF1DDB68FC00F06417 /* tinyxmlerror.cpp */; };
+		6319B1B51DDB68FC00F06417 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6319B1B01DDB68FC00F06417 /* tinyxmlparser.cpp */; };
+		6319B1B61DDB68FC00F06417 /* xmltest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6319B1B11DDB68FC00F06417 /* xmltest.cpp */; };
 		633E62811DD20841002A86A9 /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62721DD20719002A86A9 /* sfml-audio.framework */; };
 		633E62821DD20841002A86A9 /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62731DD20719002A86A9 /* sfml-graphics.framework */; };
 		633E62831DD20841002A86A9 /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633E62741DD20719002A86A9 /* sfml-network.framework */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6319B1AD1DDB68FC00F06417 /* tinystr.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
+		6319B1AE1DDB68FC00F06417 /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		6319B1AF1DDB68FC00F06417 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		6319B1B01DDB68FC00F06417 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		6319B1B11DDB68FC00F06417 /* xmltest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xmltest.cpp; sourceTree = "<group>"; };
 		633E62701DD20706002A86A9 /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = SFML/Frameworks/SFML.framework; sourceTree = "<group>"; };
 		633E62721DD20719002A86A9 /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "SFML/Frameworks/sfml-audio.framework"; sourceTree = "<group>"; };
 		633E62731DD20719002A86A9 /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "SFML/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
@@ -97,6 +107,11 @@
 		E9DDB0281DCA0BB400740C7F = {
 			isa = PBXGroup;
 			children = (
+				6319B1AD1DDB68FC00F06417 /* tinystr.cpp */,
+				6319B1AE1DDB68FC00F06417 /* tinyxml.cpp */,
+				6319B1AF1DDB68FC00F06417 /* tinyxmlerror.cpp */,
+				6319B1B01DDB68FC00F06417 /* tinyxmlparser.cpp */,
+				6319B1B11DDB68FC00F06417 /* xmltest.cpp */,
 				E9DDB0521DCA0C7900740C7F /* Assets.xcassets */,
 				E9DDB0501DCA0C6E00740C7F /* main.cpp */,
 				633E62F91DD25223002A86A9 /* DecisionSystem.cpp */,
@@ -229,6 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6319B1B21DDB68FC00F06417 /* tinystr.cpp in Sources */,
+				6319B1B31DDB68FC00F06417 /* tinyxml.cpp in Sources */,
+				6319B1B41DDB68FC00F06417 /* tinyxmlerror.cpp in Sources */,
+				6319B1B51DDB68FC00F06417 /* tinyxmlparser.cpp in Sources */,
+				6319B1B61DDB68FC00F06417 /* xmltest.cpp in Sources */,
 				633E62FB1DD25223002A86A9 /* DecisionSystem.cpp in Sources */,
 				E9DDB0511DCA0C6E00740C7F /* main.cpp in Sources */,
 				633E62F81DD22A76002A86A9 /* Vstate.cpp in Sources */,

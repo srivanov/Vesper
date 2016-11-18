@@ -79,8 +79,10 @@ void DecisionSystem::alert(){
                 //else if(ALARMA CERCANA) // BUSCAR ALARMA
                 //else{} NADIE CERCA //RECORRER ZONA CERCANA
             }
-            else if(aux>60){}//RECORRER ZONA CERCANA
-        }
+            else if(aux>60){//RECORRER ZONA CERCANA
+
+            }
+                    }
         tiempo++;
     }
     
@@ -88,10 +90,6 @@ void DecisionSystem::alert(){
 void DecisionSystem::inCombat(){
     /*
      AGRESIVO
-     
-     
-     
-     
      CUBRIRSE
      
      */

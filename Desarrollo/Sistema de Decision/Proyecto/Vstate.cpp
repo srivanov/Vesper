@@ -75,6 +75,6 @@ void Vstate::updateVstate(){
     if (_hungry==100 && _thirst==100) _life-=2;
     else if ((_hungry==100 || _thirst==100) && _life<=0)--_life;
 }
-void Vstate::drink(){_thirst=0;}
-void Vstate::eat(){_hungry=0;}
+void Vstate::drink(){_thirst-=60;}
+void Vstate::eat(){_hungry-=40;}
 void Vstate::heal(){_life=100;}
