@@ -17,6 +17,9 @@ mundoBox2D::mundoBox2D()
 {
 	world = new b2World(b2Vec2(0.0f, 0.0f)); //mundo sin gravedad
 	world->SetAllowSleeping(true);
+	timeStep = 1/20.0;      //the length of time passed to simulate (seconds)
+	velocityIterations = 8;   //how strongly to correct velocity
+	positionIterations = 3;   //how strongly to correct position
 }
 
 b2World* mundoBox2D::getWorld(){
@@ -25,4 +28,8 @@ b2World* mundoBox2D::getWorld(){
 
 mundoBox2D:: ~mundoBox2D(){ //borra todos los cuerpos y joints. No usar sus punteros despues
     delete world;
+}
+
+void mundoBox2D::update(){
+	world->Step(timeStep, velocityIterations, positionIterations);
 }

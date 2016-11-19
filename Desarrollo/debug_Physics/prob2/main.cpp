@@ -2,7 +2,6 @@
 #include <Box2D/Box2D.h>
 #include "physicsController.hpp"
 #include <stdio.h>
-#include "inputSFML.hpp"
 
 using namespace irr;
 using namespace io;
@@ -63,40 +62,42 @@ private:
 	// We use this array to store the current state of each key
 	bool KeyIsDown[KEY_KEY_CODES_COUNT];
 	SEvent::SJoystickEvent JoystickState;
-	int* p;
+	int* p = new int[2];
 };
 
-int* mouseTo3D(ISceneManager* smgr, ICameraSceneNode* camera, IAnimatedMeshSceneNode* node, int* posicionMouse)
+int* mouseTo3D(ISceneManager* smgr, ICameraSceneNode* camera, IAnimatedMeshSceneNode* node, int* posmouse)
 {
+	
 	KeyboardEventReceiver receiver;
 	int p_aux[2] = {0,0};
 	int* p=p_aux;
-	// Create a ray through the mouse cursor.
-	const vector2di posi(posicionMouse[0], posicionMouse[1]);
-	core::line3df ray = smgr->getSceneCollisionManager()->getRayFromScreenCoordinates(posi, camera);
-	
-	// And intersect the ray with a plane around the node facing towards the camera.
-	core::plane3df plane(node->getAbsolutePosition(), core::vector3df(0, 0, -1));
-	core::vector3df mousePosition;
-	mousePosition.X = posicionMouse[0];
-	mousePosition.Y = posicionMouse[1];
-	mousePosition.Z = 0;
-	if(plane.getIntersectionWithLine(ray.start, ray.getVector(), mousePosition))
-	{
-		// We now have a mouse position in 3d space; move towards it.
-//		core::vector3df toMousePosition(mousePosition - node->getAbsolutePosition());
-//		printf("%.2f %.2f\n",toMousePosition.X,toMousePosition.Y);
+	if(posmouse != NULL){
+		// Create a ray through the mouse cursor.
+		const vector2di posi(posmouse[0], posmouse[1]);
+		core::line3df ray = smgr->getSceneCollisionManager()->getRayFromScreenCoordinates(posi, camera);
 		
-		p[0] = mousePosition.X;
-		p[1] = mousePosition.Y;
+		// And intersect the ray with a plane around the node facing towards the camera.
+		core::plane3df plane(node->getAbsolutePosition(), core::vector3df(0, 0, -1));
+		core::vector3df mousePosition;
+		mousePosition.X = posmouse[0];
+		mousePosition.Y = posmouse[1];
+		mousePosition.Z = 0;
+		if(plane.getIntersectionWithLine(ray.start, ray.getVector(), mousePosition))
+		{
+			// We now have a mouse position in 3d space; move towards it.
+			//		core::vector3df toMousePosition(mousePosition - node->getAbsolutePosition());
+			//		printf("%.2f %.2f\n",toMousePosition.X,toMousePosition.Y);
+			
+			p[0] = mousePosition.X;
+			p[1] = mousePosition.Y;
+		}
 	}
 	return p;
 }
 
 int main()
 {
-	if(inputSFML::Instance()->mandoON())
-		printf("MANDO\n");
+
 	KeyboardEventReceiver receiver;
 	IrrlichtDevice* device = createDevice(EDT_OPENGL, dimension2d<u32>(640, 480), 16, false, false, false, &receiver);
 	if (!device)
@@ -112,8 +113,6 @@ int main()
 	nodo_pared->setPosition(vector3df(0,0,0));
 	
 	IMesh* bala = smgr->getMesh("../../../modelos3D/bala.3ds");
-//	nodo_pared = smgr->addMeshSceneNode(bala);
-//	nodo_pared->setPosition(vector3df(0,0,0));
 	nodo_pared = NULL;
 	
 	if(!cubo)
@@ -132,30 +131,32 @@ int main()
 	
     physicsController *fisicas = new physicsController();
     fisicas->Footest();
-	float vel_aux[3] = {0,0,0};
-	float pos_aux[3] = {0,0,0};
-    float mFin[2] = {0,0};
-	float *vel = vel_aux, *pos = pos_aux, *posmouseFinal = mFin;
-	int p_aux[2] = {0,0};
-	int *posmouse = p_aux;
+	float *vel = new float[2], *pos = new float[2];
+	float* posmouseFinal = new float[2];
+	int *posmouse = new int[2];
 	int* posmouse2;
-	int aux_bala[2] = {1,1};
-//	int* posicion_bala;
-//	posicion_bala = aux_bala;
+	float* posicion_bala = new float[2];
+	
 
 	while (device->run())
 	{
 		camera->setTarget(node->getAbsolutePosition());
 		camera->setPosition(node->getPosition() + vector3df(0,0,-20));
-		
+		fisicas->update();
 		posmouse = receiver.getPosicionMouse();
 		posmouse2 = mouseTo3D(smgr, camera, node, posmouse);
         fisicas->Step(vel,pos, posmouseFinal, posmouse2);
-//		printf("%d %d\n",posicion_bala[0],posicion_bala[1]);w
+//		printf("%d %d\n",posicion_bala[0],posicion_bala[1]);
 		
         node->setPosition(vector3df(pos[0],pos[1],pos[2]));
 		
         node->setRotation(vector3df(0,0,posmouseFinal[0]));
+		
+		if(nodo_pared != NULL){
+			fisicas->getBulletPosition(posicion_bala);
+			nodo_pared->setPosition(vector3df(posicion_bala[0],posicion_bala[1],0));
+//			printf("%.2f\n",posicion_bala[0]);
+		}
 		
 		driver->beginScene(true, true, SColor(255, 255, 255, 255));
 		
@@ -164,31 +165,31 @@ int main()
 		driver->endScene();
 		vel[0] = 0; vel[1] = 0;
 		
-        if(inputSFML::Instance()->isKeyPressed(36)){
+		if(receiver.IsKeyDown(irr::KEY_ESCAPE)){
 			device->closeDevice();
 		}
-		if(inputSFML::Instance()->isKeyPressed(22)){
+		if(receiver.IsKeyDown(irr::KEY_KEY_W)){
 			vel[1] =  1;
 //			node->setPosition(node->getPosition() + vector3df(0,1,0));
 		}
-		if(inputSFML::Instance()->isKeyPressed(18)){
+		if(receiver.IsKeyDown(irr::KEY_KEY_S)){
 			vel[1] = -1;
 //			node->setPosition(node->getPosition() + vector3df(0,-1,0));
 		}
-		if(inputSFML::Instance()->isKeyPressed(0)){
+		if(receiver.IsKeyDown(irr::KEY_KEY_A)){
 			vel[0] = -1;
 //			node->setPosition(node->getPosition() + vector3df(-1,0,0));
 		}
-		if(inputSFML::Instance()->isKeyPressed(3)){
+		if(receiver.IsKeyDown(irr::KEY_KEY_D)){
 			vel[0] =  1;
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));
 		}
-		if(inputSFML::Instance()->isKeyPressed(57)){
+		if(receiver.IsKeyDown(irr::KEY_SPACE)){
 			vel[0] = 0; vel[1] = 0;
 			if(nodo_pared == NULL){
 				nodo_pared = smgr->addMeshSceneNode(bala);
-				fisicas->dispararBala(aux_bala);
-				nodo_pared->setPosition(vector3df(aux_bala[0],aux_bala[1],0));
+				fisicas->dispararBala();
+				nodo_pared->setPosition(vector3df(posicion_bala[0],posicion_bala[1],0));
 			}
 //			node->setRotation(vector3df(0,0,node->getRotation().Z+1));
 //			node->setPosition(node->getPosition() + vector3df(1,0,0));

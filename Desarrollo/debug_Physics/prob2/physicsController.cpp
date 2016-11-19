@@ -19,9 +19,6 @@ enum _moveState {
 
 physicsController::physicsController(){
 	mundo = mundoBox2D::Instance()->getWorld();
-	timeStep = 1/20.0;      //the length of time passed to simulate (seconds)
-	velocityIterations = 8;   //how strongly to correct velocity
-	positionIterations = 3;   //how strongly to correct position
 }
 
 void physicsController::Step(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition){
@@ -37,7 +34,7 @@ void physicsController::Step(float* velocidad, float * posicion, float* anguloFi
 	
     body->SetLinearVelocity( vel );
     body->SetTransform(body->GetPosition(), anguloFinal[0]);
-	mundo->Step( timeStep, velocityIterations, positionIterations);
+//	mundo->Step( timeStep, velocityIterations, positionIterations);
 	posicion[0] = body->GetPosition().x;
 	posicion[1] = body->GetPosition().y;
 	
@@ -113,15 +110,24 @@ void physicsController::setMoveState(int u){
 }
 */
 
-void physicsController::dispararBala(int* posicion_bala){
+void physicsController::dispararBala(){
 	b2BodyDef bala;
 	bala.type = b2_kinematicBody;
 	bala.position.Set(body->GetPosition().x, body->GetPosition().y);
-	b2Body* bullet;
 	bullet = mundoBox2D::Instance()->getWorld()->CreateBody(&bala);
-	bullet->SetLinearVelocity(b2Vec2(2,0));
-	while(bullet->GetPosition().x < body->GetPosition().x + 50){
-		mundoBox2D::Instance()->getWorld()->Step(timeStep, velocityIterations, positionIterations);
-		printf("%.2f %.2f\n",bullet->GetPosition().x,bullet->GetPosition().y);
-	}
+	bullet->SetLinearVelocity(b2Vec2(1,0));
+//	while(bullet->GetPosition().x < body->GetPosition().x + 50){
+//		mundoBox2D::Instance()->getWorld()->Step(timeStep, velocityIterations, positionIterations);
+//		printf("%.2f %.2f\n",bullet->GetPosition().x,bullet->GetPosition().y);
+//	}
+	
+}
+
+void physicsController::getBulletPosition(float* pos){
+	pos[0] = bullet->GetPosition().x;
+	pos[1] = bullet->GetPosition().y;
+}
+
+void physicsController::update(){
+	mundoBox2D::Instance()->update();
 }

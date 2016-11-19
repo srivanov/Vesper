@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		886922B21DD251A5005D1385 /* inputSFML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886922B01DD251A5005D1385 /* inputSFML.cpp */; };
 		E93661E21DD1EA9A006598EE /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93661DE1DD1E8C8006598EE /* libBox2D.a */; };
 		E93661E31DD1EAA5006598EE /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93661E01DD1E8D4006598EE /* libIrrlicht.a */; };
 		E936621A1DD1F87A006598EE /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662141DD1F87A006598EE /* sfml-audio.framework */; };
@@ -27,8 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		886922B01DD251A5005D1385 /* inputSFML.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = inputSFML.cpp; path = prob2/inputSFML.cpp; sourceTree = "<group>"; };
-		886922B11DD251A5005D1385 /* inputSFML.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = inputSFML.hpp; path = prob2/inputSFML.hpp; sourceTree = "<group>"; };
 		E93661DE1DD1E8C8006598EE /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
 		E93661E01DD1E8D4006598EE /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/irrlicht/lib/MacOSX/libIrrlicht.a; sourceTree = "<group>"; };
 		E93662141DD1F87A006598EE /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "Frameworks/SFML/sfml-audio.framework"; sourceTree = "<group>"; };
@@ -76,8 +73,6 @@
 		E9DDB0281DCA0BB400740C7F = {
 			isa = PBXGroup;
 			children = (
-				886922B01DD251A5005D1385 /* inputSFML.cpp */,
-				886922B11DD251A5005D1385 /* inputSFML.hpp */,
 				E9DDB0521DCA0C7900740C7F /* Assets.xcassets */,
 				E9DDB0321DCA0BB400740C7F /* Products */,
 				E9DDB0451DCA0BC400740C7F /* Frameworks */,
@@ -185,7 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				886922B21DD251A5005D1385 /* inputSFML.cpp in Sources */,
 				E9DDB0511DCA0C6E00740C7F /* main.cpp in Sources */,
 				E9876C851DCCEEA100B2D66F /* physicsController.cpp in Sources */,
 				E9876C881DCD00AD00B2D66F /* mundoBox2D.cpp in Sources */,
