@@ -38,7 +38,7 @@ int main(){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
 		player->_setNodePosition(pos);
-		interfaceIrr->_setCamTarget(player->_getNodePosition());
+		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);
 			bala->_setNodePosition(posicion_bala);
@@ -52,16 +52,16 @@ int main(){
 			interfaceIrr->_deviceClose();
 		}
 		if(interfaceIrr->isKeyDown('W')){
-			vel[1] =  1;
+			vel[1] =  10;
 		}
 		if(interfaceIrr->isKeyDown('S')){
-			vel[1] = -1;
+			vel[1] = -10;
 		}
 		if(interfaceIrr->isKeyDown('A')){
-			vel[0] = -1;
+			vel[0] = -10;
 		}
 		if(interfaceIrr->isKeyDown('D')){
-			vel[0] =  1;
+			vel[0] =  10;
 
 		}
 		if(interfaceIrr->isKeyDown('L')){
