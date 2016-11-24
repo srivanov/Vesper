@@ -40,6 +40,7 @@ class engineInterface{
 		void _beginScene(bool backBuffer, bool zBuffer);
 		void _drawAll();
 		void _endScene();
+        ISceneCollisionManager* getSceneCollisionManager();
 	
 		void setreceiver(bool active);
 		bool isKeyDown(char key);

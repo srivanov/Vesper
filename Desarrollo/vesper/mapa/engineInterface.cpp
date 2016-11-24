@@ -161,6 +161,10 @@ void engineInterface::_endScene(){
     driver->endScene();
 }
 
+ISceneCollisionManager* engineInterface::getSceneCollisionManager(){
+    return smgr->getSceneCollisionManager();
+}
+
 void engineInterface::setreceiver(bool active){
 	
 	if(active){
