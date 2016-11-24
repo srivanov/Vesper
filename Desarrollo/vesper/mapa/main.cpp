@@ -25,13 +25,19 @@ int main(){
 	
 	interfaceIrr->_setMaterialTexture(player, "../../../modelos3D/texture.png");
 	player->_setNodePosition(new float[3]{0,0,0});
-	interfaceIrr->_createCamera(new float[3]{0,-5,-10}, player->_getNodePosition(), new float[3]{0,0,0});
+    
+	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
 	
 	fisicas->Footest();
 	float *vel = new float[3], *pos = new float[3], *posmouseFinal = new float[3], *posicion_bala = new float[3];
 	int *posmouse = new int[3];
 	int* posmouse2 = new int[3];
 	vel[2]=0;pos[2]=0;posmouseFinal[2]=0;posicion_bala[2]=0;posmouse[2]=0;posmouse2[2]=0;
+    
+    //variables para la posicion de la camara
+    float posXCamara = 0;
+    float posYCamara = -5;
+    float posZCamara = -10;
 	
     interfaceIrr->loadMap();
     while(interfaceIrr->_Run()){
@@ -53,15 +59,20 @@ int main(){
 		}
 		if(interfaceIrr->isKeyDown('W')){
 			vel[1] =  10;
+            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
+            
 		}
 		if(interfaceIrr->isKeyDown('S')){
 			vel[1] = -10;
+            posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
 			vel[0] = -10;
+            posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
 			vel[0] =  10;
+            posXCamara = player->_getNodePosition()[0];
 
 		}
 		if(interfaceIrr->isKeyDown('L')){
@@ -73,6 +84,8 @@ int main(){
 				bala->_setNodePosition(posicion_bala);
 			}
 		}
+        //para que la camara se mueva en funcion de las teclas pulsadas
+        interfaceIrr->_setCamPosition(new float[3]{posXCamara, posYCamara, posZCamara});
     }
     interfaceIrr->_deviceClose();
 }
