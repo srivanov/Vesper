@@ -5,6 +5,7 @@
 #include "physicsController.hpp"
 #include "nodeMesh.hpp"
 
+
 /*
 using namespace irr;
 using namespace core;
@@ -31,7 +32,6 @@ int main(){
     player2->_setNodePosition(new float[3]{0,10,0});
     
 	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
-	
 	fisicas->Footest();
 	float *vel = new float[3], *pos = new float[3], *posmouseFinal = new float[3], *posicion_bala = new float[3];
 	int *posmouse = new int[3];
@@ -40,10 +40,13 @@ int main(){
     
     //variables para la posicion de la camara
     float posXCamara = 0;
-    float posYCamara = -5;
-    float posZCamara = -10;
+    float posYCamara = -50; //-5
+    float posZCamara = -100; //-10
     
-	
+    //cam->setNearValue(10);
+    interfaceIrr->_setNearValue(2);
+    interfaceIrr->_setFarValue(100);
+    
     //*****************TRAZADO DE SUPERRAYOS*****************
     ISceneCollisionManager* collMan = interfaceIrr->getSceneCollisionManager();
     
@@ -91,7 +94,10 @@ int main(){
 		if(interfaceIrr->isKeyDown('D')){
 			vel[0] =  10;
             posXCamara = player->_getNodePosition()[0];
-
+        
+           // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
+//                printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);
+//
 		}
 		if(interfaceIrr->isKeyDown('L')){
 			vel[0] = 0; vel[1] = 0;

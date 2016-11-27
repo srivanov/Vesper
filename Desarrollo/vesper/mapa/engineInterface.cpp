@@ -6,6 +6,8 @@ engineInterface* engineInterface::pinstance = 0;
 engineInterface* engineInterface::Instance(){ // CONSTRUCTOR
     if(pinstance == 0)
 		pinstance = new engineInterface();
+
+    
 	return pinstance;
 }
 
@@ -27,7 +29,12 @@ bool engineInterface::_createDevice(uint32_t ancho, uint32_t alto, uint32_t colo
     }
     driver = device->getVideoDriver();
     smgr = device->getSceneManager();
-	
+    //PRUEBA
+//    ICameraSceneNode * cam = smgr->addCameraSceneNode();
+//    cam->setFOV(32);
+//    cam->setNearValue(0.5f);
+//    cam->setFarValue(10.0f);
+    
     return true;
 }
 
@@ -176,3 +183,16 @@ void engineInterface::setreceiver(bool active){
 bool engineInterface::isKeyDown(char key){
 	return r.IsKeyDown(key);
 }
+
+void engineInterface::_setNearValue(float nv){
+    f32 c =(f32)nv;
+    camera->setNearValue(c);
+}
+
+void engineInterface::_setFarValue(float fv){
+    f32 n = (f32)fv;
+    camera->setFarValue(n);
+}
+
+
+
