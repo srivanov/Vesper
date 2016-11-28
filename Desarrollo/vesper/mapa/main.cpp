@@ -40,8 +40,8 @@ int main(){
     
     //variables para la posicion de la camara
     float posXCamara = 0;
-    float posYCamara = -50; //-5
-    float posZCamara = -100; //-10
+    float posYCamara = -5; //-5
+    float posZCamara = -10; //-10
     
     //cam->setNearValue(10);
     interfaceIrr->_setNearValue(2);
@@ -56,7 +56,7 @@ int main(){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
 		player->_setNodePosition(pos);
-		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
+//		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);
 			bala->_setNodePosition(posicion_bala);
@@ -80,20 +80,20 @@ int main(){
 		}
 		if(interfaceIrr->isKeyDown('W')){
 			vel[1] =  10;
-            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
+//            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
             
 		}
 		if(interfaceIrr->isKeyDown('S')){
 			vel[1] = -10;
-            posYCamara = player->_getNodePosition()[1]-5;
+//            posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
 			vel[0] = -10;
-            posXCamara = player->_getNodePosition()[0];
+//            posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
 			vel[0] =  10;
-            posXCamara = player->_getNodePosition()[0];
+//            posXCamara = player->_getNodePosition()[0];
         
            // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
 //                printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);
@@ -109,7 +109,8 @@ int main(){
 			}
 		}
         //para que la camara se mueva en funcion de las teclas pulsadas
-        interfaceIrr->_setCamPosition(new float[3]{posXCamara, posYCamara, posZCamara});
+        interfaceIrr->_setCamPosition(new float[3]{player->_getNodePosition()[0]+posXCamara, player->_getNodePosition()[1]+posYCamara, player->_getNodePosition()[2]+posZCamara});
+        interfaceIrr->_setCamTarget(new float[3]{player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]});
     }
     interfaceIrr->_deviceClose();
 }
