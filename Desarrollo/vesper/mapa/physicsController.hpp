@@ -29,6 +29,7 @@ class physicsController{
 		b2World* mundo;
 		float angulo[2];
 		b2Body* body;
+        b2Body* body2;
 		b2Body* bullet;
 };
 

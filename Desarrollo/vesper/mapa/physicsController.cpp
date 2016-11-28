@@ -51,6 +51,7 @@ void physicsController::Footest() {
 	//body definition
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody;
+    
 	
 	//shape definition
 	b2PolygonShape polygonShape;
@@ -65,6 +66,10 @@ void physicsController::Footest() {
 	myBodyDef.position.Set(0, 0);
 	body = m_world->CreateBody(&myBodyDef);
 	body->CreateFixture(&myFixtureDef);
+    
+    myBodyDef.position.Set(10, 0);
+    body2 = m_world->CreateBody(&myBodyDef);
+    body2->CreateFixture(&myFixtureDef);
 	
 	//a static body
 	myBodyDef.type = b2_staticBody;

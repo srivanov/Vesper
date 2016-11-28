@@ -21,15 +21,15 @@ int main(){
 	interfaceIrr->_createDevice(640, 480, 18, false, false, false, true);
 	nodeMesh* player = interfaceIrr->_getNode("../../../modelos3D/sphere.3ds");
 	nodeMesh* bala = NULL;
-    nodeMesh* player2 = interfaceIrr->_getNode("../../../modelos3D/sphere.3ds");
+
 	interfaceIrr->_setMaterialFlag(player, 0, false);
-    interfaceIrr->_setMaterialFlag(player2, 0, false);
+    
 	
 	
 	interfaceIrr->_setMaterialTexture(player, "../../../modelos3D/texture.png");
-    interfaceIrr->_setMaterialTexture(player2, "../../../modelos3D/texture.png");
+    
 	player->_setNodePosition(new float[3]{0,0,0});
-    player2->_setNodePosition(new float[3]{0,10,0});
+ 
     
 	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
 	fisicas->Footest();
@@ -66,13 +66,13 @@ int main(){
         interfaceIrr->_endScene();
         
         //me creo el rayo
-        line3d<float> rayo;
-        rayo.start = vector3df(player2->_getNodePosition()[0],player2->_getNodePosition()[1],player2->_getNodePosition()[2]);
-        rayo.end = vector3df(player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]);
+//        line3d<float> rayo;
+//        rayo.start = vector3df(player2->_getNodePosition()[0],player2->_getNodePosition()[1],player2->_getNodePosition()[2]);
+//        rayo.end = vector3df(player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]);
 
         vector3df intersection;
         triangle3df hitTriangle;
-        ISceneNode* selectedNodeScene = collMan->getSceneNodeAndCollisionPointFromRay(rayo, intersection, hitTriangle);
+//        ISceneNode* selectedNodeScene = collMan->getSceneNodeAndCollisionPointFromRay(rayo, intersection, hitTriangle);
 		
 		vel[0] = 0; vel[1] = 0;
 		if(interfaceIrr->isKeyDown('Q')){
