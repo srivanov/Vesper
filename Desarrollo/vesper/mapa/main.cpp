@@ -43,9 +43,8 @@ int main(){
     float posYCamara = -5; //-5
     float posZCamara = -10; //-10
     
-    //cam->setNearValue(10);
-    interfaceIrr->_setNearValue(2);
-    interfaceIrr->_setFarValue(100);
+    //interfaceIrr->_setNearValue(2);
+    interfaceIrr->_setFarValue(20);
     
     //*****************TRAZADO DE SUPERRAYOS*****************
     ISceneCollisionManager* collMan = interfaceIrr->getSceneCollisionManager();
