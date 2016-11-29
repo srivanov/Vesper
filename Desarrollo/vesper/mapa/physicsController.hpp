@@ -21,7 +21,7 @@ class physicsController{
         void Footest();
         void setMoveState(int u);
         void Step(float* velocidad, float* posicion,float* posmouseFinal, int* rotacion);
-        bool raycast();
+        //bool raycast();
 		void dispararBala();
 		void update();
 		void getBulletPosition(float* pos);
