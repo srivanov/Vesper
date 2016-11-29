@@ -18,7 +18,7 @@ int main(){
 	engineInterface* interfaceIrr = engineInterface::Instance();
 	physicsController *fisicas = new physicsController();
 	
-	interfaceIrr->_createDevice(640, 480, 18, false, false, false, true);
+	interfaceIrr->_createDevice(640, 480, 18, true, false, false, true);
 	nodeMesh* player = interfaceIrr->_getNode("../../../modelos3D/sphere.3ds");
 	nodeMesh* bala = NULL;
 
@@ -31,7 +31,7 @@ int main(){
 	player->_setNodePosition(new float[3]{0,0,0});
  
     
-	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
+	interfaceIrr->_createCamera(new float[3]{0,0,0}, player->_getNodePosition(), new float[3]{0,0,0});
 	fisicas->Footest();
 	float *vel = new float[3], *pos = new float[3], *posmouseFinal = new float[3], *posicion_bala = new float[3];
 	int *posmouse = new int[3];
@@ -55,7 +55,6 @@ int main(){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
 		player->_setNodePosition(pos);
-//		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);
 			bala->_setNodePosition(posicion_bala);
@@ -79,35 +78,29 @@ int main(){
 		}
 		if(interfaceIrr->isKeyDown('W')){
 			vel[1] =  10;
-            printf("W");
-//            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
-            
 		}
 		if(interfaceIrr->isKeyDown('S')){
 			vel[1] = -10;
-            printf("S");
-//            posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
 			vel[0] = -10;
-            printf("A");
-//            posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
 			vel[0] =  10;
-            printf("D");
-//            posXCamara = player->_getNodePosition()[0];
-        
-           // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
-//                printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);
-//
 		}
-        if(interfaceIrr->isKeyDown('O')){
-            0.25f * 1/M_PI;
+        if(interfaceIrr->isKeyDown('O')){ //zoom lejos
+            if(posZCamara > -10){
+                posZCamara--;
+                posYCamara = posYCamara - 0.5;
+            }
+       
         }
-        if(interfaceIrr->isKeyDown('P')){
-            interfaceIrr->zoomMasFOV();
-            printf("pulsada\n");
+        if(interfaceIrr->isKeyDown('P')){ //zoom cerca
+            if(posZCamara < -5){
+                posZCamara++;
+                posYCamara = posYCamara + 0.5;
+            }
+            
         }
 		if(interfaceIrr->isKeyDown('L')){
 			vel[0] = 0; vel[1] = 0;

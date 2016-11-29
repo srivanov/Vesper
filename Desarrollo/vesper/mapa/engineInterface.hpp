@@ -45,7 +45,7 @@ class engineInterface{
     void _setNearValue(float nv);
     void _setFarValue(float fv);
     f32 _getFOV();
-    void zoomMasFOV();
+    f32 zoomMasFOV();
     f32 zoomMenosFOV();
     
     
@@ -62,5 +62,6 @@ private:
     ISceneManager* smgr;
 	ICameraSceneNode* camera;
 	MyEventReceiver r;
+    f32 val_FOV = 20;
 };
 #endif /* engineInterface_hpp */

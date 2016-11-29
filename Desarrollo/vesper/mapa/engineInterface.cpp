@@ -49,6 +49,7 @@ void engineInterface::_deviceClose(){
 void engineInterface::_createCamera(float* posicion, float* target, float* rotation){
 	camera = smgr->addCameraSceneNode(0,vector3df(posicion[0],posicion[1],posicion[2]),vector3df(target[0],target[1],target[2]));
 	_setCamRotation(rotation);
+    camera->setFOV(val_FOV);
 }
 
 void engineInterface::_setCamPosition(float *posicion){
@@ -198,10 +199,13 @@ void engineInterface::_setFarValue(float fv){
 //f32 engineInterface::_getFOV(){
 // //   const = 0;
 //}
-void engineInterface::zoomMasFOV(){
-    // f32 zoomM = 0.25 * M_PI;
-    //return zoomM;
-    camera->setFOV(32);
+f32 engineInterface::zoomMasFOV(){
+   // f32 zoomM = 0.25 * M_PI;
+    f32 newFOV = val_FOV++;
+    //camera->setFOV(newFOV);
+    
+    return newFOV;
+    //camera->setFOV(32);
 }
 
 
