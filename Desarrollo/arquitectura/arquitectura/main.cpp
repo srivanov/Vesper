@@ -6,10 +6,13 @@
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#include <iostream>
+#include <stdio.h>
+#include "objetos/player.hpp"
 
 int main(int argc, const char * argv[]) {
 	// insert code here...
-	std::cout << "Hello, World!\n";
+    
+    player* pl = new player();
+    
     return 0;
 }
