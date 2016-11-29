@@ -7,9 +7,10 @@
 //
 
 #include <iostream>
-
+#include "components/input.hpp"
 int main(int argc, const char * argv[]) {
 	// insert code here...
 	std::cout << "Hello, World!\n";
+	input *i = new input();
     return 0;
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E95616EA1DEDF23100DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616E91DEDF23100DB88AA /* main.cpp */; };
+		E95617011DEDF7D600DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */; };
+		E95617021DEDF7D600DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616FF1DEDF7D600DB88AA /* input.cpp */; };
+		E95617081DEDF84500DB88AA /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617061DEDF84500DB88AA /* component.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		E95616E61DEDF23100DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95616E91DEDF23100DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
+		E95616FE1DEDF7D600DB88AA /* armasDisparo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasDisparo.hpp; sourceTree = "<group>"; };
+		E95616FF1DEDF7D600DB88AA /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
+		E95617001DEDF7D600DB88AA /* input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = input.hpp; sourceTree = "<group>"; };
+		E95617061DEDF84500DB88AA /* component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = component.cpp; sourceTree = "<group>"; };
+		E95617071DEDF84500DB88AA /* component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +66,23 @@
 		E95616E81DEDF23100DB88AA /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
+				E95616FC1DEDF7D600DB88AA /* components */,
 				E95616E91DEDF23100DB88AA /* main.cpp */,
+				E95617061DEDF84500DB88AA /* component.cpp */,
+				E95617071DEDF84500DB88AA /* component.hpp */,
 			);
 			path = arquitectura;
+			sourceTree = "<group>";
+		};
+		E95616FC1DEDF7D600DB88AA /* components */ = {
+			isa = PBXGroup;
+			children = (
+				E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */,
+				E95616FE1DEDF7D600DB88AA /* armasDisparo.hpp */,
+				E95616FF1DEDF7D600DB88AA /* input.cpp */,
+				E95617001DEDF7D600DB88AA /* input.hpp */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95616EA1DEDF23100DB88AA /* main.cpp in Sources */,
+				E95617081DEDF84500DB88AA /* component.cpp in Sources */,
+				E95617021DEDF7D600DB88AA /* input.cpp in Sources */,
+				E95617011DEDF7D600DB88AA /* armasDisparo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
