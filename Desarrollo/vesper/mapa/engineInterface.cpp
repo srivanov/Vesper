@@ -34,6 +34,7 @@ bool engineInterface::_createDevice(uint32_t ancho, uint32_t alto, uint32_t colo
 //    cam->setFOV(32);
 //    cam->setNearValue(0.5f);
 //    cam->setFarValue(10.0f);
+//    camera->setFarValue(<#f32 zf#>);
     
     return true;
 }
@@ -194,5 +195,13 @@ void engineInterface::_setFarValue(float fv){
     camera->setFarValue(n);
 }
 
+//f32 engineInterface::_getFOV(){
+// //   const = 0;
+//}
+void engineInterface::zoomMasFOV(){
+    // f32 zoomM = 0.25 * M_PI;
+    //return zoomM;
+    camera->setFOV(32);
+}
 
 

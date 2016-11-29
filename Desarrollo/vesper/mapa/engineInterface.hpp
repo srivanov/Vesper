@@ -44,6 +44,10 @@ class engineInterface{
     
     void _setNearValue(float nv);
     void _setFarValue(float fv);
+    f32 _getFOV();
+    void zoomMasFOV();
+    f32 zoomMenosFOV();
+    
     
 	
 		void setreceiver(bool active);

@@ -79,25 +79,36 @@ int main(){
 		}
 		if(interfaceIrr->isKeyDown('W')){
 			vel[1] =  10;
+            printf("W");
 //            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
             
 		}
 		if(interfaceIrr->isKeyDown('S')){
 			vel[1] = -10;
+            printf("S");
 //            posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
 			vel[0] = -10;
+            printf("A");
 //            posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
 			vel[0] =  10;
+            printf("D");
 //            posXCamara = player->_getNodePosition()[0];
         
            // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
 //                printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);
 //
 		}
+        if(interfaceIrr->isKeyDown('O')){
+            0.25f * 1/M_PI;
+        }
+        if(interfaceIrr->isKeyDown('P')){
+            interfaceIrr->zoomMasFOV();
+            printf("pulsada\n");
+        }
 		if(interfaceIrr->isKeyDown('L')){
 			vel[0] = 0; vel[1] = 0;
 			if(bala == NULL){
