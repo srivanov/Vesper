@@ -38,10 +38,8 @@ void physicsController::Step(float* velocidad, float * posicion, float* anguloFi
 	posicion[0] = body->GetPosition().x;
 	posicion[1] = body->GetPosition().y;
     
-    //raycasting
-    if(body->GetFixtureList()->RayCast(output, *input, 0)){
-        printf("el rayo me esta dando\n");
-    }
+    if(sensor())
+        printf("rayo");
 
 //	printf("\n%u\n",moveState);
 //    float p[2] = {body->GetPosition().x,body->GetPosition().y};
@@ -103,6 +101,16 @@ void physicsController::Footest() {
 	
 }
 
+bool physicsController::sensor(){
+    for (int i = -5; i <= 5; i++) {
+        input->p2.Set(0.0f, i);
+        //raycasting
+        if(body->GetFixtureList()->RayCast(output, *input, 0)){
+            return true;
+        }
+    }
+    return false;
+}
 
 void physicsController::dispararBala(){
 	b2BodyDef bala;
