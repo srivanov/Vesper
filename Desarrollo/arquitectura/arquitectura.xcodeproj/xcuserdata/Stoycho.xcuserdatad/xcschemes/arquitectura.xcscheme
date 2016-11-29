@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E95616E51DEDF23100DB88AA"
+               BlueprintIdentifier = "E95617111DEDFD9400DB88AA"
                BuildableName = "arquitectura"
                BlueprintName = "arquitectura"
                ReferencedContainer = "container:arquitectura.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E95616E51DEDF23100DB88AA"
+            BlueprintIdentifier = "E95617111DEDFD9400DB88AA"
             BuildableName = "arquitectura"
             BlueprintName = "arquitectura"
             ReferencedContainer = "container:arquitectura.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E95616E51DEDF23100DB88AA"
+            BlueprintIdentifier = "E95617111DEDFD9400DB88AA"
             BuildableName = "arquitectura"
             BlueprintName = "arquitectura"
             ReferencedContainer = "container:arquitectura.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E95616E51DEDF23100DB88AA"
+            BlueprintIdentifier = "E95617111DEDFD9400DB88AA"
             BuildableName = "arquitectura"
             BlueprintName = "arquitectura"
             ReferencedContainer = "container:arquitectura.xcodeproj">

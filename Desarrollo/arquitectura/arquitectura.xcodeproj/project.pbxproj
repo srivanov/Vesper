@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		886BEBEE1DEDF2F500F45A7D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEBEC1DEDF2F500F45A7D /* GameObject.cpp */; };
-		886BEC2A1DEDF8CA00F45A7D /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC1C1DEDF8CA00F45A7D /* alarma.cpp */; };
-		886BEC2B1DEDF8CA00F45A7D /* camara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC1E1DEDF8CA00F45A7D /* camara.cpp */; };
-		886BEC2C1DEDF8CA00F45A7D /* enemigos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC201DEDF8CA00F45A7D /* enemigos.cpp */; };
-		886BEC2D1DEDF8CA00F45A7D /* escenarios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC221DEDF8CA00F45A7D /* escenarios.cpp */; };
-		886BEC2E1DEDF8CA00F45A7D /* monedas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC241DEDF8CA00F45A7D /* monedas.cpp */; };
-		886BEC2F1DEDF8CA00F45A7D /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC261DEDF8CA00F45A7D /* player.cpp */; };
-		886BEC301DEDF8CA00F45A7D /* puerta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC281DEDF8CA00F45A7D /* puerta.cpp */; };
-		E95616EA1DEDF23100DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616E91DEDF23100DB88AA /* main.cpp */; };
-		E95617011DEDF7D600DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */; };
-		E95617021DEDF7D600DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616FF1DEDF7D600DB88AA /* input.cpp */; };
-		E95617081DEDF84500DB88AA /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617061DEDF84500DB88AA /* component.cpp */; };
+		E95617161DEDFD9400DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617151DEDFD9400DB88AA /* main.cpp */; };
+		E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */; };
+		E95617311DEDFDDD00DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171F1DEDFDDD00DB88AA /* input.cpp */; };
+		E95617321DEDFDDD00DB88AA /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617221DEDFDDD00DB88AA /* alarma.cpp */; };
+		E95617331DEDFDDD00DB88AA /* camara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617241DEDFDDD00DB88AA /* camara.cpp */; };
+		E95617341DEDFDDD00DB88AA /* enemigos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617261DEDFDDD00DB88AA /* enemigos.cpp */; };
+		E95617351DEDFDDD00DB88AA /* escenarios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617281DEDFDDD00DB88AA /* escenarios.cpp */; };
+		E95617361DEDFDDD00DB88AA /* monedas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956172A1DEDFDDD00DB88AA /* monedas.cpp */; };
+		E95617371DEDFDDD00DB88AA /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956172C1DEDFDDD00DB88AA /* player.cpp */; };
+		E95617381DEDFDDD00DB88AA /* puerta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956172E1DEDFDDD00DB88AA /* puerta.cpp */; };
+		E956173B1DEDFE4F00DB88AA /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617391DEDFE4F00DB88AA /* component.cpp */; };
+		E956173E1DEDFE5600DB88AA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956173C1DEDFE5600DB88AA /* GameObject.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E95616E41DEDF23100DB88AA /* CopyFiles */ = {
+		E95617101DEDFD9400DB88AA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -34,34 +34,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		886BEBEC1DEDF2F500F45A7D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
-		886BEBED1DEDF2F500F45A7D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
-		886BEC1C1DEDF8CA00F45A7D /* alarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alarma.cpp; sourceTree = "<group>"; };
-		886BEC1D1DEDF8CA00F45A7D /* alarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = alarma.hpp; sourceTree = "<group>"; };
-		886BEC1E1DEDF8CA00F45A7D /* camara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camara.cpp; sourceTree = "<group>"; };
-		886BEC1F1DEDF8CA00F45A7D /* camara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camara.hpp; sourceTree = "<group>"; };
-		886BEC201DEDF8CA00F45A7D /* enemigos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = enemigos.cpp; sourceTree = "<group>"; };
-		886BEC211DEDF8CA00F45A7D /* enemigos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = enemigos.hpp; sourceTree = "<group>"; };
-		886BEC221DEDF8CA00F45A7D /* escenarios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = escenarios.cpp; sourceTree = "<group>"; };
-		886BEC231DEDF8CA00F45A7D /* escenarios.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = escenarios.hpp; sourceTree = "<group>"; };
-		886BEC241DEDF8CA00F45A7D /* monedas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = monedas.cpp; sourceTree = "<group>"; };
-		886BEC251DEDF8CA00F45A7D /* monedas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = monedas.hpp; sourceTree = "<group>"; };
-		886BEC261DEDF8CA00F45A7D /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
-		886BEC271DEDF8CA00F45A7D /* player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
-		886BEC281DEDF8CA00F45A7D /* puerta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = puerta.cpp; sourceTree = "<group>"; };
-		886BEC291DEDF8CA00F45A7D /* puerta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puerta.hpp; sourceTree = "<group>"; };
-		E95616E61DEDF23100DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
-		E95616E91DEDF23100DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
-		E95616FE1DEDF7D600DB88AA /* armasDisparo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasDisparo.hpp; sourceTree = "<group>"; };
-		E95616FF1DEDF7D600DB88AA /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
-		E95617001DEDF7D600DB88AA /* input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = input.hpp; sourceTree = "<group>"; };
-		E95617061DEDF84500DB88AA /* component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = component.cpp; sourceTree = "<group>"; };
-		E95617071DEDF84500DB88AA /* component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
+		E95617121DEDFD9400DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
+		E95617151DEDFD9400DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
+		E956171E1DEDFDDD00DB88AA /* armasDisparo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasDisparo.hpp; sourceTree = "<group>"; };
+		E956171F1DEDFDDD00DB88AA /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
+		E95617201DEDFDDD00DB88AA /* input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = input.hpp; sourceTree = "<group>"; };
+		E95617221DEDFDDD00DB88AA /* alarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alarma.cpp; sourceTree = "<group>"; };
+		E95617231DEDFDDD00DB88AA /* alarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = alarma.hpp; sourceTree = "<group>"; };
+		E95617241DEDFDDD00DB88AA /* camara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camara.cpp; sourceTree = "<group>"; };
+		E95617251DEDFDDD00DB88AA /* camara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camara.hpp; sourceTree = "<group>"; };
+		E95617261DEDFDDD00DB88AA /* enemigos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = enemigos.cpp; sourceTree = "<group>"; };
+		E95617271DEDFDDD00DB88AA /* enemigos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = enemigos.hpp; sourceTree = "<group>"; };
+		E95617281DEDFDDD00DB88AA /* escenarios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = escenarios.cpp; sourceTree = "<group>"; };
+		E95617291DEDFDDD00DB88AA /* escenarios.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = escenarios.hpp; sourceTree = "<group>"; };
+		E956172A1DEDFDDD00DB88AA /* monedas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = monedas.cpp; sourceTree = "<group>"; };
+		E956172B1DEDFDDD00DB88AA /* monedas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = monedas.hpp; sourceTree = "<group>"; };
+		E956172C1DEDFDDD00DB88AA /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		E956172D1DEDFDDD00DB88AA /* player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
+		E956172E1DEDFDDD00DB88AA /* puerta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = puerta.cpp; sourceTree = "<group>"; };
+		E956172F1DEDFDDD00DB88AA /* puerta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puerta.hpp; sourceTree = "<group>"; };
+		E95617391DEDFE4F00DB88AA /* component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = component.cpp; sourceTree = "<group>"; };
+		E956173A1DEDFE4F00DB88AA /* component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
+		E956173C1DEDFE5600DB88AA /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		E956173D1DEDFE5600DB88AA /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E95616E31DEDF23100DB88AA /* Frameworks */ = {
+		E956170F1DEDFD9400DB88AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,82 +71,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		886BEC1B1DEDF8CA00F45A7D /* objetos */ = {
+		E95617091DEDFD9400DB88AA = {
 			isa = PBXGroup;
 			children = (
-				886BEC1C1DEDF8CA00F45A7D /* alarma.cpp */,
-				886BEC1D1DEDF8CA00F45A7D /* alarma.hpp */,
-				886BEC1E1DEDF8CA00F45A7D /* camara.cpp */,
-				886BEC1F1DEDF8CA00F45A7D /* camara.hpp */,
-				886BEC201DEDF8CA00F45A7D /* enemigos.cpp */,
-				886BEC211DEDF8CA00F45A7D /* enemigos.hpp */,
-				886BEC221DEDF8CA00F45A7D /* escenarios.cpp */,
-				886BEC231DEDF8CA00F45A7D /* escenarios.hpp */,
-				886BEC241DEDF8CA00F45A7D /* monedas.cpp */,
-				886BEC251DEDF8CA00F45A7D /* monedas.hpp */,
-				886BEC261DEDF8CA00F45A7D /* player.cpp */,
-				886BEC271DEDF8CA00F45A7D /* player.hpp */,
-				886BEC281DEDF8CA00F45A7D /* puerta.cpp */,
-				886BEC291DEDF8CA00F45A7D /* puerta.hpp */,
-			);
-			path = objetos;
-			sourceTree = "<group>";
-		};
-		E95616DD1DEDF23100DB88AA = {
-			isa = PBXGroup;
-			children = (
-				E95616E81DEDF23100DB88AA /* arquitectura */,
-				E95616E71DEDF23100DB88AA /* Products */,
+				E95617141DEDFD9400DB88AA /* arquitectura */,
+				E95617131DEDFD9400DB88AA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E95616E71DEDF23100DB88AA /* Products */ = {
+		E95617131DEDFD9400DB88AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E95616E61DEDF23100DB88AA /* arquitectura */,
+				E95617121DEDFD9400DB88AA /* arquitectura */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E95616E81DEDF23100DB88AA /* arquitectura */ = {
+		E95617141DEDFD9400DB88AA /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				E95616FC1DEDF7D600DB88AA /* components */,
-				E95616E91DEDF23100DB88AA /* main.cpp */,
-				E95617061DEDF84500DB88AA /* component.cpp */,
-				E95617071DEDF84500DB88AA /* component.hpp */,
-=======
-				886BEC1B1DEDF8CA00F45A7D /* objetos */,
-				E95616E91DEDF23100DB88AA /* main.cpp */,
-				886BEBEC1DEDF2F500F45A7D /* GameObject.cpp */,
-				886BEBED1DEDF2F500F45A7D /* GameObject.hpp */,
->>>>>>> origin/arquitectura
+				E956171C1DEDFDDD00DB88AA /* components */,
+				E95617211DEDFDDD00DB88AA /* objetos */,
+				E95617151DEDFD9400DB88AA /* main.cpp */,
 			);
 			path = arquitectura;
 			sourceTree = "<group>";
 		};
-		E95616FC1DEDF7D600DB88AA /* components */ = {
+		E956171C1DEDFDDD00DB88AA /* components */ = {
 			isa = PBXGroup;
 			children = (
-				E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */,
-				E95616FE1DEDF7D600DB88AA /* armasDisparo.hpp */,
-				E95616FF1DEDF7D600DB88AA /* input.cpp */,
-				E95617001DEDF7D600DB88AA /* input.hpp */,
+				E95617391DEDFE4F00DB88AA /* component.cpp */,
+				E956173A1DEDFE4F00DB88AA /* component.hpp */,
+				E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */,
+				E956171E1DEDFDDD00DB88AA /* armasDisparo.hpp */,
+				E956171F1DEDFDDD00DB88AA /* input.cpp */,
+				E95617201DEDFDDD00DB88AA /* input.hpp */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		E95617211DEDFDDD00DB88AA /* objetos */ = {
+			isa = PBXGroup;
+			children = (
+				E956173C1DEDFE5600DB88AA /* GameObject.cpp */,
+				E956173D1DEDFE5600DB88AA /* GameObject.hpp */,
+				E95617221DEDFDDD00DB88AA /* alarma.cpp */,
+				E95617231DEDFDDD00DB88AA /* alarma.hpp */,
+				E95617241DEDFDDD00DB88AA /* camara.cpp */,
+				E95617251DEDFDDD00DB88AA /* camara.hpp */,
+				E95617261DEDFDDD00DB88AA /* enemigos.cpp */,
+				E95617271DEDFDDD00DB88AA /* enemigos.hpp */,
+				E95617281DEDFDDD00DB88AA /* escenarios.cpp */,
+				E95617291DEDFDDD00DB88AA /* escenarios.hpp */,
+				E956172A1DEDFDDD00DB88AA /* monedas.cpp */,
+				E956172B1DEDFDDD00DB88AA /* monedas.hpp */,
+				E956172C1DEDFDDD00DB88AA /* player.cpp */,
+				E956172D1DEDFDDD00DB88AA /* player.hpp */,
+				E956172E1DEDFDDD00DB88AA /* puerta.cpp */,
+				E956172F1DEDFDDD00DB88AA /* puerta.hpp */,
+			);
+			path = objetos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E95616E51DEDF23100DB88AA /* arquitectura */ = {
+		E95617111DEDFD9400DB88AA /* arquitectura */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E95616ED1DEDF23100DB88AA /* Build configuration list for PBXNativeTarget "arquitectura" */;
+			buildConfigurationList = E95617191DEDFD9400DB88AA /* Build configuration list for PBXNativeTarget "arquitectura" */;
 			buildPhases = (
-				E95616E21DEDF23100DB88AA /* Sources */,
-				E95616E31DEDF23100DB88AA /* Frameworks */,
-				E95616E41DEDF23100DB88AA /* CopyFiles */,
+				E956170E1DEDFD9400DB88AA /* Sources */,
+				E956170F1DEDFD9400DB88AA /* Frameworks */,
+				E95617101DEDFD9400DB88AA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -154,65 +150,65 @@
 			);
 			name = arquitectura;
 			productName = arquitectura;
-			productReference = E95616E61DEDF23100DB88AA /* arquitectura */;
+			productReference = E95617121DEDFD9400DB88AA /* arquitectura */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E95616DE1DEDF23100DB88AA /* Project object */ = {
+		E956170A1DEDFD9400DB88AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Stoycho Ivanov Atanasov";
 				TargetAttributes = {
-					E95616E51DEDF23100DB88AA = {
+					E95617111DEDFD9400DB88AA = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = E95616E11DEDF23100DB88AA /* Build configuration list for PBXProject "arquitectura" */;
+			buildConfigurationList = E956170D1DEDFD9400DB88AA /* Build configuration list for PBXProject "arquitectura" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = E95616DD1DEDF23100DB88AA;
-			productRefGroup = E95616E71DEDF23100DB88AA /* Products */;
+			mainGroup = E95617091DEDFD9400DB88AA;
+			productRefGroup = E95617131DEDFD9400DB88AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E95616E51DEDF23100DB88AA /* arquitectura */,
+				E95617111DEDFD9400DB88AA /* arquitectura */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E95616E21DEDF23100DB88AA /* Sources */ = {
+		E956170E1DEDFD9400DB88AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				886BEC2F1DEDF8CA00F45A7D /* player.cpp in Sources */,
-				886BEC2B1DEDF8CA00F45A7D /* camara.cpp in Sources */,
-				886BEC2E1DEDF8CA00F45A7D /* monedas.cpp in Sources */,
-				886BEC301DEDF8CA00F45A7D /* puerta.cpp in Sources */,
-				886BEC2D1DEDF8CA00F45A7D /* escenarios.cpp in Sources */,
-				886BEBEE1DEDF2F500F45A7D /* GameObject.cpp in Sources */,
-				886BEC2A1DEDF8CA00F45A7D /* alarma.cpp in Sources */,
-				886BEC2C1DEDF8CA00F45A7D /* enemigos.cpp in Sources */,
-				E95616EA1DEDF23100DB88AA /* main.cpp in Sources */,
-				E95617081DEDF84500DB88AA /* component.cpp in Sources */,
-				E95617021DEDF7D600DB88AA /* input.cpp in Sources */,
-				E95617011DEDF7D600DB88AA /* armasDisparo.cpp in Sources */,
+				E95617161DEDFD9400DB88AA /* main.cpp in Sources */,
+				E95617321DEDFDDD00DB88AA /* alarma.cpp in Sources */,
+				E95617371DEDFDDD00DB88AA /* player.cpp in Sources */,
+				E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */,
+				E95617361DEDFDDD00DB88AA /* monedas.cpp in Sources */,
+				E95617311DEDFDDD00DB88AA /* input.cpp in Sources */,
+				E95617351DEDFDDD00DB88AA /* escenarios.cpp in Sources */,
+				E95617341DEDFDDD00DB88AA /* enemigos.cpp in Sources */,
+				E956173E1DEDFE5600DB88AA /* GameObject.cpp in Sources */,
+				E95617381DEDFDDD00DB88AA /* puerta.cpp in Sources */,
+				E95617331DEDFDDD00DB88AA /* camara.cpp in Sources */,
+				E956173B1DEDFE4F00DB88AA /* component.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E95616EB1DEDF23100DB88AA /* Debug */ = {
+		E95617171DEDFD9400DB88AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +255,7 @@
 			};
 			name = Debug;
 		};
-		E95616EC1DEDF23100DB88AA /* Release */ = {
+		E95617181DEDFD9400DB88AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -299,14 +295,14 @@
 			};
 			name = Release;
 		};
-		E95616EE1DEDF23100DB88AA /* Debug */ = {
+		E956171A1DEDFD9400DB88AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		E95616EF1DEDF23100DB88AA /* Release */ = {
+		E956171B1DEDFD9400DB88AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,25 +312,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E95616E11DEDF23100DB88AA /* Build configuration list for PBXProject "arquitectura" */ = {
+		E956170D1DEDFD9400DB88AA /* Build configuration list for PBXProject "arquitectura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E95616EB1DEDF23100DB88AA /* Debug */,
-				E95616EC1DEDF23100DB88AA /* Release */,
+				E95617171DEDFD9400DB88AA /* Debug */,
+				E95617181DEDFD9400DB88AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E95616ED1DEDF23100DB88AA /* Build configuration list for PBXNativeTarget "arquitectura" */ = {
+		E95617191DEDFD9400DB88AA /* Build configuration list for PBXNativeTarget "arquitectura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E95616EE1DEDF23100DB88AA /* Debug */,
-				E95616EF1DEDF23100DB88AA /* Release */,
+				E956171A1DEDFD9400DB88AA /* Debug */,
+				E956171B1DEDFD9400DB88AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E95616DE1DEDF23100DB88AA /* Project object */;
+	rootObject = E956170A1DEDFD9400DB88AA /* Project object */;
 }
