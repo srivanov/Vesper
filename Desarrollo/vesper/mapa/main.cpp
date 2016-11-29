@@ -93,22 +93,26 @@ int main(){
 			vel[0] =  1;
 		}
         if(interfaceIrr->isKeyDown('O')){ //zoom lejos
-
+            if(posZCamara > -10){
+               
             incX = ((player->_getNodePosition()[0]+posXCamara)-interfaceIrr->_getCamPosition()[0])/(2*60);
             incZ = ((interfaceIrr->_getCamPosition()[2]-5)-(interfaceIrr->_getCamPosition()[2]))/(2*60);
             incY = ((interfaceIrr->_getCamPosition()[1]-2.5)-(interfaceIrr->_getCamPosition()[1]))/(2*60);
-            
+                
 //            incZ = ((player->_getNodePosition()[2]+5)-(player->_getNodePosition()[2]))/(2*60);
 //            incY = ((player->_getNodePosition()[1]+5)-(player->_getNodePosition()[1]))/(2*60);
             cont = 0;
+            }
         }
         if(interfaceIrr->isKeyDown('P')){ //zoom cerca
+            if(posZCamara < -5){
             incX = ((player->_getNodePosition()[0]+posXCamara)-interfaceIrr->_getCamPosition()[0])/(2*60);
             incZ = ((interfaceIrr->_getCamPosition()[2]+5)-(interfaceIrr->_getCamPosition()[2]))/(2*60);
             incY = ((interfaceIrr->_getCamPosition()[1]+2.5)-(interfaceIrr->_getCamPosition()[1]))/(2*60);
             
    
             cont = 0;
+            }
         }
 		if(interfaceIrr->isKeyDown('L')){
 			vel[0] = 0; vel[1] = 0;
