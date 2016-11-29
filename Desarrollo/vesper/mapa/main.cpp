@@ -20,18 +20,22 @@ int main(){
 	
 	interfaceIrr->_createDevice(640, 480, 18, false, false, false, true);
 	nodeMesh* player = interfaceIrr->_getNode("../../../modelos3D/sphere.3ds");
+    nodeMesh* player2 = interfaceIrr->_getNode("../../../modelos3D/sphere.3ds");
 	nodeMesh* bala = NULL;
 
 	interfaceIrr->_setMaterialFlag(player, 0, false);
-    
+    interfaceIrr->_setMaterialFlag(player2, 0, false);
 	
 	
 	interfaceIrr->_setMaterialTexture(player, "../../../modelos3D/texture.png");
+    interfaceIrr->_setMaterialTexture(player2, "../../../modelos3D/texture.png");
     
 	player->_setNodePosition(new float[3]{0,0,0});
- 
+    player2->_setNodePosition(new float[3]{10,0,0});
     
 	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
+    interfaceIrr->_createCamera(new float[3]{0,-10,0}, player2->_getNodePosition(), new float[3]{0,0,0});
+    
 	fisicas->Footest();
 	float *vel = new float[3], *pos = new float[3], *posmouseFinal = new float[3], *posicion_bala = new float[3];
 	int *posmouse = new int[3];
@@ -45,10 +49,6 @@ int main(){
     
     //interfaceIrr->_setNearValue(2);
     interfaceIrr->_setFarValue(20);
-    
-    //*****************TRAZADO DE SUPERRAYOS*****************
-    ISceneCollisionManager* collMan = interfaceIrr->getSceneCollisionManager();
-    
     
     interfaceIrr->loadMap();
     while(interfaceIrr->_Run()){

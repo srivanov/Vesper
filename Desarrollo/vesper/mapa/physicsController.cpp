@@ -90,6 +90,19 @@ void physicsController::Footest() {
 
 	
 }
+
+bool physicsController::raycast(){
+    
+    //hacer el rayo
+    
+    //comprobar que body 2 ve a body
+//    if(body2->GetWorldPoint(body->get)){
+//        
+//    }
+    
+    return false;
+}
+
 /*
 void physicsController::setMoveState(int u){
     switch (u) {
