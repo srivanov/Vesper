@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		886BEBEE1DEDF2F500F45A7D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEBEC1DEDF2F500F45A7D /* GameObject.cpp */; };
+		886BEC2A1DEDF8CA00F45A7D /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC1C1DEDF8CA00F45A7D /* alarma.cpp */; };
+		886BEC2B1DEDF8CA00F45A7D /* camara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC1E1DEDF8CA00F45A7D /* camara.cpp */; };
+		886BEC2C1DEDF8CA00F45A7D /* enemigos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC201DEDF8CA00F45A7D /* enemigos.cpp */; };
+		886BEC2D1DEDF8CA00F45A7D /* escenarios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC221DEDF8CA00F45A7D /* escenarios.cpp */; };
+		886BEC2E1DEDF8CA00F45A7D /* monedas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC241DEDF8CA00F45A7D /* monedas.cpp */; };
+		886BEC2F1DEDF8CA00F45A7D /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC261DEDF8CA00F45A7D /* player.cpp */; };
+		886BEC301DEDF8CA00F45A7D /* puerta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886BEC281DEDF8CA00F45A7D /* puerta.cpp */; };
 		E95616EA1DEDF23100DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616E91DEDF23100DB88AA /* main.cpp */; };
 		E95617011DEDF7D600DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */; };
 		E95617021DEDF7D600DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95616FF1DEDF7D600DB88AA /* input.cpp */; };
@@ -26,6 +34,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		886BEBEC1DEDF2F500F45A7D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		886BEBED1DEDF2F500F45A7D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		886BEC1C1DEDF8CA00F45A7D /* alarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alarma.cpp; sourceTree = "<group>"; };
+		886BEC1D1DEDF8CA00F45A7D /* alarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = alarma.hpp; sourceTree = "<group>"; };
+		886BEC1E1DEDF8CA00F45A7D /* camara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camara.cpp; sourceTree = "<group>"; };
+		886BEC1F1DEDF8CA00F45A7D /* camara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camara.hpp; sourceTree = "<group>"; };
+		886BEC201DEDF8CA00F45A7D /* enemigos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = enemigos.cpp; sourceTree = "<group>"; };
+		886BEC211DEDF8CA00F45A7D /* enemigos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = enemigos.hpp; sourceTree = "<group>"; };
+		886BEC221DEDF8CA00F45A7D /* escenarios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = escenarios.cpp; sourceTree = "<group>"; };
+		886BEC231DEDF8CA00F45A7D /* escenarios.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = escenarios.hpp; sourceTree = "<group>"; };
+		886BEC241DEDF8CA00F45A7D /* monedas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = monedas.cpp; sourceTree = "<group>"; };
+		886BEC251DEDF8CA00F45A7D /* monedas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = monedas.hpp; sourceTree = "<group>"; };
+		886BEC261DEDF8CA00F45A7D /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		886BEC271DEDF8CA00F45A7D /* player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
+		886BEC281DEDF8CA00F45A7D /* puerta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = puerta.cpp; sourceTree = "<group>"; };
+		886BEC291DEDF8CA00F45A7D /* puerta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puerta.hpp; sourceTree = "<group>"; };
 		E95616E61DEDF23100DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95616E91DEDF23100DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E95616FD1DEDF7D600DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
@@ -47,6 +71,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		886BEC1B1DEDF8CA00F45A7D /* objetos */ = {
+			isa = PBXGroup;
+			children = (
+				886BEC1C1DEDF8CA00F45A7D /* alarma.cpp */,
+				886BEC1D1DEDF8CA00F45A7D /* alarma.hpp */,
+				886BEC1E1DEDF8CA00F45A7D /* camara.cpp */,
+				886BEC1F1DEDF8CA00F45A7D /* camara.hpp */,
+				886BEC201DEDF8CA00F45A7D /* enemigos.cpp */,
+				886BEC211DEDF8CA00F45A7D /* enemigos.hpp */,
+				886BEC221DEDF8CA00F45A7D /* escenarios.cpp */,
+				886BEC231DEDF8CA00F45A7D /* escenarios.hpp */,
+				886BEC241DEDF8CA00F45A7D /* monedas.cpp */,
+				886BEC251DEDF8CA00F45A7D /* monedas.hpp */,
+				886BEC261DEDF8CA00F45A7D /* player.cpp */,
+				886BEC271DEDF8CA00F45A7D /* player.hpp */,
+				886BEC281DEDF8CA00F45A7D /* puerta.cpp */,
+				886BEC291DEDF8CA00F45A7D /* puerta.hpp */,
+			);
+			path = objetos;
+			sourceTree = "<group>";
+		};
 		E95616DD1DEDF23100DB88AA = {
 			isa = PBXGroup;
 			children = (
@@ -66,10 +111,17 @@
 		E95616E81DEDF23100DB88AA /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				E95616FC1DEDF7D600DB88AA /* components */,
 				E95616E91DEDF23100DB88AA /* main.cpp */,
 				E95617061DEDF84500DB88AA /* component.cpp */,
 				E95617071DEDF84500DB88AA /* component.hpp */,
+=======
+				886BEC1B1DEDF8CA00F45A7D /* objetos */,
+				E95616E91DEDF23100DB88AA /* main.cpp */,
+				886BEBEC1DEDF2F500F45A7D /* GameObject.cpp */,
+				886BEBED1DEDF2F500F45A7D /* GameObject.hpp */,
+>>>>>>> origin/arquitectura
 			);
 			path = arquitectura;
 			sourceTree = "<group>";
@@ -142,6 +194,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886BEC2F1DEDF8CA00F45A7D /* player.cpp in Sources */,
+				886BEC2B1DEDF8CA00F45A7D /* camara.cpp in Sources */,
+				886BEC2E1DEDF8CA00F45A7D /* monedas.cpp in Sources */,
+				886BEC301DEDF8CA00F45A7D /* puerta.cpp in Sources */,
+				886BEC2D1DEDF8CA00F45A7D /* escenarios.cpp in Sources */,
+				886BEBEE1DEDF2F500F45A7D /* GameObject.cpp in Sources */,
+				886BEC2A1DEDF8CA00F45A7D /* alarma.cpp in Sources */,
+				886BEC2C1DEDF8CA00F45A7D /* enemigos.cpp in Sources */,
 				E95616EA1DEDF23100DB88AA /* main.cpp in Sources */,
 				E95617081DEDF84500DB88AA /* component.cpp in Sources */,
 				E95617021DEDF7D600DB88AA /* input.cpp in Sources */,
@@ -272,6 +332,7 @@
 				E95616EF1DEDF23100DB88AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
