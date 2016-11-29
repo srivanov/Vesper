@@ -38,7 +38,11 @@ void physicsController::Step(float* velocidad, float * posicion, float* anguloFi
 	posicion[0] = body->GetPosition().x;
 	posicion[1] = body->GetPosition().y;
     
-	
+    //raycasting
+    if(body->GetFixtureList()->RayCast(output, *input, 0)){
+        printf("el rayo me esta dando\n");
+    }
+
 //	printf("\n%u\n",moveState);
 //    float p[2] = {body->GetPosition().x,body->GetPosition().y};
 //    printf("\n%.2f %.2f\n",body->GetPosition().x,body->GetPosition().y);
@@ -75,7 +79,15 @@ void physicsController::Footest() {
 	myBodyDef.type = b2_staticBody;
 	myBodyDef.position.Set(0, 0);
 //	b2Body* staticBody = m_world->CreateBody(&myBodyDef);
-	
+    
+    //raycasting
+    input = new b2RayCastInput();
+    output = new b2RayCastOutput();
+    input->p1.Set(10.0f, 0.0f);
+    input->p2.Set(0.0f, 0.0f);
+    input->maxFraction = 2.0f;
+    
+    
 	//add four walls to the static body
 //	polygonShape.SetAsBox( 20, 1, b2Vec2(0, 0), 0);//ground
 //	staticBody->CreateFixture(&myFixtureDef);
@@ -91,49 +103,6 @@ void physicsController::Footest() {
 	
 }
 
-//bool physicsController::raycast(){
-//    
-//    //hacer el rayo
-//    b2RayCastInput input;
-//    input.p1.Set(0.0f, 0.0f);
-//    input.p2.Set(10.0f, 0.0f);
-//    input.maxFraction = 10.0f;
-//    
-//    b2RayCastOutput output;
-//    //bool hit = fixture->raycast(&output, input, 0);
-//    
-//    //comprobar que body 2 ve a body
-////    if(body2->GetWorldPoint(body->get)){
-////        
-////    }
-//    
-//    return false;
-//}
-
-/*
-void physicsController::setMoveState(int u){
-    switch (u) {
-        case 0:
-            moveState = MS_STOP;
-            break;
-        case 1:
-            moveState = MS_LEFT;
-            break;
-        case 2:
-            moveState = MS_RIGHT;
-            break;
-		case 3:
-			moveState = MS_UP;
-			break;
-		case 4:
-			moveState = MS_DOWN;
-			break;
-		default:
-            break;
-    }
-    
-}
-*/
 
 void physicsController::dispararBala(){
 	b2BodyDef bala;

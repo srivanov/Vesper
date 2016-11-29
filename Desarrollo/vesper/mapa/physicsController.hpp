@@ -32,7 +32,8 @@ class physicsController{
 		b2Body* body;
         b2Body* body2;
 		b2Body* bullet;
-        b2FixtureDef* fixture;
+        b2RayCastInput* input;
+        b2RayCastOutput* output;
 };
 
 #endif /* physicsController_hpp */

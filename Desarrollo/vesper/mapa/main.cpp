@@ -78,20 +78,20 @@ int main(){
 			interfaceIrr->_deviceClose();
 		}
 		if(interfaceIrr->isKeyDown('W')){
-			vel[1] =  10;
+            vel[1] =  1;
 //            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
             
 		}
 		if(interfaceIrr->isKeyDown('S')){
-			vel[1] = -10;
+			vel[1] = -1;
 //            posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
-			vel[0] = -10;
+			vel[0] = -1;
 //            posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
-			vel[0] =  10;
+			vel[0] =  1;
 //            posXCamara = player->_getNodePosition()[0];
         
            // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
