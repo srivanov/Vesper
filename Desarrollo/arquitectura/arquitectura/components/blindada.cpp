@@ -1,17 +1,17 @@
 //
-//  armasDisparo.cpp
+//  blindada.cpp
 //  arquitectura
 //
 //  Created by Stoycho Ivanov Atanasov on 29/11/16.
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#include "armasDisparo.hpp"
+#include "blindada.hpp"
 
-armasDisparo::armasDisparo(){
+blindada::blindada(){
 	
 }
 
-armasDisparo::~armasDisparo(){
+blindada::~blindada(){
 	
 }

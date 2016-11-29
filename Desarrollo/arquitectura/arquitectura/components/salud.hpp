@@ -1,21 +1,22 @@
 //
-//  armasDisparo.hpp
+//  salud.hpp
 //  arquitectura
 //
 //  Created by Stoycho Ivanov Atanasov on 29/11/16.
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#ifndef armasDisparo_hpp
-#define armasDisparo_hpp
+#ifndef salud_hpp
+#define salud_hpp
 
 #include <stdio.h>
 #include "component.hpp"
 
-class armasDisparo : public component{
+class salud : public component{
 public:
-	armasDisparo();
-	~armasDisparo();
+	salud();
+	~salud();
 	
 };
-#endif /* armasDisparo_hpp */
+
+#endif /* salud_hpp */

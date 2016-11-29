@@ -1,21 +1,22 @@
 //
-//  armasDisparo.hpp
+//  conPuzzle.hpp
 //  arquitectura
 //
 //  Created by Stoycho Ivanov Atanasov on 29/11/16.
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#ifndef armasDisparo_hpp
-#define armasDisparo_hpp
+#ifndef conPuzzle_hpp
+#define conPuzzle_hpp
 
 #include <stdio.h>
 #include "component.hpp"
 
-class armasDisparo : public component{
+class conPuzzle : public component{
 public:
-	armasDisparo();
-	~armasDisparo();
+	conPuzzle();
+	~conPuzzle();
 	
 };
-#endif /* armasDisparo_hpp */
+
+#endif /* conPuzzle_hpp */

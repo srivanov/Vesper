@@ -1,17 +1,17 @@
 //
-//  armasDisparo.cpp
+//  conLlave.cpp
 //  arquitectura
 //
 //  Created by Stoycho Ivanov Atanasov on 29/11/16.
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#include "armasDisparo.hpp"
+#include "conLlave.hpp"
 
-armasDisparo::armasDisparo(){
+conLlave::conLlave(){
 	
 }
 
-armasDisparo::~armasDisparo(){
+conLlave::~conLlave(){
 	
 }

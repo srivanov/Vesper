@@ -1,17 +1,17 @@
 //
-//  armasDisparo.cpp
+//  salud.cpp
 //  arquitectura
 //
 //  Created by Stoycho Ivanov Atanasov on 29/11/16.
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#include "armasDisparo.hpp"
+#include "salud.hpp"
 
-armasDisparo::armasDisparo(){
+salud::salud(){
 	
 }
 
-armasDisparo::~armasDisparo(){
+salud::~salud(){
 	
 }

@@ -16,6 +16,7 @@ class input : public component {
 public:
 	input();
 	~input();
+	
 };
 
 #endif /* input_hpp */
