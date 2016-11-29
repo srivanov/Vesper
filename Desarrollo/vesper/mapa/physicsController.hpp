@@ -32,6 +32,7 @@ class physicsController{
 		b2Body* body;
         b2Body* body2;
 		b2Body* bullet;
+        b2FixtureDef* fixture;
 };
 
 #endif /* physicsController_hpp */

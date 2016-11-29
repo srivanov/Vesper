@@ -37,7 +37,7 @@ void physicsController::Step(float* velocidad, float * posicion, float* anguloFi
 //	mundo->Step( timeStep, velocityIterations, positionIterations);
 	posicion[0] = body->GetPosition().x;
 	posicion[1] = body->GetPosition().y;
-	
+    
 	
 //	printf("\n%u\n",moveState);
 //    float p[2] = {body->GetPosition().x,body->GetPosition().y};
@@ -94,6 +94,13 @@ void physicsController::Footest() {
 bool physicsController::raycast(){
     
     //hacer el rayo
+    b2RayCastInput input;
+    input.p1.Set(0.0f, 0.0f);
+    input.p2.Set(10.0f, 0.0f);
+    input.maxFraction = 10.0f;
+    
+    b2RayCastOutput output;
+    //bool hit = fixture->raycast(&output, input, 0);
     
     //comprobar que body 2 ve a body
 //    if(body2->GetWorldPoint(body->get)){
