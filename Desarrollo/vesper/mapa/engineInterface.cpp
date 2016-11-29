@@ -208,4 +208,12 @@ f32 engineInterface::zoomMasFOV(){
     //camera->setFOV(32);
 }
 
+float* engineInterface::_getCamPosition(){
+    return new float[3]{camera->getAbsolutePosition().X,camera->getAbsolutePosition().Y,camera->getAbsolutePosition().Z};
+    
+}
+float* engineInterface::_getCamTarget(){
+    return new float[3]{camera->getTarget().X,camera->getTarget().Y, camera->getTarget().Z};
+}
+
 

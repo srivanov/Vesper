@@ -42,14 +42,17 @@ int main(){
     float posXCamara = 0;
     float posYCamara = -5; //-5
     float posZCamara = -10; //-10
-    
+    float incZ = 0;
+    float incY = 0;
+    uint32_t cont = 1000;
     //interfaceIrr->_setNearValue(2);
     interfaceIrr->_setFarValue(20);
     
     //*****************TRAZADO DE SUPERRAYOS*****************
     ISceneCollisionManager* collMan = interfaceIrr->getSceneCollisionManager();
     
-    
+    interfaceIrr->_setCamPosition(new float[3]{player->_getNodePosition()[0]+posXCamara, player->_getNodePosition()[1]+posYCamara, player->_getNodePosition()[2]+posZCamara});
+    interfaceIrr->_setCamTarget(new float[3]{player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]});
     interfaceIrr->loadMap();
     while(interfaceIrr->_Run()){
 		fisicas->update();
@@ -77,23 +80,26 @@ int main(){
 			interfaceIrr->_deviceClose();
 		}
 		if(interfaceIrr->isKeyDown('W')){
-			vel[1] =  10;
+			vel[1] =  1;
 		}
 		if(interfaceIrr->isKeyDown('S')){
-			vel[1] = -10;
+			vel[1] = -1;
 		}
 		if(interfaceIrr->isKeyDown('A')){
-			vel[0] = -10;
+			vel[0] = -1;
 		}
 		if(interfaceIrr->isKeyDown('D')){
-			vel[0] =  10;
+			vel[0] =  1;
 		}
         if(interfaceIrr->isKeyDown('O')){ //zoom lejos
-            if(posZCamara > -10){
-                posZCamara--;
-                posYCamara = posYCamara - 0.5;
-            }
-       
+            //if(posZCamara > -10){
+                
+//                posZCamara--;
+//                posYCamara = posYCamara - 0.5;
+//            //}
+            incZ = ((interfaceIrr->_getCamPosition()[2]+5)-(interfaceIrr->_getCamPosition()[2]))/(2*60);
+            incY = ((interfaceIrr->_getCamPosition()[1]+5)-(interfaceIrr->_getCamPosition()[1]))/(2*60);
+            cont = 0;
         }
         if(interfaceIrr->isKeyDown('P')){ //zoom cerca
             if(posZCamara < -5){
@@ -111,9 +117,18 @@ int main(){
 				bala->_setNodePosition(posicion_bala);
 			}
 		}
-        //para que la camara se mueva en funcion de las teclas pulsadas
-        interfaceIrr->_setCamPosition(new float[3]{player->_getNodePosition()[0]+posXCamara, player->_getNodePosition()[1]+posYCamara, player->_getNodePosition()[2]+posZCamara});
-        interfaceIrr->_setCamTarget(new float[3]{player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]});
+        
+        if(cont < 120){
+            interfaceIrr->_setCamPosition(new float[3]{interfaceIrr->_getCamPosition()[0],interfaceIrr->_getCamPosition()[1] + incY, interfaceIrr->_getCamPosition()[2] + incZ});
+            posXCamara = interfaceIrr->_getCamPosition()[0] - player->_getNodePosition()[0];
+            posYCamara = interfaceIrr->_getCamPosition()[1] - player->_getNodePosition()[1];
+            posZCamara = interfaceIrr->_getCamPosition()[2] - player->_getNodePosition()[2];
+            cont++;
+        }else{
+          //  para que la camara se mueva en funcion de las teclas pulsadas
+            interfaceIrr->_setCamPosition(new float[3]{player->_getNodePosition()[0]+posXCamara, player->_getNodePosition()[1]+posYCamara, player->_getNodePosition()[2]+posZCamara});
+            interfaceIrr->_setCamTarget(new float[3]{player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]});
+        }
     }
     interfaceIrr->_deviceClose();
 }

@@ -32,6 +32,8 @@ class engineInterface{
 		void _createCamera(float* posicion, float* target, float* rotation);
 		void _setCamPosition(float* posicion);
 		void _setCamTarget(float* target);
+        float* _getCamPosition();
+        float* _getCamTarget();
 		void _setCamRotation(float* rotation);
 		nodeMesh* _getNode(char* filename);
 		nodeMesh*  _getNodeFromMesh(IMesh* mesh);
