@@ -9,7 +9,8 @@
 #include "escenarios.hpp"
 
 escenarios::escenarios(){
-    
+    this->insertComponent((char*)"physics", *new Physics());
+    this->insertComponent((char*)"render", *new render());
 }
 
 escenarios::~escenarios(){

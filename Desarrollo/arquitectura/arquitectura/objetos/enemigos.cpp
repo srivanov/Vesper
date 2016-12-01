@@ -9,7 +9,12 @@
 #include "enemigos.hpp"
 
 enemigos::enemigos(){
-    
+    this->insertComponent((char*)"transform3D", *new transform3D());
+    this->insertComponent((char*)"salud", *new salud());
+    this->insertComponent((char*)"IAEnemigos", *new IAEnemigos());
+    this->insertComponent((char*)"sed", *new sed());
+    this->insertComponent((char*)"hambre", *new hambre());
+    this->insertComponent((char*)"ataque", *new ataque());
 }
 
 enemigos::~enemigos(){

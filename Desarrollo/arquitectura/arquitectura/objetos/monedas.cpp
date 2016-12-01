@@ -9,7 +9,7 @@
 #include "monedas.hpp"
 
 monedas::monedas(){
-    
+    this->insertComponent((char*)"transform3D", *new transform3D());
 }
 
 monedas::~monedas(){

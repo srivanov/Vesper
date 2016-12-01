@@ -9,7 +9,9 @@
 #include "camara.hpp"
 
 camara::camara(){
-    
+    this->insertComponent((char*)"transform3D", *new transform3D());
+    this->insertComponent((char*)"physics", *new Physics());
+    this->insertComponent((char*)"IACamara", *new IACamara());
 }
 
 camara::~camara(){
