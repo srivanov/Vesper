@@ -7,17 +7,15 @@
 //
 
 #include <iostream>
-#include "GameObject.hpp"
-#include "components/ataque.hpp"
-#include "player.hpp"
+#include "Game.hpp"
 
 int main(int argc, const char * argv[]) {
-	// insert code here...
-	std::cout << "Hello, World!\n";
-	GameObject *i = new GameObject();
-
-    i->insertComponent((char*)"ataque", *new ataque());
-	printf("%d\n",i->findComponent((char*)"ataque"));
+	
+	Game* game = Game::Instance();
+	
+	while (game->isRunning()) {
+		
+	}
 	
     return 0;
 }
