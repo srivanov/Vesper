@@ -12,10 +12,10 @@
 #include <stdio.h>
 #include "component.hpp"
 
-class movimiento : public component{
+class transform : public component{
 public:
-	movimiento();
-	~movimiento();
+	transform();
+	~transform();
 	
 };
 

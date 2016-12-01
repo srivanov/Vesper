@@ -10,6 +10,7 @@
 
 player::player(){
 	this->insertComponent((char*)"ataque", *new ataque());
+    this->insertComponent((char*)"", *new ataque());
 }
 
 player::~player(){

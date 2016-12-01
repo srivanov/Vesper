@@ -6,12 +6,12 @@
 //  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
-#include "movimiento.hpp"
+#include "transform.hpp"
 
-movimiento::movimiento(){
+transform::transform(){
 	
 }
 
-movimiento::~movimiento(){
+transform::~transform(){
 	
 }

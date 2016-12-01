@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		886359521DF08E7D0012C6A0 /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886359501DF08E7D0012C6A0 /* transform.cpp */; };
 		E92F88751DF0859A002F13A5 /* armasArrojadizas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88631DF0859A002F13A5 /* armasArrojadizas.cpp */; };
 		E92F88761DF0859A002F13A5 /* ataque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88651DF0859A002F13A5 /* ataque.cpp */; };
 		E92F88771DF0859A002F13A5 /* martilloDeJuguete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88671DF0859A002F13A5 /* martilloDeJuguete.cpp */; };
 		E92F88781DF0859A002F13A5 /* pala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88691DF0859A002F13A5 /* pala.cpp */; };
 		E92F88791DF0859A002F13A5 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886B1DF0859A002F13A5 /* Physics.cpp */; };
 		E92F887A1DF0859A002F13A5 /* piedra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886D1DF0859A002F13A5 /* piedra.cpp */; };
-		E92F887B1DF0859A002F13A5 /* position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886F1DF0859A002F13A5 /* position.cpp */; };
 		E92F887C1DF0859A002F13A5 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88711DF0859A002F13A5 /* render.cpp */; };
 		E92F887D1DF0859A002F13A5 /* sed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88731DF0859A002F13A5 /* sed.cpp */; };
 		E92F88861DF08B99002F13A5 /* habilidadEspecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F887E1DF08B99002F13A5 /* habilidadEspecial.cpp */; };
@@ -40,7 +40,6 @@
 		E95617501DEE01EF00DB88AA /* destructiva.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956174E1DEE01EF00DB88AA /* destructiva.cpp */; };
 		E95617531DEE022E00DB88AA /* conAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617511DEE022E00DB88AA /* conAlarma.cpp */; };
 		E95617561DEE026600DB88AA /* chirriante.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617541DEE026600DB88AA /* chirriante.cpp */; };
-		E95617591DEE02AC00DB88AA /* movimiento.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617571DEE02AC00DB88AA /* movimiento.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		886359501DF08E7D0012C6A0 /* transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transform.cpp; sourceTree = "<group>"; };
+		886359511DF08E7D0012C6A0 /* transform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = transform.hpp; sourceTree = "<group>"; };
 		E92F88631DF0859A002F13A5 /* armasArrojadizas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasArrojadizas.cpp; sourceTree = "<group>"; };
 		E92F88641DF0859A002F13A5 /* armasArrojadizas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasArrojadizas.hpp; sourceTree = "<group>"; };
 		E92F88651DF0859A002F13A5 /* ataque.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ataque.cpp; sourceTree = "<group>"; };
@@ -68,8 +69,6 @@
 		E92F886C1DF0859A002F13A5 /* Physics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physics.hpp; sourceTree = "<group>"; };
 		E92F886D1DF0859A002F13A5 /* piedra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = piedra.cpp; sourceTree = "<group>"; };
 		E92F886E1DF0859A002F13A5 /* piedra.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = piedra.hpp; sourceTree = "<group>"; };
-		E92F886F1DF0859A002F13A5 /* position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = position.cpp; sourceTree = "<group>"; };
-		E92F88701DF0859A002F13A5 /* position.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = position.hpp; sourceTree = "<group>"; };
 		E92F88711DF0859A002F13A5 /* render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = render.cpp; sourceTree = "<group>"; };
 		E92F88721DF0859A002F13A5 /* render.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = render.hpp; sourceTree = "<group>"; };
 		E92F88731DF0859A002F13A5 /* sed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sed.cpp; sourceTree = "<group>"; };
@@ -122,8 +121,6 @@
 		E95617521DEE022E00DB88AA /* conAlarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conAlarma.hpp; sourceTree = "<group>"; };
 		E95617541DEE026600DB88AA /* chirriante.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chirriante.cpp; sourceTree = "<group>"; };
 		E95617551DEE026600DB88AA /* chirriante.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = chirriante.hpp; sourceTree = "<group>"; };
-		E95617571DEE02AC00DB88AA /* movimiento.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = movimiento.cpp; sourceTree = "<group>"; };
-		E95617581DEE02AC00DB88AA /* movimiento.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = movimiento.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +163,8 @@
 		E956171C1DEDFDDD00DB88AA /* components */ = {
 			isa = PBXGroup;
 			children = (
+				886359501DF08E7D0012C6A0 /* transform.cpp */,
+				886359511DF08E7D0012C6A0 /* transform.hpp */,
 				E92F887E1DF08B99002F13A5 /* habilidadEspecial.cpp */,
 				E92F887F1DF08B99002F13A5 /* habilidadEspecial.hpp */,
 				E92F88801DF08B99002F13A5 /* hambre.cpp */,
@@ -186,8 +185,6 @@
 				E92F886C1DF0859A002F13A5 /* Physics.hpp */,
 				E92F886D1DF0859A002F13A5 /* piedra.cpp */,
 				E92F886E1DF0859A002F13A5 /* piedra.hpp */,
-				E92F886F1DF0859A002F13A5 /* position.cpp */,
-				E92F88701DF0859A002F13A5 /* position.hpp */,
 				E92F88711DF0859A002F13A5 /* render.cpp */,
 				E92F88721DF0859A002F13A5 /* render.hpp */,
 				E92F88731DF0859A002F13A5 /* sed.cpp */,
@@ -214,8 +211,6 @@
 				E95617521DEE022E00DB88AA /* conAlarma.hpp */,
 				E95617541DEE026600DB88AA /* chirriante.cpp */,
 				E95617551DEE026600DB88AA /* chirriante.hpp */,
-				E95617571DEE02AC00DB88AA /* movimiento.cpp */,
-				E95617581DEE02AC00DB88AA /* movimiento.hpp */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -308,11 +303,11 @@
 				E92F887C1DF0859A002F13A5 /* render.cpp in Sources */,
 				E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */,
 				E95617561DEE026600DB88AA /* chirriante.cpp in Sources */,
+				886359521DF08E7D0012C6A0 /* transform.cpp in Sources */,
 				E95617361DEDFDDD00DB88AA /* monedas.cpp in Sources */,
 				E95617311DEDFDDD00DB88AA /* input.cpp in Sources */,
 				E92F88871DF08B99002F13A5 /* hambre.cpp in Sources */,
 				E92F88861DF08B99002F13A5 /* habilidadEspecial.cpp in Sources */,
-				E95617591DEE02AC00DB88AA /* movimiento.cpp in Sources */,
 				E95617351DEDFDDD00DB88AA /* escenarios.cpp in Sources */,
 				E95617411DEDFF9A00DB88AA /* salud.cpp in Sources */,
 				E95617441DEE008B00DB88AA /* conPuzzle.cpp in Sources */,
@@ -322,7 +317,6 @@
 				E956174D1DEE01A900DB88AA /* conLlave.cpp in Sources */,
 				E92F887D1DF0859A002F13A5 /* sed.cpp in Sources */,
 				E92F88761DF0859A002F13A5 /* ataque.cpp in Sources */,
-				E92F887B1DF0859A002F13A5 /* position.cpp in Sources */,
 				E956173E1DEDFE5600DB88AA /* GameObject.cpp in Sources */,
 				E92F88891DF08B99002F13A5 /* IAEnemigos.cpp in Sources */,
 				E95617381DEDFDDD00DB88AA /* puerta.cpp in Sources */,
