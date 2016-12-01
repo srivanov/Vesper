@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */; };
+		D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CED1DF07C0000E75C40 /* estados.cpp */; };
 		D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */; };
 		D29475CA1DCE44F000AD3AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475C91DCE44F000AD3AEF /* Cocoa.framework */; };
 		D29475CC1DCE450100AD3AEF /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475CB1DCE450100AD3AEF /* Carbon.framework */; };
@@ -24,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.cpp"; sourceTree = "<group>"; };
+		D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodos.hpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.hpp"; sourceTree = "<group>"; };
+		D22E0CED1DF07C0000E75C40 /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = estados.cpp; sourceTree = "<group>"; };
+		D22E0CEE1DF07C0000E75C40 /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = estados.hpp; sourceTree = "<group>"; };
 		D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = engineInterface.cpp; path = mapa/engineInterface.cpp; sourceTree = "<group>"; };
 		D23535701DDE1A6B00A038D8 /* engineInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = engineInterface.hpp; path = mapa/engineInterface.hpp; sourceTree = "<group>"; };
 		D29475B41DCE44BB00AD3AEF /* vesper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vesper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +89,10 @@
 				D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */,
 				D29475DB1DCE63C200AD3AEF /* cargarMapa.hpp */,
 				D29475D51DCE479D00AD3AEF /* main.cpp */,
+				D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */,
+				D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */,
+				D22E0CED1DF07C0000E75C40 /* estados.cpp */,
+				D22E0CEE1DF07C0000E75C40 /* estados.hpp */,
 				D29475B51DCE44BB00AD3AEF /* Products */,
 				D29475C81DCE44F000AD3AEF /* Frameworks */,
 			);
@@ -178,12 +188,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29475DF1DCE645B00AD3AEF /* tinyxml2.cpp in Sources */,
+				D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */,
 				D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */,
 				D2F4A43D1DDE31400050A3BC /* nodeMesh.cpp in Sources */,
 				E9C7839E1DE3596E00D96FC8 /* main2.cpp in Sources */,
 				E9C7839F1DE3596E00D96FC8 /* mundoBox2D.cpp in Sources */,
 				E9C783A01DE3596E00D96FC8 /* physicsController.cpp in Sources */,
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
+				D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */,
 				D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
