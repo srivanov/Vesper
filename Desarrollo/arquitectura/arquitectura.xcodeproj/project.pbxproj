@@ -16,6 +16,10 @@
 		E92F887B1DF0859A002F13A5 /* position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886F1DF0859A002F13A5 /* position.cpp */; };
 		E92F887C1DF0859A002F13A5 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88711DF0859A002F13A5 /* render.cpp */; };
 		E92F887D1DF0859A002F13A5 /* sed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88731DF0859A002F13A5 /* sed.cpp */; };
+		E92F88861DF08B99002F13A5 /* habilidadEspecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F887E1DF08B99002F13A5 /* habilidadEspecial.cpp */; };
+		E92F88871DF08B99002F13A5 /* hambre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88801DF08B99002F13A5 /* hambre.cpp */; };
+		E92F88881DF08B99002F13A5 /* IACamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88821DF08B99002F13A5 /* IACamara.cpp */; };
+		E92F88891DF08B99002F13A5 /* IAEnemigos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88841DF08B99002F13A5 /* IAEnemigos.cpp */; };
 		E95617161DEDFD9400DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617151DEDFD9400DB88AA /* main.cpp */; };
 		E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */; };
 		E95617311DEDFDDD00DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171F1DEDFDDD00DB88AA /* input.cpp */; };
@@ -70,6 +74,14 @@
 		E92F88721DF0859A002F13A5 /* render.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = render.hpp; sourceTree = "<group>"; };
 		E92F88731DF0859A002F13A5 /* sed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sed.cpp; sourceTree = "<group>"; };
 		E92F88741DF0859A002F13A5 /* sed.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sed.hpp; sourceTree = "<group>"; };
+		E92F887E1DF08B99002F13A5 /* habilidadEspecial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = habilidadEspecial.cpp; sourceTree = "<group>"; };
+		E92F887F1DF08B99002F13A5 /* habilidadEspecial.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = habilidadEspecial.hpp; sourceTree = "<group>"; };
+		E92F88801DF08B99002F13A5 /* hambre.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hambre.cpp; sourceTree = "<group>"; };
+		E92F88811DF08B99002F13A5 /* hambre.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hambre.hpp; sourceTree = "<group>"; };
+		E92F88821DF08B99002F13A5 /* IACamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IACamara.cpp; sourceTree = "<group>"; };
+		E92F88831DF08B99002F13A5 /* IACamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IACamara.hpp; sourceTree = "<group>"; };
+		E92F88841DF08B99002F13A5 /* IAEnemigos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAEnemigos.cpp; sourceTree = "<group>"; };
+		E92F88851DF08B99002F13A5 /* IAEnemigos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IAEnemigos.hpp; sourceTree = "<group>"; };
 		E95617121DEDFD9400DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95617151DEDFD9400DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
@@ -154,6 +166,14 @@
 		E956171C1DEDFDDD00DB88AA /* components */ = {
 			isa = PBXGroup;
 			children = (
+				E92F887E1DF08B99002F13A5 /* habilidadEspecial.cpp */,
+				E92F887F1DF08B99002F13A5 /* habilidadEspecial.hpp */,
+				E92F88801DF08B99002F13A5 /* hambre.cpp */,
+				E92F88811DF08B99002F13A5 /* hambre.hpp */,
+				E92F88821DF08B99002F13A5 /* IACamara.cpp */,
+				E92F88831DF08B99002F13A5 /* IACamara.hpp */,
+				E92F88841DF08B99002F13A5 /* IAEnemigos.cpp */,
+				E92F88851DF08B99002F13A5 /* IAEnemigos.hpp */,
 				E92F88631DF0859A002F13A5 /* armasArrojadizas.cpp */,
 				E92F88641DF0859A002F13A5 /* armasArrojadizas.hpp */,
 				E92F88651DF0859A002F13A5 /* ataque.cpp */,
@@ -290,6 +310,8 @@
 				E95617561DEE026600DB88AA /* chirriante.cpp in Sources */,
 				E95617361DEDFDDD00DB88AA /* monedas.cpp in Sources */,
 				E95617311DEDFDDD00DB88AA /* input.cpp in Sources */,
+				E92F88871DF08B99002F13A5 /* hambre.cpp in Sources */,
+				E92F88861DF08B99002F13A5 /* habilidadEspecial.cpp in Sources */,
 				E95617591DEE02AC00DB88AA /* movimiento.cpp in Sources */,
 				E95617351DEDFDDD00DB88AA /* escenarios.cpp in Sources */,
 				E95617411DEDFF9A00DB88AA /* salud.cpp in Sources */,
@@ -302,12 +324,14 @@
 				E92F88761DF0859A002F13A5 /* ataque.cpp in Sources */,
 				E92F887B1DF0859A002F13A5 /* position.cpp in Sources */,
 				E956173E1DEDFE5600DB88AA /* GameObject.cpp in Sources */,
+				E92F88891DF08B99002F13A5 /* IAEnemigos.cpp in Sources */,
 				E95617381DEDFDDD00DB88AA /* puerta.cpp in Sources */,
 				E956174A1DEE015000DB88AA /* blindada.cpp in Sources */,
 				E95617331DEDFDDD00DB88AA /* camara.cpp in Sources */,
 				E956173B1DEDFE4F00DB88AA /* component.cpp in Sources */,
 				E92F88771DF0859A002F13A5 /* martilloDeJuguete.cpp in Sources */,
 				E95617501DEE01EF00DB88AA /* destructiva.cpp in Sources */,
+				E92F88881DF08B99002F13A5 /* IACamara.cpp in Sources */,
 				E95617471DEE011300DB88AA /* bloqueada.cpp in Sources */,
 				E92F88751DF0859A002F13A5 /* armasArrojadizas.cpp in Sources */,
 			);

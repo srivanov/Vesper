@@ -9,7 +9,7 @@
 #include "player.hpp"
 
 player::player(){
-    
+	this->insertComponent((char*)"ataque", *new ataque());
 }
 
 player::~player(){

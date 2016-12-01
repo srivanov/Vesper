@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 
-class camara : public GameObject{
+class camara : public GameObject {
 public:
     camara();
     ~camara();

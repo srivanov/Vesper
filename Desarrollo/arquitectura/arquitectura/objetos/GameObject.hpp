@@ -13,6 +13,31 @@
 #include <map>
 #include "component.hpp"
 
+#include "armasArrojadizas.hpp"
+#include "armasDisparo.hpp"
+#include "ataque.hpp"
+#include "blindada.hpp"
+#include "bloqueada.hpp"
+#include "chirriante.hpp"
+#include "conAlarma.hpp"
+#include "conLlave.hpp"
+#include "conPuzzle.hpp"
+#include "destructiva.hpp"
+#include "habilidadEspecial.hpp"
+#include "hambre.hpp"
+#include "IACamara.hpp"
+#include "IAEnemigos.hpp"
+#include "input.hpp"
+#include "martilloDeJuguete.hpp"
+#include "movimiento.hpp"
+#include "pala.hpp"
+#include "Physics.hpp"
+#include "piedra.hpp"
+#include "position.hpp"
+#include "render.hpp"
+#include "salud.hpp"
+#include "sed.hpp"
+
 using namespace std;
 
 class GameObject{
