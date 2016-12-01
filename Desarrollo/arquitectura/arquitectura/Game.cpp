@@ -18,7 +18,8 @@ Game* Game::Instance(){
 }
 
 Game::Game(){
-	
+	interfaceIrr = engineInterface::Instance();
+	interfaceIrr->_createDevice(200, 200, 16, false, false, false, 0);
 }
 
 Game::~Game(){
@@ -34,6 +35,6 @@ void Game::render(){
 }
 
 bool Game::isRunning(){
-//	return interfaceIrr->_deviceRun();
+	return interfaceIrr->_Run();
 	return true;
 }

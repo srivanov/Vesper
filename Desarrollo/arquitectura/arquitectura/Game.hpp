@@ -10,6 +10,7 @@
 #define Game_hpp
 
 #include <stdio.h>
+#include "engineInterface.hpp"
 
 class Game {
 public:
@@ -23,6 +24,7 @@ protected:
 	Game();
 private:
 	static Game* pinstance;
+	engineInterface* interfaceIrr;
 };
 
 #endif /* Game_hpp */
