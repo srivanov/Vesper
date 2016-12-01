@@ -20,6 +20,7 @@
 		E92F88871DF08B99002F13A5 /* hambre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88801DF08B99002F13A5 /* hambre.cpp */; };
 		E92F88881DF08B99002F13A5 /* IACamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88821DF08B99002F13A5 /* IACamara.cpp */; };
 		E92F88891DF08B99002F13A5 /* IAEnemigos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88841DF08B99002F13A5 /* IAEnemigos.cpp */; };
+		E92F888F1DF09E94002F13A5 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F888D1DF09E94002F13A5 /* Game.cpp */; };
 		E95617161DEDFD9400DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617151DEDFD9400DB88AA /* main.cpp */; };
 		E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */; };
 		E95617311DEDFDDD00DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171F1DEDFDDD00DB88AA /* input.cpp */; };
@@ -81,6 +82,8 @@
 		E92F88831DF08B99002F13A5 /* IACamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IACamara.hpp; sourceTree = "<group>"; };
 		E92F88841DF08B99002F13A5 /* IAEnemigos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAEnemigos.cpp; sourceTree = "<group>"; };
 		E92F88851DF08B99002F13A5 /* IAEnemigos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IAEnemigos.hpp; sourceTree = "<group>"; };
+		E92F888D1DF09E94002F13A5 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		E92F888E1DF09E94002F13A5 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		E95617121DEDFD9400DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95617151DEDFD9400DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				E956171C1DEDFDDD00DB88AA /* components */,
 				E95617211DEDFDDD00DB88AA /* objetos */,
 				E95617151DEDFD9400DB88AA /* main.cpp */,
+				E92F888D1DF09E94002F13A5 /* Game.cpp */,
+				E92F888E1DF09E94002F13A5 /* Game.hpp */,
 			);
 			path = arquitectura;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				E95617341DEDFDDD00DB88AA /* enemigos.cpp in Sources */,
 				E92F88781DF0859A002F13A5 /* pala.cpp in Sources */,
 				E956174D1DEE01A900DB88AA /* conLlave.cpp in Sources */,
+				E92F888F1DF09E94002F13A5 /* Game.cpp in Sources */,
 				E92F887D1DF0859A002F13A5 /* sed.cpp in Sources */,
 				E92F88761DF0859A002F13A5 /* ataque.cpp in Sources */,
 				E956173E1DEDFE5600DB88AA /* GameObject.cpp in Sources */,
