@@ -17,7 +17,7 @@ public:
     ~estados();
     void run();
 private:
-    short* estado_act;
+    int * estado_act;
     void estandar();
     void alerta();
     void combate();

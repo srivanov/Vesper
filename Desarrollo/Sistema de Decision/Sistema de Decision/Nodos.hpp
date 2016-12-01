@@ -28,7 +28,7 @@ public:
     bool run();
     void anyadirHijo(Nodo * hijo);
 private:
-    std::vector<Nodo*> m_hijos;
+    vector<Nodo*> m_hijos;
 };
 
 class NodoMover : public Nodo {
