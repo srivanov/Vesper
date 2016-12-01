@@ -9,12 +9,14 @@
 #include <iostream>
 #include "GameObject.hpp"
 #include "components/ataque.hpp"
+
 int main(int argc, const char * argv[]) {
 	// insert code here...
 	std::cout << "Hello, World!\n";
 	GameObject *i = new GameObject();
-    
+
     i->insertComponent("ataque", *new ataque());
-    
+	printf("%d\n",i->findComponent("ataque"));
+	
     return 0;
 }

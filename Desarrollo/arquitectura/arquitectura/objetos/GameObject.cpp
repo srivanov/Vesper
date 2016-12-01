@@ -19,9 +19,9 @@ GameObject::~GameObject(){
 }
 
 void GameObject::insertComponent(char* nombre, component comp){
-    printf("%d\n", (int)components.size());
+//    printf("%d\n", (int)components.size());
     components.insert(pair<char*, component>(nombre,comp));
-    printf("%d\n", (int)components.size());
+//    printf("%d\n", (int)components.size());
 }
 
 void GameObject::eraseComponent(char* nombre){
@@ -30,10 +30,8 @@ void GameObject::eraseComponent(char* nombre){
 
 bool GameObject::findComponent(char *nombre){
     map<char*,component>::iterator iter = components.find(nombre);
-    if(iter != NULL)
-        printf("SI");
-    else
-        printf("NO");
-    return true;
+    if(iter->first != NULL)
+		return true;
+    return false;
 }
 

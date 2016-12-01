@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92F88751DF0859A002F13A5 /* armasArrojadizas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88631DF0859A002F13A5 /* armasArrojadizas.cpp */; };
+		E92F88761DF0859A002F13A5 /* ataque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88651DF0859A002F13A5 /* ataque.cpp */; };
+		E92F88771DF0859A002F13A5 /* martilloDeJuguete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88671DF0859A002F13A5 /* martilloDeJuguete.cpp */; };
+		E92F88781DF0859A002F13A5 /* pala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88691DF0859A002F13A5 /* pala.cpp */; };
+		E92F88791DF0859A002F13A5 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886B1DF0859A002F13A5 /* Physics.cpp */; };
+		E92F887A1DF0859A002F13A5 /* piedra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886D1DF0859A002F13A5 /* piedra.cpp */; };
+		E92F887B1DF0859A002F13A5 /* position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F886F1DF0859A002F13A5 /* position.cpp */; };
+		E92F887C1DF0859A002F13A5 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88711DF0859A002F13A5 /* render.cpp */; };
+		E92F887D1DF0859A002F13A5 /* sed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92F88731DF0859A002F13A5 /* sed.cpp */; };
 		E95617161DEDFD9400DB88AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E95617151DEDFD9400DB88AA /* main.cpp */; };
 		E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */; };
 		E95617311DEDFDDD00DB88AA /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E956171F1DEDFDDD00DB88AA /* input.cpp */; };
@@ -43,6 +52,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E92F88631DF0859A002F13A5 /* armasArrojadizas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasArrojadizas.cpp; sourceTree = "<group>"; };
+		E92F88641DF0859A002F13A5 /* armasArrojadizas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasArrojadizas.hpp; sourceTree = "<group>"; };
+		E92F88651DF0859A002F13A5 /* ataque.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ataque.cpp; sourceTree = "<group>"; };
+		E92F88661DF0859A002F13A5 /* ataque.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ataque.hpp; sourceTree = "<group>"; };
+		E92F88671DF0859A002F13A5 /* martilloDeJuguete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = martilloDeJuguete.cpp; sourceTree = "<group>"; };
+		E92F88681DF0859A002F13A5 /* martilloDeJuguete.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = martilloDeJuguete.hpp; sourceTree = "<group>"; };
+		E92F88691DF0859A002F13A5 /* pala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pala.cpp; sourceTree = "<group>"; };
+		E92F886A1DF0859A002F13A5 /* pala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pala.hpp; sourceTree = "<group>"; };
+		E92F886B1DF0859A002F13A5 /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
+		E92F886C1DF0859A002F13A5 /* Physics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physics.hpp; sourceTree = "<group>"; };
+		E92F886D1DF0859A002F13A5 /* piedra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = piedra.cpp; sourceTree = "<group>"; };
+		E92F886E1DF0859A002F13A5 /* piedra.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = piedra.hpp; sourceTree = "<group>"; };
+		E92F886F1DF0859A002F13A5 /* position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = position.cpp; sourceTree = "<group>"; };
+		E92F88701DF0859A002F13A5 /* position.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = position.hpp; sourceTree = "<group>"; };
+		E92F88711DF0859A002F13A5 /* render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = render.cpp; sourceTree = "<group>"; };
+		E92F88721DF0859A002F13A5 /* render.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = render.hpp; sourceTree = "<group>"; };
+		E92F88731DF0859A002F13A5 /* sed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sed.cpp; sourceTree = "<group>"; };
+		E92F88741DF0859A002F13A5 /* sed.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sed.hpp; sourceTree = "<group>"; };
 		E95617121DEDFD9400DB88AA /* arquitectura */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = arquitectura; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95617151DEDFD9400DB88AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
@@ -127,6 +154,24 @@
 		E956171C1DEDFDDD00DB88AA /* components */ = {
 			isa = PBXGroup;
 			children = (
+				E92F88631DF0859A002F13A5 /* armasArrojadizas.cpp */,
+				E92F88641DF0859A002F13A5 /* armasArrojadizas.hpp */,
+				E92F88651DF0859A002F13A5 /* ataque.cpp */,
+				E92F88661DF0859A002F13A5 /* ataque.hpp */,
+				E92F88671DF0859A002F13A5 /* martilloDeJuguete.cpp */,
+				E92F88681DF0859A002F13A5 /* martilloDeJuguete.hpp */,
+				E92F88691DF0859A002F13A5 /* pala.cpp */,
+				E92F886A1DF0859A002F13A5 /* pala.hpp */,
+				E92F886B1DF0859A002F13A5 /* Physics.cpp */,
+				E92F886C1DF0859A002F13A5 /* Physics.hpp */,
+				E92F886D1DF0859A002F13A5 /* piedra.cpp */,
+				E92F886E1DF0859A002F13A5 /* piedra.hpp */,
+				E92F886F1DF0859A002F13A5 /* position.cpp */,
+				E92F88701DF0859A002F13A5 /* position.hpp */,
+				E92F88711DF0859A002F13A5 /* render.cpp */,
+				E92F88721DF0859A002F13A5 /* render.hpp */,
+				E92F88731DF0859A002F13A5 /* sed.cpp */,
+				E92F88741DF0859A002F13A5 /* sed.hpp */,
 				E95617391DEDFE4F00DB88AA /* component.cpp */,
 				E956173A1DEDFE4F00DB88AA /* component.hpp */,
 				E956171D1DEDFDDD00DB88AA /* armasDisparo.cpp */,
@@ -235,9 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E92F887A1DF0859A002F13A5 /* piedra.cpp in Sources */,
 				E95617161DEDFD9400DB88AA /* main.cpp in Sources */,
+				E92F88791DF0859A002F13A5 /* Physics.cpp in Sources */,
 				E95617321DEDFDDD00DB88AA /* alarma.cpp in Sources */,
 				E95617371DEDFDDD00DB88AA /* player.cpp in Sources */,
+				E92F887C1DF0859A002F13A5 /* render.cpp in Sources */,
 				E95617301DEDFDDD00DB88AA /* armasDisparo.cpp in Sources */,
 				E95617561DEE026600DB88AA /* chirriante.cpp in Sources */,
 				E95617361DEDFDDD00DB88AA /* monedas.cpp in Sources */,
@@ -248,14 +296,20 @@
 				E95617441DEE008B00DB88AA /* conPuzzle.cpp in Sources */,
 				E95617531DEE022E00DB88AA /* conAlarma.cpp in Sources */,
 				E95617341DEDFDDD00DB88AA /* enemigos.cpp in Sources */,
+				E92F88781DF0859A002F13A5 /* pala.cpp in Sources */,
 				E956174D1DEE01A900DB88AA /* conLlave.cpp in Sources */,
+				E92F887D1DF0859A002F13A5 /* sed.cpp in Sources */,
+				E92F88761DF0859A002F13A5 /* ataque.cpp in Sources */,
+				E92F887B1DF0859A002F13A5 /* position.cpp in Sources */,
 				E956173E1DEDFE5600DB88AA /* GameObject.cpp in Sources */,
 				E95617381DEDFDDD00DB88AA /* puerta.cpp in Sources */,
 				E956174A1DEE015000DB88AA /* blindada.cpp in Sources */,
 				E95617331DEDFDDD00DB88AA /* camara.cpp in Sources */,
 				E956173B1DEDFE4F00DB88AA /* component.cpp in Sources */,
+				E92F88771DF0859A002F13A5 /* martilloDeJuguete.cpp in Sources */,
 				E95617501DEE01EF00DB88AA /* destructiva.cpp in Sources */,
 				E95617471DEE011300DB88AA /* bloqueada.cpp in Sources */,
+				E92F88751DF0859A002F13A5 /* armasArrojadizas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +436,7 @@
 				E956171B1DEDFD9400DB88AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

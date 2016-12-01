@@ -11,20 +11,11 @@
 
 #include <stdio.h>
 #include "component.hpp"
-<<<<<<< HEAD
 
 class armasDisparo : public component {
 public:
     armasDisparo();
     ~armasDisparo();
 };
-=======
->>>>>>> origin/arquitectura
 
-class armasDisparo : public component{
-public:
-	armasDisparo();
-	~armasDisparo();
-	
-};
 #endif /* armasDisparo_hpp */

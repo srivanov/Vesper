@@ -9,17 +9,9 @@
 #include "armasDisparo.hpp"
 
 armasDisparo::armasDisparo(){
-<<<<<<< HEAD
     
 }
 
 armasDisparo::~armasDisparo(){
-    
-=======
 	
-}
-
-armasDisparo::~armasDisparo(){
-	
->>>>>>> origin/arquitectura
 }
