@@ -15,3 +15,8 @@ input::input(){
 input::~input(){
 	
 }
+
+void input::update(){
+//	if(r.IsKeyDown(L'W'))
+		printf("HOLA");
+}

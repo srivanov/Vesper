@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
 		E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
 		E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */; };
 		E9AC3A5F1DF0AA4800A91A97 /* camara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A501DF0AA4800A91A97 /* camara.cpp */; };
@@ -68,6 +69,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E942C0571DF1EDE600CC5763 /* ventana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ventana.cpp; sourceTree = "<group>"; };
+		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E9AC3A371DF0A9C100A91A97 /* arquitectura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arquitectura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alarma.cpp; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 		E9AC3A661DF0AA5000A91A97 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				E942C0571DF1EDE600CC5763 /* ventana.cpp */,
+				E942C0581DF1EDE600CC5763 /* ventana.hpp */,
 				E9AC3A671DF0AA5000A91A97 /* armasArrojadizas.cpp */,
 				E9AC3A681DF0AA5000A91A97 /* armasArrojadizas.hpp */,
 				E9AC3A691DF0AA5000A91A97 /* armasDisparo.cpp */,
@@ -442,6 +447,7 @@
 				E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
+				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
 				E9AC3A601DF0AA4800A91A97 /* enemigos.cpp in Sources */,
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
@@ -621,6 +627,7 @@
 				E9AC3A4A1DF0A9C100A91A97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,16 +18,17 @@ Game* Game::Instance(){
 }
 
 Game::Game(){
-	interfaceIrr = engineInterface::Instance();
-	interfaceIrr->_createDevice(200, 200, 16, false, false, false, 0);
+	renderizador = new class render();
+	input = new class input();
 }
 
 Game::~Game(){
 	
 }
 
-void Game::update(){
+void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	
+	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 }
 
 void Game::render(){
@@ -35,6 +36,9 @@ void Game::render(){
 }
 
 bool Game::isRunning(){
-	return interfaceIrr->_Run();
-	return true;
+	return renderizador->run();
+}
+
+void Game::update(){
+	input->update();
 }

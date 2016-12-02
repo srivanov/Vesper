@@ -10,11 +10,14 @@
 #define Game_hpp
 
 #include <stdio.h>
-#include "engineInterface.hpp"
+#include "render.hpp"
+#include "input.hpp"
 
 class Game {
 public:
 	static Game* Instance();
+	
+	void start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver);
 	
 	virtual ~Game();
 	void update();
@@ -24,7 +27,9 @@ protected:
 	Game();
 private:
 	static Game* pinstance;
-	engineInterface* interfaceIrr;
+	class render *renderizador;
+	input* input;
+//	engineInterface* interfaceIrr;
 };
 
 #endif /* Game_hpp */

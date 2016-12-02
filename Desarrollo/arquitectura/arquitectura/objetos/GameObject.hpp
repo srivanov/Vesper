@@ -47,7 +47,7 @@ public:
     void eraseComponent(char* nombre);
     bool findComponent(char* nombre);
 private:
-    map <char*, component> components;
+	map <char*, component> components;
 };
 
 #endif /* GameObject_hpp */

@@ -11,11 +11,16 @@
 
 #include <stdio.h>
 #include "component.hpp"
+//#include "eventReceiver.h"
 
 class input : public component {
 public:
 	input();
 	~input();
+	void update();
+	
+private:
+//	MyEventReceiver r;
 	
 };
 

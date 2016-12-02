@@ -13,8 +13,11 @@ int main(int argc, const char * argv[]) {
 	
 	Game* game = Game::Instance();
 	
+	game->start(600,600,32,false,false,true,0);
+	
 	while (game->isRunning()) {
-		
+		game->update();
+		game->render();
 	}
 	
     return 0;
