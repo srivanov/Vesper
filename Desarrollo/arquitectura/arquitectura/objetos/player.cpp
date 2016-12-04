@@ -15,7 +15,7 @@ player::player(){
     this->insertComponent((char*)"piedra", *new piedra());
     this->insertComponent((char*)"habilidadEspecial", *new habilidadEspecial());
     this->insertComponent((char*)"martilloDeJuguete", *new martilloDeJuguete());
-    this->insertComponent((char*)"transform3D", *new transform3D());
+    this->insertComponent((char*)"transform3D", *new transform3D(this));
     this->insertComponent((char*)"armasDisparo", *new armasDisparo());
     this->insertComponent((char*)"salud", *new salud());
     this->insertComponent((char*)"physics", *new Physics());

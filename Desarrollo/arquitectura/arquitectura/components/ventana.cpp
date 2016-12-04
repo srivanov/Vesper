@@ -17,16 +17,16 @@ ventana* ventana::Instance(){
 }
 
 ventana::ventana(){
-	
+	r = MyEventReceiver::Instance();
 }
 
 ventana::~ventana(){
-	
+	delete r;
 }
 
 void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	if(receiver)
-		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, &r);
+		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, r);
 	else
 		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, 0);
 	

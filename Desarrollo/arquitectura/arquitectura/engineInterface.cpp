@@ -21,7 +21,8 @@ engineInterface::~engineInterface(){ // DESTRUCTOR
 
 bool engineInterface::_createDevice(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	if(receiver)
-		device = createDevice(EDT_OPENGL, dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, &r);
+//		device = createDevice(EDT_OPENGL, dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, &r);
+	printf("");
 	else
 		device = createDevice(EDT_OPENGL, dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, 0);
     if(!device){
@@ -175,13 +176,14 @@ ISceneCollisionManager* engineInterface::getSceneCollisionManager(){
 void engineInterface::setreceiver(bool active){
 	
 	if(active){
-		device->setEventReceiver(&r);
+//		device->setEventReceiver(&r);
 	}else
 		device->setEventReceiver(0);
 }
 
 bool engineInterface::isKeyDown(char key){
-	return r.IsKeyDown(key);
+//	return r.IsKeyDown(key);
+	return false;
 }
 
 void engineInterface::_setNearValue(float nv){

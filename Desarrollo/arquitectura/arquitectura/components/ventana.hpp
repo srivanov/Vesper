@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <irrlicht.h>
-#include "eventReceiver.h"
+#include "MyEventReceiver.hpp"
 
 using namespace irr;
 using namespace video;
@@ -35,7 +35,7 @@ private:
 	IrrlichtDevice* device;
 	IVideoDriver* driver;
 	ISceneManager* smgr;
-	MyEventReceiver r;
+	MyEventReceiver *r;
 };
 
 #endif /* ventana_hpp */

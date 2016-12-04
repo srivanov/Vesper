@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
+		E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */; };
 		E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
 		E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */; };
 		E9AC3A5F1DF0AA4800A91A97 /* camara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A501DF0AA4800A91A97 /* camara.cpp */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		E942C0571DF1EDE600CC5763 /* ventana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ventana.cpp; sourceTree = "<group>"; };
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
+		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
 		E9AC3A371DF0A9C100A91A97 /* arquitectura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arquitectura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alarma.cpp; sourceTree = "<group>"; };
@@ -162,7 +164,7 @@
 		E9AC3AD11DF0AD3600A91A97 /* mapa2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa2.tmx; sourceTree = "<group>"; };
 		E9AC3AD21DF0AD3600A91A97 /* mapa2c.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa2c.tmx; sourceTree = "<group>"; };
 		E9AC3AD31DF0AD3600A91A97 /* master-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "master-tileset.png"; sourceTree = "<group>"; };
-		E9AC3AE01DF0AD7100A91A97 /* eventReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventReceiver.h; sourceTree = "<group>"; };
+		E9AC3AE01DF0AD7100A91A97 /* MyEventReceiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyEventReceiver.hpp; sourceTree = "<group>"; };
 		E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mundoBox2D.cpp; sourceTree = "<group>"; };
 		E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mundoBox2D.hpp; sourceTree = "<group>"; };
 		E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeMesh.cpp; sourceTree = "<group>"; };
@@ -213,7 +215,8 @@
 				E9AC3ACF1DF0AD3600A91A97 /* tiled */,
 				E9AC3A661DF0AA5000A91A97 /* components */,
 				E9AC3A4D1DF0AA4800A91A97 /* objetos */,
-				E9AC3AE01DF0AD7100A91A97 /* eventReceiver.h */,
+				E9AC3AE01DF0AD7100A91A97 /* MyEventReceiver.hpp */,
+				E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */,
 				E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */,
 				E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */,
 				E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */,
@@ -224,9 +227,9 @@
 				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
 				E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */,
 				E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */,
+				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3ABD1DF0AB3800A91A97 /* engineInterface.cpp */,
 				E9AC3ABE1DF0AB3800A91A97 /* engineInterface.hpp */,
-				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3AB01DF0AA5900A91A97 /* Game.hpp */,
 				E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */,
 			);
@@ -439,6 +442,7 @@
 				E9AC3AA81DF0AA5000A91A97 /* pala.cpp in Sources */,
 				E9AC3AE91DF0AD7100A91A97 /* physicsController.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
+				E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */,
 				E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */,
 				E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */,
 				E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */,

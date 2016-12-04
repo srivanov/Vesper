@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
 	
 	Game* game = Game::Instance();
 	
-	game->start(600,600,32,false,false,true,0);
+	game->start(600,600,32,false,false,true,true);
 	
 	while (game->isRunning()) {
 		game->update();

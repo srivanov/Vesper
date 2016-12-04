@@ -11,11 +11,13 @@
 
 #include <stdio.h>
 #include "component.hpp"
+#include "GameObject.hpp"
 
 class transform3D : public component{
 public:
-    transform3D();
+    transform3D(class GameObject* p);
     ~transform3D();
-    
+private:
+	class GameObject* padre;
 };
 #endif /* transform3D_hpp */

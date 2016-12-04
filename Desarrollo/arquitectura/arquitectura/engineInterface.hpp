@@ -13,7 +13,7 @@
 #include <irrlicht.h>
 #include "cargarMapa.hpp"
 #include "nodeMesh.hpp"
-#include "eventReceiver.h"
+//#include "eventReceiver.hpp"
 
 using namespace irr;
 using namespace core;
@@ -57,6 +57,6 @@ private:
     IVideoDriver* driver;
     ISceneManager* smgr;
 	ICameraSceneNode* camera;
-	MyEventReceiver r;
+//	MyEventReceiver r;
 };
 #endif /* engineInterface_hpp */

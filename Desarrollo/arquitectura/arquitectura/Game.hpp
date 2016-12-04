@@ -29,7 +29,6 @@ private:
 	static Game* pinstance;
 	class render *renderizador;
 	input* input;
-//	engineInterface* interfaceIrr;
 };
 
 #endif /* Game_hpp */

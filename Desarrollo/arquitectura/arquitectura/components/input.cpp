@@ -9,7 +9,7 @@
 #include "input.hpp"
 
 input::input(){
-	
+	r = MyEventReceiver::Instance();
 }
 
 input::~input(){
@@ -17,6 +17,6 @@ input::~input(){
 }
 
 void input::update(){
-//	if(r.IsKeyDown(L'W'))
-		printf("HOLA");
+	if(r->IsKeyDown('W')){}
+		
 }

@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "component.hpp"
-//#include "eventReceiver.h"
+#include "MyEventReceiver.hpp"
 
 class input : public component {
 public:
@@ -20,7 +20,7 @@ public:
 	void update();
 	
 private:
-//	MyEventReceiver r;
+	MyEventReceiver *r;
 	
 };
 
