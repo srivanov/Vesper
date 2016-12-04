@@ -7,7 +7,7 @@
 //
 
 #include "GameObject.hpp"
-
+#include "component.hpp"
 
 
 GameObject::GameObject(){

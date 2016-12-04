@@ -9,7 +9,7 @@
 #include "alarma.hpp"
 
 alarma::alarma(){
-    this->insertComponent((char*)"transform3D", *new transform3D(this));
+    this->insertComponent((char*)"transform3D", *new transform3D());
     this->insertComponent((char*)"render", *new render());
 }
 

@@ -8,10 +8,10 @@
 
 #include "transform3D.hpp"
 
-transform3D::transform3D(GameObject* p){
-	padre = p;
+transform3D::transform3D(){
+	
 }
 
 transform3D::~transform3D(){
-	delete padre;
+	
 }

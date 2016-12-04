@@ -11,10 +11,15 @@
 
 #include <stdio.h>
 
+class GameObject;
+
 class component{
 public:
 	component();
+	void setFather(GameObject* p);
 	~component();
+private:
+	GameObject* padre;
 };
 
 #endif /* component_hpp */

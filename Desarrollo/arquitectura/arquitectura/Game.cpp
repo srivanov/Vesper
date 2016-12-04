@@ -19,7 +19,8 @@ Game* Game::Instance(){
 
 Game::Game(){
 	renderizador = new class render();
-	input = new class input();
+	entrada = new input();
+	running = true;
 }
 
 Game::~Game(){
@@ -31,14 +32,20 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 }
 
+void Game::stop(){
+	running = false;
+}
+
 void Game::render(){
 	
 }
 
 bool Game::isRunning(){
-	return renderizador->run();
+	if(running)
+		return renderizador->run();
+	return false;
 }
 
 void Game::update(){
-	input->update();
+	entrada->update();
 }

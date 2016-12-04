@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <map>
-#include "component.hpp"
+//#include "component.hpp"
 
 #include "armasArrojadizas.hpp"
 #include "armasDisparo.hpp"
@@ -27,7 +27,7 @@
 #include "hambre.hpp"
 #include "IACamara.hpp"
 #include "IAEnemigos.hpp"
-#include "input.hpp"
+//#include "input.hpp"
 #include "martilloDeJuguete.hpp"
 #include "transform3D.hpp"
 #include "pala.hpp"
@@ -38,6 +38,8 @@
 #include "sed.hpp"
 
 using namespace std;
+
+class component;
 
 class GameObject{
 public:

@@ -18,6 +18,7 @@ public:
 	static Game* Instance();
 	
 	void start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver);
+	void stop();
 	
 	virtual ~Game();
 	void update();
@@ -28,7 +29,8 @@ protected:
 private:
 	static Game* pinstance;
 	class render *renderizador;
-	input* input;
+	class input* entrada;
+	bool running;
 };
 
 #endif /* Game_hpp */

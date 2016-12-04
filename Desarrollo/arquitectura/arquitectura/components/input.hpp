@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "component.hpp"
 #include "MyEventReceiver.hpp"
+#include "Game.hpp"
 
 class input : public component {
 public:
@@ -21,7 +22,7 @@ public:
 	
 private:
 	MyEventReceiver *r;
-	
+	class Game* juego;
 };
 
 #endif /* input_hpp */

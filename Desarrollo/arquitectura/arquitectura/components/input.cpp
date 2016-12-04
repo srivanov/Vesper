@@ -17,6 +17,7 @@ input::~input(){
 }
 
 void input::update(){
-	if(r->IsKeyDown('W')){}
-		
+	if(r->IsKeyDown('W')){
+		Game::Instance()->stop();
+	}
 }

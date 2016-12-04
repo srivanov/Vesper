@@ -227,9 +227,9 @@
 				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
 				E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */,
 				E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */,
-				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3ABD1DF0AB3800A91A97 /* engineInterface.cpp */,
 				E9AC3ABE1DF0AB3800A91A97 /* engineInterface.hpp */,
+				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3AB01DF0AA5900A91A97 /* Game.hpp */,
 				E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */,
 			);
