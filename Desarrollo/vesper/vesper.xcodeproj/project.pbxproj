@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */; };
 		D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */; };
 		D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CED1DF07C0000E75C40 /* estados.cpp */; };
 		D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoard.cpp; sourceTree = "<group>"; };
+		635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlackBoard.hpp; sourceTree = "<group>"; };
 		D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.cpp"; sourceTree = "<group>"; };
 		D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodos.hpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.hpp"; sourceTree = "<group>"; };
 		D22E0CED1DF07C0000E75C40 /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = estados.cpp; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 		D29475AB1DCE44BA00AD3AEF = {
 			isa = PBXGroup;
 			children = (
+				635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */,
+				635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */,
 				E94647F51DE3BE110082BED1 /* eventReceiver.h */,
 				E9C783991DE3596E00D96FC8 /* main2.cpp */,
 				E9C7839A1DE3596E00D96FC8 /* mundoBox2D.cpp */,
@@ -192,6 +197,7 @@
 				D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */,
 				D2F4A43D1DDE31400050A3BC /* nodeMesh.cpp in Sources */,
 				E9C7839E1DE3596E00D96FC8 /* main2.cpp in Sources */,
+				635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */,
 				E9C7839F1DE3596E00D96FC8 /* mundoBox2D.cpp in Sources */,
 				E9C783A01DE3596E00D96FC8 /* physicsController.cpp in Sources */,
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,

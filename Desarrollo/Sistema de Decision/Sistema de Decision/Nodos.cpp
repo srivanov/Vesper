@@ -9,6 +9,7 @@
 
 #include "Nodos.hpp"
 
+//NODOS ESPECIALES / GENERALES
 // NODO SECUENCIA
 NodoSecuencia::NodoSecuencia(){}
 void NodoSecuencia::anyadirHijo(Nodo * hijo){NodoSecuencia::m_hijos.push_back(hijo);}
@@ -18,6 +19,52 @@ bool NodoSecuencia::run(){
     }
     return true;
 }
+// NODO SECUENCIA POSITIVA
+NodoSecuenciaPositiva::NodoSecuenciaPositiva(){}
+bool NodoSecuenciaPositiva::run(){
+    for(int i=0;i<m_hijos.size();i++){
+        if(m_hijos[i]->run())
+            return true;
+    }
+    return false;
+}
+void NodoSecuenciaPositiva::anyadirHijo(Nodo * hijo){m_hijos.push_back(hijo);}
+// NODO PARALELO
+NodoParalelo::NodoParalelo(bool typeBucle){
+    bucle = new bool;
+    bucle = &typeBucle;
+}
+void NodoParalelo::anaydirHijoParalelo(Nodo * hijo){m_hijosParalelos.push_back(hijo);}
+void NodoParalelo::anyadirHijo(Nodo * hijo){m_hijos.push_back(hijo);}
+bool NodoParalelo::run(){
+    int * resolution = new int;
+    *resolution = 0;
+    while (*resolution==0) {
+        thread first(firstExe());
+        thread second(secondExe());
+        *resolution++;
+    }
+    return false;
+}
+bool NodoParalelo::secondExe(){
+    
+    for(int i=0;i<m_hijosParalelos.size();i++){
+        if (bucle) {if(m_hijosParalelos[i]->run()) return true;}
+        else{if(!m_hijosParalelos[i]->run()) return false;}
+    }
+    if(bucle) return false;
+    else return false;
+}
+bool NodoParalelo::firstExe(){
+    for(int i=0;i<m_hijosParalelos.size();i++){
+        if (bucle) {if(m_hijosParalelos[i]->run()) return true;}
+        else{if(!m_hijosParalelos[i]->run()) return false;}
+    }
+    if(bucle) return false;
+    else return false;
+}
+
+// NODOS DE ACCION
 // NODO RECORRER ZONA
 NodoRecorreZonaCercana::NodoRecorreZonaCercana(){}
 bool NodoRecorreZonaCercana::run(){return false;}
@@ -64,7 +111,7 @@ bool NodoAtaqueCuerpo::run(){return false;}
 NodoAtaqueDistancia::NodoAtaqueDistancia(){}
 bool NodoAtaqueDistancia::run(){return false;}
 
-//NODOS PREGUNTA
+//NODOS DE CONDICION
 // NODO TENGO SED ?
 Nodo_TengoSed::Nodo_TengoSed(){}
 bool Nodo_TengoSed::run(){return false;}

@@ -11,6 +11,7 @@
 
 #include <vector>
 #include <iostream>
+#include <thread>
 #include "engineInterface.hpp"
 using namespace std;
 
@@ -30,7 +31,27 @@ public:
 private:
     vector<Nodo*> m_hijos;
 };
-
+class NodoSecuenciaPositiva : public Nodo{
+public:
+    NodoSecuenciaPositiva();
+    bool run();
+    void anyadirHijo(Nodo * hijo);
+private:
+    vector<Nodo*> m_hijos;
+};
+class NodoParalelo : public Nodo {
+public:
+    NodoParalelo(bool typeBucle);
+    bool run();
+    void anyadirHijo(Nodo * hijo);
+    void anaydirHijoParalelo(Nodo * hijo);
+private:
+    bool firstExe();
+    bool secondExe();
+    bool * bucle;
+    vector<Nodo*> m_hijos;
+    vector<Nodo*> m_hijosParalelos;
+};
 class NodoMover : public Nodo {
 public:
     NodoMover();
