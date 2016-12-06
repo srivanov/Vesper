@@ -163,10 +163,15 @@ estados::estados(){
     Nodo_HayAlguienRadio * alguien_radio = new Nodo_HayAlguienRadio;
     NodoSecuencia * ayuda_cercana = new NodoSecuencia;
     NodoSecuencia * ayuda_radio = new NodoSecuencia;
+    NodoSecuencia * ayuda_alarma = new NodoSecuencia;
+    Nodo_AlarmaCerca * alarma_cerca = new Nodo_AlarmaCerca;
+    ayuda_alarma->anyadirHijo(alarm_cerca);
+    ayuda_alarma->anyadirHijo(moverse);
     ayuda_cercana->anyadirHijo(alguien_cerca);
     ayuda_radio->anyadirHijo(alguien_radio);
     NodoAvisar * avisar = new NodoAvisar;
     NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
+    ayuda_alarma->anyadirHijo(avisar);
     ayuda_cercana->anyadirHijo(moverse);
     ayuda_cercana->anyadirHijo(avisar);
     ayuda_radio->anyadirHijo(avisar);
@@ -177,7 +182,7 @@ estados::estados(){
     //COMBATIR
     NodoSecuenciaPositiva * _combatir = new NodoSecuenciaPositiva;
     NodoSecuencia * _cubrir = new NodoSecuencia;
-    NodoSecuencia * _ataques = new NodoSecuencia;
+    NodoSecuenciaPositiva * _ataques = new NodoSecuenciaPositiva;
     NodoSecuencia * _distancia_jugador = new NodoSecuencia; //comprueba a la distancia que estas del jugador para elegir el tipo de ataque
     NodoSecuencia * _cuerpo_cuerpo = new NodoSecuencia;
     NodoSecuencia * _a_distancia = new NodoSecuencia;
@@ -235,7 +240,6 @@ void estados::run(){
         case ASUSTADO:asustado();break;
         default:cout << "NO EXISTE ESTADO" << endl;break;
     }
-    
 }
 
 void estados::estandar(){
