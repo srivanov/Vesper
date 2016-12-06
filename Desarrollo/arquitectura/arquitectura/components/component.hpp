@@ -18,7 +18,7 @@ public:
 	component();
 	void setFather(GameObject* p);
 	~component();
-private:
+protected:
 	GameObject* padre;
 };
 
