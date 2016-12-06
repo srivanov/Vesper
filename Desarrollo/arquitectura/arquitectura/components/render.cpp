@@ -10,6 +10,11 @@
 
 render::render(){
 	window = ventana::Instance();
+    device = window->getDevice();
+    driver = window->getDriver();
+    smgr = window->getSceneManager();
+    nodo = NULL;
+    
 }
 
 render::~render(){
@@ -24,3 +29,20 @@ bool render::run(){
 	return window->getDevice()->run();
 }
 
+void render::setNode(char *filename){
+    if(nodo == NULL){
+        nodo = new nodeMesh(window->getSceneManager()->addMeshSceneNode(window->getSceneManager()->getMesh(filename)));
+        printf("he llegado");
+    }
+    
+}
+
+void render::dropNode(){
+    nodo = NULL;
+}
+
+void render::dibujar(){
+    window->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
+    window->getSceneManager()->drawAll();
+    window->getDriver()->endScene();
+}

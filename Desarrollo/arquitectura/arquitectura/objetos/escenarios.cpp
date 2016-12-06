@@ -10,7 +10,7 @@
 
 escenarios::escenarios(){
     this->insertComponent((char*)"physics", *new Physics());
-    this->insertComponent((char*)"render", *new render());
+    this->insertComponent((char*)"render", *new class render());
 }
 
 escenarios::~escenarios(){

@@ -47,9 +47,20 @@ public:
     ~GameObject();
     void insertComponent(char* nombre, component comp);
     void eraseComponent(char* nombre);
-    bool findComponent(char* nombre);
+    component* findComponent(char* nombre);
+    bool getRenderizable();
+    void setRenderizable(bool r);
+    float* getPosicion();
+    void setPosicion(float* p3D);
+    void render();
+    void update();
+    void addNodo(char* filename);
+    
+protected:
+    bool renderizable;
+    float* posicion;
 private:
-	map <char*, component> components;
+    std::map<char*, component> components;
 };
 
 #endif /* GameObject_hpp */

@@ -13,6 +13,7 @@
 #include "component.hpp"
 #include "ventana.hpp"
 #include <irrlicht.h>
+#include "nodeMesh.hpp"
 
 using namespace irr;
 
@@ -22,9 +23,17 @@ public:
     ~render();
 	void crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver);
 	bool run();
+    void setNode(char* filename);
+    void dropNode();
+    void dibujar();
 	
 private:
 	ventana* window;
+    IrrlichtDevice* device;
+    IVideoDriver* driver;
+    ISceneManager* smgr;
+    nodeMesh* nodo;
+    
 };
 
 #endif /* render_hpp */

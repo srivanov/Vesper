@@ -11,7 +11,8 @@
 
 
 GameObject::GameObject(){
-    
+    renderizable = false;
+    posicion = new float[3]{0,0,0};
 }
 
 GameObject::~GameObject(){
@@ -28,10 +29,56 @@ void GameObject::eraseComponent(char* nombre){
     components.erase(nombre);
 }
 
-bool GameObject::findComponent(char *nombre){
-    map<char*,component>::iterator iter = components.find(nombre);
+component* GameObject::findComponent(char *nombre){
+    std::map<char*,component>::iterator iter = components.find(nombre);
     if(iter->first != NULL)
-		return true;
-    return false;
+		return &iter->second;
+    return NULL;
 }
+
+bool GameObject::getRenderizable(){
+    return renderizable;
+}
+
+void GameObject::setRenderizable(bool r){
+    renderizable = r;
+}
+
+float* GameObject::getPosicion(){
+    return posicion;
+}
+
+void GameObject::setPosicion(float* p3D){
+    if(p3D != NULL){
+        posicion[0] = p3D[0];
+        posicion[1] = p3D[1];
+        posicion[2] = p3D[2];
+    
+    }
+    
+}
+
+void GameObject::render(){
+    if(renderizable){
+        
+    }
+}
+
+void GameObject::update(){
+    
+}
+
+void GameObject::addNodo(char* filename){
+    class render* r = (class render*)findComponent("render");
+    if(r != NULL){
+        r->setNode(filename);
+        
+    }else
+        printf("he llegado2");
+}
+
+
+
+
+
 

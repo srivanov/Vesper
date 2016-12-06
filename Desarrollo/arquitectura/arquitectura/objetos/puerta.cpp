@@ -10,7 +10,7 @@
 
 puerta::puerta(){
     this->insertComponent((char*)"transform3D", *new transform3D());
-    this->insertComponent((char*)"render", *new render());
+    this->insertComponent((char*)"render", *new class render());
     this->insertComponent((char*)"conPuzzle", *new conPuzzle());
     this->insertComponent((char*)"bloqueada", *new bloqueada());
     this->insertComponent((char*)"blindada", *new blindada());

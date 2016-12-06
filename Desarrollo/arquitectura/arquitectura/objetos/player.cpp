@@ -19,7 +19,7 @@ player::player(){
     this->insertComponent((char*)"armasDisparo", *new armasDisparo());
     this->insertComponent((char*)"salud", *new salud());
     this->insertComponent((char*)"physics", *new Physics());
-    this->insertComponent((char*)"render", *new render());
+    this->insertComponent((char*)"render", *new class render());
 }
 
 player::~player(){

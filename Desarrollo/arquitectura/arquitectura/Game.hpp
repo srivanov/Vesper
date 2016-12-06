@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include "render.hpp"
 #include "input.hpp"
+#include "player.hpp"
+#include "camara.hpp"
 
 class Game {
 public:
@@ -31,6 +33,8 @@ private:
 	class render *renderizador;
 	class input* entrada;
 	bool running;
+    player* p;
+    camara* c;
 };
 
 #endif /* Game_hpp */

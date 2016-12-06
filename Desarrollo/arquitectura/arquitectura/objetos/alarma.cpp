@@ -10,7 +10,7 @@
 
 alarma::alarma(){
     this->insertComponent((char*)"transform3D", *new transform3D());
-    this->insertComponent((char*)"render", *new render());
+    this->insertComponent((char*)"render", *new class render());
 }
 
 alarma::~alarma(){
