@@ -22,10 +22,10 @@ private:
     void alerta();
     void combate();
     void asustado();
-    NodoSecuencia* _estandar;
-    NodoSecuencia* _alerta;
-    NodoSecuencia* _combate;
-    NodoSecuencia* _asustado;
+    NodoSecuenciaPositiva* _estandar;
+    NodoSecuenciaPositiva* _alerta;
+    NodoSecuenciaPositiva* _combate;
+    NodoSecuenciaPositiva* _asustado;
 };
 
 #endif /* estados_hpp */

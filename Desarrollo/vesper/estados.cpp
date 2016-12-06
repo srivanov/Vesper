@@ -32,7 +32,7 @@ estados::estados(){
     NodoMover * moverse = new NodoMover;
     
     //CONSTRUCCION ARBOL ESTANDAR
-    _estandar = new NodoSecuencia;
+    _estandar = new NodoSecuenciaPositiva;
     
     //CAMBIAR ESTADO AGRESIVO
     Nodo_VerJugador * agresivo = new Nodo_VerJugador;
@@ -43,7 +43,7 @@ estados::estados(){
     _estandar->anyadirHijo(alerta);
     
     //BUSCAR RUIDO
-    NodoSecuencia * _buscar_ruido = new NodoSecuencia;
+    NodoSecuenciaPositiva * _buscar_ruido = new NodoSecuenciaPositiva;
     
     
     for (int i=0; i<BUSCAR_RUIDO_ESTANDAR; i++) {
@@ -54,7 +54,7 @@ estados::estados(){
             sin_puerta->anyadirHijo(moverse);
             _buscar_ruido->anyadirHijo(sin_puerta);
         }
-        else if(i==1){
+        else if(i==1){// SIN PUERTA
             NodoSecuencia * con_puerta = new NodoSecuencia;
             con_puerta->anyadirHijo(moverse);
             NodoAbrirPuerta * abrir_puerta = new NodoAbrirPuerta;
@@ -83,7 +83,7 @@ estados::estados(){
     
     // INGERIR
     
-    NodoSecuencia * _ingerir = new NodoSecuencia;
+    NodoSecuenciaPositiva * _ingerir = new NodoSecuenciaPositiva;
     
     for (int i=0; i<INGERIR_ESTANDAR; i++) {
         if(i==0){//COMER
@@ -107,7 +107,7 @@ estados::estados(){
     }
     
     // ACCIONES - ESTANDAR
-    NodoSecuencia * _acciones = new NodoSecuencia;
+    NodoSecuenciaPositiva * _acciones = new NodoSecuenciaPositiva;
     
     for (int i=0; i<ACCIONES_GENERALES_ESTANDAR; i++) {
         if(i==0) {// HABLAR
@@ -125,10 +125,13 @@ estados::estados(){
     }
 
     // CONSTRUCCION DE ARBOL ALERTA
-    _alerta = new NodoSecuencia;
+    _alerta = new NodoSecuenciaPositiva;
     
     //CAMBIAR ESTADO A COMBATE
     _alerta->anyadirHijo(agresivo);
+    
+    //BUSCAR RUIDO
+    _alerta->anyadirHijo(_buscar_ruido);
     
     //CAMBIAR ESTADO ESTANDAR
     Nodo_TiempoInactivo * estandar = new Nodo_TiempoInactivo;
@@ -137,7 +140,7 @@ estados::estados(){
     //ALARMA ACTIVA
     Nodo_AlarmaCerca * alarm_cerca = new Nodo_AlarmaCerca;
     NodoRecorreZonaCercana * recorrer_zona = new NodoRecorreZonaCercana; // NODO SIN DEFINIR
-    NodoSecuencia * _alarma_activa = new NodoSecuencia;
+    NodoSecuenciaPositiva * _alarma_activa = new NodoSecuenciaPositiva;
     _alarma_activa->anyadirHijo(alarm_cerca);
     _alarma_activa->anyadirHijo(moverse);
     _alarma_activa->anyadirHijo(recorrer_zona);
@@ -150,7 +153,7 @@ estados::estados(){
     _alerta->anyadirHijo(patrullar);
     
     //CONSTRUYE EL ARBOL DE COMBATE
-    _combate = new NodoSecuencia;
+    _combate = new NodoSecuenciaPositiva;
     //CAMBIAR ESTADO A ASUSTADO
     Nodo_EstasAsustado * estar_asustado = new Nodo_EstasAsustado;
     _combate->anyadirHijo(estar_asustado);
@@ -172,7 +175,7 @@ estados::estados(){
     _combate->anyadirHijo(_pedir_ayuda);
     
     //COMBATIR
-    NodoSecuencia * _combatir = new NodoSecuencia;
+    NodoSecuenciaPositiva * _combatir = new NodoSecuenciaPositiva;
     NodoSecuencia * _cubrir = new NodoSecuencia;
     NodoSecuencia * _ataques = new NodoSecuencia;
     NodoSecuencia * _distancia_jugador = new NodoSecuencia; //comprueba a la distancia que estas del jugador para elegir el tipo de ataque
@@ -203,7 +206,7 @@ estados::estados(){
     _combate->anyadirHijo(vigilar);
     
     //CONSTRUCCION DEL ARBOL ASUSTADO
-    _asustado = new NodoSecuencia;
+    _asustado = new NodoSecuenciaPositiva;
     
     //CAMBIAR ESTADO ESTANDAR
     _asustado->anyadirHijo(estandar);

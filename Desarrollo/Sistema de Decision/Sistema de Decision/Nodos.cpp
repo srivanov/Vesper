@@ -23,8 +23,7 @@ bool NodoSecuencia::run(){
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){}
 bool NodoSecuenciaPositiva::run(){
     for(int i=0;i<m_hijos.size();i++){
-        if(m_hijos[i]->run())
-            return true;
+        if(m_hijos[i]->run()) return true;
     }
     return false;
 }
@@ -37,13 +36,14 @@ NodoParalelo::NodoParalelo(bool typeBucle){
 void NodoParalelo::anaydirHijoParalelo(Nodo * hijo){m_hijosParalelos.push_back(hijo);}
 void NodoParalelo::anyadirHijo(Nodo * hijo){m_hijos.push_back(hijo);}
 bool NodoParalelo::run(){
-    int * resolution = new int;
+    /*int * resolution = new int;
     *resolution = 0;
     while (*resolution==0) {
         thread first(firstExe());
         thread second(secondExe());
         *resolution++;
     }
+    */
     return false;
 }
 bool NodoParalelo::secondExe(){

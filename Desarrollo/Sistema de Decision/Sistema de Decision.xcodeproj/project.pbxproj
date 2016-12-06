@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		635534F71DEF297800D9EB3E /* ia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635534F51DEF297800D9EB3E /* ia.cpp */; };
 		63F46C661DEDF16400957C88 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63F46C651DEDF16400957C88 /* main.cpp */; };
 		63F46C6E1DEDF32500957C88 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63F46C6C1DEDF32500957C88 /* Nodos.cpp */; };
 /* End PBXBuildFile section */
@@ -25,8 +24,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		635534F51DEF297800D9EB3E /* ia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ia.cpp; sourceTree = "<group>"; };
-		635534F61DEF297800D9EB3E /* ia.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ia.hpp; sourceTree = "<group>"; };
 		63F46C621DEDF16400957C88 /* Sistema de Decision */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Sistema de Decision"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F46C651DEDF16400957C88 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		63F46C6C1DEDF32500957C88 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodos.cpp; sourceTree = "<group>"; };
@@ -66,8 +63,6 @@
 				63F46C651DEDF16400957C88 /* main.cpp */,
 				63F46C6C1DEDF32500957C88 /* Nodos.cpp */,
 				63F46C6D1DEDF32500957C88 /* Nodos.hpp */,
-				635534F51DEF297800D9EB3E /* ia.cpp */,
-				635534F61DEF297800D9EB3E /* ia.hpp */,
 			);
 			path = "Sistema de Decision";
 			sourceTree = "<group>";
@@ -129,7 +124,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635534F71DEF297800D9EB3E /* ia.cpp in Sources */,
 				63F46C661DEDF16400957C88 /* main.cpp in Sources */,
 				63F46C6E1DEDF32500957C88 /* Nodos.cpp in Sources */,
 			);
