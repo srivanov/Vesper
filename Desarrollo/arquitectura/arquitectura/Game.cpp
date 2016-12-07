@@ -32,7 +32,7 @@ Game::~Game(){
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
-    p->addNodo("../../3d/muro.3ds");
+    p->addNodo("../../../arquitectura/3d/muro.3ds");
 }
 
 void Game::stop(){

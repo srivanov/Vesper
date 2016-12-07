@@ -17,22 +17,23 @@ ventana* ventana::Instance(){
 }
 
 ventana::ventana(){
-	r = MyEventReceiver::Instance();
+	receiver = MyEventReceiver::Instance();
 }
 
 ventana::~ventana(){
-	delete r;
+	delete receiver;
 }
 
-void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
+void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool rec){
 	if(receiver)
-		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, r);
+		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, receiver);
 	else
 		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, 0);
 	
 	driver = device->getVideoDriver();
 	smgr = device->getSceneManager();
 	device->setWindowCaption(L"HOLA");
+	smgr->addCameraSceneNode(0, irr::core::vector3df(-10,-10,-10), irr::core::vector3df(0,0,0));
 }
 
 IrrlichtDevice* ventana::getDevice(){

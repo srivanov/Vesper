@@ -28,11 +28,11 @@ public:
     void dibujar();
 	
 private:
-	ventana* window;
-    IrrlichtDevice* device;
-    IVideoDriver* driver;
-    ISceneManager* smgr;
-    nodeMesh* nodo;
+//	ventana* window = ventana::Instance();
+    IrrlichtDevice* device1;
+    IVideoDriver* driver1;
+    ISceneManager* smgr1;
+    nodeMesh* nodo = NULL;
     
 };
 

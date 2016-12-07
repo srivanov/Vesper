@@ -9,10 +9,10 @@
 #include "render.hpp"
 
 render::render(){
-	window = ventana::Instance();
-    device = window->getDevice();
-    driver = window->getDriver();
-    smgr = window->getSceneManager();
+//	window = ventana::Instance();
+//	device = ventana::Instance()->getDevice();
+//	driver = ventana::Instance()->getDriver();
+//	smgr = ventana::Instance()->getSceneManager();
     nodo = NULL;
     
 }
@@ -22,19 +22,18 @@ render::~render(){
 }
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
-	window->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
+	ventana::Instance()->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 }
 
 bool render::run(){
-	return window->getDevice()->run();
+	return ventana::Instance()->getDevice()->run();
 }
 
 void render::setNode(char *filename){
     if(nodo == NULL){
-        nodo = new nodeMesh(window->getSceneManager()->addMeshSceneNode(window->getSceneManager()->getMesh(filename)));
-        printf("he llegado");
+        nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(ventana::Instance()->getSceneManager()->getMesh(filename)));
+        printf("cargado!\n");
     }
-    
 }
 
 void render::dropNode(){
@@ -42,7 +41,7 @@ void render::dropNode(){
 }
 
 void render::dibujar(){
-    window->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
-    window->getSceneManager()->drawAll();
-    window->getDriver()->endScene();
+    ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
+    ventana::Instance()->getSceneManager()->drawAll();
+    ventana::Instance()->getDriver()->endScene();
 }

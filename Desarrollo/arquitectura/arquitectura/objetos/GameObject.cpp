@@ -53,9 +53,7 @@ void GameObject::setPosicion(float* p3D){
         posicion[0] = p3D[0];
         posicion[1] = p3D[1];
         posicion[2] = p3D[2];
-    
     }
-    
 }
 
 void GameObject::render(){
@@ -69,12 +67,9 @@ void GameObject::update(){
 }
 
 void GameObject::addNodo(char* filename){
-    class render* r = (class render*)findComponent("render");
-    if(r != NULL){
-        r->setNode(filename);
-        
-    }else
-        printf("he llegado2");
+    class render* ren = (class render*)findComponent("render");
+    if(ren != NULL)
+        ren->setNode(filename);
 }
 
 

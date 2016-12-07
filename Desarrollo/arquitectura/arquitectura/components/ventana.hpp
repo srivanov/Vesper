@@ -22,7 +22,7 @@ public:
 	static ventana* Instance();
 	virtual ~ventana();
 	
-	void crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver);
+	void crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool rec);
 	IrrlichtDevice* getDevice();
 	IVideoDriver* getDriver();
 	ISceneManager* getSceneManager();
@@ -35,7 +35,7 @@ private:
 	IrrlichtDevice* device;
 	IVideoDriver* driver;
 	ISceneManager* smgr;
-	MyEventReceiver *r;
+	MyEventReceiver *receiver;
 };
 
 #endif /* ventana_hpp */
