@@ -11,8 +11,7 @@
 
 #include <vector>
 #include <iostream>
-#include <thread>
-#include "engineInterface.hpp"
+#include "datos.hpp"
 using namespace std;
 
 /*###################
@@ -20,13 +19,16 @@ using namespace std;
  ###################*/
 class Nodo {
 public:
-    virtual bool run() = 0;
+    virtual short run(datos NPCinfo) = 0;
+    bool getRunning(){return running;}
+protected:
+    bool running = false;
 };
 
 class NodoSecuencia : public Nodo {
 public:
     NodoSecuencia();
-    bool run();
+    short run(datos NPCinfo);
     void anyadirHijo(Nodo * hijo);
 private:
     vector<Nodo*> m_hijos;
@@ -34,28 +36,15 @@ private:
 class NodoSecuenciaPositiva : public Nodo{
 public:
     NodoSecuenciaPositiva();
-    bool run();
+    short run(datos NPCinfo);
     void anyadirHijo(Nodo * hijo);
 private:
     vector<Nodo*> m_hijos;
-};
-class NodoParalelo : public Nodo {
-public:
-    NodoParalelo(bool typeBucle);
-    bool run();
-    void anyadirHijo(Nodo * hijo);
-    void anaydirHijoParalelo(Nodo * hijo);
-private:
-    bool firstExe();
-    bool secondExe();
-    bool * bucle;
-    vector<Nodo*> m_hijos;
-    vector<Nodo*> m_hijosParalelos;
 };
 class NodoMover : public Nodo {
 public:
     NodoMover();
-    bool run();
+    short run(datos NPCinfo);
 private:
     //Posicion Inicial X e Y;
     //Posicion Final X e Y;
@@ -63,7 +52,7 @@ private:
 class Nodo_PuertaAbierta : public Nodo {
 public:
     Nodo_PuertaAbierta();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Estado de la puerta
     // Tipo de puerta
@@ -71,7 +60,7 @@ private:
 class NodoAbrirPuerta : public Nodo {
 public:
     NodoAbrirPuerta();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Estado de la puerta
     // Tipo de puerta
@@ -80,21 +69,21 @@ private:
 class Nodo_VerJugador : public Nodo {
 public:
     Nodo_VerJugador();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Sensor
 };
 class Nodo_SuenaAlarma : public Nodo {
 public:
     Nodo_SuenaAlarma();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Alarma Activa
 };
 class NodoHayRuido : public Nodo {
 public:
     NodoHayRuido();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Ruido de objeto
 };
@@ -102,21 +91,21 @@ private:
 class NodoVigilar : public Nodo {
 public:
     NodoVigilar();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Iniciar Tiempo
 };
 class NodoPatrullar : public Nodo {
 public:
     NodoPatrullar();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Patrulla
 };
 class Nodo_TiempoInactivo : public Nodo {
 public:
     Nodo_TiempoInactivo();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Tiempo
 };
@@ -124,7 +113,7 @@ private:
 class NodoDarAlarma : public Nodo {
 public:
     NodoDarAlarma();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // Estado de la Alarma (CAMBIA ESTADO)
 };
@@ -136,7 +125,7 @@ private:
 class Nodo_VidaBaja : public Nodo {
 public:
     Nodo_VidaBaja();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // VIDA DEL NPC
 };
@@ -144,7 +133,7 @@ private:
 class Nodo_HayBotiquin : public Nodo {
 public:
     Nodo_HayBotiquin();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // BOTIQUINES (BLACKBOARD)
 };
@@ -152,7 +141,7 @@ private:
 class NodoCurarse : public Nodo {
 public:
     NodoCurarse();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // VIDA
     // CUANTO CURA
@@ -160,42 +149,42 @@ private:
 class Nodo_TengoHambre : public Nodo {
 public:
     Nodo_TengoHambre();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // HAMBRE
 };
 class Nodo_TengoSed : public Nodo {
 public:
     Nodo_TengoSed();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // SED
 };
 class NodoComer : public Nodo {
 public:
     NodoComer();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // HAMBRE
 };
 class NodoBeber : public Nodo {
 public:
     NodoBeber();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // SED
 };
 class Nodo_TieneAgua : public Nodo {
 public:
     Nodo_TieneAgua();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // ESTADO FUENTE
 };
 class Nodo_HayParaHablar : public Nodo {
 public:
     Nodo_HayParaHablar();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // NPC + CERCANO
     
@@ -203,7 +192,7 @@ private:
 class NodoHablar : public Nodo {
 public:
     NodoHablar();
-    bool run();
+    short run(datos NPCinfo);
 private:
     //  TEMAS RAMDOM
 };
@@ -214,7 +203,7 @@ private:
 class Nodo_AlarmaCerca : public Nodo {
 public:
     Nodo_AlarmaCerca();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // POSICION ALARMA + CERCANA
 };
@@ -222,7 +211,7 @@ private:
 class NodoRecorreZonaCercana : public Nodo {
 public:
     NodoRecorreZonaCercana();
-    bool run();
+    short run(datos NPCinfo);
 private:
     //
 };
@@ -233,21 +222,21 @@ private:
 class Nodo_EstasAsustado : public Nodo {
 public:
     Nodo_EstasAsustado();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // VIDA , HAMBRE Y SED
 };
 class Nodo_HayAlguienCerca : public Nodo {
 public:
     Nodo_HayAlguienCerca();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // COORDENADAS NPC + CERCANO
 };
 class Nodo_HayAlguienRadio : public Nodo {
 public:
     Nodo_HayAlguienRadio();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // COORDENADAS DE NPC DENTRO DE RANGO DE RADIO ,
     // CUANTOS AVISA: COMBATE SOLO 1 , ASUSTADO 3 NPCS
@@ -256,40 +245,40 @@ private:
 class NodoAvisar : public Nodo {
 public:
     NodoAvisar();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // COORDENADAS PROPIAS
 };
 class Nodo_EstasCercaJugador : public Nodo {
 public:
     Nodo_EstasCercaJugador();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // COORDENADAS DEL JUGADOR
 };
 class Nodo_EstasLejosJugador : public Nodo {
 public:
     Nodo_EstasLejosJugador();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // COORDENADAS DEL JUGADOR
 };
 class NodoAtaqueCuerpo : public Nodo {
 public:
     NodoAtaqueCuerpo();
-    bool run();
+    short run(datos NPCinfo);
 private:
 };
 class NodoAtaqueDistancia : public Nodo {
 public:
     NodoAtaqueDistancia();
-    bool run();
+    short run(datos NPCinfo);
 private:
 };
 class NodoCubrirse : public Nodo {
 public:
     NodoCubrirse();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // OBJETOS DONDE CUBRISE, EL + CERCANO
 };
@@ -301,7 +290,7 @@ private:
 class NodoHuir : public Nodo {
 public:
     NodoHuir();
-    bool run();
+    short run(datos NPCinfo);
 private:
     // COORDENADAS DEL JUGADOR
 };

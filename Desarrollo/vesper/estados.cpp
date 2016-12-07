@@ -21,8 +21,8 @@
 // QUE MOVER HABRA PUERTAS
 
 estados::estados(){
-    estado_act = new int;
-    *estado_act = ESTANDAR;
+    
+    estado_act = ESTANDAR;
     
     //GENERALES
     NodoVigilar * vigilar = new NodoVigilar;
@@ -165,7 +165,7 @@ estados::estados(){
     NodoSecuencia * ayuda_radio = new NodoSecuencia;
     NodoSecuencia * ayuda_alarma = new NodoSecuencia;
     Nodo_AlarmaCerca * alarma_cerca = new Nodo_AlarmaCerca;
-    ayuda_alarma->anyadirHijo(alarm_cerca);
+    ayuda_alarma->anyadirHijo(alarma_cerca);
     ayuda_alarma->anyadirHijo(moverse);
     ayuda_cercana->anyadirHijo(alguien_cerca);
     ayuda_radio->anyadirHijo(alguien_radio);
@@ -232,8 +232,9 @@ estados::~estados(){
     
 }
 
-void estados::run(){
-    switch (*estado_act) {
+void estados::run(datos NPCinfo){
+    NPC = &NPCinfo;
+    switch (estado_act) {
         case ESTANDAR:estandar();break;
         case ALERTA:alerta();break;
         case COMBATE:combate();break;
@@ -243,18 +244,18 @@ void estados::run(){
 }
 
 void estados::estandar(){
-    
+    _estandar->run(*NPC);
 }
 
 void estados::alerta(){
-    
+    _alerta->run(*NPC);
 }
 
 void estados::combate(){
-    
+    _combate->run(*NPC);
 }
 
 void estados::asustado(){
-    
+    _asustado->run(*NPC);
 }
 

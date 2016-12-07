@@ -41,11 +41,9 @@ class engineInterface{
 		void _drawAll();
 		void _endScene();
         ISceneCollisionManager* getSceneCollisionManager();
-    
-    void _setNearValue(float nv);
-    void _setFarValue(float fv);
-    
-	
+        IMesh * _createPlaneMesh(float ancho,float largo,char* texture);
+        void _setNearValue(float nv);
+        void _setFarValue(float fv);
 		void setreceiver(bool active);
 		bool isKeyDown(char key);
 protected:

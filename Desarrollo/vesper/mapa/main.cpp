@@ -65,13 +65,13 @@ int main(){
         interfaceIrr->_endScene();
         
         //me creo el rayo
-//        line3d<float> rayo;
-//        rayo.start = vector3df(player2->_getNodePosition()[0],player2->_getNodePosition()[1],player2->_getNodePosition()[2]);
-//        rayo.end = vector3df(player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]);
+        //line3d<float> rayo;
+        //rayo.start = vector3df(player2->_getNodePosition()[0],player2->_getNodePosition()[1],player2->_getNodePosition()[2]);
+        //rayo.end = vector3df(player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]);
 
         vector3df intersection;
         triangle3df hitTriangle;
-//        ISceneNode* selectedNodeScene = collMan->getSceneNodeAndCollisionPointFromRay(rayo, intersection, hitTriangle);
+        //ISceneNode* selectedNodeScene = collMan->getSceneNodeAndCollisionPointFromRay(rayo, intersection, hitTriangle);
 		
 		vel[0] = 0; vel[1] = 0;
 		if(interfaceIrr->isKeyDown('Q')){
@@ -79,24 +79,23 @@ int main(){
 		}
 		if(interfaceIrr->isKeyDown('W')){
 			vel[1] =  10;
-//            posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
+        //posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
             
 		}
 		if(interfaceIrr->isKeyDown('S')){
 			vel[1] = -10;
-//            posYCamara = player->_getNodePosition()[1]-5;
+        //posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
 			vel[0] = -10;
-//            posXCamara = player->_getNodePosition()[0];
+        //posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
 			vel[0] =  10;
-//            posXCamara = player->_getNodePosition()[0];
-        
-           // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
-//                printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);
-//
+        // posXCamara = player->_getNodePosition()[0];
+        // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
+        // printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);
+        //
 		}
 		if(interfaceIrr->isKeyDown('L')){
 			vel[0] = 0; vel[1] = 0;
@@ -107,7 +106,7 @@ int main(){
 				bala->_setNodePosition(posicion_bala);
 			}
 		}
-        //para que la camara se mueva en funcion de las teclas pulsadas
+        // para que la camara se mueva en funcion de las teclas pulsadas
         interfaceIrr->_setCamPosition(new float[3]{player->_getNodePosition()[0]+posXCamara, player->_getNodePosition()[1]+posYCamara, player->_getNodePosition()[2]+posZCamara});
         interfaceIrr->_setCamTarget(new float[3]{player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]});
     }

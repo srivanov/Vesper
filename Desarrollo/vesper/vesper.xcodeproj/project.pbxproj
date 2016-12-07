@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633297241DF86B62002585D5 /* NPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633297221DF86B62002585D5 /* NPC.cpp */; };
+		6332972A1DF87A8A002585D5 /* datos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633297281DF87A8A002585D5 /* datos.cpp */; };
 		635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */; };
 		D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */; };
 		D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CED1DF07C0000E75C40 /* estados.cpp */; };
@@ -27,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633297221DF86B62002585D5 /* NPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPC.cpp; sourceTree = "<group>"; };
+		633297231DF86B62002585D5 /* NPC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NPC.hpp; sourceTree = "<group>"; };
+		633297281DF87A8A002585D5 /* datos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = datos.cpp; sourceTree = "<group>"; };
+		633297291DF87A8A002585D5 /* datos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = datos.hpp; sourceTree = "<group>"; };
 		635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoard.cpp; sourceTree = "<group>"; };
 		635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlackBoard.hpp; sourceTree = "<group>"; };
 		D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.cpp"; sourceTree = "<group>"; };
@@ -77,8 +83,12 @@
 		D29475AB1DCE44BA00AD3AEF = {
 			isa = PBXGroup;
 			children = (
+				633297281DF87A8A002585D5 /* datos.cpp */,
+				633297291DF87A8A002585D5 /* datos.hpp */,
 				635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */,
 				635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */,
+				633297221DF86B62002585D5 /* NPC.cpp */,
+				633297231DF86B62002585D5 /* NPC.hpp */,
 				E94647F51DE3BE110082BED1 /* eventReceiver.h */,
 				E9C783991DE3596E00D96FC8 /* main2.cpp */,
 				E9C7839A1DE3596E00D96FC8 /* mundoBox2D.cpp */,
@@ -201,7 +211,9 @@
 				E9C7839F1DE3596E00D96FC8 /* mundoBox2D.cpp in Sources */,
 				E9C783A01DE3596E00D96FC8 /* physicsController.cpp in Sources */,
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
+				633297241DF86B62002585D5 /* NPC.cpp in Sources */,
 				D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */,
+				6332972A1DF87A8A002585D5 /* datos.cpp in Sources */,
 				D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

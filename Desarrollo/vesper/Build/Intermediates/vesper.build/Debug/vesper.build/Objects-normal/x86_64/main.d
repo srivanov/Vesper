@@ -225,4 +225,5 @@ dependencies: \
   /Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/vesper/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h \
   /Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/vesper/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h \
   /Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/vesper/mapa/mundoBox2D.hpp \
-  /Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Sistema\ de\ Decision/Sistema\ de\ Decision/Nodos.hpp
+  /Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Sistema\ de\ Decision/Sistema\ de\ Decision/Nodos.hpp \
+  /Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/vesper/datos.hpp

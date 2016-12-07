@@ -139,7 +139,7 @@ bool engineInterface::loadMap(){
 //                nodo->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/rocas.jpg"));
 				_setMaterialTexture(nodo, "../../../modelos3D/rocas.jpg");
 //                nodo->setPosition(vector3df(i,j,0));
-				nodo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+				nodo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),-0.5});
                 nodo = NULL;
             }
             if(mapita[0][i][j] == 86){
@@ -193,6 +193,12 @@ void engineInterface::_setFarValue(float fv){
     f32 n = (f32)fv;
     camera->setFarValue(n);
 }
-
+IMesh* engineInterface::_createPlaneMesh(float height, float width, char *texture){
+    IMesh * plano = smgr->getGeometryCreator()->createPlaneMesh(core::dimension2d<f32>(width,height));
+    nodeMesh * nodo = _getNodeFromMesh(plano);
+    _setMaterialFlag(nodo, 0, false);
+    _setMaterialTexture(nodo,texture);
+    return plano;
+}
 
 
