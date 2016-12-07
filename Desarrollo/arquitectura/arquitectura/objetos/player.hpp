@@ -16,6 +16,7 @@ class player : public GameObject{
 public:
     player();
     ~player();
+	
 };
 
 #endif /* player_hpp */

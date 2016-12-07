@@ -12,10 +12,10 @@
 #include <stdio.h>
 #include "component.hpp"
 #include "ventana.hpp"
-#include <irrlicht.h>
+//#include <irrlicht.h>
 #include "nodeMesh.hpp"
 
-using namespace irr;
+//using namespace irr;
 
 class render : public component {
 public:
@@ -28,11 +28,13 @@ public:
     void dibujar();
 	
 private:
-//	ventana* window = ventana::Instance();
-    IrrlichtDevice* device1;
-    IVideoDriver* driver1;
-    ISceneManager* smgr1;
-    nodeMesh* nodo = NULL;
+	nodeMesh* nodo;
+	
+//	ventana* ventanita;
+//    IrrlichtDevice* device;
+//    IVideoDriver* driver;
+//    ISceneManager* smgr;
+	
     
 };
 

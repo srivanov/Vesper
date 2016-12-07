@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "render.hpp"
-#include "input.hpp"
+//#include "input.hpp"
 #include "player.hpp"
 #include "camara.hpp"
 
@@ -31,7 +31,7 @@ protected:
 private:
 	static Game* pinstance;
 	class render *renderizador;
-	class input* entrada;
+//	class input* entrada;
 	bool running;
     player* p;
     camara* c;

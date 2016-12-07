@@ -18,11 +18,11 @@ Game* Game::Instance(){
 }
 
 Game::Game(){
-	renderizador = new class render();
-	entrada = new input();
+//	renderizador = new class render();
+//	entrada = new input();
 	running = true;
     p = new player();
-    c = new camara();
+	c = new camara();
 }
 
 Game::~Game(){
@@ -32,6 +32,7 @@ Game::~Game(){
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
+
     p->addNodo("../../../arquitectura/3d/muro.3ds");
 }
 
@@ -50,6 +51,6 @@ bool Game::isRunning(){
 }
 
 void Game::update(){
-	entrada->update();
-    
+//	entrada->update();
+//	p->update();
 }

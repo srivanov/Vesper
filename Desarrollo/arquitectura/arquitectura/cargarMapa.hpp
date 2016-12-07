@@ -13,7 +13,7 @@
 #include "tinyxml2.h"
 #include <iostream>
 using namespace tinyxml2;
-#endif /* cargarMapa_hpp */
+
 
 class cargarMapa{
 public:
@@ -49,3 +49,5 @@ private:
     //sf::VertexArray m_vertices;
     //sf::Texture m_tileset;
 };
+
+#endif /* cargarMapa_hpp */

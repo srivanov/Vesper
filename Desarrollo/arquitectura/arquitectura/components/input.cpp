@@ -7,6 +7,7 @@
 //
 
 #include "input.hpp"
+#include "GameObject.hpp"
 
 input::input(){
 	r = MyEventReceiver::Instance();
@@ -17,7 +18,9 @@ input::~input(){
 }
 
 void input::update(){
-	if(r->IsKeyDown('W')){
-		Game::Instance()->stop();
+	if(MyEventReceiver::Instance()->IsKeyDown('W')){
+		transform3D *com = (class transform3D*)padre->findComponent("transform3D");
+		if(com != NULL)
+			com->hola();
 	}
 }

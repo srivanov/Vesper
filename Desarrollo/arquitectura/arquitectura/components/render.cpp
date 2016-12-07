@@ -9,11 +9,12 @@
 #include "render.hpp"
 
 render::render(){
-//	window = ventana::Instance();
+	nodo = NULL;
+//	ventanita = ventana::Instance();
 //	device = ventana::Instance()->getDevice();
 //	driver = ventana::Instance()->getDriver();
 //	smgr = ventana::Instance()->getSceneManager();
-    nodo = NULL;
+	
     
 }
 
@@ -32,7 +33,7 @@ bool render::run(){
 void render::setNode(char *filename){
     if(nodo == NULL){
         nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(ventana::Instance()->getSceneManager()->getMesh(filename)));
-        printf("cargado!\n");
+		printf("cargado!\n");
     }
 }
 

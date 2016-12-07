@@ -63,17 +63,30 @@ void GameObject::render(){
 }
 
 void GameObject::update(){
-    
+//	std::map<char*, component>::iterator iter = components.begin();
+//	while (iter != components.end()) {
+//		iter->second.update();
+//		iter++;
+//	}
+	input* go = (input*)this->findComponent("input");
+	go->update();
 }
 
 void GameObject::addNodo(char* filename){
     class render* ren = (class render*)findComponent("render");
-    if(ren != NULL)
-        ren->setNode(filename);
+	if(ren != NULL){
+		ren->dropNode();
+		ren->setNode(filename);
+	}
 }
 
+std::map<char*,component>::iterator GameObject::getIteradorBegin(){
+	return components.begin();
+}
 
-
+std::map<char*,component>::iterator GameObject::getIteradorEnd(){
+	return components.end();
+}
 
 
 

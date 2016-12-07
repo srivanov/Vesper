@@ -15,7 +15,7 @@
 using namespace irr;
 using namespace core;
 using namespace video;
-using namespace io;
+//using namespace io;
 using namespace scene;
 
 

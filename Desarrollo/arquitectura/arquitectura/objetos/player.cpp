@@ -9,7 +9,7 @@
 #include "player.hpp"
 
 player::player(){
-//    this->insertComponent((char*)"input", *new input());
+    this->insertComponent((char*)"input", *new input());
     this->insertComponent((char*)"pala", *new pala());
     this->insertComponent((char*)"armasArrojadizas", *new armasArrojadizas());
     this->insertComponent((char*)"piedra", *new piedra());
@@ -20,6 +20,13 @@ player::player(){
     this->insertComponent((char*)"salud", *new salud());
     this->insertComponent((char*)"physics", *new Physics());
     this->insertComponent((char*)"render", *new class render());
+	
+	std::map<char*,component>::iterator iter = this->getIteradorBegin();
+
+	while(iter != this->getIteradorEnd()){
+		iter->second.setFather(this);
+		iter++;
+	}
 }
 
 player::~player(){

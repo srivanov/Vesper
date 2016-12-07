@@ -27,7 +27,7 @@
 #include "hambre.hpp"
 #include "IACamara.hpp"
 #include "IAEnemigos.hpp"
-//#include "input.hpp"
+#include "input.hpp"
 #include "martilloDeJuguete.hpp"
 #include "transform3D.hpp"
 #include "pala.hpp"
@@ -55,6 +55,8 @@ public:
     void render();
     void update();
     void addNodo(char* filename);
+	std::map<char*,component>::iterator getIteradorBegin();
+	std::map<char*,component>::iterator getIteradorEnd();
     
 protected:
     bool renderizable;

@@ -15,3 +15,7 @@ transform3D::transform3D(){
 transform3D::~transform3D(){
 	
 }
+
+void transform3D::hola(){
+	printf("Hola");
+}
