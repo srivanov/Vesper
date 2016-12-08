@@ -25,8 +25,8 @@ public:
     ~nodeMesh();
     IMesh* _getMesh();
 	bool _setMaterialTexture(ITexture* tex);
-	void _setNodePosition(float posicion[]);
-	void _setNodeRotation(float rotacion[]);
+	void _setNodePosition(float* posicion);
+	void _setNodeRotation(float* rotacion);
 	void _setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger);
 	
 	float* _getNodePosition();

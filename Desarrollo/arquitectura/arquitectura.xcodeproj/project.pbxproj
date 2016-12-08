@@ -36,7 +36,7 @@
 		E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A851DF0AA5000A91A97 /* input.cpp */; };
 		E9AC3AA71DF0AA5000A91A97 /* martilloDeJuguete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A871DF0AA5000A91A97 /* martilloDeJuguete.cpp */; };
 		E9AC3AA81DF0AA5000A91A97 /* pala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A891DF0AA5000A91A97 /* pala.cpp */; };
-		E9AC3AA91DF0AA5000A91A97 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8B1DF0AA5000A91A97 /* Physics.cpp */; };
+		E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */; };
 		E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8D1DF0AA5000A91A97 /* piedra.cpp */; };
 		E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8F1DF0AA5000A91A97 /* render.cpp */; };
 		E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A911DF0AA5000A91A97 /* salud.cpp */; };
@@ -127,8 +127,8 @@
 		E9AC3A881DF0AA5000A91A97 /* martilloDeJuguete.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = martilloDeJuguete.hpp; sourceTree = "<group>"; };
 		E9AC3A891DF0AA5000A91A97 /* pala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pala.cpp; sourceTree = "<group>"; };
 		E9AC3A8A1DF0AA5000A91A97 /* pala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pala.hpp; sourceTree = "<group>"; };
-		E9AC3A8B1DF0AA5000A91A97 /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
-		E9AC3A8C1DF0AA5000A91A97 /* Physics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physics.hpp; sourceTree = "<group>"; };
+		E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = physics.cpp; sourceTree = "<group>"; };
+		E9AC3A8C1DF0AA5000A91A97 /* physics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = physics.hpp; sourceTree = "<group>"; };
 		E9AC3A8D1DF0AA5000A91A97 /* piedra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = piedra.cpp; sourceTree = "<group>"; };
 		E9AC3A8E1DF0AA5000A91A97 /* piedra.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = piedra.hpp; sourceTree = "<group>"; };
 		E9AC3A8F1DF0AA5000A91A97 /* render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = render.cpp; sourceTree = "<group>"; };
@@ -300,8 +300,8 @@
 				E9AC3A881DF0AA5000A91A97 /* martilloDeJuguete.hpp */,
 				E9AC3A891DF0AA5000A91A97 /* pala.cpp */,
 				E9AC3A8A1DF0AA5000A91A97 /* pala.hpp */,
-				E9AC3A8B1DF0AA5000A91A97 /* Physics.cpp */,
-				E9AC3A8C1DF0AA5000A91A97 /* Physics.hpp */,
+				E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */,
+				E9AC3A8C1DF0AA5000A91A97 /* physics.hpp */,
 				E9AC3A8D1DF0AA5000A91A97 /* piedra.cpp */,
 				E9AC3A8E1DF0AA5000A91A97 /* piedra.hpp */,
 				E9AC3A8F1DF0AA5000A91A97 /* render.cpp */,
@@ -466,7 +466,7 @@
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
-				E9AC3AA91DF0AA5000A91A97 /* Physics.cpp in Sources */,
+				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
 				E9AC3ABF1DF0AB3800A91A97 /* engineInterface.cpp in Sources */,
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,

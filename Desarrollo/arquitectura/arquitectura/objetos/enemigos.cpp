@@ -1,20 +1,23 @@
-//
-//  enemigos.cpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 29/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "enemigos.hpp"
 
 enemigos::enemigos(){
-    this->insertComponent((char*)"transform3D", *new transform3D());
-    this->insertComponent((char*)"salud", *new salud());
-    this->insertComponent((char*)"IAEnemigos", *new IAEnemigos());
-    this->insertComponent((char*)"sed", *new sed());
-    this->insertComponent((char*)"hambre", *new hambre());
-    this->insertComponent((char*)"ataque", *new ataque());
+	component* aux = new class render();
+	this->insertComponent((char*)"render", aux);
+	aux = new physics();
+	this->insertComponent((char*)"physics", aux);
+	aux = new transform3D();
+    this->insertComponent((char*)"transform3D", aux);
+	aux = new salud();
+    this->insertComponent((char*)"salud", aux);
+	aux = new IAEnemigos();
+    this->insertComponent((char*)"IAEnemigos", aux);
+	aux = new sed();
+    this->insertComponent((char*)"sed", aux);
+	aux = new hambre();
+    this->insertComponent((char*)"hambre", aux);
+	aux = new ataque();
+    this->insertComponent((char*)"ataque", aux);
 }
 
 enemigos::~enemigos(){

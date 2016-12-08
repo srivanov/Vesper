@@ -27,13 +27,12 @@ bool nodeMesh::_setMaterialTexture(ITexture* tex){
 	return true;
 }
 
-void nodeMesh::_setNodePosition(float posicion[]){
-	if(posicion != NULL){
+void nodeMesh::_setNodePosition(float* posicion){
+	if(posicion != NULL)
 		object->setPosition(vector3df(posicion[0],posicion[1],posicion[2]));
-	}
 }
 
-void nodeMesh::_setNodeRotation(float rotacion[]){
+void nodeMesh::_setNodeRotation(float* rotacion){
 	if(rotacion != NULL){
 		object->setRotation(vector3df(rotacion[0],rotacion[1],rotacion[2]));
 	}

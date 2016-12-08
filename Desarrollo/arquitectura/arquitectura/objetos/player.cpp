@@ -1,32 +1,36 @@
-//
-//  player.cpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 29/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "player.hpp"
 
 player::player(){
-    this->insertComponent((char*)"input", *new input());
-    this->insertComponent((char*)"pala", *new pala());
-    this->insertComponent((char*)"armasArrojadizas", *new armasArrojadizas());
-    this->insertComponent((char*)"piedra", *new piedra());
-    this->insertComponent((char*)"habilidadEspecial", *new habilidadEspecial());
-    this->insertComponent((char*)"martilloDeJuguete", *new martilloDeJuguete());
-    this->insertComponent((char*)"transform3D", *new transform3D());
-    this->insertComponent((char*)"armasDisparo", *new armasDisparo());
-    this->insertComponent((char*)"salud", *new salud());
-    this->insertComponent((char*)"physics", *new Physics());
-    this->insertComponent((char*)"render", *new class render());
+	component* aux = new class render();
+	this->insertComponent((char*)"render", aux);
+	aux = new input();
+	this->insertComponent((char*)"input", aux);
+	aux = new physics();
+	this->insertComponent((char*)"physics", aux);
+	aux = new pala();
+    this->insertComponent((char*)"pala", aux);
+	aux = new armasArrojadizas();
+    this->insertComponent((char*)"armasArrojadizas", aux);
+	aux = new piedra();
+    this->insertComponent((char*)"piedra", aux);
+	aux = new habilidadEspecial();
+    this->insertComponent((char*)"habilidadEspecial", aux);
+	aux = new martilloDeJuguete();
+    this->insertComponent((char*)"martilloDeJuguete", aux);
+	aux = new transform3D();
+    this->insertComponent((char*)"transform3D", aux);
+	aux = new armasDisparo();
+    this->insertComponent((char*)"armasDisparo", aux);
+	aux = new salud();
+    this->insertComponent((char*)"salud", aux);
 	
-	std::map<char*,component>::iterator iter = this->getIteradorBegin();
-
+	std::map<char*,component*>::iterator iter = this->getIteradorBegin();
 	while(iter != this->getIteradorEnd()){
-		iter->second.setFather(this);
+		iter->second->setFather(this);
 		iter++;
 	}
+	setRenderizable(true);
 }
 
 player::~player(){

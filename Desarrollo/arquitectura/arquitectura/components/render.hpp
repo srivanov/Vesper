@@ -1,10 +1,3 @@
-//
-//  render.hpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 29/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #ifndef render_hpp
 #define render_hpp
@@ -26,16 +19,12 @@ public:
     void setNode(char* filename);
     void dropNode();
     void dibujar();
+	void actualizarRender();
+	void addCamera(float* p, float* l);
 	
 private:
 	nodeMesh* nodo;
-	
-//	ventana* ventanita;
-//    IrrlichtDevice* device;
-//    IVideoDriver* driver;
-//    ISceneManager* smgr;
-	
-    
+	ICameraSceneNode* camara;
 };
 
 #endif /* render_hpp */

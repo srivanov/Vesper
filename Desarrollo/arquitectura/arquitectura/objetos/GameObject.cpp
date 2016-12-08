@@ -1,10 +1,3 @@
-//
-//  GameObject.cpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 29/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "GameObject.hpp"
 #include "component.hpp"
@@ -19,9 +12,9 @@ GameObject::~GameObject(){
     
 }
 
-void GameObject::insertComponent(char* nombre, component comp){
+void GameObject::insertComponent(char* nombre, component *comp){
 //    printf("%d\n", (int)components.size());
-    components.insert(pair<char*, component>(nombre,comp));
+    components.insert(pair<char*, component*>(nombre,comp));
 //    printf("%d\n", (int)components.size());
 }
 
@@ -30,9 +23,9 @@ void GameObject::eraseComponent(char* nombre){
 }
 
 component* GameObject::findComponent(char *nombre){
-    std::map<char*,component>::iterator iter = components.find(nombre);
+    std::map<char*,component*>::iterator iter = components.find(nombre);
     if(iter->first != NULL)
-		return &iter->second;
+		return iter->second;
     return NULL;
 }
 
@@ -56,9 +49,19 @@ void GameObject::setPosicion(float* p3D){
     }
 }
 
+void GameObject::mover(float *vel){
+	if(vel != NULL){
+		posicion[0] += vel[0];
+		posicion[1] += vel[1];
+		posicion[2] += vel[2];
+	}
+}
+
 void GameObject::render(){
     if(renderizable){
-        
+        class render* ren = (class render*)findComponent("render");
+		if(ren != NULL)
+			ren->actualizarRender();
     }
 }
 
@@ -75,16 +78,15 @@ void GameObject::update(){
 void GameObject::addNodo(char* filename){
     class render* ren = (class render*)findComponent("render");
 	if(ren != NULL){
-		ren->dropNode();
 		ren->setNode(filename);
 	}
 }
 
-std::map<char*,component>::iterator GameObject::getIteradorBegin(){
+std::map<char*,component*>::iterator GameObject::getIteradorBegin(){
 	return components.begin();
 }
 
-std::map<char*,component>::iterator GameObject::getIteradorEnd(){
+std::map<char*,component*>::iterator GameObject::getIteradorEnd(){
 	return components.end();
 }
 

@@ -1,10 +1,3 @@
-//
-//  window.hpp
-//  arquitectura
-//
-//  Created by Stoycho Ivanov Atanasov on 2/12/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #ifndef ventana_hpp
 #define ventana_hpp

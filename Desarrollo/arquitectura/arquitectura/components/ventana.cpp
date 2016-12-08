@@ -1,10 +1,3 @@
-//
-//  window.cpp
-//  arquitectura
-//
-//  Created by Stoycho Ivanov Atanasov on 2/12/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "ventana.hpp"
 
@@ -32,8 +25,7 @@ void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fu
 	
 	driver = device->getVideoDriver();
 	smgr = device->getSceneManager();
-	device->setWindowCaption(L"HOLA");
-	smgr->addCameraSceneNode(0, irr::core::vector3df(-10,-10,-10), irr::core::vector3df(0,0,0));
+	device->setWindowCaption(L"Vesper");
 }
 
 IrrlichtDevice* ventana::getDevice(){
@@ -41,11 +33,11 @@ IrrlichtDevice* ventana::getDevice(){
 }
 
 IVideoDriver* ventana::getDriver(){
-	return driver;
+	return device->getVideoDriver();
 }
 
 ISceneManager* ventana::getSceneManager(){
-	return smgr;
+	return device->getSceneManager();
 }
 
 void ventana::deviceDrop(){

@@ -18,7 +18,7 @@ Game* Game::Instance(){
 }
 
 Game::Game(){
-//	renderizador = new class render();
+	renderizador = new class render();
 //	entrada = new input();
 	running = true;
     p = new player();
@@ -34,6 +34,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 
     p->addNodo("../../../arquitectura/3d/muro.3ds");
+	c->addCamara(new float[3]{0,-10,-10}, new float[3]{0,0,0});
 }
 
 void Game::stop(){
@@ -41,6 +42,7 @@ void Game::stop(){
 }
 
 void Game::render(){
+	p->render();
     renderizador->dibujar();
 }
 
@@ -52,5 +54,5 @@ bool Game::isRunning(){
 
 void Game::update(){
 //	entrada->update();
-//	p->update();
+	p->update();
 }

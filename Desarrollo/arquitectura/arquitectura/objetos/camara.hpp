@@ -1,10 +1,3 @@
-//
-//  camara.hpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 29/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #ifndef camara_hpp
 #define camara_hpp
@@ -16,5 +9,8 @@ class camara : public GameObject {
 public:
     camara();
     ~camara();
+	void addCamara(float* p, float* l);
+private:
+	class render* renderizador;
 };
 #endif /* camara_hpp */

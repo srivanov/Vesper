@@ -1,16 +1,12 @@
-//
-//  escenarios.cpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 29/11/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "escenarios.hpp"
 
 escenarios::escenarios(){
-    this->insertComponent((char*)"physics", *new Physics());
-    this->insertComponent((char*)"render", *new class render());
+	component* aux = new class render();
+	this->insertComponent((char*)"render", aux);
+	aux = new physics();
+    this->insertComponent((char*)"physics", aux);
+	
 }
 
 escenarios::~escenarios(){
