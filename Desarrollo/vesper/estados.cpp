@@ -229,7 +229,10 @@ estados::estados(){
 }
 
 estados::~estados(){
-    
+    delete _estandar;
+    delete _alerta;
+    delete _combate;
+    delete _asustado;
 }
 
 void estados::run(datos NPCinfo){

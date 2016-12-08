@@ -7,3 +7,15 @@
 //
 
 #include "objects.hpp"
+
+void botiquin::usar(){
+    num_usos--;
+    if(num_usos==0)
+        gastado=!gastado;
+}
+botiquin::botiquin(){}
+comida::comida(){}
+fuente::fuente(){}
+botiquin::~botiquin(){}
+comida::~comida(){}
+fuente::~fuente(){}

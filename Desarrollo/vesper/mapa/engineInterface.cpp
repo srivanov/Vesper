@@ -127,7 +127,7 @@ bool engineInterface::loadMap(){
     nodeMesh * nodo_suelo = _getNodeFromMesh(suelo_prueba);
     _setMaterialFlag(nodo_suelo, 0, false);
     _setMaterialTexture(nodo_suelo,"../../../modelos3D/colorverde.jpg");
-    nodo_suelo->_setNodePosition(new float[3]{static_cast<float>((map->getHeight()/2)-0.5),static_cast<float>((map->getWidth()/2)-0.5),0});
+    nodo_suelo->_setNodePosition(new float[3]{static_cast<float>((map->getHeight()/2)-0.5),static_cast<float>((map->getWidth()/2)-0.5),0.5});
     nodo_suelo->_setNodeRotation(new float [3]{90,180,180});
     
     mapita = map->getMatriz();

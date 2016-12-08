@@ -7,3 +7,16 @@
 //
 
 #include "world.hpp"
+
+void world::anyadirBotiquin(){
+    botiquin * obj_hijo = new botiquin;
+    objetos_mundo.push_back(obj_hijo);
+}
+void world::anyadirFuente(){
+    fuente * obj_hijo = new fuente;
+    objetos_mundo.push_back(obj_hijo);
+}
+void world::anyadirComida(){
+    comida * obj_hijo = new comida;
+    objetos_mundo.push_back(obj_hijo);
+}

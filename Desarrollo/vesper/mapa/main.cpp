@@ -68,7 +68,16 @@ int main(){
         //line3d<float> rayo;
         //rayo.start = vector3df(player2->_getNodePosition()[0],player2->_getNodePosition()[1],player2->_getNodePosition()[2]);
         //rayo.end = vector3df(player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]);
-
+        /*
+         MUNDO -> NPC -> Maquina de Estados -> NODOS
+                  
+         <- BlackBoard ->
+         
+         Blackboard.update(world);
+         
+         
+         
+         */
         vector3df intersection;
         triangle3df hitTriangle;
         //ISceneNode* selectedNodeScene = collMan->getSceneNodeAndCollisionPointFromRay(rayo, intersection, hitTriangle);
@@ -78,20 +87,20 @@ int main(){
 			interfaceIrr->_deviceClose();
 		}
 		if(interfaceIrr->isKeyDown('W')){
-			vel[1] =  10;
+			vel[1] =  1;
         //posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
             
 		}
 		if(interfaceIrr->isKeyDown('S')){
-			vel[1] = -10;
+			vel[1] = -1;
         //posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
-			vel[0] = -10;
+			vel[0] = -1;
         //posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
-			vel[0] =  10;
+			vel[0] =  1;
         // posXCamara = player->_getNodePosition()[0];
         // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
         // printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);

@@ -11,7 +11,10 @@ NPC::NPC(){
     DeciSys = new estados;
     datosPropios.inicializar();
 }
+NPC::~NPC(){
+    
+}
 void NPC::update(){
     DeciSys->run(datosPropios);
 }
-
+datos NPC::getNPCinfo(){return datosPropios;}

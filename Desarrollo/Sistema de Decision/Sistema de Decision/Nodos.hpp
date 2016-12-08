@@ -12,6 +12,7 @@
 #include <vector>
 #include <iostream>
 #include "datos.hpp"
+#include "BlackBoard.hpp"
 using namespace std;
 
 /*###################

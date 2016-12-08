@@ -11,15 +11,19 @@
 
 #include "NPC.hpp"
 #include "objects.hpp"
+#include "tinyxml2.h"
 
 
 class world {
 public:
     world();
     ~world();
+    void anyadirBotiquin();
+    void anyadirFuente();
+    void anyadirComida();
 private:
-    vector<NPC*> enemigos;
-    vector<objetos> objetos_mundo;
+    std::vector<NPC*> enemigos;
+    std::vector<objetos*> objetos_mundo;
     void cargarMapa();
     
 };

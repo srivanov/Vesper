@@ -11,9 +11,6 @@
 
 #include "estados.hpp"
 
-//typedef struct{int x,y,z;} vector3d;
-
-
 
 class NPC{
 public:
