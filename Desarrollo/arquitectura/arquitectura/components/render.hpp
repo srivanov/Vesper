@@ -7,6 +7,8 @@
 #include "ventana.hpp"
 //#include <irrlicht.h>
 #include "nodeMesh.hpp"
+#include "FPS.hpp"
+
 
 //using namespace irr;
 

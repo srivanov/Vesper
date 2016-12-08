@@ -2,6 +2,8 @@
 #include "render.hpp"
 #include "GameObject.hpp"
 
+Fps fps;
+
 render::render(){
 	nodo = NULL;
 	camara = NULL;
@@ -37,8 +39,10 @@ void render::actualizarRender(){
 }
 
 void render::dibujar(){
+	ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(fps.get()).c_str(), core::rect<s32>(10,10,40,22), true);
     ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
     ventana::Instance()->getSceneManager()->drawAll();
+	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
     ventana::Instance()->getDriver()->endScene();
 }
 
