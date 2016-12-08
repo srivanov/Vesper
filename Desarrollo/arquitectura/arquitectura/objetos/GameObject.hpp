@@ -38,9 +38,15 @@ class GameObject{
 public:
     GameObject();
     ~GameObject();
+	
+	//COMPONENTES
     void insertComponent(char* nombre, component *comp);
     void eraseComponent(char* nombre);
     component* findComponent(char* nombre);
+	std::map<char*,component*>::iterator getIteradorBegin();
+	std::map<char*,component*>::iterator getIteradorEnd();
+	void clearComponents();
+	
     bool getRenderizable();
     void setRenderizable(bool r);
     float* getPosicion();
@@ -49,8 +55,7 @@ public:
     void render();
     void update();
     void addNodo(char* filename);
-	std::map<char*,component*>::iterator getIteradorBegin();
-	std::map<char*,component*>::iterator getIteradorEnd();
+	
     
 protected:
     bool renderizable;

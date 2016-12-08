@@ -34,5 +34,5 @@ player::player(){
 }
 
 player::~player(){
-    
+	clearComponents();
 }

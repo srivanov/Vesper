@@ -9,8 +9,9 @@ GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
-    
+	printf("1");
 }
+
 
 void GameObject::insertComponent(char* nombre, component *comp){
 //    printf("%d\n", (int)components.size());
@@ -28,6 +29,19 @@ component* GameObject::findComponent(char *nombre){
 		return iter->second;
     return NULL;
 }
+
+std::map<char*,component*>::iterator GameObject::getIteradorBegin(){
+	return components.begin();
+}
+
+std::map<char*,component*>::iterator GameObject::getIteradorEnd(){
+	return components.end();
+}
+
+void GameObject::clearComponents(){
+	components.clear();
+}
+
 
 bool GameObject::getRenderizable(){
     return renderizable;
@@ -80,14 +94,6 @@ void GameObject::addNodo(char* filename){
 	if(ren != NULL){
 		ren->setNode(filename);
 	}
-}
-
-std::map<char*,component*>::iterator GameObject::getIteradorBegin(){
-	return components.begin();
-}
-
-std::map<char*,component*>::iterator GameObject::getIteradorEnd(){
-	return components.end();
 }
 
 

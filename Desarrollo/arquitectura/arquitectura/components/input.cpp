@@ -26,7 +26,14 @@ void input::update(){
 		if(MyEventReceiver::Instance()->IsKeyDown('D')){
 			velocidad[0] =  0.2;
 		}
+		
 		if(velocidad[0] != 0 || velocidad[1] != 0 || velocidad[2] != 0)
 			com->mover(velocidad);
+		if(MyEventReceiver::Instance()->IsKeyDown('Q')){
+			class render *com = (class render*)padre->findComponent("render");
+			if(com != NULL){
+				com->closeWindow();
+			}
+		}
 	}
 }

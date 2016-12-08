@@ -26,7 +26,10 @@ Game::Game(){
 }
 
 Game::~Game(){
-	
+	c->~camara();
+	p->~player();
+	renderizador->~render();
+	free(pinstance);
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){

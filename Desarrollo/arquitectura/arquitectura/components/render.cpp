@@ -45,3 +45,8 @@ void render::dibujar(){
 void render::addCamera(float* p, float* l){
 	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p[0], p[1], p[2]), vector3df(l[0], l[1], l[2]));
 }
+
+void render::closeWindow(){
+	ventana::Instance()->deviceDrop();
+}
+

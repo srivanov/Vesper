@@ -14,7 +14,10 @@ camara::camara(){
 }
 
 camara::~camara(){
-    
+	renderizador->~render();
+	if(renderizador == NULL)
+		printf("bien");
+	clearComponents();
 }
 
 void camara::addCamara(float* p, float* l){
