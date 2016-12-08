@@ -52,16 +52,27 @@ int main(){
     interfaceIrr->_setCamTarget(new float[3]{player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]});
 	
     interfaceIrr->loadMap();
-	
+    
+    float time;
+    bool cerca = false;
+    
     while(interfaceIrr->_Run()){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
 		player->_setNodePosition(pos);
 		
-		incX = ((player->_getNodePosition()[0]+posXCamara)-interfaceIrr->_getCamPosition()[0])/(1.8*60);
-		incY = ((player->_getNodePosition()[1]+posYCamara)-(interfaceIrr->_getCamPosition()[1]))/(1.8*60);
-		incZ = ((player->_getNodePosition()[2]+posZCamara)-(interfaceIrr->_getCamPosition()[2]))/(1.8*60);
+        if(cerca){
+            time = 0.6;
+        }else{
+            time = 1.5;
+        }
+        
+		incX = ((player->_getNodePosition()[0]+posXCamara)-interfaceIrr->_getCamPosition()[0])/(time*60);
+		incY = ((player->_getNodePosition()[1]+posYCamara)-(interfaceIrr->_getCamPosition()[1]))/(time*60);
+		incZ = ((player->_getNodePosition()[2]+posZCamara)-(interfaceIrr->_getCamPosition()[2]))/(time*60);
 		
+        
+        
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);
 			bala->_setNodePosition(posicion_bala);
@@ -79,6 +90,7 @@ int main(){
 		}
 		if(interfaceIrr->isKeyDown('S')){
 			vel[1] = -1;
+            
 		}
 		if(interfaceIrr->isKeyDown('A')){
 			vel[0] = -1;
@@ -89,11 +101,13 @@ int main(){
         if(interfaceIrr->isKeyDown('O')){ //zoom lejos
 			posYCamara = -5;
 			posZCamara = -10;
+            cerca=false;
 //			cont = 0;
         }
         if(interfaceIrr->isKeyDown('P')){ //zoom cerca
 			posYCamara = -2.5;
 			posZCamara = -5;
+            cerca = true;
 //			cont = 0;
 
         }
