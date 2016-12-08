@@ -33,8 +33,9 @@ bool engineInterface::_createDevice(uint32_t ancho, uint32_t alto, uint32_t colo
 //    ICameraSceneNode * cam = smgr->addCameraSceneNode();
 //    cam->setFOV(32);
 //    cam->setNearValue(0.5f);
-//    cam->setFarValue(10.0f);
-//    camera->setFarValue(<#f32 zf#>);
+
+    
+    
     
     return true;
 }
@@ -126,7 +127,16 @@ bool engineInterface::loadMap(){
     mapita = map->getMatriz();
     nodeMesh* nodo;
     nodeMesh* nodor;
-    nodeMesh* nodo_suelo;
+    //nodeMesh* nodo_suelo;
+    
+    //CARGAR PLANO
+   
+    IMesh* suelo_prueba = smgr->getGeometryCreator()->createPlaneMesh(core::dimension2df(map->getHeight(),map->getWidth()));
+    nodeMesh * nodo_suelo = _getNodeFromMesh(suelo_prueba);
+    _setMaterialFlag(nodo_suelo, 0, false);
+    _setMaterialTexture(nodo_suelo,"../../../modelos3D/colorverde.jpg");
+    nodo_suelo->_setNodePosition(new float[3]{static_cast<float>((map->getHeight()/2)-0.5),static_cast<float>((map->getWidth()/2)-0.5),0});
+    nodo_suelo->_setNodeRotation(new float [3]{90,180,180});
     
     if(map->getHeight() < 0 || map->getWidth() < 0)
         return false;
@@ -144,17 +154,17 @@ bool engineInterface::loadMap(){
 				nodo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 nodo = NULL;
             }
-            if(mapita[0][i][j] == 86){
-//                nodo_suelo = smgr->addMeshSceneNode(suelo);
-				nodo_suelo = _getNodeFromMesh(suelo);
-//                nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-				_setMaterialFlag(nodo_suelo, 0, false);
-//                nodo_suelo->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/verde.jpg"));
-				_setMaterialTexture(nodo_suelo, "../../../modelos3D/verde.jpg");
-//                nodo_suelo->setPosition(vector3df(i,j,0));
-				nodo_suelo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
-                nodo_suelo = NULL;
-            }
+//            if(mapita[0][i][j] == 86){
+////                nodo_suelo = smgr->addMeshSceneNode(suelo);
+//				nodo_suelo = _getNodeFromMesh(suelo);
+////                nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
+//				_setMaterialFlag(nodo_suelo, 0, false);
+////                nodo_suelo->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/verde.jpg"));
+//				_setMaterialTexture(nodo_suelo, "../../../modelos3D/verde.jpg");
+////                nodo_suelo->setPosition(vector3df(i,j,0));
+//				nodo_suelo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+//                nodo_suelo = NULL;
+//            }
         }
     }
     return true;
