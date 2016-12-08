@@ -21,3 +21,5 @@ vector3D datos::getPosAnterior(){return posAnterior;}
 int datos::getLife(){return life;}
 int datos::getHambre(){return hambre;}
 int datos::getSed(){return sed;}
+int datos::getEstado(){return estados;}
+void datos::setEstados(int NewEstado){estados=NewEstado;}

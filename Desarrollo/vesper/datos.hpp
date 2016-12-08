@@ -21,8 +21,10 @@ private:
     int life,sed,hambre,tipo;
     vector3D posActual, posAnterior;
     float velocidad;
-    
+    int estados;
 public:
+    void setEstados(int NewEstado);
+    int getEstado();
     void inicializar();
     int getLife();
     int getSed();

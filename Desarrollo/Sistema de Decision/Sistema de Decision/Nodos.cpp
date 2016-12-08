@@ -170,6 +170,7 @@ short Nodo_VidaBaja::run(datos NPCinfo){
 // NODO TIENE AGUA ?
 Nodo_TieneAgua::Nodo_TieneAgua(){}
 short Nodo_TieneAgua::run(datos NPCinfo){
+    
     return false;
 }
 // NODO VER JUGADOR ?
