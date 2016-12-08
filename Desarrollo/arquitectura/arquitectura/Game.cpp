@@ -35,7 +35,7 @@ Game::~Game(){
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
-
+//	renderizador->setTexto();
     p->addNodo("../../../arquitectura/3d/muro.3ds");
 	c->addCamara(new float[3]{0,-10,-10}, new float[3]{0,0,0});
 }
@@ -58,4 +58,5 @@ bool Game::isRunning(){
 void Game::update(){
 //	entrada->update();
 	p->update();
+	Fps::Instance()->update();
 }

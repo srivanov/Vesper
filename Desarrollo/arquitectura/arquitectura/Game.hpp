@@ -14,6 +14,7 @@
 //#include "input.hpp"
 #include "player.hpp"
 #include "camara.hpp"
+#include "Fps.hpp"
 
 class Game {
 public:

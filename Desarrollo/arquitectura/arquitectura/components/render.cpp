@@ -2,11 +2,10 @@
 #include "render.hpp"
 #include "GameObject.hpp"
 
-Fps fps;
-
 render::render(){
 	nodo = NULL;
 	camara = NULL;
+	texto = NULL;
 }
 
 render::~render(){
@@ -15,6 +14,7 @@ render::~render(){
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	ventana::Instance()->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
+	setTexto();
 }
 
 bool render::run(){
@@ -38,8 +38,12 @@ void render::actualizarRender(){
 		nodo->_setNodePosition(padre->getPosicion());
 }
 
+void render::setTexto(){
+	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,40,22), true);
+}
+
 void render::dibujar(){
-	ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(fps.get()).c_str(), core::rect<s32>(10,10,40,22), true);
+	texto->setText(irr::core::stringw(Fps::Instance()->get()).c_str());
     ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
     ventana::Instance()->getSceneManager()->drawAll();
 	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();

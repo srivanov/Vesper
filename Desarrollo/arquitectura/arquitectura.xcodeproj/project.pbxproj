@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
+		E98661271DF99ED30028AC64 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
 		E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */; };
 		E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
 		E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */; };
@@ -73,6 +74,7 @@
 		E942C0571DF1EDE600CC5763 /* ventana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ventana.cpp; sourceTree = "<group>"; };
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
+		E98661261DF99ED30028AC64 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
 		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
 		E9AC3A371DF0A9C100A91A97 /* arquitectura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arquitectura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */,
 				E9AC3ABD1DF0AB3800A91A97 /* engineInterface.cpp */,
 				E9AC3ABE1DF0AB3800A91A97 /* engineInterface.hpp */,
+				E98661261DF99ED30028AC64 /* Fps.cpp */,
 				E98661241DF98D140028AC64 /* Fps.hpp */,
 				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3AB01DF0AA5900A91A97 /* Game.hpp */,
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98661271DF99ED30028AC64 /* Fps.cpp in Sources */,
 				E9AC3AA71DF0AA5000A91A97 /* martilloDeJuguete.cpp in Sources */,
 				E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */,
 				E9AC3AC21DF0ACED00A91A97 /* cargarMapa.cpp in Sources */,

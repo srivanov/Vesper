@@ -7,7 +7,7 @@
 #include "ventana.hpp"
 //#include <irrlicht.h>
 #include "nodeMesh.hpp"
-#include "FPS.hpp"
+#include "Fps.hpp"
 
 
 //using namespace irr;
@@ -20,6 +20,7 @@ public:
 	bool run();
     void setNode(char* filename);
     void dropNode();
+	void setTexto();
     void dibujar();
 	void actualizarRender();
 	void addCamera(float* p, float* l);
@@ -28,6 +29,7 @@ public:
 private:
 	nodeMesh* nodo;
 	ICameraSceneNode* camara;
+	irr::gui::IGUIStaticText* texto;
 };
 
 #endif /* render_hpp */

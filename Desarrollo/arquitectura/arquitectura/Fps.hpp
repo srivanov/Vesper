@@ -2,48 +2,30 @@
 #ifndef Fps_hpp
 #define Fps_hpp
 
-//#include <stdio.h>
+#include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
 
-class Fps
-{
-protected:
-	time_t begin_time = time(NULL);
-	unsigned int m_fps;
-	unsigned int m_fpscount;
-
+class Fps {
 	
 public:
-	// Constructor
-	Fps() : m_fps(0), m_fpscount(0)
-	{
-	}
+	static Fps* Instance();
 	
 	// Update
-	void update()
-	{
-		// increase the counter by one
-		m_fpscount++;
-		
-		// one second elapsed? (= 1000 milliseconds)
-		if (difftime(time(NULL), begin_time) >= 1.0)
-		{
-			// save the current counter value to m_fps
-			m_fps         = m_fpscount;
-			
-			// reset the counter and the interval
-			m_fpscount    = 0;
-			
-		}
-	}
+	void update();
 	
 	// Get fps
-	int get() const
-	{
-		printf("%d",m_fps);
-		return 1;
-	}
+	unsigned int get() const;
+	
+protected:
+	time_t begin_time;
+	unsigned int m_fps;
+	unsigned int m_fpscount;
+	
+	Fps();
+	
+private:
+	static Fps* pinstance;
 };
 
 #endif /* Fps_hpp */
