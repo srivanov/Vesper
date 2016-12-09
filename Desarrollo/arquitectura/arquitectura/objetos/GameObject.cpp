@@ -9,7 +9,7 @@ GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
-	printf("1");
+	components.clear();
 }
 
 

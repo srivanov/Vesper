@@ -8,7 +8,7 @@
 //#include <irrlicht.h>
 #include "nodeMesh.hpp"
 #include "Fps.hpp"
-
+#include <OpenGL/gl.h>
 
 //using namespace irr;
 
