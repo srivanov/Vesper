@@ -59,4 +59,5 @@ void Game::update(){
 //	entrada->update();
 	p->update();
 	Fps::Instance()->update();
+    mundoBox2D::Instance()->update();
 }

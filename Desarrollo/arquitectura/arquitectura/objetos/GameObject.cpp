@@ -65,9 +65,8 @@ void GameObject::setPosicion(float* p3D){
 
 void GameObject::mover(float *vel){
 	if(vel != NULL){
-		posicion[0] += vel[0];
-		posicion[1] += vel[1];
-		posicion[2] += vel[2];
+        physics* go = (physics*)this->findComponent("physics");
+        go->update(vel, posicion, NULL, NULL);
 	}
 }
 

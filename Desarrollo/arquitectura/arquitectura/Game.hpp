@@ -15,6 +15,7 @@
 #include "player.hpp"
 #include "camara.hpp"
 #include "Fps.hpp"
+#include "mundoBox2D.hpp"
 
 class Game {
 public:
