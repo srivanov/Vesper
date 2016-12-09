@@ -6,6 +6,8 @@
 #include "component.hpp"
 #include "MyEventReceiver.hpp"
 
+class bala;
+
 class input : public component {
 public:
 	input();
@@ -14,7 +16,7 @@ public:
 	
 private:
 	MyEventReceiver *r;
-	
+    int prueba;
 };
 
 #endif /* input_hpp */
