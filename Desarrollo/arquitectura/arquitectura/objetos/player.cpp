@@ -4,8 +4,8 @@
 player::player(){
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
-	aux = new input();
-	this->insertComponent((char*)"input", aux);
+//	aux = new input();
+//	this->insertComponent((char*)"input", aux);
 	aux = new physics();
 	this->insertComponent((char*)"physics", aux);
 	aux = new pala();

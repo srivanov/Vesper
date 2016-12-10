@@ -1,10 +1,3 @@
-//
-//  bala.cpp
-//  arquitectura
-//
-//  Created by Nerea Castellanos Rodríguez on 9/12/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "bala.hpp"
 
@@ -22,8 +15,9 @@ bala::bala(float* pos){
         iter++;
     }
     setRenderizable(true);
-//    physics* fisica = (physics*)findComponent("physics");
-//    fisica->crearBodyDinamico(new float[2]{0.1,0.1}, pos);
+    physics* fisica = (physics*)findComponent("physics");
+    fisica->crearBodyDinamico(new float[2]{0.1,0.1}, pos);
+    
 }
 
 bala::~bala(){

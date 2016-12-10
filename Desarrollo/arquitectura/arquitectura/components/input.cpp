@@ -2,10 +2,12 @@
 #include "input.hpp"
 #include "GameObject.hpp"
 #include "bala.hpp"
+#include "Game.hpp"
 
 input::input(){
 	r = MyEventReceiver::Instance();
-    prueba = 0;
+    tiempoDisparo = time(NULL);
+    cadenciaDisparo = 1.0;
 }
 
 input::~input(){
@@ -13,8 +15,8 @@ input::~input(){
 }
 
 void input::update(){
-	transform3D *com = (class transform3D*)padre->findComponent("transform3D");
-	if(com != NULL){
+//	transform3D *com = (class transform3D*)padre->findComponent("transform3D");
+//	if(com != NULL){
 		float* velocidad = new float[3]{0,0,0};
 		if(MyEventReceiver::Instance()->IsKeyDown('W')){
 			velocidad[1] =  1;
@@ -28,25 +30,29 @@ void input::update(){
 		if(MyEventReceiver::Instance()->IsKeyDown('D')){
 			velocidad[0] =  1;
 		}
-        
-		
-//		if(velocidad[0] != 0 || velocidad[1] != 0 || velocidad[2] != 0)
-			com->mover(velocidad);
+    
+//        com->mover(velocidad);
+        Game::Instance()->getPlayer()->mover(velocidad);
         
         if(MyEventReceiver::Instance()->IsKeyDown('L')){
-            if(prueba == 0){
-                bala* disparo = new bala(padre->getPosicion());
-                disparo->addNodo("../../../arquitectura/3d/bala.3ds");
-                prueba++;
+            if(difftime(time(NULL), tiempoDisparo) >= cadenciaDisparo){
+//                bala* disparo = new bala(padre->getPosicion());
+//                disparo->addNodo("../../../arquitectura/3d/bala.3ds");
+                Game::Instance()->insertBala();
+                
+                tiempoDisparo = time(NULL);
+            
             }
             
         }
         
 		if(MyEventReceiver::Instance()->IsKeyDown('Q')){
-			class render *com = (class render*)padre->findComponent("render");
-			if(com != NULL){
-				com->closeWindow();
-			}
+//			class render *com = (class render*)padre->findComponent("render");
+//			if(com != NULL){
+//				com->closeWindow();
+//			}
+            
+            Game::Instance()->stop();
 		}
-	}
+//	}
 }

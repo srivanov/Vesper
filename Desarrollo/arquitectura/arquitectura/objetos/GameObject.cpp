@@ -84,8 +84,13 @@ void GameObject::update(){
 //		iter->second.update();
 //		iter++;
 //	}
-	input* go = (input*)this->findComponent("input");
-	go->update();
+    
+//	physics* go = (physics*)this->findComponent("physics");
+//    if(go != NULL)
+//        go->update();
+    
+    
+    
 }
 
 void GameObject::addNodo(char* filename){

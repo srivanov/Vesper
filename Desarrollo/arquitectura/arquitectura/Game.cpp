@@ -19,7 +19,7 @@ Game* Game::Instance(){
 
 Game::Game(){
 	renderizador = new class render();
-//	entrada = new input();
+	entrada = new input();
 	running = true;
     p = new player();
 	c = new camara();
@@ -28,6 +28,7 @@ Game::Game(){
 Game::~Game(){
 	c->~camara();
 	p->~player();
+    renderizador->closeWindow();
 	renderizador->~render();
 	free(pinstance);
 }
@@ -46,6 +47,12 @@ void Game::stop(){
 
 void Game::render(){
 	p->render();
+    iter = balas.begin();
+    while (iter != balas.end()){
+        bala_aux = *iter;
+        bala_aux->render();
+        iter++;
+    }
     renderizador->dibujar();
 }
 
@@ -55,9 +62,26 @@ bool Game::isRunning(){
 	return false;
 }
 
+player* Game::getPlayer(){
+    return p;
+}
+
+bala* Game::insertBala(){
+    bala_aux = new bala(p->getPosicion());
+    bala_aux->addNodo("../../../arquitectura/3d/bala.3ds");
+    balas.insert(balas.begin(), bala_aux);
+    return bala_aux;
+}
+
 void Game::update(){
-//	entrada->update();
+	entrada->update();
 	p->update();
+    iter = balas.begin();
+    while (iter != balas.end()){
+        bala_aux = *iter;
+        bala_aux->mover(new float[2]{1,0});
+        iter++;
+    }
 	Fps::Instance()->update();
     mundoBox2D::Instance()->update();
 }

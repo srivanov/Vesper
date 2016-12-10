@@ -36,8 +36,6 @@ void physics::update(float* velocidad, float * posicion, float* anguloFinal, int
         b2Vec2 vel;
         vel.x = velocidad[0];
         vel.y = velocidad[1];
-    
-    printf("%.2f, %.2f\n", posicion[0], posicion[1]);
         
 //        angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
 //        angulo[1] = (float)mousePosition[1] - body->GetPosition().y;

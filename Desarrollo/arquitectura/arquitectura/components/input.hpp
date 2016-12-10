@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "component.hpp"
 #include "MyEventReceiver.hpp"
+#include <time.h>
 
 class bala;
 
@@ -16,7 +17,8 @@ public:
 	
 private:
 	MyEventReceiver *r;
-    int prueba;
+    time_t tiempoDisparo;
+    float cadenciaDisparo;
 };
 
 #endif /* input_hpp */

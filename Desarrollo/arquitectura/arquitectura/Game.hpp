@@ -11,11 +11,13 @@
 
 #include <stdio.h>
 #include "render.hpp"
-//#include "input.hpp"
+#include "input.hpp"
 #include "player.hpp"
 #include "camara.hpp"
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
+#include <vector>
+#include "bala.hpp"
 
 class Game {
 public:
@@ -28,15 +30,20 @@ public:
 	void update();
 	void render();
 	bool isRunning();
+    player* getPlayer();
+    bala* insertBala();
 protected:
 	Game();
 private:
 	static Game* pinstance;
 	class render *renderizador;
-//	class input* entrada;
+	class input* entrada;
 	bool running;
     player* p;
     camara* c;
+    vector<bala*> balas;
+    bala* bala_aux;
+    std::vector<bala*>::iterator iter;
 };
 
 #endif /* Game_hpp */
