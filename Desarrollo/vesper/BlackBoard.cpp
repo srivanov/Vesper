@@ -7,3 +7,14 @@
 //
 
 #include "BlackBoard.hpp"
+
+BlackBoard::BlackBoard(){}
+BlackBoard::~BlackBoard(){}
+void BlackBoard::clean(){
+    ObjetosCercanos.clear();
+    posicionesNPC.clear();
+    comprobadaAlarma = false;
+    comprobadaFuente = false;
+    estadoAlarma = false;
+    estadoFuente = false;
+}

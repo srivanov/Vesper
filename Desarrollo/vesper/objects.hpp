@@ -12,6 +12,7 @@
 #define BOTIQUIN 1
 #define FUENTE 2
 #define COMIDA 3
+#define ALARMA 4
 #include "datos.hpp"
 
 class objetos {
@@ -41,9 +42,12 @@ public:
     void inicializar(bool indestructible){infinita=indestructible;}
     bool getInifinita(){return infinita;}
     bool getEstado(){return destruida;}
+    bool getNPCrota(){return NPCrota;}
+    void Comprobacion();
     void destruir(){destruida=true;}
 private:
     int tipo = FUENTE;
+    bool NPCrota = false;
     bool infinita;
     bool destruida;
     
@@ -60,5 +64,21 @@ private:
     int tipo = COMIDA;
     // FALTA EL TIEMPO
 };
-
+class alarma : public objetos{
+public:
+    alarma();
+    ~alarma();
+    void activar(){activada=true;}
+    bool getActivada(){return activada;}
+    bool getRota(){return rota;}
+    void Romper(){rota=true;}
+    bool getNPCrota(){return NPCrota;}
+    void Comprobacion();
+private:
+    bool NPCrota = false;
+    bool rota = false;
+    bool activada = false;
+    int tipo = ALARMA;
+    // FALTA EL TIEMPO
+};
 #endif /* objects_hpp */

@@ -7,6 +7,7 @@
 //
 
 #include "NPC.hpp"
+
 NPC::NPC(){
     DeciSys = new estados;
     datosPropios.inicializar();
@@ -14,7 +15,6 @@ NPC::NPC(){
 NPC::~NPC(){
     
 }
-void NPC::update(){
-    DeciSys->run(datosPropios);
-}
+void NPC::update(BlackBoard * worldINFO){DeciSys->run(datosPropios,worldINFO);}
 datos NPC::getNPCinfo(){return datosPropios;}
+vector3D NPC::getPosition(){return datosPropios.getPosActual();}

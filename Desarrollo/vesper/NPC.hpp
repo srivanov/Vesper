@@ -17,7 +17,8 @@ public:
     NPC();
     ~NPC();
     datos getNPCinfo();
-    void update();
+    void update(BlackBoard * worldINFO);
+    vector3D getPosition();
 private:
     datos datosPropios;
     estados * DeciSys;

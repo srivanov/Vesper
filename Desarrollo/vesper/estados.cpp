@@ -6,14 +6,16 @@
 //  Copyright © 2016 Skyscrapers. All rights reserved.
 //
 
-#define ESTANDAR 0
-#define ALERTA 1
-#define COMBATE 2
-#define ASUSTADO 3
+
 
 #define ACCIONES_GENERALES_ESTANDAR 3
 #define BUSCAR_RUIDO_ESTANDAR 2
 #define INGERIR_ESTANDAR 2
+
+#define ESTANDAR 0
+#define ALERTA 1
+#define COMBATE 2
+#define ASUSTADO 3
 
 #include "estados.hpp"
 
@@ -27,9 +29,12 @@ estados::estados(){
     //GENERALES
     NodoVigilar * vigilar = new NodoVigilar;
     NodoPatrullar * patrullar = new NodoPatrullar;
-    
+    NodoSecuencia * avisado = new NodoSecuencia;
+    Nodo_Avisado * recibido_aviso = new Nodo_Avisado;
     Nodo_PuertaAbierta * _hay_puerta = new Nodo_PuertaAbierta;
     NodoMover * moverse = new NodoMover;
+    avisado->anyadirHijo(recibido_aviso);
+    avisado->anyadirHijo(moverse);
     
     //CONSTRUCCION ARBOL ESTANDAR
     _estandar = new NodoSecuenciaPositiva;
@@ -38,9 +43,13 @@ estados::estados(){
     Nodo_VerJugador * agresivo = new Nodo_VerJugador;
     _estandar->anyadirHijo(agresivo);
     
+    //AVISADO
+    _estandar->anyadirHijo(avisado);
+    
     //CAMBIAR ESTADO ALERTA
     Nodo_SuenaAlarma * alerta = new Nodo_SuenaAlarma;
     _estandar->anyadirHijo(alerta);
+    
     
     //BUSCAR RUIDO
     NodoSecuenciaPositiva * _buscar_ruido = new NodoSecuenciaPositiva;
@@ -130,8 +139,8 @@ estados::estados(){
     //CAMBIAR ESTADO A COMBATE
     _alerta->anyadirHijo(agresivo);
     
-    //BUSCAR RUIDO
-    _alerta->anyadirHijo(_buscar_ruido);
+    //AVISADO
+    _alerta->anyadirHijo(avisado);
     
     //CAMBIAR ESTADO ESTANDAR
     Nodo_TiempoInactivo * estandar = new Nodo_TiempoInactivo;
@@ -145,6 +154,9 @@ estados::estados(){
     _alarma_activa->anyadirHijo(moverse);
     _alarma_activa->anyadirHijo(recorrer_zona);
     _alerta->anyadirHijo(_alarma_activa);
+    
+    //BUSCAR RUIDO
+    _alerta->anyadirHijo(_buscar_ruido);
     
     // VIGILAR
     _alerta->anyadirHijo(vigilar);
@@ -167,6 +179,8 @@ estados::estados(){
     Nodo_AlarmaCerca * alarma_cerca = new Nodo_AlarmaCerca;
     ayuda_alarma->anyadirHijo(alarma_cerca);
     ayuda_alarma->anyadirHijo(moverse);
+    Nodo_AlarmaRota * alarma_rota = new Nodo_AlarmaRota;
+    ayuda_alarma->anyadirHijo(alarma_rota);
     ayuda_cercana->anyadirHijo(alguien_cerca);
     ayuda_radio->anyadirHijo(alguien_radio);
     NodoAvisar * avisar = new NodoAvisar;
@@ -235,8 +249,9 @@ estados::~estados(){
     delete _asustado;
 }
 
-void estados::run(datos NPCinfo){
+void estados::run(datos NPCinfo,BlackBoard * worldInfo){
     NPC = &NPCinfo;
+    WorldInfo = worldInfo;
     switch (estado_act) {
         case ESTANDAR:estandar();break;
         case ALERTA:alerta();break;
@@ -247,18 +262,22 @@ void estados::run(datos NPCinfo){
 }
 
 void estados::estandar(){
-    _estandar->run(*NPC);
+    _estandar->run(*NPC ,WorldInfo);
 }
 
 void estados::alerta(){
-    _alerta->run(*NPC);
+    _alerta->run(*NPC,WorldInfo);
 }
 
 void estados::combate(){
-    _combate->run(*NPC);
+    _combate->run(*NPC,WorldInfo);
 }
 
 void estados::asustado(){
-    _asustado->run(*NPC);
+    _asustado->run(*NPC,WorldInfo);
 }
+
+
+
+
 

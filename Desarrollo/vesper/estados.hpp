@@ -15,7 +15,7 @@ class estados {
 public:
     estados();
     ~estados();
-    void run(datos NPCinfo);
+    void run(datos NPCinfo,BlackBoard * worldInfo);
 private:
     int estado_act;
     void estandar();
@@ -23,6 +23,7 @@ private:
     void combate();
     void asustado();
     datos * NPC;
+    BlackBoard * WorldInfo;
     NodoSecuenciaPositiva* _estandar;
     NodoSecuenciaPositiva* _alerta;
     NodoSecuenciaPositiva* _combate;

@@ -9,15 +9,21 @@
 #ifndef BlackBoard_hpp
 #define BlackBoard_hpp
 
-#include "world.hpp"
+#include "datos.hpp"
+#include <vector>
 
 
-class WorldBlackBoard{
+class BlackBoard{
 public:
-private:
-};
-class PlayerBlackBoard{
-public:
+    BlackBoard();
+    ~BlackBoard();
+    std::vector<vector3D> posicionesNPC;
+    std::vector<vector3D> ObjetosCercanos;
+    bool estadoFuente;
+    bool comprobadaFuente = false;
+    bool estadoAlarma;
+    bool comprobadaAlarma = false;
+    void clean();
 private:
 };
 

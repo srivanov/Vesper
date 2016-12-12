@@ -16,6 +16,10 @@ void botiquin::usar(){
 botiquin::botiquin(){}
 comida::comida(){}
 fuente::fuente(){}
+void fuente::Comprobacion(){if (destruida && !NPCrota) {NPCrota = true;}}
+void alarma::Comprobacion(){if (rota && !NPCrota) {NPCrota = true;}}
 botiquin::~botiquin(){}
 comida::~comida(){}
 fuente::~fuente(){}
+alarma::alarma(){}
+alarma::~alarma(){}

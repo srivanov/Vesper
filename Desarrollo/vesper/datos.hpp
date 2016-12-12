@@ -14,15 +14,26 @@
 class vector3D{
 public:
     float x,y,z;
+    
 };
 
 class datos {
 private:
     int life,sed,hambre,tipo;
     vector3D posActual, posAnterior;
+    vector3D posLlamada;
     float velocidad;
     int estados;
+    bool llamando;
+    bool avisado;
 public:
+    void Avisado(bool senyal);
+    void Llamada(bool senyal,vector3D posicion);
+    void Beber(int valor);
+    void Alimentarse(int valor);
+    void Curarse(int valor);
+    bool getAviso();
+    bool getLLamada();
     void setEstados(int NewEstado);
     int getEstado();
     void inicializar();

@@ -10,9 +10,9 @@
 #define world_hpp
 
 #include "NPC.hpp"
-#include "objects.hpp"
-#include "tinyxml2.h"
 
+#include "tinyxml2.h"
+#include <math.h>
 
 class world {
 public:
@@ -21,10 +21,22 @@ public:
     void anyadirBotiquin();
     void anyadirFuente();
     void anyadirComida();
+    void anyadirAlarma();
+    void update();
 private:
-    std::vector<NPC*> enemigos;
-    std::vector<objetos*> objetos_mundo;
+    void NPCsAvisados(NPC * npc);
+    void NPCsCercanos(vector3D  NPCactual);
+    void ObjetosCercanos(vector3D  NPCactual);
+    void PosicionJugador(vector3D  NPCactual);
+    void ComprobacionFuentesAlarmas();
+    float CalcularDistancia(vector3D a,vector3D b);
+    vector<NPC*> enemigos;
+    vector<botiquin*> botiquin_mundo;
+    vector<fuente*> fuente_mundo;
+    vector<comida*> comida_mundo;
+    vector<alarma*> alarma_mundo;
     void cargarMapa();
+    BlackBoard * infoWorld;
     
 };
 

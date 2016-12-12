@@ -15,6 +15,7 @@ void datos::inicializar(){
     tipo = 1;
     //posActual = {1,1,0};
     velocidad = 1.f;
+    llamando = false;
 }
 vector3D datos::getPosActual(){return posActual;}
 vector3D datos::getPosAnterior(){return posAnterior;}
@@ -23,3 +24,13 @@ int datos::getHambre(){return hambre;}
 int datos::getSed(){return sed;}
 int datos::getEstado(){return estados;}
 void datos::setEstados(int NewEstado){estados=NewEstado;}
+void datos::Llamada(bool senyal,vector3D posicion){llamando=senyal;posLlamada=posicion;}
+void datos::Avisado(bool senyal){avisado=senyal;}
+bool datos::getAviso(){return avisado;}
+bool datos::getLLamada(){return llamando;}
+void datos::Curarse(int valor){
+    life+=valor;
+    if (life>100) life = 100;
+}
+void datos::Alimentarse(int valor){hambre-=valor;}
+void datos::Beber(int valor){sed-=valor;}

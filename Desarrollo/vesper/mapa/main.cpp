@@ -69,11 +69,10 @@ int main(){
         //rayo.start = vector3df(player2->_getNodePosition()[0],player2->_getNodePosition()[1],player2->_getNodePosition()[2]);
         //rayo.end = vector3df(player->_getNodePosition()[0],player->_getNodePosition()[1],player->_getNodePosition()[2]);
         /*
-         MUNDO -> NPC -> Maquina de Estados -> NODOS
-                  
-         <- BlackBoard ->
          
-         Blackboard.update(world);
+         wordl.infoneeded(posJugador,vector<vector3D> * ruidos);
+         
+         world.update();
          
          
          
