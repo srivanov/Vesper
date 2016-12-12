@@ -15,6 +15,8 @@ public:
 	int getAncho();
 	int getAlto();
 	int*** getMapa();
+	void dibujarMapa();
+	
 private:
 	int*** mapa_nivel;
 	cargarMapa* cargador;

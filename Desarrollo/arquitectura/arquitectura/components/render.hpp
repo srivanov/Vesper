@@ -5,12 +5,10 @@
 #include <stdio.h>
 #include "component.hpp"
 #include "ventana.hpp"
-//#include <irrlicht.h>
 #include "nodeMesh.hpp"
 #include "Fps.hpp"
 #include <OpenGL/gl.h>
 
-//using namespace irr;
 class escenarios;
 class render : public component {
 public:

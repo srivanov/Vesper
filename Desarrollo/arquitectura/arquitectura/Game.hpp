@@ -45,6 +45,7 @@ private:
     vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
+	escenarios* nivel;
 };
 
 #endif /* Game_hpp */

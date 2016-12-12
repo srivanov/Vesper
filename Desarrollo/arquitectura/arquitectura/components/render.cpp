@@ -1,6 +1,7 @@
 
 #include "render.hpp"
 #include "GameObject.hpp"
+#include "escenarios.hpp"
 
 render::render(){
 	nodo = NULL;
@@ -71,44 +72,26 @@ void render::dibujarMapa(){
 //		return false;
 	}
 	
-	/////(0,-5,10)-(0,6,0)////posicion de la camra, y donde tiene q mirar
-	//    smgr->addCameraSceneNode(0,vector3df(60,-40,-50),vector3df(60,30,0));
-//	cargarMapa * map = new cargarMapa();
-	
-	//    map->leerMapa();
-	//    map->mostrarMatriz();
-//	int*** mapita;
-	
-//	mapita = map->getMatriz();
+	int*** mapita;
+	mapita = static_cast<escenarios*>(getFather())->getMapa();
+
 	ISceneNode* nodo;
-//	nodeMesh* nodor;
 	ISceneNode* nodo_suelo;
 	
-//	if(map->getHeight() < 0 || map->getWidth() < 0)
-//		return false;
-	
-	for(int i=0; i< (class escenarios*)(getFather())->getAlto() ;i++){
-		for(int j=0; j< (class escenarios*)(getFather())->getAncho() ; j++){
-			if(getFather()->getMapa()[0][i][j] == 21 || mapita[0][i][j] == 9){
+	for(int i=0; i< static_cast<escenarios*>(getFather())->getAlto() ;i++){
+		for(int j=0; j< static_cast<escenarios*>(getFather())->getAncho() ; j++){
+			if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
-//				nodo = _getNodeFromMesh(muro);
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
-//				_setMaterialFlag(nodo, 0, false);
 				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/rocas.jpg"));
-//				_setMaterialTexture(nodo, "../../../modelos3D/rocas.jpg");
 				nodo->setPosition(vector3df(i,j,0));
-//				nodo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
 				nodo = NULL;
 			}
 			if(mapita[0][i][j] == 86){
 				nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
-//				nodo_suelo = _getNodeFromMesh(suelo);
 				nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-//				_setMaterialFlag(nodo_suelo, 0, false);
 				nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
-//				_setMaterialTexture(nodo_suelo, "../../../modelos3D/verde.jpg");
 				nodo_suelo->setPosition(vector3df(i,j,0));
-//				nodo_suelo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
 				nodo_suelo = NULL;
 			}
 		}
