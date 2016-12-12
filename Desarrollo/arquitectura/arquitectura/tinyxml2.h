@@ -545,7 +545,7 @@ public:
     // Anything in the high order range of UTF-8 is assumed to not be whitespace. This isn't
     // correct, but simple, and usually works.
     static bool IsWhiteSpace( char p )					{
-        return !IsUTF8Continuation(p) && isspace( static_cast<unsigned char>(p) );
+		return !IsUTF8Continuation(p) && std::isspace( static_cast<unsigned char>(p) );
     }
     
     inline static bool IsNameStartChar( unsigned char ch ) {
@@ -561,7 +561,7 @@ public:
     
     inline static bool IsNameChar( unsigned char ch ) {
         return IsNameStartChar( ch )
-               || isdigit( ch )
+		|| std::isdigit( ch )
                || ch == '.'
                || ch == '-';
     }

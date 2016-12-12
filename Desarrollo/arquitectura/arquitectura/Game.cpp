@@ -23,6 +23,7 @@ Game::Game(){
 	running = true;
     p = new player();
 	c = new camara();
+	escenarios* uno = new escenarios();
 }
 
 Game::~Game(){
@@ -39,6 +40,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //	renderizador->setTexto();
     p->addNodo("../../../arquitectura/3d/muro.3ds");
 	c->addCamara(new float[3]{0,-10,-10}, new float[3]{0,0,0});
+	uno->cargarNivel(2);
 }
 
 void Game::stop(){

@@ -22,15 +22,17 @@ cargarMapa::cargarMapa(){
     _numLayers = 0;
 }
 
-void cargarMapa::leerMapa() {
+bool cargarMapa::leerMapa(char* fichero) {
     ////////////////////////////////////////////////////////////////////////////////////
     // CAPA DE TEXTURAS
     
     XMLDocument doc;
    
     //doc.LoadFile("mapas/mapa1tiled.tmx");
-    doc.LoadFile("../../../mapa/tiled/mapa2.tmx");
-   
+    doc.LoadFile(fichero);
+	if(doc.NoChildren())
+		return false;
+	
     
     //tamanyo mapa y de los tiles
     XMLElement* map = doc.FirstChildElement("map");
@@ -103,9 +105,9 @@ void cargarMapa::leerMapa() {
     ////////////////////////////////////////////////////////////////////////////////////
     // AQUI EMPIEZA LA CAPA DE OBJETOS
     ////////////////////////////////////////////////////////////////////////////////////
-    cout <<"Empiezo a compilar objetos" <<endl;
-    objs = map->FirstChildElement("objectgroup");
-
+//    cout <<"Empiezo a compilar objetos" <<endl;
+//    objs = map->FirstChildElement("objectgroup");
+	return true;
 }
 
 int cargarMapa::getWidth(){

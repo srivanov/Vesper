@@ -19,7 +19,7 @@ class cargarMapa{
 public:
     cargarMapa();
     virtual ~cargarMapa();
-    void leerMapa();
+    bool leerMapa(char* fichero);
     int getWidth();
     int getHeight();
     int getTileWidth();

@@ -14,3 +14,7 @@ void component::setFather(GameObject *p){
 component::~component(){
 
 }
+
+GameObject* component::getFather(){
+	return padre;
+}

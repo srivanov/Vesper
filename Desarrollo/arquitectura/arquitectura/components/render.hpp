@@ -11,7 +11,7 @@
 #include <OpenGL/gl.h>
 
 //using namespace irr;
-
+class escenarios;
 class render : public component {
 public:
     render();
@@ -25,6 +25,7 @@ public:
 	void actualizarRender();
 	void addCamera(float* p, float* l);
 	void closeWindow();
+	void dibujarMapa();
 	
 private:
 	nodeMesh* nodo;

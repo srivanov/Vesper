@@ -118,7 +118,7 @@ bool engineInterface::loadMap(){
 //    smgr->addCameraSceneNode(0,vector3df(60,-40,-50),vector3df(60,30,0));
     cargarMapa * map = new cargarMapa();
     
-    map->leerMapa();
+//    map->leerMapa();
 //    map->mostrarMatriz();
     int*** mapita;
     

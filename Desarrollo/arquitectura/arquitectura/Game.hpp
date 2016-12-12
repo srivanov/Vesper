@@ -18,6 +18,7 @@
 #include "mundoBox2D.hpp"
 #include <vector>
 #include "bala.hpp"
+#include "escenarios.hpp"
 
 class Game {
 public:

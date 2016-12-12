@@ -10,6 +10,7 @@ class component{
 public:
 	component();
 	void setFather(GameObject* p);
+	GameObject* getFather();
 	~component();
 protected:
 	GameObject* padre;
