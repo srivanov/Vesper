@@ -65,7 +65,6 @@
 		E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AC3AD31DF0AD3600A91A97 /* master-tileset.png */; };
 		E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */; };
 		E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */; };
-		E9CD69FD1DFEB5FF00DF3183 /* engineInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9CD69FB1DFEB5FF00DF3183 /* engineInterface.cpp */; };
 		E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
 		E9F0BE871DFAC61400F6ED67 /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */; };
 /* End PBXBuildFile section */
@@ -173,8 +172,6 @@
 		E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeMesh.cpp; sourceTree = "<group>"; };
 		E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nodeMesh.hpp; sourceTree = "<group>"; };
 		E9AC3AEA1DF0AE4300A91A97 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
-		E9CD69FB1DFEB5FF00DF3183 /* engineInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engineInterface.cpp; sourceTree = "<group>"; };
-		E9CD69FC1DFEB5FF00DF3183 /* engineInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engineInterface.hpp; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/libIrrlicht.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,8 +227,6 @@
 				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
 				E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */,
 				E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */,
-				E9CD69FB1DFEB5FF00DF3183 /* engineInterface.cpp */,
-				E9CD69FC1DFEB5FF00DF3183 /* engineInterface.hpp */,
 				E98661261DF99ED30028AC64 /* Fps.cpp */,
 				E98661241DF98D140028AC64 /* Fps.hpp */,
 				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
@@ -475,7 +470,6 @@
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
-				E9CD69FD1DFEB5FF00DF3183 /* engineInterface.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,

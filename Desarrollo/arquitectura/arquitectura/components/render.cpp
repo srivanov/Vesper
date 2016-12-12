@@ -77,7 +77,9 @@ void render::dibujarMapa(){
 
 	ISceneNode* nodo;
 	ISceneNode* nodo_suelo;
-	
+	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<escenarios*>(getFather())->getAlto(), static_cast<escenarios*>(getFather())->getAncho(), 0.1));
+	nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
+	nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
 	for(int i=0; i< static_cast<escenarios*>(getFather())->getAlto() ;i++){
 		for(int j=0; j< static_cast<escenarios*>(getFather())->getAncho() ; j++){
 			if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
@@ -85,17 +87,33 @@ void render::dibujarMapa(){
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
 				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/rocas.jpg"));
 				nodo->setPosition(vector3df(i,j,0));
-				nodo = NULL;
+//				nodo = NULL;
 			}
-			if(mapita[0][i][j] == 86){
-				nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
-				nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-				nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
-				nodo_suelo->setPosition(vector3df(i,j,0));
-				nodo_suelo = NULL;
-			}
+//			if(mapita[0][i][j] == 86){
+//				nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
+//				nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
+//				nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
+//				nodo_suelo->setPosition(vector3df(i,j,0));
+////				nodo_suelo = NULL;
+//			}
 		}
 	}
 //	return true;
 
+}
+
+void render::setCamPos(float* pos){
+	camara->setPosition(vector3df(pos[0], pos[1], pos[2]));
+}
+
+float* render::getCamPos(){
+	float* p = new float[3];
+	p[0] = camara->getPosition().X;
+	p[1] = camara->getPosition().Y;
+	p[2] = camara->getPosition().Z;
+	return p;
+}
+
+void render::setCamTarget(float *pos){
+	camara->setTarget(vector3df(pos[0], pos[1], pos[2]));
 }

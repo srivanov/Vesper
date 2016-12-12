@@ -24,6 +24,9 @@ public:
 	void addCamera(float* p, float* l);
 	void closeWindow();
 	void dibujarMapa();
+	void setCamPos(float* pos);
+	float* getCamPos();
+	void setCamTarget(float* pos);
 	
 private:
 	nodeMesh* nodo;
