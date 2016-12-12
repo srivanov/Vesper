@@ -10,9 +10,8 @@
 #define world_hpp
 
 #include "NPC.hpp"
-
 #include "tinyxml2.h"
-#include <math.h>
+
 
 class world {
 public:

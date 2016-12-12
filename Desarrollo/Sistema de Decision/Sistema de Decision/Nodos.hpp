@@ -14,6 +14,7 @@
 #include "datos.hpp"
 #include "BlackBoard.hpp"
 #include "objects.hpp"
+#include <math.h>
 
 using namespace std;
 
@@ -240,6 +241,7 @@ class Nodo_HayAlguienCerca : public Nodo {
 public:
     Nodo_HayAlguienCerca();
     short run(datos NPCinfo, BlackBoard * WorldInfo);
+    float CalcularDistancia(vector3D a, vector3D b);
 private:
     // COORDENADAS NPC + CERCANO
 };

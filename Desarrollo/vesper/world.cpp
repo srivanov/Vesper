@@ -50,7 +50,7 @@ void world::NPCsAvisados(NPC * npc){
     if (npc->getNPCinfo().getAviso()) {
         for(int x=0;x<enemigos.size();x++){
             for (int l=0; l<infoWorld->posicionesNPC.size(); l++) {
-                if(enemigos[x]->getPosition().x==infoWorld->posicionesNPC[l].x && enemigos[x]->getPosition().y==infoWorld->posicionesNPC[l].y)
+                if(enemigos[x]->getPosition()==infoWorld->posicionesNPC[l])
                     enemigos[x]->getNPCinfo().Llamada(true,npc->getPosition());
                 
             }
@@ -60,13 +60,13 @@ void world::NPCsAvisados(NPC * npc){
 void world::ComprobacionFuentesAlarmas(){
     if(infoWorld->comprobadaAlarma && !infoWorld->estadoAlarma){
         for (int y=0; y<alarma_mundo.size(); y++) {
-            if(alarma_mundo[y]->getPosition().x==infoWorld->ObjetosCercanos[ALARMA-1].x && alarma_mundo[y]->getPosition().y==infoWorld->ObjetosCercanos[ALARMA-1].y)
+            if(alarma_mundo[y]->getPosition()==infoWorld->ObjetosCercanos[ALARMA-1])
                 alarma_mundo[y]->Comprobacion();
         }
     }
     if(infoWorld->comprobadaFuente && !infoWorld->estadoFuente){
         for (int y=0; y<fuente_mundo.size(); y++) {
-            if(fuente_mundo[y]->getPosition().x==infoWorld->ObjetosCercanos[FUENTE-1].x && fuente_mundo[y]->getPosition().y==infoWorld->ObjetosCercanos[FUENTE-1].y)
+            if(fuente_mundo[y]->getPosition()==infoWorld->ObjetosCercanos[FUENTE-1])
                 fuente_mundo[y]->Comprobacion();
         }
     }
@@ -83,7 +83,7 @@ void world::NPCsCercanos(vector3D NPCactual){
     bool completo = false;
     float distancias[3]={-1,-1,-1};
     for (int i=0; i<enemigos.size(); i++) {
-        if (NPCactual.x == enemigos[i]->getPosition().x && NPCactual.y == enemigos[i]->getPosition().y) {
+        if (NPCactual == enemigos[i]->getPosition()) {
             cout << "ERES TU IDIOTA!"<< endl;
         }else{
             

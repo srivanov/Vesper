@@ -14,19 +14,22 @@
 class vector3D{
 public:
     float x,y,z;
-    
+    bool operator ==(const vector3D &p) const;
+    vector3D& operator =(const vector3D &p);
 };
 
 class datos {
 private:
     int life,sed,hambre,tipo;
     vector3D posActual, posAnterior;
-    vector3D posLlamada;
+    vector3D posFinal;
     float velocidad;
     int estados;
     bool llamando;
     bool avisado;
 public:
+    vector3D getPosicionFinal();
+    void setPosicionFinal(vector3D posicion);
     void Avisado(bool senyal);
     void Llamada(bool senyal,vector3D posicion);
     void Beber(int valor);
@@ -40,6 +43,7 @@ public:
     int getLife();
     int getSed();
     int getHambre();
+    void newPosition(vector3D nueva_posicion);
     vector3D getPosActual();
     vector3D getPosAnterior();
 };

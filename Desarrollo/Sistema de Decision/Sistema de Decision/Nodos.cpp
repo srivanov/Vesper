@@ -24,6 +24,8 @@
 #define COMIDA_ALIMENTA 25
 #define AGUA_HIDATRA 50
 
+#define DISTANCIA_COMUNICACION_PERSONAL 30
+#define DISTANCIA_POR_RADIO 35
 
 #define ACTIVO true
 #define INACTIVO false
@@ -98,7 +100,30 @@ short NodoAbrirPuerta::run(datos NPCinfo, BlackBoard * WorldInfo){
 }
 // NODO MOVER
 NodoMover::NodoMover(){}
-short NodoMover::run(datos NPCinfo, BlackBoard * WorldInfo){return false;}
+short NodoMover::run(datos NPCinfo, BlackBoard * WorldInfo){
+    //
+    if (NPCinfo.getPosActual()==NPCinfo.getPosicionFinal()) {
+        NPCinfo.setPosicionFinal(vector3D{-1,-1,-1});
+        return true;
+    }else{
+        float xABS = fabs(NPCinfo.getPosicionFinal().x-NPCinfo.getPosActual().x);
+        float x=0,y=0;
+        if(NPCinfo.getPosicionFinal().x-NPCinfo.getPosActual().x<0){x--;}
+        else{x++;}
+        if(NPCinfo.getPosicionFinal().y-NPCinfo.getPosActual().y<0){y--;}
+        else{y++;}
+        float yABS = fabs(NPCinfo.getPosicionFinal().y-NPCinfo.getPosActual().y);
+        if(xABS>yABS){
+            NPCinfo.newPosition(vector3D{NPCinfo.getPosActual().x+x,NPCinfo.getPosActual().y,NPCinfo.getPosActual().z});
+        }else if(xABS<yABS){
+            NPCinfo.newPosition(vector3D{NPCinfo.getPosActual().x,NPCinfo.getPosActual().y+y,NPCinfo.getPosActual().z});
+        }else if(xABS==yABS){
+            NPCinfo.newPosition(vector3D{NPCinfo.getPosActual().x+x,NPCinfo.getPosActual().y+y,NPCinfo.getPosActual().z});
+        }
+        return RUNNING;
+    }
+    return false;
+}
 // NODO COMER
 NodoComer::NodoComer(){}
 short NodoComer::run(datos NPCinfo, BlackBoard * WorldInfo){
@@ -167,6 +192,8 @@ short NodoAtaqueDistancia::run(datos NPCinfo, BlackBoard * WorldInfo){
 //#    NODOS DE CONDICION     #
 //#############################
 
+
+
 // NODO ALARMA ROTA?
 
 Nodo_AlarmaRota::Nodo_AlarmaRota(){}
@@ -205,8 +232,9 @@ short Nodo_VidaBaja::run(datos NPCinfo, BlackBoard * WorldInfo){
 Nodo_TieneAgua::Nodo_TieneAgua(){}
 short Nodo_TieneAgua::run(datos NPCinfo, BlackBoard * WorldInfo){
     WorldInfo->comprobadaFuente = true;
-    if(WorldInfo->estadoFuente) return true;
-    return false;
+    if(WorldInfo->estadoFuente) return false;
+    NPCinfo.setPosicionFinal(WorldInfo->ObjetosCercanos[FUENTE-1]);
+    return true;
 }
 // NODO VER JUGADOR ?
 Nodo_VerJugador::Nodo_VerJugador(){}
@@ -216,18 +244,25 @@ short Nodo_VerJugador::run(datos NPCinfo, BlackBoard * WorldInfo){
 // NODO ALARMA CERCA?
 Nodo_AlarmaCerca::Nodo_AlarmaCerca(){}
 short Nodo_AlarmaCerca::run(datos NPCinfo, BlackBoard * WorldInfo){
-    if(WorldInfo->ObjetosCercanos[ALARMA-1].x<1000) return true;
+    if(WorldInfo->ObjetosCercanos[ALARMA-1].x<1000) {
+        NPCinfo.setPosicionFinal(WorldInfo->ObjetosCercanos[ALARMA-1]);
+        return true;
+    }
     return false;
 }
 // NODO HAY BOTIQUIN ?
 Nodo_HayBotiquin::Nodo_HayBotiquin(){}
 short Nodo_HayBotiquin::run(datos NPCinfo, BlackBoard * WorldInfo){
-    if(WorldInfo->ObjetosCercanos[BOTIQUIN-1].x<1000) return true;
+    if(WorldInfo->ObjetosCercanos[BOTIQUIN-1].x<1000) {
+        NPCinfo.setPosicionFinal(WorldInfo->ObjetosCercanos[BOTIQUIN-1]);
+        return true;
+    }
     return false;
 }
 // NODO SUENA ALARMA ?
 Nodo_SuenaAlarma::Nodo_SuenaAlarma(){}
 short Nodo_SuenaAlarma::run(datos NPCinfo, BlackBoard * WorldInfo){
+    if(WorldInfo->alarmaActivada) return true;
     return false;
 }
 // NODO ESTAS ASUSTADO ?
@@ -252,12 +287,24 @@ short Nodo_PuertaAbierta::run(datos NPCinfo, BlackBoard * WorldInfo){
 }
 // NODO HAY ALGUIEN CERCA ?
 Nodo_HayAlguienCerca::Nodo_HayAlguienCerca(){}
+float Nodo_HayAlguienCerca::CalcularDistancia(vector3D a, vector3D b){
+    float x = fabs(pow(a.x-b.x,2));
+    float y = fabs(pow(a.y-b.y,2));
+    return sqrt(x+y);
+}
 short Nodo_HayAlguienCerca::run(datos NPCinfo, BlackBoard * WorldInfo){
+    for (int i = 0; i<WorldInfo->posicionesNPC.size(); i++) {
+        if(NPCinfo.getPosicionFinal().x>-1 && CalcularDistancia(WorldInfo->posicionesNPC[i], NPCinfo.getPosActual())<=DISTANCIA_COMUNICACION_PERSONAL){
+            NPCinfo.setPosicionFinal(WorldInfo->posicionesNPC[i]);
+            return true;
+        }
+    }
     return false;
 }
 // NODO HAY ALGUIEN RADIO ?
 Nodo_HayAlguienRadio::Nodo_HayAlguienRadio(){}
 short Nodo_HayAlguienRadio::run(datos NPCinfo, BlackBoard * WorldInfo){
+    if (WorldInfo->posicionesNPC.size()>0) return true;
     return false;
 }
 // NODO ESTAS CERCA JUGADOR ?

@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "world::update()"
+            landmarkName = "world::anyadirAlarma()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "Nodo_Avisado::run(datos NPCinfo, BlackBoard * WorldInfo)"
+            landmarkName = "NodoPatrullar::NodoPatrullar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "world::NPCsCercanos(vector3D NPCactual)"
+            landmarkName = "world::update()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

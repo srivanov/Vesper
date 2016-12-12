@@ -19,10 +19,13 @@ public:
     ~BlackBoard();
     std::vector<vector3D> posicionesNPC;
     std::vector<vector3D> ObjetosCercanos;
+    std::vector<vector3D> RuidosCercanos;
+    vector3D JugadorPosicion;
     bool estadoFuente;
     bool comprobadaFuente = false;
     bool estadoAlarma;
     bool comprobadaAlarma = false;
+    bool alarmaActivada = false;
     void clean();
 private:
 };
