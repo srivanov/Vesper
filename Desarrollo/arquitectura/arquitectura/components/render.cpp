@@ -40,7 +40,9 @@ void render::actualizarRender(){
 }
 
 void render::setTexto(){
-	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,40,22), true);
+	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,24,22), true);
+    texto->setBackgroundColor(SColor(255,255,0,255));
+    texto->setOverrideColor(SColor(255,255,255,255));
 }
 
 void render::dibujar(){
@@ -53,6 +55,8 @@ void render::dibujar(){
 
 void render::addCamera(float* p, float* l){
 	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p[0], p[1], p[2]), vector3df(l[0], l[1], l[2]));
+    camara->setNearValue(1);
+    camara->setFarValue(20);
 }
 
 void render::closeWindow(){
@@ -61,26 +65,39 @@ void render::closeWindow(){
 
 void render::dibujarMapa(){
 	IMesh* muro  = ventana::Instance()->getSceneManager()->getMesh("../../../arquitectura/3d/muro.3ds");
-	IMesh* suelo = ventana::Instance()->getSceneManager()->getMesh("../../../arquitectura/3d/suelo.3ds");
+//	IMesh* suelo = ventana::Instance()->getSceneManager()->getMesh("../../../arquitectura/3d/suelo.3ds");
 	
 	if(!muro){
 		printf("muro no cargado\n");
 //		return false;
 	}
-	if(!suelo){
-		printf("suelo no cargado\n");
-//		return false;
-	}
+//	if(!suelo){
+//		printf("suelo no cargado\n");
+////		return false;
+//	}
 	
 	int*** mapita;
 	mapita = static_cast<escenarios*>(getFather())->getMapa();
 
 	ISceneNode* nodo;
 	ISceneNode* nodo_suelo;
-	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<escenarios*>(getFather())->getAlto(), static_cast<escenarios*>(getFather())->getAncho(), 0.1));
-	nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-	nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
-	for(int i=0; i< static_cast<escenarios*>(getFather())->getAlto() ;i++){
+    
+//	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<escenarios*>(getFather())->getAlto(), static_cast<escenarios*>(getFather())->getAncho(), 0.1));
+//	nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
+//	nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
+    
+    //CARGAR PLANO
+    
+    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<escenarios*>(getFather())->getAlto(),static_cast<escenarios*>(getFather())->getAncho()));
+    nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
+    nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
+    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/colorverde.jpg"));
+    
+    nodo_suelo->setPosition(vector3df((static_cast<escenarios*>(getFather())->getAlto()/2)-0.5, (static_cast<escenarios*>(getFather())->getAncho()/2)-0.5, 0));
+    
+    nodo_suelo->setRotation(vector3df(90,180,180));
+	
+    for(int i=0; i< static_cast<escenarios*>(getFather())->getAlto() ;i++){
 		for(int j=0; j< static_cast<escenarios*>(getFather())->getAncho() ; j++){
 			if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);

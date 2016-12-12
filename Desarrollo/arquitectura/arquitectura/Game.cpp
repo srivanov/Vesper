@@ -82,3 +82,7 @@ void Game::update(){
 	Fps::Instance()->update();
     mundoBox2D::Instance()->update();
 }
+
+void Game::zoom(bool z){
+    c->setZoom(z);
+}

@@ -33,6 +33,7 @@ public:
 	bool isRunning();
     player* getPlayer();
     bala* insertBala();
+    void zoom(bool z);
 protected:
 	Game();
 private:

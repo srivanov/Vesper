@@ -26,7 +26,9 @@ camara::camara(){
 	offsetY = -5;
 	offsetZ = -10;
 	//velocidad de la camara
-	camSpeed = 2.0;
+	camSpeed = 1.5;
+    //variable para zoom zoom zoom
+    cerca = false;
 }
 
 camara::~camara(){
@@ -41,17 +43,32 @@ void camara::addCamara(float* p, float* l){
 }
 
 void camara::movimientoInteligente(float* posPlayer){
-	incrX = ((posPlayer[0] + 0) - renderiza->getCamPos()[0])/ (camSpeed*60.0);
-	incrY = ((posPlayer[1] + -5) - renderiza->getCamPos()[1])/ (camSpeed*60.0);
-	incrZ = ((posPlayer[2] + -10) - renderiza->getCamPos()[2])/ (camSpeed*60.0);
-
-//	printf("%.2f %.2f %.2f\n", renderiza->getCamPos()[0], renderiza->getCamPos()[1], renderiza->getCamPos()[2]);
-	
-//	printf("%.2f %.2f %.2f\n", posPlayer[0], posPlayer[1], posPlayer[2]);
-//	printf("%.5f %.5f %.5f\n", incrX, incrY, incrZ);
-
-	renderiza->setCamPos(new float[3]{renderiza->getCamPos()[0]+incrX, renderiza->getCamPos()[1]+incrY, renderiza->getCamPos()[2]+incrZ});
-	renderiza->setCamTarget(new float[3]{renderiza->getCamPos()[0] - offsetX, renderiza->getCamPos()[1] - offsetY, renderiza->getCamPos()[2] - offsetZ});
-
+    
+	incrX = ((posPlayer[0] + offsetX) - renderiza->getCamPos()[0])/ (camSpeed*60.0);
+	incrY = ((posPlayer[1] + offsetY) - renderiza->getCamPos()[1])/ (camSpeed*60.0);
+	incrZ = ((posPlayer[2] + offsetZ) - renderiza->getCamPos()[2])/ (camSpeed*60.0);
+    
+    renderiza->setCamPos(new float[3]{renderiza->getCamPos()[0]+incrX, renderiza->getCamPos()[1]+incrY, renderiza->getCamPos()[2]+incrZ});
+    renderiza->setCamTarget(new float[3]{renderiza->getCamPos()[0] - offsetX, renderiza->getCamPos()[1] - offsetY, renderiza->getCamPos()[2] - offsetZ});
 }
 
+void camara::setCamSpeed(float vel){
+    camSpeed = vel;
+}
+
+void camara::setZoom(bool z){
+    cerca = z;
+    if(cerca){
+        //distancia con zoom
+        offsetX = 0; offsetY = -2.5; offsetZ = -5;
+        setCamSpeed(0.5);
+    }else{
+        //distancia normal
+        offsetX = 0; offsetY = -5; offsetZ = -10;
+        setCamSpeed(1.5);
+    }
+}
+
+bool camara::getZoom(){
+    return cerca;
+}
