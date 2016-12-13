@@ -20,7 +20,8 @@ public:
 	IVideoDriver* getDriver();
 	ISceneManager* getSceneManager();
 	void deviceDrop();
-		
+	float* posicionRaton(float* player);
+	
 protected:
 	ventana();
 private:

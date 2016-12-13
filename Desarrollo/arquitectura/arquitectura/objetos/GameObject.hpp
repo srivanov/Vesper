@@ -49,17 +49,25 @@ public:
 	
     bool getRenderizable();
     void setRenderizable(bool r);
-    float* getPosicion();
+	
+	float* getPosicion();
     void setPosicion(float* p3D);
+	void setRotacion(float* rot);
+	float* getRotacion();
+	float* getDirDisparo();
+	
 	void mover(float* vel);
     void render();
     void update();
-    void addNodo(char* filename);
 	
+    void addNodo(char* filename);
+	void setTexture(char* filename);
     
 protected:
     bool renderizable;
     float* posicion;
+	float* rotacion;
+	float* anguloDisparo;
 private:
     std::map<char*, component*> components;
 };

@@ -6,6 +6,8 @@
 GameObject::GameObject(){
     renderizable = false;
     posicion = new float[3]{0,0,0};
+	rotacion = new float[2]{0,0};
+	anguloDisparo = new float[2]{0,0};
 }
 
 GameObject::~GameObject(){
@@ -63,10 +65,20 @@ void GameObject::setPosicion(float* p3D){
     }
 }
 
+void GameObject::setRotacion(float* rot){
+	physics* go = (physics*)this->findComponent("physics");
+	go->update(NULL, NULL, rotacion, anguloDisparo, rot);
+//	printf("%.2f %.2f\n", anguloDisparo[0], anguloDisparo[1]);
+}
+
+float* GameObject::getRotacion(){
+	return rotacion;
+}
+
 void GameObject::mover(float *vel){
 	if(vel != NULL){
         physics* go = (physics*)this->findComponent("physics");
-        go->update(vel, posicion, NULL, NULL);
+        go->update(vel, posicion, NULL, anguloDisparo, NULL);
 	}
 }
 
@@ -100,5 +112,14 @@ void GameObject::addNodo(char* filename){
 	}
 }
 
+void GameObject::setTexture(char* filename){
+	class render* ren = (class render*)findComponent("render");
+	if(ren != NULL){
+		ren->setNodeTexture(filename);
+	}
+}
 
 
+float* GameObject::getDirDisparo(){
+	return anguloDisparo;
+}

@@ -31,7 +31,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	renderizador->setTexto();
-    p->addNodo("../../../arquitectura/3d/muro.3ds");
+    p->addNodo("../../../arquitectura/3d/sphere.3ds");
+	p->setTexture("../../../arquitectura/3d/texture.png");
 	c->addCamara(new float[3]{0,-5,-10}, new float[3]{0,0,0});
 	if(nivel->cargarNivel(2))
 		nivel->dibujarMapa();
@@ -63,7 +64,7 @@ player* Game::getPlayer(){
 }
 
 bala* Game::insertBala(){
-    bala_aux = new bala(p->getPosicion());
+    bala_aux = new bala(p->getPosicion(), p->getDirDisparo());
     bala_aux->addNodo("../../../arquitectura/3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
     return bala_aux;
@@ -76,7 +77,7 @@ void Game::update(){
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
-        bala_aux->mover(new float[2]{1,0});
+        bala_aux->mover(bala_aux->getDireccion());
         iter++;
     }
 	Fps::Instance()->update();

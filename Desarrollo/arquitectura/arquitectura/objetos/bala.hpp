@@ -7,8 +7,10 @@
 
 class bala : public GameObject{
 public:
-    bala(float* pos);
+    bala(float* pos, float* dir);
     ~bala();
-    
+	float* getDireccion();
+private:
+	float* direccion;
 };
 #endif /* bala_hpp */

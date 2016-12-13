@@ -12,7 +12,7 @@ public:
     physics();
     ~physics();
     void crearBodyDinamico(float* dimension, float* posicion);
-    void update(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition);
+    void update(float* velocidad, float * posicion, float* anguloFinal, float* angulo, float* mousePosition);
 private:
     b2Body *body;
     float angulo[2];

@@ -30,21 +30,26 @@ void physics::crearBodyDinamico(float* dimension, float* posicion){
 
 }
 
-void physics::update(float* velocidad, float * posicion, float* anguloFinal, int* mousePosition){
-  
+void physics::update(float* velocidad, float * posicion, float* anguloFinal, float* angulo, float* mousePosition){
+	
+	if(velocidad != NULL){
         //inside Step()
         b2Vec2 vel;
         vel.x = velocidad[0];
         vel.y = velocidad[1];
-        
-//        angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
-//        angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
-//        
-//        anguloFinal[0] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
-    
-        body->SetLinearVelocity( vel );
-//        body->SetTransform(body->GetPosition(), anguloFinal[0]);
-    
-        posicion[0] = body->GetPosition().x;
-        posicion[1] = body->GetPosition().y;
+	
+		body->SetLinearVelocity( vel );
+	
+		posicion[0] = body->GetPosition().x;
+		posicion[1] = body->GetPosition().y;
+	}
+	if(mousePosition != NULL){
+        angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
+        angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
+//		printf("%.2f %.2f\n", (float)mousePosition[0], (float)mousePosition[1]);
+        anguloFinal[2] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
+		
+        body->SetTransform(body->GetPosition(), anguloFinal[2]);
+	}
+	
 }

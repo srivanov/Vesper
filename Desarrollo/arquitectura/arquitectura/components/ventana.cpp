@@ -44,4 +44,7 @@ void ventana::deviceDrop(){
 	device->closeDevice();
 }
 
+float* ventana::posicionRaton(float* player){
+	return receiver->mouseTo3D(smgr, player);
+}
 

@@ -30,13 +30,24 @@ void render::setNode(char *filename){
     }
 }
 
+void render::setNodeTexture(char* filename){
+	if(nodo != NULL){
+		nodo->_setMaterialFlag(EMF_LIGHTING, false);
+		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/texture.png"));
+	}
+	printf("\n\n\nHOLA\n\n\n");
+}
+
 void render::dropNode(){
     nodo = NULL;
 }
 
 void render::actualizarRender(){
-	if(nodo != NULL)
+	if(nodo != NULL){
 		nodo->_setNodePosition(padre->getPosicion());
+		padre->setRotacion(ventana::Instance()->posicionRaton(padre->getPosicion()));
+		nodo->_setNodeRotation(padre->getRotacion());
+	}
 }
 
 void render::setTexto(){

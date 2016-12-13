@@ -17,6 +17,7 @@ public:
 	void crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver);
 	bool run();
     void setNode(char* filename);
+	void setNodeTexture(char* filename);
     void dropNode();
 	void setTexto();
     void dibujar();
