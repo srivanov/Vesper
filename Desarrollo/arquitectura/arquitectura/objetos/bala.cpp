@@ -16,7 +16,7 @@ bala::bala(float* pos, float* dir){
     }
     setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
-    fisica->crearBodyDinamico(new float[2]{0.1,0.1}, pos);
+	fisica->crearBodyDinamico(new float[2]{0.1,0.1}, new float[2]{pos[0]+dir[0], pos[1]+dir[1]});
 	
 	direccion = new float[2]{0,0};
 	direccion[0] = dir[0];

@@ -46,9 +46,15 @@ void physics::update(float* velocidad, float * posicion, float* anguloFinal, flo
 	if(mousePosition != NULL){
         angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
         angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
-//		printf("%.2f %.2f\n", (float)mousePosition[0], (float)mousePosition[1]);
+		
         anguloFinal[2] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
 		
+		//paso el coseno y seno de la rotacion a unitario
+		float length = sqrt((angulo[0]*angulo[0])+(angulo[1]*angulo[1]));
+		angulo[0] = angulo[0] / length;
+		angulo[1] = angulo[1] / length;
+		
+//		printf("%.2f %.2f\n", angulo[0], angulo[1]);
         body->SetTransform(body->GetPosition(), anguloFinal[2]);
 	}
 	

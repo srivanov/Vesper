@@ -22,6 +22,7 @@ MyEventReceiver::MyEventReceiver()
 	for (u32 i=0; i<KEY_KEY_CODES_COUNT; ++i)
 		KeyIsDown[i] = false;
 	pos_Mouse = new float[2]{0,0};
+	clickL = false;
 }
 
 MyEventReceiver::~MyEventReceiver(){
@@ -39,6 +40,11 @@ bool MyEventReceiver::OnEvent(const SEvent& event)
 	{
 		pos_Mouse[0] = event.MouseInput.X;
 		pos_Mouse[1] = event.MouseInput.Y;
+		
+		if(event.MouseInput.Event == irr::EMIE_LMOUSE_PRESSED_DOWN)
+			clickL = true;
+		if(event.MouseInput.Event == irr::EMIE_LMOUSE_LEFT_UP)
+			clickL = false;
 	}
 	
 	return false;
@@ -103,5 +109,9 @@ float* MyEventReceiver::mouseTo3D(irr::scene::ISceneManager* smgr, float* node)
 		p[1] = mousePosition.Y;
 	}
 	return p;
+}
+
+bool MyEventReceiver::getLeftClick(){
+	return clickL;
 }
 

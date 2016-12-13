@@ -31,12 +31,13 @@ void input::update(){
 
 //        com->mover(velocidad);
     Game::Instance()->getPlayer()->mover(velocidad);
-    
-    if(MyEventReceiver::Instance()->IsKeyDown('L')){
+	
+    if(MyEventReceiver::Instance()->getLeftClick()){
         if(difftime(time(NULL), tiempoDisparo) >= cadenciaDisparo){
 //                bala* disparo = new bala(padre->getPosicion());
 //                disparo->addNodo("../../../arquitectura/3d/bala.3ds");
             Game::Instance()->insertBala();
+			
             tiempoDisparo = time(NULL);
         }
     }

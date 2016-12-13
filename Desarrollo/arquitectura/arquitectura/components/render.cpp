@@ -26,7 +26,7 @@ void render::setNode(char *filename){
     if(nodo == NULL){
         nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(ventana::Instance()->getSceneManager()->getMesh(filename)));
 		nodo->_setNodePosition(padre->getPosicion());
-		printf("cargado!\n");
+//		printf("cargado!\n");
     }
 }
 
@@ -35,7 +35,6 @@ void render::setNodeTexture(char* filename){
 		nodo->_setMaterialFlag(EMF_LIGHTING, false);
 		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/texture.png"));
 	}
-	printf("\n\n\nHOLA\n\n\n");
 }
 
 void render::dropNode(){
