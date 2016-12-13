@@ -78,7 +78,12 @@ void Game::update(){
     while (iter != balas.end()){
         bala_aux = *iter;
         bala_aux->mover(bala_aux->getDireccion());
-        iter++;
+		bala_aux->update();
+		if(bala_aux->muero()){
+			bala_aux->~bala();
+			iter = balas.erase(iter);
+		}else
+			iter++;
     }
 	Fps::Instance()->update();
     mundoBox2D::Instance()->update();

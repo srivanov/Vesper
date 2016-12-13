@@ -21,13 +21,25 @@ bala::bala(float* pos, float* dir){
 	direccion = new float[2]{0,0};
 	direccion[0] = dir[0];
 	direccion[1] = dir[1];
-	
+	tiempo_vida = time(NULL);
+	muerto = false;
 }
 
 bala::~bala(){
-    
+	class render* ren = (class render*)findComponent("render");
+	if(ren != NULL)
+		ren->deleteNode();
 }
 
 float* bala::getDireccion(){
 	return direccion;
+}
+
+void bala::update(){
+	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
+		muerto = true;
+}
+
+bool bala::muero(){
+	return muerto;
 }

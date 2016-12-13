@@ -19,6 +19,7 @@ public:
     void setNode(char* filename);
 	void setNodeTexture(char* filename);
     void dropNode();
+	void deleteNode();
 	void setTexto();
     void dibujar();
 	void actualizarRender();

@@ -58,7 +58,7 @@ public:
 	
 	void mover(float* vel);
     void render();
-    void update();
+    virtual void update();
 	
     void addNodo(char* filename);
 	void setTexture(char* filename);

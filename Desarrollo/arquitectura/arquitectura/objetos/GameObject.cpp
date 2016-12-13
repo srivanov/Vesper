@@ -100,9 +100,6 @@ void GameObject::update(){
 //	physics* go = (physics*)this->findComponent("physics");
 //    if(go != NULL)
 //        go->update();
-    
-    
-    
 }
 
 void GameObject::addNodo(char* filename){

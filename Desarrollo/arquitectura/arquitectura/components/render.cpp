@@ -41,6 +41,11 @@ void render::dropNode(){
     nodo = NULL;
 }
 
+void render::deleteNode(){
+	nodo->~nodeMesh();
+	nodo = NULL;
+}
+
 void render::actualizarRender(){
 	if(nodo != NULL){
 		nodo->_setNodePosition(padre->getPosicion());
