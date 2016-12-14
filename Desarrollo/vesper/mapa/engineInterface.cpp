@@ -103,7 +103,8 @@ bool engineInterface::loadMap(){
 	IMesh* muro  = _getMesh("../../../mapa/3d/muro.3ds");
 	IMesh* muro2 = _getMesh("../../../mapa/3d/muro.3ds");
 	IMesh* suelo = _getMesh("../../../mapa/3d/suelo.3ds");
-	
+    //IMesh* suelo_comida = smgr->getGeometryCreator()->createPlaneMesh(core::dimension2df(10,10));
+    IMesh * suelo_comida = smgr->getGeometryCreator()->createCubeMesh(vector3df{1,1,1});
     if(!muro){
         printf("muro no cargado\n");
         return false;
@@ -122,7 +123,6 @@ bool engineInterface::loadMap(){
     int*** mapita;
     
     //CARGAR PLANO
-    
     IMesh* suelo_prueba = smgr->getGeometryCreator()->createPlaneMesh(core::dimension2df(map->getHeight(),map->getWidth()));
     nodeMesh * nodo_suelo = _getNodeFromMesh(suelo_prueba);
     _setMaterialFlag(nodo_suelo, 0, false);
@@ -133,6 +133,7 @@ bool engineInterface::loadMap(){
     mapita = map->getMatriz();
     nodeMesh* nodo;
     nodeMesh* nodor;
+    nodeMesh* nodoc; //comida
     //nodeMesh* nodo_suelo;
     
     if(map->getHeight() < 0 || map->getWidth() < 0)
@@ -140,7 +141,7 @@ bool engineInterface::loadMap(){
     
     for(int i=0; i<map->getHeight();i++){
         for(int j=0; j<map->getWidth(); j++){
-            if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
+            if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9 ){
 //				nodo = smgr->addMeshSceneNode(muro);
 				nodo = _getNodeFromMesh(muro);
 //				nodo->setMaterialFlag(EMF_LIGHTING, false);
@@ -150,6 +151,17 @@ bool engineInterface::loadMap(){
 //                nodo->setPosition(vector3df(i,j,0));
 				nodo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),-0.5});
                 nodo = NULL;
+            }
+            if(mapita[0][i][j] == 86){ //comida
+                //				nodo = smgr->addMeshSceneNode(muro);
+                nodoc = _getNodeFromMesh(suelo_comida);
+                //				nodo->setMaterialFlag(EMF_LIGHTING, false);
+                _setMaterialFlag(nodoc, 0, false);
+                //                nodo->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/rocas.jpg"));
+                _setMaterialTexture(nodoc, "../../../modelos3D/rocas.jpg");
+                //                nodo->setPosition(vector3df(i,j,0));
+                nodoc->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                nodoc = NULL;
             }
             /*if(mapita[0][i][j] == 86){
 //                nodo_suelo = smgr->addMeshSceneNode(suelo);
