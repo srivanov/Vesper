@@ -103,8 +103,11 @@ bool engineInterface::loadMap(){
 	IMesh* muro  = _getMesh("../../../mapa/3d/muro.3ds");
 	IMesh* muro2 = _getMesh("../../../mapa/3d/muro.3ds");
 	IMesh* suelo = _getMesh("../../../mapa/3d/suelo.3ds");
-    //IMesh* suelo_comida = smgr->getGeometryCreator()->createPlaneMesh(core::dimension2df(10,10));
-    IMesh * suelo_comida = smgr->getGeometryCreator()->createCubeMesh(vector3df{1,1,1});
+    IMesh* suelo_comida = smgr->getGeometryCreator()->createCubeMesh(vector3df{1,1,1});
+    IMesh* cubo_fuente = smgr->getGeometryCreator()->createCubeMesh(vector3df{1,1,1});
+    IMesh* cubo_alarma = smgr->getGeometryCreator()->createCubeMesh(vector3df{1,1,1});
+    IMesh* cubo_botiquin = smgr->getGeometryCreator()->createCubeMesh(vector3df{1,1,1});
+    
     if(!muro){
         printf("muro no cargado\n");
         return false;
@@ -132,8 +135,11 @@ bool engineInterface::loadMap(){
     
     mapita = map->getMatriz();
     nodeMesh* nodo;
-    nodeMesh* nodor;
+    nodeMesh* nodor; //rocas
     nodeMesh* nodoc; //comida
+    nodeMesh* nodof; //fuente
+    nodeMesh* nodoa; //alarma
+    nodeMesh* nodob; //botiquin
     //nodeMesh* nodo_suelo;
     
     if(map->getHeight() < 0 || map->getWidth() < 0)
@@ -153,15 +159,32 @@ bool engineInterface::loadMap(){
                 nodo = NULL;
             }
             if(mapita[0][i][j] == 86){ //comida
-                //				nodo = smgr->addMeshSceneNode(muro);
                 nodoc = _getNodeFromMesh(suelo_comida);
-                //				nodo->setMaterialFlag(EMF_LIGHTING, false);
                 _setMaterialFlag(nodoc, 0, false);
-                //                nodo->setMaterialTexture(0, driver->getTexture("../../../mapa/3d/rocas.jpg"));
-                _setMaterialTexture(nodoc, "../../../modelos3D/rocas.jpg");
-                //                nodo->setPosition(vector3df(i,j,0));
+                _setMaterialTexture(nodoc,"../../../modelos3D/colorComida.jpg");
                 nodoc->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 nodoc = NULL;
+            }
+            if(mapita[0][i][j] == 100){ //fuente
+                nodof = _getNodeFromMesh(cubo_fuente);
+                _setMaterialFlag(nodof, 0, false);
+                _setMaterialTexture(nodof,"../../../modelos3D/colorFuente.jpg");
+                nodof->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                nodof = NULL;
+            }
+            if(mapita[0][i][j] == 161){ //alarma
+                nodoa = _getNodeFromMesh(cubo_alarma);
+                _setMaterialFlag(nodoa, 0, false);
+                _setMaterialTexture(nodoa,"../../../modelos3D/colorAlarma.jpg");
+                nodoa->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                nodoa = NULL;
+            }
+            if(mapita[0][i][j] == 130){ //botiquin
+                nodob = _getNodeFromMesh(cubo_botiquin);
+                _setMaterialFlag(nodob, 0, false);
+                _setMaterialTexture(nodob,"../../../modelos3D/colorBotiquin.jpg");
+                nodob->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                nodob = NULL;
             }
             /*if(mapita[0][i][j] == 86){
 //                nodo_suelo = smgr->addMeshSceneNode(suelo);
