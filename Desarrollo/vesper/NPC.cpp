@@ -8,13 +8,18 @@
 
 #include "NPC.hpp"
 
-NPC::NPC(){
+NPC::NPC(int ntipo, vector3D * posinicial){
     DeciSys = new estados;
-    datosPropios.inicializar();
+    datosPropios = new datos(ntipo, posinicial);
 }
 NPC::~NPC(){
-    
+    delete datosPropios;
+    delete DeciSys;
 }
-void NPC::update(BlackBoard * worldINFO){DeciSys->run(datosPropios,worldINFO);}
-datos NPC::getNPCinfo(){return datosPropios;}
-vector3D NPC::getPosition(){return datosPropios.getPosActual();}
+void NPC::update(BlackBoard * worldINFO){
+    cout << datosPropios->getPosActual()->x << "|" << datosPropios->getPosActual()->y << endl;
+    DeciSys->run(*datosPropios,worldINFO);
+}
+datos NPC::getNPCinfo(){return *datosPropios;}
+vector3D * NPC::getPosition(){return datosPropios->getPosActual();}
+void NPC::setPosition(vector3D * posicion){datosPropios->newPosition(posicion);}

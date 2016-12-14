@@ -10,41 +10,39 @@
 #define datos_hpp
 
 #include <stdlib.h>
+#include "vectorD.hpp"
 #include <time.h>
-class vector3D{
-public:
-    float x,y,z;
-    bool operator ==(const vector3D &p) const;
-    vector3D& operator =(const vector3D &p);
-};
+
 
 class datos {
-private:
-    int life,sed,hambre,tipo;
-    vector3D posActual, posAnterior;
-    vector3D posFinal;
-    float velocidad;
-    int estados;
-    bool llamando;
-    bool avisado;
 public:
-    vector3D getPosicionFinal();
-    void setPosicionFinal(vector3D posicion);
+    datos(int ntipos,vector3D * PosicionInicial);//tipo, posActual;
+    ~datos();
     void Avisado(bool senyal);
-    void Llamada(bool senyal,vector3D posicion);
+    void Llamada(bool senyal,vector3D * posicion);
     void Beber(int valor);
     void Alimentarse(int valor);
     void Curarse(int valor);
-    bool getAviso();
-    bool getLLamada();
+    bool getAviso() const {return avisado;}
+    bool getLLamada() const {return llamando;}
     void setEstados(int NewEstado);
-    int getEstado();
-    void inicializar();
-    int getLife();
-    int getSed();
-    int getHambre();
-    void newPosition(vector3D nueva_posicion);
-    vector3D getPosActual();
-    vector3D getPosAnterior();
+    int getEstado() const {return estados;}
+    int getLife() const {return life;}
+    int getSed() const {return sed;}
+    int getHambre() const {return hambre;}
+    void newPosition(vector3D * nueva_posicion);
+    vector3D * getPosActual() const {return posActual;}
+    vector3D * getPosAnterior() const {return posAnterior;}
+    vector3D * getPosAviso() const {return aviso;}
+    void setPosicionAviso(vector3D * posicion);
+private:
+    int life,sed,hambre,tipo;
+    vector3D *posActual, *posAnterior;
+    vector3D * aviso;
+    float velocidad;
+    float velcorriendo;
+    int estados;
+    bool llamando;
+    bool avisado;
 };
 #endif /* datos_hpp */

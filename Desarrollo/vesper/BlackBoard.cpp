@@ -8,13 +8,19 @@
 
 #include "BlackBoard.hpp"
 
-BlackBoard::BlackBoard(){}
+BlackBoard::BlackBoard(){posicion = new vector3D{-1,-1,-1};}
 BlackBoard::~BlackBoard(){}
-void BlackBoard::clean(){
-    ObjetosCercanos.clear();
-    posicionesNPC.clear();
+void BlackBoard::cleanBool(){
     comprobadaAlarma = false;
     comprobadaFuente = false;
     estadoAlarma = false;
-    estadoFuente = false;
+    estadofuente = false;
+}
+void BlackBoard::vaciarVectores(){
+    posicionesNPC.clear();
+    Botiquines.clear();
+    Fuente.clear();
+    Comida.clear();
+    Alarma.clear();
+    posicion->clear();
 }

@@ -7,43 +7,28 @@
 //
 
 #include "world.hpp"
-world::world(){infoWorld = new BlackBoard;}
+world::world(){
+    infoWorld = new BlackBoard;
+}
 
-
-// SIN ACABAR , FALTA ASIGNACION DE VALORES
-void world::anyadirBotiquin(){
-    botiquin * obj_hijo = new botiquin;
-    botiquin_mundo.push_back(obj_hijo);
-}
-void world::anyadirFuente(){
-    fuente * obj_hijo = new fuente;
-    fuente_mundo.push_back(obj_hijo);
-}
-void world::anyadirComida(){
-    comida * obj_hijo = new comida;
-    comida_mundo.push_back(obj_hijo);
-}
-void world::anyadirAlarma(){
-    alarma * obj_hijo = new alarma;
-    alarma_mundo.push_back(obj_hijo);
-}
+void world::anyadirBotiquin(botiquin *hijo){botiquin_mundo.push_back(hijo);}
+void world::anyadirFuente(fuente *hijo){fuente_mundo.push_back(hijo);}
+void world::anyadirComida(comida *hijo){comida_mundo.push_back(hijo);}
+void world::anyadirAlarma(alarma *hijo){alarma_mundo.push_back(hijo);}
+void world::anyadirNPC(NPC *hijo){enemigos.push_back(hijo);}
 void world::update(){
-    
+    infoWorld->vaciarVectores();
+    ConstruirBlackBoard();
     for (int i=0; i<enemigos.size(); i++) {
         
-        // LIMPAMOS BLACKBOARD
-        infoWorld->clean();
-        // VECTORES DE LOS NPCs MAS CERCARNOS AL NPC
-        NPCsCercanos(enemigos[i]->getPosition());
-        // VECTORES DE LOS OBJETOS MAS CERCANOS AL NPC
-        ObjetosCercanos(enemigos[i]->getPosition());
+        infoWorld->cleanBool();
+        
         // UPDATE DEL NPC
         enemigos[i]->update(infoWorld);
         // SE ACTUALIZAN LOS OBJECTOS DESTRUCTIBLES
-        ComprobacionFuentesAlarmas();
+        //ComprobacionFuentesAlarmas();
         //AVISO DE UN NPC A SUS COMPAÑEROS
         NPCsAvisados(enemigos[i]);
-        
     }
 }
 void world::NPCsAvisados(NPC * npc){
@@ -57,7 +42,7 @@ void world::NPCsAvisados(NPC * npc){
         }
     }
 }
-void world::ComprobacionFuentesAlarmas(){
+/*void world::ComprobacionFuentesAlarmas(){
     if(infoWorld->comprobadaAlarma && !infoWorld->estadoAlarma){
         for (int y=0; y<alarma_mundo.size(); y++) {
             if(alarma_mundo[y]->getPosition()==infoWorld->ObjetosCercanos[ALARMA-1])
@@ -70,24 +55,44 @@ void world::ComprobacionFuentesAlarmas(){
                 fuente_mundo[y]->Comprobacion();
         }
     }
-}
+}*/
 float world::CalcularDistancia(vector3D a, vector3D b){
     float x = fabs(pow(a.x-b.x,2));
     float y = fabs(pow(a.y-b.y,2));
     return sqrt(x+y);
 }
-
+void world::ConstruirBlackBoard(){
+    for (int i=0; i<enemigos.size(); i++) {
+        infoWorld->posicionesNPC.push_back(enemigos[i]->getPosition());
+    }
+    for (int i=0; i<botiquin_mundo.size(); i++) {
+        if(!botiquin_mundo[i]->getGastado())
+            infoWorld->Botiquines.push_back(botiquin_mundo[i]->getPosition());
+    }
+    for (int i=0; i<fuente_mundo.size(); i++) {
+        if(!fuente_mundo[i]->getNPCrota())
+            infoWorld->Fuente.push_back(fuente_mundo[i]->getPosition());
+    }
+    for (int i=0; i<comida_mundo.size(); i++) {
+        if (comida_mundo[i]->getComestible())
+            infoWorld->Comida.push_back(comida_mundo[i]->getPosition());
+    }
+    for (int i=0; i<alarma_mundo.size(); i++) {
+        if(!alarma_mundo[i]->getNPCrota())
+            infoWorld->Alarma.push_back(alarma_mundo[i]->getPosition());
+    }
+}
 void world::NPCsCercanos(vector3D NPCactual){
     vector<int> respuesta;
     float aux=-1;int auxID = -1;
     bool completo = false;
     float distancias[3]={-1,-1,-1};
     for (int i=0; i<enemigos.size(); i++) {
-        if (NPCactual == enemigos[i]->getPosition()) {
+        if (NPCactual == *enemigos[i]->getPosition()) {
             cout << "ERES TU IDIOTA!"<< endl;
         }else{
             
-            float distancia = CalcularDistancia(enemigos[i]->getPosition(), NPCactual);
+            float distancia = CalcularDistancia(*enemigos[i]->getPosition(), NPCactual);
             bool guardado = false;
             
             //###################################################
@@ -150,7 +155,7 @@ void world::NPCsCercanos(vector3D NPCactual){
 #define COMIDA 3
 #define ALARMA 4
  */
-void world::ObjetosCercanos(vector3D NPCactual){
+/*void world::ObjetosCercanos(vector3D NPCactual){
     infoWorld->ObjetosCercanos.assign(4,{1000,1000,1000});
     for (int i=0; i<botiquin_mundo.size(); i++) {
         bool descartar = false;
@@ -191,3 +196,4 @@ void world::ObjetosCercanos(vector3D NPCactual){
         }
     }
 }
+*/

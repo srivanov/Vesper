@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <irrlicht.h>
+#include "vectorD.hpp"
 
 using namespace irr;
 using namespace core;
@@ -28,7 +29,7 @@ public:
 	void _setNodePosition(float posicion[]);
 	void _setNodeRotation(float rotacion[]);
 	void _setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger);
-	
+    vector3D * _getNodePositionD();
 	float* _getNodePosition();
 	float* _getNodeRotation();
 	

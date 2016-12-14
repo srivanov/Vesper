@@ -13,13 +13,13 @@ void botiquin::usar(){
     if(num_usos==0)
         gastado=!gastado;
 }
-botiquin::botiquin(){}
-comida::comida(){}
-fuente::fuente(){}
+botiquin::botiquin(vector3D * posInicial){posicion = posInicial;}
+comida::comida(vector3D * posInicial){posicion = posInicial;}
+fuente::fuente(vector3D * posInicial, bool Ninfinita){posicion = posInicial;infinita=posInicial;}
 void fuente::Comprobacion(){if (destruida && !NPCrota) {NPCrota = true;}}
 void alarma::Comprobacion(){if (rota && !NPCrota) {NPCrota = true;}}
 botiquin::~botiquin(){}
 comida::~comida(){}
 fuente::~fuente(){}
-alarma::alarma(){}
+alarma::alarma(vector3D * posInicial){posicion = posInicial;}
 alarma::~alarma(){}

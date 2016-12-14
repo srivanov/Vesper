@@ -27,11 +27,11 @@ estados::estados(){
     estado_act = ESTANDAR;
     
     //GENERALES
+    NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
     NodoVigilar * vigilar = new NodoVigilar;
     NodoPatrullar * patrullar = new NodoPatrullar;
     NodoSecuencia * avisado = new NodoSecuencia;
     Nodo_Avisado * recibido_aviso = new Nodo_Avisado;
-    Nodo_PuertaAbierta * _hay_puerta = new Nodo_PuertaAbierta;
     NodoMover * moverse = new NodoMover;
     avisado->anyadirHijo(recibido_aviso);
     avisado->anyadirHijo(moverse);
@@ -54,26 +54,13 @@ estados::estados(){
     //BUSCAR RUIDO
     NodoSecuenciaPositiva * _buscar_ruido = new NodoSecuenciaPositiva;
     
+    NodoSecuencia * sin_puerta = new NodoSecuencia;
+    Nodo_HayRuido * ruido = new Nodo_HayRuido;
+    sin_puerta->anyadirHijo(ruido);
+    sin_puerta->anyadirHijo(moverse);
+    sin_puerta->anyadirHijo(vigilar);
+    _buscar_ruido->anyadirHijo(sin_puerta);
     
-    for (int i=0; i<BUSCAR_RUIDO_ESTANDAR; i++) {
-        
-        if (i==0) {// CUANDO HAY PUERTA
-            NodoSecuencia * sin_puerta = new NodoSecuencia;
-            sin_puerta->anyadirHijo(_hay_puerta);
-            sin_puerta->anyadirHijo(moverse);
-            _buscar_ruido->anyadirHijo(sin_puerta);
-        }
-        else if(i==1){// SIN PUERTA
-            NodoSecuencia * con_puerta = new NodoSecuencia;
-            con_puerta->anyadirHijo(moverse);
-            NodoAbrirPuerta * abrir_puerta = new NodoAbrirPuerta;
-            con_puerta->anyadirHijo(abrir_puerta);
-            con_puerta->anyadirHijo(moverse);
-            _buscar_ruido->anyadirHijo(con_puerta);
-        }
-        else{cout << "ERROR - BUSCAR RUIDO ESTANDAR SIN DEFINIR" << endl;}
-        
-    }
     
     _estandar->anyadirHijo(_buscar_ruido);
     
@@ -114,6 +101,7 @@ estados::estados(){
         }
         else{cout << "ERROR - FALTA RUTINA DE INGERIR - ESTANDAR" << endl;}
     }
+    _estandar->anyadirHijo(_ingerir);
     
     // ACCIONES - ESTANDAR
     NodoSecuenciaPositiva * _acciones = new NodoSecuenciaPositiva;
@@ -132,6 +120,7 @@ estados::estados(){
                 _acciones->anyadirHijo(patrullar);
         }else{cout << "ERROR - ACCION ESTANDAR SIN DEFINIR" << endl;break;}
     }
+    _estandar->anyadirHijo(_acciones);
 
     // CONSTRUCCION DE ARBOL ALERTA
     _alerta = new NodoSecuenciaPositiva;
@@ -149,20 +138,20 @@ estados::estados(){
     //ALARMA ACTIVA
     Nodo_AlarmaCerca * alarm_cerca = new Nodo_AlarmaCerca;
     NodoRecorreZonaCercana * recorrer_zona = new NodoRecorreZonaCercana; // NODO SIN DEFINIR
-    NodoSecuenciaPositiva * _alarma_activa = new NodoSecuenciaPositiva;
+    NodoSecuencia * _alarma_activa = new NodoSecuencia;
     _alarma_activa->anyadirHijo(alarm_cerca);
     _alarma_activa->anyadirHijo(moverse);
     _alarma_activa->anyadirHijo(recorrer_zona);
     _alerta->anyadirHijo(_alarma_activa);
     
+    _alerta->anyadirHijo(_pedir_ayuda);
+    
     //BUSCAR RUIDO
     _alerta->anyadirHijo(_buscar_ruido);
     
     // VIGILAR
-    _alerta->anyadirHijo(vigilar);
+    _alerta->anyadirHijo(_acciones);
     
-    //PATRULLAR
-    _alerta->anyadirHijo(patrullar);
     
     //CONSTRUYE EL ARBOL DE COMBATE
     _combate = new NodoSecuenciaPositiva;
@@ -171,26 +160,36 @@ estados::estados(){
     _combate->anyadirHijo(estar_asustado);
     
     //PEDIR AYUDA
+    NodoSecuenciaPositiva * ayuda = new NodoSecuenciaPositiva;
     Nodo_HayAlguienCerca * alguien_cerca = new Nodo_HayAlguienCerca;
     Nodo_HayAlguienRadio * alguien_radio = new Nodo_HayAlguienRadio;
     NodoSecuencia * ayuda_cercana = new NodoSecuencia;
     NodoSecuencia * ayuda_radio = new NodoSecuencia;
     NodoSecuencia * ayuda_alarma = new NodoSecuencia;
     Nodo_AlarmaCerca * alarma_cerca = new Nodo_AlarmaCerca;
-    ayuda_alarma->anyadirHijo(alarma_cerca);
-    ayuda_alarma->anyadirHijo(moverse);
     Nodo_AlarmaRota * alarma_rota = new Nodo_AlarmaRota;
-    ayuda_alarma->anyadirHijo(alarma_rota);
-    ayuda_cercana->anyadirHijo(alguien_cerca);
-    ayuda_radio->anyadirHijo(alguien_radio);
     NodoAvisar * avisar = new NodoAvisar;
-    NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
-    ayuda_alarma->anyadirHijo(avisar);
+    ayuda_cercana->anyadirHijo(alguien_cerca);
     ayuda_cercana->anyadirHijo(moverse);
     ayuda_cercana->anyadirHijo(avisar);
+    
+    ayuda_radio->anyadirHijo(alguien_radio);
     ayuda_radio->anyadirHijo(avisar);
-    _pedir_ayuda->anyadirHijo(ayuda_cercana);
-    _pedir_ayuda->anyadirHijo(ayuda_radio);
+    
+    ayuda_alarma->anyadirHijo(alarma_cerca);
+    ayuda_alarma->anyadirHijo(moverse);
+    ayuda_alarma->anyadirHijo(alarma_rota);
+    ayuda_alarma->anyadirHijo(avisar);
+    
+    //NodoSecuenciaPositiva * _pedir_ayuda = new NodoSecuenciaPositiva;
+    
+    ayuda->anyadirHijo(ayuda_cercana);
+    ayuda->anyadirHijo(ayuda_radio);
+    ayuda->anyadirHijo(ayuda_alarma);
+    Nodo_NecesitoAyuda * necesito = new Nodo_NecesitoAyuda;
+    _pedir_ayuda->anyadirHijo(necesito);
+    _pedir_ayuda->anyadirHijo(ayuda);
+    
     _combate->anyadirHijo(_pedir_ayuda);
     
     //COMBATIR
@@ -200,7 +199,7 @@ estados::estados(){
     NodoSecuencia * _distancia_jugador = new NodoSecuencia; //comprueba a la distancia que estas del jugador para elegir el tipo de ataque
     NodoSecuencia * _cuerpo_cuerpo = new NodoSecuencia;
     NodoSecuencia * _a_distancia = new NodoSecuencia;
-    
+    Nodo_PuedoAtacarDistancia * distatack = new Nodo_PuedoAtacarDistancia;
     Nodo_EstasCercaJugador * cerca_jug = new Nodo_EstasCercaJugador;
     Nodo_EstasLejosJugador * lejos_jug = new Nodo_EstasLejosJugador;
     NodoAtaqueCuerpo * ataque_cuerpo = new NodoAtaqueCuerpo;
@@ -210,18 +209,24 @@ estados::estados(){
     _cubrir->anyadirHijo(cubrirse);
     _combatir->anyadirHijo(_cubrir);
     _combatir->anyadirHijo(_ataques);
-    _ataques->anyadirHijo(_distancia_jugador);
+    
     _distancia_jugador->anyadirHijo(lejos_jug);
     _distancia_jugador->anyadirHijo(moverse);
-    _ataques->anyadirHijo(_cuerpo_cuerpo);
+    
     _cuerpo_cuerpo->anyadirHijo(cerca_jug);
     _cuerpo_cuerpo->anyadirHijo(moverse);
     _cuerpo_cuerpo->anyadirHijo(ataque_cuerpo);
-    _ataques->anyadirHijo(_a_distancia);
+    
+    _a_distancia->anyadirHijo(distatack);
     _a_distancia->anyadirHijo(ataque_distancia);
+    
+    _ataques->anyadirHijo(_distancia_jugador);
+    _ataques->anyadirHijo(_cuerpo_cuerpo);
+    _ataques->anyadirHijo(_a_distancia);
     _combate->anyadirHijo(_combatir);
     
     //CAMBIAR ESTADO A ALERTA
+    //VIGILAR TAMBIEN CAMBIA ESTADO
     _combate->anyadirHijo(vigilar);
     
     //CONSTRUCCION DEL ARBOL ASUSTADO
@@ -243,6 +248,7 @@ estados::estados(){
 }
 
 estados::~estados(){
+    WorldInfo = NULL;
     delete _estandar;
     delete _alerta;
     delete _combate;
@@ -262,19 +268,19 @@ void estados::run(datos NPCinfo,BlackBoard * worldInfo){
 }
 
 void estados::estandar(){
-    _estandar->run(*NPC ,WorldInfo);
+    _estandar->run(NPC ,WorldInfo);
 }
 
 void estados::alerta(){
-    _alerta->run(*NPC,WorldInfo);
+    _alerta->run(NPC,WorldInfo);
 }
 
 void estados::combate(){
-    _combate->run(*NPC,WorldInfo);
+    _combate->run(NPC,WorldInfo);
 }
 
 void estados::asustado(){
-    _asustado->run(*NPC,WorldInfo);
+    _asustado->run(NPC,WorldInfo);
 }
 
 

@@ -7,46 +7,41 @@
 //
 
 #include "datos.hpp"
-void datos::inicializar(){
+
+#define BOLASdeFUEGO 1
+#define LANZApinchos 2
+#define ESCUPEacido 3
+#define CUERPOaCUERPO 4
+
+
+datos::datos(int ntipos,vector3D * PosicionInicial){
     life=100;
-    srand(time(NULL));
+    srand(static_cast<int>(time(NULL)));
     sed = rand() % 40;
     hambre = rand() % 40;
-    tipo = 1;
-    //posActual = {1,1,0};
-    velocidad = 1.f;
     llamando = false;
-}
-bool vector3D::operator ==(const vector3D &p) const{
-    return this->x==p.x && this->y==p.y && this->z==p.z;
-    
-}
-vector3D& vector3D::operator=(const vector3D &p){
-    if(this!=&p){
-        if(p.x != 0 ) this->x = p.x;
-        if(p.y != 0 ) this->y = p.y;
-        if(p.z != 0 ) this->z = p.z;
+    avisado = false;
+    tipo = ntipos;
+    if (tipo<=ESCUPEacido) {
+        velocidad = 1.f;
+        if(tipo==BOLASdeFUEGO) velcorriendo = 1.5f;
+        else if(tipo==LANZApinchos) velcorriendo = 1.2f;
+        else velcorriendo = 1.7f;
+    }else{
+        velocidad = 0.8f;
+        velcorriendo = 2.f;
     }
-    return *this;
+    posActual = PosicionInicial;
 }
-vector3D datos::getPosicionFinal(){return posFinal;}
-void datos::setPosicionFinal(vector3D posicion){posFinal=posicion;}
-vector3D datos::getPosActual(){return posActual;}
-vector3D datos::getPosAnterior(){return posAnterior;}
-int datos::getLife(){return life;}
-int datos::getHambre(){return hambre;}
-int datos::getSed(){return sed;}
-int datos::getEstado(){return estados;}
+datos::~datos(){}
 void datos::setEstados(int NewEstado){estados=NewEstado;}
-void datos::Llamada(bool senyal,vector3D posicion){llamando=senyal;setPosicionFinal(posicion);}
-
+void datos::Llamada(bool senyal,vector3D * posicion){llamando=senyal;setPosicionAviso(posicion);}
+void datos::setPosicionAviso(vector3D *posicion){aviso = posicion;}
 void datos::Avisado(bool senyal){avisado=senyal;}
-bool datos::getAviso(){return avisado;}
-bool datos::getLLamada(){return llamando;}
 void datos::Curarse(int valor){
     life+=valor;
     if (life>100) life = 100;
 }
 void datos::Alimentarse(int valor){hambre-=valor;}
 void datos::Beber(int valor){sed-=valor;}
-void datos::newPosition(vector3D nueva_posicion){posActual=nueva_posicion;}
+void datos::newPosition(vector3D * nueva_posicion){posActual=nueva_posicion;}

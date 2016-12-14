@@ -4,7 +4,7 @@
 #include "engineInterface.hpp"
 #include "physicsController.hpp"
 #include "nodeMesh.hpp"
-#include "Nodos.hpp"
+#include "world.hpp"
 
 /*
 using namespace irr;
@@ -29,7 +29,10 @@ int main(){
 	interfaceIrr->_setMaterialTexture(player, "../../../modelos3D/texture.png");
     
 	player->_setNodePosition(new float[3]{0,0,0});
- 
+    
+    world * mundo = new world;
+    NPC * npc = new NPC(1,player->_getNodePositionD());
+    mundo->anyadirNPC(npc);
     
 	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
 	fisicas->Footest();
@@ -60,6 +63,10 @@ int main(){
 			fisicas->getBulletPosition(posicion_bala);
 			bala->_setNodePosition(posicion_bala);
 		}
+        
+        npc->setPosition(player->_getNodePositionD());
+        
+        mundo->update();
         interfaceIrr->_beginScene(true, true);
         interfaceIrr->_drawAll();
         interfaceIrr->_endScene();

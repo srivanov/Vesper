@@ -52,3 +52,6 @@ float* nodeMesh::_getNodeRotation(){
 	vector3df r =  object->getRotation();
 	return new float[3]{r.X, r.Y, r.Z};
 }
+vector3D * nodeMesh::_getNodePositionD(){
+    return new vector3D(object->getAbsolutePosition().X,object->getAbsolutePosition().Y,object->getAbsolutePosition().Z);
+}

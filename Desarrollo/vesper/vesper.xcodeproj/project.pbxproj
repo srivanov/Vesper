@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		633297241DF86B62002585D5 /* NPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633297221DF86B62002585D5 /* NPC.cpp */; };
 		6332972A1DF87A8A002585D5 /* datos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633297281DF87A8A002585D5 /* datos.cpp */; };
+		63376E3F1E0024A700258E84 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63376E3D1E0024A700258E84 /* player.cpp */; };
+		63376E421E00271C00258E84 /* vectorD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63376E401E00271C00258E84 /* vectorD.cpp */; };
 		634EC61D1DF963C70005F5F9 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634EC61B1DF963C70005F5F9 /* world.cpp */; };
 		634EC6201DF964F30005F5F9 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634EC61E1DF964F30005F5F9 /* objects.cpp */; };
 		635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */; };
@@ -35,6 +37,10 @@
 		633297231DF86B62002585D5 /* NPC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NPC.hpp; sourceTree = "<group>"; };
 		633297281DF87A8A002585D5 /* datos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = datos.cpp; sourceTree = "<group>"; };
 		633297291DF87A8A002585D5 /* datos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = datos.hpp; sourceTree = "<group>"; };
+		63376E3D1E0024A700258E84 /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		63376E3E1E0024A700258E84 /* player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
+		63376E401E00271C00258E84 /* vectorD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vectorD.cpp; sourceTree = "<group>"; };
+		63376E411E00271C00258E84 /* vectorD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vectorD.hpp; sourceTree = "<group>"; };
 		634EC61B1DF963C70005F5F9 /* world.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = world.cpp; sourceTree = "<group>"; };
 		634EC61C1DF963C70005F5F9 /* world.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = world.hpp; sourceTree = "<group>"; };
 		634EC61E1DF964F30005F5F9 /* objects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */,
 				D29475DB1DCE63C200AD3AEF /* cargarMapa.hpp */,
 				D29475D51DCE479D00AD3AEF /* main.cpp */,
+				63376E3D1E0024A700258E84 /* player.cpp */,
+				63376E3E1E0024A700258E84 /* player.hpp */,
+				63376E401E00271C00258E84 /* vectorD.cpp */,
+				63376E411E00271C00258E84 /* vectorD.hpp */,
 				634EC61B1DF963C70005F5F9 /* world.cpp */,
 				634EC61C1DF963C70005F5F9 /* world.hpp */,
 				634EC61E1DF964F30005F5F9 /* objects.cpp */,
@@ -170,7 +180,7 @@
 		D29475AC1DCE44BA00AD3AEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Skyscrapers;
 				TargetAttributes = {
 					D29475B31DCE44BA00AD3AEF = {
@@ -220,9 +230,11 @@
 				E9C7839E1DE3596E00D96FC8 /* main2.cpp in Sources */,
 				635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */,
 				E9C7839F1DE3596E00D96FC8 /* mundoBox2D.cpp in Sources */,
+				63376E3F1E0024A700258E84 /* player.cpp in Sources */,
 				E9C783A01DE3596E00D96FC8 /* physicsController.cpp in Sources */,
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
 				633297241DF86B62002585D5 /* NPC.cpp in Sources */,
+				63376E421E00271C00258E84 /* vectorD.cpp in Sources */,
 				D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */,
 				6332972A1DF87A8A002585D5 /* datos.cpp in Sources */,
 				634EC61D1DF963C70005F5F9 /* world.cpp in Sources */,
@@ -251,6 +263,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -298,6 +311,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

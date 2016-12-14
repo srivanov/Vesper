@@ -10,19 +10,19 @@
 #define world_hpp
 
 #include "NPC.hpp"
-#include "tinyxml2.h"
-
 
 class world {
 public:
     world();
     ~world();
-    void anyadirBotiquin();
-    void anyadirFuente();
-    void anyadirComida();
-    void anyadirAlarma();
+    void anyadirBotiquin(botiquin * hijo);
+    void anyadirFuente(fuente * hijo);
+    void anyadirComida(comida * hijo);
+    void anyadirAlarma(alarma * hijo);
+    void anyadirNPC(NPC * hijo);
     void update();
 private:
+    void ConstruirBlackBoard();
     void NPCsAvisados(NPC * npc);
     void NPCsCercanos(vector3D  NPCactual);
     void ObjetosCercanos(vector3D  NPCactual);

@@ -17,15 +17,15 @@
 
 class objetos {
 public:
-    vector3D getPosition(){return posicion;}
+    vector3D * getPosition(){return posicion;}
     int TipoObjeto(){return tipo;}
-private:
+protected:
     int tipo;
-    vector3D posicion;
+    vector3D * posicion;
 };
 class botiquin : public objetos{
 public:
-    botiquin();
+    botiquin(vector3D * posInicial);
     ~botiquin();
     bool getGastado(){return gastado;}
     void usar();
@@ -37,9 +37,8 @@ private:
 };
 class fuente : public objetos{
 public:
-    fuente();
+    fuente(vector3D * posInicial, bool Ninfinita);
     ~fuente();
-    void inicializar(bool indestructible){infinita=indestructible;}
     bool getInifinita(){return infinita;}
     bool getEstado(){return destruida;}
     bool getNPCrota(){return NPCrota;}
@@ -54,7 +53,7 @@ private:
 };
 class comida : public objetos{
 public:
-    comida();
+    comida(vector3D * posInicial);
     ~comida();
     void comer(){comestible=false;}
     bool getComestible(){return comestible;}
@@ -66,7 +65,7 @@ private:
 };
 class alarma : public objetos{
 public:
-    alarma();
+    alarma(vector3D * posInicial);
     ~alarma();
     void activar(){activada=true;}
     bool getActivada(){return activada;}

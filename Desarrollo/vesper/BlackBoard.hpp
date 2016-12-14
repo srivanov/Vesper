@@ -17,16 +17,21 @@ class BlackBoard{
 public:
     BlackBoard();
     ~BlackBoard();
-    std::vector<vector3D> posicionesNPC;
-    std::vector<vector3D> ObjetosCercanos;
-    std::vector<vector3D> RuidosCercanos;
-    vector3D JugadorPosicion;
-    bool estadoFuente;
+    std::vector<vector3D*> posicionesNPC;
+    std::vector<vector3D*> Botiquines;
+    std::vector<vector3D*> Alarma;
+    std::vector<vector3D*> Comida;
+    std::vector<vector3D*> Fuente;
+    std::vector<vector3D*> RuidosCercanos;
+    
+    vector3D * posicion;
     bool comprobadaFuente = false;
-    bool estadoAlarma;
+    bool estadofuente = false;
+    bool estadoAlarma = false;
     bool comprobadaAlarma = false;
     bool alarmaActivada = false;
-    void clean();
+    void cleanBool();
+    void vaciarVectores();
 private:
 };
 

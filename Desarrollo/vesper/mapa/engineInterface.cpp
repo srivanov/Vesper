@@ -114,7 +114,7 @@ bool engineInterface::loadMap(){
     }
 	
 	/////(0,-5,10)-(0,6,0)////posicion de la camra, y donde tiene q mirar
-//    smgr->addCameraSceneNode(0,vector3df(60,-40,-50),vector3df(60,30,0));
+    //smgr->addCameraSceneNode(0,vector3df(60,-40,-50),vector3df(60,30,0));
     cargarMapa * map = new cargarMapa();
     
     map->leerMapa();
