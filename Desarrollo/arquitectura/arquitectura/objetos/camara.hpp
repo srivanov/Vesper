@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
-#include "Fps.hpp"
+#include "../Fps.hpp"
 
 class camara : public GameObject {
 public:

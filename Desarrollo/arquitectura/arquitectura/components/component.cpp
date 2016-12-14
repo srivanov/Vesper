@@ -12,7 +12,8 @@ void component::setFather(GameObject *p){
 }
 
 component::~component(){
-
+	//delete padre;
+	padre = NULL;
 }
 
 GameObject* component::getFather(){

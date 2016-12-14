@@ -19,6 +19,6 @@ int main(int argc, const char * argv[]) {
 		game->update();
 		game->render();
 	}
-	game->~Game();
+	delete game;
     return 0;
 }

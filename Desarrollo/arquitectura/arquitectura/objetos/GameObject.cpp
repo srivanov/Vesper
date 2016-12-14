@@ -1,6 +1,6 @@
 
 #include "GameObject.hpp"
-#include "component.hpp"
+#include "../components/component.hpp"
 
 
 GameObject::GameObject(){
@@ -11,7 +11,16 @@ GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
+	/*std::map<char*, component*>::iterator iter = components.begin();
+	while (iter != components.end()) {
+		delete &iter;
+		iter++;
+	}*/
 	components.clear();
+	delete posicion;
+    //delete rotacion;
+	delete anguloDisparo;
+	//TODO: borrar variables
 }
 
 

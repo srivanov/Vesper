@@ -15,6 +15,15 @@ cargarMapa::cargarMapa(){
     _numLayers = 0;
 }
 
+cargarMapa::~cargarMapa() {
+	//delete _tilemap;
+	_tilemap = NULL;
+	delete _level;
+	delete matrizMapa;
+	//delete objs;
+	//delete tilesMov;
+}
+
 bool cargarMapa::leerMapa(char* fichero) {
     ////////////////////////////////////////////////////////////////////////////////////
     // CAPA DE TEXTURAS
@@ -76,21 +85,19 @@ bool cargarMapa::leerMapa(char* fichero) {
     _level = new int [_width*_height];
     int cont = 0;
     //cargar los gids de diversas capas
-    XMLElement  *data[_width*_height];
+	
     //Carga la primera capa de textura
-    data[0] = map->FirstChildElement("layer")->FirstChildElement("data")->FirstChildElement("tile");
+    XMLElement *data = map->FirstChildElement("layer")->FirstChildElement("data")->FirstChildElement("tile");
     for(int l=0; l<_numLayers; l++){
         for(int y=0; y<_height; y++){
             for(int x=0; x<_width; x++){
                //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
-                _level[cont] = data[l]->IntAttribute("gid")-1; //hasta q llega a 260 desde 1(ancho*alto)
+                _level[cont] = data->IntAttribute("gid")-1; //hasta q llega a 260 desde 1(ancho*alto)
                 cont++;
-                data[l]->QueryIntAttribute("gid", &_tilemap[l][y][x]);
+                data->QueryIntAttribute("gid", &_tilemap[l][y][x]);
 
                 //avanzo hasta el siguiente tag
-                data[l] = data[l]->NextSiblingElement("tile");
-
-              
+                data = data->NextSiblingElement("tile");
             }
         }
     }
@@ -126,15 +133,6 @@ void cargarMapa::mostrarMatriz(){
     }
     
 }
-
-cargarMapa::~cargarMapa(){
-    delete _tilemap;
-    delete _level;
-    delete matrizMapa;
-    //delete objs;
-    //delete tilesMov;
-}
-
 
 int*** cargarMapa::getMatriz(){
     return _tilemap;

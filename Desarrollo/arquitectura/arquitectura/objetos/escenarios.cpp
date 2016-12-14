@@ -18,16 +18,18 @@ escenarios::escenarios(){
 }
 
 escenarios::~escenarios(){
-    
+	delete mapa_nivel;
+	delete cargador;
 }
 
-bool escenarios::cargarNivel(int numero){
-	char* ruta = new char[30];
+bool escenarios::cargarNivel(char* numero){
+	char ruta[30] = "";
 	char* num = new char[2];
-	sprintf(num, "%d", numero);
-	strcat(ruta, "../../../arquitectura/tiled/mapa");
-	strcat(ruta, num);
+	
+	strcat(ruta, "tiled/mapa");
+	strcat(ruta, numero);
 	strcat(ruta, ".tmx");
+	printf("\n%s\n", ruta);
 	if(!cargador->leerMapa(ruta))
 		printf("Ha habido un problema al leer el mapa del fichero. Comprueba la ruta y el acceso.\n");
 	ancho = cargador->getWidth();

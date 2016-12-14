@@ -1,6 +1,6 @@
 
 #include "Game.hpp"
-
+#include <cstdlib>
 Game* Game::pinstance = 0;
 
 Game* Game::Instance(){
@@ -20,22 +20,25 @@ Game::Game(){
 }
 
 Game::~Game(){
-	c->~camara();
-	p->~player();
+	delete entrada;
+	delete c;
+	delete nivel;
     renderizador->closeWindow();
-	renderizador->~render();
-	free(pinstance);
+	delete renderizador;
+	delete p;
+	//delete pinstance;
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	renderizador->setTexto();
-    p->addNodo("../../../arquitectura/3d/sphere.3ds");
-	p->setTexture("../../../arquitectura/3d/texture.png");
+    p->addNodo("3d/sphere.3ds");
+	p->setTexture("3d/texture.png");
 	c->addCamara(new float[3]{0,-5,-10}, new float[3]{0,0,0});
-	if(nivel->cargarNivel(2))
+	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();
+	
 }
 
 void Game::stop(){
@@ -65,7 +68,7 @@ player* Game::getPlayer(){
 
 bala* Game::insertBala(){
     bala_aux = new bala(p->getPosicion(), p->getDirDisparo());
-    bala_aux->addNodo("../../../arquitectura/3d/bala.3ds");
+    bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
     return bala_aux;
 }
@@ -80,7 +83,7 @@ void Game::update(){
         bala_aux->mover(bala_aux->getDireccion());
 		bala_aux->update();
 		if(bala_aux->muero()){
-			bala_aux->~bala();
+			delete bala_aux;
 			iter = balas.erase(iter);
 		}else
 			iter++;

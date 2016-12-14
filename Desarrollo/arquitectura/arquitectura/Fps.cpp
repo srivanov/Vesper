@@ -17,6 +17,10 @@ Fps::Fps(){
 	begin_time = time(NULL);
 }
 
+Fps::~Fps() {
+	delete pinstance;
+}
+
 // Update
 void Fps::update()
 {

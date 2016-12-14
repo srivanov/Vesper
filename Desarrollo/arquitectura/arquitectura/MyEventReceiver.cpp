@@ -26,7 +26,9 @@ MyEventReceiver::MyEventReceiver()
 }
 
 MyEventReceiver::~MyEventReceiver(){
-	
+	printf("DELETE receiver\n");
+	delete pos_Mouse;
+	delete pinstance;
 }
 
 // This is the one method that we have to implement

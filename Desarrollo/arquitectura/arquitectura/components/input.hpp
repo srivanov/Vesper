@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "component.hpp"
-#include "MyEventReceiver.hpp"
+#include "../MyEventReceiver.hpp"
 #include <time.h>
 
 class bala;

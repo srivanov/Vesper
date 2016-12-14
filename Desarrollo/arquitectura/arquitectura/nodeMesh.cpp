@@ -15,9 +15,9 @@ nodeMesh::nodeMesh(ISceneNode* node){
 
 nodeMesh::~nodeMesh(){
 //	object->drop();
-//	texture->drop();int* rotation
+//	texture->drop();
 	object->remove();
-	free(texture);
+	delete texture;
 }
 
 bool nodeMesh::_setMaterialTexture(ITexture* tex){

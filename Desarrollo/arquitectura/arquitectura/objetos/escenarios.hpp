@@ -4,14 +4,14 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
-#include "cargarMapa.hpp"
+#include "../cargarMapa.hpp"
 
 class escenarios : public GameObject{
 public:
     escenarios();
     ~escenarios();
 	
-	bool cargarNivel(int numero);
+	bool cargarNivel(char* numero);
 	int getAncho();
 	int getAlto();
 	int*** getMapa();

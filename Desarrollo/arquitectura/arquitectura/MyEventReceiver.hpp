@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <irrlicht.h>
+#include <stdint.h>
 
 using namespace irr;
 

@@ -1,8 +1,8 @@
 
 #include "input.hpp"
-#include "GameObject.hpp"
-#include "bala.hpp"
-#include "Game.hpp"
+#include "../objetos/GameObject.hpp"
+#include "../objetos/bala.hpp"
+#include "../Game.hpp"
 
 input::input(){
 	r = MyEventReceiver::Instance();
@@ -11,7 +11,8 @@ input::input(){
 }
 
 input::~input(){
-	
+	//delete r;
+	r = NULL;
 }
 
 void input::update(){

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "component.hpp"
 #include <Box2D/Box2D.h>
-#include "mundoBox2D.hpp"
+#include "../mundoBox2D.hpp"
 
 class physics : public component {
 public:

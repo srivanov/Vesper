@@ -18,7 +18,7 @@ using namespace tinyxml2;
 class cargarMapa{
 public:
     cargarMapa();
-    virtual ~cargarMapa();
+    ~cargarMapa();
     bool leerMapa(char* fichero);
     int getWidth();
     int getHeight();
@@ -33,7 +33,7 @@ public:
     
 private:
     
-    int _width;
+	int _width;
     int _height;
     int _tileWidth;
     int _tileHeight;

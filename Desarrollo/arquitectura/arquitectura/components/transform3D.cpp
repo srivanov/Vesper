@@ -1,6 +1,6 @@
 
 #include "transform3D.hpp"
-#include "GameObject.hpp"
+#include "../objetos/GameObject.hpp"
 
 transform3D::transform3D(){
 	

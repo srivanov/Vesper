@@ -32,10 +32,7 @@ camara::camara(){
 }
 
 camara::~camara(){
-	renderiza->~render();
-	if(renderiza == NULL)
-		printf("bien");
-	clearComponents();
+	delete renderiza;
 }
 
 void camara::addCamara(float* p, float* l){

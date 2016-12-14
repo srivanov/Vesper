@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <irrlicht.h>
-#include "MyEventReceiver.hpp"
+#include "../MyEventReceiver.hpp"
 
 using namespace irr;
 using namespace video;

@@ -1,7 +1,7 @@
 
 #include "render.hpp"
-#include "GameObject.hpp"
-#include "escenarios.hpp"
+#include "../objetos/GameObject.hpp"
+#include "../objetos/escenarios.hpp"
 
 render::render(){
 	nodo = NULL;
@@ -10,7 +10,8 @@ render::render(){
 }
 
 render::~render(){
-	
+	printf("DELETE render\n");
+	delete nodo;
 }
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -33,7 +34,7 @@ void render::setNode(char *filename){
 void render::setNodeTexture(char* filename){
 	if(nodo != NULL){
 		nodo->_setMaterialFlag(EMF_LIGHTING, false);
-		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/texture.png"));
+		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture("3d/texture.png"));
 	}
 }
 
@@ -55,7 +56,7 @@ void render::actualizarRender(){
 }
 
 void render::setTexto(){
-	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,24,22), true);
+	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,34,22), true);
     texto->setBackgroundColor(SColor(255,255,0,255));
     texto->setOverrideColor(SColor(255,255,255,255));
 }
@@ -69,7 +70,7 @@ void render::dibujar(){
 }
 
 void render::addCamera(float* p, float* l){
-	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p[0], p[1], p[2]), vector3df(l[0], l[1], l[2]));
+	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p[0], p[1], p[2]), vector3df(l[0], l[1], l[2]));
     camara->setNearValue(1);
     camara->setFarValue(20);
 }
@@ -79,7 +80,7 @@ void render::closeWindow(){
 }
 
 void render::dibujarMapa(){
-	IMesh* muro  = ventana::Instance()->getSceneManager()->getMesh("../../../arquitectura/3d/muro.3ds");
+	IMesh* muro  = ventana::Instance()->getSceneManager()->getMesh("3d/muro.3ds");
 //	IMesh* suelo = ventana::Instance()->getSceneManager()->getMesh("../../../arquitectura/3d/suelo.3ds");
 	
 	if(!muro){
@@ -106,7 +107,7 @@ void render::dibujarMapa(){
     IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<escenarios*>(getFather())->getAlto(),static_cast<escenarios*>(getFather())->getAncho()));
     nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/colorverde.jpg"));
+    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
     
     nodo_suelo->setPosition(vector3df((static_cast<escenarios*>(getFather())->getAlto()/2)-0.5, (static_cast<escenarios*>(getFather())->getAncho()/2)-0.5, 0));
     
@@ -117,7 +118,7 @@ void render::dibujarMapa(){
 			if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
-				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/rocas.jpg"));
+				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
 				nodo->setPosition(vector3df(i,j,0));
 //				nodo = NULL;
 			}

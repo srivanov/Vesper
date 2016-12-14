@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include <Box2D/Box2D.h>
 #include "mundoBox2D.hpp"
-#include <OpenGL/OpenGL.h>
-#include <GLUT/glut.h>
+//#include <OpenGL/OpenGL.h>
+//#include <GLUT/glut.h>
 
 class physicsController{
     public:

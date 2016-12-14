@@ -5,9 +5,9 @@
 #include <stdio.h>
 #include "component.hpp"
 #include "ventana.hpp"
-#include "nodeMesh.hpp"
-#include "Fps.hpp"
-#include <OpenGL/gl.h>
+#include "../nodeMesh.hpp"
+#include "../Fps.hpp"
+//#include <OpenGL/gl.h>
 
 class escenarios;
 class render : public component {

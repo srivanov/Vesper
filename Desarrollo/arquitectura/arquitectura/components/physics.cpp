@@ -6,7 +6,8 @@ physics::physics(){
 }
 
 physics::~physics(){
-    
+	mundoBox2D::Instance()->getWorld()->DestroyBody(body);
+	//delete angulo;
 }
 
 void physics::crearBodyDinamico(float* dimension, float* posicion){

@@ -22,12 +22,13 @@ mundoBox2D::mundoBox2D()
 	positionIterations = 3;   //how strongly to correct position
 }
 
-b2World* mundoBox2D::getWorld(){
-    return world;
+mundoBox2D:: ~mundoBox2D() { //borra todos los cuerpos y joints. No usar sus punteros despues
+	delete world;
+	delete pinstance;
 }
 
-mundoBox2D:: ~mundoBox2D(){ //borra todos los cuerpos y joints. No usar sus punteros despues
-    delete world;
+b2World* mundoBox2D::getWorld(){
+    return world;
 }
 
 void mundoBox2D::update(){

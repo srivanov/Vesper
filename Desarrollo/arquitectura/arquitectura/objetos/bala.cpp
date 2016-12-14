@@ -16,9 +16,8 @@ bala::bala(float* pos, float* dir){
     }
     setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
-	fisica->crearBodyDinamico(new float[2]{0.1,0.1}, new float[2]{pos[0]+dir[0], pos[1]+dir[1]});
+	fisica->crearBodyDinamico(new float[2]{(float)(0.1),(float)(0.1)}, new float[2]{pos[0]+dir[0], pos[1]+dir[1]});
 	
-	direccion = new float[2]{0,0};
 	direccion[0] = dir[0];
 	direccion[1] = dir[1];
 	tiempo_vida = time(NULL);
@@ -26,9 +25,12 @@ bala::bala(float* pos, float* dir){
 }
 
 bala::~bala(){
+	printf("DELETE bala\n");
+//	delete direccion;
 	class render* ren = (class render*)findComponent("render");
-	if(ren != NULL)
+	if (ren != NULL)
 		ren->deleteNode();
+
 }
 
 float* bala::getDireccion(){

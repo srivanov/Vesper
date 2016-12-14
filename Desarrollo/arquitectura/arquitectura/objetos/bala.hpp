@@ -13,7 +13,7 @@ public:
 	void update();
 	bool muero();
 private:
-	float* direccion;
+	float direccion[2];
 	time_t tiempo_vida;
 	bool muerto;
 };

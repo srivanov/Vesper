@@ -10,15 +10,15 @@
 #define Game_hpp
 
 #include <stdio.h>
-#include "render.hpp"
-#include "input.hpp"
-#include "player.hpp"
-#include "camara.hpp"
+#include "components/render.hpp"
+#include "components/input.hpp"
+#include "objetos/player.hpp"
+#include "objetos/camara.hpp"
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
+#include "objetos/bala.hpp"
+#include "objetos/escenarios.hpp"
 #include <vector>
-#include "bala.hpp"
-#include "escenarios.hpp"
 
 class Game {
 public:
