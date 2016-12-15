@@ -34,10 +34,12 @@ public:
     vector3D * getPosActual() const {return posActual;}
     vector3D * getPosAnterior() const {return posAnterior;}
     vector3D * getPosAviso() const {return aviso;}
-    void setPosicionAviso(vector3D * posicion);
+    void setPosicionFinal(vector3D * posicion);
 private:
     int life,sed,hambre,tipo;
     vector3D *posActual, *posAnterior;
+    vector<vector3D*> patrullar;
+    short rutinas;
     vector3D * aviso;
     float velocidad;
     float velcorriendo;

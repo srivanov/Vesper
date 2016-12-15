@@ -25,13 +25,9 @@ using namespace std;
 class Nodo {
 public:
     virtual short run(datos * NPCinfo, BlackBoard * WorldInfo) = 0;
-    bool getRunning(){return running;}
+    bool getRunning() const {return running;}
 protected:
-    float CalcularDistancia(vector3D a, vector3D b){
-        float x = fabs(a.x-b.x);
-        float y = fabs(a.y-b.y);
-        return x+y;
-    }
+    float CalcularDistancia(vector3D a, vector3D b);
     bool running = false;
 };
 
@@ -56,7 +52,7 @@ public:
     NodoMover();
     short run(datos * NPCinfo, BlackBoard * WorldInfo);
 private:
-    vector3D * posFinal;
+    int f = 0;
 };
 
 class Nodo_VerJugador : public Nodo {

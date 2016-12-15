@@ -17,6 +17,7 @@ void world::anyadirComida(comida *hijo){comida_mundo.push_back(hijo);}
 void world::anyadirAlarma(alarma *hijo){alarma_mundo.push_back(hijo);}
 void world::anyadirNPC(NPC *hijo){enemigos.push_back(hijo);}
 void world::update(){
+    
     infoWorld->vaciarVectores();
     ConstruirBlackBoard();
     for (int i=0; i<enemigos.size(); i++) {

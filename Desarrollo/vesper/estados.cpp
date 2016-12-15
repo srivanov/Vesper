@@ -52,14 +52,11 @@ estados::estados(){
     
     
     //BUSCAR RUIDO
-    NodoSecuenciaPositiva * _buscar_ruido = new NodoSecuenciaPositiva;
-    
-    NodoSecuencia * sin_puerta = new NodoSecuencia;
+    NodoSecuencia * _buscar_ruido = new NodoSecuencia;
     Nodo_HayRuido * ruido = new Nodo_HayRuido;
-    sin_puerta->anyadirHijo(ruido);
-    sin_puerta->anyadirHijo(moverse);
-    sin_puerta->anyadirHijo(vigilar);
-    _buscar_ruido->anyadirHijo(sin_puerta);
+    _buscar_ruido->anyadirHijo(ruido);
+    _buscar_ruido->anyadirHijo(moverse);
+    _buscar_ruido->anyadirHijo(vigilar);
     
     
     _estandar->anyadirHijo(_buscar_ruido);
@@ -255,8 +252,8 @@ estados::~estados(){
     delete _asustado;
 }
 
-void estados::run(datos NPCinfo,BlackBoard * worldInfo){
-    NPC = &NPCinfo;
+void estados::run(datos * NPCinfo,BlackBoard * worldInfo){
+    NPC = NPCinfo;
     WorldInfo = worldInfo;
     switch (estado_act) {
         case ESTANDAR:estandar();break;

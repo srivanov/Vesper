@@ -18,7 +18,8 @@ NPC::~NPC(){
 }
 void NPC::update(BlackBoard * worldINFO){
     cout << datosPropios->getPosActual()->x << "|" << datosPropios->getPosActual()->y << endl;
-    DeciSys->run(*datosPropios,worldINFO);
+    cout << worldINFO->Botiquines[0]->x << endl;
+    DeciSys->run(datosPropios,worldINFO);
 }
 datos NPC::getNPCinfo(){return *datosPropios;}
 vector3D * NPC::getPosition(){return datosPropios->getPosActual();}

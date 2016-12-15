@@ -7,6 +7,7 @@
 //
 
 #include "nodeMesh.hpp"
+#include <stdio.h>
 
 
 nodeMesh::nodeMesh(ISceneNode* node){
@@ -19,7 +20,9 @@ nodeMesh::~nodeMesh(){
 	delete object;
 	delete texture;
 }
-
+void nodeMesh::_setNodePositionD(vector3D * posicion){
+    object->setPosition(vector3df(posicion->x,posicion->y,posicion->z));
+}
 bool nodeMesh::_setMaterialTexture(ITexture* tex){
 	if(tex == NULL)
 		return false;
@@ -53,5 +56,7 @@ float* nodeMesh::_getNodeRotation(){
 	return new float[3]{r.X, r.Y, r.Z};
 }
 vector3D * nodeMesh::_getNodePositionD(){
-    return new vector3D(object->getAbsolutePosition().X,object->getAbsolutePosition().Y,object->getAbsolutePosition().Z);
+
+    
+    return new vector3D(object->getPosition().X,object->getPosition().Y,object->getPosition().Z);
 }

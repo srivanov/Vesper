@@ -37,29 +37,39 @@
 
 
 //NODOS ESPECIALES / GENERALES
+float Nodo::CalcularDistancia(vector3D a, vector3D b){
+    float x = fabs(a.x-b.x);
+    float y = fabs(a.y-b.y);
+    return x+y;
+}
+
+
 // NODO SECUENCIA
 NodoSecuencia::NodoSecuencia(){}
 void NodoSecuencia::anyadirHijo(Nodo * hijo){NodoSecuencia::m_hijos.push_back(hijo);}
 short NodoSecuencia::run(datos * NPCinfo, BlackBoard * WorldInfo){
-    //cout << "NODO SECUENCIA" <<endl;
+    cout << "NODO SECUENCIA" << endl;
     if(getRunning()){
+        cout << " ESTOY RUNNING" << endl;
         for (int i=0; i<m_hijos.size(); i++) {
             if(m_hijos[i]->getRunning()){
                 m_hijos[i]->run(NPCinfo, WorldInfo);
+                //cout << "RUNNING" << endl;
                 return RUNNING;
             }
             else running=INACTIVO;
         }
-    }
-    for (int i=0; i<m_hijos.size(); i++) {
-        short answer = m_hijos[i]->run(NPCinfo, WorldInfo);
-        if (answer==FAILURE) {
-            return FAILURE;
-        }else if(answer==RUNNING){
-            running=ACTIVO;
-            return RUNNING;
+    }else{
+        for (int i=0; i<m_hijos.size(); i++) {
+            short answer = m_hijos[i]->run(NPCinfo, WorldInfo);
+            if (answer==FAILURE) {
+                return FAILURE;
+            }else if(answer==RUNNING){
+                running=ACTIVO;
+                return RUNNING;
+            }
+            
         }
-        
     }
     running=INACTIVO;
     return SUCCESS;
@@ -68,29 +78,35 @@ short NodoSecuencia::run(datos * NPCinfo, BlackBoard * WorldInfo){
 // NODO SECUENCIA POSITIVA
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){}
 short NodoSecuenciaPositiva::run(datos * NPCinfo, BlackBoard * WorldInfo){
-    //cout << "NODO SECUENCIA POSITIVA" <<endl;
+    cout << "NODO SECUENCIA POSITIVA" <<endl;
     if(getRunning()){
+        cout << " ESTOY RUNNING" << endl;
         for (int i=0; i<m_hijos.size(); i++) {
             if(m_hijos[i]->getRunning()){
                 m_hijos[i]->run(NPCinfo, WorldInfo);
+                
                 return RUNNING;
             }
             else running=INACTIVO;
         }
     }
-    for(int i=0;i<m_hijos.size();i++){
-        short answer = m_hijos[i]->run(NPCinfo, WorldInfo);
-        if(answer==SUCCESS){
-            running=INACTIVO;
-            return SUCCESS;
+    else{
+        for(int i=0;i<m_hijos.size();i++){
+            short answer = m_hijos[i]->run(NPCinfo, WorldInfo);
+            if(answer==SUCCESS){
+                running=INACTIVO;
+                return SUCCESS;
+            }
+            else if (answer==RUNNING){
+                running=ACTIVO;
+                return RUNNING;
+            }
         }
-        else if (answer==RUNNING){
-            running=ACTIVO;
-            return RUNNING;
-        }
+        
     }
     return FAILURE;
 }
+
 void NodoSecuenciaPositiva::anyadirHijo(Nodo * hijo){m_hijos.push_back(hijo);}
 
 
@@ -102,31 +118,40 @@ short NodoRecorreZonaCercana::run(datos * NPCinfo, BlackBoard * WorldInfo){retur
 // NODO MOVER
 NodoMover::NodoMover(){}
 short NodoMover::run(datos * NPCinfo, BlackBoard * WorldInfo){
-    if(WorldInfo->posicion!=NULL && WorldInfo->posicion->x!=-1 && posFinal!=WorldInfo->posicion)
-        posFinal=WorldInfo->posicion;
     
     cout << " NODO MOVER" <<endl;
-    return false;
-    if (NPCinfo->getPosActual()==posFinal) {
-        NPCinfo->setPosicionAviso(new vector3D{-1,-1,-1});
+    cout << "PLAYER X:" << NPCinfo->getPosActual()->x << "| Y:" << NPCinfo->getPosActual()->y << endl;
+    cout << "OBJETI X:" << NPCinfo->getPosAviso()->x << "| Y:" << NPCinfo->getPosAviso()->y << endl;
+    float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosAviso());
+    if (aux<0.5) {
+         NPCinfo->setPosicionFinal(new vector3D{-1,-1,-1}) ;
+        running = false;
+        cout << "  LLEGUE" << endl;
         return true;
+        
     }else{
-        float xABS = fabs(posFinal->x-NPCinfo->getPosActual()->x);
-        float x=0,y=0;
-        if(posFinal->x-NPCinfo->getPosActual()->x<0){x--;}
-        else{x++;}
-        if(posFinal->y-NPCinfo->getPosActual()->y<0){y--;}
-        else{y++;}
-        float yABS = fabs(posFinal->y-NPCinfo->getPosActual()->y);
-        if(xABS>yABS){
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y,NPCinfo->getPosActual()->z});
-        }else if(xABS<yABS){
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
-        }else if(xABS==yABS){
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
-        }
+            cout << "  RUNNING" << endl;
+            float xABS = fabs(NPCinfo->getPosAviso()->x-NPCinfo->getPosActual()->x);
+            float x=0,y=0;
+            if(NPCinfo->getPosAviso()->x-NPCinfo->getPosActual()->x<0){x-=0.05;}
+            else{x+=0.05;}
+            if(NPCinfo->getPosAviso()->y-NPCinfo->getPosActual()->y<0){y-=0.05;}
+            else{y+=0.05;}
+            float yABS = fabs(NPCinfo->getPosAviso()->y-NPCinfo->getPosActual()->y);
+            cout << x << "|" << y << endl;
+            if(xABS>yABS){
+                
+                NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y,NPCinfo->getPosActual()->z});
+            }else if(xABS<yABS){
+                NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
+            }else if(xABS==yABS){
+                NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
+            }
+        running = true;
         return RUNNING;
     }
+    running=false;
+    cout << "  FALLE" << endl;
     return false;
 }
 
@@ -166,8 +191,10 @@ short NodoHablar::run(datos * NPCinfo, BlackBoard * WorldInfo){
 // NODO CURARSE
 NodoCurarse::NodoCurarse(){}
 short NodoCurarse::run(datos * NPCinfo, BlackBoard * WorldInfo){
-    //cout << " NODO CURARSE" << endl;
+    cout << " NODO CURARSE" << endl;
+    cout << "  VIDA ANTES :" << NPCinfo->getLife() << endl;
     NPCinfo->Curarse(BOTIQUIN_CURA);
+    cout << "  VIDA DESPS :" << NPCinfo->getLife() << endl;
     return true;
 }
 // NODO VIGILAR
@@ -251,21 +278,58 @@ short Nodo_Avisado::run(datos * NPCinfo, BlackBoard * WorldInfo){
 Nodo_TengoSed::Nodo_TengoSed(){}
 short Nodo_TengoSed::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO TENGO SED?" << endl;
-    if(NPCinfo->getSed()>UMBRAL_SED) return true;
+    if(NPCinfo->getSed()>UMBRAL_SED && WorldInfo->Botiquines.size()>0) {
+        NPCinfo->setPosicionFinal(MasCercano(WorldInfo->Fuente,NPCinfo));
+        return true;
+    }
     return false;
+}
+vector3D * Nodo_TengoSed::MasCercano(vector<vector3D*>& objetos,datos * NPCinfo){
+    int x = 0;
+    
+    float distancia;
+    float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+    
+    for (int i=0; i<objetos.size(); i++) {
+        distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
+        if(aux>distancia){
+            x = i;
+        }
+    }
+    return objetos[x];
 }
 // NODO TENGO HAMBRE ?
 Nodo_TengoHambre::Nodo_TengoHambre(){}
 short Nodo_TengoHambre::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO TEMGO HAMBRE?" << endl;
-    if (NPCinfo->getHambre()>UMBRAL_HAMBRE) return true;
+    if (NPCinfo->getHambre()>UMBRAL_HAMBRE && WorldInfo->Comida.size()>0) {
+        NPCinfo->setPosicionFinal(MasCercano(WorldInfo->Comida, NPCinfo));
+        return true;
+    }
     return false;
+}
+vector3D * Nodo_TengoHambre::MasCercano(vector<vector3D*>& objetos,datos * NPCinfo){
+    int x = 0;
+    
+    float distancia;
+    float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+    
+    for (int i=0; i<objetos.size(); i++) {
+        distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
+        if(aux>distancia){
+            x = i;
+        }
+    }
+    return objetos[x];
 }
 // NODO VIDA BAJA ?
 Nodo_VidaBaja::Nodo_VidaBaja(){}
 short Nodo_VidaBaja::run(datos * NPCinfo, BlackBoard * WorldInfo){
-    //cout << " NODO VIDA BAJA?" << endl;
-    if(NPCinfo->getLife()<UMBRAL_VIDA) return true;
+    cout << " NODO VIDA BAJA?" << endl;
+    if(NPCinfo->getLife()<=UMBRAL_VIDA) {
+        cout << "  VIDA BAJA!" << endl;
+        return true;
+    }
     return false;
 }
 // NODO TIENE AGUA ?
@@ -310,23 +374,27 @@ vector3D * Nodo_AlarmaCerca::MasCercano(vector<vector3D*>& objetos,datos * NPCin
 // NODO HAY BOTIQUIN ?
 Nodo_HayBotiquin::Nodo_HayBotiquin(){}
 short Nodo_HayBotiquin::run(datos * NPCinfo, BlackBoard * WorldInfo){
-    //cout << " NODO HAY BOTIQUIN" << endl;
+    cout << " NODO HAY BOTIQUIN" << endl;
     if(WorldInfo->Botiquines.size()>0){
-        WorldInfo->posicion = MasCercano(WorldInfo->Botiquines,NPCinfo);
+        NPCinfo->setPosicionFinal(MasCercano(WorldInfo->Botiquines,NPCinfo));
+        cout << "  HAY BOTQUIN" << endl;
         return true;
     }
     return false;
 }
 vector3D * Nodo_HayBotiquin::MasCercano(vector<vector3D*>& objetos,datos * NPCinfo){
     int x = 0;
+    
     float distancia;
     float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+    //cout << aux << endl;
     for (int i=0; i<objetos.size(); i++) {
         distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
         if(aux>distancia){
             x = i;
         }
     }
+    //cout << "POS BOTI   " << objetos[x]->x << endl;
     return objetos[x];
 }
 // NODO SUENA ALARMA ?
@@ -363,7 +431,7 @@ float Nodo_HayAlguienCerca::CalcularDistancia(vector3D a, vector3D b){
 short Nodo_HayAlguienCerca::run(datos * NPCinfo, BlackBoard * WorldInfo){
     for (int i = 0; i<WorldInfo->posicionesNPC.size(); i++) {
         if(2>-1 && CalcularDistancia(*WorldInfo->posicionesNPC[i], *NPCinfo->getPosActual())<=DISTANCIA_COMUNICACION_PERSONAL){
-            NPCinfo->setPosicionAviso(WorldInfo->posicionesNPC[i]);
+            NPCinfo->setPosicionFinal(WorldInfo->posicionesNPC[i]);
             return true;
         }
     }
@@ -394,7 +462,6 @@ short Nodo_TiempoInactivo::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO TIEMPO INACTIVO?" << endl;
     return false;
 }
-
 
 
 

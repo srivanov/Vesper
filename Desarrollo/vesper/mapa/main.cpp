@@ -4,7 +4,6 @@
 #include "engineInterface.hpp"
 #include "physicsController.hpp"
 #include "nodeMesh.hpp"
-#include "world.hpp"
 
 /*
 using namespace irr;
@@ -39,32 +38,33 @@ int main(){
 	float *vel = new float[3], *pos = new float[3], *posmouseFinal = new float[3], *posicion_bala = new float[3];
 	int *posmouse = new int[3];
 	int* posmouse2 = new int[3];
-	vel[2]=0;pos[2]=0;posmouseFinal[2]=0;posicion_bala[2]=0;posmouse[2]=0;posmouse2[2]=0;
+	vel[2]=0;pos[2]=2;posmouseFinal[2]=0;posicion_bala[2]=0;posmouse[2]=0;posmouse2[2]=0;
     
     //variables para la posicion de la camara
     float posXCamara = 0;
     float posYCamara = -5; //-5
     float posZCamara = -10; //-10
     
-    //interfaceIrr->_setNearValue(2);
-    interfaceIrr->_setFarValue(200);
+    interfaceIrr->_setNearValue(10); /// 10
+    interfaceIrr->_setFarValue(19); /// 19
     
     //*****************TRAZADO DE SUPERRAYOS*****************
     ISceneCollisionManager* collMan = interfaceIrr->getSceneCollisionManager();
     
     
-    interfaceIrr->loadMap();
+    interfaceIrr->loadMap(mundo);
     while(interfaceIrr->_Run()){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
-		player->_setNodePosition(pos);
+		player->_setNodePositionD(npc->getPosition());
+        //player->_setNodePosition(pos);
 //		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);
 			bala->_setNodePosition(posicion_bala);
 		}
         
-        npc->setPosition(player->_getNodePositionD());
+        //npc->setPosition(player->_getNodePositionD());
         
         mundo->update();
         interfaceIrr->_beginScene(true, true);
@@ -93,20 +93,20 @@ int main(){
 			interfaceIrr->_deviceClose();
 		}
 		if(interfaceIrr->isKeyDown('W')){
-			vel[1] =  50;
+			vel[1] =  1;
         //posYCamara = player->_getNodePosition()[1]-5; //si pulso W se mueve en la y
             
 		}
 		if(interfaceIrr->isKeyDown('S')){
-			vel[1] = -50;
+			vel[1] = -1;
         //posYCamara = player->_getNodePosition()[1]-5;
 		}
 		if(interfaceIrr->isKeyDown('A')){
-			vel[0] = -50;
+			vel[0] = -1;
         //posXCamara = player->_getNodePosition()[0];
 		}
 		if(interfaceIrr->isKeyDown('D')){
-			vel[0] =  50;
+			vel[0] =  1;
         // posXCamara = player->_getNodePosition()[0];
         // printf("****CAM2D: x%f, y%f, z%f \n", posXCamara, posYCamara, posZCamara);
         // printf("******** 3 CAMRA (t, rot): bx: %f, by: %f, rt%f, rt%f, rt%f \n", player->_getNodePosition()[0], player->_getNodePosition()[1], player->_getNodeRotation()[0], player->_getNodeRotation()[1], player->_getNodeRotation()[2]);

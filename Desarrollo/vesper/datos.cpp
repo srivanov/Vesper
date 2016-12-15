@@ -15,10 +15,10 @@
 
 
 datos::datos(int ntipos,vector3D * PosicionInicial){
-    life=100;
+    life=30;
     srand(static_cast<int>(time(NULL)));
-    sed = rand() % 40;
-    hambre = rand() % 40;
+    sed = 80; //rand() % 40;
+    hambre = 90;  //rand() % 40;
     llamando = false;
     avisado = false;
     tipo = ntipos;
@@ -31,12 +31,12 @@ datos::datos(int ntipos,vector3D * PosicionInicial){
         velocidad = 0.8f;
         velcorriendo = 2.f;
     }
-    posActual = PosicionInicial;
+    aviso = posActual = PosicionInicial;
 }
 datos::~datos(){}
 void datos::setEstados(int NewEstado){estados=NewEstado;}
-void datos::Llamada(bool senyal,vector3D * posicion){llamando=senyal;setPosicionAviso(posicion);}
-void datos::setPosicionAviso(vector3D *posicion){aviso = posicion;}
+void datos::Llamada(bool senyal,vector3D * posicion){llamando=senyal;setPosicionFinal(posicion);}
+void datos::setPosicionFinal(vector3D *posicion){aviso = posicion;}
 void datos::Avisado(bool senyal){avisado=senyal;}
 void datos::Curarse(int valor){
     life+=valor;

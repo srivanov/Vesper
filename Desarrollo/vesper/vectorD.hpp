@@ -22,9 +22,9 @@ public:
     float x,y,z;
     bool operator ==(const vector3D &p) const;
     vector3D& operator =(const vector3D &p);
-    vector3D& operator =(const vector3d<u32> &p);
-    vector3D() : x(0), y(0), z(0) {}
-    vector3D(float nx, float ny, float nz){x=nx,y=ny,z=nz;}
+    vector3D(){x=0,y=0,z=0;}
+    vector3D(float nx, float ny, float nz){x=nx;y=ny;z=nz;}
+    //vector
     void clear();
     ~vector3D(){}
 };

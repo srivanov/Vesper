@@ -27,6 +27,7 @@ public:
     IMesh* _getMesh();
 	bool _setMaterialTexture(ITexture* tex);
 	void _setNodePosition(float posicion[]);
+    void _setNodePositionD(vector3D * posicion);
 	void _setNodeRotation(float rotacion[]);
 	void _setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger);
     vector3D * _getNodePositionD();

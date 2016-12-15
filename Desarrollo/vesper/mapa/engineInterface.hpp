@@ -13,6 +13,7 @@
 #include <irrlicht.h>
 #include "cargarMapa.hpp"
 #include "nodeMesh.hpp"
+#include "world.hpp"
 #include "eventReceiver.h"
 
 using namespace irr;
@@ -28,7 +29,7 @@ class engineInterface{
 		bool _createDevice(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver);
 		bool _Run();
 		void _deviceClose();
-		bool loadMap();
+		bool loadMap(world * mundo);
 		void _createCamera(float* posicion, float* target, float* rotation);
 		void _setCamPosition(float* posicion);
 		void _setCamTarget(float* target);

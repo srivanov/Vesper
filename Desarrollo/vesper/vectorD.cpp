@@ -19,10 +19,5 @@ vector3D& vector3D::operator=(const vector3D &p){
     }
     return *this;
 }
-vector3D& vector3D::operator =(const vector3d<u32> &p){
-    if(p.X != 0 ) this->x = p.X;
-    if(p.Y != 0 ) this->y = p.Y;
-    if(p.Z != 0 ) this->z = p.Z;
-    return *this;
-}
+
 void vector3D::clear(){this->x=-1,this->y=-1,this->z=-1;}

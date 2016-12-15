@@ -15,7 +15,7 @@ class estados {
 public:
     estados();
     ~estados();
-    void run(datos NPCinfo,BlackBoard * worldInfo);
+    void run(datos * NPCinfo,BlackBoard * worldInfo);
 private:
     int estado_act;
     void estandar();

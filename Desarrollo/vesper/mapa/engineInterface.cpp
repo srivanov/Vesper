@@ -95,7 +95,7 @@ void engineInterface::_setMaterialFlag(nodeMesh* node, uint32_t flag, bool value
 	}
 }
 
-bool engineInterface::loadMap(){
+bool engineInterface::loadMap(world * mundo){
 
 //    IMesh* muro  = smgr->getMesh("../../../mapa/3d/muro.3ds");
 //    IMesh* muro2 = smgr->getMesh("../../../mapa/3d/muro.3ds");
@@ -147,7 +147,7 @@ bool engineInterface::loadMap(){
     
     for(int i=0; i<map->getHeight();i++){
         for(int j=0; j<map->getWidth(); j++){
-            if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9 ){
+            /*if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9 ){
 //				nodo = smgr->addMeshSceneNode(muro);
 				nodo = _getNodeFromMesh(muro);
 //				nodo->setMaterialFlag(EMF_LIGHTING, false);
@@ -156,13 +156,16 @@ bool engineInterface::loadMap(){
 				_setMaterialTexture(nodo, "../../../modelos3D/rocas.jpg");
 //                nodo->setPosition(vector3df(i,j,0));
 				nodo->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),-0.5});
+                
                 nodo = NULL;
-            }
+            }*/
             if(mapita[0][i][j] == 86){ //comida
                 nodoc = _getNodeFromMesh(suelo_comida);
                 _setMaterialFlag(nodoc, 0, false);
                 _setMaterialTexture(nodoc,"../../../modelos3D/colorComida.jpg");
                 nodoc->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                comida * food = new comida(nodoc->_getNodePositionD());
+                mundo->anyadirComida(food);
                 nodoc = NULL;
             }
             if(mapita[0][i][j] == 100){ //fuente
@@ -170,6 +173,8 @@ bool engineInterface::loadMap(){
                 _setMaterialFlag(nodof, 0, false);
                 _setMaterialTexture(nodof,"../../../modelos3D/colorFuente.jpg");
                 nodof->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                fuente * fuen = new fuente(nodof->_getNodePositionD(),true);
+                mundo->anyadirFuente(fuen);
                 nodof = NULL;
             }
             if(mapita[0][i][j] == 161){ //alarma
@@ -177,6 +182,11 @@ bool engineInterface::loadMap(){
                 _setMaterialFlag(nodoa, 0, false);
                 _setMaterialTexture(nodoa,"../../../modelos3D/colorAlarma.jpg");
                 nodoa->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                
+                alarma * alarm = new alarma(nodoa->_getNodePositionD());
+                mundo->anyadirAlarma(alarm);
+                vector3D * p = new vector3D(20,30,40);
+                
                 nodoa = NULL;
             }
             if(mapita[0][i][j] == 130){ //botiquin
@@ -184,6 +194,9 @@ bool engineInterface::loadMap(){
                 _setMaterialFlag(nodob, 0, false);
                 _setMaterialTexture(nodob,"../../../modelos3D/colorBotiquin.jpg");
                 nodob->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
+                nodob->_getNodePositionD();
+                botiquin * boti = new botiquin(nodob->_getNodePositionD());
+                mundo->anyadirBotiquin(boti);
                 nodob = NULL;
             }
             /*if(mapita[0][i][j] == 86){
