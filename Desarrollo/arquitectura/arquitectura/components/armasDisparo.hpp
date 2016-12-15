@@ -11,7 +11,7 @@ public:
     ~armasDisparo();
 	
 private:
-	
+	unsigned int arma;
 };
 
 #endif /* armasDisparo_hpp */
