@@ -11,5 +11,5 @@ transform3D::~transform3D(){
 }
 
 void transform3D::mover(float* velocidad){
-	padre->mover(velocidad);
+	getFather()->mover(velocidad);
 }

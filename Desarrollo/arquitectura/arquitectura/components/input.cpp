@@ -6,8 +6,8 @@
 
 input::input(){
 	r = MyEventReceiver::Instance();
-    tiempoDisparo = time(NULL);
-    cadenciaDisparo = 1.0;
+    tiempoDisparo = clock();
+    cadenciaDisparo = 5.0;
 }
 
 input::~input(){
@@ -34,12 +34,13 @@ void input::update(){
     Game::Instance()->getPlayer()->mover(velocidad);
 	
     if(MyEventReceiver::Instance()->getLeftClick()){
-        if(difftime(time(NULL), tiempoDisparo) >= cadenciaDisparo){
+//        if(difftime(time(NULL), tiempoDisparo) >= cadenciaDisparo){
+		if(2000.0 * (clock()-tiempoDisparo) / CLOCKS_PER_SEC >= (1000.0 / cadenciaDisparo)){
 //                bala* disparo = new bala(padre->getPosicion());
 //                disparo->addNodo("../../../arquitectura/3d/bala.3ds");
             Game::Instance()->insertBala();
 			
-            tiempoDisparo = time(NULL);
+            tiempoDisparo = clock();
         }
     }
     

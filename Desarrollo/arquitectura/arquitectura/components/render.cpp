@@ -26,7 +26,7 @@ bool render::run(){
 void render::setNode(char *filename){
     if(nodo == NULL){
         nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(ventana::Instance()->getSceneManager()->getMesh(filename)));
-		nodo->_setNodePosition(padre->getPosicion());
+		nodo->_setNodePosition(getFather()->getPosicion());
 //		printf("cargado!\n");
     }
 }
@@ -49,9 +49,9 @@ void render::deleteNode(){
 
 void render::actualizarRender(){
 	if(nodo != NULL){
-		nodo->_setNodePosition(padre->getPosicion());
-		padre->setRotacion(ventana::Instance()->posicionRaton(padre->getPosicion()));
-		nodo->_setNodeRotation(padre->getRotacion());
+		nodo->_setNodePosition(getFather()->getPosicion());
+		getFather()->setRotacion(ventana::Instance()->posicionRaton(getFather()->getPosicion()));
+		nodo->_setNodeRotation(getFather()->getRotacion());
 	}
 }
 

@@ -9,6 +9,9 @@ class armasDisparo : public component {
 public:
     armasDisparo();
     ~armasDisparo();
+	
+private:
+	
 };
 
 #endif /* armasDisparo_hpp */
