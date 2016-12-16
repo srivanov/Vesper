@@ -9,6 +9,7 @@ class conPuzzle : public component{
 public:
 	conPuzzle();
 	~conPuzzle();
+	void update();
 	
 };
 

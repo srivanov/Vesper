@@ -1,10 +1,3 @@
-//
-//  pistola.hpp
-//  arquitectura
-//
-//  Created by Stoycho Ivanov Atanasov on 16/12/16.
-//  Copyright © 2016 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #ifndef pistola_hpp
 #define pistola_hpp
@@ -15,14 +8,17 @@
 
 class pistola : public armaInterface{
 public:
-	pistola(unsigned int muni);
+	pistola(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
 	~pistola();
 	void atacar();
 	unsigned int getMunicion();
 	void setMunicion(unsigned int n);
+	void destructor();
+	void update();
+	
 private:
-	unsigned int cadencia, alcance, municion, cargador;
-	float tiempo_recarga, tiempo_vida;
+	unsigned int cadencia, municion, cargador;
+	float tiempo_recarga, tiempo_vida, alcance;
 	time_t tiempo;
 };
 

@@ -8,3 +8,7 @@ destructiva::destructiva(){
 destructiva::~destructiva(){
 	
 }
+
+void destructiva::update(){
+	
+}

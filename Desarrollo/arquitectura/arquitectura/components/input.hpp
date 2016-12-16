@@ -7,7 +7,6 @@
 #include "../MyEventReceiver.hpp"
 #include <time.h>
 
-class bala;
 
 class input : public component {
 public:
@@ -17,7 +16,7 @@ public:
 	
 private:
 	MyEventReceiver *r;
-    time_t tiempoDisparo;
+    time_t intervalo;
     float cadenciaDisparo;
 };
 

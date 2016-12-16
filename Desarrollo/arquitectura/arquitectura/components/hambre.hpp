@@ -9,5 +9,7 @@ class hambre : public component {
 public:
     hambre();
     ~hambre();
+	void update();
+	
 };
 #endif /* hambre_hpp */

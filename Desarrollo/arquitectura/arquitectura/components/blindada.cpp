@@ -8,3 +8,7 @@ blindada::blindada(){
 blindada::~blindada(){
 	
 }
+
+void blindada::update(){
+	
+}

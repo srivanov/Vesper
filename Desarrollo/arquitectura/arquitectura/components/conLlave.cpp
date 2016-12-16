@@ -8,3 +8,7 @@ conLlave::conLlave(){
 conLlave::~conLlave(){
 	
 }
+
+void conLlave::update(){
+	
+}

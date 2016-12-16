@@ -8,3 +8,7 @@ conAlarma::conAlarma(){
 conAlarma::~conAlarma(){
 	
 }
+
+void conAlarma::update(){
+	
+}

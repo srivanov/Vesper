@@ -19,3 +19,7 @@ component::~component(){
 GameObject* component::getFather(){
 	return padre;
 }
+
+void component::update(){
+	
+}

@@ -6,7 +6,7 @@
 
 input::input(){
 	r = MyEventReceiver::Instance();
-//    tiempoDisparo = clock();
+    intervalo = clock();
     cadenciaDisparo = 5.0;
 }
 
@@ -44,7 +44,14 @@ void input::update(){
 //            tiempoDisparo = clock();
 //        }
     }
-    
+	
+	if(MyEventReceiver::Instance()->IsKeyDown('t')){
+		if(2000.0 * (clock()-intervalo) / CLOCKS_PER_SEC >= 500.0){
+			Game::Instance()->cambiarArmaJugador();
+			intervalo = clock();
+		}
+	}
+	
     if(MyEventReceiver::Instance()->IsKeyDown('Q')){
         Game::Instance()->stop();
     }

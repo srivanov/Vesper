@@ -9,5 +9,7 @@ class ataque : public component {
 public:
     ataque();
     ~ataque();
+	void update();
+	
 };
 #endif /* ataque_hpp */

@@ -8,3 +8,7 @@ pala::pala(){
 pala::~pala(){
     
 }
+
+void pala::update(){
+	
+}

@@ -13,6 +13,7 @@
 
 class armaInterface{
 public:
+	virtual void destructor()=0;
 	virtual void atacar() = 0;
 	virtual unsigned int getMunicion() = 0;
 	virtual void setMunicion(unsigned int n) = 0;

@@ -10,8 +10,12 @@ render::render(){
 }
 
 render::~render(){
-	printf("DELETE render\n");
+//	printf("DELETE render\n");
 	delete nodo;
+}
+
+void render::update(){
+	
 }
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){

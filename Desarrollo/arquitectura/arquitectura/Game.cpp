@@ -66,8 +66,8 @@ player* Game::getPlayer(){
     return jugador;
 }
 
-bala* Game::insertBala(){
-    bala_aux = new bala(jugador->getPosicion(), jugador->getDirDisparo());
+bala* Game::insertBala(float vel){
+    bala_aux = new bala(jugador->getPosicion(), jugador->getDirDisparo(), vel);
     bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
     return bala_aux;
@@ -100,4 +100,7 @@ void Game::atacarJugador(){
 	jugador->atacar();
 }
 
+void Game::cambiarArmaJugador(){
+	jugador->cambiarArma();
+}
 

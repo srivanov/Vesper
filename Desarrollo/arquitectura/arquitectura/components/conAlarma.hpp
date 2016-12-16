@@ -9,6 +9,7 @@ class conAlarma : public component{
 public:
 	conAlarma();
 	~conAlarma();
+	void update();
 	
 };
 

@@ -9,5 +9,7 @@ class pala : public component {
 public:
     pala();
     ~pala();
+	void update();
+	
 };
 #endif /* pala_hpp */

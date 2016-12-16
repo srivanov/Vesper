@@ -9,5 +9,7 @@ class armasArrojadizas : public component {
 public:
     armasArrojadizas();
     ~armasArrojadizas();
+	void update();
+	
 };
 #endif /* armasArrojadizas_hpp */

@@ -10,6 +10,7 @@ class transform3D : public component{
 public:
 	transform3D();
     ~transform3D();
+	void update();
 	void mover(float* velocidad);
 
 };

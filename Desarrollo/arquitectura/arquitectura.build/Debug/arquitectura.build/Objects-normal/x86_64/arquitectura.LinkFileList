@@ -3,6 +3,7 @@
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conAlarma.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/cargarMapa.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/salud.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/globoAgua.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/pala.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conPuzzle.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MyEventReceiver.o
@@ -24,12 +25,16 @@
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puerta.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/destructiva.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Game.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/lanzaCaramelos.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/escenarios.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bombaHumo.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nodeMesh.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/sed.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/tinyxml2.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/piedra.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/escopeta.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bloqueada.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chicle.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/physics.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/input.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/transform3D.o

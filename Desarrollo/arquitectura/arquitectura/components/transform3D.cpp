@@ -10,6 +10,10 @@ transform3D::~transform3D(){
 	
 }
 
+void transform3D::update(){
+	
+}
+
 void transform3D::mover(float* velocidad){
 	getFather()->mover(velocidad);
 }

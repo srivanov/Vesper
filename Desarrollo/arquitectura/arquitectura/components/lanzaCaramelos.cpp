@@ -1,9 +1,10 @@
 
-#include "pistola.hpp"
+
+#include "lanzaCaramelos.hpp"
 #include "../Game.hpp"
 
-pistola::pistola(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
-	cadencia = 1;
+lanzaCaramelos::lanzaCaramelos(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
+	cadencia = 5;
 	alcance = pAlcance;
 	municion = pMunicion;
 	tiempo_vida = alcance/3.0f;
@@ -12,18 +13,18 @@ pistola::pistola(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
 	cargador = 6;
 }
 
-pistola::~pistola(){
+lanzaCaramelos::~lanzaCaramelos(){
 	
 }
 
-void pistola::update(){
+void lanzaCaramelos::update(){
 	
 }
 
-void pistola::atacar(){
+void lanzaCaramelos::atacar(){
 	if(municion > 0){
 		if(cargador > 0 && 2000.0 * (clock()-tiempo) / CLOCKS_PER_SEC >= (1000.0 / cadencia)){
-			printf("PISTOLA ");
+			printf("CARAMELOS ");
 			Game::Instance()->insertBala(tiempo_vida);
 			municion--;
 			cargador--;
@@ -37,14 +38,14 @@ void pistola::atacar(){
 	}
 }
 
-unsigned int pistola::getMunicion(){
+unsigned int lanzaCaramelos::getMunicion(){
 	return 1;
 }
 
-void pistola::setMunicion(unsigned int n){
+void lanzaCaramelos::setMunicion(unsigned int n){
 	municion = n;
 }
 
-void pistola::destructor(){
-	this->~pistola();
+void lanzaCaramelos::destructor(){
+	this->~lanzaCaramelos();
 }

@@ -12,6 +12,7 @@ public:
     player();
     ~player();
 	void atacar();
+	void cambiarArma();
 	
 private:
 	armas* arma;

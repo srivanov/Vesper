@@ -12,6 +12,11 @@
 		E98661271DF99ED30028AC64 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
 		E9A346341E04162700E6EC25 /* armaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346321E04162700E6EC25 /* armaInterface.cpp */; };
 		E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346351E0416FC00E6EC25 /* pistola.cpp */; };
+		E9A3463A1E0434BA00E6EC25 /* escopeta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346381E0434BA00E6EC25 /* escopeta.cpp */; };
+		E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A3463B1E045CB000E6EC25 /* lanzaCaramelos.cpp */; };
+		E9A346401E045F0500E6EC25 /* globoAgua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A3463E1E045F0500E6EC25 /* globoAgua.cpp */; };
+		E9A346431E045FD000E6EC25 /* chicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346411E045FD000E6EC25 /* chicle.cpp */; };
+		E9A346461E0460C400E6EC25 /* bombaHumo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346441E0460C400E6EC25 /* bombaHumo.cpp */; };
 		E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */; };
 		E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
 		E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */; };
@@ -82,6 +87,16 @@
 		E9A346331E04162700E6EC25 /* armaInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armaInterface.hpp; sourceTree = "<group>"; };
 		E9A346351E0416FC00E6EC25 /* pistola.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pistola.cpp; sourceTree = "<group>"; };
 		E9A346361E0416FC00E6EC25 /* pistola.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pistola.hpp; sourceTree = "<group>"; };
+		E9A346381E0434BA00E6EC25 /* escopeta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = escopeta.cpp; sourceTree = "<group>"; };
+		E9A346391E0434BA00E6EC25 /* escopeta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = escopeta.hpp; sourceTree = "<group>"; };
+		E9A3463B1E045CB000E6EC25 /* lanzaCaramelos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lanzaCaramelos.cpp; sourceTree = "<group>"; };
+		E9A3463C1E045CB000E6EC25 /* lanzaCaramelos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lanzaCaramelos.hpp; sourceTree = "<group>"; };
+		E9A3463E1E045F0500E6EC25 /* globoAgua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = globoAgua.cpp; sourceTree = "<group>"; };
+		E9A3463F1E045F0500E6EC25 /* globoAgua.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = globoAgua.hpp; sourceTree = "<group>"; };
+		E9A346411E045FD000E6EC25 /* chicle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chicle.cpp; sourceTree = "<group>"; };
+		E9A346421E045FD000E6EC25 /* chicle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = chicle.hpp; sourceTree = "<group>"; };
+		E9A346441E0460C400E6EC25 /* bombaHumo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bombaHumo.cpp; sourceTree = "<group>"; };
+		E9A346451E0460C400E6EC25 /* bombaHumo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bombaHumo.hpp; sourceTree = "<group>"; };
 		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
 		E9AC3A371DF0A9C100A91A97 /* arquitectura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arquitectura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -276,11 +291,25 @@
 				E9AC3A681DF0AA5000A91A97 /* armasArrojadizas.hpp */,
 				E9AC3A691DF0AA5000A91A97 /* armas.cpp */,
 				E9AC3A6A1DF0AA5000A91A97 /* armas.hpp */,
-				E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */,
 				E9A346321E04162700E6EC25 /* armaInterface.cpp */,
 				E9A346331E04162700E6EC25 /* armaInterface.hpp */,
 				E9A346351E0416FC00E6EC25 /* pistola.cpp */,
 				E9A346361E0416FC00E6EC25 /* pistola.hpp */,
+				E9A346381E0434BA00E6EC25 /* escopeta.cpp */,
+				E9A346391E0434BA00E6EC25 /* escopeta.hpp */,
+				E9A3463B1E045CB000E6EC25 /* lanzaCaramelos.cpp */,
+				E9A3463C1E045CB000E6EC25 /* lanzaCaramelos.hpp */,
+				E9AC3A8D1DF0AA5000A91A97 /* piedra.cpp */,
+				E9AC3A8E1DF0AA5000A91A97 /* piedra.hpp */,
+				E9A3463E1E045F0500E6EC25 /* globoAgua.cpp */,
+				E9A3463F1E045F0500E6EC25 /* globoAgua.hpp */,
+				E9A346411E045FD000E6EC25 /* chicle.cpp */,
+				E9A346421E045FD000E6EC25 /* chicle.hpp */,
+				E9A346441E0460C400E6EC25 /* bombaHumo.cpp */,
+				E9A346451E0460C400E6EC25 /* bombaHumo.hpp */,
+				E9AC3A871DF0AA5000A91A97 /* martilloDeJuguete.cpp */,
+				E9AC3A881DF0AA5000A91A97 /* martilloDeJuguete.hpp */,
+				E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */,
 				E9AC3A6C1DF0AA5000A91A97 /* ataque.hpp */,
 				E9AC3A6D1DF0AA5000A91A97 /* blindada.cpp */,
 				E9AC3A6E1DF0AA5000A91A97 /* blindada.hpp */,
@@ -308,20 +337,16 @@
 				E9AC3A841DF0AA5000A91A97 /* IAEnemigos.hpp */,
 				E9AC3A851DF0AA5000A91A97 /* input.cpp */,
 				E9AC3A861DF0AA5000A91A97 /* input.hpp */,
-				E9AC3A871DF0AA5000A91A97 /* martilloDeJuguete.cpp */,
-				E9AC3A881DF0AA5000A91A97 /* martilloDeJuguete.hpp */,
 				E9AC3A891DF0AA5000A91A97 /* pala.cpp */,
 				E9AC3A8A1DF0AA5000A91A97 /* pala.hpp */,
 				E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */,
 				E9AC3A8C1DF0AA5000A91A97 /* physics.hpp */,
-				E9AC3A8D1DF0AA5000A91A97 /* piedra.cpp */,
-				E9AC3A8E1DF0AA5000A91A97 /* piedra.hpp */,
 				E9AC3A8F1DF0AA5000A91A97 /* render.cpp */,
 				E9AC3A901DF0AA5000A91A97 /* render.hpp */,
 				E9AC3A911DF0AA5000A91A97 /* salud.cpp */,
 				E9AC3A921DF0AA5000A91A97 /* salud.hpp */,
-				E9AC3A941DF0AA5000A91A97 /* sed.hpp */,
 				E9AC3A931DF0AA5000A91A97 /* sed.cpp */,
+				E9AC3A941DF0AA5000A91A97 /* sed.hpp */,
 				E9AC3A951DF0AA5000A91A97 /* transform3D.cpp */,
 				E9AC3A961DF0AA5000A91A97 /* transform3D.hpp */,
 			);
@@ -454,6 +479,7 @@
 				E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */,
 				E9AC3AC21DF0ACED00A91A97 /* cargarMapa.cpp in Sources */,
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
+				E9A346401E045F0500E6EC25 /* globoAgua.cpp in Sources */,
 				E9AC3AA81DF0AA5000A91A97 /* pala.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
 				E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */,
@@ -475,12 +501,16 @@
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
+				E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */,
 				E9AC3A611DF0AA4800A91A97 /* escenarios.cpp in Sources */,
+				E9A346461E0460C400E6EC25 /* bombaHumo.cpp in Sources */,
 				E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */,
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
+				E9A3463A1E0434BA00E6EC25 /* escopeta.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
+				E9A346431E045FD000E6EC25 /* chicle.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,

@@ -9,6 +9,7 @@ class conLlave : public component{
 public:
 	conLlave();
 	~conLlave();
+	void update();
 	
 };
 

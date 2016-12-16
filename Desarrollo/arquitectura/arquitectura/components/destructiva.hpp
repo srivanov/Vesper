@@ -9,6 +9,7 @@ class destructiva : public component{
 public:
 	destructiva();
 	~destructiva();
+	void update();
 	
 };
 

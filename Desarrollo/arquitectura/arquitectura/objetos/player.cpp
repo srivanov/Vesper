@@ -12,12 +12,12 @@ player::player(){
     this->insertComponent((char*)"pala", aux);
 //	aux = new armasArrojadizas();
 //    this->insertComponent((char*)"armasArrojadizas", aux);
-	aux = new piedra();
-    this->insertComponent((char*)"piedra", aux);
+//	aux = new piedra();
+//    this->insertComponent((char*)"piedra", aux);
 	aux = new habilidadEspecial();
     this->insertComponent((char*)"habilidadEspecial", aux);
-	aux = new martilloDeJuguete();
-    this->insertComponent((char*)"martilloDeJuguete", aux);
+//	aux = new martilloDeJuguete();
+//    this->insertComponent((char*)"martilloDeJuguete", aux);
 	aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
 //	aux = new armasDisparo();
@@ -43,5 +43,10 @@ player::~player(){
 
 void player::atacar(){
 	arma = (armas*)findComponent("armas");
-	arma->atacar();
+	arma->shoot();
+}
+
+void player::cambiarArma(){
+	arma = (armas*)findComponent("armas");
+	arma->changeGun();
 }

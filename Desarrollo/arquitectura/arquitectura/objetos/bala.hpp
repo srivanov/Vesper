@@ -7,14 +7,15 @@
 
 class bala : public GameObject{
 public:
-    bala(float* pos, float* dir);
+    bala(float* pos, float* dir, float vel);
     ~bala();
 	float* getDireccion();
 	void update();
 	bool muero();
 private:
 	float direccion[2];
-	time_t tiempo_vida;
+	time_t intervalo;
+	float tiempo_vida, velocidad;
 	bool muerto;
 };
 #endif /* bala_hpp */

@@ -8,3 +8,7 @@ conPuzzle::conPuzzle(){
 conPuzzle::~conPuzzle(){
 	
 }
+
+void conPuzzle::update(){
+	
+}

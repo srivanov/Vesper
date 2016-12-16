@@ -8,3 +8,7 @@ ataque::ataque(){
 ataque::~ataque(){
     
 }
+
+void ataque::update(){
+	
+}

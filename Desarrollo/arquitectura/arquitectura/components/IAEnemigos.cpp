@@ -8,3 +8,7 @@ IAEnemigos::IAEnemigos(){
 IAEnemigos::~IAEnemigos(){
     
 }
+
+void IAEnemigos::update(){
+	
+}

@@ -8,3 +8,7 @@ habilidadEspecial::habilidadEspecial(){
 habilidadEspecial::~habilidadEspecial(){
     
 }
+
+void habilidadEspecial::update(){
+	
+}

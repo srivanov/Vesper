@@ -1,8 +1,8 @@
 
-#include "pistola.hpp"
+#include "bombaHumo.hpp"
 #include "../Game.hpp"
 
-pistola::pistola(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
+bombaHumo::bombaHumo(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
 	cadencia = 1;
 	alcance = pAlcance;
 	municion = pMunicion;
@@ -12,18 +12,18 @@ pistola::pistola(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
 	cargador = 6;
 }
 
-pistola::~pistola(){
+bombaHumo::~bombaHumo(){
 	
 }
 
-void pistola::update(){
+void bombaHumo::update(){
 	
 }
 
-void pistola::atacar(){
+void bombaHumo::atacar(){
 	if(municion > 0){
 		if(cargador > 0 && 2000.0 * (clock()-tiempo) / CLOCKS_PER_SEC >= (1000.0 / cadencia)){
-			printf("PISTOLA ");
+			printf("BOMBA DE HUMO ");
 			Game::Instance()->insertBala(tiempo_vida);
 			municion--;
 			cargador--;
@@ -37,14 +37,14 @@ void pistola::atacar(){
 	}
 }
 
-unsigned int pistola::getMunicion(){
+unsigned int bombaHumo::getMunicion(){
 	return 1;
 }
 
-void pistola::setMunicion(unsigned int n){
+void bombaHumo::setMunicion(unsigned int n){
 	municion = n;
 }
 
-void pistola::destructor(){
-	this->~pistola();
+void bombaHumo::destructor(){
+	this->~bombaHumo();
 }

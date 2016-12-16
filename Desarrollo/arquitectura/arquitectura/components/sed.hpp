@@ -9,5 +9,6 @@ class sed : public component {
 public:
     sed();
     ~sed();
+	void update();
 };
 #endif /* sed_hpp */

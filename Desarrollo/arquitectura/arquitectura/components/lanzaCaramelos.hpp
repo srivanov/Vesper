@@ -1,15 +1,16 @@
 
-#ifndef martilloDeJuguete_hpp
-#define martilloDeJuguete_hpp
+
+#ifndef lanzaCaramelos_hpp
+#define lanzaCaramelos_hpp
 
 #include <stdio.h>
 #include "armaInterface.hpp"
 #include <time.h>
 
-class martilloDeJuguete : public armaInterface{
+class lanzaCaramelos : public armaInterface{
 public:
-	martilloDeJuguete(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
-	~martilloDeJuguete();
+	lanzaCaramelos(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
+	~lanzaCaramelos();
 	void atacar();
 	unsigned int getMunicion();
 	void setMunicion(unsigned int n);
@@ -22,4 +23,4 @@ private:
 	time_t tiempo;
 };
 
-#endif /* martilloDeJuguete_hpp */
+#endif /* lanzaCaramelos_hpp */

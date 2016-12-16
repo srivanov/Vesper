@@ -8,3 +8,7 @@ salud::salud(){
 salud::~salud(){
 	
 }
+
+void salud::update(){
+	
+}

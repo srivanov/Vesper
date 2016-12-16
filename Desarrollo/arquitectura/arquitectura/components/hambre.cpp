@@ -8,3 +8,7 @@ hambre::hambre(){
 hambre::~hambre(){
     
 }
+
+void hambre::update(){
+	
+}

@@ -32,9 +32,10 @@ public:
 	void render();
 	bool isRunning();
     player* getPlayer();
-    bala* insertBala();
+    bala* insertBala(float vel);
     void zoom(bool z);
 	void atacarJugador();
+	void cambiarArmaJugador();
 	
 protected:
 	Game();

@@ -8,3 +8,7 @@ bloqueada::bloqueada(){
 bloqueada::~bloqueada(){
 	
 }
+
+void bloqueada::update(){
+	
+}

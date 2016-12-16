@@ -9,5 +9,6 @@ class IAEnemigos : public component {
 public:
     IAEnemigos();
     ~IAEnemigos();
+	void update();
 };
 #endif /* IAEnemigos_hpp */

@@ -9,5 +9,6 @@ class IACamara : public component {
 public:
     IACamara();
     ~IACamara();
+	void update();
 };
 #endif /* IACamara_hpp */

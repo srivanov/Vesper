@@ -9,6 +9,7 @@ class bloqueada : public component{
 public:
 	bloqueada();
 	~bloqueada();
+	void update();
 	
 };
 

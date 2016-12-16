@@ -8,3 +8,7 @@ armasArrojadizas::armasArrojadizas(){
 armasArrojadizas::~armasArrojadizas(){
     
 }
+
+void armasArrojadizas::update(){
+	
+}
