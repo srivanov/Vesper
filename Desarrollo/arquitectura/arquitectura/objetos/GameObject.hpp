@@ -6,8 +6,8 @@
 #include <map>
 //#include "component.hpp"
 
-#include "../components/armasArrojadizas.hpp"
-#include "../components/armasDisparo.hpp"
+//#include "../components/armasArrojadizas.hpp"
+//#include "../components/armasDisparo.hpp"
 #include "../components/ataque.hpp"
 #include "../components/blindada.hpp"
 #include "../components/bloqueada.hpp"

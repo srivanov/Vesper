@@ -12,13 +12,14 @@
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/component.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IACamara.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/player.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armaInterface.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/render.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/hambre.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ventana.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IAEnemigos.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/enemigos.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/monedas.o
-/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armasDisparo.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armas.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armasArrojadizas.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puerta.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/destructiva.o
@@ -33,6 +34,7 @@
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/input.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/transform3D.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conLlave.o
+/Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/pistola.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chirriante.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GameObject.o
 /Users/Stoycho/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/main.o

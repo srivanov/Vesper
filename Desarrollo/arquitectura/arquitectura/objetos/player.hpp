@@ -4,12 +4,17 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "../components/armas.hpp"
+#include "../components/pistola.hpp"
 
 class player : public GameObject{
 public:
     player();
     ~player();
+	void atacar();
 	
+private:
+	armas* arma;
 };
 
 #endif /* player_hpp */

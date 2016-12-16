@@ -34,15 +34,18 @@ public:
     player* getPlayer();
     bala* insertBala();
     void zoom(bool z);
+	void atacarJugador();
+	
 protected:
 	Game();
+	
 private:
 	static Game* pinstance;
 	class render *renderizador;
 	class input* entrada;
 	bool running;
-    player* p;
-    camara* c;
+    player* jugador;
+    camara* cam;
     vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;

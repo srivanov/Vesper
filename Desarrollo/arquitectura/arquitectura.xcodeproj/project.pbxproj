@@ -10,6 +10,8 @@
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
 		E98661271DF99ED30028AC64 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
+		E9A346341E04162700E6EC25 /* armaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346321E04162700E6EC25 /* armaInterface.cpp */; };
+		E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346351E0416FC00E6EC25 /* pistola.cpp */; };
 		E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */; };
 		E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
 		E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4E1DF0AA4800A91A97 /* alarma.cpp */; };
@@ -21,7 +23,7 @@
 		E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A5A1DF0AA4800A91A97 /* player.cpp */; };
 		E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A5C1DF0AA4800A91A97 /* puerta.cpp */; };
 		E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A671DF0AA5000A91A97 /* armasArrojadizas.cpp */; };
-		E9AC3A981DF0AA5000A91A97 /* armasDisparo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A691DF0AA5000A91A97 /* armasDisparo.cpp */; };
+		E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A691DF0AA5000A91A97 /* armas.cpp */; };
 		E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */; };
 		E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A6D1DF0AA5000A91A97 /* blindada.cpp */; };
 		E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A6F1DF0AA5000A91A97 /* bloqueada.cpp */; };
@@ -76,6 +78,10 @@
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
 		E98661261DF99ED30028AC64 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
+		E9A346321E04162700E6EC25 /* armaInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armaInterface.cpp; sourceTree = "<group>"; };
+		E9A346331E04162700E6EC25 /* armaInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armaInterface.hpp; sourceTree = "<group>"; };
+		E9A346351E0416FC00E6EC25 /* pistola.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pistola.cpp; sourceTree = "<group>"; };
+		E9A346361E0416FC00E6EC25 /* pistola.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pistola.hpp; sourceTree = "<group>"; };
 		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
 		E9AC3A371DF0A9C100A91A97 /* arquitectura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arquitectura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -97,8 +103,8 @@
 		E9AC3A5D1DF0AA4800A91A97 /* puerta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puerta.hpp; sourceTree = "<group>"; };
 		E9AC3A671DF0AA5000A91A97 /* armasArrojadizas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasArrojadizas.cpp; sourceTree = "<group>"; };
 		E9AC3A681DF0AA5000A91A97 /* armasArrojadizas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasArrojadizas.hpp; sourceTree = "<group>"; };
-		E9AC3A691DF0AA5000A91A97 /* armasDisparo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armasDisparo.cpp; sourceTree = "<group>"; };
-		E9AC3A6A1DF0AA5000A91A97 /* armasDisparo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armasDisparo.hpp; sourceTree = "<group>"; };
+		E9AC3A691DF0AA5000A91A97 /* armas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armas.cpp; sourceTree = "<group>"; };
+		E9AC3A6A1DF0AA5000A91A97 /* armas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armas.hpp; sourceTree = "<group>"; };
 		E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ataque.cpp; sourceTree = "<group>"; };
 		E9AC3A6C1DF0AA5000A91A97 /* ataque.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ataque.hpp; sourceTree = "<group>"; };
 		E9AC3A6D1DF0AA5000A91A97 /* blindada.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blindada.cpp; sourceTree = "<group>"; };
@@ -268,9 +274,13 @@
 				E942C0581DF1EDE600CC5763 /* ventana.hpp */,
 				E9AC3A671DF0AA5000A91A97 /* armasArrojadizas.cpp */,
 				E9AC3A681DF0AA5000A91A97 /* armasArrojadizas.hpp */,
-				E9AC3A691DF0AA5000A91A97 /* armasDisparo.cpp */,
-				E9AC3A6A1DF0AA5000A91A97 /* armasDisparo.hpp */,
+				E9AC3A691DF0AA5000A91A97 /* armas.cpp */,
+				E9AC3A6A1DF0AA5000A91A97 /* armas.hpp */,
 				E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */,
+				E9A346321E04162700E6EC25 /* armaInterface.cpp */,
+				E9A346331E04162700E6EC25 /* armaInterface.hpp */,
+				E9A346351E0416FC00E6EC25 /* pistola.cpp */,
+				E9A346361E0416FC00E6EC25 /* pistola.hpp */,
 				E9AC3A6C1DF0AA5000A91A97 /* ataque.hpp */,
 				E9AC3A6D1DF0AA5000A91A97 /* blindada.cpp */,
 				E9AC3A6E1DF0AA5000A91A97 /* blindada.hpp */,
@@ -453,13 +463,14 @@
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
 				E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */,
 				E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */,
+				E9A346341E04162700E6EC25 /* armaInterface.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
 				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
 				E9AC3A601DF0AA4800A91A97 /* enemigos.cpp in Sources */,
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
-				E9AC3A981DF0AA5000A91A97 /* armasDisparo.cpp in Sources */,
+				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
@@ -474,6 +485,7 @@
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,
 				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
+				E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,
 				E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */,

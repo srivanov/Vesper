@@ -14,18 +14,18 @@ Game::Game(){
 	renderizador = new class render();
 	entrada = new input();
 	running = true;
-    p = new player();
-	c = new camara();
+    jugador = new player();
+	cam = new camara();
 	nivel = new escenarios();
 }
 
 Game::~Game(){
 	delete entrada;
-	delete c;
+	delete cam;
 	delete nivel;
     renderizador->closeWindow();
 	delete renderizador;
-	delete p;
+	delete jugador;
 	//delete pinstance;
 }
 
@@ -33,9 +33,9 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	renderizador->setTexto();
-    p->addNodo("3d/sphere.3ds");
-	p->setTexture("3d/texture.png");
-	c->addCamara(new float[3]{0,-5,-10}, new float[3]{0,0,0});
+    jugador->addNodo("3d/sphere.3ds");
+	jugador->setTexture("3d/texture.png");
+	cam->addCamara(new float[3]{0,-5,-10}, new float[3]{0,0,0});
 	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();
 	
@@ -46,7 +46,7 @@ void Game::stop(){
 }
 
 void Game::render(){
-	p->render();
+	jugador->render();
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
@@ -63,11 +63,11 @@ bool Game::isRunning(){
 }
 
 player* Game::getPlayer(){
-    return p;
+    return jugador;
 }
 
 bala* Game::insertBala(){
-    bala_aux = new bala(p->getPosicion(), p->getDirDisparo());
+    bala_aux = new bala(jugador->getPosicion(), jugador->getDirDisparo());
     bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
     return bala_aux;
@@ -75,8 +75,8 @@ bala* Game::insertBala(){
 
 void Game::update(){
 	entrada->update();
-	p->update();
-	c->movimientoInteligente(p->getPosicion());
+	jugador->update();
+	cam->movimientoInteligente(jugador->getPosicion());
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
@@ -93,5 +93,11 @@ void Game::update(){
 }
 
 void Game::zoom(bool z){
-    c->setZoom(z);
+    cam->setZoom(z);
 }
+
+void Game::atacarJugador(){
+	jugador->atacar();
+}
+
+

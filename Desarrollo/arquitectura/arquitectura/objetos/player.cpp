@@ -4,14 +4,14 @@
 player::player(){
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
-//	aux = new input();
-//	this->insertComponent((char*)"input", aux);
+	aux = new armas();
+	this->insertComponent((char*)"armas", aux);
 	aux = new physics();
 	this->insertComponent((char*)"physics", aux);
 	aux = new pala();
     this->insertComponent((char*)"pala", aux);
-	aux = new armasArrojadizas();
-    this->insertComponent((char*)"armasArrojadizas", aux);
+//	aux = new armasArrojadizas();
+//    this->insertComponent((char*)"armasArrojadizas", aux);
 	aux = new piedra();
     this->insertComponent((char*)"piedra", aux);
 	aux = new habilidadEspecial();
@@ -20,8 +20,8 @@ player::player(){
     this->insertComponent((char*)"martilloDeJuguete", aux);
 	aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
-	aux = new armasDisparo();
-    this->insertComponent((char*)"armasDisparo", aux);
+//	aux = new armasDisparo();
+//    this->insertComponent((char*)"armasDisparo", aux);
 	aux = new salud();
     this->insertComponent((char*)"salud", aux);
 	
@@ -33,8 +33,15 @@ player::player(){
 	setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
     fisica->crearBodyDinamico(new float[2]{1,1}, new float[2]{0,0});
+//	// INICIALIZAR ARMA
+//	arma = new armas();
 }
 
 player::~player(){
 	
+}
+
+void player::atacar(){
+	arma = (armas*)findComponent("armas");
+	arma->atacar();
 }
