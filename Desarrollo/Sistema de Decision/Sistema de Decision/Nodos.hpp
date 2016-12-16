@@ -25,10 +25,8 @@ using namespace std;
 class Nodo {
 public:
     virtual short run(datos * NPCinfo, BlackBoard * WorldInfo) = 0;
-    bool getRunning() const {return running;}
 protected:
     float CalcularDistancia(vector3D a, vector3D b);
-    bool running = false;
 };
 
 class NodoSecuencia : public Nodo {
@@ -38,6 +36,7 @@ public:
     void anyadirHijo(Nodo * hijo);
 private:
     vector<Nodo*> m_hijos;
+    size_t hijo = -1;
 };
 class NodoSecuenciaPositiva : public Nodo{
 public:
@@ -46,6 +45,7 @@ public:
     void anyadirHijo(Nodo * hijo);
 private:
     vector<Nodo*> m_hijos;
+    size_t hijo = -1;
 };
 class NodoMover : public Nodo {
 public:
@@ -89,6 +89,7 @@ public:
     NodoPatrullar();
     short run(datos * NPCinfo, BlackBoard * WorldInfo);
 private:
+    int f= 0;
     // Patrulla
 };
 class Nodo_TiempoInactivo : public Nodo {

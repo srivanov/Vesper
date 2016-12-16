@@ -11,12 +11,13 @@
 
 #include <stdlib.h>
 #include "vectorD.hpp"
+#include <vector>
 #include <time.h>
 
 
 class datos {
 public:
-    datos(int ntipos,vector3D * PosicionInicial);//tipo, posActual;
+    datos(int ntipos,vector3D * PosicionInicial,int rutina);//tipo, posActual;
     ~datos();
     void Avisado(bool senyal);
     void Llamada(bool senyal,vector3D * posicion);
@@ -35,11 +36,18 @@ public:
     vector3D * getPosAnterior() const {return posAnterior;}
     vector3D * getPosAviso() const {return aviso;}
     void setPosicionFinal(vector3D * posicion);
+    std::vector<vector3D*> getPosRutina() const {return PosRutina;}
+    int getRutina() const {return rutinas;}
+    int getPaso() const{return paso;}
+    void setPaso() {
+        if(paso+1==PosRutina.size())paso=0;
+        else paso++;
+        }
 private:
     int life,sed,hambre,tipo;
     vector3D *posActual, *posAnterior;
-    vector<vector3D*> patrullar;
-    short rutinas;
+    std::vector<vector3D*> PosRutina;
+    int rutinas,paso;
     vector3D * aviso;
     float velocidad;
     float velcorriendo;

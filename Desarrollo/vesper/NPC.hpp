@@ -14,13 +14,14 @@
 
 class NPC{
 public:
-    NPC(int ntipo, vector3D * posinicial);
+    NPC(int ntipo, vector3D * posinicial,short rutina);
     ~NPC();
     datos getNPCinfo();
     void update(BlackBoard * worldINFO);
     vector3D * getPosition();
     void setPosition(vector3D * posicion);
 private:
+    int f = 0;
     datos * datosPropios;
     estados * DeciSys;
     

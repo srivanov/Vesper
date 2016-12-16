@@ -30,7 +30,7 @@ int main(){
 	player->_setNodePosition(new float[3]{0,0,0});
     
     world * mundo = new world;
-    NPC * npc = new NPC(1,player->_getNodePositionD());
+    NPC * npc = new NPC(1,player->_getNodePositionD(),0);
     mundo->anyadirNPC(npc);
     
 	interfaceIrr->_createCamera(new float[3]{0,-10,0}, player->_getNodePosition(), new float[3]{0,0,0});
