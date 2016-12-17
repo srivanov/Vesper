@@ -38,7 +38,7 @@ int main(){
 	float *vel = new float[3], *pos = new float[3], *posmouseFinal = new float[3], *posicion_bala = new float[3];
 	int *posmouse = new int[3];
 	int* posmouse2 = new int[3];
-	vel[2]=0;pos[2]=2;posmouseFinal[2]=0;posicion_bala[2]=0;posmouse[2]=0;posmouse2[2]=0;
+	vel[2]=0;pos[2]=0;posmouseFinal[2]=0;posicion_bala[2]=0;posmouse[2]=0;posmouse2[2]=0;
     
     //variables para la posicion de la camara
     float posXCamara = 0;
@@ -56,8 +56,8 @@ int main(){
     while(interfaceIrr->_Run()){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
-		player->_setNodePositionD(npc->getPosition());
-        //player->_setNodePosition(pos);
+		//player->_setNodePositionD(npc->getPosition());
+        player->_setNodePosition(pos);
 //		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);

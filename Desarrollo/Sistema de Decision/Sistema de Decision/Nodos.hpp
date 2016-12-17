@@ -53,6 +53,8 @@ public:
     short run(datos * NPCinfo, BlackBoard * WorldInfo);
 private:
     int f = 0;
+    float aux = -1;
+    float xABS, yABS;
 };
 
 class Nodo_VerJugador : public Nodo {
@@ -89,8 +91,8 @@ public:
     NodoPatrullar();
     short run(datos * NPCinfo, BlackBoard * WorldInfo);
 private:
-    int f= 0;
-    // Patrulla
+    float aux = -1;
+    float xABS, yABS;
 };
 class Nodo_TiempoInactivo : public Nodo {
 public:
