@@ -12,9 +12,17 @@ public:
     physics();
     ~physics();
     void crearBodyDinamico(float* dimension, float* posicion);
-    void update(float* velocidad, float * posicion, float* anguloFinal, float* angulo, float* mousePosition);
+//    void update(float* anguloFinal, float* angulo, float* mousePosition);
+	void update();
+	
+	void setPosition(float* pos);
+	
+	void setVelocity(float* vel);
+	float rotarConRaton(float* posRaton);
+	void rotar(float anguloRotacion);
 private:
     b2Body *body;
-    float angulo[2];
+    float rotacion, velocidad[2], angulo_disparo[2];
+	
 };
 #endif /* physics_hpp */

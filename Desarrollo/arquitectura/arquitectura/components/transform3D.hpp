@@ -11,7 +11,10 @@ public:
 	transform3D();
     ~transform3D();
 	void update();
+	void setPosition(float* pos);
 	void mover(float* velocidad);
+	float rotarConRaton(float* rotacion);
+	void rotar(float anguloRotacion);
 
 };
 #endif /* transform3D_hpp */

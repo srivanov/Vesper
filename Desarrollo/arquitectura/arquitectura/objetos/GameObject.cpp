@@ -6,7 +6,7 @@
 GameObject::GameObject(){
     renderizable = false;
     posicion = new float[3]{0,0,0};
-	rotacion = new float[2]{0,0};
+	rotacion = new float[3]{0,0,0};
 	anguloDisparo = new float[2]{0,0};
 }
 
@@ -36,7 +36,7 @@ void GameObject::eraseComponent(char* nombre){
 
 component* GameObject::findComponent(char *nombre){
     std::map<char*,component*>::iterator iter = components.find(nombre);
-    if(iter->first != NULL)
+    if(iter != components.end())
 		return iter->second;
     return NULL;
 }
@@ -71,13 +71,35 @@ void GameObject::setPosicion(float* p3D){
         posicion[0] = p3D[0];
         posicion[1] = p3D[1];
         posicion[2] = p3D[2];
+		transform3D* go = (transform3D*)this->findComponent("transform3D");
+		if(go != NULL)
+			go->setPosition(posicion);
+		class render* ren = (class render*)findComponent("render");
+		if(ren != NULL)
+			ren->setNodePosition(posicion);
     }
 }
 
-void GameObject::setRotacion(float* rot){
-	physics* go = (physics*)this->findComponent("physics");
-	go->update(NULL, NULL, rotacion, anguloDisparo, rot);
+void GameObject::setRotacion(float rot){
+	transform3D* go = (transform3D*)this->findComponent("transform3D");
+	if(go != NULL)
+		go->rotar(rot);
+	rotacion[2] = rot;
+	class render* ren = (class render*)findComponent("render");
+	if(ren != NULL)
+		ren->setNodeRotation(rotacion);
+	
+//	go->update(NULL, NULL, rotacion, anguloDisparo, rot);
 //	printf("%.2f %.2f\n", anguloDisparo[0], anguloDisparo[1]);
+}
+
+void GameObject::rotarConRaton(float* posRaton){
+	transform3D* go = (transform3D*)this->findComponent("transform3D");
+	if(go != NULL)
+		rotacion[2] = go->rotarConRaton(posRaton);
+	class render* ren = (class render*)findComponent("render");
+	if(ren != NULL)
+		ren->setNodeRotation(rotacion);
 }
 
 float* GameObject::getRotacion(){
@@ -86,8 +108,12 @@ float* GameObject::getRotacion(){
 
 void GameObject::mover(float *vel){
 	if(vel != NULL){
-        physics* go = (physics*)this->findComponent("physics");
-        go->update(vel, posicion, NULL, anguloDisparo, NULL);
+        transform3D* go = (transform3D*)findComponent("transform3D");
+		if(go != NULL)
+			go->mover(vel);
+		class render* ren = (class render*)findComponent("render");
+		if(ren != NULL)
+			ren->setNodePosition(posicion);
 	}
 }
 
@@ -106,9 +132,9 @@ void GameObject::update(){
 //		iter++;
 //	}
     
-//	physics* go = (physics*)this->findComponent("physics");
-//    if(go != NULL)
-//        go->update();
+	physics* go = (physics*)this->findComponent("physics");
+    if(go != NULL)
+        go->update();
 }
 
 void GameObject::addNodo(char* filename){
@@ -129,3 +155,9 @@ void GameObject::setTexture(char* filename){
 float* GameObject::getDirDisparo(){
 	return anguloDisparo;
 }
+
+void GameObject::setDirDisparo(float *dir){
+	anguloDisparo[0] = dir[0];
+	anguloDisparo[1] = dir[1];
+}
+

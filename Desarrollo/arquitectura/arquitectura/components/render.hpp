@@ -20,6 +20,8 @@ public:
 	bool run();
     void setNode(char* filename);
 	void setNodeTexture(char* filename);
+	bool setNodePosition(float* pos);
+	bool setNodeRotation(float* rot);
     void dropNode();
 	void deleteNode();
 	void setTexto();

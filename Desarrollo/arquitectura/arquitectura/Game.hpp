@@ -36,6 +36,7 @@ public:
     void zoom(bool z);
 	void atacarJugador();
 	void cambiarArmaJugador();
+	void rotarConRaton(float* posRaton);
 	
 protected:
 	Game();

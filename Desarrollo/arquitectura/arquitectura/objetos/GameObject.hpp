@@ -52,9 +52,11 @@ public:
 	
 	float* getPosicion();
     void setPosicion(float* p3D);
-	void setRotacion(float* rot);
+	void setRotacion(float rot);
+	void rotarConRaton(float* posRaton);
 	float* getRotacion();
 	float* getDirDisparo();
+	void setDirDisparo(float* dir);
 	
 	void mover(float* vel);
     void render();

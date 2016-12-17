@@ -36,7 +36,10 @@ camara::~camara(){
 }
 
 void camara::addCamara(float* p, float* l){
-	renderiza->addCamera(p, l);
+	posicion[0] = p[0];
+	posicion[1] = p[1];
+	posicion[2] = p[2];
+	renderiza->addCamera(posicion, l);
 }
 
 void camara::movimientoInteligente(float* posPlayer){
@@ -47,6 +50,7 @@ void camara::movimientoInteligente(float* posPlayer){
     
     renderiza->setCamPos(new float[3]{renderiza->getCamPos()[0]+incrX, renderiza->getCamPos()[1]+incrY, renderiza->getCamPos()[2]+incrZ});
     renderiza->setCamTarget(new float[3]{renderiza->getCamPos()[0] - offsetX, renderiza->getCamPos()[1] - offsetY, renderiza->getCamPos()[2] - offsetZ});
+//	printf("%.2f %.2f %.2f\n", renderiza->getCamPos()[0], renderiza->getCamPos()[1], renderiza->getCamPos()[2]);
 }
 
 void camara::setCamSpeed(float vel){

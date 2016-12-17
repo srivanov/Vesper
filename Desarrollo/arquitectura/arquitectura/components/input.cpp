@@ -45,6 +45,9 @@ void input::update(){
 //        }
     }
 	
+	Game::Instance()->rotarConRaton(ventana::Instance()->posicionRaton(Game::Instance()->getPlayer()->getPosicion()));
+	
+	
 	if(MyEventReceiver::Instance()->IsKeyDown('t')){
 		if(2000.0 * (clock()-intervalo) / CLOCKS_PER_SEC >= 500.0){
 			Game::Instance()->cambiarArmaJugador();

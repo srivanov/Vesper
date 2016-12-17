@@ -35,7 +35,9 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //	renderizador->setTexto();
     jugador->addNodo("3d/sphere.3ds");
 	jugador->setTexture("3d/texture.png");
-	cam->addCamara(new float[3]{0,-5,-10}, new float[3]{0,0,0});
+	float* p = new float[3]{10, 10, 0};
+	jugador->setPosicion(new float[3]{10, 10, 0});
+	cam->addCamara(new float[3]{p[0], p[1]-5, p[2]-10}, jugador->getPosicion());
 	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();
 	
@@ -104,3 +106,6 @@ void Game::cambiarArmaJugador(){
 	jugador->cambiarArma();
 }
 
+void Game::rotarConRaton(float* posRaton){
+	jugador->rotarConRaton(posRaton);
+}

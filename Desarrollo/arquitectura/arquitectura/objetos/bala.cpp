@@ -42,6 +42,11 @@ float* bala::getDireccion(){
 }
 
 void bala::update(){
+	//	std::map<char*, component>::iterator iter = components.begin();
+	//	while (iter != components.end()) {
+	//		iter->second.update();
+	//		iter++;
+	//	}
 //	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
 	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muerto == false)
 		muerto = true;

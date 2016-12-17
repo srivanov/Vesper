@@ -42,6 +42,22 @@ void render::setNodeTexture(char* filename){
 	}
 }
 
+bool render::setNodePosition(float* pos){
+	if(nodo != NULL){
+		nodo->_setNodePosition(pos);
+		return true;
+	}
+	return false;
+}
+
+bool render::setNodeRotation(float* rot){
+	if(nodo != NULL){
+		nodo->_setNodeRotation(rot);
+		return true;
+	}
+	return false;
+}
+
 void render::dropNode(){
     nodo = NULL;
 }
@@ -53,9 +69,9 @@ void render::deleteNode(){
 
 void render::actualizarRender(){
 	if(nodo != NULL){
-		nodo->_setNodePosition(getFather()->getPosicion());
-		getFather()->setRotacion(ventana::Instance()->posicionRaton(getFather()->getPosicion()));
-		nodo->_setNodeRotation(getFather()->getRotacion());
+//		nodo->_setNodePosition(getFather()->getPosicion());
+//		getFather()->setRotacion(ventana::Instance()->posicionRaton(getFather()->getPosicion()));
+//		nodo->_setNodeRotation(getFather()->getRotacion());
 	}
 }
 
