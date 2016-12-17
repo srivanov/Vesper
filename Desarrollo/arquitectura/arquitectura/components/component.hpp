@@ -12,7 +12,7 @@ public:
 	void setFather(GameObject* p);
 	GameObject* getFather();
 	~component();
-	void update();
+	virtual void update();
 private:
 	GameObject* padre;
 };

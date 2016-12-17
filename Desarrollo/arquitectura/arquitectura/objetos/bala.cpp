@@ -24,12 +24,11 @@ bala::bala(float* pos, float* dir, float vel){
 //	printf("%2.f %.2f\n", dir[0], dir[1]);
 	intervalo = clock();
 	tiempo_vida = vel;
-	printf("\n%.2f\n", tiempo_vida);
 	muerto = false;
 }
 
 bala::~bala(){
-	printf("DELETE bala\n");
+//	printf("DELETE bala\n");
 //	delete direccion;
 	class render* ren = (class render*)findComponent("render");
 	if (ren != NULL)
@@ -48,6 +47,7 @@ void bala::update(){
 	//		iter++;
 	//	}
 //	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
+	GameObject::update();
 	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muerto == false)
 		muerto = true;
 }

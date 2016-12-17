@@ -21,5 +21,5 @@ GameObject* component::getFather(){
 }
 
 void component::update(){
-	
+	printf("MAL\n");
 }

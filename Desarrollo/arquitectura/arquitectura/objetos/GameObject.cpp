@@ -126,15 +126,15 @@ void GameObject::render(){
 }
 
 void GameObject::update(){
-//	std::map<char*, component>::iterator iter = components.begin();
-//	while (iter != components.end()) {
-//		iter->second.update();
-//		iter++;
-//	}
-    
-	physics* go = (physics*)this->findComponent("physics");
-    if(go != NULL)
-        go->update();
+	std::map<char*, component*>::iterator iter = components.begin();
+	while (iter != components.end()) {
+		iter->second->update();
+		iter++;
+	}
+	
+//	physics* go = (physics*)this->findComponent("physics");
+//    if(go != NULL)
+//        go->update();
 }
 
 void GameObject::addNodo(char* filename){
