@@ -23,7 +23,8 @@ class nodeMesh{
 public:
     nodeMesh(ISceneNode* mesh);
     ~nodeMesh();
-    IMesh* _getMesh();
+    ISceneNode* _getNode();
+	void _setNode(ISceneNode* node);
 	bool _setMaterialTexture(ITexture* tex);
 	void _setNodePosition(float* posicion);
 	void _setNodeRotation(float* rotacion);

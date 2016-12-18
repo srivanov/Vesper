@@ -51,3 +51,12 @@ float* nodeMesh::_getNodeRotation(){
 	vector3df r =  object->getRotation();
 	return new float[3]{r.X, r.Y, r.Z};
 }
+
+ISceneNode* nodeMesh::_getNode(){
+	return object;
+}
+
+void nodeMesh::_setNode(ISceneNode* node){
+	object = node;
+}
+

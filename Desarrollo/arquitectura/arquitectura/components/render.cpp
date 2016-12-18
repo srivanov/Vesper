@@ -29,7 +29,13 @@ bool render::run(){
 
 void render::setNode(char *filename){
     if(nodo == NULL){
-        nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(ventana::Instance()->getSceneManager()->getMesh(filename)));
+		IMesh* aux = ventana::Instance()->getSceneManager()->getMesh(filename);
+		// si no consigue cargar la malla 3D cargamos un cubo de irrlicht
+		if(aux == NULL)
+			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addCubeSceneNode(1.0f, 0, -1, vector3df(0,0,0), vector3df(0,0,0), vector3df(1,1,1)));
+		else
+			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
+		aux = NULL;
 		nodo->_setNodePosition(getFather()->getPosicion());
 //		printf("cargado!\n");
     }
