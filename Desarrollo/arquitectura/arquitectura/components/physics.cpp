@@ -17,12 +17,13 @@ void physics::crearBodyDinamico(float* dimension, float* posicion){
     myBodyDef.type = b2_dynamicBody;
     
     //shape definition
-    b2PolygonShape polygonShape;
-    polygonShape.SetAsBox(dimension[0], dimension[1]); //a 2x2 rectangle
-    
+    b2CircleShape circleShape;
+	circleShape.m_radius = dimension[0]/2.0f;
+//    polygonShape.SetAsBox(dimension[0], dimension[1]); //a 2x2 rectangle
+	
     //fixture definition
     b2FixtureDef myFixtureDef;
-    myFixtureDef.shape = &polygonShape;
+    myFixtureDef.shape = &circleShape;
     myFixtureDef.density = 1;
     
     //create dynamic body
@@ -33,7 +34,26 @@ void physics::crearBodyDinamico(float* dimension, float* posicion){
 	rotacion = 0;
 	velocidad[0] = 0;
 	velocidad[1] = 0;
+}
 
+void physics::crearBodyEstatico(float* dimension, float* posicion, float rotacion){
+	b2BodyDef myBodyDef;
+	myBodyDef.type = b2_staticBody;
+	
+	b2PolygonShape polygonShape;
+	polygonShape.SetAsBox(dimension[0], dimension[1]);
+	
+	b2FixtureDef myFixtureDef;
+	myFixtureDef.shape = &polygonShape;
+	myFixtureDef.density = 1;
+	
+	myBodyDef.position.Set(posicion[0], posicion[1]);
+	body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
+	body->CreateFixture(&myFixtureDef);
+	
+	this->rotacion = rotacion;
+	velocidad[0] = 0;
+	velocidad[1] = 0;
 }
 
 //void physics::update(float* anguloFinal, float* angulo, float* mousePosition){

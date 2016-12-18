@@ -12,6 +12,7 @@ public:
     physics();
     ~physics();
     void crearBodyDinamico(float* dimension, float* posicion);
+	void crearBodyEstatico(float* dimension, float* posicion, float rotacion);
 //    void update(float* anguloFinal, float* angulo, float* mousePosition);
 	void update();
 	
