@@ -1,2 +1,3 @@
 # Vesper
-[ABP16] Juego de shoot and run (en espera de ser aceptado en V1)
+Archivos contenidos en el Hito 1
+  Sistema de Toma de decisiones v.:1.0
