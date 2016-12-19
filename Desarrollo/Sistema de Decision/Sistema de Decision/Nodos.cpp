@@ -37,11 +37,7 @@
 
 
 //NODOS ESPECIALES / GENERALES
-float Nodo::CalcularDistancia(vector3D a, vector3D b){
-    float x = fabs(a.x-b.x);
-    float y = fabs(a.y-b.y);
-    return x+y;
-}
+
 
 
 // NODO SECUENCIA
@@ -49,7 +45,7 @@ NodoSecuencia::NodoSecuencia(){}
 void NodoSecuencia::anyadirHijo(Nodo * hijo){NodoSecuencia::m_hijos.push_back(hijo);}
 short NodoSecuencia::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << "NODO SECUENCIA" << endl;
-    int i = hijo;
+    size_t i = hijo;
     for (i; i<m_hijos.size(); i++) {
         short answer = m_hijos[i]->run(NPCinfo, WorldInfo);
         if (answer==FAILURE) {hijo=0;return FAILURE;}
@@ -63,7 +59,7 @@ short NodoSecuencia::run(datos * NPCinfo, BlackBoard * WorldInfo){
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){}
 short NodoSecuenciaPositiva::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << "NODO SECUENCIA POSITIVA" <<endl;
-    int i = hijo;
+    size_t i = hijo;
     for(i;i<m_hijos.size();i++){
         short answer = m_hijos[i]->run(NPCinfo, WorldInfo);
         if(answer==SUCCESS){hijo=0;return SUCCESS;}
@@ -88,7 +84,7 @@ short NodoMover::run(datos * NPCinfo, BlackBoard * WorldInfo){
     
     
     if(aux==-1) {
-        aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosAviso());
+        aux = vector3D::CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosAviso());
         yABS = NPCinfo->getPosAviso()->y-NPCinfo->getPosActual()->y;
         xABS = NPCinfo->getPosAviso()->x-NPCinfo->getPosActual()->x;
     }else if (aux<0.5 && aux>0) {
@@ -138,7 +134,7 @@ short NodoHuir::run(datos * NPCinfo, BlackBoard * WorldInfo){
 NodoAvisar::NodoAvisar(){}
 short NodoAvisar::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO AVISAR" << endl;
-    NPCinfo->Avisado(true);
+    //NPCinfo->Avisado(true);
     return false;
 }
 // NODO HABLAR
@@ -161,7 +157,7 @@ NodoVigilar::NodoVigilar(){}
 short NodoVigilar::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO VIGILAR" << endl;
     if(NPCinfo->getRutina()!=0){
-        float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
+        float aux = vector3D::CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
         if(aux<0.5) {return true;}
         float xABS = fabs(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->x-NPCinfo->getPosActual()->x);
         float x=0,y=0;
@@ -198,7 +194,7 @@ short NodoPatrullar::run(datos * NPCinfo, BlackBoard * WorldInfo){
     if (NPCinfo->getRutina()!=0) {
         return false;
     }
-    float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
+    float aux = vector3D::CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
     if(aux<0.5) NPCinfo->setPaso();
     float xABS = fabs(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->x-NPCinfo->getPosActual()->x);
     float x=0,y=0;
@@ -272,7 +268,7 @@ short Nodo_AlarmaRota::run(datos * NPCinfo, BlackBoard *WorldInfo){
 Nodo_Avisado::Nodo_Avisado(){};
 short Nodo_Avisado::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO AVISADO ?" << endl;
-    if(NPCinfo->getLLamada()) return true;
+    //if(NPCinfo->getLLamada()) return true;
     return false;
 }
 
@@ -291,10 +287,10 @@ vector3D * Nodo_TengoSed::MasCercano(vector<vector3D*>& objetos,datos * NPCinfo)
     int x = 0;
     
     float distancia;
-    float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+    float aux = vector3D::CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
     
     for (int i=0; i<objetos.size(); i++) {
-        distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
+        distancia = vector3D::CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
         if(aux>distancia){
             x = i;
             aux = distancia;
@@ -317,10 +313,10 @@ vector3D * Nodo_TengoHambre::MasCercano(vector<vector3D*>& objetos,datos * NPCin
     int x = 0;
     
     float distancia;
-    float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+    float aux = vector3D::CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
     
     for (int i=0; i<objetos.size(); i++) {
-        distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
+        distancia = vector3D::CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
         if(aux>distancia){
             x = i;
             aux = distancia;
@@ -366,9 +362,9 @@ vector3D * Nodo_AlarmaCerca::MasCercano(vector<vector3D*>& objetos,datos * NPCin
     if (objetos.size()>0) {
         int x = 0;
         float distancia;
-        float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+        float aux = vector3D::CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
         for (int i=0; i<objetos.size(); i++) {
-            distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
+            distancia = vector3D::CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
             if(aux>distancia){
                 x = i;
             }
@@ -392,10 +388,10 @@ vector3D * Nodo_HayBotiquin::MasCercano(vector<vector3D*>& objetos,datos * NPCin
     int x = 0;
     
     float distancia;
-    float aux = CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
+    float aux = vector3D::CalcularDistancia(*objetos[0],*NPCinfo->getPosActual());
     //cout << aux << endl;
     for (int i=0; i<objetos.size(); i++) {
-        distancia = CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
+        distancia = vector3D::CalcularDistancia(*objetos[i],*NPCinfo->getPosActual());
         if(aux>distancia){
             x = i;
             aux = distancia;

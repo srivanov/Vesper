@@ -15,7 +15,7 @@
 #include "vectorD.hpp"
 #include "BlackBoard.hpp"
 #include "objects.hpp"
-#include <math.h>
+
 
 using namespace std;
 
@@ -26,7 +26,7 @@ class Nodo {
 public:
     virtual short run(datos * NPCinfo, BlackBoard * WorldInfo) = 0;
 protected:
-    float CalcularDistancia(vector3D a, vector3D b);
+    
 };
 
 class NodoSecuencia : public Nodo {
