@@ -24,7 +24,8 @@ enum ENUM_DTRECORD_TYPE{
     DT_BOTIQUIN,
     DT_COMIDA,
     DT_FUENTE,
-    DT_ALARMA
+    DT_ALARMA,
+    DT_NPC_VALUES
 };
 
 struct DTRECORD {
@@ -44,6 +45,8 @@ public:
     vector3D * getDTRECORD_DATA(ENUM_DTRECORD_TYPE type , int id_Target);
     void AddRecord(ENUM_DTRECORD_TYPE type, int id_object,vector3D * pos_object, ENUM_DTRECORD_TYPE type_target);
     void AddRecord(ENUM_DTRECORD_TYPE type, int id_object,vector3D * pos_object, ENUM_DTRECORD_TYPE type_target, int id_target);
+    void replaceRecord(ENUM_DTRECORD_TYPE type, int id_object,vector3D * pos_object, ENUM_DTRECORD_TYPE type_target);
+    void replaceRecord(ENUM_DTRECORD_TYPE type, int id_object,vector3D * pos_object, ENUM_DTRECORD_TYPE type_target, int id_target);
     int countDTRECORD(ENUM_DTRECORD_TYPE type);
     int countDTRECORD(ENUM_DTRECORD_TYPE type,int id_Target);
     void update(DTRECORD * updated);
@@ -54,6 +57,8 @@ private:
 class arbitro{
     
 };
+
+
 class BlackBoard{
 public:
     BlackBoard();

@@ -9,7 +9,7 @@
 #include "gestor_eventos.hpp"
 #include "NPC.hpp"
 
-#define SONIDO 40
+#define SONIDO 10
 #define AVISO 80
 
 
@@ -49,6 +49,12 @@ void gestor::addEvent(Event_type tipo, vector3D posicion, int * objeto_id){
     contador++;
     events.push_back(new_evento);
 }
+bool gestor::ExistEvent(Event_type tipo, int id){
+    for (size_t i=0; i<events.size(); i++) {
+        if(*events[i]->id_objeto==id && events[i]->tE==tipo) return true;
+    }
+    return false;
+}
 void gestor::update(std::vector<NPC*>& agentes){
     
     time_t AcTime = time(NULL);
@@ -66,15 +72,15 @@ void gestor::update(std::vector<NPC*>& agentes){
     for (size_t i=0; i<agentes.size(); i++) {
         pAgent = agentes[i];
         
-        for (size_t t=0; i<events.size(); t++) {
-            if(!(events[t]->tE && pAgent->getFlags(events[t]->id_evento))){}
+        for (size_t t=0; t<events.size(); t++) {
+            if( !events[t]->tE && pAgent->getFlags(events[t]->tE)){}
             else if(*events[t]->id_objeto == pAgent->getId()){}
             else{
                 vector3D posAgent = *pAgent->getPosition();
                 vector3D posEvent = events[t]->pos_objeto;
                 float dist = vector3D::CalcularDistancia(posEvent, posAgent);
                 if(dist<=events[t]->radio){
-                    pAgent->setEventFlag(events[t]);
+                    pAgent->setEventFlag(events[t]->pos_objeto,events[t]->tE);
                 }
             }
         }

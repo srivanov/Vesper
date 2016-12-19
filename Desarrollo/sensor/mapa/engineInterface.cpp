@@ -166,6 +166,7 @@ bool engineInterface::loadMap(world * mundo){
                 nodoc->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 comida * food = new comida(nodoc->_getNodePositionD());
                 mundo->anyadirComida(food);
+                
                 nodoc = NULL;
             }
             if(mapita[0][i][j] == 100){ //fuente
@@ -195,8 +196,10 @@ bool engineInterface::loadMap(world * mundo){
                 _setMaterialTexture(nodob,"../../../modelos3D/colorBotiquin.jpg");
                 nodob->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 nodob->_getNodePositionD();
-                botiquin * boti = new botiquin(nodob->_getNodePositionD());
-                mundo->anyadirBotiquin(boti);
+                //botiquin * boti = new botiquin(nodob->_getNodePositionD());
+                //mundo->anyadirBotiquin(boti);
+                altavoz * alta = new altavoz(nodob->_getNodePositionD(),1);
+                mundo->anyadirAltavoz(alta);
                 nodob = NULL;
             }
             /*if(mapita[0][i][j] == 86){

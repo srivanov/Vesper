@@ -12,6 +12,13 @@
 #include "estados.hpp"
 class eventos;
 
+struct DT_evento {
+    DT_evento(Event_type tipo, vector3D posicion) : type(tipo){posEvent=posicion;}
+    ~DT_evento();
+    vector3D posEvent;
+    Event_type type;
+};
+
 class NPC{
 public:
     NPC(int ntipo, vector3D * posinicial,short rutina);
@@ -22,12 +29,12 @@ public:
     void setPosition(vector3D * posicion);
     void setDestino(vector3D * posicion) {posDestino = posicion;}
     bool getFlags(int event);
-    void setEventFlag(eventos * event);
+    void setEventFlag(vector3D posicion,Event_type Etype);
     int getId() const {return id;}
 private:
     int f = 0;
     
-    vector<eventos*> EPropios;
+    vector<DT_evento*> EPropios;
     
     estados * DeciSys;
     

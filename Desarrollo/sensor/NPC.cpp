@@ -7,7 +7,6 @@
 //
 
 #include "NPC.hpp"
-#include "gestor_eventos.hpp"
 
 #define BOLASdeFUEGO 1
 #define LANZApinchos 2
@@ -43,6 +42,7 @@ NPC::NPC(int ntipo, vector3D * posinicial, short rutina){
     }else{ //VIGILAR
         PosRutina.push_back(new vector3D(10,10,0));
     }
+    //EPropios.resize(3);
 }
 NPC::~NPC(){
     //delete datosPropios;
@@ -50,12 +50,18 @@ NPC::~NPC(){
 }
 bool NPC::getFlags(int event){
     for (size_t i=0; i<EPropios.size(); i++) {
-        if (EPropios[i]->id_evento==event) return true;
+        if (EPropios[i]!=NULL && EPropios[i]->type==event) return true;
     }
     return false;
 }
-void NPC::setEventFlag(eventos * event){
-    EPropios.push_back(event);
+void NPC::setEventFlag(vector3D posicion,Event_type Etype){
+    bool existe = false;
+    for (size_t i=0 ; i<EPropios.size(); i++) {
+        if(EPropios[i]->type==Etype) existe=true;
+    }
+    if(!existe) {
+        EPropios.push_back(new DT_evento(Etype,posicion));
+    }
 }
 void NPC::update(BlackBoard * worldINFO){
     /*if(f%120==0){
@@ -72,6 +78,12 @@ void NPC::update(BlackBoard * worldINFO){
     }
     f++;
     DeciSys->run(datosPropios,worldINFO);*/
+    for (size_t i=0; i<EPropios.size(); i++) {
+        if(EPropios[i]->type==tE_Sound && vector3D::CalcularDistancia(EPropios[i]->posEvent, *this->getPosition())<=10) {
+            
+            cout << "ESCUCHO A " << vector3D::CalcularDistancia(EPropios[i]->posEvent, *this->getPosition())<< endl;
+        }
+    }
     
 }
 //datos NPC::getNPCinfo(){return *datosPropios;}

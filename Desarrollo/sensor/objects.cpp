@@ -23,3 +23,13 @@ comida::~comida(){}
 fuente::~fuente(){}
 alarma::alarma(vector3D * posInicial){posicion = posInicial;}
 alarma::~alarma(){}
+
+altavoz::altavoz(vector3D * posInicial,int _id){
+    id = _id;
+    posicion = posInicial;
+}
+altavoz::~altavoz(){}
+void altavoz::update(){
+    if(!gestor::Instance()->ExistEvent(tE_Sound, id))
+        gestor::Instance()->addEvent(tE_Sound, *posicion, &id);
+}

@@ -9,8 +9,9 @@
 #include "world.hpp"
 world::world(){
     infoWorld = new BlackBoard;
+    gestor::Instance();
 }
-
+void world::anyadirAltavoz(altavoz *hijo){altavoces_mundo.push_back(hijo);}
 void world::anyadirBotiquin(botiquin *hijo){botiquin_mundo.push_back(hijo);}
 void world::anyadirFuente(fuente *hijo){fuente_mundo.push_back(hijo);}
 void world::anyadirComida(comida *hijo){comida_mundo.push_back(hijo);}
@@ -20,6 +21,8 @@ void world::update(){
     
     infoWorld->vaciarVectores();
     ConstruirBlackBoard();
+    gestor::Instance()->update(enemigos);
+    
     for (int i=0; i<enemigos.size(); i++) {
         
         infoWorld->cleanBool();
@@ -30,6 +33,15 @@ void world::update(){
         //ComprobacionFuentesAlarmas();
         //AVISO DE UN NPC A SUS COMPAÑEROS
         //NPCsAvisados(enemigos[i]);
+        /*
+         
+         
+         
+         
+         */
+    }
+    for (int i=0; i<altavoces_mundo.size(); i++) {
+        altavoces_mundo[i]->update();
     }
 }
 

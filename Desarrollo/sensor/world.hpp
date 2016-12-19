@@ -10,6 +10,7 @@
 #define world_hpp
 
 #include "NPC.hpp"
+#include "gestor_eventos.hpp"
 
 class world {
 public:
@@ -20,6 +21,7 @@ public:
     void anyadirComida(comida * hijo);
     void anyadirAlarma(alarma * hijo);
     void anyadirNPC(NPC * hijo);
+    void anyadirAltavoz(altavoz * hijo);
     void update();
 private:
     void ConstruirBlackBoard();
@@ -34,6 +36,7 @@ private:
     vector<fuente*> fuente_mundo;
     vector<comida*> comida_mundo;
     vector<alarma*> alarma_mundo;
+    vector<altavoz*> altavoces_mundo;
     void cargarMapa();
     BlackBoard * infoWorld;
     

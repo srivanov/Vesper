@@ -40,6 +40,7 @@ public:
     static gestor * Instance();
     void addEvent(Event_type tipo, vector3D posicion,int * objeto_id);
     void update(std::vector<NPC*>& agentes);
+    bool ExistEvent(Event_type tipo, int id);
 private:
     static gestor * pInstancia;
     std::vector<eventos*> events;

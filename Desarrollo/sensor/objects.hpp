@@ -13,6 +13,7 @@
 #define FUENTE 2
 #define COMIDA 3
 #define ALARMA 4
+#include "gestor_eventos.hpp"
 #include "datos.hpp"
 
 class objetos {
@@ -23,6 +24,15 @@ protected:
     int tipo;
     vector3D * posicion;
 };
+class altavoz : public objetos{
+public:
+    void update();
+    altavoz(vector3D * posInicial,int _id);
+    ~altavoz();
+private:
+    int id;
+};
+
 class botiquin : public objetos{
 public:
     botiquin(vector3D * posInicial);
