@@ -17,7 +17,7 @@ NPC::~NPC(){
     delete DeciSys;
 }
 void NPC::update(BlackBoard * worldINFO){
-    /*if(f%120==0){
+    if(f%120==0){
         datosPropios->Alimentarse(-1);
         cout <<"VIDA:"<<datosPropios->getLife() << " | HAMBRE:" << datosPropios->getHambre() << " | SED:" << datosPropios->getSed() << endl;
     }
@@ -30,7 +30,7 @@ void NPC::update(BlackBoard * worldINFO){
         f=0;
     }
     f++;
-    DeciSys->run(datosPropios,worldINFO);*/
+    DeciSys->run(datosPropios,worldINFO);
     
 }
 datos NPC::getNPCinfo(){return *datosPropios;}

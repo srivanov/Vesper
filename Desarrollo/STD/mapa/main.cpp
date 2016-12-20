@@ -56,8 +56,8 @@ int main(){
     while(interfaceIrr->_Run()){
 		fisicas->update();
 		fisicas->Step(vel,pos, posmouseFinal, posmouse2);
-		//player->_setNodePositionD(npc->getPosition());
-        player->_setNodePosition(pos);
+		player->_setNodePositionD(npc->getPosition());
+       // player->_setNodePosition(pos);
 //		interfaceIrr->_setCamTarget(player->_getNodePosition()); //////
 		if(bala != NULL){
 			fisicas->getBulletPosition(posicion_bala);
