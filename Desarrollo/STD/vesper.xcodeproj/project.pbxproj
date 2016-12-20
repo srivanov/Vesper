@@ -92,11 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D29475AB1DCE44BA00AD3AEF = {
+		D257880A1E09A10B00D70E80 /* sistema de decision */ = {
 			isa = PBXGroup;
 			children = (
 				633297281DF87A8A002585D5 /* datos.cpp */,
 				633297291DF87A8A002585D5 /* datos.hpp */,
+				D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */,
+				D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */,
+				D22E0CED1DF07C0000E75C40 /* estados.cpp */,
+				D22E0CEE1DF07C0000E75C40 /* estados.hpp */,
+			);
+			name = "sistema de decision";
+			sourceTree = "<group>";
+		};
+		D29475AB1DCE44BA00AD3AEF = {
+			isa = PBXGroup;
+			children = (
+				D257880A1E09A10B00D70E80 /* sistema de decision */,
 				635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */,
 				635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */,
 				633297221DF86B62002585D5 /* NPC.cpp */,
@@ -124,10 +136,6 @@
 				634EC61C1DF963C70005F5F9 /* world.hpp */,
 				634EC61E1DF964F30005F5F9 /* objects.cpp */,
 				634EC61F1DF964F30005F5F9 /* objects.hpp */,
-				D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */,
-				D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */,
-				D22E0CED1DF07C0000E75C40 /* estados.cpp */,
-				D22E0CEE1DF07C0000E75C40 /* estados.hpp */,
 				D29475B51DCE44BB00AD3AEF /* Products */,
 				D29475C81DCE44F000AD3AEF /* Frameworks */,
 			);
