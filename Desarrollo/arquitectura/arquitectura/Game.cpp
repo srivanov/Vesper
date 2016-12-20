@@ -1,13 +1,15 @@
 
 #include "Game.hpp"
 #include <cstdlib>
-Game* Game::pinstance = 0;
+//Game* Game::pinstance = 0;
 
 Game* Game::Instance(){
-	if(pinstance == 0){
-		pinstance = new Game();
-	}
-	return pinstance;
+	static Game pinstance;
+	return &pinstance;
+	//if(pinstance == 0){
+	//	pinstance = new Game();
+	//}
+	//return pinstance;
 }
 
 Game::Game(){
@@ -26,7 +28,7 @@ Game::~Game(){
     renderizador->closeWindow();
 	delete renderizador;
 	delete jugador;
-	//delete pinstance;
+//	delete pinstance;
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -38,6 +40,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	float* p = new float[3]{10, 10, 0};
 	jugador->setPosicion(new float[3]{10, 10, 0});
 	cam->addCamara(new float[3]{p[0], p[1]-5, p[2]-10}, jugador->getPosicion());
+	
 	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();
 	

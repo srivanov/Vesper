@@ -42,7 +42,7 @@ protected:
 	Game();
 	
 private:
-	static Game* pinstance;
+	//static Game* pinstance;
 	class render *renderizador;
 	class input* entrada;
 	bool running;
