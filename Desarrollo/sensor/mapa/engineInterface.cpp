@@ -174,9 +174,13 @@ bool engineInterface::loadMap(world * mundo){
                 _setMaterialFlag(nodof, 0, false);
                 _setMaterialTexture(nodof,"../../../modelos3D/colorFuente.jpg");
                 nodof->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
-                fuente * fuen = new fuente(nodof->_getNodePositionD(),true);
-                mundo->anyadirFuente(fuen);
+//                fuente * fuen = new fuente(nodof->_getNodePositionD(),true);
+//                mundo->anyadirFuente(fuen);
+                
+                altavoz * alta = new altavoz(nodof->_getNodePositionD(),1);
+                mundo->anyadirAltavoz(alta);
                 nodof = NULL;
+               
             }
             if(mapita[0][i][j] == 161){ //alarma
                 nodoa = _getNodeFromMesh(cubo_alarma);
@@ -196,11 +200,9 @@ bool engineInterface::loadMap(world * mundo){
                 _setMaterialTexture(nodob,"../../../modelos3D/colorBotiquin.jpg");
                 nodob->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 nodob->_getNodePositionD();
-                //botiquin * boti = new botiquin(nodob->_getNodePositionD());
-                //mundo->anyadirBotiquin(boti);
-                altavoz * alta = new altavoz(nodob->_getNodePositionD(),1);
-                mundo->anyadirAltavoz(alta);
-                nodob = NULL;
+                botiquin * boti = new botiquin(nodob->_getNodePositionD());
+                mundo->anyadirBotiquin(boti);
+                
             }
             /*if(mapita[0][i][j] == 86){
 //                nodo_suelo = smgr->addMeshSceneNode(suelo);

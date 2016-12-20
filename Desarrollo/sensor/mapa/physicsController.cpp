@@ -63,7 +63,7 @@ void physicsController::Footest() {
 	myFixtureDef.density = 1;
 	
 	//create dynamic body
-	myBodyDef.position.Set(0, 0);
+	myBodyDef.position.Set(15, 13);
 	body = m_world->CreateBody(&myBodyDef);
 	body->CreateFixture(&myFixtureDef);
     

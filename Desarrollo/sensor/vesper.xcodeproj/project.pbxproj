@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D257880B1E09AF3200D70E80 /* trigger system */ = {
+			isa = PBXGroup;
+			children = (
+				6315F9761E053B59005F64CD /* gestor_eventos.cpp */,
+				6315F9771E053B59005F64CD /* gestor_eventos.hpp */,
+			);
+			name = "trigger system";
+			sourceTree = "<group>";
+		};
 		D29475AB1DCE44BA00AD3AEF = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +127,7 @@
 				D29475DE1DCE645B00AD3AEF /* tinyxml2.h */,
 				D29475DA1DCE63C200AD3AEF /* cargarMapa.cpp */,
 				D29475DB1DCE63C200AD3AEF /* cargarMapa.hpp */,
-				6315F9761E053B59005F64CD /* gestor_eventos.cpp */,
-				6315F9771E053B59005F64CD /* gestor_eventos.hpp */,
+				D257880B1E09AF3200D70E80 /* trigger system */,
 				D29475D51DCE479D00AD3AEF /* main.cpp */,
 				63376E3D1E0024A700258E84 /* player.cpp */,
 				63376E3E1E0024A700258E84 /* player.hpp */,
