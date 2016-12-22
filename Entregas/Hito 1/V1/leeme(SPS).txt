@@ -1,0 +1,11 @@
+Sistema de percepción sensorial
+
+En este ejecutable la pelota representará al NPC que será guiado por el usuario mediante las teclas designadas:
+•	W: Movimiento hacia arriba
+•	A: Movimiento hacia la izquierda
+•	D: Movimiento hacia la derecha
+•	S: Movimiento hacia abajo.
+
+Se cargará un plano en el cual sobre él se encontrarán diferentes cajas, en este caso las cajas de color azul representan altavoces, es decir, al acercarnos a ellos se imprimirá por el terminal si el NPC ha escuchado o no el ruido. Los altavoces son objetos auxiliares creados para la prueba y muestra del sensor del oído.
+
+Actualmente la visión mediante trazado de rayos no se encuentra disponible aunque se encuentra en desarrollo para la muestra publica del 12 de enero.
