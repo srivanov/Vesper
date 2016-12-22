@@ -41,13 +41,29 @@ int main(int argc, const char * argv[]) {
 	glfwGetFramebufferSize(window, &width, &height);
 	glViewport(0, 0, width, height);
 	
+	GLfloat vertices[] = {
+		-0.5f, -0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.0f,  0.5f, 0.0f
+	};
+	//genera el vertex buffer
+	GLuint VBO;
+	glGenBuffers(1, &VBO);
+	//linkamos el buffer GL_ARRAY_BUFFER al puntero VBO
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	
+	
+	
 	// Game loop
 	while (!glfwWindowShouldClose(window))
 	{
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);		// Swap the screen buffers
+//		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+//		glClear(GL_COLOR_BUFFER_BIT);
+		// Swap the screen buffers
 		glfwSwapBuffers(window);
 	}
 	
