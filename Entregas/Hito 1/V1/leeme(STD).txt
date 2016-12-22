@@ -1,0 +1,14 @@
+Behavior Trees
+En la pantalla se mostrará una pelota que representara al NPC que va ha realizar las diferentes tareas del árbol. Mientras desarrolla su patrón, se podrá ver en pantalla diferentes cubos de colores representando diferentes objetos.
+•	Cubo rojo: Alarma
+•	Cubo azul: Fuente
+•	Cubo verde: Comida
+•	Cubo amarillo: botiquín
+
+El NPC está programado para que cuando sus variables se hallen alteradas, es decir, que tenga la sed o hambre altas y/o la vida baja, el acudirá al objeto para curarse, alimentar o calmar su sed, lo que hare que sus parámetros vuelvan a valores positivos o buenos para la IA. Estas acciones se llevarán a cabo bajo estos valores y en el orden siguiente:
+
+1.	Vida por debajo de 30, irá a curarse.
+2.	Hambre por encima de 60, comerá.
+3.	Sed por encima de 70, ira a la fuente a beber.
+
+Cuando no realiza dichas acciones se observará como el NPC realiza un recorrido que muestra que está realizando su patrulla pues no tiene variables que suplir y debe continuar con sus acciones predeterminadas.
