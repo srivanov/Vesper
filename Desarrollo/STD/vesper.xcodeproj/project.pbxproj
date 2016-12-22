@@ -14,7 +14,7 @@
 		634EC61D1DF963C70005F5F9 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634EC61B1DF963C70005F5F9 /* world.cpp */; };
 		634EC6201DF964F30005F5F9 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634EC61E1DF964F30005F5F9 /* objects.cpp */; };
 		635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */; };
-		D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */; };
+		63B100841E0C678E00D55481 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B100821E0C678E00D55481 /* Nodos.cpp */; };
 		D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CED1DF07C0000E75C40 /* estados.cpp */; };
 		D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */; };
 		D29475CA1DCE44F000AD3AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475C91DCE44F000AD3AEF /* Cocoa.framework */; };
@@ -47,8 +47,8 @@
 		634EC61F1DF964F30005F5F9 /* objects.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
 		635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoard.cpp; sourceTree = "<group>"; };
 		635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlackBoard.hpp; sourceTree = "<group>"; };
-		D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.cpp"; sourceTree = "<group>"; };
-		D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodos.hpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.hpp"; sourceTree = "<group>"; };
+		63B100821E0C678E00D55481 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodos.cpp; sourceTree = "<group>"; };
+		63B100831E0C678E00D55481 /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodos.hpp; sourceTree = "<group>"; };
 		D22E0CED1DF07C0000E75C40 /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = estados.cpp; sourceTree = "<group>"; };
 		D22E0CEE1DF07C0000E75C40 /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = estados.hpp; sourceTree = "<group>"; };
 		D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = engineInterface.cpp; path = mapa/engineInterface.cpp; sourceTree = "<group>"; };
@@ -95,10 +95,10 @@
 		D257880A1E09A10B00D70E80 /* sistema de decision */ = {
 			isa = PBXGroup;
 			children = (
+				63B100821E0C678E00D55481 /* Nodos.cpp */,
+				63B100831E0C678E00D55481 /* Nodos.hpp */,
 				633297281DF87A8A002585D5 /* datos.cpp */,
 				633297291DF87A8A002585D5 /* datos.hpp */,
-				D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */,
-				D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */,
 				D22E0CED1DF07C0000E75C40 /* estados.cpp */,
 				D22E0CEE1DF07C0000E75C40 /* estados.hpp */,
 			);
@@ -232,6 +232,7 @@
 			files = (
 				634EC6201DF964F30005F5F9 /* objects.cpp in Sources */,
 				D29475DF1DCE645B00AD3AEF /* tinyxml2.cpp in Sources */,
+				63B100841E0C678E00D55481 /* Nodos.cpp in Sources */,
 				D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */,
 				D29475DC1DCE63C200AD3AEF /* cargarMapa.cpp in Sources */,
 				D2F4A43D1DDE31400050A3BC /* nodeMesh.cpp in Sources */,
@@ -243,7 +244,6 @@
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
 				633297241DF86B62002585D5 /* NPC.cpp in Sources */,
 				63376E421E00271C00258E84 /* vectorD.cpp in Sources */,
-				D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */,
 				6332972A1DF87A8A002585D5 /* datos.cpp in Sources */,
 				634EC61D1DF963C70005F5F9 /* world.cpp in Sources */,
 				D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */,
