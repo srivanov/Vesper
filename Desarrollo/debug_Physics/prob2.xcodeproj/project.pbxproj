@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E93661E21DD1EA9A006598EE /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93661DE1DD1E8C8006598EE /* libBox2D.a */; };
+		E93661E31DD1EAA5006598EE /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93661E01DD1E8D4006598EE /* libIrrlicht.a */; };
+		E936621A1DD1F87A006598EE /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662141DD1F87A006598EE /* sfml-audio.framework */; };
+		E936621B1DD1F87A006598EE /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662151DD1F87A006598EE /* sfml-graphics.framework */; };
+		E936621C1DD1F87A006598EE /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662161DD1F87A006598EE /* sfml-network.framework */; };
+		E936621D1DD1F87A006598EE /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662171DD1F87A006598EE /* sfml-system.framework */; };
+		E936621E1DD1F87A006598EE /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662181DD1F87A006598EE /* sfml-window.framework */; };
+		E936621F1DD1F87A006598EE /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93662191DD1F87A006598EE /* SFML.framework */; };
+		E9876C851DCCEEA100B2D66F /* physicsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9876C831DCCEEA100B2D66F /* physicsController.cpp */; };
+		E9876C881DCD00AD00B2D66F /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9876C861DCD00AD00B2D66F /* mundoBox2D.cpp */; };
+		E9DDB0471DCA0BC500740C7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0461DCA0BC500740C7F /* Cocoa.framework */; };
+		E9DDB0491DCA0BCB00740C7F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB0481DCA0BCB00740C7F /* Carbon.framework */; };
+		E9DDB04B1DCA0BD100740C7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB04A1DCA0BD100740C7F /* IOKit.framework */; };
+		E9DDB04D1DCA0BD700740C7F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB04C1DCA0BD700740C7F /* OpenGL.framework */; };
+		E9DDB0511DCA0C6E00740C7F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9DDB0501DCA0C6E00740C7F /* main.cpp */; };
+		E9DDB0531DCA0C7900740C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DDB0521DCA0C7900740C7F /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E93661DE1DD1E8C8006598EE /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
+		E93661E01DD1E8D4006598EE /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/irrlicht/lib/MacOSX/libIrrlicht.a; sourceTree = "<group>"; };
+		E93662141DD1F87A006598EE /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "Frameworks/SFML/sfml-audio.framework"; sourceTree = "<group>"; };
+		E93662151DD1F87A006598EE /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "Frameworks/SFML/sfml-graphics.framework"; sourceTree = "<group>"; };
+		E93662161DD1F87A006598EE /* sfml-network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-network.framework"; path = "Frameworks/SFML/sfml-network.framework"; sourceTree = "<group>"; };
+		E93662171DD1F87A006598EE /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "Frameworks/SFML/sfml-system.framework"; sourceTree = "<group>"; };
+		E93662181DD1F87A006598EE /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "Frameworks/SFML/sfml-window.framework"; sourceTree = "<group>"; };
+		E93662191DD1F87A006598EE /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = Frameworks/SFML/SFML.framework; sourceTree = "<group>"; };
+		E9876C831DCCEEA100B2D66F /* physicsController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = physicsController.cpp; path = prob2/physicsController.cpp; sourceTree = "<group>"; };
+		E9876C841DCCEEA100B2D66F /* physicsController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = physicsController.hpp; path = prob2/physicsController.hpp; sourceTree = "<group>"; };
+		E9876C861DCD00AD00B2D66F /* mundoBox2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mundoBox2D.cpp; path = prob2/mundoBox2D.cpp; sourceTree = "<group>"; };
+		E9876C871DCD00AD00B2D66F /* mundoBox2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = mundoBox2D.hpp; path = prob2/mundoBox2D.hpp; sourceTree = "<group>"; };
+		E9DDB0311DCA0BB400740C7F /* prob2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prob2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9DDB0461DCA0BC500740C7F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E9DDB0481DCA0BCB00740C7F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		E9DDB04A1DCA0BD100740C7F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		E9DDB04C1DCA0BD700740C7F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		E9DDB0501DCA0C6E00740C7F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = prob2/main.cpp; sourceTree = "<group>"; };
+		E9DDB0521DCA0C7900740C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = prob2/Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9DDB02E1DCA0BB400740C7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E936621A1DD1F87A006598EE /* sfml-audio.framework in Frameworks */,
+				E936621B1DD1F87A006598EE /* sfml-graphics.framework in Frameworks */,
+				E936621C1DD1F87A006598EE /* sfml-network.framework in Frameworks */,
+				E936621D1DD1F87A006598EE /* sfml-system.framework in Frameworks */,
+				E936621E1DD1F87A006598EE /* sfml-window.framework in Frameworks */,
+				E936621F1DD1F87A006598EE /* SFML.framework in Frameworks */,
+				E93661E31DD1EAA5006598EE /* libIrrlicht.a in Frameworks */,
+				E93661E21DD1EA9A006598EE /* libBox2D.a in Frameworks */,
+				E9DDB04D1DCA0BD700740C7F /* OpenGL.framework in Frameworks */,
+				E9DDB04B1DCA0BD100740C7F /* IOKit.framework in Frameworks */,
+				E9DDB0491DCA0BCB00740C7F /* Carbon.framework in Frameworks */,
+				E9DDB0471DCA0BC500740C7F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9DDB0281DCA0BB400740C7F = {
+			isa = PBXGroup;
+			children = (
+				E9DDB0521DCA0C7900740C7F /* Assets.xcassets */,
+				E9DDB0321DCA0BB400740C7F /* Products */,
+				E9DDB0451DCA0BC400740C7F /* Frameworks */,
+				E9876C861DCD00AD00B2D66F /* mundoBox2D.cpp */,
+				E9876C871DCD00AD00B2D66F /* mundoBox2D.hpp */,
+				E9876C831DCCEEA100B2D66F /* physicsController.cpp */,
+				E9876C841DCCEEA100B2D66F /* physicsController.hpp */,
+				E9DDB0501DCA0C6E00740C7F /* main.cpp */,
+			);
+			sourceTree = "<group>";
+		};
+		E9DDB0321DCA0BB400740C7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9DDB0311DCA0BB400740C7F /* prob2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9DDB0451DCA0BC400740C7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E93662141DD1F87A006598EE /* sfml-audio.framework */,
+				E93662151DD1F87A006598EE /* sfml-graphics.framework */,
+				E93662161DD1F87A006598EE /* sfml-network.framework */,
+				E93662171DD1F87A006598EE /* sfml-system.framework */,
+				E93662181DD1F87A006598EE /* sfml-window.framework */,
+				E93662191DD1F87A006598EE /* SFML.framework */,
+				E93661E01DD1E8D4006598EE /* libIrrlicht.a */,
+				E93661DE1DD1E8C8006598EE /* libBox2D.a */,
+				E9DDB04C1DCA0BD700740C7F /* OpenGL.framework */,
+				E9DDB04A1DCA0BD100740C7F /* IOKit.framework */,
+				E9DDB0481DCA0BCB00740C7F /* Carbon.framework */,
+				E9DDB0461DCA0BC500740C7F /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9DDB0301DCA0BB400740C7F /* prob2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9DDB0421DCA0BB400740C7F /* Build configuration list for PBXNativeTarget "prob2" */;
+			buildPhases = (
+				E9DDB02D1DCA0BB400740C7F /* Sources */,
+				E9DDB02E1DCA0BB400740C7F /* Frameworks */,
+				E9DDB02F1DCA0BB400740C7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = prob2;
+			productName = prob2;
+			productReference = E9DDB0311DCA0BB400740C7F /* prob2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9DDB0291DCA0BB400740C7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Stoycho Ivanov Atanasov";
+				TargetAttributes = {
+					E9DDB0301DCA0BB400740C7F = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E9DDB02C1DCA0BB400740C7F /* Build configuration list for PBXProject "prob2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9DDB0281DCA0BB400740C7F;
+			productRefGroup = E9DDB0321DCA0BB400740C7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9DDB0301DCA0BB400740C7F /* prob2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9DDB02F1DCA0BB400740C7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9DDB0531DCA0C7900740C7F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9DDB02D1DCA0BB400740C7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9DDB0511DCA0C6E00740C7F /* main.cpp in Sources */,
+				E9876C851DCCEEA100B2D66F /* physicsController.cpp in Sources */,
+				E9876C881DCD00AD00B2D66F /* mundoBox2D.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E9DDB0401DCA0BB400740C7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E9DDB0411DCA0BB400740C7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E9DDB0431DCA0BB400740C7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(PROJECT_DIR)/Frameworks/SFML",
+				);
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/includes/irrlicht",
+					"$(PROJECT_DIR)/includes/Box2D",
+					"$(PROJECT_DIR)/includes/SFML",
+				);
+				INFOPLIST_FILE = prob2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/libs/Box2D/lib",
+					"$(PROJECT_DIR)/libs/irrlicht/lib/MacOSX",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sia.prob2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E9DDB0441DCA0BB400740C7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(PROJECT_DIR)/Frameworks/SFML",
+				);
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/includes/irrlicht",
+					"$(PROJECT_DIR)/includes/Box2D",
+					"$(PROJECT_DIR)/includes/SFML",
+				);
+				INFOPLIST_FILE = prob2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/libs/Box2D/lib",
+					"$(PROJECT_DIR)/libs/irrlicht/lib/MacOSX",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sia.prob2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9DDB02C1DCA0BB400740C7F /* Build configuration list for PBXProject "prob2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9DDB0401DCA0BB400740C7F /* Debug */,
+				E9DDB0411DCA0BB400740C7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9DDB0421DCA0BB400740C7F /* Build configuration list for PBXNativeTarget "prob2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9DDB0431DCA0BB400740C7F /* Debug */,
+				E9DDB0441DCA0BB400740C7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9DDB0291DCA0BB400740C7F /* Project object */;
+}
