@@ -21,6 +21,7 @@ class physicsController{
         void Footest();
         void setMoveState(int u);
         void Step(float* velocidad, float* posicion,float* posmouseFinal, int* rotacion);
+        bool sensor();
 		void dispararBala();
 		void update();
 		void getBulletPosition(float* pos);
@@ -31,6 +32,8 @@ class physicsController{
 		b2Body* body;
         b2Body* body2;
 		b2Body* bullet;
+        b2RayCastInput* input;
+        b2RayCastOutput* output;
 };
 
 #endif /* physicsController_hpp */

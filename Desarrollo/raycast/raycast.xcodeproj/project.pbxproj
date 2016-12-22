@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = engineInterface.cpp; path = mapa/engineInterface.cpp; sourceTree = "<group>"; };
 		D23535701DDE1A6B00A038D8 /* engineInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = engineInterface.hpp; path = mapa/engineInterface.hpp; sourceTree = "<group>"; };
-		D29475B41DCE44BB00AD3AEF /* vesper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vesper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29475B41DCE44BB00AD3AEF /* raycast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raycast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29475C91DCE44F000AD3AEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D29475CB1DCE450100AD3AEF /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		D29475CD1DCE451300AD3AEF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -91,7 +91,7 @@
 		D29475B51DCE44BB00AD3AEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D29475B41DCE44BB00AD3AEF /* vesper.app */,
+				D29475B41DCE44BB00AD3AEF /* raycast.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,9 +112,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D29475B31DCE44BA00AD3AEF /* vesper */ = {
+		D29475B31DCE44BA00AD3AEF /* raycast */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D29475C51DCE44BB00AD3AEF /* Build configuration list for PBXNativeTarget "vesper" */;
+			buildConfigurationList = D29475C51DCE44BB00AD3AEF /* Build configuration list for PBXNativeTarget "raycast" */;
 			buildPhases = (
 				D29475B01DCE44BA00AD3AEF /* Sources */,
 				D29475B11DCE44BA00AD3AEF /* Frameworks */,
@@ -124,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = vesper;
+			name = raycast;
 			productName = mapa;
-			productReference = D29475B41DCE44BB00AD3AEF /* vesper.app */;
+			productReference = D29475B41DCE44BB00AD3AEF /* raycast.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D29475AF1DCE44BA00AD3AEF /* Build configuration list for PBXProject "vesper" */;
+			buildConfigurationList = D29475AF1DCE44BA00AD3AEF /* Build configuration list for PBXProject "raycast" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D29475B31DCE44BA00AD3AEF /* vesper */,
+				D29475B31DCE44BA00AD3AEF /* raycast */,
 			);
 		};
 /* End PBXProject section */
@@ -295,7 +295,7 @@
 					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
 					"$(PROJECT_DIR)/Box2D/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = skyscrapers.vesper;
+				PRODUCT_BUNDLE_IDENTIFIER = skyscrapers.raycast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -316,7 +316,7 @@
 					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
 					"$(PROJECT_DIR)/Box2D/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = skyscrapers.vesper;
+				PRODUCT_BUNDLE_IDENTIFIER = skyscrapers.raycast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -324,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D29475AF1DCE44BA00AD3AEF /* Build configuration list for PBXProject "vesper" */ = {
+		D29475AF1DCE44BA00AD3AEF /* Build configuration list for PBXProject "raycast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D29475C31DCE44BB00AD3AEF /* Debug */,
@@ -333,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D29475C51DCE44BB00AD3AEF /* Build configuration list for PBXNativeTarget "vesper" */ = {
+		D29475C51DCE44BB00AD3AEF /* Build configuration list for PBXNativeTarget "raycast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D29475C61DCE44BB00AD3AEF /* Debug */,
