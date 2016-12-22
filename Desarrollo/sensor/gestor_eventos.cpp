@@ -11,7 +11,7 @@
 
 #define SONIDO 10
 #define AVISO 80
-
+#define ENEMIGO 40
 
 eventos::eventos(int id,Event_type tipo, vector3D posicion, int * objeto_id) : pos_objeto(posicion) , id_objeto(objeto_id){
     id_evento = id;
@@ -26,7 +26,11 @@ eventos::eventos(int id,Event_type tipo, vector3D posicion, int * objeto_id) : p
             break;
         case tE_Aviso:
             radio=AVISO;
-            timeExpires+=10;;
+            timeExpires+=10;
+            break;
+        case tE_Enemy:
+            radio=ENEMIGO;
+            timeExpires+=10;
             break;
         default:break;
     }

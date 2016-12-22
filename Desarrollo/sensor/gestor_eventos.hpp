@@ -18,7 +18,8 @@ class NPC;
 enum Event_type{
     tE_None = 0,
     tE_Sound,
-    tE_Aviso
+    tE_Aviso,
+    tE_Enemy
 };
 
 struct eventos{

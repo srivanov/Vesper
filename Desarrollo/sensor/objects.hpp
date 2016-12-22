@@ -88,6 +88,13 @@ private:
     bool rota = false;
     bool activada = false;
     int tipo = ALARMA;
-    // FALTA EL TIEMPO
+};
+class enemy_fake : public objetos{
+    public:
+        void update();
+        enemy_fake(vector3D * posInicial,int _id);
+        ~enemy_fake();
+    private:
+        int id;
 };
 #endif /* objects_hpp */

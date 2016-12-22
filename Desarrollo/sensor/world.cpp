@@ -42,6 +42,10 @@ void world::update(){
     }
     for (int i=0; i<altavoces_mundo.size(); i++) {
         altavoces_mundo[i]->update();
+        
+    }
+    for (int i=0; i<FAKES.size(); i++) {
+        FAKES[i]->update();
     }
 }
 

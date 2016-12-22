@@ -64,7 +64,7 @@ int main(){
 			bala->_setNodePosition(posicion_bala);
 		}
         
-        npc->setPosition(player->_getNodePositionD());
+        //npc->setPosition(player->_getNodePositionD());
         
         mundo->update();
         interfaceIrr->_beginScene(true, true);

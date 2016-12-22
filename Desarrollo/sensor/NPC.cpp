@@ -7,6 +7,7 @@
 //
 
 #include "NPC.hpp"
+#include "datos.hpp"
 
 #define BOLASdeFUEGO 1
 #define LANZApinchos 2
@@ -14,8 +15,8 @@
 #define CUERPOaCUERPO 4
 
 NPC::NPC(int ntipo, vector3D * posinicial, short rutina){
-    DeciSys = new class estados;
-    //datosPropios = new datos(ntipo, posinicial,rutina);
+    DeciSys = new class estados();
+    datosPropios = new datos(ntipo, posinicial,rutina);
     life= 100;
     srand(static_cast<int>(time(NULL)));
     sed = rand() % 40;
@@ -48,23 +49,17 @@ NPC::~NPC(){
     //delete datosPropios;
     delete DeciSys;
 }
+
+void NPC::setEventFlag(vector3D posicion, Event_type Etype){
+    datosPropios->setEventFlag( posicion,  Etype);
+}
+
 bool NPC::getFlags(int event){
-    for (size_t i=0; i<EPropios.size(); i++) {
-        if (EPropios[i]!=NULL && EPropios[i]->type==event) return true;
-    }
-    return false;
+    return datosPropios->getFlags(event);
 }
-void NPC::setEventFlag(vector3D posicion,Event_type Etype){
-    bool existe = false;
-    for (size_t i=0 ; i<EPropios.size(); i++) {
-        if(EPropios[i]->type==Etype) existe=true;
-    }
-    if(!existe) {
-        EPropios.push_back(new DT_evento(Etype,posicion));
-    }
-}
+
 void NPC::update(BlackBoard * worldINFO){
-    /*if(f%120==0){
+    if(f%120==0){
         datosPropios->Alimentarse(-1);
         cout <<"VIDA:"<<datosPropios->getLife() << " | HAMBRE:" << datosPropios->getHambre() << " | SED:" << datosPropios->getSed() << endl;
     }
@@ -77,13 +72,15 @@ void NPC::update(BlackBoard * worldINFO){
         f=0;
     }
     f++;
-    DeciSys->run(datosPropios,worldINFO);*/
-    for (size_t i=0; i<EPropios.size(); i++) {
+    
+    DeciSys->run(datosPropios,worldINFO);
+    
+    /*for (size_t i=0; i<EPropios.size(); i++) {
         if(EPropios[i]->type==tE_Sound && vector3D::CalcularDistancia(EPropios[i]->posEvent, *this->getPosition())<=10) {
             
             cout << "ESCUCHO A " << vector3D::CalcularDistancia(EPropios[i]->posEvent, *this->getPosition())<< endl;
         }
-    }
+    }*/
     
 }
 //datos NPC::getNPCinfo(){return *datosPropios;}

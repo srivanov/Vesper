@@ -33,3 +33,13 @@ void altavoz::update(){
     if(!gestor::Instance()->ExistEvent(tE_Sound, id))
         gestor::Instance()->addEvent(tE_Sound, *posicion, &id);
 }
+
+enemy_fake::enemy_fake(vector3D * posInicial,int _id){
+    posicion = posInicial;
+    id = _id;
+}
+enemy_fake::~enemy_fake(){}
+void enemy_fake::update(){
+    if(!gestor::Instance()->ExistEvent(tE_Enemy, id))
+        gestor::Instance()->addEvent(tE_Enemy, *posicion, &id);
+}

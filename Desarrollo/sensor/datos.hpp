@@ -14,6 +14,13 @@
 #include <vector>
 #include <time.h>
 
+struct DT_evento {
+    DT_evento(int tipo, vector3D posicion) : type(tipo){posEvent=posicion;}
+    ~DT_evento();
+    vector3D posEvent;
+    int type;
+};
+
 
 class datos {
 public:
@@ -41,7 +48,11 @@ public:
         if(paso+1==PosRutina.size())paso=0;
         else paso++;
         }
+    bool getFlags(int event);
+    void setEventFlag(vector3D posicion,int Etype);
+    std::vector<DT_evento*> getEvents() const {return EPropios;}
 private:
+    std::vector<DT_evento*> EPropios;
     int life,sed,hambre,tipo;
     vector3D *posActual;
     std::vector<vector3D*> PosRutina;

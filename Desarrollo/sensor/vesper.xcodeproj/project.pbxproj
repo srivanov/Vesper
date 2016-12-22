@@ -15,7 +15,7 @@
 		634EC61D1DF963C70005F5F9 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634EC61B1DF963C70005F5F9 /* world.cpp */; };
 		634EC6201DF964F30005F5F9 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 634EC61E1DF964F30005F5F9 /* objects.cpp */; };
 		635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */; };
-		D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */; };
+		63D867D31E0C388700B03E89 /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D867D11E0C388700B03E89 /* Nodos.cpp */; };
 		D22E0CEF1DF07C0000E75C40 /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D22E0CED1DF07C0000E75C40 /* estados.cpp */; };
 		D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */; };
 		D29475CA1DCE44F000AD3AEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29475C91DCE44F000AD3AEF /* Cocoa.framework */; };
@@ -50,8 +50,8 @@
 		634EC61F1DF964F30005F5F9 /* objects.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
 		635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoard.cpp; sourceTree = "<group>"; };
 		635534F91DF0ABCF00D9EB3E /* BlackBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlackBoard.hpp; sourceTree = "<group>"; };
-		D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.cpp"; sourceTree = "<group>"; };
-		D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodos.hpp; path = "../Sistema de Decision/Sistema de Decision/Nodos.hpp"; sourceTree = "<group>"; };
+		63D867D11E0C388700B03E89 /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodos.cpp; sourceTree = "<group>"; };
+		63D867D21E0C388700B03E89 /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodos.hpp; sourceTree = "<group>"; };
 		D22E0CED1DF07C0000E75C40 /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = estados.cpp; sourceTree = "<group>"; };
 		D22E0CEE1DF07C0000E75C40 /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = estados.hpp; sourceTree = "<group>"; };
 		D235356F1DDE1A6B00A038D8 /* engineInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = engineInterface.cpp; path = mapa/engineInterface.cpp; sourceTree = "<group>"; };
@@ -95,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63D867D41E0C389800B03E89 /* STD */ = {
+			isa = PBXGroup;
+			children = (
+				63D867D11E0C388700B03E89 /* Nodos.cpp */,
+				63D867D21E0C388700B03E89 /* Nodos.hpp */,
+				D22E0CED1DF07C0000E75C40 /* estados.cpp */,
+				D22E0CEE1DF07C0000E75C40 /* estados.hpp */,
+			);
+			name = STD;
+			sourceTree = "<group>";
+		};
 		D257880B1E09AF3200D70E80 /* trigger system */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +118,7 @@
 		D29475AB1DCE44BA00AD3AEF = {
 			isa = PBXGroup;
 			children = (
+				63D867D41E0C389800B03E89 /* STD */,
 				633297281DF87A8A002585D5 /* datos.cpp */,
 				633297291DF87A8A002585D5 /* datos.hpp */,
 				635534F81DF0ABCF00D9EB3E /* BlackBoard.cpp */,
@@ -137,10 +149,6 @@
 				634EC61C1DF963C70005F5F9 /* world.hpp */,
 				634EC61E1DF964F30005F5F9 /* objects.cpp */,
 				634EC61F1DF964F30005F5F9 /* objects.hpp */,
-				D22E0CEA1DF07A5100E75C40 /* Nodos.cpp */,
-				D22E0CEB1DF07A5100E75C40 /* Nodos.hpp */,
-				D22E0CED1DF07C0000E75C40 /* estados.cpp */,
-				D22E0CEE1DF07C0000E75C40 /* estados.hpp */,
 				D29475B51DCE44BB00AD3AEF /* Products */,
 				D29475C81DCE44F000AD3AEF /* Frameworks */,
 			);
@@ -242,6 +250,7 @@
 				D2F4A43D1DDE31400050A3BC /* nodeMesh.cpp in Sources */,
 				E9C7839E1DE3596E00D96FC8 /* main2.cpp in Sources */,
 				6315F9781E053B59005F64CD /* gestor_eventos.cpp in Sources */,
+				63D867D31E0C388700B03E89 /* Nodos.cpp in Sources */,
 				635534FA1DF0ABCF00D9EB3E /* BlackBoard.cpp in Sources */,
 				E9C7839F1DE3596E00D96FC8 /* mundoBox2D.cpp in Sources */,
 				63376E3F1E0024A700258E84 /* player.cpp in Sources */,
@@ -249,7 +258,6 @@
 				D29475D61DCE479D00AD3AEF /* main.cpp in Sources */,
 				633297241DF86B62002585D5 /* NPC.cpp in Sources */,
 				63376E421E00271C00258E84 /* vectorD.cpp in Sources */,
-				D22E0CEC1DF07A5100E75C40 /* Nodos.cpp in Sources */,
 				6332972A1DF87A8A002585D5 /* datos.cpp in Sources */,
 				634EC61D1DF963C70005F5F9 /* world.cpp in Sources */,
 				D23535711DDE1A6B00A038D8 /* engineInterface.cpp in Sources */,

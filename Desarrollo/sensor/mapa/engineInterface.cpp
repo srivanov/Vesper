@@ -187,9 +187,9 @@ bool engineInterface::loadMap(world * mundo){
                 _setMaterialFlag(nodoa, 0, false);
                 _setMaterialTexture(nodoa,"../../../modelos3D/colorAlarma.jpg");
                 nodoa->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
-                
-                alarma * alarm = new alarma(nodoa->_getNodePositionD());
-                mundo->anyadirAlarma(alarm);
+                enemy_fake * enemy = new enemy_fake(nodoa->_getNodePositionD(),0);
+                //alarma * alarm = new alarma(nodoa->_getNodePositionD());
+                //mundo->anyadirAlarma(alarm);
                 vector3D * p = new vector3D(20,30,40);
                 
                 nodoa = NULL;

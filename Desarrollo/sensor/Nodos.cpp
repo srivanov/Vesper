@@ -6,6 +6,7 @@
 //  Copyright © 2016 Gaspar Rodriguez Valero. All rights reserved.
 //
 #include "Nodos.hpp"
+#include "gestor_eventos.hpp"
 
 #define FAILURE 0
 #define SUCCESS 1
@@ -347,6 +348,13 @@ short Nodo_TieneAgua::run(datos * NPCinfo, BlackBoard * WorldInfo){
 Nodo_VerJugador::Nodo_VerJugador(){}
 short Nodo_VerJugador::run(datos * NPCinfo, BlackBoard * WorldInfo){
     //cout << " NODO VES AL JUGADOR?" << endl;
+    for (int i=0; i<NPCinfo->getEvents().size(); i++) {
+        if (NPCinfo->getEvents()[i]->type == tE_Enemy) {
+            NPCinfo->setEstados(COMBATE);
+            return true;
+        }
+    }
+    //if(){}
     return false;
 }
 // NODO ALARMA CERCA?

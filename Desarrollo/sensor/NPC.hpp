@@ -12,12 +12,7 @@
 #include "estados.hpp"
 class eventos;
 
-struct DT_evento {
-    DT_evento(Event_type tipo, vector3D posicion) : type(tipo){posEvent=posicion;}
-    ~DT_evento();
-    vector3D posEvent;
-    Event_type type;
-};
+
 
 class NPC{
 public:
@@ -33,11 +28,8 @@ public:
     int getId() const {return id;}
 private:
     int f = 0;
-    
-    vector<DT_evento*> EPropios;
-    
     estados * DeciSys;
-    
+    datos * datosPropios;
     int id;
     int life,sed,hambre,tipo;
     vector3D *posActual;

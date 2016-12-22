@@ -20,6 +20,7 @@ public:
     void anyadirFuente(fuente * hijo);
     void anyadirComida(comida * hijo);
     void anyadirAlarma(alarma * hijo);
+    void anyadirEnemy_FAKE(enemy_fake * hijo){FAKES.push_back(hijo);}
     void anyadirNPC(NPC * hijo);
     void anyadirAltavoz(altavoz * hijo);
     void update();
@@ -37,6 +38,7 @@ private:
     vector<comida*> comida_mundo;
     vector<alarma*> alarma_mundo;
     vector<altavoz*> altavoces_mundo;
+    vector<enemy_fake*> FAKES;
     void cargarMapa();
     BlackBoard * infoWorld;
     

@@ -60,3 +60,19 @@ void datos::Beber(int valor){
     if(sed>99) sed=100;
 }
 void datos::newPosition(vector3D * nueva_posicion){posActual=nueva_posicion;}
+
+bool datos::getFlags(int event){
+    for (size_t i=0; i<EPropios.size(); i++) {
+        if (EPropios[i]!=NULL && EPropios[i]->type==event) return true;
+    }
+    return false;
+}
+void datos::setEventFlag(vector3D posicion,int Etype){
+    bool existe = false;
+    for (size_t i=0 ; i<EPropios.size(); i++) {
+        if(EPropios[i]->type==Etype) existe=true;
+    }
+    if(!existe) {
+        EPropios.push_back(new DT_evento(Etype,posicion));
+    }
+}
