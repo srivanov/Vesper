@@ -59,40 +59,6 @@ int main(int argc, const char * argv[]) {
 	glfwGetFramebufferSize(window, &width, &height);
 	glViewport(0, 0, width, height);
 	
-	GLfloat vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.0f,  0.5f, 0.0f
-	};
-	
-	//genera el vertex buffer
-	GLuint VBO, VAO, EBO;
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &EBO);
-	// Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).
-	glBindVertexArray(VAO);
-	
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
-	glEnableVertexAttribArray(0);
-	
-	glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
-	
-	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
-	
-	
-	//linkamos el buffer GL_ARRAY_BUFFER al puntero VBO
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	
-	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	
 	//creamos un vertex shader y recogemos su ID
 	GLuint vertexShader;
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -143,12 +109,32 @@ int main(int argc, const char * argv[]) {
 		std::cout << "ERROR::SHADER::PROGRAM::LINK_FAILED\n" << infoLog << std::endl;
 	}
 	
-	//activamos el programa para renderizar
-	glUseProgram(shaderProgram);
-	
 	//borramos los shader ya que no los vamos a utilizar mas
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+	
+	
+	
+	
+	GLfloat vertices[] = {
+		-0.5f, -0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.0f,  0.5f, 0.0f
+	};
+	
+	//genera el vertex buffer
+	GLuint VBO, VAO;
+	//generamos el Vertex Array Object
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &VBO);
+	//linkamos el VAO
+	glBindVertexArray(VAO);
+	
+	//linkamos el buffer GL_ARRAY_BUFFER al puntero VBO
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	
+	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	
 	/* aqui le decimos a OpenGL como interpretar el buffer de vertices cuando tenga que dibujar
 	 * el primer parametro es el indice del vertice que queremos configurar
@@ -164,13 +150,15 @@ int main(int argc, const char * argv[]) {
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
 	
+	//linkamos el buffer por su ID
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	
+	//deslinkamos el VAO por seguridad
+	glBindVertexArray(0);
 	
 	
 	
-	
-	
-	
-	// Game loop
+	// Bucle principal
 	while (!glfwWindowShouldClose(window))
 	{
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
@@ -178,9 +166,16 @@ int main(int argc, const char * argv[]) {
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		
+		//activamos el programa para renderizar
 		glUseProgram(shaderProgram);
+		
+		//linkamos el VAO
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 3, GL_FLOAT, 0);
+		
+		//dibuja el array de vertices
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+		
+		//deslinkamos el VAO por seguridad
 		glBindVertexArray(0);
 		
 		// Swap the screen buffers
