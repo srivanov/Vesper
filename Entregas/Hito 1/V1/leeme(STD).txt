@@ -12,3 +12,6 @@ El NPC está programado para que cuando sus variables se hallen alteradas, es de
 3.	Sed por encima de 70, ira a la fuente a beber.
 
 Cuando no realiza dichas acciones se observará como el NPC realiza un recorrido que muestra que está realizando su patrulla pues no tiene variables que suplir y debe continuar con sus acciones predeterminadas.
+
+Maquina de estados
+Se encuentra implementado en este ejecutable pero no se muestra por pantalla porque para cambiar de estado, lo hace mediante los eventos que puede crear el personaje, que no está terminado de implementar.
