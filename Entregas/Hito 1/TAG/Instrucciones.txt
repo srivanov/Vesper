@@ -1,0 +1,7 @@
+En el entregable se visualiza el trazado de un polígono formado por dos triangulos.
+
+Incorpora funciones con entrada por teclado, teclas:
+	
+	- ESCAPE: cierra el programa
+	- TECLA D: renderiza el poligono en wireframe
+	- TECLA F: renderiza el polígono con relleno
