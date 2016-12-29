@@ -1,0 +1,60 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   trigger_system.hpp
+ * Author: Gaspar
+ *
+ * Created on 24 de diciembre de 2016, 19:42
+ */
+
+#ifndef TRIGGER_SYSTEM_HPP
+#define TRIGGER_SYSTEM_HPP
+
+#include <time.h>
+#include <vector>
+#include "Dvector.hpp"
+
+enum TypeEvents{
+    E_none = -1,
+    E_ruido,
+    E_aviso,
+    E_hablar,
+    E_puerta,
+    E_void
+    
+};
+
+
+struct triggers{
+    TypeEvents _type;
+    unsigned int _idTrigger;
+    unsigned int * _idSource;
+    vector3D _pos;
+    float _radio;
+    time_t _duration;
+    triggers(TypeEvents& type, unsigned int& idTrigger, unsigned int* idSource, vector3D& pos, float& radio, float& duration);
+    ~triggers();
+};
+
+
+class trigger_system {
+public:
+    static trigger_system * _instance();
+    unsigned long add_trigger(TypeEvents& type, unsigned int* id, vector3D& pos, float& radio, float& duration);
+    void remove_trigger(unsigned long id);
+    void update();
+    virtual ~trigger_system();
+private:
+    trigger_system();
+    void clear();
+    static trigger_system * _TSinstance;
+    std::vector<triggers*> TRIGGER_VECTOR;
+    unsigned int IDcont;
+};
+
+#endif /* TRIGGER_SYSTEM_HPP */
+
