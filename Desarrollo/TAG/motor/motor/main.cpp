@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <math.h>
 
 #define GLEW_STATIC
 #include <GL/glew.h>
@@ -12,16 +13,20 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 // Shaders
 const GLchar* vertexShaderSource = "#version 330 core\n"
 	"layout (location = 0) in vec3 position;\n"
+	"layout (location = 1) in vec3 color;\n"
+	"out vec3 ourColor;\n"
 	"void main()\n"
 	"{\n"
-	"gl_Position = vec4(position.x, position.y, position.z, 1.0);\n"
+	"gl_Position = vec4(position, 1.0);\n"
+	"ourColor = color;\n"
 	"}\0";
 
 const GLchar* fragmentShaderSource = "#version 330 core\n"
+	"in vec3 ourColor;\n"
 	"out vec4 color;\n"
 	"void main()\n"
 	"{\n"
-	"color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+	"color = vec4(ourColor, 1.0f);\n"
 	"}\0";
 
 
@@ -135,15 +140,15 @@ int main(int argc, const char * argv[]) {
 	
 	
 	GLfloat vertices[] = {
-		0.5f,  0.5f, 0.0f,  // Top Right
-		0.5f, -0.5f, 0.0f,  // Bottom Right
-		-0.5f, -0.5f, 0.0f,  // Bottom Left
-		-0.5f,  0.5f, 0.0f   // Top Left
+		// Positions         // Colors
+		0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // Bottom Right
+	   -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // Bottom Left
+		0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // Top
 		
 	};
 	GLuint indices[] = {  // Note that we start from 0!
-		0, 1, 3,   // First Triangle
-		1, 2, 3    // Second Triangle
+		0, 1, 2//,   // First Triangle
+		//1, 2, 3    // Second Triangle
 	};
 	
 	//genera el vertex buffer
@@ -175,8 +180,12 @@ int main(int argc, const char * argv[]) {
 	 *
 	 * en la otra funcion activamos los atributos de vertices ya que estan desactivados por defecto
 	 */
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
+	
+	// atributos del color
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3* sizeof(GLfloat)));
+	glEnableVertexAttribArray(1);
 	
 	//linkamos el buffer por su ID
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -196,6 +205,17 @@ int main(int argc, const char * argv[]) {
 		
 		//activamos el programa para renderizar
 		glUseProgram(shaderProgram);
+		
+		//variamos el color de la variable ourColor en el fragment shader, es una variable uniform (es global) podemos acceder a ella desde cualquier sitio del codigo
+		//cogemos el tiempo actual
+		GLfloat timeValue = glfwGetTime();
+		//variamos el color verde entre 0.0 y -1.0
+		GLfloat greenValue = (sin(timeValue) / 2) + 0.5;
+		GLint vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+		
+		
+		
 		
 		//linkamos el VAO
 		glBindVertexArray(VAO);
