@@ -10,10 +10,8 @@
 		E907FC5C1E09F89F00C260C5 /* libassimp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC591E09F89F00C260C5 /* libassimp.a */; };
 		E907FC5D1E09F89F00C260C5 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5A1E09F89F00C260C5 /* libGLEW.a */; };
 		E907FC5E1E09F89F00C260C5 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5B1E09F89F00C260C5 /* libglfw3.a */; };
-		E91401A91E0D56CC0006B5EC /* basico.frag in Sources */ = {isa = PBXBuildFile; fileRef = E91401A81E0D56CC0006B5EC /* basico.frag */; };
 		E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E943945A1E09A7CB0053DBE7 /* main.cpp */; };
 		E94394691E09A81C0053DBE7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94394681E09A81C0053DBE7 /* OpenGL.framework */; };
-		E94DA02A1E0CAB1A000A40BE /* basico.vs in Sources */ = {isa = PBXBuildFile; fileRef = E94DA0291E0CAB1A000A40BE /* basico.vs */; };
 		E9F59EED1E09B6910048E771 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EEC1E09B6910048E771 /* Cocoa.framework */; };
 		E9F59EF51E09B9880048E771 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF41E09B9880048E771 /* CoreVideo.framework */; };
 		E9F59EF61E09B9A70048E771 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF01E09B6B40048E771 /* IOKit.framework */; };
@@ -35,11 +33,12 @@
 		E907FC591E09F89F00C260C5 /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = libs/libassimp.a; sourceTree = "<group>"; };
 		E907FC5A1E09F89F00C260C5 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = libs/libGLEW.a; sourceTree = "<group>"; };
 		E907FC5B1E09F89F00C260C5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = libs/libglfw3.a; sourceTree = "<group>"; };
-		E91401A81E0D56CC0006B5EC /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
 		E94394571E09A7CB0053DBE7 /* motor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = motor; sourceTree = BUILT_PRODUCTS_DIR; };
 		E943945A1E09A7CB0053DBE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E94394681E09A81C0053DBE7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		E94DA0291E0CAB1A000A40BE /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
+		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
+		E99573AF1E16F49B00487446 /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
+		E9B8EB6A1E16CE93003811A4 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		E9F59EEC1E09B6910048E771 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9F59EF01E09B6B40048E771 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E9F59EF41E09B9880048E771 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -66,6 +65,7 @@
 		E943944E1E09A7CB0053DBE7 = {
 			isa = PBXGroup;
 			children = (
+				E99573AD1E16F49B00487446 /* Shaders */,
 				E94394591E09A7CB0053DBE7 /* motor */,
 				E94394581E09A7CB0053DBE7 /* Products */,
 				E94394611E09A7EF0053DBE7 /* Frameworks */,
@@ -84,8 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E943945A1E09A7CB0053DBE7 /* main.cpp */,
-				E94DA0291E0CAB1A000A40BE /* basico.vs */,
-				E91401A81E0D56CC0006B5EC /* basico.frag */,
+				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
 			);
 			path = motor;
 			sourceTree = "<group>";
@@ -102,6 +101,15 @@
 				E94394681E09A81C0053DBE7 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E99573AD1E16F49B00487446 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				E99573AE1E16F49B00487446 /* basico.frag */,
+				E99573AF1E16F49B00487446 /* basico.vs */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +169,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E91401A91E0D56CC0006B5EC /* basico.frag in Sources */,
-				E94DA02A1E0CAB1A000A40BE /* basico.vs in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/includes";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -275,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/includes";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

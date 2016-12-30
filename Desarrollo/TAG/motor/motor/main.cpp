@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <math.h>
+#include "Shader.h"
 
 #define GLEW_STATIC
 #include <GL/glew.h>
@@ -10,26 +11,6 @@
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
 
-// Shaders
-const GLchar* vertexShaderSource = "#version 330 core\n"
-	"layout (location = 0) in vec3 position;\n"
-	"layout (location = 1) in vec3 color;\n"
-	"out vec3 ourColor;\n"
-	"void main()\n"
-	"{\n"
-	"gl_Position = vec4(position, 1.0);\n"
-	"ourColor = color;\n"
-	"}\0";
-
-const GLchar* fragmentShaderSource = "#version 330 core\n"
-	"in vec3 ourColor;\n"
-	"out vec4 color;\n"
-	"void main()\n"
-	"{\n"
-	"color = vec4(ourColor, 1.0f);\n"
-	"}\0";
-
-
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	// detectamos la pulsacion de la tecla
@@ -38,9 +19,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		glfwSetWindowShouldClose(window, GL_TRUE);
 	
 	if(key == GLFW_KEY_D && action == GLFW_PRESS)
+		// dibuja las figuras en wireframe
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	
 	if(key == GLFW_KEY_F && action == GLFW_PRESS)
+		//dibuja las figuras rellenas
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
@@ -82,61 +65,8 @@ int main(int argc, const char * argv[]) {
 	glfwGetFramebufferSize(window, &width, &height);
 	glViewport(0, 0, width, height);
 	
-	//creamos un vertex shader y recogemos su ID
-	GLuint vertexShader;
-	vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	
-	//compilamos el vertex shader
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-	glCompileShader(vertexShader);
-	
-	//comprobamos si se ha compilado con exito
-	GLint success;
-	GLchar infoLog[512];
-	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-	
-	if(!success)
-	{
-		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-	}
-	
-	//compilamos el fragment shader
-	GLuint fragmentShader;
-	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-	glCompileShader(fragmentShader);
-	
-	//comprobamos si se ha compilado con exito
-	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-	
-	if(!success)
-	{
-		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-		std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-	}
-	
-	//creamos el programa de shaders
-	GLuint shaderProgram;
-	shaderProgram = glCreateProgram();
-	
-	//linkamos los shaders al programa y activamos este para que se use en el render
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragmentShader);
-	glLinkProgram(shaderProgram);
-	
-	//comprobamos que se ha linkado con exito
-	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-	if(!success) {
-		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-		std::cout << "ERROR::SHADER::PROGRAM::LINK_FAILED\n" << infoLog << std::endl;
-	}
-	
-	//borramos los shader ya que no los vamos a utilizar mas
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
-	
-	
+	//creamos la clase Shader y compilamos los shaders
+	Shader miShader("../Shaders/basico.vs", "../Shaders/basico.frag");
 	
 	
 	GLfloat vertices[] = {
@@ -198,24 +128,16 @@ int main(int argc, const char * argv[]) {
 	// Bucle principal
 	while (!glfwWindowShouldClose(window))
 	{
-		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
+		// comprueba los eventos de entrada (teclado, raton...)
 		glfwPollEvents();
+		
+		//limpia la pantalla asignando un color de fondo
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		
-		//activamos el programa para renderizar
-		glUseProgram(shaderProgram);
-		
-		//variamos el color de la variable ourColor en el fragment shader, es una variable uniform (es global) podemos acceder a ella desde cualquier sitio del codigo
-		//cogemos el tiempo actual
-		GLfloat timeValue = glfwGetTime();
-		//variamos el color verde entre 0.0 y -1.0
-		GLfloat greenValue = (sin(timeValue) / 2) + 0.5;
-		GLint vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
-		
-		
-		
+//		//activamos el programa para renderizar
+//		glUseProgram(shaderProgram);
+		miShader.Use();
 		
 		//linkamos el VAO
 		glBindVertexArray(VAO);
@@ -223,22 +145,23 @@ int main(int argc, const char * argv[]) {
 //		//dibuja el array de vertices
 //		glDrawArrays(GL_TRIANGLES, 0, 3);
 
+		//dibuja los elementos que indican el indice de los vertices a pintar
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		
 		
 		//deslinkamos el VAO por seguridad
 		glBindVertexArray(0);
 		
-		// Swap the screen buffers
+		// intercambiamos los buffers, sino no pinta NADA
 		glfwSwapBuffers(window);
 	}
+	
+	//liberamos la memoria de los buffers y array por seguridad
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
-	// Terminate GLFW, clearing any resources allocated by GLFW.
+	
+	// terminamos con GLFW y borramos todos los recursos asociados a el
 	glfwTerminate();
 	
 	return 0;
 }
-
-
