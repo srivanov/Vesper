@@ -12,6 +12,7 @@
 		E907FC5E1E09F89F00C260C5 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5B1E09F89F00C260C5 /* libglfw3.a */; };
 		E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E943945A1E09A7CB0053DBE7 /* main.cpp */; };
 		E94394691E09A81C0053DBE7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94394681E09A81C0053DBE7 /* OpenGL.framework */; };
+		E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E954B0921E17F7EC00F1BEB6 /* libSOIL.a */; };
 		E9F59EED1E09B6910048E771 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EEC1E09B6910048E771 /* Cocoa.framework */; };
 		E9F59EF51E09B9880048E771 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF41E09B9880048E771 /* CoreVideo.framework */; };
 		E9F59EF61E09B9A70048E771 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF01E09B6B40048E771 /* IOKit.framework */; };
@@ -36,9 +37,13 @@
 		E94394571E09A7CB0053DBE7 /* motor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = motor; sourceTree = BUILT_PRODUCTS_DIR; };
 		E943945A1E09A7CB0053DBE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E94394681E09A81C0053DBE7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		E954B0911E17DC4F00F1BEB6 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
+		E954B0921E17F7EC00F1BEB6 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = libs/libSOIL.a; sourceTree = "<group>"; };
+		E954B0941E17FFAD00F1BEB6 /* libIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIL.a; path = libs/libIL.a; sourceTree = "<group>"; };
 		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
 		E99573AF1E16F49B00487446 /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
 		E9B8EB6A1E16CE93003811A4 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E9DAC0401E1A58B100F2B347 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		E9F59EEC1E09B6910048E771 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9F59EF01E09B6B40048E771 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E9F59EF41E09B9880048E771 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */,
 				E907FC5C1E09F89F00C260C5 /* libassimp.a in Frameworks */,
 				E907FC5D1E09F89F00C260C5 /* libGLEW.a in Frameworks */,
 				E907FC5E1E09F89F00C260C5 /* libglfw3.a in Frameworks */,
@@ -65,6 +71,7 @@
 		E943944E1E09A7CB0053DBE7 = {
 			isa = PBXGroup;
 			children = (
+				E954B0901E17DC3700F1BEB6 /* Textures */,
 				E99573AD1E16F49B00487446 /* Shaders */,
 				E94394591E09A7CB0053DBE7 /* motor */,
 				E94394581E09A7CB0053DBE7 /* Products */,
@@ -92,6 +99,8 @@
 		E94394611E09A7EF0053DBE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E954B0941E17FFAD00F1BEB6 /* libIL.a */,
+				E954B0921E17F7EC00F1BEB6 /* libSOIL.a */,
 				E907FC591E09F89F00C260C5 /* libassimp.a */,
 				E907FC5A1E09F89F00C260C5 /* libGLEW.a */,
 				E907FC5B1E09F89F00C260C5 /* libglfw3.a */,
@@ -103,11 +112,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E954B0901E17DC3700F1BEB6 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				E9DAC0401E1A58B100F2B347 /* container.jpg */,
+				E954B0911E17DC4F00F1BEB6 /* wall.jpg */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
 		E99573AD1E16F49B00487446 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				E99573AE1E16F49B00487446 /* basico.frag */,
 				E99573AF1E16F49B00487446 /* basico.vs */,
+				E99573AE1E16F49B00487446 /* basico.frag */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
