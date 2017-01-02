@@ -6,8 +6,10 @@
 
 #define GLEW_STATIC
 #include <GL/glew.h>
-
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -119,7 +121,7 @@ int main(int argc, const char * argv[]) {
 	glEnableVertexAttribArray(1);
 	
 	// atributos de las texturas
-	glVertexAttribPointer(2, 2, GL_FLOAT,GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(2);
 	
 	//linkamos el buffer por su ID
@@ -130,14 +132,21 @@ int main(int argc, const char * argv[]) {
 	
 	//cargamos la imagen desde el archivo
 	int tex_width, tex_height;
-	unsigned char* image = SOIL_load_image("../Textures/container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
+	unsigned char* image = SOIL_load_image("../Textures/container.jpg", &tex_width, &tex_height, 0, SOIL_LOAD_RGB);
 	
 	//generamos la textura, se pueden crear varias a la vez cambiando el primer parametro de la funcion
-	GLuint texture;
-	glGenTextures(1, &texture);
+	GLuint texture1;
+	glGenTextures(1, &texture1);
 	
 	//linkamos la textura al objeto en el primer parametro
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glBindTexture(GL_TEXTURE_2D, texture1);
+	
+	// Set our texture parameters
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// Set texture wrapping to GL_REPEAT
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	// Set texture filtering
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
 	/*
 	 * asignamos la imagen a la textura de OpenGL
@@ -149,7 +158,7 @@ int main(int argc, const char * argv[]) {
 	 * el septimo y octavo especifican el tipo y el formato de la imagen fuente cargada
 	 * el ultimo es la imagen
 	 */
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tex_width, tex_height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	
 	//hacemos que OpenGL genere el mipmap de la textura automaticamente
 	glGenerateMipmap(GL_TEXTURE_2D);
@@ -157,6 +166,20 @@ int main(int argc, const char * argv[]) {
 	//liberamos la memoria de la imagen y deslinkamos el objeto de textura
 	SOIL_free_image_data(image);
 	glBindTexture(GL_TEXTURE_2D, 0);
+	
+	//segunda textura
+	GLuint texture2;
+	glGenTextures(1, &texture2);
+	glBindTexture(GL_TEXTURE_2D, texture2);
+	image = SOIL_load_image("../Textures/awesomeface.png", &tex_width, &tex_height, 0, SOIL_LOAD_RGB);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tex_width, tex_height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+	glGenerateMipmap(GL_TEXTURE_2D);
+	SOIL_free_image_data(image);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	
+	
+	
+	
 	
 	// Bucle principal
 	while (!glfwWindowShouldClose(window))
@@ -172,8 +195,23 @@ int main(int argc, const char * argv[]) {
 //		glUseProgram(shaderProgram);
 		miShader.Use();
 		
+		glActiveTexture(GL_TEXTURE0);
+		
 		//linkamos la textura para dibujarla
-		glBindTexture(GL_TEXTURE_2D, texture);
+		glBindTexture(GL_TEXTURE_2D, texture1);
+		
+		glUniform1i(glGetUniformLocation(miShader.Program, "ourTexture1"), 0);
+		
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, texture2);
+		glUniform1i(glGetUniformLocation(miShader.Program, "ourTexture2"), 1);
+	
+		glm::mat4 trans;
+		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+		trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		GLuint transformLoc = glGetUniformLocation(miShader.Program, "transform");
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+		
 		
 		//linkamos el VAO
 		glBindVertexArray(VAO);
