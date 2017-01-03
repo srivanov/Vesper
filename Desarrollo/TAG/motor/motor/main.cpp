@@ -1,15 +1,17 @@
 
-#include <iostream>
-#include <math.h>
-#include "Shader.h"
-#include <SOIL/SOIL.h>
-
 #define GLEW_STATIC
 #include <GL/glew.h>
+#include <iostream>
+#include <math.h>
+//libreria para leer imagenes
+#include <SOIL/SOIL.h>
 #include <GLFW/glfw3.h>
+//libreria para trabajar con matrices
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
+#include "Shader.h"
 
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -100,7 +102,10 @@ int main(int argc, const char * argv[]) {
 	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	
+	//linkamos el array de elementos al EBO
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	
+	//copiamos los indices en el array de elementos
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	
 	/*
@@ -179,7 +184,8 @@ int main(int argc, const char * argv[]) {
 	
 	
 	
-	
+	glm::mat4 trans;
+	GLuint transformLoc;
 	
 	// Bucle principal
 	while (!glfwWindowShouldClose(window))
@@ -200,18 +206,28 @@ int main(int argc, const char * argv[]) {
 		//linkamos la textura para dibujarla
 		glBindTexture(GL_TEXTURE_2D, texture1);
 		
+		// asignamos al uniform ourTexture1 el sampler2D
 		glUniform1i(glGetUniformLocation(miShader.Program, "ourTexture1"), 0);
 		
+		//hacemos lo mismo con la textura2
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture2);
 		glUniform1i(glGetUniformLocation(miShader.Program, "ourTexture2"), 1);
 	
-		glm::mat4 trans;
-		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-		trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-		GLuint transformLoc = glGetUniformLocation(miShader.Program, "transform");
-		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+		//inicializo la matriz
+		trans = glm::mat4();
 		
+		//aplico traslacion
+		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+		
+		//aplico rotacion
+		trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		
+		//recojo el ID del uniform
+		transformLoc = glGetUniformLocation(miShader.Program, "transform");
+		
+		//le asigno al uniform el valor de la matriz 'trans'
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 		
 		//linkamos el VAO
 		glBindVertexArray(VAO);
@@ -239,3 +255,6 @@ int main(int argc, const char * argv[]) {
 	
 	return 0;
 }
+
+
+
