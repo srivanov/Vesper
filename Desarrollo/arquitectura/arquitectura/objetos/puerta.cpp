@@ -20,6 +20,10 @@ puerta::puerta(){
     this->insertComponent((char*)"conAlarma", aux);
 	aux = new chirriante();
     this->insertComponent((char*)"chirriante", aux);
+	
+	
+	aux = NULL;
+	delete aux;
 }
 
 puerta::~puerta(){

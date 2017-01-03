@@ -4,10 +4,16 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include <time.h>
+#include <stdlib.h>
 
 class enemigos : public GameObject{
 public:
-    enemigos();
+    enemigos(int& ID);
     ~enemigos();
+	void update();
+private:
+	int ID;
+	unsigned int salud, sed, hambre;
 };
 #endif /* enemigos_hpp */

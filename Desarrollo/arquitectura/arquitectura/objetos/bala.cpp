@@ -25,6 +25,8 @@ bala::bala(float* pos, float* dir, float vel){
 	intervalo = clock();
 	tiempo_vida = vel;
 	muerto = false;
+	aux = NULL;
+	delete aux;
 }
 
 bala::~bala(){

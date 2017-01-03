@@ -73,14 +73,6 @@ void render::deleteNode(){
 	nodo = NULL;
 }
 
-void render::actualizarRender(){
-	if(nodo != NULL){
-//		nodo->_setNodePosition(getFather()->getPosicion());
-//		getFather()->setRotacion(ventana::Instance()->posicionRaton(getFather()->getPosicion()));
-//		nodo->_setNodeRotation(getFather()->getRotacion());
-	}
-}
-
 void render::setTexto(){
 	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,34,22), true);
     texto->setBackgroundColor(SColor(255,255,0,255));

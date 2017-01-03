@@ -25,6 +25,7 @@ Game::~Game(){
 	delete entrada;
 	delete cam;
 	delete nivel;
+	balas.clear();
     renderizador->closeWindow();
 	delete renderizador;
 	delete jugador;
@@ -37,13 +38,24 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //	renderizador->setTexto();
     jugador->addNodo("3d/sphere.3ds");
 	jugador->setTexture("3d/texture.png");
-	float* p = new float[3]{10, 10, 0};
 	jugador->setPosicion(new float[3]{10, 10, 0});
+	float* p = new float[3]{10, 10, 0};
 	cam->addCamara(new float[3]{p[0], p[1]-5, p[2]-10}, jugador->getPosicion());
 	
 	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();
 	
+	World_BlackBoard::instance();
+	NPC_library::instance();
+	trigger_system::_instance();
+	
+	contador_npc=0;
+	enemigos* npc = new enemigos(contador_npc);
+	contador_npc++;
+	npc->setPosicion(new float[3]{10, 30, 0});
+	npc->addNodo("");
+	npc->setTexture("3d/texture.png");
+	npcs.insert(npcs.end(), npc);
 }
 
 void Game::stop(){
@@ -52,6 +64,13 @@ void Game::stop(){
 
 void Game::render(){
 	jugador->render();
+	
+	std::vector<enemigos*>::iterator it = npcs.begin();
+	while (it != npcs.end()) {
+		(*it)->render();
+		it++;
+	}
+	
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
@@ -95,6 +114,12 @@ void Game::update(){
     }
 	Fps::Instance()->update();
     mundoBox2D::Instance()->update();
+	
+	std::vector<enemigos*>::iterator it = npcs.begin();
+	while (it != npcs.end()) {
+		(*it)->update();
+		it++;
+	}
 }
 
 void Game::zoom(bool z){

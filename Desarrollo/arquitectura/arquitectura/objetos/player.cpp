@@ -33,11 +33,13 @@ player::player(){
 	setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
     fisica->crearBodyDinamico(new float[2]{1,1}, new float[2]{0,0});
-	
+	aux = NULL;
+	delete aux;
 }
 
 player::~player(){
-	
+	arma = NULL;
+	delete arma;
 }
 
 void player::atacar(){

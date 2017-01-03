@@ -26,7 +26,6 @@ public:
 	void deleteNode();
 	void setTexto();
     void dibujar();
-	void actualizarRender();
 	void addCamera(float* p, float* l);
 	void closeWindow();
 	void dibujarMapa();

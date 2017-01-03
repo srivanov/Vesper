@@ -15,6 +15,8 @@ escenarios::escenarios(){
 	
 	mapa_nivel = NULL;
 	cargador = new cargarMapa();
+	aux = NULL;
+	delete aux;
 }
 
 escenarios::~escenarios(){

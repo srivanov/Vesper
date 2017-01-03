@@ -11,11 +11,11 @@ GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
-	/*std::map<char*, component*>::iterator iter = components.begin();
+	std::map<char*, component*>::iterator iter = components.begin();
 	while (iter != components.end()) {
-		delete &iter;
+		delete iter->second;
 		iter++;
-	}*/
+	}
 	components.clear();
 	delete posicion;
     //delete rotacion;
@@ -81,10 +81,11 @@ void GameObject::setPosicion(float* p3D){
 }
 
 void GameObject::setRotacion(float rot){
+	rotacion[2] = rot;
 	transform3D* go = (transform3D*)this->findComponent("transform3D");
 	if(go != NULL)
-		go->rotar(rot);
-	rotacion[2] = rot;
+		go->rotar(rotacion[2]);
+	
 	class render* ren = (class render*)findComponent("render");
 	if(ren != NULL)
 		ren->setNodeRotation(rotacion);
@@ -118,11 +119,11 @@ void GameObject::mover(float *vel){
 }
 
 void GameObject::render(){
-    if(renderizable){
-        class render* ren = (class render*)findComponent("render");
-		if(ren != NULL)
-			ren->actualizarRender();
-    }
+//    if(renderizable){
+//        class render* ren = (class render*)findComponent("render");
+//		if(ren != NULL)
+//			ren->actualizarRender();
+//    }
 }
 
 void GameObject::update(){

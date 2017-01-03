@@ -93,7 +93,6 @@ void physics::update(){
 }
 
 void physics::setPosition(float* pos){
-	printf("222");
 	body->SetTransform(b2Vec2(pos[0],pos[1]), body->GetAngle());
 }
 

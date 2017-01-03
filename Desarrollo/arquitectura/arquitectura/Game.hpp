@@ -13,11 +13,14 @@
 #include "components/render.hpp"
 #include "components/input.hpp"
 #include "objetos/player.hpp"
+#include "objetos/enemigos.hpp"
 #include "objetos/camara.hpp"
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
 #include "objetos/bala.hpp"
 #include "objetos/escenarios.hpp"
+#include "BlackBoards.hpp"
+#include "trigger_system.hpp"
 #include <vector>
 
 class Game {
@@ -52,6 +55,8 @@ private:
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
 	escenarios* nivel;
+	std::vector<enemigos*> npcs;
+	int contador_npc;
 };
 
 #endif /* Game_hpp */
