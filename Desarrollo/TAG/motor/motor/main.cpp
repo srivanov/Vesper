@@ -16,20 +16,61 @@
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
 
+//variables de la camara
+glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+
+//array con las teclas
+bool keys[1024];
+
+// Time between current frame and last frame
+GLfloat deltaTime = 0.0f;
+
+// Time of last frame
+GLfloat lastFrame = 0.0f;
+
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
-	// detectamos la pulsacion de la tecla
+	if(action == GLFW_PRESS)
+		keys[key] = true;
+	else if(action == GLFW_RELEASE)
+		keys[key] = false;
+	
+	// detectamos la pulsacion de la tecla ESCAPE
 	if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		// hacemos que se salga del bucle
 		glfwSetWindowShouldClose(window, GL_TRUE);
-	
-	if(key == GLFW_KEY_D && action == GLFW_PRESS)
-		// dibuja las figuras en wireframe
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	
-	if(key == GLFW_KEY_F && action == GLFW_PRESS)
-		//dibuja las figuras rellenas
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+//	if(key == GLFW_KEY_G && action == GLFW_PRESS)
+//		// dibuja las figuras en wireframe
+//		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//	
+//	if(key == GLFW_KEY_H && action == GLFW_PRESS)
+//		//dibuja las figuras rellenas
+//		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+//	
+//	GLfloat cameraSpeed = 0.05f;
+//	if(key == GLFW_KEY_W)
+//		cameraPos += cameraSpeed * cameraFront;
+//	if(key == GLFW_KEY_S)
+//		cameraPos -= cameraSpeed * cameraFront;
+//	if(key == GLFW_KEY_A)
+//		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+//	if(key == GLFW_KEY_D)
+//		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+}
+
+void movimiento(){
+	GLfloat cameraSpeed = 5.0f * deltaTime;
+	if(keys[GLFW_KEY_W])
+		cameraPos += cameraSpeed * cameraFront;
+	if(keys[GLFW_KEY_S])
+		cameraPos -= cameraSpeed * cameraFront;
+	if(keys[GLFW_KEY_A])
+		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+	if(keys[GLFW_KEY_D])
+		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 }
 
 int main(int argc, const char * argv[]) {
@@ -236,14 +277,20 @@ int main(int argc, const char * argv[]) {
 	SOIL_free_image_data(image);
 	glBindTexture(GL_TEXTURE_2D, 0);
 	
-	glm::mat4 trans;
-	GLuint transformLoc, modelLoc, viewLoc, projectionLoc;
+	GLuint modelLoc, viewLoc, projectionLoc;
 	
 	// Bucle principal
 	while (!glfwWindowShouldClose(window))
 	{
+		GLfloat currentFrame = glfwGetTime();
+		deltaTime = currentFrame - lastFrame;
+		lastFrame = currentFrame;
+		
 		// comprueba los eventos de entrada (teclado, raton...)
 		glfwPollEvents();
+		
+		//funcion de movimiento
+		movimiento();
 		
 		//limpia la pantalla asignando un color de fondo
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -266,22 +313,6 @@ int main(int argc, const char * argv[]) {
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture2);
 		glUniform1i(glGetUniformLocation(miShader.Program, "ourTexture2"), 1);
-		/*
-			//inicializo la matriz
-			trans = glm::mat4();
-			
-			//aplico traslacion
-			trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-			
-			//aplico rotacion
-			trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-			
-			//recojo el ID del uniform
-			transformLoc = glGetUniformLocation(miShader.Program, "transform");
-			
-			//le asigno al uniform el valor de la matriz 'trans'
-			glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-		*/
 		
 		//model matrix
 		glm::mat4 model;
@@ -299,7 +330,7 @@ int main(int argc, const char * argv[]) {
 		// en este caso queremos movernos hacia atras con lo cual movemos la escena en el eje Z negativamente
 //		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		
-		view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 		
 		//projection matrix
 		glm::mat4 projection;
