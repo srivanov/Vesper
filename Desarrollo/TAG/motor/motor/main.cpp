@@ -49,6 +49,7 @@ int main(int argc, const char * argv[]) {
 		glfwTerminate();
 		return -1;
 	}
+	
 	//seleccionamos window para que se haga la gestion sobre esta ventana
 	glfwMakeContextCurrent(window);
 	
@@ -70,18 +71,57 @@ int main(int argc, const char * argv[]) {
 	glfwGetFramebufferSize(window, &width, &height);
 	glViewport(0, 0, width, height);
 	
+	// activamos el Z-buffer
+	glEnable(GL_DEPTH_TEST);
+	
 	//creamos la clase Shader y compilamos los shaders
 	Shader miShader("../Shaders/basico.vs", "../Shaders/basico.frag");
 	
 	
 	GLfloat vertices[] = {
-		// Positions          // Colors           // Texture Coords
-		0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // Top Right
-		0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // Bottom Right
-		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // Bottom Left
-		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // Top Left
+		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+		0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 		
+		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+		0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+		0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+		0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+		
+		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+		-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+		
+		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+		0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+		0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+		
+		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+		0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+		0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+		
+		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+		-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 	};
+	
 	GLuint indices[] = {  // Note that we start from 0!
 		0, 1, 3,   // First Triangle
 		1, 2, 3    // Second Triangle
@@ -118,15 +158,15 @@ int main(int argc, const char * argv[]) {
 	* el sexto es un puntero a la posicion que queremos empezar la figura, esto sirve para cuando tengamos mas de uno
 	* en la otra funcion activamos los atributos de vertices ya que estan desactivados por defecto
 	*/
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
 	
-	// atributos del color
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3* sizeof(GLfloat)));
-	glEnableVertexAttribArray(1);
+//	// atributos del color
+//	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3* sizeof(GLfloat)));
+//	glEnableVertexAttribArray(1);
 	
 	// atributos de las texturas
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(2);
 	
 	//linkamos el buffer por su ID
@@ -182,10 +222,8 @@ int main(int argc, const char * argv[]) {
 	SOIL_free_image_data(image);
 	glBindTexture(GL_TEXTURE_2D, 0);
 	
-	
-	
 	glm::mat4 trans;
-	GLuint transformLoc;
+	GLuint transformLoc, modelLoc, viewLoc, projectionLoc;
 	
 	// Bucle principal
 	while (!glfwWindowShouldClose(window))
@@ -195,7 +233,8 @@ int main(int argc, const char * argv[]) {
 		
 		//limpia la pantalla asignando un color de fondo
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		//limpiamos el buffer de color y Z-buffer
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 //		//activamos el programa para renderizar
 //		glUseProgram(shaderProgram);
@@ -213,30 +252,61 @@ int main(int argc, const char * argv[]) {
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture2);
 		glUniform1i(glGetUniformLocation(miShader.Program, "ourTexture2"), 1);
-	
-		//inicializo la matriz
-		trans = glm::mat4();
+		/*
+			//inicializo la matriz
+			trans = glm::mat4();
+			
+			//aplico traslacion
+			trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+			
+			//aplico rotacion
+			trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+			
+			//recojo el ID del uniform
+			transformLoc = glGetUniformLocation(miShader.Program, "transform");
+			
+			//le asigno al uniform el valor de la matriz 'trans'
+			glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+		*/
 		
-		//aplico traslacion
-		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+		//model matrix
+		glm::mat4 model;
+		model = glm::rotate(model, (GLfloat)glfwGetTime() * 1.0f, glm::vec3(0.5f, 1.0f, 0.0f));
 		
-		//aplico rotacion
-		trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		//view matrix
+		glm::mat4 view;
 		
-		//recojo el ID del uniform
-		transformLoc = glGetUniformLocation(miShader.Program, "transform");
+		// para la camara trasladamos la escena entera en la direccion contraria a donde queremos movernos
+		// en este caso queremos movernos hacia atras con lo cual movemos la escena en el eje Z negativamente
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		
-		//le asigno al uniform el valor de la matriz 'trans'
-		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+		//projection matrix
+		glm::mat4 projection;
+		
+		/*
+		 * primer parametro es FOV (Field of view), cambiando este valor conseguimos efecto de zoom
+		 * el segundo es el aspect ratio, tiene que actualizarse si se cambia el tamaño de la ventana
+		 * el tercero es el near value
+		 * el cuarto es el far value
+		 */
+		projection = glm::perspective(45.0f, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+		
+		modelLoc = glGetUniformLocation(miShader.Program, "model");
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		viewLoc = glGetUniformLocation(miShader.Program, "view");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		projectionLoc = glGetUniformLocation(miShader.Program, "projection");
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		
 		
 		//linkamos el VAO
 		glBindVertexArray(VAO);
 		
-//		//dibuja el array de vertices
-//		glDrawArrays(GL_TRIANGLES, 0, 3);
+		//dibuja el array de vertices
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		//dibuja los elementos que indican el indice de los vertices a pintar
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+//		//dibuja los elementos que indican el indice de los vertices a pintar
+//		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		
 		//deslinkamos el VAO por seguridad
 		glBindVertexArray(0);
@@ -255,6 +325,4 @@ int main(int argc, const char * argv[]) {
 	
 	return 0;
 }
-
-
 
