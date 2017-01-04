@@ -122,6 +122,20 @@ int main(int argc, const char * argv[]) {
 		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 	};
 	
+	// para dibujar 10 cubos
+	glm::vec3 cubePositions[] = {
+		glm::vec3( 0.0f,  0.0f,  0.0f),
+		glm::vec3( 2.0f,  5.0f, -15.0f),
+		glm::vec3(-1.5f, -2.2f, -2.5f),
+		glm::vec3(-3.8f, -2.0f, -12.3f),
+		glm::vec3( 2.4f, -0.4f, -3.5f),
+		glm::vec3(-1.7f,  3.0f, -7.5f),
+		glm::vec3( 1.3f, -2.0f, -2.5f),
+		glm::vec3( 1.5f,  2.0f, -2.5f),
+		glm::vec3( 1.5f,  0.2f, -1.5f),
+		glm::vec3(-1.3f,  1.0f, -1.5f)
+	};
+	
 	GLuint indices[] = {  // Note that we start from 0!
 		0, 1, 3,   // First Triangle
 		1, 2, 3    // Second Triangle
@@ -302,9 +316,23 @@ int main(int argc, const char * argv[]) {
 		//linkamos el VAO
 		glBindVertexArray(VAO);
 		
-		//dibuja el array de vertices
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-
+		// bucle para dibujar los 10 cubos
+		for(GLuint i = 0; i < 10; i++)
+		{
+			//model matrix propia de cada cubo
+			glm::mat4 model;
+			
+			//hacemos la traslacion a su posicion
+			model = glm::translate(model, cubePositions[i]);
+			
+			//definimos un angulo de rotacion
+			GLfloat angle = 20.0f * i;
+			model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+			
+			//dibuja el array de vertices
+			glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
 //		//dibuja los elementos que indican el indice de los vertices a pintar
 //		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		
