@@ -287,12 +287,19 @@ int main(int argc, const char * argv[]) {
 		glm::mat4 model;
 		model = glm::rotate(model, (GLfloat)glfwGetTime() * 1.0f, glm::vec3(0.5f, 1.0f, 0.0f));
 		
+		//rotando la camara en un radio
+		GLfloat radius = 10.0f;
+		GLfloat camX = sin(glfwGetTime()) * radius;
+		GLfloat camZ = cos(glfwGetTime()) * radius;
+		
 		//view matrix
 		glm::mat4 view;
 		
 		// para la camara trasladamos la escena entera en la direccion contraria a donde queremos movernos
 		// en este caso queremos movernos hacia atras con lo cual movemos la escena en el eje Z negativamente
-		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+//		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+		
+		view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		
 		//projection matrix
 		glm::mat4 projection;
