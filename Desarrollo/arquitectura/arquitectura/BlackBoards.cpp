@@ -37,13 +37,13 @@ World_BlackBoard * World_BlackBoard::instance(){
     return _blackboard;
 }
 
-void World_BlackBoard::addRecord(TypeRecords& type, int * id, dvector3D * info){
+void World_BlackBoard::addRecord(const TypeRecords& type, int * id, dvector3D * info){
     Key * _key = new Key(type,id);
     record * _record = new record(info);
     _map.insert(std::pair<Key* , record *> (_key,_record));
 }
 
-void World_BlackBoard::addRecord(TypeRecords& type, int* id, int* idTarget, dvector3D* info){
+void World_BlackBoard::addRecord(const TypeRecords& type, int* id, int* idTarget, dvector3D* info){
     Key * _aux = new Key(type,idTarget);
     unsigned long cont = _map.count(_aux);
     if(cont!=0){
@@ -71,14 +71,14 @@ bool World_BlackBoard::regulator(dvector3D* info) const{
     return true;
 }
 
-unsigned long World_BlackBoard::countType(TypeRecords& type) {
+unsigned long World_BlackBoard::countType(const TypeRecords& type) {
     unsigned long count = 0;
     for(it = _map.begin();it!=_map.end();it++)
         if(it->first->_type==type) count++;
     return count;
 }
 
-bool World_BlackBoard::hasAnswer(TypeRecords& type, int* id) {
+bool World_BlackBoard::hasAnswer(const TypeRecords& type, int* id) {
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;
@@ -88,7 +88,7 @@ bool World_BlackBoard::hasAnswer(TypeRecords& type, int* id) {
     return false;
 }
 
-record * World_BlackBoard::getAnswer(TypeRecords& type, int* id) {
+record * World_BlackBoard::getAnswer(const TypeRecords& type, int* id) {
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;
@@ -104,7 +104,7 @@ void World_BlackBoard::CleanByID(int* id){
         }
 }
 
-void World_BlackBoard::removeRecord(TypeRecords& type, int* id){
+void World_BlackBoard::removeRecord(const TypeRecords& type, int* id){
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;
@@ -114,6 +114,17 @@ void World_BlackBoard::removeRecord(TypeRecords& type, int* id){
         _map.erase(it);
     }
     return;
+}
+
+bool World_BlackBoard::existRecord(const TypeRecords& type, int* id){
+    Key * _aux = new Key(type,id);
+    it = _map.find(_aux);
+    delete _aux;
+    if(it!=_map.end()){
+        return true;
+    }
+    return false;
+    
 }
 
 /* PERSONAL BLACKBOARD AND LIBRARY*/
@@ -179,4 +190,13 @@ Personal_BlackBoard * NPC_library::getMyBook(int* id){
     if(it==_values.end())
         return NULL;
     return it->second;
+}
+void Personal_BlackBoard::setThirst(int thirst){
+    
+}
+void Personal_BlackBoard::setLife(int life){
+    
+}
+void Personal_BlackBoard::setHungry(int hungry){
+    
 }

@@ -252,31 +252,31 @@ estados::~estados(){
     delete _asustado;
 }
 
-void estados::run(){
+void estados::run(int &id){
     
     switch (estado_act) {
-        case ESTANDAR:estandar();break;
-        case ALERTA:alerta();break;
-        case COMBATE:combate();break;
-        case ASUSTADO:asustado();break;
+        case ESTANDAR:estandar(id);break;
+        case ALERTA:alerta(id);break;
+        case COMBATE:combate(id);break;
+        case ASUSTADO:asustado(id);break;
         default:cout << "NO EXISTE ESTADO" << endl;break;
     }
 }
 
-void estados::estandar(){
-    _estandar->run();
+void estados::estandar(int &id){
+    _estandar->run(id);
 }
 
-void estados::alerta(){
-    _alerta->run();
+void estados::alerta(int &id){
+    _alerta->run(id);
 }
 
-void estados::combate(){
-    _combate->run();
+void estados::combate(int &id){
+    _combate->run(id);
 }
 
-void estados::asustado(){
-    _asustado->run();
+void estados::asustado(int &id){
+    _asustado->run(id);
 }
 
 

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Gaspar Rodriguez Valero. All rights reserved.
 //
 #include "Nodos.hpp"
+#include "BlackBoards.hpp"
 
 #define FAILURE 0
 #define SUCCESS 1
@@ -47,11 +48,11 @@
 // NODO SECUENCIA
 NodoSecuencia::NodoSecuencia(){}
 void NodoSecuencia::anyadirHijo(Nodo * hijo){NodoSecuencia::m_hijos.push_back(hijo);}
-short NodoSecuencia::run(){
+short NodoSecuencia::run(int &id){
     //cout << "NODO SECUENCIA" << endl;
     int i = hijo;
     for (i; i<m_hijos.size(); i++) {
-        short answer = m_hijos[i]->run();
+        short answer = m_hijos[i]->run(id);
         if (answer==FAILURE) {hijo=0;return FAILURE;}
         else if(answer==RUNNING){hijo = i ;return RUNNING;}
     }
@@ -61,11 +62,11 @@ short NodoSecuencia::run(){
 
 // NODO SECUENCIA POSITIVA
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){}
-short NodoSecuenciaPositiva::run(){
+short NodoSecuenciaPositiva::run(int &id){
     //cout << "NODO SECUENCIA POSITIVA" <<endl;
     int i = hijo;
     for(i;i<m_hijos.size();i++){
-        short answer = m_hijos[i]->run();
+        short answer = m_hijos[i]->run(id);
         if(answer==SUCCESS){hijo=0;return SUCCESS;}
         else if (answer==RUNNING){hijo=i;return RUNNING;}
     }
@@ -79,11 +80,11 @@ void NodoSecuenciaPositiva::anyadirHijo(Nodo * hijo){m_hijos.push_back(hijo);}
 // NODOS DE ACCION
 // NODO RECORRER ZONA
 NodoRecorreZonaCercana::NodoRecorreZonaCercana(){}
-short NodoRecorreZonaCercana::run(){return false;}
+short NodoRecorreZonaCercana::run(int &id){return false;}
 
 // NODO MOVER
 NodoMover::NodoMover(){}
-short NodoMover::run(){
+short NodoMover::run(int &id){
     //cout << "NODO MOVER" << endl;
     
     /*
@@ -114,43 +115,46 @@ short NodoMover::run(){
 
 // NODO COMER
 NodoComer::NodoComer(){}
-short NodoComer::run(){
+short NodoComer::run(int &id){
     cout << " NODO COMER" <<endl;
+    NPC_library::instance()->getMyBook(&id)->setHungry(COMIDA_ALIMENTA);
     //NPCinfo->Alimentarse(COMIDA_ALIMENTA);
     
     return true;
 }
 // NODO BEBER
 NodoBeber::NodoBeber(){}
-short NodoBeber::run(){
+short NodoBeber::run(int &id){
     cout << " NODO BEBER" <<endl;
+    NPC_library::instance()->getMyBook(&id)->setThirst(AGUA_HIDATRA);
     //NPCinfo->Beber(AGUA_HIDATRA);
     
     return true;
 }
 // NODO HUIR
 NodoHuir::NodoHuir(){}
-short NodoHuir::run(){
+short NodoHuir::run(int &id){
     //cout << " NODO HUIR" << endl;
     return false;
 }
 // NODO AVISAR
 NodoAvisar::NodoAvisar(){}
-short NodoAvisar::run(){
+short NodoAvisar::run(int &id){
     //cout << " NODO AVISAR" << endl;
     //NPCinfo->Avisado(true);
     return false;
 }
 // NODO HABLAR
 NodoHablar::NodoHablar(){}
-short NodoHablar::run(){
+short NodoHablar::run(int &id){
     //cout << " NODO HABLAR" << endl;
     return false;
 }
 // NODO CURARSE
 NodoCurarse::NodoCurarse(){}
-short NodoCurarse::run(){
+short NodoCurarse::run(int &id){
     cout << " NODO CURARSE" << endl;
+    NPC_library::instance()->getMyBook(&id)->setLife(BOTIQUIN_CURA);
     //cout << "  VIDA ANTES :" << NPCinfo->getLife() << endl;
     //NPCinfo->Curarse(BOTIQUIN_CURA);
     //cout << "  VIDA DESPS :" << NPCinfo->getLife() << endl;
@@ -158,7 +162,7 @@ short NodoCurarse::run(){
 }
 // NODO VIGILAR
 NodoVigilar::NodoVigilar(){}
-short NodoVigilar::run(){
+short NodoVigilar::run(int &id){
     //cout << " NODO VIGILAR" << endl;
     /*if(NPCinfo->getRutina()!=0){
         float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
@@ -181,19 +185,19 @@ short NodoVigilar::run(){
         }
         return true;
     }
-        
-    return false;*/
+        */
+    return false;
 }
 // NODO CUBRISE
 NodoCubrirse::NodoCubrirse(){}
-short NodoCubrirse::run(){
+short NodoCubrirse::run(int &id){
     //cout << " NODO CUBRIRSE" << endl;
     return false;
 }
 
 // NODO PATRULLAR
 NodoPatrullar::NodoPatrullar(){}
-short NodoPatrullar::run(){
+short NodoPatrullar::run(int &id){
     //cout << " NODO PATRULLAR" << endl;
    /* if (NPCinfo->getRutina()!=0) {
         return false;
@@ -220,13 +224,13 @@ short NodoPatrullar::run(){
 }
 // NODO ATAQUE CUERPO A CUERPO
 NodoAtaqueCuerpo::NodoAtaqueCuerpo(){}
-short NodoAtaqueCuerpo::run(){
+short NodoAtaqueCuerpo::run(int &id){
     //cout << " NODO ATAQUE A CUEPO" << endl;
     return false;
 }
 // NODO ATAQUE DISTANCIA
 NodoAtaqueDistancia::NodoAtaqueDistancia(){}
-short NodoAtaqueDistancia::run(){
+short NodoAtaqueDistancia::run(int &id){
     //cout << " NODO ATACO DISTANCIA" << endl;
     return false;
 }
@@ -237,7 +241,7 @@ short NodoAtaqueDistancia::run(){
 // NODO HAY RUIDO
 
 Nodo_HayRuido::Nodo_HayRuido(){}
-short Nodo_HayRuido::run(){
+short Nodo_HayRuido::run(int &id){
     //cout << " NODO HAY RUIDO ?" << endl;
     return false;
 }
@@ -245,7 +249,7 @@ short Nodo_HayRuido::run(){
 // PUEDO ATACAR DISTANCIA ?
 
 Nodo_PuedoAtacarDistancia::Nodo_PuedoAtacarDistancia(){}
-short Nodo_PuedoAtacarDistancia::run(){
+short Nodo_PuedoAtacarDistancia::run(int &id){
     //cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
     return false;
 }
@@ -253,7 +257,7 @@ short Nodo_PuedoAtacarDistancia::run(){
 // NODO NECESITO AYUDA?
 
 Nodo_NecesitoAyuda::Nodo_NecesitoAyuda(){}
-short Nodo_NecesitoAyuda::run(){
+short Nodo_NecesitoAyuda::run(int &id){
     //cout << " NODO NECESITO AYUDA ?" << endl;
     return false;
 }
@@ -261,7 +265,7 @@ short Nodo_NecesitoAyuda::run(){
 // NODO ALARMA ROTA?
 
 Nodo_AlarmaRota::Nodo_AlarmaRota(){}
-short Nodo_AlarmaRota::run(){
+short Nodo_AlarmaRota::run(int &id){
     //cout << " NODO ALARMA ROTA ?" << endl;
    // WorldInfo->comprobadaAlarma = true;
     //if(WorldInfo->estadoAlarma) return false;    
@@ -270,7 +274,7 @@ short Nodo_AlarmaRota::run(){
 
 // NODO HE SIDO AVISADO ?
 Nodo_Avisado::Nodo_Avisado(){};
-short Nodo_Avisado::run(){
+short Nodo_Avisado::run(int &id){
     //cout << " NODO AVISADO ?" << endl;
     //if(NPCinfo->getLLamada()) return true;
     return false;
@@ -278,7 +282,7 @@ short Nodo_Avisado::run(){
 
 // NODO TENGO SED ?
 Nodo_TengoSed::Nodo_TengoSed(){}
-short Nodo_TengoSed::run(){
+short Nodo_TengoSed::run(int &id){
     
     /*if(NPCinfo->getSed()>UMBRAL_SED && WorldInfo->Botiquines.size()>0) {
         cout << " NODO TENGO SED?" << endl;
@@ -304,7 +308,7 @@ short Nodo_TengoSed::run(){
 }*/
 // NODO TENGO HAMBRE ?
 Nodo_TengoHambre::Nodo_TengoHambre(){}
-short Nodo_TengoHambre::run(){
+short Nodo_TengoHambre::run(int &id){
    
     /*if (NPCinfo->getHambre()>UMBRAL_HAMBRE && WorldInfo->Comida.size()>0) {
          cout << " NODO TEMGO HAMBRE?" << endl;
@@ -330,7 +334,7 @@ short Nodo_TengoHambre::run(){
 }*/
 // NODO VIDA BAJA ?
 Nodo_VidaBaja::Nodo_VidaBaja(){}
-short Nodo_VidaBaja::run(){
+short Nodo_VidaBaja::run(int &id){
     //cout << " NODO VIDA BAJA?" << endl;
     //if(NPCinfo->getLife()<=UMBRAL_VIDA) {
         //cout << "  VIDA BAJA!" << endl;
@@ -340,7 +344,7 @@ short Nodo_VidaBaja::run(){
 }
 // NODO TIENE AGUA ?
 Nodo_TieneAgua::Nodo_TieneAgua(){}
-short Nodo_TieneAgua::run(){
+short Nodo_TieneAgua::run(int &id){
     //cout << " NODO FUENTE TIENE AGUA?" << endl;
     //WorldInfo->comprobadaFuente = true;
     //if(WorldInfo->estadofuente) return false;
@@ -349,13 +353,14 @@ short Nodo_TieneAgua::run(){
 }
 // NODO VER JUGADOR ?
 Nodo_VerJugador::Nodo_VerJugador(){}
-short Nodo_VerJugador::run(){
+short Nodo_VerJugador::run(int &id){
     //cout << " NODO VES AL JUGADOR?" << endl;
     return false;
 }
 // NODO ALARMA CERCA?
 Nodo_AlarmaCerca::Nodo_AlarmaCerca(){}
-short Nodo_AlarmaCerca::run(){
+short Nodo_AlarmaCerca::run(int &id){
+    
     //cout << " NODO ALARMA CERCA?" << endl;
     /*if(MasCercano(WorldInfo->Alarma, NPCinfo)!=NULL)
         WorldInfo->posicion = MasCercano(WorldInfo->Alarma, NPCinfo);
@@ -379,7 +384,14 @@ short Nodo_AlarmaCerca::run(){
 }*/
 // NODO HAY BOTIQUIN ?
 Nodo_HayBotiquin::Nodo_HayBotiquin(){}
-short Nodo_HayBotiquin::run(){
+short Nodo_HayBotiquin::run(int &id){
+    if(World_BlackBoard::instance()->existRecord(R_BOTIQUIN, &id)){
+        if(World_BlackBoard::instance()->hasAnswer(R_BOTIQUIN, &id)){
+            return true;
+        }
+        return false;
+    }
+    World_BlackBoard::instance()->addRecord(R_BOTIQUIN, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
     //cout << " NODO HAY BOTIQUIN" << endl;
     /*if(WorldInfo->Botiquines.size()>0){
         NPCinfo->setPosicionFinal(MasCercano(WorldInfo->Botiquines,NPCinfo));
@@ -406,14 +418,14 @@ short Nodo_HayBotiquin::run(){
 }*/
 // NODO SUENA ALARMA ?
 Nodo_SuenaAlarma::Nodo_SuenaAlarma(){}
-short Nodo_SuenaAlarma::run(){
+short Nodo_SuenaAlarma::run(int &id){
     //cout << " NODO SUENA ALARMA?" << endl;
     //if(WorldInfo->alarmaActivada) return true;
     return false;
 }
 // NODO ESTAS ASUSTADO ?
 Nodo_EstasAsustado::Nodo_EstasAsustado(){}
-short Nodo_EstasAsustado::run(){
+short Nodo_EstasAsustado::run(int &id){
     //cout << " NODO ASUSTADO?" << endl;
     /*if (NPCinfo->getSed()>=UMBRAL_SED && NPCinfo->getLife()<UMBRAL_VIDA && NPCinfo->getHambre()>=UMBRAL_HAMBRE) {
         NPCinfo->setEstados(ASUSTADO);
@@ -423,7 +435,7 @@ short Nodo_EstasAsustado::run(){
 }
 // NODO HAY PARA HABLAR ?
 Nodo_HayParaHablar::Nodo_HayParaHablar(){}
-short Nodo_HayParaHablar::run(){
+short Nodo_HayParaHablar::run(int &id){
     //cout << " NODO ALGUIEN HABLAR?" << endl;
     return false;
 }
@@ -435,7 +447,7 @@ Nodo_HayAlguienCerca::Nodo_HayAlguienCerca(){}
     float y = fabs(pow(a.y-b.y,2));
     return sqrt(x+y);
 }*/
-short Nodo_HayAlguienCerca::run(){
+short Nodo_HayAlguienCerca::run(int &id){
     /*for (int i = 0; i<WorldInfo->posicionesNPC.size(); i++) {
         if(2>-1 && CalcularDistancia(*WorldInfo->posicionesNPC[i], *NPCinfo->getPosActual())<=DISTANCIA_COMUNICACION_PERSONAL){
             NPCinfo->setPosicionFinal(WorldInfo->posicionesNPC[i]);
@@ -446,26 +458,26 @@ short Nodo_HayAlguienCerca::run(){
 }
 // NODO HAY ALGUIEN RADIO ?
 Nodo_HayAlguienRadio::Nodo_HayAlguienRadio(){}
-short Nodo_HayAlguienRadio::run(){
+short Nodo_HayAlguienRadio::run(int &id){
     //cout << " NODO HAY NPCS POR RADIO?" << endl;
     //if (WorldInfo->posicionesNPC.size()>0) return true;
     return false;
 }
 // NODO ESTAS CERCA JUGADOR ?
 Nodo_EstasCercaJugador::Nodo_EstasCercaJugador(){}
-short Nodo_EstasCercaJugador::run(){
+short Nodo_EstasCercaJugador::run(int &id){
     //cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
     return false;
 }
 // NODO ESTAS LEJOS JUGADOR ?
 Nodo_EstasLejosJugador::Nodo_EstasLejosJugador(){}
-short Nodo_EstasLejosJugador::run(){
+short Nodo_EstasLejosJugador::run(int &id){
     //cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
     return false;
 }
 // NODO TIEMPO INACTIVO ?
 Nodo_TiempoInactivo::Nodo_TiempoInactivo(){}
-short Nodo_TiempoInactivo::run(){
+short Nodo_TiempoInactivo::run(int &id){
     //cout << " NODO TIEMPO INACTIVO?" << endl;
     return false;
 }

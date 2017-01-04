@@ -25,7 +25,7 @@ enum TypeRecords{
     R_FUENTE
 };
 struct Key{
-    Key(TypeRecords& type, int * id) : _type(type) , _id(id){}
+    Key(const TypeRecords& type, int * id) : _type(type) , _id(id){}
     ~Key();
     TypeRecords _type;
     int * _id;
@@ -50,16 +50,17 @@ class World_BlackBoard {
     BLACKBOARD_MAP::iterator it;
 public:
     static World_BlackBoard * instance();
-    void addRecord(TypeRecords& type, int * id, int * idTarget, dvector3D * info);
-    void addRecord(TypeRecords& type, int * id, dvector3D * info);
-    void removeRecord(TypeRecords& type, int * id);
-    unsigned long countType(TypeRecords& type);
-    bool hasAnswer(TypeRecords& type, int * id);
-    record * getAnswer(TypeRecords& type, int * id);
+    void addRecord(const TypeRecords& type, int * id, int * idTarget, dvector3D * info);
+    void addRecord(const TypeRecords& type, int * id, dvector3D * info);
+    void removeRecord(const TypeRecords& type, int * id);
+    unsigned long countType(const TypeRecords& type);
+    bool hasAnswer(const TypeRecords& type, int * id);
+    record * getAnswer(const TypeRecords& type, int * id);
     void CleanByID(int* id);
     bool regulator(dvector3D* info) const;
     World_BlackBoard();
     World_BlackBoard(const World_BlackBoard& orig);
+    bool existRecord(const TypeRecords& type, int * id);
     virtual ~World_BlackBoard();  
 };
 class Personal_BlackBoard{
@@ -72,6 +73,9 @@ public:
     unsigned int getHungry() const {return _hungry;}
     unsigned int getThirst() const {return _life;}
     dvector3D * getPosition() const {return _position;}
+    void setLife(int life);
+    void setHungry(int hungry);
+    void setThirst(int thirst);
     void update(unsigned int& life,unsigned int& hungry,unsigned int& thirst,dvector3D * position);
 };
 typedef std::map<int *,Personal_BlackBoard*> NPC_VALUES;

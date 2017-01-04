@@ -15,13 +15,13 @@ class estados {
 public:
     estados();
     ~estados();
-    void run();
+    void run(int &id);
 private:
     int estado_act;
-    void estandar();
-    void alerta();
-    void combate();
-    void asustado();
+    void estandar(int &id);
+    void alerta(int &id);
+    void combate(int &id);
+    void asustado(int &id);
     NodoSecuenciaPositiva* _estandar;
     NodoSecuenciaPositiva* _alerta;
     NodoSecuenciaPositiva* _combate;
