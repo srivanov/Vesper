@@ -16,10 +16,20 @@
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
 
+GLfloat lastX = WIDTH/2, lastY = HEIGHT/2;
+
 //variables de la camara
 glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+
+//Yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector
+//pointing to the right (due to how Eular angles work) so we initially rotate a bit to the left.
+GLfloat yaw   = -90.0f;
+GLfloat pitch =   0.0f;
+
+//primer movimiento del raton
+bool firstMouse = true;
 
 //array con las teclas
 bool keys[1024];
@@ -73,6 +83,41 @@ void movimiento(){
 		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 }
 
+void mouse_callback(GLFWwindow* window, double xpos, double ypos){
+	
+	if(firstMouse) // this bool variable is initially set to true
+	{
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
+	}
+	
+	GLfloat xoffset = xpos - lastX;
+	GLfloat yoffset = lastY - ypos; // Reversed since y-coordinates range from bottom to top
+	lastX = xpos;
+	lastY = ypos;
+	
+	//sensibilidad del raton
+	GLfloat sensitivity = 0.05f;
+	xoffset *= sensitivity;
+	yoffset *= sensitivity;
+	
+	yaw   += xoffset;
+	pitch += yoffset;
+	
+	if(pitch > 89.0f)
+		pitch =  89.0f;
+	if(pitch < -89.0f)
+		pitch = -89.0f;
+	
+	glm::vec3 front;
+	front.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
+	front.y = sin(glm::radians(pitch));
+	front.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
+	cameraFront = glm::normalize(front);
+	
+}
+
 int main(int argc, const char * argv[]) {
 
 	glfwInit();
@@ -96,6 +141,12 @@ int main(int argc, const char * argv[]) {
 	
 	//definimos la funcion que llamaremos cuando se pulse una tecla
 	glfwSetKeyCallback(window, key_callback);
+	
+	//definimos la funcion que llamaremos cuando se mueva el raton
+	glfwSetCursorPosCallback(window, mouse_callback);
+	
+	//ocultamos el raton en la aplicacion y capturamos su posicion
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	
 	// activamos esto para que GLEW pueda trabajar con punteros de forma moderna, algo asi
 	glewExperimental = GL_TRUE;
