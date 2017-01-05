@@ -13,6 +13,7 @@
 		E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E943945A1E09A7CB0053DBE7 /* main.cpp */; };
 		E94394691E09A81C0053DBE7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94394681E09A81C0053DBE7 /* OpenGL.framework */; };
 		E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E954B0921E17F7EC00F1BEB6 /* libSOIL.a */; };
+		E960F3F01E1E6C4300A90C05 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E960F3EE1E1E6C4300A90C05 /* camera.cpp */; };
 		E9F59EED1E09B6910048E771 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EEC1E09B6910048E771 /* Cocoa.framework */; };
 		E9F59EF51E09B9880048E771 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF41E09B9880048E771 /* CoreVideo.framework */; };
 		E9F59EF61E09B9A70048E771 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF01E09B6B40048E771 /* IOKit.framework */; };
@@ -40,6 +41,8 @@
 		E954B0911E17DC4F00F1BEB6 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
 		E954B0921E17F7EC00F1BEB6 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = libs/libSOIL.a; sourceTree = "<group>"; };
 		E954B0941E17FFAD00F1BEB6 /* libIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIL.a; path = libs/libIL.a; sourceTree = "<group>"; };
+		E960F3EE1E1E6C4300A90C05 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		E960F3EF1E1E6C4300A90C05 /* camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
 		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
 		E99573AF1E16F49B00487446 /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
 		E9B8EB6A1E16CE93003811A4 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 			children = (
 				E943945A1E09A7CB0053DBE7 /* main.cpp */,
 				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
+				E960F3EE1E1E6C4300A90C05 /* camera.cpp */,
+				E960F3EF1E1E6C4300A90C05 /* camera.hpp */,
 			);
 			path = motor;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E960F3F01E1E6C4300A90C05 /* camera.cpp in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

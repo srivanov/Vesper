@@ -12,21 +12,15 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Shader.h"
+#include "camera.hpp"
 
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
 
+//ultima posicion del raton, inicializada al centro de la pantalla
 GLfloat lastX = WIDTH/2, lastY = HEIGHT/2;
 
-//variables de la camara
-glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
-
-//Yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector
-//pointing to the right (due to how Eular angles work) so we initially rotate a bit to the left.
-GLfloat yaw   = -90.0f;
-GLfloat pitch =   0.0f;
+camera camara(glm::vec3(0.0f, 0.0f, 3.0f));
 
 //primer movimiento del raton
 bool firstMouse = true;
@@ -72,15 +66,14 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 }
 
 void movimiento(){
-	GLfloat cameraSpeed = 5.0f * deltaTime;
 	if(keys[GLFW_KEY_W])
-		cameraPos += cameraSpeed * cameraFront;
+		camara.ProcessKeyboard(FORWARD, deltaTime);
 	if(keys[GLFW_KEY_S])
-		cameraPos -= cameraSpeed * cameraFront;
+		camara.ProcessKeyboard(BACKWARD, deltaTime);
 	if(keys[GLFW_KEY_A])
-		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+		camara.ProcessKeyboard(LEFT, deltaTime);
 	if(keys[GLFW_KEY_D])
-		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+		camara.ProcessKeyboard(RIGHT, deltaTime);
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
@@ -97,25 +90,12 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 	lastX = xpos;
 	lastY = ypos;
 	
-	//sensibilidad del raton
-	GLfloat sensitivity = 0.05f;
-	xoffset *= sensitivity;
-	yoffset *= sensitivity;
+	camara.ProcessMouseMovement(xoffset, yoffset);
 	
-	yaw   += xoffset;
-	pitch += yoffset;
-	
-	if(pitch > 89.0f)
-		pitch =  89.0f;
-	if(pitch < -89.0f)
-		pitch = -89.0f;
-	
-	glm::vec3 front;
-	front.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
-	front.y = sin(glm::radians(pitch));
-	front.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
-	cameraFront = glm::normalize(front);
-	
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
+	camara.ProcessMouseScroll(yoffset);
 }
 
 int main(int argc, const char * argv[]) {
@@ -144,6 +124,9 @@ int main(int argc, const char * argv[]) {
 	
 	//definimos la funcion que llamaremos cuando se mueva el raton
 	glfwSetCursorPosCallback(window, mouse_callback);
+	
+	//definimos la funcion cuando hacemos scroll
+	glfwSetScrollCallback(window, scroll_callback);
 	
 	//ocultamos el raton en la aplicacion y capturamos su posicion
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -381,7 +364,7 @@ int main(int argc, const char * argv[]) {
 		// en este caso queremos movernos hacia atras con lo cual movemos la escena en el eje Z negativamente
 //		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		
-		view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+		view = camara.GetViewMatrix();
 		
 		//projection matrix
 		glm::mat4 projection;
@@ -392,7 +375,7 @@ int main(int argc, const char * argv[]) {
 		 * el tercero es el near value
 		 * el cuarto es el far value
 		 */
-		projection = glm::perspective(45.0f, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+		projection = glm::perspective(glm::radians(camara.Zoom), (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 1000.0f);
 		
 		modelLoc = glGetUniformLocation(miShader.Program, "model");
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
