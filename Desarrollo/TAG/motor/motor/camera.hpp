@@ -1,6 +1,6 @@
 
-#ifndef camera_hpp
-#define camera_hpp
+#ifndef Camera_hpp
+#define Camera_hpp
 
 #include <vector>
 #include <iostream>
@@ -52,4 +52,4 @@ private:
 };
 
 
-#endif /* camera_hpp */
+#endif /* Camera_hpp */
