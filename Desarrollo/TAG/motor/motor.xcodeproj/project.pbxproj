@@ -105,12 +105,12 @@
 		E94394591E09A7CB0053DBE7 /* motor */ = {
 			isa = PBXGroup;
 			children = (
+				E943945A1E09A7CB0053DBE7 /* main.cpp */,
+				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
 				E9B3EF961E1F2A230039E88A /* Modelo.cpp */,
 				E9B3EF971E1F2A230039E88A /* Modelo.hpp */,
 				E9B3EF931E1F29820039E88A /* Mesh.cpp */,
 				E9B3EF8F1E1F291D0039E88A /* Mesh.hpp */,
-				E943945A1E09A7CB0053DBE7 /* main.cpp */,
-				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
 				E960F3EE1E1E6C4300A90C05 /* Camera.cpp */,
 				E960F3EF1E1E6C4300A90C05 /* Camera.hpp */,
 			);

@@ -46,6 +46,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		// hacemos que se salga del bucle
 		glfwSetWindowShouldClose(window, GL_TRUE);
+	
+	if(key == GLFW_KEY_G && action == GLFW_PRESS)
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	
+	if(key == GLFW_KEY_H && action == GLFW_PRESS)
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 void movimiento(){
@@ -134,7 +140,7 @@ int main(int argc, const char * argv[]) {
 	//creamos la clase Shader y compilamos los shaders
 	Shader miShader("../Shaders/textura.vs", "../Shaders/textura.frag");
 	
-	Modelo modelo("../Models/nanosuit.obj");
+	Modelo modelo("../Models/cube2.obj");
 	
 //	GLfloat vertices[] = {
 //		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,

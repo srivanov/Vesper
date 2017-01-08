@@ -57,9 +57,12 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 		vector.z = mesh->mVertices[i].z;
 		vertex.Position = vector;
 		
-		vector.x = mesh->mNormals[i].x;
-		vector.y = mesh->mNormals[i].y;
-		vector.z = mesh->mNormals[i].z;
+		if(mesh->mNormals != NULL){
+			vector.x = mesh->mNormals[i].x;
+			vector.y = mesh->mNormals[i].y;
+			vector.z = mesh->mNormals[i].z;
+			vertex.Normal = vector;
+		}
 		
 		if(mesh->mTextureCoords[0]){
 			glm::vec2 vec;
@@ -118,6 +121,9 @@ std::vector<Texture> Modelo::loadMaterialTextures(aiMaterial *mat, aiTextureType
 GLuint Modelo::TextureFromFile(const char *ruta, std::string directorio){
 	std::string filename = std::string(ruta);
 	filename = directorio + '/' + filename;
+	
+	std::cout << filename << std::endl;
+	
 	GLuint textureID;
 	
 	//generamos la textura en OpenGL
