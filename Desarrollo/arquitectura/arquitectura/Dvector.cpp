@@ -50,13 +50,6 @@ dvector3D& dvector3D::operator/(const dvector3D &p){
     return *this;
 }
 
-dvector3D& dvector3D::operator=(const float *p){
-	this->x = p[0];
-	this->y = p[1];
-	this->z = p[2];
-	return *this;
-}
-
 dvector2D::dvector2D(const dvector2D &p) {
 	this->x = p.x;
 	this->y = p.y;

@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "estados.hpp"
 #include <time.h>
 #include <stdlib.h>
 
@@ -13,7 +14,9 @@ public:
     ~enemigos();
 	void update();
 private:
+    estados * STD;
 	int ID;
 	unsigned int salud, sed, hambre;
+    unsigned int estado;
 };
 #endif /* enemigos_hpp */

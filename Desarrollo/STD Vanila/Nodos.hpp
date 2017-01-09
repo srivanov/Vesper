@@ -22,13 +22,14 @@ using namespace std;
 class Nodo {
 public:
     virtual short run(int &id) = 0;
+    //virtual ~Nodo();
 protected:
-    //float CalcularDistancia(vector3D a, vector3D b);
 };
 
 class NodoSecuencia : public Nodo {
 public:
     NodoSecuencia();
+    ~NodoSecuencia();
     short run(int &id);
     void anyadirHijo(Nodo * hijo);
 private:
@@ -38,6 +39,7 @@ private:
 class NodoSecuenciaPositiva : public Nodo{
 public:
     NodoSecuenciaPositiva();
+    ~NodoSecuenciaPositiva();
     short run(int &id);
     void anyadirHijo(Nodo * hijo);
 private:
@@ -46,16 +48,19 @@ private:
 };
 class NodoMover : public Nodo {
 public:
+    ~NodoMover();
     NodoMover();
     short run(int &id);
 private:
-    int f = 0;
+    float CalcularDistancia(dvector3D a, dvector3D b);
     float aux = -1;
     float xABS, yABS;
+    dvector3D * _movement;
 };
 
 class Nodo_VerJugador : public Nodo {
 public:
+    ~Nodo_VerJugador();
     Nodo_VerJugador();
     short run(int &id);
 private:
@@ -63,6 +68,7 @@ private:
 };
 class Nodo_HayRuido : public Nodo {
 public:
+    ~Nodo_HayRuido();
     Nodo_HayRuido();
     short run(int &id);
 private:
@@ -70,6 +76,7 @@ private:
 };
 class Nodo_SuenaAlarma : public Nodo {
 public:
+    ~Nodo_SuenaAlarma();
     Nodo_SuenaAlarma();
     short run(int &id);
 private:
@@ -78,6 +85,7 @@ private:
 
 class NodoVigilar : public Nodo {
 public:
+    ~NodoVigilar();
     NodoVigilar();
     short run(int &id);
 private:
@@ -85,6 +93,7 @@ private:
 };
 class NodoPatrullar : public Nodo {
 public:
+    ~NodoPatrullar();
     NodoPatrullar();
     short run(int &id);
 private:
@@ -93,6 +102,7 @@ private:
 };
 class Nodo_TiempoInactivo : public Nodo {
 public:
+    ~Nodo_TiempoInactivo();
     Nodo_TiempoInactivo();
     short run(int &id);
 private:
@@ -101,6 +111,7 @@ private:
 
 class NodoDarAlarma : public Nodo {
 public:
+    ~NodoDarAlarma();
     NodoDarAlarma();
     short run(int &id);
 private:
@@ -108,6 +119,7 @@ private:
 };
 class Nodo_Avisado : public Nodo {
 public:
+    ~Nodo_Avisado();
     Nodo_Avisado();
     short run(int &id);
 private:
@@ -119,15 +131,16 @@ private:
 
 class Nodo_VidaBaja : public Nodo {
 public:
+    ~Nodo_VidaBaja();
     Nodo_VidaBaja();
     short run(int &id);
 private:
-    // VIDA DEL NPC
 };
 
 class Nodo_NecesitoAyuda : public Nodo {
 public:
     Nodo_NecesitoAyuda();
+    ~Nodo_NecesitoAyuda();
     short run(int &id);
 private:
     
@@ -135,6 +148,7 @@ private:
 
 class Nodo_HayBotiquin : public Nodo {
 public:
+    ~Nodo_HayBotiquin();
     Nodo_HayBotiquin();
     short run(int &id);
 private:
@@ -144,6 +158,7 @@ private:
 
 class NodoCurarse : public Nodo {
 public:
+    ~NodoCurarse();
     NodoCurarse();
     short run(int &id);
 private:
@@ -152,54 +167,50 @@ private:
 };
 class Nodo_TengoHambre : public Nodo {
 public:
+    ~Nodo_TengoHambre();
     Nodo_TengoHambre();
     short run(int &id);
 private:
-    //vector3D * MasCercano(vector<vector3D*>& objetos,datos * NPCinfo);
-    //int hambre;
-    // HAMBRE
 };
 class Nodo_TengoSed : public Nodo {
 public:
+    ~Nodo_TengoSed();
     Nodo_TengoSed();
     short run(int &id);
 private:
-    //vector3D * MasCercano(vector<vector3D*>& objetos,datos * NPCinfo);
-    //int sed;
-    // SED
 };
 class NodoComer : public Nodo {
 public:
+    ~NodoComer();
     NodoComer();
     short run(int &id);
 private:
-    // HAMBRE
-    
 };
 class NodoBeber : public Nodo {
 public:
+    ~NodoBeber();
     NodoBeber();
     short run(int &id);
 private:
-    // SED
 };
 class Nodo_TieneAgua : public Nodo {
 public:
+    ~Nodo_TieneAgua();
     Nodo_TieneAgua();
     short run(int &id);
 private:
-    // ESTADO FUENTE
 };
 class Nodo_HayParaHablar : public Nodo {
 public:
+    ~Nodo_HayParaHablar();
     Nodo_HayParaHablar();
     short run(int &id);
 private:
-    // NPC + CERCANO
     
 };
 class NodoHablar : public Nodo {
 public:
+    ~NodoHablar();
     NodoHablar();
     short run(int &id);
 private:
@@ -211,20 +222,18 @@ private:
 
 class Nodo_AlarmaCerca : public Nodo {
 public:
+    ~Nodo_AlarmaCerca();
     Nodo_AlarmaCerca();
     short run(int &id);
 private:
-    //vector3D * posAlarma;
-    //vector3D * MasCercano(vector<vector3D*>& objetos,datos * NPCinfo);
-    // POSICION ALARMA + CERCANA
 };
 
 class NodoRecorreZonaCercana : public Nodo {
 public:
+    ~NodoRecorreZonaCercana();
     NodoRecorreZonaCercana();
     short run(int &id);
 private:
-    //
 };
 
 /*###################
@@ -233,21 +242,22 @@ private:
 
 class Nodo_PuedoAtacarDistancia : public Nodo {
 public:
+    ~Nodo_PuedoAtacarDistancia();
     Nodo_PuedoAtacarDistancia();
     short run(int &id);
 private:
-    //  TEMAS RAMDOM
 };
 
 class Nodo_EstasAsustado : public Nodo {
 public:
+    ~Nodo_EstasAsustado();
     Nodo_EstasAsustado();
     short run(int &id);
 private:
-    // VIDA , HAMBRE Y SED
 };
 class Nodo_HayAlguienCerca : public Nodo {
 public:
+    ~Nodo_HayAlguienCerca();
     Nodo_HayAlguienCerca();
     short run(int &id);
     //float CalcularDistancia(vector3D a, vector3D b);
@@ -256,59 +266,60 @@ private:
 };
 class Nodo_HayAlguienRadio : public Nodo {
 public:
+    ~Nodo_HayAlguienRadio();
     Nodo_HayAlguienRadio();
     short run(int &id);
 private:
-    // COORDENADAS DE NPC DENTRO DE RANGO DE RADIO ,
-    // CUANTOS AVISA: COMBATE SOLO 1 , ASUSTADO 3 NPCS
 };
 
 class NodoAvisar : public Nodo {
 public:
+    ~NodoAvisar();
     NodoAvisar();
     short run(int &id);
 private:
-    // COORDENADAS PROPIAS
 };
 class Nodo_EstasCercaJugador : public Nodo {
 public:
+    ~Nodo_EstasCercaJugador();
     Nodo_EstasCercaJugador();
     short run(int &id);
 private:
-    // COORDENADAS DEL JUGADOR
 };
 class Nodo_AlarmaRota : public Nodo {
 public:
     Nodo_AlarmaRota();
+    ~Nodo_AlarmaRota();
     short run(int &id);
 private:
-    // COORDENADAS DEL JUGADOR
 };
 class Nodo_EstasLejosJugador : public Nodo {
 public:
+    ~Nodo_EstasLejosJugador();
     Nodo_EstasLejosJugador();
     short run(int &id);
 private:
-    // COORDENADAS DEL JUGADOR
 };
 class NodoAtaqueCuerpo : public Nodo {
 public:
+    ~NodoAtaqueCuerpo();
     NodoAtaqueCuerpo();
     short run(int &id);
 private:
 };
 class NodoAtaqueDistancia : public Nodo {
 public:
+    ~NodoAtaqueDistancia();
     NodoAtaqueDistancia();
     short run(int &id);
 private:
 };
 class NodoCubrirse : public Nodo {
 public:
+    ~NodoCubrirse();
     NodoCubrirse();
     short run(int &id);
 private:
-    // OBJETOS DONDE CUBRISE, EL + CERCANO
 };
 
 /*###################
@@ -318,9 +329,9 @@ private:
 class NodoHuir : public Nodo {
 public:
     NodoHuir();
+    ~NodoHuir();
     short run(int &id);
 private:
-    // COORDENADAS DEL JUGADOR
 };
 
 

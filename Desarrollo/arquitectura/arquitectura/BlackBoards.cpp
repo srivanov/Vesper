@@ -129,20 +129,22 @@ bool World_BlackBoard::existRecord(const TypeRecords& type, int* id){
 
 /* PERSONAL BLACKBOARD AND LIBRARY*/
 
-Personal_BlackBoard::Personal_BlackBoard(unsigned int& life, unsigned int& hungry, unsigned int& thirst, dvector3D* position) :
-_life(life), _hungry(hungry), _thirst(thirst), _position(position){}
+Personal_BlackBoard::Personal_BlackBoard(unsigned int& life, unsigned int& hungry, unsigned int& thirst, unsigned int& state, dvector3D* position) :
+_life(life), _hungry(hungry), _thirst(thirst), _position(position), _state(state){
+    _posObjetivo = NULL;_Vmov=NULL;
+}
 
-Personal_BlackBoard::~Personal_BlackBoard(){_position=NULL;delete _position;}
+Personal_BlackBoard::~Personal_BlackBoard(){_position=NULL;delete _position;_posObjetivo=NULL;delete _posObjetivo;_Vmov=NULL; delete _Vmov;}
 
 void Personal_BlackBoard::update(unsigned int& life, unsigned int& hungry, unsigned int& thirst, dvector3D* position){
     _life = life; _hungry = hungry; _thirst = thirst; _position = position;
 }
-
+void Personal_BlackBoard::setVMovement(dvector3D *Vmov){_Vmov=Vmov;}
 NPC_library::NPC_library(){}
 NPC_library::~NPC_library(){
     for(it = _values.begin();it!=_values.end();it++){
-        delete it->first;
         delete it->second;
+        delete it->first;
     }
     _values.clear();
 }
@@ -161,11 +163,11 @@ bool NPC_library::ExistMyBook(int* id){
     return false;
 }
 
-void NPC_library::AddBook(int* id, unsigned int& life, unsigned int& hungry, unsigned int& thirst, dvector3D* position){
+void NPC_library::AddBook(int* id, unsigned int& life, unsigned int& hungry, unsigned int& thirst,unsigned int& state, dvector3D* position){
     it = _values.find(id);
     if(it!=_values.end())
         return;
-    Personal_BlackBoard * _book = new Personal_BlackBoard(life,hungry,thirst,position);
+    Personal_BlackBoard * _book = new Personal_BlackBoard(life,hungry,thirst,state,position);
     _values.insert(std::pair<int *,Personal_BlackBoard*>(id,_book));
 }
 
@@ -173,8 +175,8 @@ void NPC_library::RemoveBook(int* id){
     it = _values.find(id);
     if(it==_values.end())
         return;
-    delete it->first;
     delete it->second;
+    delete it->first;
     _values.erase(it);
 }
 
@@ -192,11 +194,14 @@ Personal_BlackBoard * NPC_library::getMyBook(int* id){
     return it->second;
 }
 void Personal_BlackBoard::setThirst(int thirst){
-    
+    _thirst-=thirst;
 }
 void Personal_BlackBoard::setLife(int life){
-    
+    _life+=life;
 }
 void Personal_BlackBoard::setHungry(int hungry){
-    
+    _hungry-=hungry;
+}
+void Personal_BlackBoard::setPosObjetivo(dvector3D * position){
+    _posObjetivo = position;
 }

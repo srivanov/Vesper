@@ -17,7 +17,6 @@ public:
     ~estados();
     void run(int &id);
 private:
-    int estado_act;
     void estandar(int &id);
     void alerta(int &id);
     void combate(int &id);

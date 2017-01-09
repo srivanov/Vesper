@@ -64,18 +64,25 @@ public:
     virtual ~World_BlackBoard();  
 };
 class Personal_BlackBoard{
-    unsigned int _life,_hungry,_thirst;
-    dvector3D * _position;
+    unsigned int _life,_hungry,_thirst,_state;
+    dvector3D * _position, *_posObjetivo;
+    dvector3D * _Vmov;
 public:
-    Personal_BlackBoard(unsigned int& life,unsigned int& hungry,unsigned int& thirst,dvector3D * position);
+    Personal_BlackBoard(unsigned int& life,unsigned int& hungry,unsigned int& thirst, unsigned int& state,dvector3D * position);
     ~Personal_BlackBoard();
     unsigned int getLife() const {return _life;}
     unsigned int getHungry() const {return _hungry;}
     unsigned int getThirst() const {return _life;}
+    unsigned int getState() const {return _state;}
     dvector3D * getPosition() const {return _position;}
+    dvector3D * getPosObjetivo() const {return _posObjetivo;}
+    void setPosObjetivo(dvector3D * position);
     void setLife(int life);
     void setHungry(int hungry);
     void setThirst(int thirst);
+    void setState(unsigned int NewState);
+    dvector3D * getVMovement() const {return _Vmov;}
+    void setVMovement(dvector3D * Vmov);
     void update(unsigned int& life,unsigned int& hungry,unsigned int& thirst,dvector3D * position);
 };
 typedef std::map<int *,Personal_BlackBoard*> NPC_VALUES;
@@ -86,7 +93,7 @@ class NPC_library{
 public:
     static NPC_library * instance();
     bool ExistMyBook(int * id);
-    void AddBook(int * id,unsigned int& life,unsigned int& hungry,unsigned int& thirst,dvector3D * position);
+    void AddBook(int * id,unsigned int& life,unsigned int& hungry,unsigned int& thirst,unsigned int& state,dvector3D * position);
     void RemoveBook(int * id);
     void updateMyBook(int * id,unsigned int& life,unsigned int& hungry,unsigned int& thirst,dvector3D * position);
     Personal_BlackBoard * getMyBook(int * id);

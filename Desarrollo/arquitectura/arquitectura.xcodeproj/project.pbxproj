@@ -179,7 +179,6 @@
 		E9AC3AB51DF0AAB300A91A97 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E9AC3AB71DF0AAB900A91A97 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		E9AC3ABB1DF0AACE00A91A97 /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = irrlicht/lib/MacOSX/libIrrlicht.a; sourceTree = "<group>"; };
 		E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cargarMapa.cpp; sourceTree = "<group>"; };
 		E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cargarMapa.hpp; sourceTree = "<group>"; };
 		E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
@@ -201,7 +200,6 @@
 		E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mundoBox2D.hpp; sourceTree = "<group>"; };
 		E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeMesh.cpp; sourceTree = "<group>"; };
 		E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nodeMesh.hpp; sourceTree = "<group>"; };
-		E9AC3AEA1DF0AE4300A91A97 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = Box2D/lib/libBox2D.a; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/libIrrlicht.a; sourceTree = "<group>"; };
 		E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoards.cpp; sourceTree = "<group>"; };
@@ -392,8 +390,6 @@
 			children = (
 				E9F0BE841DFAC61400F6ED67 /* libBox2D.a */,
 				E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */,
-				E9AC3AEA1DF0AE4300A91A97 /* libBox2D.a */,
-				E9AC3ABB1DF0AACE00A91A97 /* libIrrlicht.a */,
 				E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */,
 				E9AC3AB71DF0AAB900A91A97 /* Carbon.framework */,
 				E9AC3AB51DF0AAB300A91A97 /* OpenGL.framework */,

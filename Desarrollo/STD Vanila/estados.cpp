@@ -18,13 +18,12 @@
 #define ASUSTADO 3
 
 #include "estados.hpp"
+#include "BlackBoards.hpp"
 
 
 // QUE MOVER HABRA PUERTAS
 
 estados::estados(){
-    
-    estado_act = ESTANDAR;
     
     //GENERALES
     NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
@@ -254,7 +253,7 @@ estados::~estados(){
 
 void estados::run(int &id){
     
-    switch (estado_act) {
+    switch (NPC_library::instance()->getMyBook(&id)->getState()) {
         case ESTANDAR:estandar(id);break;
         case ALERTA:alerta(id);break;
         case COMBATE:combate(id);break;
