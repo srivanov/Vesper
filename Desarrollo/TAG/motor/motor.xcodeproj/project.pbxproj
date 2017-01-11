@@ -57,6 +57,8 @@
 		E9B3EF961E1F2A230039E88A /* Modelo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Modelo.cpp; sourceTree = "<group>"; };
 		E9B3EF971E1F2A230039E88A /* Modelo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Modelo.hpp; sourceTree = "<group>"; };
 		E9B8EB6A1E16CE93003811A4 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E9CC8D191E22D433005D1408 /* texLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texLight.frag; sourceTree = "<group>"; };
+		E9CC8D1A1E22D433005D1408 /* texLight.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texLight.vs; sourceTree = "<group>"; };
 		E9DAC0401E1A58B100F2B347 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		E9F59EEC1E09B6910048E771 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9F59EF01E09B6B40048E771 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -150,6 +152,8 @@
 				E99573AE1E16F49B00487446 /* basico.frag */,
 				E9B3EF831E1EE5E50039E88A /* textura.vs */,
 				E9B3EF841E1EE5E50039E88A /* textura.frag */,
+				E9CC8D1A1E22D433005D1408 /* texLight.vs */,
+				E9CC8D191E22D433005D1408 /* texLight.frag */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";

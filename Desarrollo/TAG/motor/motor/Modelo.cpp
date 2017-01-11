@@ -6,14 +6,14 @@ Modelo::Modelo(GLchar* ruta){
 }
 
 void Modelo::Draw(Shader shader){
-//	std::vector<Mesh>::iterator it = meshes.begin();
-//	while(it != meshes.end()){
-//		it->Draw(shader);
-//		it++;
-//	}
+	std::vector<Mesh>::iterator it = meshes.begin();
+	while(it != meshes.end()){
+		it->Draw(shader);
+		it++;
+	}
 	
-	for (GLuint i=0; i<this->meshes.size(); i++)
-		this->meshes[i].Draw(shader);
+//	for (GLuint i=0; i<this->meshes.size(); i++)
+//		this->meshes[i].Draw(shader);
 }
 
 void Modelo::loadModel(std::string ruta){
@@ -50,7 +50,7 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 	for (GLuint i=0; i<mesh->mNumVertices; i++){
 		Vertex vertex;
 		
-		// Process vertex positions, normals and texture coordinates
+		// procesamos las coordenadas de los vertices, normales y texturas
 		glm::vec3 vector;
 		vector.x = mesh->mVertices[i].x;
 		vector.y = mesh->mVertices[i].y;
@@ -85,12 +85,6 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 	if(mesh->mMaterialIndex > 0)
 	{
 		aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
-		// We assume a convention for sampler names in the shaders. Each diffuse texture should be named
-		// as 'texture_diffuseN' where N is a sequential number ranging from 1 to MAX_SAMPLER_NUMBER.
-		// Same applies to other texture as the following list summarizes:
-		// Diffuse: texture_diffuseN
-		// Specular: texture_specularN
-		// Normal: texture_normalN
 		
 		// 1. Diffuse maps
 		std::vector<Texture> diffuseMaps = this->loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
@@ -121,8 +115,6 @@ std::vector<Texture> Modelo::loadMaterialTextures(aiMaterial *mat, aiTextureType
 GLuint Modelo::TextureFromFile(const char *ruta, std::string directorio){
 	std::string filename = std::string(ruta);
 	filename = directorio + '/' + filename;
-	
-	std::cout << filename << std::endl;
 	
 	GLuint textureID;
 	

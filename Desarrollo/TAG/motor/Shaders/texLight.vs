@@ -6,6 +6,8 @@ layout (location = 1) in vec3 normal;
 layout (location = 2) in vec2 texCoord;
 
 out vec2 TexCoord;
+out vec3 FragPos;
+out vec3 Normal;
 
 uniform mat4 model;
 uniform mat4 view;
@@ -17,4 +19,7 @@ void main()
 	
 	//asignamos las coordenadas de las texturas dando la vuelta al eje Y
 	TexCoord = vec2(texCoord.x, 1.0f - texCoord.y);
+	Normal = normal;
+	//posicion en coordenadas del mundo del fragment
+	FragPos = vec3(model * vec4(position, 1.0f));
 }

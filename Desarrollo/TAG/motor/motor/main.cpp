@@ -138,9 +138,9 @@ int main(int argc, const char * argv[]) {
 	glEnable(GL_DEPTH_TEST);
 	
 	//creamos la clase Shader y compilamos los shaders
-	Shader miShader("../Shaders/textura.vs", "../Shaders/textura.frag");
+	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
-	Modelo modelo("../Models/cube2.obj");
+	Modelo modelo("../Models/nanosuit/nanosuit.obj");
 	
 //	GLfloat vertices[] = {
 //		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -345,6 +345,35 @@ int main(int argc, const char * argv[]) {
 //		GLfloat radius = 10.0f;
 //		GLfloat camX = sin(glfwGetTime()) * radius;
 //		GLfloat camZ = cos(glfwGetTime()) * radius;
+		
+		GLint lightPosLoc = glGetUniformLocation(miShader.Program, "light.position");
+		GLint viewPosLoc  = glGetUniformLocation(miShader.Program, "viewPos");
+		glUniform3f(lightPosLoc, 3.0f, 5.0f, 3.0f);
+		glUniform3f(viewPosLoc,  camara.Position.x, camara.Position.y, camara.Position.z);
+		
+		//propiedades de la luz
+		glUniform3f(glGetUniformLocation(miShader.Program, "light.ambient"),   0.5f, 0.5f, 0.5f);
+		glUniform3f(glGetUniformLocation(miShader.Program, "light.diffuse"),   1.2f, 1.2f, 1.2f);
+		glUniform3f(glGetUniformLocation(miShader.Program, "light.specular"),  3.0f, 3.0f, 3.0f);
+		glUniform1f(glGetUniformLocation(miShader.Program, "light.constant"),  1.0f);
+		glUniform1f(glGetUniformLocation(miShader.Program, "light.linear"),    0.09);
+		glUniform1f(glGetUniformLocation(miShader.Program, "light.quadratic"), 0.032);
+		
+		// luz 2
+		GLint lightPosLoc2 = glGetUniformLocation(miShader.Program, "light2.position");
+		glUniform3f(lightPosLoc2, -5.0f, 5.0f, -3.0f);
+		
+		// propiedades de la luz
+		glUniform3f(glGetUniformLocation(miShader.Program, "light2.ambient"),   0.2f, 0.2f, 0.2f);
+		glUniform3f(glGetUniformLocation(miShader.Program, "light2.diffuse"),   1.7f, 1.7f, 1.7f);
+		glUniform3f(glGetUniformLocation(miShader.Program, "light2.specular"),  3.3f, 3.3f, 3.3f);
+		glUniform1f(glGetUniformLocation(miShader.Program, "light2.constant"),  1.0f);
+		glUniform1f(glGetUniformLocation(miShader.Program, "light2.linear"),    0.1f);
+		glUniform1f(glGetUniformLocation(miShader.Program, "light2.quadratic"), 0.032);
+		
+		// brillantez del material
+		glUniform1f(glGetUniformLocation(miShader.Program, "shininess"), 32.0f);
+		
 		
 		//view matrix
 		glm::mat4 view;
