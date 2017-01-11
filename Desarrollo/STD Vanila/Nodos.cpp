@@ -81,7 +81,7 @@ NodoRecorreZonaCercana::~NodoRecorreZonaCercana(){}
 short NodoRecorreZonaCercana::run(int &id){return false;}
 
 // NODO MOVER
-NodoMover::NodoMover(){_movement=NULL;aux=-1;}
+NodoMover::NodoMover(){_movement=new dvector3D(0,0,0);aux=-1;}
 NodoMover::~NodoMover(){delete _movement;}
 short NodoMover::run(int &id){
     cout << "NODO MOVER" << endl;
@@ -140,6 +140,12 @@ float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
 NodoComer::NodoComer(){}
 short NodoComer::run(int &id){
     cout << " NODO COMER" <<endl;
+    TypeRecords comida = R_COMIDA;
+    World_BlackBoard::instance()->addRecord(comida,
+                                            World_BlackBoard::instance()->getAnswer(comida, &id)->_idResponse,
+                                            World_BlackBoard::instance()->getAnswer(comida, &id)->_answerInfo);
+    //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
+    World_BlackBoard::instance()->removeRecord(comida, &id);
     NPC_library::instance()->getMyBook(&id)->setHungry(COMIDA_ALIMENTA);
     //NPCinfo->Alimentarse(COMIDA_ALIMENTA);
     
@@ -151,6 +157,12 @@ NodoBeber::NodoBeber(){}
 NodoBeber::~NodoBeber(){}
 short NodoBeber::run(int &id){
     cout << " NODO BEBER" <<endl;
+    TypeRecords fuente = R_FUENTE;
+    World_BlackBoard::instance()->addRecord(fuente,
+                                            World_BlackBoard::instance()->getAnswer(fuente, &id)->_idResponse,
+                                            World_BlackBoard::instance()->getAnswer(fuente, &id)->_answerInfo);
+    //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
+    World_BlackBoard::instance()->removeRecord(fuente, &id);
     NPC_library::instance()->getMyBook(&id)->setThirst(AGUA_HIDATRA);
     return true;
 }
@@ -181,6 +193,12 @@ NodoCurarse::NodoCurarse(){}
 NodoCurarse::~NodoCurarse(){}
 short NodoCurarse::run(int &id){
     cout << " NODO CURARSE" << endl;
+    TypeRecords botiquin = R_BOTIQUIN;
+    World_BlackBoard::instance()->addRecord(botiquin,
+                                            World_BlackBoard::instance()->getAnswer(botiquin, &id)->_idResponse,
+                                            World_BlackBoard::instance()->getAnswer(botiquin, &id)->_answerInfo);
+    //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
+    World_BlackBoard::instance()->removeRecord(botiquin, &id);
     NPC_library::instance()->getMyBook(&id)->setLife(BOTIQUIN_CURA);
     return true;
 }
@@ -316,14 +334,15 @@ Nodo_TengoSed::Nodo_TengoSed(){}
 Nodo_TengoSed::~Nodo_TengoSed(){}
 short Nodo_TengoSed::run(int &id){
     cout << "NODO TENGO SED" << endl;
-    if(NPC_library::instance()->getMyBook(&id)->getThirst()>=UMBRAL_SED){
-        if (World_BlackBoard::instance()->existRecord(R_FUENTE, &id)) {
-            if (World_BlackBoard::instance()->hasAnswer(R_FUENTE, &id)) {
-                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(R_FUENTE, &id)->_answerInfo);
+    TypeRecords sed = R_FUENTE;
+    if(NPC_library::instance()->getMyBook(&id)->getThirst()>70){
+        if (World_BlackBoard::instance()->existRecord(sed, &id)) {
+            if (World_BlackBoard::instance()->hasAnswer(sed, &id)) {
+                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(sed, &id)->_answerInfo);
                 return true;
             }
         }
-        World_BlackBoard::instance()->addRecord(R_FUENTE, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
+        World_BlackBoard::instance()->addRecord(sed, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
     }
     return false;
 }
@@ -332,14 +351,15 @@ Nodo_TengoHambre::Nodo_TengoHambre(){}
 Nodo_TengoHambre::~Nodo_TengoHambre(){}
 short Nodo_TengoHambre::run(int &id){
     cout << "NODO TENGO HAMBRE" << endl;
+    TypeRecords comida = R_COMIDA;
     if(NPC_library::instance()->getMyBook(&id)->getHungry()>=UMBRAL_HAMBRE){
-        if (World_BlackBoard::instance()->existRecord(R_COMIDA, &id)) {
-            if (World_BlackBoard::instance()->hasAnswer(R_COMIDA, &id)) {
-                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(R_COMIDA, &id)->_answerInfo);
+        if (World_BlackBoard::instance()->existRecord(comida, &id)) {
+            if (World_BlackBoard::instance()->hasAnswer(comida, &id)) {
+                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(comida, &id)->_answerInfo);
                 return true;
             }
         }
-        World_BlackBoard::instance()->addRecord(R_COMIDA, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
+        World_BlackBoard::instance()->addRecord(comida, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
     }
     return false;
 }
@@ -383,13 +403,14 @@ Nodo_HayBotiquin::Nodo_HayBotiquin(){}
 Nodo_HayBotiquin::~Nodo_HayBotiquin(){}
 short Nodo_HayBotiquin::run(int &id){
     cout << "NODO HAY BOTIQUIN" << endl;
-    if (World_BlackBoard::instance()->existRecord(R_BOTIQUIN, &id)) {
-        if (World_BlackBoard::instance()->hasAnswer(R_BOTIQUIN, &id)) {
-            NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(R_BOTIQUIN, &id)->_answerInfo);
+    TypeRecords botiquin = R_BOTIQUIN;
+    if (World_BlackBoard::instance()->existRecord(botiquin, &id)) {
+        if (World_BlackBoard::instance()->hasAnswer(botiquin, &id)) {
+            NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(botiquin, &id)->_answerInfo);
             return true;
         }
     }
-    World_BlackBoard::instance()->addRecord(R_BOTIQUIN, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
+    World_BlackBoard::instance()->addRecord(botiquin, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
     return false;
 }
 // NODO SUENA ALARMA ?

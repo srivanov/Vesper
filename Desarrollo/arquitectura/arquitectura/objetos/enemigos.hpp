@@ -14,7 +14,9 @@ public:
     ~enemigos();
 	void update();
 private:
+    int k ; // GUARRRADA!!!
     estados * STD;
+    dvector3D * posi;
 	int ID;
 	unsigned int salud, sed, hambre;
     unsigned int estado;

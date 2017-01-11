@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */; };
+		63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E301E26CFE6006BD3AB /* comida.cpp */; };
+		63B81E351E26D288006BD3AB /* fuente.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E331E26D288006BD3AB /* fuente.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
 		D2F319BA1E1D68910033372E /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F319B61E1D68910033372E /* estados.cpp */; };
 		D2F319BB1E1D68910033372E /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F319B81E1D68910033372E /* Nodos.cpp */; };
@@ -82,6 +85,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = botiquin.cpp; sourceTree = "<group>"; };
+		63B81E2E1E26C2C5006BD3AB /* botiquin.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = botiquin.hpp; sourceTree = "<group>"; };
+		63B81E301E26CFE6006BD3AB /* comida.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = comida.cpp; sourceTree = "<group>"; };
+		63B81E311E26CFE6006BD3AB /* comida.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = comida.hpp; sourceTree = "<group>"; };
+		63B81E331E26D288006BD3AB /* fuente.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fuente.cpp; sourceTree = "<group>"; };
+		63B81E341E26D288006BD3AB /* fuente.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fuente.hpp; sourceTree = "<group>"; };
 		884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bala.cpp; sourceTree = "<group>"; };
 		884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bala.hpp; sourceTree = "<group>"; };
 		D2F319B61E1D68910033372E /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = estados.cpp; path = "../STD Vanila/estados.cpp"; sourceTree = "<group>"; };
@@ -310,6 +319,12 @@
 				E9AC3A5D1DF0AA4800A91A97 /* puerta.hpp */,
 				884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */,
 				884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */,
+				63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */,
+				63B81E2E1E26C2C5006BD3AB /* botiquin.hpp */,
+				63B81E301E26CFE6006BD3AB /* comida.cpp */,
+				63B81E331E26D288006BD3AB /* fuente.cpp */,
+				63B81E341E26D288006BD3AB /* fuente.hpp */,
+				63B81E311E26CFE6006BD3AB /* comida.hpp */,
 			);
 			path = objetos;
 			sourceTree = "<group>";
@@ -533,8 +548,10 @@
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
+				63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
 				E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */,
+				63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */,
 				E9AC3A611DF0AA4800A91A97 /* escenarios.cpp in Sources */,
 				D2F319BA1E1D68910033372E /* estados.cpp in Sources */,
 				E9A346461E0460C400E6EC25 /* bombaHumo.cpp in Sources */,
@@ -551,6 +568,7 @@
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,
 				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */,
+				63B81E351E26D288006BD3AB /* fuente.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,
 				E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */,

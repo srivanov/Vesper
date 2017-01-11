@@ -2,6 +2,13 @@
 #include "BlackBoards.hpp"
 
 
+float World_BlackBoard::absolute(float p){
+    float aux = 0;
+    if(p<0) aux=-p;
+    else aux = p;
+    return aux;
+}
+
 Key::~Key(){_id=NULL; delete _id;}
 
 record::record(dvector3D* info){
@@ -37,48 +44,51 @@ World_BlackBoard * World_BlackBoard::instance(){
     return _blackboard;
 }
 
-void World_BlackBoard::addRecord(const TypeRecords& type, int * id, dvector3D * info){
+void World_BlackBoard::addRecord(TypeRecords& type, int * id, dvector3D * info){
     Key * _key = new Key(type,id);
     record * _record = new record(info);
     _map.insert(std::pair<Key* , record *> (_key,_record));
 }
 
-void World_BlackBoard::addRecord(const TypeRecords& type, int* id, int* idTarget, dvector3D* info){
-    Key * _aux = new Key(type,idTarget);
-    unsigned long cont = _map.count(_aux);
-    if(cont!=0){
-        it = _map.find(_aux);
-        if(it->second->isAnswer() && regulator(info)){
-            it->second->_answerInfo = info;
-            it->second->_idResponse = id;
-        }else{
-            it->second->_answerInfo = info;
-            it->second->_idResponse = id;
-            it->second->addAnswer();
+void World_BlackBoard::AnswerRecord(TypeRecords& type, int* id, dvector3D* info){
+    it = _map.begin();
+    while (it!=_map.end()) {
+        if(it->first->_type==type){
+            if(!it->second->isAnswer()){
+                it->second->_answerInfo = info;
+                it->second->_idResponse = id;
+                it->second->addAnswer();
+            }
+            else if(it->second->isAnswer() && regulator(info)){
+                it->second->_answerInfo = info;
+                it->second->_idResponse = id;
+            }else{
+                continue;
+            }
         }
+        it++;
     }
-    delete _aux;
 }
 
-bool World_BlackBoard::regulator(dvector3D* info) const{
+bool World_BlackBoard::regulator(dvector3D* info) {
     float targetX = it->second->_info->x, targetY = it->second->_info->y;
     float Answer1X = it->second->_answerInfo->x, Answer1Y = it->second->_answerInfo->y;
     float Answer2X = info->x, Answer2Y = info->y;
     float dist1, dist2;
-	dist1 = abs((targetX-Answer1X)+(targetY-Answer1Y));
-    dist2 = abs((targetX-Answer2X)+(targetY-Answer2Y));
+    dist1 = absolute((targetX-Answer1X)+(targetY-Answer1Y));
+    dist2 = absolute((targetX-Answer2X)+(targetY-Answer2Y));
     if(dist1>dist2) return false;
     return true;
 }
 
-unsigned long World_BlackBoard::countType(const TypeRecords& type) {
+unsigned long World_BlackBoard::countType(TypeRecords& type) {
     unsigned long count = 0;
     for(it = _map.begin();it!=_map.end();it++)
         if(it->first->_type==type) count++;
     return count;
 }
 
-bool World_BlackBoard::hasAnswer(const TypeRecords& type, int* id) {
+bool World_BlackBoard::hasAnswer(TypeRecords& type, int* id) {
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;
@@ -88,7 +98,7 @@ bool World_BlackBoard::hasAnswer(const TypeRecords& type, int* id) {
     return false;
 }
 
-record * World_BlackBoard::getAnswer(const TypeRecords& type, int* id) {
+record * World_BlackBoard::getAnswer(TypeRecords& type, int* id) {
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;
@@ -104,7 +114,7 @@ void World_BlackBoard::CleanByID(int* id){
         }
 }
 
-void World_BlackBoard::removeRecord(const TypeRecords& type, int* id){
+void World_BlackBoard::removeRecord(TypeRecords& type, int* id){
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;
@@ -116,7 +126,7 @@ void World_BlackBoard::removeRecord(const TypeRecords& type, int* id){
     return;
 }
 
-bool World_BlackBoard::existRecord(const TypeRecords& type, int* id){
+bool World_BlackBoard::existRecord(TypeRecords& type, int* id){
     Key * _aux = new Key(type,id);
     it = _map.find(_aux);
     delete _aux;

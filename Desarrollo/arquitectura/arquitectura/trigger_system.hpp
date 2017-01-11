@@ -24,7 +24,7 @@ enum TypeEvents{
     E_aviso,
     E_hablar,
     E_puerta,
-    E_void
+    E_alarma
     
 };
 
@@ -32,11 +32,11 @@ enum TypeEvents{
 struct triggers{
     TypeEvents _type;
     unsigned int _idTrigger;
-    unsigned int * _idSource;
+    int * _idSource;
     dvector3D _pos;
     float _radio;
     time_t _duration;
-    triggers(TypeEvents& type, unsigned int& idTrigger, unsigned int* idSource, dvector3D& pos, float& radio, float& duration);
+    triggers(const TypeEvents& type, unsigned int& idTrigger, int* idSource, dvector3D* pos, float radio, float duration);
     ~triggers();
 };
 
@@ -44,7 +44,7 @@ struct triggers{
 class trigger_system {
 public:
     static trigger_system * _instance();
-    unsigned long add_trigger(TypeEvents& type, unsigned int* id, dvector3D& pos, float& radio, float& duration);
+    unsigned long add_trigger(const TypeEvents& type, int* id, dvector3D* pos, float radio, float duration);
     void remove_trigger(unsigned long id);
     void update();
     virtual ~trigger_system();

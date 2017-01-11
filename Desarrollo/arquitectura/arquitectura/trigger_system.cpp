@@ -13,11 +13,11 @@
 
 #include "trigger_system.hpp"
 
-triggers::triggers(TypeEvents& type, unsigned int& idTrigger, unsigned int* idSource, dvector3D& pos, float& radio, float& duration){
+triggers::triggers(const TypeEvents& type, unsigned int& idTrigger, int* idSource, dvector3D* pos, float radio, float duration){
     _type = type;
     _idTrigger = idTrigger;
     _idSource = idSource;
-    _pos = pos;
+    _pos = *pos;
     _radio = radio;
     _duration = time(NULL)+duration;
 }
@@ -25,7 +25,7 @@ triggers::~triggers(){_idSource = NULL; delete _idSource;}
 trigger_system * trigger_system::_TSinstance = 0;
 trigger_system::trigger_system() {IDcont=0;}
 
-unsigned long trigger_system::add_trigger(TypeEvents& type, unsigned int* id, dvector3D& pos, float& radio, float& duration){
+unsigned long trigger_system::add_trigger(const TypeEvents& type, int* id, dvector3D* pos, float radio, float duration){
     triggers * _trigger = new triggers(type,IDcont,id,pos,radio,duration);
     TRIGGER_VECTOR.push_back(_trigger);
     return _trigger->_idTrigger;

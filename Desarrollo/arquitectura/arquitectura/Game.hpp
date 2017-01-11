@@ -14,6 +14,10 @@
 #include "components/input.hpp"
 #include "objetos/player.hpp"
 #include "objetos/enemigos.hpp"
+#include "objetos/alarma.hpp"
+#include "objetos/botiquin.hpp"
+#include "objetos/comida.hpp"
+#include "objetos/fuente.hpp"
 #include "objetos/camara.hpp"
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
@@ -56,6 +60,10 @@ private:
     std::vector<bala*>::iterator iter;
 	escenarios* nivel;
 	std::vector<enemigos*> npcs;
+    std::vector<alarma*> alarmas;
+    std::vector<fuente*> fuentes;
+    std::vector<comida*> comidas;
+    std::vector<botiquin*> botiquines;
 	int contador_npc;
 };
 

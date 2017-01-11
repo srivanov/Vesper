@@ -17,6 +17,8 @@
 #include <stdlib.h>
 #include "Dvector.hpp"
 
+
+
 enum TypeRecords{
     R_NONE = -1,
     R_BOTIQUIN,
@@ -25,7 +27,7 @@ enum TypeRecords{
     R_FUENTE
 };
 struct Key{
-    Key(const TypeRecords& type, int * id) : _type(type) , _id(id){}
+    Key(TypeRecords& type, int * id) : _type(type) , _id(id){}
     ~Key();
     TypeRecords _type;
     int * _id;
@@ -48,19 +50,20 @@ class World_BlackBoard {
     static World_BlackBoard * _blackboard;
     BLACKBOARD_MAP _map;
     BLACKBOARD_MAP::iterator it;
+    float absolute(float p);
 public:
     static World_BlackBoard * instance();
-    void addRecord(const TypeRecords& type, int * id, int * idTarget, dvector3D * info);
-    void addRecord(const TypeRecords& type, int * id, dvector3D * info);
-    void removeRecord(const TypeRecords& type, int * id);
-    unsigned long countType(const TypeRecords& type);
-    bool hasAnswer(const TypeRecords& type, int * id);
-    record * getAnswer(const TypeRecords& type, int * id);
+    void AnswerRecord(TypeRecords& type, int * id, dvector3D * info);
+    void addRecord(TypeRecords& type, int * id, dvector3D * info);
+    void removeRecord(TypeRecords& type, int * id);
+    unsigned long countType(TypeRecords& type);
+    bool hasAnswer(TypeRecords& type, int * id);
+    record * getAnswer(TypeRecords& type, int * id);
     void CleanByID(int* id);
-    bool regulator(dvector3D* info) const;
+    bool regulator(dvector3D* info);
     World_BlackBoard();
     World_BlackBoard(const World_BlackBoard& orig);
-    bool existRecord(const TypeRecords& type, int * id);
+    bool existRecord(TypeRecords& type, int * id);
     virtual ~World_BlackBoard();  
 };
 class Personal_BlackBoard{
@@ -72,7 +75,7 @@ public:
     ~Personal_BlackBoard();
     unsigned int getLife() const {return _life;}
     unsigned int getHungry() const {return _hungry;}
-    unsigned int getThirst() const {return _life;}
+    unsigned int getThirst() const {return _thirst;}
     unsigned int getState() const {return _state;}
     dvector3D * getPosition() const {return _position;}
     dvector3D * getPosObjetivo() const {return _posObjetivo;}
