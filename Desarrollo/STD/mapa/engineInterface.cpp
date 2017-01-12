@@ -162,7 +162,8 @@ bool engineInterface::loadMap(world * mundo){
             if(mapita[0][i][j] == 86){ //comida
                 nodoc = _getNodeFromMesh(suelo_comida);
                 _setMaterialFlag(nodoc, 0, false);
-                _setMaterialTexture(nodoc,"../../../modelos3D/colorComida.jpg");
+                //_setMaterialTexture(nodoc,"../../../modelos3D/colorComida.jpg");
+                _setMaterialTexture(nodoc,"../../../modelos3D/pizza.jpg");
                 nodoc->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 comida * food = new comida(nodoc->_getNodePositionD());
                 mundo->anyadirComida(food);
@@ -171,7 +172,8 @@ bool engineInterface::loadMap(world * mundo){
             if(mapita[0][i][j] == 100){ //fuente
                 nodof = _getNodeFromMesh(cubo_fuente);
                 _setMaterialFlag(nodof, 0, false);
-                _setMaterialTexture(nodof,"../../../modelos3D/colorFuente.jpg");
+                //_setMaterialTexture(nodof,"../../../modelos3D/colorFuente.jpg");
+                _setMaterialTexture(nodof,"../../../modelos3D/gota.jpg");
                 nodof->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 fuente * fuen = new fuente(nodof->_getNodePositionD(),true);
                 mundo->anyadirFuente(fuen);
@@ -180,7 +182,8 @@ bool engineInterface::loadMap(world * mundo){
             if(mapita[0][i][j] == 161){ //alarma
                 nodoa = _getNodeFromMesh(cubo_alarma);
                 _setMaterialFlag(nodoa, 0, false);
-                _setMaterialTexture(nodoa,"../../../modelos3D/colorAlarma.jpg");
+                //_setMaterialTexture(nodoa,"../../../modelos3D/colorAlarma.jpg");
+                _setMaterialTexture(nodoa,"../../../modelos3D/alarmita.jpg");
                 nodoa->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 
                 alarma * alarm = new alarma(nodoa->_getNodePositionD());
@@ -192,7 +195,8 @@ bool engineInterface::loadMap(world * mundo){
             if(mapita[0][i][j] == 130){ //botiquin
                 nodob = _getNodeFromMesh(cubo_botiquin);
                 _setMaterialFlag(nodob, 0, false);
-                _setMaterialTexture(nodob,"../../../modelos3D/colorBotiquin.jpg");
+               // _setMaterialTexture(nodob,"../../../modelos3D/colorBotiquin.jpg");
+                _setMaterialTexture(nodob,"../../../modelos3D/botiquin.jpg");
                 nodob->_setNodePosition(new float[3]{static_cast<float>(i),static_cast<float>(j),0});
                 nodob->_getNodePositionD();
                 botiquin * boti = new botiquin(nodob->_getNodePositionD());
