@@ -45,9 +45,10 @@ enemigos::~enemigos(){
 }
 
 void enemigos::update(){
+	GameObject::update();
     if(k%600){
         hambre++;
-        std::cout << hambre << std::endl;
+//        std::cout << hambre << std::endl;
         k = 0;
     }
     k++;
@@ -65,5 +66,5 @@ void enemigos::update(){
         this->mover(new float[3]{x,y,z});
     }
     
-	GameObject::update();
+	
 }

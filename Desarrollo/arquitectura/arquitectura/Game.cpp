@@ -52,43 +52,43 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	contador_npc=0;
 	enemigos* npc = new enemigos(contador_npc);
 	contador_npc++;
-	npc->setPosicion(new float[3]{10, 30, 0});
+	npc->setPosicion(new float[3]{10, 15, 0});
 	npc->addNodo("");
-	npc->setTexture("3d/texture.png");
+	npc->setTexture("3d/enemy.jpg");
 	npcs.insert(npcs.end(), npc);
-    
+	
     alarma * alarmita = new alarma(contador_npc);
     alarmita->addNodo("3d/alarmita.3ds");
     alarmita->setTexture("3d/alarmita.jpg");
-    alarmita->setPosicion(new float[3]{30, 30, 0});
+    alarmita->setPosicion(new float[3]{5, 3, 0});
     
     contador_npc++;
     alarmas.insert(alarmas.end(), alarmita);
-    
-    fuente * fuentezita = new fuente(contador_npc);
-    fuentezita->addNodo("");
-    fuentezita->setTexture("3d/alarmita.jpg");
-    fuentezita->setPosicion(new float[3]{0, 10, 0});
-    
-    contador_npc++;
-    fuentes.insert(fuentes.end(), fuentezita);
-    
-    comida * comidita = new comida(contador_npc);
-    comidita->addNodo("");
-    comidita->setTexture("3d/alarmita.jpg");
-    comidita->setPosicion(new float[3]{0, 0, 0});
-    
-    contador_npc++;
-    comidas.insert(comidas.end(), comidita);
-    
-    botiquin * botiqueen = new botiquin(contador_npc);
-    botiqueen->addNodo("");
-    botiqueen->setTexture("3d/alarmita.jpg");
-    botiqueen->setPosicion(new float[3]{10, 0, 0});
-    
-    contador_npc++;
-    botiquines.insert(botiquines.end(), botiqueen);
-    
+
+//    fuente * fuentezita = new fuente(contador_npc);
+//    fuentezita->addNodo("");
+//    fuentezita->setTexture("3d/alarmita.jpg");
+//    fuentezita->setPosicion(new float[3]{0, 10, 0});
+//    
+//    contador_npc++;
+//    fuentes.insert(fuentes.end(), fuentezita);
+//    
+//    comida * comidita = new comida(contador_npc);
+//    comidita->addNodo("");
+//    comidita->setTexture("3d/alarmita.jpg");
+//    comidita->setPosicion(new float[3]{0, 0, 0});
+//    
+//    contador_npc++;
+//    comidas.insert(comidas.end(), comidita);
+//    
+//    botiquin * botiqueen = new botiquin(contador_npc);
+//    botiqueen->addNodo("");
+//    botiqueen->setTexture("3d/alarmita.jpg");
+//    botiqueen->setPosicion(new float[3]{10, 0, 0});
+//    
+//    contador_npc++;
+//    botiquines.insert(botiquines.end(), botiqueen);
+	
 }
 
 void Game::stop(){
@@ -145,9 +145,8 @@ void Game::update(){
 		}else
 			iter++;
     }
+	
     trigger_system::_instance()->update();
-	Fps::Instance()->update();
-    mundoBox2D::Instance()->update();
 	
 	std::vector<enemigos*>::iterator it = npcs.begin();
 	while (it != npcs.end()) {
@@ -159,6 +158,13 @@ void Game::update(){
         (*it2)->update();
         it2++;
     }
+	std::vector<alarma*>::iterator it3 = alarmas.begin();
+	while (it3 != alarmas.end()) {
+		(*it3)->update();
+		it3++;
+	}
+	Fps::Instance()->update();
+	mundoBox2D::Instance()->update();
 }
 
 void Game::zoom(bool z){

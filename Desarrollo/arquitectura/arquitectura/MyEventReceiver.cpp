@@ -76,6 +76,9 @@ bool MyEventReceiver::IsKeyDown(uint32_t keyCode) const
 		case 't':
 			key = EKEY_CODE::KEY_TAB;
 			break;
+		case 's':
+			key = EKEY_CODE::KEY_SHIFT;
+			break;
 		default:
 			return false;
 			break;

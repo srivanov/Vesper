@@ -14,6 +14,8 @@ alarma::alarma(int &ID){
 	this->insertComponent((char*)"render", aux);
 	aux = new transform3D();
 	this->insertComponent((char*)"transform3D", aux);
+	aux = new physics();
+	this->insertComponent((char*)"physics", aux);
     
     
     std::map<char*,component*>::iterator iter = this->getIteradorBegin();
@@ -22,6 +24,10 @@ alarma::alarma(int &ID){
         iter++;
     }
     setRenderizable(true);
+	
+	physics* fisica = (physics*)findComponent("physics");
+	fisica->crearBodyEstatico(new float[2]{1,1}, new float[2]{0,0}, 90.f);
+	
     _time = 0;
     posi = new dvector3D();
     NPCKnows = false;
@@ -38,20 +44,21 @@ void alarma::gestorTiempo(){
     }
 }
 void alarma::update(){
-    TypeRecords alarma = R_ALARMA;
-    posi->x = getPosicion()[0]; posi->y = getPosicion()[1]; posi->z = getPosicion()[2];
-    gestorTiempo();
-    if(World_BlackBoard::instance()->hasAnswer(alarma, &ID)){
-        if (World_BlackBoard::instance()->getAnswer(alarma, &ID)->_idResponse<0) {rota=true;}
-        else if(rota){NPCKnows=true;}
-        else if(!activado){
-            World_BlackBoard::instance()->removeRecord(alarma, &ID);
-            _time = time(NULL)+TIEMPOALARMA;
-            trigger_system::_instance()->add_trigger(E_alarma, &ID, posi, RADIOALARMA, TIEMPOALARMA);
-            this->activado = true;
-        }
-    }
-    else if(World_BlackBoard::instance()->countType(alarma)>0 && !NPCKnows){
-        World_BlackBoard::instance()->AnswerRecord(alarma, &ID, posi);
-    }
+	GameObject::update();
+//    TypeRecords alarma = R_ALARMA;
+//    posi->x = getPosicion()[0]; posi->y = getPosicion()[1]; posi->z = getPosicion()[2];
+//    gestorTiempo();
+//    if(World_BlackBoard::instance()->hasAnswer(alarma, &ID)){
+//        if (World_BlackBoard::instance()->getAnswer(alarma, &ID)->_idResponse<0) {rota=true;}
+//        else if(rota){NPCKnows=true;}
+//        else if(!activado){
+//            World_BlackBoard::instance()->removeRecord(alarma, &ID);
+//            _time = time(NULL)+TIEMPOALARMA;
+//            trigger_system::_instance()->add_trigger(E_alarma, &ID, posi, RADIOALARMA, TIEMPOALARMA);
+//            this->activado = true;
+//        }
+//    }
+//    else if(World_BlackBoard::instance()->countType(alarma)>0 && !NPCKnows){
+//        World_BlackBoard::instance()->AnswerRecord(alarma, &ID, posi);
+//    }
 }

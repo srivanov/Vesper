@@ -15,7 +15,9 @@ render::~render(){
 }
 
 void render::update(){
-	
+	if (nodo != NULL) {
+		nodo->_setNodePosition(getFather()->getPosicion());
+	}
 }
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -44,7 +46,7 @@ void render::setNode(char *filename){
 void render::setNodeTexture(char* filename){
 	if(nodo != NULL){
 		nodo->_setMaterialFlag(EMF_LIGHTING, false);
-		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture("3d/texture.png"));
+		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture(filename));
 	}
 }
 

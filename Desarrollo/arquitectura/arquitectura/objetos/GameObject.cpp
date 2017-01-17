@@ -112,9 +112,9 @@ void GameObject::mover(float *vel){
         transform3D* go = (transform3D*)findComponent("transform3D");
 		if(go != NULL)
 			go->mover(vel);
-		class render* ren = (class render*)findComponent("render");
-		if(ren != NULL)
-			ren->setNodePosition(posicion);
+//		class render* ren = (class render*)findComponent("render");
+//		if(ren != NULL)
+//			ren->setNodePosition(posicion);
 	}
 }
 

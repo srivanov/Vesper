@@ -29,7 +29,11 @@ void input::update(){
     if(MyEventReceiver::Instance()->IsKeyDown('D')){
         velocidad[0] =  1;
     }
-
+	
+	if(MyEventReceiver::Instance()->IsKeyDown('s')){
+		velocidad[0]*=2; velocidad[1]*=2;
+	}
+	
 //        com->mover(velocidad);
     Game::Instance()->getPlayer()->mover(velocidad);
 	

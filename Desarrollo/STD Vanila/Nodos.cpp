@@ -39,7 +39,7 @@
 NodoSecuencia::NodoSecuencia(){hijo=0;}
 void NodoSecuencia::anyadirHijo(Nodo * hijo){NodoSecuencia::m_hijos.push_back(hijo);}
 short NodoSecuencia::run(int &id){
-    cout << "NODO SECUENCIA" << endl;
+//    cout << "NODO SECUENCIA" << endl;
     for (hijo; hijo<m_hijos.size(); hijo++) {
         short answer = m_hijos[hijo]->run(id);
         if (answer==FAILURE) {hijo=0;return FAILURE;}
@@ -57,7 +57,7 @@ NodoSecuencia::~NodoSecuencia(){
 // NODO SECUENCIA POSITIVA
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){hijo=0;}
 short NodoSecuenciaPositiva::run(int &id){
-    cout << "NODO SECUENCIA POSITIVA" <<endl;
+//    cout << "NODO SECUENCIA POSITIVA" <<endl;
     for(hijo;hijo<m_hijos.size();hijo++){
         short answer = m_hijos[hijo]->run(id);
         if(answer==SUCCESS){hijo=0;return SUCCESS;}
@@ -84,7 +84,7 @@ short NodoRecorreZonaCercana::run(int &id){return false;}
 NodoMover::NodoMover(){_movement=new dvector3D(0,0,0);aux=-1;}
 NodoMover::~NodoMover(){delete _movement;}
 short NodoMover::run(int &id){
-    cout << "NODO MOVER" << endl;
+//    cout << "NODO MOVER" << endl;
     if(_movement==NULL) _movement = new dvector3D;
     if(aux==-1){
         aux = CalcularDistancia(*NPC_library::instance()->getMyBook(&id)->getPosition(), *NPC_library::instance()->getMyBook(&id)->getPosObjetivo());
@@ -139,7 +139,7 @@ float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
 // NODO COMER
 NodoComer::NodoComer(){}
 short NodoComer::run(int &id){
-    cout << " NODO COMER" <<endl;
+//    cout << " NODO COMER" <<endl;
     TypeRecords comida = R_COMIDA;
     World_BlackBoard::instance()->addRecord(comida,
                                             World_BlackBoard::instance()->getAnswer(comida, &id)->_idResponse,
@@ -156,7 +156,7 @@ NodoComer::~NodoComer(){}
 NodoBeber::NodoBeber(){}
 NodoBeber::~NodoBeber(){}
 short NodoBeber::run(int &id){
-    cout << " NODO BEBER" <<endl;
+//    cout << " NODO BEBER" <<endl;
     TypeRecords fuente = R_FUENTE;
     World_BlackBoard::instance()->addRecord(fuente,
                                             World_BlackBoard::instance()->getAnswer(fuente, &id)->_idResponse,
@@ -170,14 +170,14 @@ short NodoBeber::run(int &id){
 NodoHuir::NodoHuir(){}
 NodoHuir::~NodoHuir(){}
 short NodoHuir::run(int &id){
-    cout << " NODO HUIR" << endl;
+//    cout << " NODO HUIR" << endl;
     return false;
 }
 // NODO AVISAR
 NodoAvisar::NodoAvisar(){}
 NodoAvisar::~NodoAvisar(){}
 short NodoAvisar::run(int &id){
-    cout << " NODO AVISAR" << endl;
+//    cout << " NODO AVISAR" << endl;
     //NPCinfo->Avisado(true);
     return false;
 }
@@ -185,14 +185,14 @@ short NodoAvisar::run(int &id){
 NodoHablar::NodoHablar(){}
 NodoHablar::~NodoHablar(){}
 short NodoHablar::run(int &id){
-    cout << " NODO HABLAR" << endl;
+//    cout << " NODO HABLAR" << endl;
     return false;
 }
 // NODO CURARSE
 NodoCurarse::NodoCurarse(){}
 NodoCurarse::~NodoCurarse(){}
 short NodoCurarse::run(int &id){
-    cout << " NODO CURARSE" << endl;
+//    cout << " NODO CURARSE" << endl;
     TypeRecords botiquin = R_BOTIQUIN;
     World_BlackBoard::instance()->addRecord(botiquin,
                                             World_BlackBoard::instance()->getAnswer(botiquin, &id)->_idResponse,
@@ -206,7 +206,7 @@ short NodoCurarse::run(int &id){
 NodoVigilar::NodoVigilar(){}
 NodoVigilar::~NodoVigilar(){}
 short NodoVigilar::run(int &id){
-    cout << " NODO VIGILAR" << endl;
+//    cout << " NODO VIGILAR" << endl;
     /*if(NPCinfo->getRutina()!=0){
         float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
         if(aux<0.5) {return true;}
@@ -235,7 +235,7 @@ short NodoVigilar::run(int &id){
 NodoCubrirse::NodoCubrirse(){}
 NodoCubrirse::~NodoCubrirse(){}
 short NodoCubrirse::run(int &id){
-    cout << " NODO CUBRIRSE" << endl;
+//    cout << " NODO CUBRIRSE" << endl;
     return false;
 }
 
@@ -243,7 +243,7 @@ short NodoCubrirse::run(int &id){
 NodoPatrullar::NodoPatrullar(){}
 NodoPatrullar::~NodoPatrullar(){}
 short NodoPatrullar::run(int &id){
-    cout << " NODO PATRULLAR" << endl;
+//    cout << " NODO PATRULLAR" << endl;
    /* if (NPCinfo->getRutina()!=0) {
         return false;
     }
@@ -271,14 +271,14 @@ short NodoPatrullar::run(int &id){
 NodoAtaqueCuerpo::NodoAtaqueCuerpo(){}
 NodoAtaqueCuerpo::~NodoAtaqueCuerpo(){}
 short NodoAtaqueCuerpo::run(int &id){
-    cout << " NODO ATAQUE A CUEPO" << endl;
+//    cout << " NODO ATAQUE A CUEPO" << endl;
     return false;
 }
 // NODO ATAQUE DISTANCIA
 NodoAtaqueDistancia::NodoAtaqueDistancia(){}
 NodoAtaqueDistancia::~NodoAtaqueDistancia(){}
 short NodoAtaqueDistancia::run(int &id){
-    cout << " NODO ATACO DISTANCIA" << endl;
+//    cout << " NODO ATACO DISTANCIA" << endl;
     return false;
 }
 //#############################
@@ -290,7 +290,7 @@ short NodoAtaqueDistancia::run(int &id){
 Nodo_HayRuido::Nodo_HayRuido(){}
 Nodo_HayRuido::~Nodo_HayRuido(){}
 short Nodo_HayRuido::run(int &id){
-    cout << " NODO HAY RUIDO ?" << endl;
+//    cout << " NODO HAY RUIDO ?" << endl;
     return false;
 }
 
@@ -298,7 +298,7 @@ short Nodo_HayRuido::run(int &id){
 Nodo_PuedoAtacarDistancia::~Nodo_PuedoAtacarDistancia(){}
 Nodo_PuedoAtacarDistancia::Nodo_PuedoAtacarDistancia(){}
 short Nodo_PuedoAtacarDistancia::run(int &id){
-    cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
+//    cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
     return false;
 }
 
@@ -306,7 +306,7 @@ short Nodo_PuedoAtacarDistancia::run(int &id){
 Nodo_NecesitoAyuda::~Nodo_NecesitoAyuda(){}
 Nodo_NecesitoAyuda::Nodo_NecesitoAyuda(){}
 short Nodo_NecesitoAyuda::run(int &id){
-    cout << " NODO NECESITO AYUDA ?" << endl;
+//    cout << " NODO NECESITO AYUDA ?" << endl;
     return false;
 }
 
@@ -314,7 +314,7 @@ short Nodo_NecesitoAyuda::run(int &id){
 Nodo_AlarmaRota::~Nodo_AlarmaRota(){}
 Nodo_AlarmaRota::Nodo_AlarmaRota(){}
 short Nodo_AlarmaRota::run(int &id){
-    cout << " NODO ALARMA ROTA ?" << endl;
+//    cout << " NODO ALARMA ROTA ?" << endl;
    // WorldInfo->comprobadaAlarma = true;
     //if(WorldInfo->estadoAlarma) return false;    
     return true;
@@ -324,7 +324,7 @@ short Nodo_AlarmaRota::run(int &id){
 Nodo_Avisado::Nodo_Avisado(){};
 Nodo_Avisado::~Nodo_Avisado(){}
 short Nodo_Avisado::run(int &id){
-    cout << " NODO AVISADO ?" << endl;
+//    cout << " NODO AVISADO ?" << endl;
     //if(NPCinfo->getLLamada()) return true;
     return false;
 }
@@ -333,7 +333,7 @@ short Nodo_Avisado::run(int &id){
 Nodo_TengoSed::Nodo_TengoSed(){}
 Nodo_TengoSed::~Nodo_TengoSed(){}
 short Nodo_TengoSed::run(int &id){
-    cout << "NODO TENGO SED" << endl;
+//    cout << "NODO TENGO SED" << endl;
     TypeRecords sed = R_FUENTE;
     if(NPC_library::instance()->getMyBook(&id)->getThirst()>70){
         if (World_BlackBoard::instance()->existRecord(sed, &id)) {
@@ -350,7 +350,7 @@ short Nodo_TengoSed::run(int &id){
 Nodo_TengoHambre::Nodo_TengoHambre(){}
 Nodo_TengoHambre::~Nodo_TengoHambre(){}
 short Nodo_TengoHambre::run(int &id){
-    cout << "NODO TENGO HAMBRE" << endl;
+//    cout << "NODO TENGO HAMBRE" << endl;
     TypeRecords comida = R_COMIDA;
     if(NPC_library::instance()->getMyBook(&id)->getHungry()>=UMBRAL_HAMBRE){
         if (World_BlackBoard::instance()->existRecord(comida, &id)) {
@@ -367,7 +367,7 @@ short Nodo_TengoHambre::run(int &id){
 Nodo_VidaBaja::Nodo_VidaBaja(){}
 Nodo_VidaBaja::~Nodo_VidaBaja(){}
 short Nodo_VidaBaja::run(int &id){
-    cout << " NODO VIDA BAJA?" << endl;
+//    cout << " NODO VIDA BAJA?" << endl;
     if(NPC_library::instance()->getMyBook(&id)->getLife()<=UMBRAL_VIDA)
         return true;
     return false;
@@ -376,15 +376,15 @@ short Nodo_VidaBaja::run(int &id){
 Nodo_TieneAgua::Nodo_TieneAgua(){}
 Nodo_TieneAgua::~Nodo_TieneAgua(){}
 short Nodo_TieneAgua::run(int &id){
-    cout << " NODO FUENTE TIENE AGUA?" << endl;
-    
+//    cout << " NODO FUENTE TIENE AGUA?" << endl;
+	
     return true;
 }
 // NODO VER JUGADOR ?
 Nodo_VerJugador::Nodo_VerJugador(){}
 Nodo_VerJugador::~Nodo_VerJugador(){}
 short Nodo_VerJugador::run(int &id){
-    cout << " NODO VES AL JUGADOR?" << endl;
+//    cout << " NODO VES AL JUGADOR?" << endl;
     return false;
 }
 // NODO ALARMA CERCA?
@@ -392,7 +392,7 @@ Nodo_AlarmaCerca::Nodo_AlarmaCerca(){}
 Nodo_AlarmaCerca::~Nodo_AlarmaCerca(){}
 short Nodo_AlarmaCerca::run(int &id){
     
-    cout << " NODO ALARMA CERCA?" << endl;
+//    cout << " NODO ALARMA CERCA?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -402,7 +402,7 @@ short Nodo_AlarmaCerca::run(int &id){
 Nodo_HayBotiquin::Nodo_HayBotiquin(){}
 Nodo_HayBotiquin::~Nodo_HayBotiquin(){}
 short Nodo_HayBotiquin::run(int &id){
-    cout << "NODO HAY BOTIQUIN" << endl;
+//    cout << "NODO HAY BOTIQUIN" << endl;
     TypeRecords botiquin = R_BOTIQUIN;
     if (World_BlackBoard::instance()->existRecord(botiquin, &id)) {
         if (World_BlackBoard::instance()->hasAnswer(botiquin, &id)) {
@@ -417,7 +417,7 @@ short Nodo_HayBotiquin::run(int &id){
 Nodo_SuenaAlarma::Nodo_SuenaAlarma(){}
 Nodo_SuenaAlarma::~Nodo_SuenaAlarma(){}
 short Nodo_SuenaAlarma::run(int &id){
-    cout << " NODO SUENA ALARMA?" << endl;
+//    cout << " NODO SUENA ALARMA?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -427,14 +427,14 @@ short Nodo_SuenaAlarma::run(int &id){
 Nodo_EstasAsustado::Nodo_EstasAsustado(){}
 Nodo_EstasAsustado::~Nodo_EstasAsustado(){}
 short Nodo_EstasAsustado::run(int &id){
-    cout << " NODO ASUSTADO?" << endl;
+//    cout << " NODO ASUSTADO?" << endl;
     return false;
 }
 // NODO HAY PARA HABLAR ?
 Nodo_HayParaHablar::Nodo_HayParaHablar(){}
 Nodo_HayParaHablar::~Nodo_HayParaHablar(){}
 short Nodo_HayParaHablar::run(int &id){
-    cout << " NODO ALGUIEN HABLAR?" << endl;
+//    cout << " NODO ALGUIEN HABLAR?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -445,7 +445,7 @@ short Nodo_HayParaHablar::run(int &id){
 Nodo_HayAlguienCerca::Nodo_HayAlguienCerca(){}
 Nodo_HayAlguienCerca::~Nodo_HayAlguienCerca(){}
 short Nodo_HayAlguienCerca::run(int &id){
-    cout << "NODO HAY ALGUIEN CERCA " << endl;
+//    cout << "NODO HAY ALGUIEN CERCA " << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -455,7 +455,7 @@ short Nodo_HayAlguienCerca::run(int &id){
 Nodo_HayAlguienRadio::Nodo_HayAlguienRadio(){}
 Nodo_HayAlguienRadio::~Nodo_HayAlguienRadio(){}
 short Nodo_HayAlguienRadio::run(int &id){
-    cout << " NODO HAY NPCS POR RADIO?" << endl;
+//    cout << " NODO HAY NPCS POR RADIO?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -465,21 +465,21 @@ short Nodo_HayAlguienRadio::run(int &id){
 Nodo_EstasCercaJugador::Nodo_EstasCercaJugador(){}
 Nodo_EstasCercaJugador::~Nodo_EstasCercaJugador(){}
 short Nodo_EstasCercaJugador::run(int &id){
-    cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
+//    cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
     return false;
 }
 // NODO ESTAS LEJOS JUGADOR ?
 Nodo_EstasLejosJugador::Nodo_EstasLejosJugador(){}
 Nodo_EstasLejosJugador::~Nodo_EstasLejosJugador(){}
 short Nodo_EstasLejosJugador::run(int &id){
-    cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
+//    cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
     return false;
 }
 // NODO TIEMPO INACTIVO ?
 Nodo_TiempoInactivo::Nodo_TiempoInactivo(){}
 Nodo_TiempoInactivo::~Nodo_TiempoInactivo(){}
 short Nodo_TiempoInactivo::run(int &id){
-    cout << " NODO TIEMPO INACTIVO?" << endl;
+//    cout << " NODO TIEMPO INACTIVO?" << endl;
     return false;
 }
 
