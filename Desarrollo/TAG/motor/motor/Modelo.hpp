@@ -18,6 +18,7 @@ class Modelo{
 public:
 	Modelo(GLchar* ruta);
 	void Draw(Shader shader);
+	void imprimirDatos();
 	
 private:
 	std::vector<Mesh> meshes;
@@ -28,6 +29,10 @@ private:
 	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
 	std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
 	GLuint TextureFromFile(const char* ruta, std::string directorio);
+	
+	unsigned int nVertices, nNormales, nCaras, nIndices;
+	bool bTex;
+	std::string rFile, rTextura;
 };
 
 #endif /* Modelo_hpp */

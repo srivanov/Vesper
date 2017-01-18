@@ -140,8 +140,8 @@ int main(int argc, const char * argv[]) {
 	//creamos la clase Shader y compilamos los shaders
 	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
-	Modelo modelo("../Models/nanosuit/nanosuit.obj");
-	
+	Modelo modelo("../Models/cube.obj");
+	modelo.imprimirDatos();
 //	GLfloat vertices[] = {
 //		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 //		0.5f, -0.5f, -0.5f,  1.0f, 0.0f,

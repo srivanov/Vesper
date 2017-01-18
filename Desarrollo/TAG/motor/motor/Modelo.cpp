@@ -2,6 +2,7 @@
 #include "Modelo.hpp"
 
 Modelo::Modelo(GLchar* ruta){
+	nVertices=0;nNormales=0;nCaras=0;nIndices=0;bTex=false;
 	loadModel(ruta);
 }
 
@@ -24,6 +25,7 @@ void Modelo::loadModel(std::string ruta){
 		std::cout << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
 	}
 	this->directorio = ruta.substr(0, ruta.find_last_of('/'));
+	this->rFile = ruta.substr(ruta.find_last_of('/')+1, ruta.size());
 	this->processNode(scene->mRootNode, scene);
 }
 
@@ -33,6 +35,7 @@ void Modelo::processNode(aiNode *node, const aiScene *scene){
 		//cojo de la escena entera los meshes del nodo
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
 		this->meshes.push_back(this->processMesh(mesh, scene));
+		
 	}
 	
 	for (GLuint i=0; i<node->mNumChildren; i++) {
@@ -46,7 +49,7 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 	std::vector<Vertex> vertices;
 	std::vector<GLuint> indices;
 	std::vector<Texture> texturas;
-	
+	unsigned int n=0;
 	for (GLuint i=0; i<mesh->mNumVertices; i++){
 		Vertex vertex;
 		
@@ -62,6 +65,7 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 			vector.y = mesh->mNormals[i].y;
 			vector.z = mesh->mNormals[i].z;
 			vertex.Normal = vector;
+			n++;
 		}
 		
 		if(mesh->mTextureCoords[0]){
@@ -69,6 +73,8 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 			vec.x = mesh->mTextureCoords[0][i].x;
 			vec.y = mesh->mTextureCoords[0][i].y;
 			vertex.TexCoords = vec;
+			if(!bTex)
+				bTex=true;
 		}
 		else
 			vertex.TexCoords = glm::vec2(0.0f, 0.0f);
@@ -76,14 +82,20 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 		vertices.push_back(vertex);
 	}
 	
+	this->nVertices+=mesh->mNumVertices;
+	this->nNormales+=n;
+	this->nCaras+=mesh->mNumFaces;
+	
+	n=0;
 	for(GLuint i = 0; i < mesh->mNumFaces; i++){
 		aiFace face = mesh->mFaces[i];
 		for (GLuint j=0; j<face.mNumIndices; j++)
 			indices.push_back(face.mIndices[j]);
+		n+=face.mNumIndices;
 	}
+	this->nIndices+=n;
+//	if(mesh->mMaterialIndex >= 0){
 	
-	if(mesh->mMaterialIndex > 0)
-	{
 		aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
 		
 		// 1. Diffuse maps
@@ -93,7 +105,11 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 		// 2. Specular maps
 		std::vector<Texture> specularMaps = this->loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 		texturas.insert(texturas.end(), specularMaps.begin(), specularMaps.end());
-	}
+		
+		//3. Normal maps
+		std::vector<Texture> normalMaps = this->loadMaterialTextures(material, aiTextureType_NORMALS, "texture_normal");
+		texturas.insert(texturas.end(), normalMaps.begin(), normalMaps.end());
+//	}
 	return Mesh(vertices, indices, texturas);
 }
 
@@ -114,6 +130,8 @@ std::vector<Texture> Modelo::loadMaterialTextures(aiMaterial *mat, aiTextureType
 
 GLuint Modelo::TextureFromFile(const char *ruta, std::string directorio){
 	std::string filename = std::string(ruta);
+	this->rTextura = filename;
+	
 	filename = directorio + '/' + filename;
 	
 	GLuint textureID;
@@ -157,6 +175,24 @@ GLuint Modelo::TextureFromFile(const char *ruta, std::string directorio){
 	return textureID;
 }
 
+void Modelo::imprimirDatos(){
+	std::cout << "Archivo: " << this->rFile << std::endl;
+	
+	if(this->rTextura.length()==0)
+		std::cout << "Textura: Sin textura" << std::endl;
+	else
+		std::cout << "Textura: " << this->rTextura << std::endl;
+	
+	std::cout << "Vertices: " << this->nVertices << std::endl;
+	std::cout << "Normales: " << this->nNormales << std::endl;
+	std::cout << "Caras: " << this->nCaras << std::endl;
+	std::cout << "Indices: " << this->nIndices << std::endl;
+	
+	if(bTex)
+		std::cout << "Coordenadas de textura: True" << std::endl;
+	else
+		std::cout << "Coordenadas de textura: False" << std::endl;
+}
 
 
 
