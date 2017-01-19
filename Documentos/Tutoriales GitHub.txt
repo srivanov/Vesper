@@ -1,0 +1,9 @@
+Tutoriales GitHub
+
+- Deshacer commit (borrando todo lo posterior) [NO ES RECUPERABLE]
+	git reset --hard <old-commit-id>
+		. git reset --hard 230457
+		. git reset --hard HEAD~3
+	git push -f <remote-name> <branch-name>
+		. git push -f origin master
+	git push origin HEAD --force
