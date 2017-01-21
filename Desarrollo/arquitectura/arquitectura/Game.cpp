@@ -22,13 +22,14 @@ Game::Game(){
 }
 
 Game::~Game(){
-	delete entrada;
-	delete cam;
-	delete nivel;
-	balas.clear();
-    renderizador->closeWindow();
-	delete renderizador;
-	delete jugador;
+	//TO DO: revisar
+//	delete entrada;
+//	delete cam;
+//	delete nivel;
+////	balas.clear();
+//	delete renderizador;
+//	delete jugador;
+//	renderizador->closeWindow();
 //	delete pinstance;
 }
 
@@ -141,6 +142,7 @@ void Game::update(){
 	entrada->update();
 	jugador->update();
 	cam->movimientoInteligente(*jugador->getPosicion());
+	
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
@@ -186,6 +188,6 @@ void Game::cambiarArmaJugador(){
 	jugador->cambiarArma();
 }
 
-void Game::rotarConRaton(dvector3D &posRaton){
+void Game::rotarConRaton(dvector3D posRaton){
 	jugador->rotarConRaton(posRaton);
 }

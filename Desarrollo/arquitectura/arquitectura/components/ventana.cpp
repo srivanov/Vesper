@@ -49,7 +49,7 @@ void ventana::deviceDrop(){
 	device->closeDevice();
 }
 
-dvector3D* ventana::posicionRaton(dvector3D &player){
+dvector3D ventana::posicionRaton(dvector3D &player){
 	return receiver->mouseTo3D(smgr, player);
 }
 

@@ -44,3 +44,7 @@ unsigned int bombaHumo::getMunicion(){
 void bombaHumo::setMunicion(unsigned int n){
 	municion = n;
 }
+
+void bombaHumo::destructor(){
+	this->~bombaHumo();
+}

@@ -44,7 +44,7 @@ public:
     void zoom(bool z);
 	void atacarJugador();
 	void cambiarArmaJugador();
-	void rotarConRaton(dvector3D &posRaton);
+	void rotarConRaton(dvector3D posRaton);
 	
 protected:
 	Game();

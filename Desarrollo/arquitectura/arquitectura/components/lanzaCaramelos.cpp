@@ -45,3 +45,7 @@ unsigned int lanzaCaramelos::getMunicion(){
 void lanzaCaramelos::setMunicion(unsigned int n){
 	municion = n;
 }
+
+void lanzaCaramelos::destructor(){
+	this->~lanzaCaramelos();
+}

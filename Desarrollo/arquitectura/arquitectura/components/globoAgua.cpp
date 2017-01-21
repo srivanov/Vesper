@@ -45,3 +45,6 @@ void globoAgua::setMunicion(unsigned int n){
 	municion = n;
 }
 
+void globoAgua::destructor(){
+	this->~globoAgua();
+}

@@ -16,7 +16,7 @@ public:
 	virtual bool OnEvent(const SEvent& event);
 	virtual bool IsKeyDown(uint32_t keyCode) const;
 	~MyEventReceiver();
-	dvector3D* mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node);
+	dvector3D mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node);
 	bool getLeftClick();
 protected:
 	MyEventReceiver();

@@ -35,3 +35,7 @@ unsigned int martilloDeJuguete::getMunicion(){
 void martilloDeJuguete::setMunicion(unsigned int n){
 	municion = n;
 }
+
+void martilloDeJuguete::destructor(){
+	this->~martilloDeJuguete();
+}

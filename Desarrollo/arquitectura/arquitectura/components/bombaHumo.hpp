@@ -10,10 +10,11 @@ class bombaHumo : public armaInterface{
 public:
 	bombaHumo(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
 	~bombaHumo();
-	void atacar();
-	unsigned int getMunicion();
-	void setMunicion(unsigned int n);
+	void atacar() override;
+	unsigned int getMunicion() override;
+	void setMunicion(unsigned int n) override;
 	void update();
+	void destructor() override;
 	
 private:
 	unsigned int cadencia, municion, cargador;

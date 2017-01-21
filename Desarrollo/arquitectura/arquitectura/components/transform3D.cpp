@@ -34,6 +34,7 @@ void transform3D::mover(dvector3D &velocidad){
 
 float transform3D::rotarConRaton(dvector3D &rotacion){
 //	if(rotacion != NULL){
+	
     physics* go = (physics*)getFather()->findComponent("physics");
     if(go != NULL){
         return go->rotarConRaton(rotacion);

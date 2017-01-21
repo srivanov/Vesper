@@ -34,7 +34,6 @@ bala::bala(dvector3D &pos, dvector3D &dir, float vel){
 	tiempo_vida = vel;
 	muerto = false;
 	aux = NULL;
-	delete aux;
 }
 
 bala::~bala(){

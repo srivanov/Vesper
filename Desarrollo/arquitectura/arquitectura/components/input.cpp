@@ -50,7 +50,7 @@ void input::update(){
 //        }
     }
 	
-	Game::Instance()->rotarConRaton(*ventana::Instance()->posicionRaton(*Game::Instance()->getPlayer()->getPosicion()));
+	Game::Instance()->rotarConRaton(ventana::Instance()->posicionRaton(*Game::Instance()->getPlayer()->getPosicion()));
 	
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('t')){

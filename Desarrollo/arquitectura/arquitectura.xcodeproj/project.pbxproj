@@ -101,6 +101,7 @@
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
 		E98661261DF99ED30028AC64 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
+		E99A269F1E339237003D1D32 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E9A346321E04162700E6EC25 /* armaInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = armaInterface.cpp; sourceTree = "<group>"; };
 		E9A346331E04162700E6EC25 /* armaInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = armaInterface.hpp; sourceTree = "<group>"; };
 		E9A346351E0416FC00E6EC25 /* pistola.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pistola.cpp; sourceTree = "<group>"; };
@@ -248,10 +249,19 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		E99A269E1E339237003D1D32 /* prueba */ = {
+			isa = PBXGroup;
+			children = (
+				E99A269F1E339237003D1D32 /* main.cpp */,
+			);
+			path = prueba;
+			sourceTree = "<group>";
+		};
 		E9AC3A2E1DF0A9C100A91A97 = {
 			isa = PBXGroup;
 			children = (
 				E9AC3A391DF0A9C100A91A97 /* arquitectura */,
+				E99A269E1E339237003D1D32 /* prueba */,
 				E9AC3A381DF0A9C100A91A97 /* Products */,
 				E9AC3AB21DF0AAAD00A91A97 /* Frameworks */,
 			);

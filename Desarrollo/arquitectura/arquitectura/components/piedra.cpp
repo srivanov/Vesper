@@ -45,3 +45,6 @@ void piedra::setMunicion(unsigned int n){
 	municion = n;
 }
 
+void piedra::destructor(){
+	this->~piedra();
+}

@@ -21,7 +21,7 @@ public:
 	IVideoDriver* getDriver();
 	ISceneManager* getSceneManager();
 	void deviceDrop();
-	dvector3D* posicionRaton(dvector3D &player);
+	dvector3D posicionRaton(dvector3D &player);
 	
 protected:
 	ventana();

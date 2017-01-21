@@ -86,7 +86,7 @@ bool MyEventReceiver::IsKeyDown(uint32_t keyCode) const
 	return KeyIsDown[key];
 }
 
-dvector3D* MyEventReceiver::mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node)
+dvector3D MyEventReceiver::mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node)
 {
     dvector3D p(0,0,0);
 	// Create a ray through the mouse cursor.
@@ -108,7 +108,7 @@ dvector3D* MyEventReceiver::mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D
 		p.x = mousePosition.X;
 		p.y = mousePosition.Y;
 	}
-	return &p;
+	return p;
 }
 
 bool MyEventReceiver::getLeftClick(){

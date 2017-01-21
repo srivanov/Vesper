@@ -10,7 +10,8 @@ nodeMesh::~nodeMesh(){
 //	object->drop();
 //	texture->drop();
 	object->remove();
-	delete texture;
+	object = NULL;
+//	delete texture;
 }
 
 bool nodeMesh::_setMaterialTexture(ITexture* tex){

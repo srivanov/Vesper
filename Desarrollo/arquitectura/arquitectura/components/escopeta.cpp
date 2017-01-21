@@ -44,3 +44,7 @@ unsigned int escopeta::getMunicion(){
 void escopeta::setMunicion(unsigned int n){
 	municion = n;
 }
+
+void escopeta::destructor(){
+	this->~escopeta();
+}

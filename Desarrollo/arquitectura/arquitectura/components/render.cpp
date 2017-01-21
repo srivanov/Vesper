@@ -71,7 +71,7 @@ void render::dropNode(){
 }
 
 void render::deleteNode(){
-	nodo->~nodeMesh();
+	delete nodo;
 	nodo = NULL;
 }
 
