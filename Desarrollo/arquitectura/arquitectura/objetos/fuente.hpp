@@ -20,7 +20,6 @@ public:
 private:
     int ID;
     bool rota, NPCKnows;
-    dvector3D * posi;
 };
 
 #endif /* fuente_hpp */

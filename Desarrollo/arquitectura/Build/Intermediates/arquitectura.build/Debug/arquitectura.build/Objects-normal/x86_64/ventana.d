@@ -1,185 +1,186 @@
 dependencies: \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/arquitectura/components/ventana.cpp \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/arquitectura/components/ventana.hpp \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrlicht.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IrrCompileConfig.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/aabbox3d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrMath.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/plane3d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/vector3d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/line3d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/CDynamicMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IDynamicMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IReferenceCounted.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SMaterial.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SColor.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/matrix4.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/vector2d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/dimension2d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/rect.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/position2d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrString.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrAllocator.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrArray.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/heapsort.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EMaterialTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EMaterialFlags.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SMaterialLayer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/S3DVertex.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SVertexIndex.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EHardwareBufferFlags.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EPrimitiveTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IVertexBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IIndexBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/CVertexBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/CIndexBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/CMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/coreutil.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/path.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ECullingTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EDebugSceneTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EDriverFeatures.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EDriverTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EGUIAlignment.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EGUIElementTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EMeshWriterEnums.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EMessageBoxFlags.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ESceneNodeAnimatorTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ESceneNodeTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ETerrainElements.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/fast_atof.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMesh.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMesh.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMeshMD2.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMeshMD3.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IQ3Shader.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IFileSystem.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IXMLReader.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrXML.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IFileArchive.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IReadFile.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IFileList.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IVideoDriver.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ITexture.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IImage.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/triangle3d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SExposedVideoData.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/quaternion.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrpack.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrunpack.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMeshSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IAttributeExchangingObject.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimator.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IEventReceiver.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ILogger.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/Keycodes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ITriangleSelector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrList.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IAttributes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/line2d.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EAttributes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IBoneSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IBillboardSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IBillboardTextSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ICameraSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ICursorControl.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IDummyTransformationSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGeometryCreator.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGPUProgrammingServices.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EShaderTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIButton.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIElement.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUICheckBox.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIColorSelectDialog.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIComboBox.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIContextMenu.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIEditBox.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIElementFactory.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIEnvironment.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUISkin.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIFileOpenDialog.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIFont.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIFontBitmap.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIImage.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIInOutFader.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIListBox.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIMeshViewer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIScrollBar.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUISpinBox.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUISpriteBank.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIStaticText.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUITabControl.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUITable.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIToolbar.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIWindow.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUITreeView.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IGUIImageList.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IImageLoader.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IImageWriter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ILightSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SLight.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMaterialRenderer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMaterialRendererServices.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMeshCache.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMeshLoader.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMeshManipulator.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SVertexManipulator.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMeshSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMeshWriter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IColladaMeshWriter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IMetaTriangleSelector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IOSOperator.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleSystemSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SParticle.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleBoxEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleCylinderEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleMeshEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleRingEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleSphereEmitter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleAttractionAffector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleAffector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleFadeOutAffector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleGravityAffector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IParticleRotationAffector.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IQ3LevelMesh.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IRandomizer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IrrlichtDevice.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/EDeviceTypes.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IVideoModeList.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ITimer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/irrMap.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneCollisionManager.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneLoader.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneManager.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SceneParameters.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISkinnedMesh.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SSkinMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorCameraFPS.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorCameraMaya.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorCollisionResponse.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorFactory.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeFactory.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ISceneUserDataSerializer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IShaderConstantSetCallBack.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IShadowVolumeSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ITerrainSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ITextSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IVolumeLightSceneNode.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IWriteFile.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/IXMLWriter.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/ILightManager.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SAnimatedMesh.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SIrrCreationParameters.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SKeyMap.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SMesh.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SMeshBufferLightMap.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SMeshBufferTangents.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SSharedMeshBuffer.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/includes/irrlicht/SViewFrustum.h \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/arquitectura/components/../MyEventReceiver.hpp
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/ventana.cpp \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/ventana.hpp \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrlicht.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IrrCompileConfig.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/aabbox3d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrMath.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/plane3d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/vector3d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/line3d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/CDynamicMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IDynamicMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IReferenceCounted.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SMaterial.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SColor.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/matrix4.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/vector2d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/dimension2d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/rect.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/position2d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrString.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrAllocator.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrArray.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/heapsort.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EMaterialTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EMaterialFlags.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SMaterialLayer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/S3DVertex.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SVertexIndex.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EHardwareBufferFlags.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EPrimitiveTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IVertexBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IIndexBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/CVertexBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/CIndexBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/CMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/coreutil.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/path.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ECullingTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EDebugSceneTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EDriverFeatures.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EDriverTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EGUIAlignment.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EGUIElementTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EMeshWriterEnums.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EMessageBoxFlags.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ESceneNodeAnimatorTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ESceneNodeTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ETerrainElements.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/fast_atof.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMesh.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMesh.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMeshMD2.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMeshMD3.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IQ3Shader.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IFileSystem.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IXMLReader.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrXML.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IFileArchive.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IReadFile.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IFileList.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IVideoDriver.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ITexture.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IImage.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/triangle3d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SExposedVideoData.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/quaternion.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrpack.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrunpack.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IAnimatedMeshSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IAttributeExchangingObject.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimator.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IEventReceiver.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ILogger.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/Keycodes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ITriangleSelector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrList.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IAttributes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/line2d.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EAttributes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IBoneSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IBillboardSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IBillboardTextSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ICameraSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ICursorControl.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IDummyTransformationSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGeometryCreator.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGPUProgrammingServices.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EShaderTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIButton.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIElement.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUICheckBox.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIColorSelectDialog.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIComboBox.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIContextMenu.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIEditBox.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIElementFactory.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIEnvironment.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUISkin.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIFileOpenDialog.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIFont.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIFontBitmap.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIImage.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIInOutFader.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIListBox.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIMeshViewer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIScrollBar.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUISpinBox.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUISpriteBank.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIStaticText.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUITabControl.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUITable.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIToolbar.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIWindow.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUITreeView.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IGUIImageList.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IImageLoader.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IImageWriter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ILightSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SLight.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMaterialRenderer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMaterialRendererServices.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMeshCache.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMeshLoader.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMeshManipulator.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SVertexManipulator.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMeshSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMeshWriter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IColladaMeshWriter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IMetaTriangleSelector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IOSOperator.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleSystemSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleAnimatedMeshSceneNodeEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SParticle.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleBoxEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleCylinderEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleMeshEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleRingEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleSphereEmitter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleAttractionAffector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleAffector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleFadeOutAffector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleGravityAffector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IParticleRotationAffector.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IQ3LevelMesh.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IRandomizer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IrrlichtDevice.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/EDeviceTypes.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IVideoModeList.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ITimer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/irrMap.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneCollisionManager.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneLoader.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneManager.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SceneParameters.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISkinnedMesh.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SSkinMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorCameraFPS.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorCameraMaya.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorCollisionResponse.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeAnimatorFactory.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneNodeFactory.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ISceneUserDataSerializer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IShaderConstantSetCallBack.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IShadowVolumeSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ITerrainSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ITextSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IVolumeLightSceneNode.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IWriteFile.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/IXMLWriter.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/ILightManager.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SAnimatedMesh.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SIrrCreationParameters.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SKeyMap.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SMesh.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SMeshBufferLightMap.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SMeshBufferTangents.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SSharedMeshBuffer.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/includes/irrlicht/SViewFrustum.h \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/../MyEventReceiver.hpp \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/../Dvector.hpp

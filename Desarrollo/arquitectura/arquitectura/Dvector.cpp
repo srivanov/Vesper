@@ -55,6 +55,11 @@ dvector2D::dvector2D(const dvector2D &p) {
 	this->y = p.y;
 }
 
+dvector2D::dvector2D(float _x, float _y){
+    this->x = _x;
+    this->y = _y;
+}
+
 dvector2D::~dvector2D() {
 }
 

@@ -15,10 +15,10 @@ ventana::ventana(){
 
 ventana::~ventana(){
 	printf("DELETE ventana\n");
-	delete receiver;
-	delete smgr;
-	delete driver;
-	delete device;
+//	delete receiver;
+//	delete smgr;
+//	delete driver;
+//	delete device;
 	delete pinstance;
 }
 
@@ -49,7 +49,7 @@ void ventana::deviceDrop(){
 	device->closeDevice();
 }
 
-float* ventana::posicionRaton(float* player){
+dvector3D* ventana::posicionRaton(dvector3D &player){
 	return receiver->mouseTo3D(smgr, player);
 }
 

@@ -29,6 +29,7 @@
 #include "../components/render.hpp"
 #include "../components/salud.hpp"
 #include "../components/sed.hpp"
+#include "../Dvector.hpp"
 
 using namespace std;
 
@@ -50,15 +51,15 @@ public:
     bool getRenderizable();
     void setRenderizable(bool r);
 	
-	float* getPosicion();
-    void setPosicion(float* p3D);
+	dvector3D* getPosicion();
+    void setPosicion(dvector3D &p3D);
 	void setRotacion(float rot);
-	void rotarConRaton(float* posRaton);
-	float* getRotacion();
-	float* getDirDisparo();
-	void setDirDisparo(float* dir);
+	void rotarConRaton(dvector3D &posRaton);
+	dvector3D* getRotacion();
+	dvector3D* getDirDisparo();
+	void setDirDisparo(dvector3D &dir);
 	
-	void mover(float* vel);
+	void mover(dvector3D &vel);
     void render();
     virtual void update();
 	
@@ -67,9 +68,7 @@ public:
     
 protected:
     bool renderizable;
-    float* posicion;
-	float* rotacion;
-	float* anguloDisparo;
+    dvector3D posicion, rotacion, anguloDisparo;
 private:
     std::map<char*, component*> components;
 };

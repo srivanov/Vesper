@@ -45,6 +45,3 @@ void pistola::setMunicion(unsigned int n){
 	municion = n;
 }
 
-void pistola::destructor(){
-	this->~pistola();
-}

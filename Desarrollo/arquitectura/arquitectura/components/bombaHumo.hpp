@@ -13,7 +13,6 @@ public:
 	void atacar();
 	unsigned int getMunicion();
 	void setMunicion(unsigned int n);
-	void destructor();
 	void update();
 	
 private:

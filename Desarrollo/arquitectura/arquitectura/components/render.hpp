@@ -7,7 +7,7 @@
 #include "ventana.hpp"
 #include "../nodeMesh.hpp"
 #include "../Fps.hpp"
-//#include <OpenGL/gl.h>
+#include "../Dvector.hpp"
 
 class escenarios;
 class render : public component {
@@ -20,18 +20,18 @@ public:
 	bool run();
     void setNode(char* filename);
 	void setNodeTexture(char* filename);
-	bool setNodePosition(float* pos);
-	bool setNodeRotation(float* rot);
+	bool setNodePosition(dvector3D &pos);
+	bool setNodeRotation(dvector3D &rot);
     void dropNode();
 	void deleteNode();
 	void setTexto();
     void dibujar();
-	void addCamera(float* p, float* l);
+	void addCamera(dvector3D &p, dvector3D &l);
 	void closeWindow();
 	void dibujarMapa();
-	void setCamPos(float* pos);
-	float* getCamPos();
-	void setCamTarget(float* pos);
+	void setCamPos(dvector3D &pos);
+	dvector3D* getCamPos();
+	void setCamTarget(dvector3D &pos);
 	
 private:
 	nodeMesh* nodo;

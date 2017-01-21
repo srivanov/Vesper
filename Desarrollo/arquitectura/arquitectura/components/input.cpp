@@ -16,22 +16,23 @@ input::~input(){
 }
 
 void input::update(){
-    float* velocidad = new float[3]{0,0,0};
+    dvector3D velocidad;
+    
     if(MyEventReceiver::Instance()->IsKeyDown('W')){
-        velocidad[1] =  1;
+        velocidad.y =  1;
     }
     if(MyEventReceiver::Instance()->IsKeyDown('S')){
-        velocidad[1] = -1;
+        velocidad.y = -1;
     }
     if(MyEventReceiver::Instance()->IsKeyDown('A')){
-        velocidad[0] = -1;
+        velocidad.x = -1;
     }
     if(MyEventReceiver::Instance()->IsKeyDown('D')){
-        velocidad[0] =  1;
+        velocidad.x =  1;
     }
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('s')){
-		velocidad[0]*=2; velocidad[1]*=2;
+		velocidad.x*=2; velocidad.y*=2;
 	}
 	
 //        com->mover(velocidad);
@@ -49,7 +50,7 @@ void input::update(){
 //        }
     }
 	
-	Game::Instance()->rotarConRaton(ventana::Instance()->posicionRaton(Game::Instance()->getPlayer()->getPosicion()));
+	Game::Instance()->rotarConRaton(*ventana::Instance()->posicionRaton(*Game::Instance()->getPlayer()->getPosicion()));
 	
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('t')){

@@ -6,6 +6,7 @@
 #include "GameObject.hpp"
 #include "../components/armas.hpp"
 #include "../components/pistola.hpp"
+#include "../Dvector.hpp"
 
 class player : public GameObject{
 public:

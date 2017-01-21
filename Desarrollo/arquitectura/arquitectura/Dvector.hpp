@@ -19,7 +19,8 @@ struct dvector3D {
 
 struct dvector2D {
 	float x, y;
-	dvector2D();
+    dvector2D() : x(0), y(0){};
+    dvector2D(float _x, float _y);
 	dvector2D(const dvector2D &p);
 	virtual ~dvector2D();
 	dvector2D& operator=(const dvector2D &p);

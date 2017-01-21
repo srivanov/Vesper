@@ -23,12 +23,15 @@ enemigos::enemigos(int& ID){
 	}
 	setRenderizable(true);
 	physics* fisica = (physics*)findComponent("physics");
-	fisica->crearBodyDinamico(new float[2]{1,1}, new float[2]{0,0});
+    
+    dvector3D dim(1,1,1);
+    dvector3D pos(0,0,0);
+    
+	fisica->crearBodyDinamico(dim, pos);
 	
 	aux = NULL;
 	delete aux;
     k = 0;
-    posi = new dvector3D();
 	salud = 100;
 	srand(time(NULL));
 	sed = rand()%20 + 1;
@@ -41,7 +44,6 @@ enemigos::~enemigos(){
 	if(NPC_library::instance()->ExistMyBook(&ID))
 		NPC_library::instance()->RemoveBook(&ID);
     delete STD;
-    delete posi;
 }
 
 void enemigos::update(){
@@ -52,18 +54,14 @@ void enemigos::update(){
         k = 0;
     }
     k++;
-	posi->x = getPosicion()[0]; posi->y = getPosicion()[1]; posi->z = getPosicion()[2];
 	
 	if(!NPC_library::instance()->ExistMyBook(&ID))
-		NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, posi);
+		NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, getPosicion());
 	else
-		NPC_library::instance()->updateMyBook(&ID, salud, hambre, sed, posi);
+		NPC_library::instance()->updateMyBook(&ID, salud, hambre, sed, getPosicion());
     STD->run(ID);
     if(NPC_library::instance()->getMyBook(&ID)->getVMovement()!=NULL){
-    float x = NPC_library::instance()->getMyBook(&ID)->getVMovement()->x;
-    float y = NPC_library::instance()->getMyBook(&ID)->getVMovement()->y;
-    float z = NPC_library::instance()->getMyBook(&ID)->getVMovement()->z;
-        this->mover(new float[3]{x,y,z});
+        this->mover(*NPC_library::instance()->getMyBook(&ID)->getVMovement());
     }
     
 	

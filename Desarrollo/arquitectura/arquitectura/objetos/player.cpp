@@ -32,7 +32,11 @@ player::player(){
 	}
 	setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
-    fisica->crearBodyDinamico(new float[2]{1,1}, new float[2]{0,0});
+    
+    dvector3D dim(1,1,1);
+    dvector3D pos(0,0,0);
+    
+    fisica->crearBodyDinamico(dim, pos);
 	aux = NULL;
 	delete aux;
 }

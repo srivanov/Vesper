@@ -1,10 +1,3 @@
-//
-//  nodeMesh.cpp
-//  mapa
-//
-//  Created by Julia Martínez Valera on 17/11/16.
-//  Copyright © 2016 Julia Martínez Valera. All rights reserved.
-//
 
 #include "nodeMesh.hpp"
 
@@ -27,29 +20,28 @@ bool nodeMesh::_setMaterialTexture(ITexture* tex){
 	return true;
 }
 
-void nodeMesh::_setNodePosition(float* posicion){
-	if(posicion != NULL)
-		object->setPosition(vector3df(posicion[0],posicion[1],posicion[2]));
+void nodeMesh::_setNodePosition(dvector3D &posicion){
+//	if(posicion != NULL)
+    object->setPosition(vector3df(posicion.x,posicion.y,posicion.z));
 }
 
-void nodeMesh::_setNodeRotation(float* rotacion){
-	if(rotacion != NULL){
-		object->setRotation(vector3df(rotacion[0],rotacion[1],rotacion[2]));
-	}
+void nodeMesh::_setNodeRotation(dvector3D &rotacion){
+//	if(rotacion != NULL)
+    object->setRotation(vector3df(rotacion.x,rotacion.y,rotacion.z));
 }
 
 void nodeMesh::_setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger){
 	object->setMaterialFlag(flag, trigger);
 }
 
-float* nodeMesh::_getNodePosition(){
-	vector3df p =  object->getAbsolutePosition();
-	return new float[3]{p.X, p.Y, p.Z};
+dvector3D* nodeMesh::_getNodePosition(){
+	dvector3D p(object->getAbsolutePosition().X, object->getAbsolutePosition().Y, object->getAbsolutePosition().Z);
+	return &p;
 }
 
-float* nodeMesh::_getNodeRotation(){
-	vector3df r =  object->getRotation();
-	return new float[3]{r.X, r.Y, r.Z};
+dvector3D* nodeMesh::_getNodeRotation(){
+	dvector3D r(object->getRotation().X, object->getRotation().Y, object->getRotation().Z);
+	return &r;
 }
 
 ISceneNode* nodeMesh::_getNode(){

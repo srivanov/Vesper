@@ -16,7 +16,7 @@ render::~render(){
 
 void render::update(){
 	if (nodo != NULL) {
-		nodo->_setNodePosition(getFather()->getPosicion());
+		nodo->_setNodePosition(*getFather()->getPosicion());
 	}
 }
 
@@ -38,7 +38,7 @@ void render::setNode(char *filename){
 		else
 			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
 		aux = NULL;
-		nodo->_setNodePosition(getFather()->getPosicion());
+		nodo->_setNodePosition(*getFather()->getPosicion());
 //		printf("cargado!\n");
     }
 }
@@ -50,7 +50,7 @@ void render::setNodeTexture(char* filename){
 	}
 }
 
-bool render::setNodePosition(float* pos){
+bool render::setNodePosition(dvector3D &pos){
 	if(nodo != NULL){
 		nodo->_setNodePosition(pos);
 		return true;
@@ -58,7 +58,7 @@ bool render::setNodePosition(float* pos){
 	return false;
 }
 
-bool render::setNodeRotation(float* rot){
+bool render::setNodeRotation(dvector3D &rot){
 	if(nodo != NULL){
 		nodo->_setNodeRotation(rot);
 		return true;
@@ -89,8 +89,8 @@ void render::dibujar(){
     ventana::Instance()->getDriver()->endScene();
 }
 
-void render::addCamera(float* p, float* l){
-	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p[0], p[1], p[2]), vector3df(l[0], l[1], l[2]));
+void render::addCamera(dvector3D &p, dvector3D &l){
+	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p.x, p.y, p.z), vector3df(l.x, l.y, l.z));
     camara->setNearValue(1);
     camara->setFarValue(20);
 }
@@ -155,18 +155,15 @@ void render::dibujarMapa(){
 
 }
 
-void render::setCamPos(float* pos){
-	camara->setPosition(vector3df(pos[0], pos[1], pos[2]));
+void render::setCamPos(dvector3D &pos){
+	camara->setPosition(vector3df(pos.x, pos.y, pos.z));
 }
 
-float* render::getCamPos(){
-	float* p = new float[3];
-	p[0] = camara->getPosition().X;
-	p[1] = camara->getPosition().Y;
-	p[2] = camara->getPosition().Z;
-	return p;
+dvector3D* render::getCamPos(){
+    dvector3D getcam(camara->getPosition().X, camara->getPosition().Y, camara->getPosition().Z);
+    return &getcam;
 }
 
-void render::setCamTarget(float *pos){
-	camara->setTarget(vector3df(pos[0], pos[1], pos[2]));
+void render::setCamTarget(dvector3D &pos){
+	camara->setTarget(vector3df(pos.x, pos.y, pos.z));
 }

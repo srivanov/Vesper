@@ -1,7 +1,7 @@
 
 #include "bala.hpp"
 
-bala::bala(float* pos, float* dir, float vel){
+bala::bala(dvector3D &pos, dvector3D &dir, float vel){
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);
     aux = new physics();
@@ -16,11 +16,19 @@ bala::bala(float* pos, float* dir, float vel){
     }
     setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
-	fisica->crearBodyDinamico(new float[2]{(float)(0.1),(float)(0.1)}, new float[2]{pos[0]+dir[0]*1.5f, pos[1]+dir[1]*1.5f});
+    
+    dvector3D dim(0.1, 0.1, 0);
+
+    pos.x += dir.x*1.5f;
+    pos.y += dir.y*1.5f;
+    pos.z = 0;
+    
+	fisica->crearBodyDinamico(dim, pos);
 	
 	velocidad = 3.0f;
-	direccion[0] = dir[0] * velocidad;
-	direccion[1] = dir[1] * velocidad;
+    
+	direccion.x = dir.x * velocidad;
+	direccion.y = dir.y * velocidad;
 //	printf("%2.f %.2f\n", dir[0], dir[1]);
 	intervalo = clock();
 	tiempo_vida = vel;
@@ -38,8 +46,8 @@ bala::~bala(){
 
 }
 
-float* bala::getDireccion(){
-	return direccion;
+dvector3D* bala::getDireccion(){
+	return &direccion;
 }
 
 void bala::update(){

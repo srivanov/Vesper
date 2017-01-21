@@ -38,9 +38,9 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //	renderizador->setTexto();
     jugador->addNodo("3d/sphere.3ds");
 	jugador->setTexture("3d/texture.png");
-	jugador->setPosicion(new float[3]{10, 10, 0});
-	float* p = new float[3]{10, 10, 0};
-	cam->addCamara(new float[3]{p[0], p[1]-5, p[2]-10}, jugador->getPosicion());
+    dvector3D jpos(10,10,0);
+	jugador->setPosicion(jpos);
+	cam->addCamara(jpos, *jugador->getPosicion());
 	
 	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();
@@ -52,7 +52,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	contador_npc=0;
 	enemigos* npc = new enemigos(contador_npc);
 	contador_npc++;
-	npc->setPosicion(new float[3]{10, 15, 0});
+    dvector3D nodepos(10,15,0);
+	npc->setPosicion(nodepos);
 	npc->addNodo("");
 	npc->setTexture("3d/enemy.jpg");
 	npcs.insert(npcs.end(), npc);
@@ -60,15 +61,19 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
     alarma * alarmita = new alarma(contador_npc);
     alarmita->addNodo("3d/alarmita.3ds");
     alarmita->setTexture("3d/alarmita.jpg");
-    alarmita->setPosicion(new float[3]{5, 3, 0});
+    dvector3D posal(5,3,0);
+    alarmita->setPosicion(posal);
     
     contador_npc++;
     alarmas.insert(alarmas.end(), alarmita);
 
+    //TO DO: descomentar codigo de abajo
+    
 //    fuente * fuentezita = new fuente(contador_npc);
 //    fuentezita->addNodo("");
 //    fuentezita->setTexture("3d/alarmita.jpg");
-//    fuentezita->setPosicion(new float[3]{0, 10, 0});
+//    dvector3D posf(0,10,0);
+//    fuentezita->setPosicion(posf);
 //    
 //    contador_npc++;
 //    fuentes.insert(fuentes.end(), fuentezita);
@@ -76,7 +81,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //    comida * comidita = new comida(contador_npc);
 //    comidita->addNodo("");
 //    comidita->setTexture("3d/alarmita.jpg");
-//    comidita->setPosicion(new float[3]{0, 0, 0});
+//    dvector3D poscom(0,0,0);
+//    comidita->setPosicion(poscom);
 //    
 //    contador_npc++;
 //    comidas.insert(comidas.end(), comidita);
@@ -84,7 +90,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //    botiquin * botiqueen = new botiquin(contador_npc);
 //    botiqueen->addNodo("");
 //    botiqueen->setTexture("3d/alarmita.jpg");
-//    botiqueen->setPosicion(new float[3]{10, 0, 0});
+//    dvector3D posbot(10,0,0);
+//    botiqueen->setPosicion(posbot);
 //    
 //    contador_npc++;
 //    botiquines.insert(botiquines.end(), botiqueen);
@@ -124,7 +131,7 @@ player* Game::getPlayer(){
 }
 
 bala* Game::insertBala(float vel){
-    bala_aux = new bala(jugador->getPosicion(), jugador->getDirDisparo(), vel);
+    bala_aux = new bala(*jugador->getPosicion(), *jugador->getDirDisparo(), vel);
     bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
     return bala_aux;
@@ -133,11 +140,11 @@ bala* Game::insertBala(float vel){
 void Game::update(){
 	entrada->update();
 	jugador->update();
-	cam->movimientoInteligente(jugador->getPosicion());
+	cam->movimientoInteligente(*jugador->getPosicion());
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
-        bala_aux->mover(bala_aux->getDireccion());
+        bala_aux->mover(*bala_aux->getDireccion());
 		bala_aux->update();
 		if(bala_aux->muero()){
 			delete bala_aux;
@@ -179,6 +186,6 @@ void Game::cambiarArmaJugador(){
 	jugador->cambiarArma();
 }
 
-void Game::rotarConRaton(float* posRaton){
+void Game::rotarConRaton(dvector3D &posRaton){
 	jugador->rotarConRaton(posRaton);
 }

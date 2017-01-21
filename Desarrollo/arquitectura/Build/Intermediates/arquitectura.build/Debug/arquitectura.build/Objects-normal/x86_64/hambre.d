@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/arquitectura/components/hambre.cpp \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/arquitectura/components/hambre.hpp \
-  /Users/JuliaMartinezValera/GitHub/Vesper2/Desarrollo/arquitectura/arquitectura/components/component.hpp
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/hambre.cpp \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/hambre.hpp \
+  /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO\ -\ ABP/github/Vesper/Desarrollo/arquitectura/arquitectura/components/component.hpp

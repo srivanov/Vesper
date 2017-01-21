@@ -26,6 +26,7 @@
 #include "BlackBoards.hpp"
 #include "trigger_system.hpp"
 #include <vector>
+#include "Dvector.hpp"
 
 class Game {
 public:
@@ -43,7 +44,7 @@ public:
     void zoom(bool z);
 	void atacarJugador();
 	void cambiarArmaJugador();
-	void rotarConRaton(float* posRaton);
+	void rotarConRaton(dvector3D &posRaton);
 	
 protected:
 	Game();

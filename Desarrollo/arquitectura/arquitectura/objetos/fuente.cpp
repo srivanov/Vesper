@@ -19,6 +19,7 @@ fuente::fuente(int & ID){
     aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
     
+    //TO DO: anyadir componente de fisicas
     
     std::map<char*,component*>::iterator iter = this->getIteradorBegin();
     while(iter != this->getIteradorEnd()){
@@ -26,18 +27,15 @@ fuente::fuente(int & ID){
         iter++;
     }
     setRenderizable(true);
-    
-    
-    posi = new dvector3D();
+ 
     aux = NULL;
     delete aux;
 }
 fuente::~fuente(){
-    delete posi;
+
 }
 void fuente::update(){
     TypeRecords fuente = R_FUENTE;
-    posi->x = getPosicion()[0]; posi->y = getPosicion()[1]; posi->z = getPosicion()[2];
     while(World_BlackBoard::instance()->hasAnswer(fuente, &ID)){
         if(World_BlackBoard::instance()->getAnswer(fuente, &ID)->_idResponse<0){
             rota = true;
@@ -45,6 +43,6 @@ void fuente::update(){
         World_BlackBoard::instance()->removeRecord(fuente, &ID);
     }
     if(World_BlackBoard::instance()->countType(fuente)>0 && !NPCKnows){
-        World_BlackBoard::instance()->AnswerRecord(fuente, &ID, posi);
+        World_BlackBoard::instance()->AnswerRecord(fuente, &ID, getPosicion());
     }
 }

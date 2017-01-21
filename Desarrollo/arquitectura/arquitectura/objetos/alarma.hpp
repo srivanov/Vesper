@@ -5,6 +5,7 @@
 #include <time.h>
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "../Dvector.hpp"
 
 class alarma : public GameObject{
 public:
@@ -17,7 +18,6 @@ private:
     bool activado;
     bool rota;
     bool NPCKnows;
-    dvector3D * posi;
     time_t _time;
 };
 #endif /* alarma_hpp */

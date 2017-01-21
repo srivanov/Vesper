@@ -6,6 +6,7 @@
 #include "component.hpp"
 #include "../MyEventReceiver.hpp"
 #include <time.h>
+#include "../Dvector.hpp"
 
 
 class input : public component {

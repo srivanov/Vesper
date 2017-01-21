@@ -44,7 +44,3 @@ unsigned int chicle::getMunicion(){
 void chicle::setMunicion(unsigned int n){
 	municion = n;
 }
-
-void chicle::destructor(){
-	this->~chicle();
-}

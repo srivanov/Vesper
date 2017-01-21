@@ -322,9 +322,9 @@
 				63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */,
 				63B81E2E1E26C2C5006BD3AB /* botiquin.hpp */,
 				63B81E301E26CFE6006BD3AB /* comida.cpp */,
+				63B81E311E26CFE6006BD3AB /* comida.hpp */,
 				63B81E331E26D288006BD3AB /* fuente.cpp */,
 				63B81E341E26D288006BD3AB /* fuente.hpp */,
-				63B81E311E26CFE6006BD3AB /* comida.hpp */,
 			);
 			path = objetos;
 			sourceTree = "<group>";

@@ -22,7 +22,6 @@ private:
     int ID;
     bool consumido;
     time_t _time;
-    dvector3D * posi;
 };
 
 #endif /* comida_hpp */

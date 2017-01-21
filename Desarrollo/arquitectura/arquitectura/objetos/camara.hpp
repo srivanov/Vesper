@@ -5,13 +5,14 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include "../Fps.hpp"
+#include "../Dvector.hpp"
 
 class camara : public GameObject {
 public:
     camara();
     ~camara();
-	void addCamara(float* p, float* l);
-	void movimientoInteligente(float* posPlayer);
+	void addCamara(dvector3D &p, dvector3D &l);
+	void movimientoInteligente(dvector3D &posPlayer);
     void setCamSpeed(float vel);
     void setZoom(bool z);
     bool getZoom();

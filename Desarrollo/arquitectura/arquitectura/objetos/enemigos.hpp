@@ -7,6 +7,7 @@
 #include "estados.hpp"
 #include <time.h>
 #include <stdlib.h>
+#include "../Dvector.hpp"
 
 class enemigos : public GameObject{
 public:
@@ -16,7 +17,6 @@ public:
 private:
     int k ; // GUARRRADA!!!
     estados * STD;
-    dvector3D * posi;
 	int ID;
 	unsigned int salud, sed, hambre;
     unsigned int estado;

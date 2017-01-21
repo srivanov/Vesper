@@ -30,11 +30,13 @@ armas::armas(){
 	seleccionada = interface.begin();
 }
 
+//TO DO: revisar destructor y corregir
 armas::~armas(){
 	aux = NULL;
+    delete aux;
 	seleccionada = interface.begin();
 	while(seleccionada != interface.end()){
-		(*seleccionada)->destructor();
+        delete (*seleccionada);
 	}
 	interface.clear();
 }

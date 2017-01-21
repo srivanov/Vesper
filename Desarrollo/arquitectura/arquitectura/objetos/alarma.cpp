@@ -17,7 +17,6 @@ alarma::alarma(int &ID){
 	aux = new physics();
 	this->insertComponent((char*)"physics", aux);
     
-    
     std::map<char*,component*>::iterator iter = this->getIteradorBegin();
     while(iter != this->getIteradorEnd()){
         iter->second->setFather(this);
@@ -26,17 +25,20 @@ alarma::alarma(int &ID){
     setRenderizable(true);
 	
 	physics* fisica = (physics*)findComponent("physics");
-	fisica->crearBodyEstatico(new float[2]{1,1}, new float[2]{0,0}, 90.f);
+    
+    dvector3D dim(1,1,1);
+    dvector3D pos(0,0,0);
+    
+	fisica->crearBodyEstatico(dim, pos, 90.f);
 	
     _time = 0;
-    posi = new dvector3D();
     NPCKnows = false;
     aux = NULL;
     delete aux;
 }
 
 alarma::~alarma(){
-    delete posi;
+    
 }
 void alarma::gestorTiempo(){
     if(time(NULL)>_time){
@@ -46,7 +48,6 @@ void alarma::gestorTiempo(){
 void alarma::update(){
 	GameObject::update();
 //    TypeRecords alarma = R_ALARMA;
-//    posi->x = getPosicion()[0]; posi->y = getPosicion()[1]; posi->z = getPosicion()[2];
 //    gestorTiempo();
 //    if(World_BlackBoard::instance()->hasAnswer(alarma, &ID)){
 //        if (World_BlackBoard::instance()->getAnswer(alarma, &ID)->_idResponse<0) {rota=true;}
@@ -54,11 +55,11 @@ void alarma::update(){
 //        else if(!activado){
 //            World_BlackBoard::instance()->removeRecord(alarma, &ID);
 //            _time = time(NULL)+TIEMPOALARMA;
-//            trigger_system::_instance()->add_trigger(E_alarma, &ID, posi, RADIOALARMA, TIEMPOALARMA);
+//            trigger_system::_instance()->add_trigger(E_alarma, &ID, getPosicion(), RADIOALARMA, TIEMPOALARMA);
 //            this->activado = true;
 //        }
 //    }
 //    else if(World_BlackBoard::instance()->countType(alarma)>0 && !NPCKnows){
-//        World_BlackBoard::instance()->AnswerRecord(alarma, &ID, posi);
+//        World_BlackBoard::instance()->AnswerRecord(alarma, &ID, getPosicion());
 //    }
 }

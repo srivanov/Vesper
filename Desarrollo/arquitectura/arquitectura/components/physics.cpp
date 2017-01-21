@@ -24,14 +24,14 @@ physics::~physics(){
 	//delete angulo;
 }
 
-void physics::crearBodyDinamico(float* dimension, float* posicion){
+void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
     //body definition
     b2BodyDef myBodyDef;
     myBodyDef.type = b2_dynamicBody;
     
     //shape definition
     b2CircleShape circleShape;
-	circleShape.m_radius = dimension[0]/2.0f;
+	circleShape.m_radius = dimension.x/2.0f;
 //    polygonShape.SetAsBox(dimension[0], dimension[1]); //a 2x2 rectangle
 	
     //fixture definition
@@ -40,46 +40,43 @@ void physics::crearBodyDinamico(float* dimension, float* posicion){
     myFixtureDef.density = 1;
 	
     //create dynamic body
-    myBodyDef.position.Set(posicion[0], posicion[1]);
+    myBodyDef.position.Set(posicion.x, posicion.y);
     body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
     body->CreateFixture(&myFixtureDef);
 	
 	this->rotacion = 0;
-	velocidad[0] = 0;
-	velocidad[1] = 0;
+	vel.x = 0;
+	vel.y = 0;
 }
 
-void physics::crearBodyEstatico(float* dimension, float* posicion, float rotacion){
+void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion){
 	b2BodyDef myBodyDef;
 	b2PolygonShape polygonShape;
 	b2FixtureDef myFixtureDef;
 	myFixtureDef.shape = &polygonShape;
 	myFixtureDef.density = 1;
 	myBodyDef.type = b2_staticBody;
-	myBodyDef.position.Set(posicion[0], posicion[1]);
+	myBodyDef.position.Set(posicion.x, posicion.y);
 	body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
-	polygonShape.SetAsBox(dimension[0]/2.0f, dimension[1]/2.0f);
+	polygonShape.SetAsBox(dimension.x/2.0f, dimension.y/2.0f);
 	body->CreateFixture(&myFixtureDef);
 	
 	this->rotacion = rotacion;
-	velocidad[0] = 0;
-	velocidad[1] = 0;
+	vel.x = 0;
+	vel.y = 0;
 }
 
 //void physics::update(float* anguloFinal, float* angulo, float* mousePosition){
 void physics::update(){
 	//TO DO: COMPROBAR QUE EL BODY NO SEA ESTATICO
 	//inside Step()
-	b2Vec2 vel;
-	vel.x = velocidad[0];
-	vel.y = velocidad[1];
 
 	body->SetLinearVelocity( vel );
 	
 //	getFather()->setPosicion(new float[3]{body->GetPosition().x, body->GetPosition().y, 0});
-	float* aux = getFather()->getPosicion();
-	aux[0] = body->GetPosition().x;
-	aux[1] = body->GetPosition().y;
+    dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
+    
+    getFather()->setPosicion(aux);
 	
 //	posicion[0] = body->GetPosition().x;
 //	posicion[1] = body->GetPosition().y;
@@ -134,34 +131,36 @@ void physics::update(){
 	
 }
 
-void physics::setPosition(float* pos){
-	body->SetTransform(b2Vec2(pos[0],pos[1]), body->GetAngle());
+void physics::setPosition(dvector3D &pos){
+	body->SetTransform(b2Vec2(pos.x,pos.y), body->GetAngle());
 }
 
-void physics::setVelocity(float* vel){
-	velocidad[0] = vel[0];
-	velocidad[1] = vel[1];
+void physics::setVelocity(dvector3D &veloc){
+	vel.x = veloc.x;
+	vel.y = veloc.y;
 }
 
-float physics::rotarConRaton(float* posRaton){
-	if(posRaton != NULL){
-		float aux[2];
-		aux[0] = posRaton[0] - body->GetPosition().x;
-		aux[1] = posRaton[1] - body->GetPosition().y;
+float physics::rotarConRaton(dvector3D &posRaton){
+//	if(posRaton != NULL){
 		
-		rotacion = atan2f(-aux[0], aux[1])* 180 / 3.14159265 + 90;
-		
-		//paso el coseno y seno de la rotacion a unitario
-		float length = sqrt((aux[0]*aux[0])+(aux[1]*aux[1]));
-		angulo_disparo[0] = aux[0] / length;
-		angulo_disparo[1] = aux[1] / length;
-		
-		getFather()->setDirDisparo(angulo_disparo);
-		
-		body->SetTransform(body->GetPosition(), rotacion);
-		
-		return rotacion;
-	}
+    b2Vec2 aux;
+    //TO DO: Mirar si se puede hacer en una linea
+    aux.x = posRaton.x - body->GetPosition().x;
+    aux.y = posRaton.y - body->GetPosition().y;
+    
+    rotacion = atan2f(-aux.x, aux.y)* 180 / 3.14159265 + 90;
+    
+    //paso el coseno y seno de la rotacion a unitario
+    float length = sqrt((aux.x*aux.x)+(aux.y*aux.y));
+    angulo_disparo.x = aux.x / length;
+    angulo_disparo.y = aux.y / length;
+    
+    getFather()->setDirDisparo(angulo_disparo);
+    
+    body->SetTransform(body->GetPosition(), rotacion);
+    
+    return rotacion;
+//	}
 	return 0.0f;
 }
 

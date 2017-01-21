@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <irrlicht.h>
 #include "../MyEventReceiver.hpp"
+#include "../Dvector.hpp"
 
 using namespace irr;
 using namespace video;
@@ -20,7 +21,7 @@ public:
 	IVideoDriver* getDriver();
 	ISceneManager* getSceneManager();
 	void deviceDrop();
-	float* posicionRaton(float* player);
+	dvector3D* posicionRaton(dvector3D &player);
 	
 protected:
 	ventana();

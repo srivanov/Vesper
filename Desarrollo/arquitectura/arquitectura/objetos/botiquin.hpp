@@ -21,7 +21,6 @@ private:
     int ID;
     unsigned int usos;
     bool gastado;
-    dvector3D * posi;
 };
 
 #endif /* botiquin_hpp */

@@ -19,6 +19,7 @@ comida::comida(int & ID){
     aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
     
+    //TO DO: anyadir componente de fisicas
     
     std::map<char*,component*>::iterator iter = this->getIteradorBegin();
     while(iter != this->getIteradorEnd()){
@@ -27,13 +28,11 @@ comida::comida(int & ID){
     }
     setRenderizable(true);
     
-    
-    posi = new dvector3D();
     aux = NULL;
     delete aux;
 }
 comida::~comida(){
-    delete posi;
+
 }
 void comida::gestorTiempo(){
     if(time(NULL)>_time){
@@ -42,13 +41,12 @@ void comida::gestorTiempo(){
 }
 void comida::update(){
     gestorTiempo();
-    posi->x = getPosicion()[0]; posi->y = getPosicion()[1]; posi->z = getPosicion()[2];
     TypeRecords comida = R_COMIDA;
     if (World_BlackBoard::instance()->hasAnswer(comida, &ID) && !consumido) {
         World_BlackBoard::instance()->removeRecord(comida, &ID);
         consumido = true;
         _time = time(NULL) + TIEMPO_COMESTIBLE;
     }else if(World_BlackBoard::instance()->countType(comida)>0 && !consumido){
-        World_BlackBoard::instance()->AnswerRecord(comida, &ID, posi);
+        World_BlackBoard::instance()->AnswerRecord(comida, &ID, getPosicion());
     }
 }
