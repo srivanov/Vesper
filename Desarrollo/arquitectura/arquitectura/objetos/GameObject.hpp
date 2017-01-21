@@ -70,6 +70,7 @@ protected:
     bool renderizable;
     dvector3D posicion, rotacion, anguloDisparo;
 private:
+	//TO DO: crear el vector con componentes y no punteros
     std::map<char*, component*> components;
 };
 

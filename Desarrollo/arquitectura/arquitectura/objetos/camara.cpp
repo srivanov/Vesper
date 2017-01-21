@@ -29,10 +29,11 @@ camara::camara(){
 	camSpeed = 1.5;
     //variable para zoom zoom zoom
     cerca = false;
+	aux = NULL;
 }
 
 camara::~camara(){
-	delete renderiza;
+	
 }
 
 void camara::addCamara(dvector3D &p, dvector3D &l){

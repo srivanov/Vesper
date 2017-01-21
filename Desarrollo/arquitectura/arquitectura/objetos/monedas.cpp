@@ -8,6 +8,14 @@ monedas::monedas(){
     this->insertComponent((char*)"transform3D", aux);
 	aux = new physics();
 	this->insertComponent((char*)"physics", aux);
+	
+	std::map<char*,component*>::iterator iter = this->getIteradorBegin();
+	while(iter != this->getIteradorEnd()){
+		iter->second->setFather(this);
+		iter++;
+	}
+	
+	aux = NULL;
 }
 
 monedas::~monedas(){

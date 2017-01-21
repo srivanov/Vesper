@@ -34,7 +34,6 @@ alarma::alarma(int &ID){
     _time = 0;
     NPCKnows = false;
     aux = NULL;
-    delete aux;
 }
 
 alarma::~alarma(){

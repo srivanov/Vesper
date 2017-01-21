@@ -23,14 +23,13 @@ Game::Game(){
 
 Game::~Game(){
 	//TO DO: revisar
-//	delete entrada;
-//	delete cam;
-//	delete nivel;
-////	balas.clear();
-//	delete renderizador;
-//	delete jugador;
-//	renderizador->closeWindow();
-//	delete pinstance;
+	delete entrada;
+	delete cam;
+	delete nivel;
+	//balas.clear();
+	delete jugador;
+	renderizador->closeWindow();
+	delete renderizador;
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -41,7 +40,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	jugador->setTexture("3d/texture.png");
     dvector3D jpos(10,10,0);
 	jugador->setPosicion(jpos);
-	cam->addCamara(jpos, *jugador->getPosicion());
+	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
+	cam->addCamara(campos, *jugador->getPosicion());
 	
 	if(nivel->cargarNivel("2"))
 		nivel->dibujarMapa();

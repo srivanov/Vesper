@@ -8,15 +8,13 @@ GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
+	//TO DO: arreglar llamada a destructor, llama al destructor de componente en vez de la clase que hereda
 	std::map<char*, component*>::iterator iter = components.begin();
 	while (iter != components.end()) {
 		delete iter->second;
 		iter++;
 	}
 	components.clear();
-	
-   
-	//TODO: borrar variables
 }
 
 

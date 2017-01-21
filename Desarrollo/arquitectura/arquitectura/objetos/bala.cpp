@@ -37,8 +37,6 @@ bala::bala(dvector3D &pos, dvector3D &dir, float vel){
 }
 
 bala::~bala(){
-//	printf("DELETE bala\n");
-//	delete direccion;
 	class render* ren = (class render*)findComponent("render");
 	if (ren != NULL)
 		ren->deleteNode();

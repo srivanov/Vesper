@@ -19,12 +19,12 @@ class armas : public component {
 public:
     armas();
     ~armas();
-	void update();
+	void update() override;
 	void shoot();
 	void changeGun();
 	
 private:
-	armaInterface* aux;
+//	armaInterface* aux;
 	std::vector<armaInterface*>::iterator seleccionada;
 	std::vector<armaInterface*> interface;
 };

@@ -55,8 +55,7 @@ void armas::update(){
 
 void armas::shoot(){
 //	Game::Instance()->insertBala();
-	aux = *seleccionada;
-	aux->atacar();
+	(*seleccionada)->atacar();
 }
 
 void armas::changeGun(){

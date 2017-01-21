@@ -9,7 +9,7 @@ class chirriante : public component{
 public:
 	chirriante();
 	~chirriante();
-	void update();
+	void update() override;
 	
 };
 

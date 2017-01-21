@@ -16,7 +16,9 @@ int main(int argc, const char * argv[]) {
 	game->start(600,600,32,false,false,true,true);
 	
 	while (game->isRunning()) {
+		//TO DO: Update 15 veces por segundo
 		game->update();
+		//TO DO: interpolacion
 		game->render();
 	}
     return 0;

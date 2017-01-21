@@ -38,12 +38,10 @@ player::player(){
     
     fisica->crearBodyDinamico(dim, pos);
 	aux = NULL;
-	delete aux;
 }
 
 player::~player(){
-	arma = NULL;
-	delete arma;
+	
 }
 
 void player::atacar(){

@@ -23,7 +23,6 @@ puerta::puerta(){
 	
 	
 	aux = NULL;
-	delete aux;
 }
 
 puerta::~puerta(){

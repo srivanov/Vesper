@@ -9,6 +9,6 @@ class habilidadEspecial : public component {
 public:
     habilidadEspecial();
     ~habilidadEspecial();
-	void update();
+	void update() override;
 };
 #endif /* habilidadEspecial_hpp */

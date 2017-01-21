@@ -16,17 +16,14 @@ escenarios::escenarios(){
 	mapa_nivel = NULL;
 	cargador = new cargarMapa();
 	aux = NULL;
-	delete aux;
 }
 
 escenarios::~escenarios(){
-	delete mapa_nivel;
 	delete cargador;
 }
 
 bool escenarios::cargarNivel(char* numero){
 	char ruta[30] = "";
-	char* num = new char[2];
 	
 	strcat(ruta, "tiled/mapa");
 	strcat(ruta, numero);

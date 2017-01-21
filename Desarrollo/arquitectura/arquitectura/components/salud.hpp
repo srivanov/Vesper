@@ -9,7 +9,7 @@ class salud : public component{
 public:
 	salud();
 	~salud();
-	void update();
+	void update() override;
 	
 };
 

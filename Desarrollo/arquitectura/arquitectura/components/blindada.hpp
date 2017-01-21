@@ -9,7 +9,7 @@ class blindada : public component{
 public:
 	blindada();
 	~blindada();
-	void update();
+	void update() override;
 	
 };
 

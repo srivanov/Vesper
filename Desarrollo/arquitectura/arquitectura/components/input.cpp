@@ -11,8 +11,7 @@ input::input(){
 }
 
 input::~input(){
-	//delete r;
-	r = NULL;
+	
 }
 
 void input::update(){

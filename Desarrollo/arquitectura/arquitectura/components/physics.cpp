@@ -20,8 +20,8 @@ physics::physics(){
 }
 
 physics::~physics(){
-	mundoBox2D::Instance()->getWorld()->DestroyBody(body);
-	//delete angulo;
+	if(body!=NULL)
+		mundoBox2D::Instance()->getWorld()->DestroyBody(body);
 }
 
 void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
