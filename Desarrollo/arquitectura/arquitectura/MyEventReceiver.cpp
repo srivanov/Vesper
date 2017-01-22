@@ -19,7 +19,6 @@ MyEventReceiver::MyEventReceiver()
 }
 
 MyEventReceiver::~MyEventReceiver(){
-	printf("DELETE receiver\n");
 	delete pinstance;
 }
 

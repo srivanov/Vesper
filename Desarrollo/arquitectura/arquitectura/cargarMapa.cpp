@@ -16,12 +16,9 @@ cargarMapa::cargarMapa(){
 }
 
 cargarMapa::~cargarMapa() {
-	//delete _tilemap;
+	delete _tilemap;
 	_tilemap = NULL;
 	delete _level;
-	delete matrizMapa;
-	//delete objs;
-	//delete tilesMov;
 }
 
 bool cargarMapa::leerMapa(char* fichero) {

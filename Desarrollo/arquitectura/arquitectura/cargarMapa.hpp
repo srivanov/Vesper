@@ -29,7 +29,7 @@ public:
     //virtual ~cargarMapa();
     int ***_tilemap;
     void mostrarMatriz();
-    int*** getMatriz();
+    int *** getMatriz();
     
 private:
     
@@ -39,7 +39,6 @@ private:
     int _tileHeight;
     int _numLayers;
     int *_level;
-    int ***matrizMapa;
     
    // int matrizMapa[][][];
     

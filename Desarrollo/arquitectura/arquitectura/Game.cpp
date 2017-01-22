@@ -22,14 +22,17 @@ Game::Game(){
 }
 
 Game::~Game(){
-	//TO DO: revisar
+	//TO DO: revisar deletes de ncp, alarmita... (estan abajo en start)
 	delete entrada;
 	delete cam;
 	delete nivel;
-	//balas.clear();
+	balas.clear();
 	delete jugador;
 	renderizador->closeWindow();
 	delete renderizador;
+    if(bala_aux == NULL)
+        delete bala_aux;
+    
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -96,7 +99,13 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //    
 //    contador_npc++;
 //    botiquines.insert(botiquines.end(), botiqueen);
-	
+    
+    
+//    delete npc;
+//    delete alarmita;
+//    //    delete fuentezita;
+//    //    delete comidita;
+//    //    delete botiqueen;
 }
 
 void Game::stop(){
@@ -132,6 +141,7 @@ player* Game::getPlayer(){
 }
 
 bala* Game::insertBala(float vel){
+    //TO DO: Hacer la gestion de las balas en la clase bala
     bala_aux = new bala(*jugador->getPosicion(), *jugador->getDirDisparo(), vel);
     bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
@@ -150,6 +160,7 @@ void Game::update(){
 		bala_aux->update();
 		if(bala_aux->muero()){
 			delete bala_aux;
+            bala_aux = NULL;
 			iter = balas.erase(iter);
 		}else
 			iter++;

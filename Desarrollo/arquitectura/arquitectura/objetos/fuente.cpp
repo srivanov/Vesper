@@ -29,7 +29,6 @@ fuente::fuente(int & ID){
     setRenderizable(true);
  
     aux = NULL;
-    delete aux;
 }
 fuente::~fuente(){
 

@@ -7,11 +7,8 @@ nodeMesh::nodeMesh(ISceneNode* node){
 }
 
 nodeMesh::~nodeMesh(){
-//	object->drop();
-//	texture->drop();
 	object->remove();
 	object = NULL;
-//	delete texture;
 }
 
 bool nodeMesh::_setMaterialTexture(ITexture* tex){
