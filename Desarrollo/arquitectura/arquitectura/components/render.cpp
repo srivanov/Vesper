@@ -113,7 +113,7 @@ void render::dibujarMapa(){
 ////		return false;
 //	}
 	
-	int*** mapita;
+	std::vector<int>* mapita;
 	mapita = static_cast<escenarios*>(getFather())->getMapa();
 
 	ISceneNode* nodo;
@@ -134,13 +134,18 @@ void render::dibujarMapa(){
     
     nodo_suelo->setRotation(vector3df(90,180,180));
 	
-    for(int i=0; i< static_cast<escenarios*>(getFather())->getAlto() ;i++){
-		for(int j=0; j< static_cast<escenarios*>(getFather())->getAncho() ; j++){
-			if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
+
+    int h1 = static_cast<escenarios*>(getFather())->getAlto();
+    int w1 = static_cast<escenarios*>(getFather())->getAncho();
+    
+    for(int j = 0; j<h1; j++){
+        for(int k = w1-static_cast<escenarios*>(getFather())->getAncho(); k<w1; k++){
+            
+			if(mapita->at(k) == 21 || mapita->at(k) == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
 				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
-				nodo->setPosition(vector3df(i,j,0));
+				nodo->setPosition(vector3df(j,k,0));
 //				nodo = NULL;
 			}
 //			if(mapita[0][i][j] == 86){
@@ -151,7 +156,9 @@ void render::dibujarMapa(){
 ////				nodo_suelo = NULL;
 //			}
 		}
+        w1 += static_cast<escenarios*>(getFather())->getAncho();
 	}
+    
 //	return true;
 
 }

@@ -14,11 +14,11 @@ public:
 	bool cargarNivel(char* numero);
 	int getAncho();
 	int getAlto();
-	int*** getMapa();
+    std::vector<int>* getMapa();
 	void dibujarMapa();
 	
 private:
-	int*** mapa_nivel;
+	std::vector<int>* mapa_nivel;
 	cargarMapa* cargador;
 	int ancho, alto;
 };

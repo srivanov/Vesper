@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "tinyxml2.h"
 #include <iostream>
+#include <vector>
 using namespace tinyxml2;
 
 
@@ -27,9 +28,9 @@ public:
     int * getLevel();
     //int getMatriz()[][][] const;
     //virtual ~cargarMapa();
-    int ***_tilemap;
+    std::vector<int> _tilemap;
     void mostrarMatriz();
-    int *** getMatriz();
+    std::vector<int>* getMatriz();
     
 private:
     

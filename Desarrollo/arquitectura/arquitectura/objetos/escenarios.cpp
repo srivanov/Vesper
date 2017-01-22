@@ -49,7 +49,7 @@ int escenarios::getAlto(){
 	return alto;
 }
 
-int*** escenarios::getMapa(){
+std::vector<int>* escenarios::getMapa(){
 	return mapa_nivel;
 }
 
