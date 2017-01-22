@@ -1,7 +1,7 @@
 
-#include "escenarios.hpp"
+#include "nivel.hpp"
 
-escenarios::escenarios(){
+nivel::nivel(){
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
 	aux = new physics();
@@ -18,11 +18,11 @@ escenarios::escenarios(){
 	aux = NULL;
 }
 
-escenarios::~escenarios(){
+nivel::~nivel(){
 	delete cargador;
 }
 
-bool escenarios::cargarNivel(char* numero){
+bool nivel::cargarNivel(char* numero){
 	char ruta[30] = "";
 	
 	strcat(ruta, "tiled/mapa");
@@ -33,6 +33,12 @@ bool escenarios::cargarNivel(char* numero){
 		printf("Ha habido un problema al leer el mapa del fichero. Comprueba la ruta y el acceso.\n");
 	ancho = cargador->getWidth();
 	alto = cargador->getHeight();
+	
+	dvector3D pos(5,17,0);
+	pala.addNodo("");
+	pala.setTexture("3d/pala.jpg");
+	pala.setPosicion(pos);
+	
 	if(ancho == 0 || alto == 0)
 		return false;
 	else{
@@ -41,18 +47,23 @@ bool escenarios::cargarNivel(char* numero){
 	}
 }
 
-int escenarios::getAncho(){
+int nivel::getAncho(){
 	return ancho;
 }
 
-int escenarios::getAlto(){
+int nivel::getAlto(){
 	return alto;
 }
 
-std::vector<int>* escenarios::getMapa(){
+std::vector<int>* nivel::getMapa(){
 	return mapa_nivel;
 }
 
-void escenarios::dibujarMapa(){
+void nivel::dibujarMapa(){
 	static_cast<class render*>(findComponent("render"))->dibujarMapa();
 }
+
+void nivel::update(){
+	pala.update();
+}
+

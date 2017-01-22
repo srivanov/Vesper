@@ -22,7 +22,7 @@
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
 #include "objetos/bala.hpp"
-#include "objetos/escenarios.hpp"
+#include "objetos/nivel.hpp"
 #include "BlackBoards.hpp"
 #include "trigger_system.hpp"
 #include <vector>
@@ -59,7 +59,7 @@ private:
     vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
-	escenarios* nivel;
+	nivel* nivelazo;
 	std::vector<enemigos*> npcs;
     std::vector<alarma*> alarmas;
     std::vector<fuente*> fuentes;

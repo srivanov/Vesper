@@ -18,14 +18,14 @@ Game::Game(){
 	running = true;
     jugador = new player();
 	cam = new camara();
-	nivel = new escenarios();
+	nivelazo = new nivel();
 }
 
 Game::~Game(){
 	//TO DO: revisar deletes de ncp, alarmita... (estan abajo en start)
 	delete entrada;
 	delete cam;
-	delete nivel;
+	delete nivelazo;
 	balas.clear();
 	delete jugador;
 	renderizador->closeWindow();
@@ -46,8 +46,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
 	cam->addCamara(campos, *jugador->getPosicion());
 	
-	if(nivel->cargarNivel("2"))
-		nivel->dibujarMapa();
+	if(nivelazo->cargarNivel("2"))
+		nivelazo->dibujarMapa();
 	
 	World_BlackBoard::instance();
 	NPC_library::instance();
@@ -70,42 +70,42 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
     
     contador_npc++;
     alarmas.insert(alarmas.end(), alarmita);
-
+	
     //TO DO: descomentar codigo de abajo
     
-//    fuente * fuentezita = new fuente(contador_npc);
-//    fuentezita->addNodo("");
-//    fuentezita->setTexture("3d/alarmita.jpg");
-//    dvector3D posf(0,10,0);
-//    fuentezita->setPosicion(posf);
-//    
-//    contador_npc++;
-//    fuentes.insert(fuentes.end(), fuentezita);
-//    
-//    comida * comidita = new comida(contador_npc);
-//    comidita->addNodo("");
-//    comidita->setTexture("3d/alarmita.jpg");
-//    dvector3D poscom(0,0,0);
-//    comidita->setPosicion(poscom);
-//    
-//    contador_npc++;
-//    comidas.insert(comidas.end(), comidita);
-//    
-//    botiquin * botiqueen = new botiquin(contador_npc);
-//    botiqueen->addNodo("");
-//    botiqueen->setTexture("3d/alarmita.jpg");
-//    dvector3D posbot(10,0,0);
-//    botiqueen->setPosicion(posbot);
-//    
-//    contador_npc++;
-//    botiquines.insert(botiquines.end(), botiqueen);
+    fuente * fuentezita = new fuente(contador_npc);
+    fuentezita->addNodo("");
+    fuentezita->setTexture("3d/alarmita.jpg");
+    dvector3D posf(0,10,0);
+    fuentezita->setPosicion(posf);
+    
+    contador_npc++;
+    fuentes.insert(fuentes.end(), fuentezita);
+    
+    comida * comidita = new comida(contador_npc);
+    comidita->addNodo("");
+    comidita->setTexture("3d/alarmita.jpg");
+    dvector3D poscom(0,0,0);
+    comidita->setPosicion(poscom);
+    
+    contador_npc++;
+    comidas.insert(comidas.end(), comidita);
+    
+    botiquin * botiqueen = new botiquin(contador_npc);
+    botiqueen->addNodo("");
+    botiqueen->setTexture("3d/alarmita.jpg");
+    dvector3D posbot(10,0,0);
+    botiqueen->setPosicion(posbot);
+    
+    contador_npc++;
+    botiquines.insert(botiquines.end(), botiqueen);
     
     
-//    delete npc;
-//    delete alarmita;
-//    //    delete fuentezita;
-//    //    delete comidita;
-//    //    delete botiqueen;
+//  delete npc;
+//  delete alarmita;
+//	delete fuentezita;
+//	delete comidita;
+//	delete botiqueen;
 }
 
 void Game::stop(){
@@ -149,6 +149,7 @@ bala* Game::insertBala(float vel){
 }
 
 void Game::update(){
+	nivelazo->update();
 	entrada->update();
 	jugador->update();
 	cam->movimientoInteligente(*jugador->getPosicion());

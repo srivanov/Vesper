@@ -1,7 +1,7 @@
 
 #include "render.hpp"
 #include "../objetos/GameObject.hpp"
-#include "../objetos/escenarios.hpp"
+#include "../objetos/nivel.hpp"
 
 render::render(){
 	nodo = NULL;
@@ -114,32 +114,32 @@ void render::dibujarMapa(){
 //	}
 	
 	std::vector<int>* mapita;
-	mapita = static_cast<escenarios*>(getFather())->getMapa();
+	mapita = static_cast<nivel*>(getFather())->getMapa();
 
 	ISceneNode* nodo;
 	ISceneNode* nodo_suelo;
     
-//	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<escenarios*>(getFather())->getAlto(), static_cast<escenarios*>(getFather())->getAncho(), 0.1));
+//	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<nivel*>(getFather())->getAlto(), static_cast<nivel*>(getFather())->getAncho(), 0.1));
 //	nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
 //	nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
     
     //CARGAR PLANO
     
-    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<escenarios*>(getFather())->getAlto(),static_cast<escenarios*>(getFather())->getAncho()));
+    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<nivel*>(getFather())->getAlto(),static_cast<nivel*>(getFather())->getAncho()));
     nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
     nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/mapimg.png"));
     
-    nodo_suelo->setPosition(vector3df((static_cast<escenarios*>(getFather())->getAlto()/2)-0.5, (static_cast<escenarios*>(getFather())->getAncho()/2)-0.5, 0));
+    nodo_suelo->setPosition(vector3df((static_cast<nivel*>(getFather())->getAlto()/2)-0.5, (static_cast<nivel*>(getFather())->getAncho()/2)-0.5, 0));
     
     nodo_suelo->setRotation(vector3df(90,180,180));
 	
 
-    int h1 = static_cast<escenarios*>(getFather())->getAlto();
-    int w1 = static_cast<escenarios*>(getFather())->getAncho();
+    int h1 = static_cast<nivel*>(getFather())->getAlto();
+    int w1 = static_cast<nivel*>(getFather())->getAncho();
     
     for(int j = 0; j<h1; j++){
-        for(int k = w1-static_cast<escenarios*>(getFather())->getAncho(); k<w1; k++){
+        for(int k = w1-static_cast<nivel*>(getFather())->getAncho(); k<w1; k++){
             
 			if(mapita->at(k) == 21 || mapita->at(k) == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
@@ -156,7 +156,7 @@ void render::dibujarMapa(){
 ////				nodo_suelo = NULL;
 //			}
 		}
-        w1 += static_cast<escenarios*>(getFather())->getAncho();
+        w1 += static_cast<nivel*>(getFather())->getAncho();
 	}
     
 //	return true;

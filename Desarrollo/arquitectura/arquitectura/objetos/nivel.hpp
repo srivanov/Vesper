@@ -1,25 +1,29 @@
 
-#ifndef escenarios_hpp
-#define escenarios_hpp
+#ifndef nivel_hpp
+#define nivel_hpp
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "palaObj.hpp"
 #include "../cargarMapa.hpp"
 
-class escenarios : public GameObject{
+
+class nivel : public GameObject{
 public:
-    escenarios();
-    ~escenarios();
+    nivel();
+    ~nivel();
 	
 	bool cargarNivel(char* numero);
 	int getAncho();
 	int getAlto();
     std::vector<int>* getMapa();
 	void dibujarMapa();
+	void update();
 	
 private:
 	std::vector<int>* mapa_nivel;
 	cargarMapa* cargador;
 	int ancho, alto;
+	palaObj pala;
 };
-#endif /* escenarios_hpp */
+#endif /* nivel_hpp */

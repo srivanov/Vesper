@@ -9,7 +9,7 @@
 #include "../Fps.hpp"
 #include "../Dvector.hpp"
 
-class escenarios;
+class nivel;
 class render : public component {
 public:
     render();

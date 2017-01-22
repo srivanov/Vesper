@@ -44,6 +44,8 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
     body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
     body->CreateFixture(&myFixtureDef);
 	
+	body->SetUserData(getFather());
+	
 	this->rotacion = 0;
 	vel.x = 0;
 	vel.y = 0;
@@ -60,6 +62,8 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 	body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
 	polygonShape.SetAsBox(dimension.x/2.0f, dimension.y/2.0f);
 	body->CreateFixture(&myFixtureDef);
+	
+	body->SetUserData(getFather());
 	
 	this->rotacion = rotacion;
 	vel.x = 0;
