@@ -44,7 +44,7 @@ void ContactListener::BeginContact(b2Contact* contact){
 	//Si los dos son bodys dinamicos el fixtureA es el que choca
 	//Si uno es estatico sera el fixtureB, el fixtureA sera el dinamico
 	GameObject* g = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
-	g->setTexture("3d/pizza.jpg");
+	g->setTexture("3d/rocas.jpg");
 	g->contacto(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 }
 

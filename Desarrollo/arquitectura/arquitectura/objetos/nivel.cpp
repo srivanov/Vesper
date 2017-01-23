@@ -35,11 +35,26 @@ bool nivel::cargarNivel(char* numero){
 	ancho = cargador->getWidth();
 	alto = cargador->getHeight();
 	
-	dvector3D pos(5,17,0);
+	dvector3D pos1(5,17,0);
 	pala.addNodo("");
 	pala.setTexture("3d/pala.jpg");
-	pala.setPosicion(pos);
-	
+	pala.setPosicion(pos1);
+    
+    dvector3D pos2(3,20,0);
+    piedra.addNodo("");
+    piedra.setTexture("3d/piedra.jpg");
+    piedra.setPosicion(pos2);
+    
+    dvector3D pos3(8,20,0);
+    moneda.addNodo("");
+    moneda.setTexture("3d/moneda.jpg");
+    moneda.setPosicion(pos3);
+    
+    dvector3D pos4(4,11,0);
+    llave.addNodo("");
+    llave.setTexture("3d/llave.jpg");
+    llave.setPosicion(pos4);
+
 	if(ancho == 0 || alto == 0)
 		return false;
 	else{
@@ -66,5 +81,8 @@ void nivel::dibujarMapa(){
 
 void nivel::update(){
 	pala.update();
+    piedra.update();
+    moneda.update();
+    llave.update();
 }
 

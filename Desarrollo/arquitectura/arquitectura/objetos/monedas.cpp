@@ -14,6 +14,13 @@ monedas::monedas(){
 		iter->second->setFather(this);
 		iter++;
 	}
+    
+    physics* fisica = (physics*)findComponent("physics");
+    
+    dvector3D dim(1,1,1);
+    dvector3D pos(0,0,0);
+    
+    fisica->crearBodyEstatico(dim, pos, 90.f);
 	
 	aux = NULL;
 	setType(tMONEDAS);
@@ -21,4 +28,8 @@ monedas::monedas(){
 
 monedas::~monedas(){
     
+}
+
+void monedas::update(){
+   GameObject::update();
 }

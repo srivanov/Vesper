@@ -18,8 +18,9 @@ botiquin::botiquin(int &ID){
     this->insertComponent((char*)"render", aux);
     aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
+    aux = new physics();
+    this->insertComponent((char*)"physics", aux);
     
-    //TO DO: anyadir componente de fisicas
     
     std::map<char*,component*>::iterator iter = this->getIteradorBegin();
     while(iter != this->getIteradorEnd()){
@@ -27,6 +28,13 @@ botiquin::botiquin(int &ID){
         iter++;
     }
     setRenderizable(true);
+    
+    physics* fisica = (physics*)findComponent("physics");
+    
+    dvector3D dim(1,1,1);
+    dvector3D pos(0,0,0);
+    
+    fisica->crearBodyDinamico(dim, pos);
     
     usos = NUMERO_USOS;
     aux = NULL;

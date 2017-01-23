@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include "palaObj.hpp"
+#include "piedraObj.hpp"
+#include "monedas.hpp"
+#include "llaveObj.hpp"
 #include "../cargarMapa.hpp"
 
 
@@ -25,5 +28,8 @@ private:
 	cargarMapa* cargador;
 	int ancho, alto;
 	palaObj pala;
+    piedraObj piedra;
+    monedas moneda;
+    llaveObj llave;
 };
 #endif /* nivel_hpp */

@@ -75,7 +75,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
     
     fuente * fuentezita = new fuente(contador_npc);
     fuentezita->addNodo("");
-    fuentezita->setTexture("3d/alarmita.jpg");
+    fuentezita->setTexture("3d/fuenten.jpg");
     dvector3D posf(0,10,0);
     fuentezita->setPosicion(posf);
     
@@ -84,7 +84,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
     
     comida * comidita = new comida(contador_npc);
     comidita->addNodo("");
-    comidita->setTexture("3d/alarmita.jpg");
+    comidita->setTexture("3d/pizza.jpg");
     dvector3D poscom(0,0,0);
     comidita->setPosicion(poscom);
     
@@ -93,7 +93,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
     
     botiquin * botiqueen = new botiquin(contador_npc);
     botiqueen->addNodo("");
-    botiqueen->setTexture("3d/alarmita.jpg");
+    botiqueen->setTexture("3d/botiquin.jpg");
     dvector3D posbot(10,0,0);
     botiqueen->setPosicion(posbot);
     

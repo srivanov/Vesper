@@ -19,8 +19,7 @@ public:
 	~palaObj();
 	void update();
 private:
-	
-	
+		
 };
 
 #endif /* palaObj_hpp */
