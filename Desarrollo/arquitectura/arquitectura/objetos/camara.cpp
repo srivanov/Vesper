@@ -30,6 +30,7 @@ camara::camara(){
     //variable para zoom zoom zoom
     cerca = false;
 	aux = NULL;
+	setType(tCAMARA);
 }
 
 camara::~camara(){

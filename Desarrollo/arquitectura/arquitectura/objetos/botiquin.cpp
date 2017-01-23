@@ -30,7 +30,7 @@ botiquin::botiquin(int &ID){
     
     usos = NUMERO_USOS;
     aux = NULL;
-    delete aux;
+	setType(tBOTIQUIN);
 }
 botiquin::~botiquin(){
 

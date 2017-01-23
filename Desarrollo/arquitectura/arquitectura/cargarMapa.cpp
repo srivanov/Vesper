@@ -51,7 +51,7 @@ bool cargarMapa::leerMapa(char* fichero) {
     _tsheight = atoi(img->Attribute("height"));
     _tswidth = atoi(img->Attribute("width"));
     cout << "source-> "<<filename << endl;
-    cout << "AnchoAllSprites: " <<_tswidth << " AltoAllSprites: "<<_tsheight<<endl;
+    cout << "AnchoAllSprites: " <<_tswidth << " AltoAllSprites: "<<_tsheight<<endl<<endl;
     
     //Capas del mapa
     XMLElement *layer = map->FirstChildElement("layer"); //primera capa, la de patrones

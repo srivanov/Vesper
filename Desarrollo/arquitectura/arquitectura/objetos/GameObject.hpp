@@ -33,6 +33,23 @@
 
 using namespace std;
 
+//TO DO: mantener actualizado
+enum typeObj{
+	NO_TYPE = -1,
+	tALARMA,
+	tPALA,
+	tCAMARA,
+	tENEMIGOS,
+	tNIVEL,
+	tMONEDAS,
+	tPLAYER,
+	tPUERTA,
+	tBALA,
+	tBOTIQUIN,
+	tCOMIDA,
+	tFUENTE
+};
+
 class component;
 
 class GameObject{
@@ -65,6 +82,11 @@ public:
 	
     void addNodo(char* filename);
 	void setTexture(char* filename);
+	
+	void setType(typeObj t);
+	typeObj const* getType();
+	
+	virtual void contacto(GameObject* g){};
     
 protected:
     bool renderizable;
@@ -72,6 +94,7 @@ protected:
 private:
 	//TO DO: crear el vector con componentes y no punteros
     std::map<char*, component*> components;
+	typeObj tipo;
 };
 
 #endif /* GameObject_hpp */

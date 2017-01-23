@@ -14,7 +14,7 @@ class mundoBox2D{
 public:
 	b2World* getWorld();
 	static mundoBox2D* Instance();
-	virtual ~mundoBox2D();
+	~mundoBox2D();
 	void update();
 
 protected:

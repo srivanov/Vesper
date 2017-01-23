@@ -23,6 +23,7 @@ puerta::puerta(){
 	
 	
 	aux = NULL;
+	setType(tPUERTA);
 }
 
 puerta::~puerta(){

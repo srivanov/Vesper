@@ -29,6 +29,7 @@ comida::comida(int & ID){
     setRenderizable(true);
     
     aux = NULL;
+	setType(tCOMIDA);
 }
 comida::~comida(){
 

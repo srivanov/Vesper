@@ -16,6 +16,7 @@ nivel::nivel(){
 	mapa_nivel = NULL;
 	cargador = new cargarMapa();
 	aux = NULL;
+	setType(tNIVEL);
 }
 
 nivel::~nivel(){

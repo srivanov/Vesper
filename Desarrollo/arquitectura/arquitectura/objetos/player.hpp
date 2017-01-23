@@ -14,6 +14,7 @@ public:
     ~player();
 	void atacar();
 	void cambiarArma();
+	void contacto(GameObject* g);
 	
 private:
 	armas* arma;

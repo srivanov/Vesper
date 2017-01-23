@@ -31,7 +31,7 @@ palaObj::palaObj(){
 	fisica->crearBodyEstatico(dim, pos, 90.f);
 	
 	aux = NULL;
-
+	setType(tPALA);
 }
 
 palaObj::~palaObj(){
@@ -40,5 +40,4 @@ palaObj::~palaObj(){
 
 void palaObj::update(){
 	GameObject::update();
-	
 }

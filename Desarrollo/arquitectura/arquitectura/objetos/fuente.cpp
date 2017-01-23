@@ -29,11 +29,15 @@ fuente::fuente(int & ID){
     setRenderizable(true);
  
     aux = NULL;
+	setType(tFUENTE);
 }
+
 fuente::~fuente(){
 
 }
+
 void fuente::update(){
+	GameObject::update();
     TypeRecords fuente = R_FUENTE;
     while(World_BlackBoard::instance()->hasAnswer(fuente, &ID)){
         if(World_BlackBoard::instance()->getAnswer(fuente, &ID)->_idResponse<0){

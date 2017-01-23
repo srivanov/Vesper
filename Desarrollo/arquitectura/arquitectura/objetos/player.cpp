@@ -38,6 +38,7 @@ player::player(){
     
     fisica->crearBodyDinamico(dim, pos);
 	aux = NULL;
+	setType(tPLAYER);
 }
 
 player::~player(){
@@ -53,3 +54,11 @@ void player::cambiarArma(){
 	arma = (armas*)findComponent("armas");
 	arma->changeGun();
 }
+
+void player::contacto(GameObject *g){
+	if(*g->getType() == tPALA){
+		printf("\nCONTACTO CON PALA\n\n");
+	}
+}
+
+

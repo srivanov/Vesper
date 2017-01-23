@@ -5,6 +5,7 @@
 
 GameObject::GameObject(){
     renderizable = false;
+	tipo = NO_TYPE;
 }
 
 GameObject::~GameObject(){
@@ -15,7 +16,6 @@ GameObject::~GameObject(){
 	}
 	components.clear();
 }
-
 
 void GameObject::insertComponent(char* nombre, component *comp){
 //    printf("%d\n", (int)components.size());
@@ -45,7 +45,6 @@ std::map<char*,component*>::iterator GameObject::getIteradorEnd(){
 void GameObject::clearComponents(){
 	components.clear();
 }
-
 
 bool GameObject::getRenderizable(){
     return renderizable;
@@ -99,14 +98,9 @@ dvector3D* GameObject::getRotacion(){
 }
 
 void GameObject::mover(dvector3D &vel){
-//	if(vel != NULL){
-    transform3D* go = (transform3D*)findComponent("transform3D");
-    if(go != NULL)
-        go->mover(vel);
-//		class render* ren = (class render*)findComponent("render");
-//		if(ren != NULL)
-//			ren->setNodePosition(posicion);
-//	}
+	transform3D* go = (transform3D*)findComponent("transform3D");
+	if(go != NULL)
+		go->mover(vel);
 }
 
 void GameObject::render(){
@@ -123,10 +117,6 @@ void GameObject::update(){
 		iter->second->update();
 		iter++;
 	}
-	
-//	physics* go = (physics*)this->findComponent("physics");
-//    if(go != NULL)
-//        go->update();
 }
 
 void GameObject::addNodo(char* filename){
@@ -143,12 +133,19 @@ void GameObject::setTexture(char* filename){
 	}
 }
 
-
 dvector3D* GameObject::getDirDisparo(){
 	return &anguloDisparo;
 }
 
 void GameObject::setDirDisparo(dvector3D &dir){
     anguloDisparo = dir;
+}
+
+void GameObject::setType(typeObj t){
+	tipo = t;
+}
+
+typeObj const* GameObject::getType(){
+	return &tipo;
 }
 

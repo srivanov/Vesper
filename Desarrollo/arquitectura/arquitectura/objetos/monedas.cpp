@@ -16,6 +16,7 @@ monedas::monedas(){
 	}
 	
 	aux = NULL;
+	setType(tMONEDAS);
 }
 
 monedas::~monedas(){

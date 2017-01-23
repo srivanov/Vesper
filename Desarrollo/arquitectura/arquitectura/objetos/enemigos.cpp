@@ -30,6 +30,8 @@ enemigos::enemigos(int& ID){
 	fisica->crearBodyDinamico(dim, pos);
 	
 	aux = NULL;
+	setType(tENEMIGOS);
+	
     k = 0;
 	salud = 100;
 	srand(time(NULL));

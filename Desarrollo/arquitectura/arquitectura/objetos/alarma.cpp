@@ -34,16 +34,19 @@ alarma::alarma(int &ID){
     _time = 0;
     NPCKnows = false;
     aux = NULL;
+	setType(tALARMA);
 }
 
 alarma::~alarma(){
     
 }
+
 void alarma::gestorTiempo(){
     if(time(NULL)>_time){
         activado = false;
     }
 }
+
 void alarma::update(){
 	GameObject::update();
 //    TypeRecords alarma = R_ALARMA;
