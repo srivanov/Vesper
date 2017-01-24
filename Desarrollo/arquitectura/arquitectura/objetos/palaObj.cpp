@@ -30,6 +30,7 @@ palaObj::palaObj(){
 	
 	fisica->crearBodyEstatico(dim, pos, 90.f);
 	
+    muero = false;
 	aux = NULL;
 	setType(tPALA);
 }
@@ -41,3 +42,15 @@ palaObj::~palaObj(){
 void palaObj::update(){
 	GameObject::update();
 }
+
+void palaObj::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* palaObj::getmuero(){
+    return &muero;
+}
+
+

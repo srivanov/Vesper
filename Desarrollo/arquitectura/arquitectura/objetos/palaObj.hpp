@@ -18,8 +18,10 @@ public:
 	palaObj();
 	~palaObj();
 	void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
-		
+    bool muero;
 };
 
 #endif /* palaObj_hpp */

@@ -36,9 +36,12 @@ bool nivel::cargarNivel(char* numero){
 	alto = cargador->getHeight();
 	
 	dvector3D pos1(5,17,0);
-	pala.addNodo("");
-	pala.setTexture("3d/pala.jpg");
-	pala.setPosicion(pos1);
+    palaObj* pala = new palaObj();
+	pala->addNodo("");
+	pala->setTexture("3d/pala.jpg");
+	pala->setPosicion(pos1);
+    
+    powerups.push_back(pala);
     
     dvector3D pos2(3,20,0);
     piedra.addNodo("");
@@ -80,7 +83,17 @@ void nivel::dibujarMapa(){
 }
 
 void nivel::update(){
-	pala.update();
+    //TO DO: revisar !!
+    std::vector<palaObj*>::iterator iter = powerups.begin();
+    while (iter!=powerups.end()) {
+        if(!(*(*iter)->getmuero())){
+            (*iter)->update();
+        }else{
+//            (*iter)->~palaObj();
+            powerups.erase(iter);
+        }
+        iter.operator++();
+    }
     piedra.update();
     moneda.update();
     llave.update();

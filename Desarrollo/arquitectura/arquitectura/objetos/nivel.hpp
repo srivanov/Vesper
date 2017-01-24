@@ -27,7 +27,7 @@ private:
 	std::vector<int>* mapa_nivel;
 	cargarMapa* cargador;
 	int ancho, alto;
-	palaObj pala;
+    std::vector<palaObj*> powerups;
     piedraObj piedra;
     monedas moneda;
     llaveObj llave;

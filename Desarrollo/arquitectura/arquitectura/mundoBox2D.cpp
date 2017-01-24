@@ -43,9 +43,12 @@ void mundoBox2D::update(){
 void ContactListener::BeginContact(b2Contact* contact){
 	//Si los dos son bodys dinamicos el fixtureA es el que choca
 	//Si uno es estatico sera el fixtureB, el fixtureA sera el dinamico
-	GameObject* g = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
-	g->setTexture("3d/rocas.jpg");
-	g->contacto(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
+	GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
+    GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+	g1->contacto(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
+    
+    g2->setTexture("3d/rocas.jpg");
+    g2->contacto(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 }
 
 void ContactListener::EndContact(b2Contact* contact) {

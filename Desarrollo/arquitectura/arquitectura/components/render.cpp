@@ -10,7 +10,6 @@ render::render(){
 }
 
 render::~render(){
-//	printf("DELETE render\n");
 	delete nodo;
 	nodo = NULL;
 }
