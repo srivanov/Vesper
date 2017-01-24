@@ -40,19 +40,19 @@ fuente::fuente(int & ID){
 }
 
 fuente::~fuente(){
-
+    
 }
 
 void fuente::update(){
 	GameObject::update();
     TypeRecords fuente = R_FUENTE;
-    while(World_BlackBoard::instance()->hasAnswer(fuente, &ID)){
-        if(World_BlackBoard::instance()->getAnswer(fuente, &ID)->_idResponse<0){
+    while(World_BlackBoard::instance()->hasAnswer(fuente, ID)){
+        if(World_BlackBoard::instance()->getAnswer(fuente, ID)->_idResponse<0){
             rota = true;
         }else if(rota) NPCKnows = true;
-        World_BlackBoard::instance()->removeRecord(fuente, &ID);
+        World_BlackBoard::instance()->removeRecord(fuente, ID);
     }
     if(World_BlackBoard::instance()->countType(fuente)>0 && !NPCKnows){
-        World_BlackBoard::instance()->AnswerRecord(fuente, &ID, getPosicion());
+        World_BlackBoard::instance()->AnswerRecord(fuente, ID, getPosicion());
     }
 }

@@ -56,7 +56,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	contador_npc=0;
 	enemigos* npc = new enemigos(contador_npc);
 	contador_npc++;
-    dvector3D nodepos(10,15,0);
+    dvector3D nodepos(10,20,0);
 	npc->setPosicion(nodepos);
 	npc->addNodo("");
 	npc->setTexture("3d/enemy.jpg");

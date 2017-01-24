@@ -45,12 +45,12 @@ botiquin::~botiquin(){
 }
 void botiquin::update(){
     TypeRecords botiquin = R_BOTIQUIN;
-    while (World_BlackBoard::instance()->hasAnswer(botiquin, &ID)) {
-        World_BlackBoard::instance()->removeRecord(botiquin, &ID);
+    while (World_BlackBoard::instance()->hasAnswer(botiquin, ID)) {
+        World_BlackBoard::instance()->removeRecord(botiquin, ID);
         if (usos>0) usos--;
         else gastado = true;
     }
     if(World_BlackBoard::instance()->countType(botiquin)>0 && !gastado){
-        World_BlackBoard::instance()->AnswerRecord(botiquin, &ID, getPosicion());
+        World_BlackBoard::instance()->AnswerRecord(botiquin, ID, getPosicion());
     }
 }

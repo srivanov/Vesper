@@ -7,6 +7,7 @@
 //
 #include "Nodos.hpp"
 #include "BlackBoards.hpp"
+#include "trigger_system.hpp"
 
 #define FAILURE 0
 #define SUCCESS 1
@@ -22,8 +23,8 @@
 #define ASUSTADO 3
 
 #define BOTIQUIN_CURA 40
-#define COMIDA_ALIMENTA 25
-#define AGUA_HIDATRA 50
+#define COMIDA_ALIMENTA 45
+#define AGUA_HIDATRA 70
 
 #define DISTANCIA_COMUNICACION_PERSONAL 30
 #define DISTANCIA_POR_RADIO 35
@@ -31,16 +32,35 @@
 #define ACTIVO true
 #define INACTIVO false
 
+#define EVENTO_RUIDO 0
+#define EVENTO_AVISO 1
+#define EVENTO_HABLAR 2
+#define EVENTO_PUERTA 3
+#define EVENTO_ALARMA 4
+#define EVENTO_ALARMA_CERCA 5
+#define EVENTO_RADIO 6
+
+/*
+ enum TypeEvents{
+ E_none = -1,
+ E_ruido,
+ E_aviso,
+ E_hablar,
+ E_puerta,
+ E_alarma
+ };
+ */
+
 
 //NODOS ESPECIALES / GENERALES
 
-//Nodo::~Nodo(){}
+
 // NODO SECUENCIA
 NodoSecuencia::NodoSecuencia(){hijo=0;}
 void NodoSecuencia::anyadirHijo(Nodo * hijo){NodoSecuencia::m_hijos.push_back(hijo);}
 short NodoSecuencia::run(int &id){
-//    cout << "NODO SECUENCIA" << endl;
-    for (hijo; hijo<m_hijos.size(); hijo++) {
+    //cout << "NODO SECUENCIA" << endl;
+    for (;hijo<m_hijos.size(); hijo++) {
         short answer = m_hijos[hijo]->run(id);
         if (answer==FAILURE) {hijo=0;return FAILURE;}
         else if(answer==RUNNING){return RUNNING;}
@@ -50,15 +70,18 @@ short NodoSecuencia::run(int &id){
 }
 NodoSecuencia::~NodoSecuencia(){
     for (int i=0; i<m_hijos.size(); i++) {
-        delete m_hijos[i];
+        if(m_hijos[i]!=NULL){
+            delete m_hijos[i];
+            m_hijos[i] = NULL;
+        }
     }
     m_hijos.clear();
 }
 // NODO SECUENCIA POSITIVA
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){hijo=0;}
 short NodoSecuenciaPositiva::run(int &id){
-//    cout << "NODO SECUENCIA POSITIVA" <<endl;
-    for(hijo;hijo<m_hijos.size();hijo++){
+    //cout << "NODO SECUENCIA POSITIVA" <<endl;
+    for(;hijo<m_hijos.size();hijo++){
         short answer = m_hijos[hijo]->run(id);
         if(answer==SUCCESS){hijo=0;return SUCCESS;}
         else if (answer==RUNNING){return RUNNING;}
@@ -69,7 +92,10 @@ short NodoSecuenciaPositiva::run(int &id){
 void NodoSecuenciaPositiva::anyadirHijo(Nodo * hijo){m_hijos.push_back(hijo);}
 NodoSecuenciaPositiva::~NodoSecuenciaPositiva(){
     for (int i=0; i<m_hijos.size(); i++) {
-        delete m_hijos[i];
+        if(m_hijos[i]!=NULL){
+            delete m_hijos[i];
+            m_hijos[i]=NULL;
+        }
     }
     m_hijos.clear();
 }
@@ -84,51 +110,31 @@ short NodoRecorreZonaCercana::run(int &id){return false;}
 NodoMover::NodoMover(){_movement=new dvector3D(0,0,0);aux=-1;}
 NodoMover::~NodoMover(){delete _movement;}
 short NodoMover::run(int &id){
-//    cout << "NODO MOVER" << endl;
+    //cout << "NODO MOVER" << endl;
     if(_movement==NULL) _movement = new dvector3D;
     if(aux==-1){
         aux = CalcularDistancia(*NPC_library::instance()->getMyBook(&id)->getPosition(), *NPC_library::instance()->getMyBook(&id)->getPosObjetivo());
-        _movement->x = 0;
-        _movement->y = 0;
-        _movement->z = 0;
+        xABS = NPC_library::instance()->getMyBook(&id)->getPosObjetivo()->x-NPC_library::instance()->getMyBook(&id)->getPosition()->x;
+        yABS = NPC_library::instance()->getMyBook(&id)->getPosObjetivo()->y-NPC_library::instance()->getMyBook(&id)->getPosition()->y;
     }else if(aux>0 && aux<0.5){
+        aux=-1;
         return true;
     }else{
-        if(fabsf(xABS)>fabsf(yABS)){
-            float x = 0.05;
-            if (xABS<0) x=-0.05;
-            _movement->x = x;
-            _movement->y = 0;
-            _movement->z = 0;
-            
+        float y=0,x=0;
+        if(aux<2){
+            x = xABS;
+            y = yABS;
         }else{
-            float y = 0.05;
-            if (yABS<0) y=-0.05;
-            _movement->x = 0;
-            _movement->y = y;
-            _movement->z = 0;
+            float por = (100/aux);
+            x = xABS*(por/100);
+            y = yABS*(por/100);
         }
+        _movement->x = x;
+        _movement->y = y;
+        _movement->z = 0;
         NPC_library::instance()->getMyBook(&id)->setVMovement(_movement);
         aux = -1;
     }
-    
-    
-    /*
-    else{
-        if(fabsf(xABS)>fabsf(yABS)){
-            float x = 0.05;
-            if (xABS<0) x=-0.05;
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y,NPCinfo->getPosActual()->z});
-        }else{
-            float y = 0.05;
-            if (yABS<0) y=-0.05;
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
-        }
-        cout << "JUGADOR :" << NPCinfo->getPosActual()->x << "|" << NPCinfo->getPosActual()->y << endl;
-        cout << NPCinfo->getPosAviso()->x << "|" << NPCinfo->getPosAviso()->y << endl;
-        aux = -1;
-        
-    }*/
     return RUNNING;
 }
 float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
@@ -136,16 +142,23 @@ float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
     float y = fabs(a.y-b.y);
     return x+y;
 }
+float NodoVigilar::CalcularDistancia(dvector3D a, dvector3D b){
+    float x = fabs(a.x-b.x);
+    float y = fabs(a.y-b.y);
+    return x+y;
+}
 // NODO COMER
 NodoComer::NodoComer(){}
 short NodoComer::run(int &id){
-//    cout << " NODO COMER" <<endl;
+    //cout << " NODO COMER" <<endl;
     TypeRecords comida = R_COMIDA;
-    World_BlackBoard::instance()->addRecord(comida,
-                                            World_BlackBoard::instance()->getAnswer(comida, &id)->_idResponse,
-                                            World_BlackBoard::instance()->getAnswer(comida, &id)->_answerInfo);
+    World_BlackBoard::instance()->addRecord(
+                                            comida,
+                                            *World_BlackBoard::instance()->getAnswer(comida,id)->_idResponse,
+                                            World_BlackBoard::instance()->getAnswer(comida, id)->_answerInfo
+                                            );
     //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
-    World_BlackBoard::instance()->removeRecord(comida, &id);
+    World_BlackBoard::instance()->removeRecord(comida,id);
     NPC_library::instance()->getMyBook(&id)->setHungry(COMIDA_ALIMENTA);
     //NPCinfo->Alimentarse(COMIDA_ALIMENTA);
     
@@ -156,13 +169,13 @@ NodoComer::~NodoComer(){}
 NodoBeber::NodoBeber(){}
 NodoBeber::~NodoBeber(){}
 short NodoBeber::run(int &id){
-//    cout << " NODO BEBER" <<endl;
+    //cout << " NODO BEBER" <<endl;
     TypeRecords fuente = R_FUENTE;
     World_BlackBoard::instance()->addRecord(fuente,
-                                            World_BlackBoard::instance()->getAnswer(fuente, &id)->_idResponse,
-                                            World_BlackBoard::instance()->getAnswer(fuente, &id)->_answerInfo);
+                                            *World_BlackBoard::instance()->getAnswer(fuente, id)->_idResponse,
+                                            World_BlackBoard::instance()->getAnswer(fuente, id)->_answerInfo);
     //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
-    World_BlackBoard::instance()->removeRecord(fuente, &id);
+    World_BlackBoard::instance()->removeRecord(fuente, id);
     NPC_library::instance()->getMyBook(&id)->setThirst(AGUA_HIDATRA);
     return true;
 }
@@ -170,14 +183,14 @@ short NodoBeber::run(int &id){
 NodoHuir::NodoHuir(){}
 NodoHuir::~NodoHuir(){}
 short NodoHuir::run(int &id){
-//    cout << " NODO HUIR" << endl;
+    //cout << " NODO HUIR" << endl;
     return false;
 }
 // NODO AVISAR
 NodoAvisar::NodoAvisar(){}
 NodoAvisar::~NodoAvisar(){}
 short NodoAvisar::run(int &id){
-//    cout << " NODO AVISAR" << endl;
+    //cout << " NODO AVISAR" << endl;
     //NPCinfo->Avisado(true);
     return false;
 }
@@ -185,57 +198,63 @@ short NodoAvisar::run(int &id){
 NodoHablar::NodoHablar(){}
 NodoHablar::~NodoHablar(){}
 short NodoHablar::run(int &id){
-//    cout << " NODO HABLAR" << endl;
+    //cout << " NODO HABLAR" << endl;
     return false;
 }
 // NODO CURARSE
 NodoCurarse::NodoCurarse(){}
 NodoCurarse::~NodoCurarse(){}
 short NodoCurarse::run(int &id){
-//    cout << " NODO CURARSE" << endl;
+    //cout << " NODO CURARSE" << endl;
     TypeRecords botiquin = R_BOTIQUIN;
     World_BlackBoard::instance()->addRecord(botiquin,
-                                            World_BlackBoard::instance()->getAnswer(botiquin, &id)->_idResponse,
-                                            World_BlackBoard::instance()->getAnswer(botiquin, &id)->_answerInfo);
+    *World_BlackBoard::instance()->getAnswer(botiquin, id)->_idResponse,
+    World_BlackBoard::instance()->getAnswer(botiquin, id)->_answerInfo);
     //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
-    World_BlackBoard::instance()->removeRecord(botiquin, &id);
+    World_BlackBoard::instance()->removeRecord(botiquin,id);
     NPC_library::instance()->getMyBook(&id)->setLife(BOTIQUIN_CURA);
     return true;
 }
 // NODO VIGILAR
-NodoVigilar::NodoVigilar(){}
-NodoVigilar::~NodoVigilar(){}
+NodoVigilar::NodoVigilar(){vigilar = new dvector3D(10,10,0);aux=-1;_movement = new dvector3D(0,0,0);}
+NodoVigilar::~NodoVigilar(){delete _movement;delete vigilar;}
 short NodoVigilar::run(int &id){
-//    cout << " NODO VIGILAR" << endl;
-    /*if(NPCinfo->getRutina()!=0){
-        float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
-        if(aux<0.5) {return true;}
-        float xABS = fabs(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->x-NPCinfo->getPosActual()->x);
-        float x=0,y=0;
-        if(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->x-NPCinfo->getPosActual()->x<0){x-=0.05;}
-        else{x+=0.05;}
-        if(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->y-NPCinfo->getPosActual()->y<0){y-=0.05;}
-        else{y+=0.05;}
-        float yABS = fabs(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->y-NPCinfo->getPosActual()->y);
-        cout << x << "|" << y << endl;
-        if(xABS>yABS){
-            
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y,NPCinfo->getPosActual()->z});
-        }else if(xABS<yABS){
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
-        }else if(xABS==yABS){
-            NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
+    //cout << " NODO VIGILAR" << endl;
+    if(NPC_library::instance()->getMyBook(&id)->getPosObjetivo()!=vigilar)
+        NPC_library::instance()->getMyBook(&id)->setPosObjetivo(vigilar);
+    else{
+        // TO DO: RESUMIR LLAMADAS WITHOUT ID
+        if(aux==-1){
+            aux = CalcularDistancia(*NPC_library::instance()->getMyBook(&id)->getPosition(), *NPC_library::instance()->getMyBook(&id)->getPosObjetivo());
+            xABS = NPC_library::instance()->getMyBook(&id)->getPosObjetivo()->x-NPC_library::instance()->getMyBook(&id)->getPosition()->x;
+            yABS = NPC_library::instance()->getMyBook(&id)->getPosObjetivo()->y-NPC_library::instance()->getMyBook(&id)->getPosition()->y;
+        }else if(aux>0 && aux<0.1){
+            aux=-1;
+            return true;
+        }else{
+            float y,x;
+            if(aux<2){
+                x = xABS;
+                y = yABS;
+            }else{
+                float por = (100/aux);
+                x = xABS*(por/100);
+                y = yABS*(por/100);
+            }
+            _movement->x = x;
+            _movement->y = y;
+            _movement->z = 0;
+            NPC_library::instance()->getMyBook(&id)->setVMovement(_movement);
+            aux = -1;
         }
-        return true;
     }
-        */
     return false;
 }
 // NODO CUBRISE
 NodoCubrirse::NodoCubrirse(){}
 NodoCubrirse::~NodoCubrirse(){}
 short NodoCubrirse::run(int &id){
-//    cout << " NODO CUBRIRSE" << endl;
+    //cout << " NODO CUBRIRSE" << endl;
     return false;
 }
 
@@ -243,42 +262,20 @@ short NodoCubrirse::run(int &id){
 NodoPatrullar::NodoPatrullar(){}
 NodoPatrullar::~NodoPatrullar(){}
 short NodoPatrullar::run(int &id){
-//    cout << " NODO PATRULLAR" << endl;
-   /* if (NPCinfo->getRutina()!=0) {
-        return false;
-    }
-    float aux = CalcularDistancia(*NPCinfo->getPosActual(), *NPCinfo->getPosRutina()[NPCinfo->getPaso()]);
-    if(aux<0.5) NPCinfo->setPaso();
-    float xABS = fabs(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->x-NPCinfo->getPosActual()->x);
-    float x=0,y=0;
-    if(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->x-NPCinfo->getPosActual()->x<0){x-=0.05;}
-    else{x+=0.05;}
-    if(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->y-NPCinfo->getPosActual()->y<0){y-=0.05;}
-    else{y+=0.05;}
-    float yABS = fabs(NPCinfo->getPosRutina()[NPCinfo->getPaso()]->y-NPCinfo->getPosActual()->y);
-    if(xABS>yABS){
-        
-        NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y,NPCinfo->getPosActual()->z});
-    }else if(xABS<yABS){
-        NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
-    }else if(xABS==yABS){
-        NPCinfo->newPosition(new vector3D{NPCinfo->getPosActual()->x+x,NPCinfo->getPosActual()->y+y,NPCinfo->getPosActual()->z});
-    }
-    */
     return true;
 }
 // NODO ATAQUE CUERPO A CUERPO
 NodoAtaqueCuerpo::NodoAtaqueCuerpo(){}
 NodoAtaqueCuerpo::~NodoAtaqueCuerpo(){}
 short NodoAtaqueCuerpo::run(int &id){
-//    cout << " NODO ATAQUE A CUEPO" << endl;
+    //cout << " NODO ATAQUE A CUEPO" << endl;
     return false;
 }
 // NODO ATAQUE DISTANCIA
 NodoAtaqueDistancia::NodoAtaqueDistancia(){}
 NodoAtaqueDistancia::~NodoAtaqueDistancia(){}
 short NodoAtaqueDistancia::run(int &id){
-//    cout << " NODO ATACO DISTANCIA" << endl;
+    //cout << " NODO ATACO DISTANCIA" << endl;
     return false;
 }
 //#############################
@@ -290,7 +287,14 @@ short NodoAtaqueDistancia::run(int &id){
 Nodo_HayRuido::Nodo_HayRuido(){}
 Nodo_HayRuido::~Nodo_HayRuido(){}
 short Nodo_HayRuido::run(int &id){
-//    cout << " NODO HAY RUIDO ?" << endl;
+    //cout << " NODO HAY RUIDO ?" << endl;
+    /*######################################
+     TRIGGER SYSTEM
+     #####################################*/
+    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_RUIDO)) {
+        NPC_library::instance()->getMyBook(&id)->EventPosObjetivo(EVENTO_RUIDO);
+        return true;
+    }
     return false;
 }
 
@@ -298,7 +302,7 @@ short Nodo_HayRuido::run(int &id){
 Nodo_PuedoAtacarDistancia::~Nodo_PuedoAtacarDistancia(){}
 Nodo_PuedoAtacarDistancia::Nodo_PuedoAtacarDistancia(){}
 short Nodo_PuedoAtacarDistancia::run(int &id){
-//    cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
+    //cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
     return false;
 }
 
@@ -306,7 +310,7 @@ short Nodo_PuedoAtacarDistancia::run(int &id){
 Nodo_NecesitoAyuda::~Nodo_NecesitoAyuda(){}
 Nodo_NecesitoAyuda::Nodo_NecesitoAyuda(){}
 short Nodo_NecesitoAyuda::run(int &id){
-//    cout << " NODO NECESITO AYUDA ?" << endl;
+    //cout << " NODO NECESITO AYUDA ?" << endl;
     return false;
 }
 
@@ -314,9 +318,9 @@ short Nodo_NecesitoAyuda::run(int &id){
 Nodo_AlarmaRota::~Nodo_AlarmaRota(){}
 Nodo_AlarmaRota::Nodo_AlarmaRota(){}
 short Nodo_AlarmaRota::run(int &id){
-//    cout << " NODO ALARMA ROTA ?" << endl;
-   // WorldInfo->comprobadaAlarma = true;
-    //if(WorldInfo->estadoAlarma) return false;    
+    //cout << " NODO ALARMA ROTA ?" << endl;
+    // WorldInfo->comprobadaAlarma = true;
+    //if(WorldInfo->estadoAlarma) return false;
     return true;
 }
 
@@ -324,7 +328,7 @@ short Nodo_AlarmaRota::run(int &id){
 Nodo_Avisado::Nodo_Avisado(){};
 Nodo_Avisado::~Nodo_Avisado(){}
 short Nodo_Avisado::run(int &id){
-//    cout << " NODO AVISADO ?" << endl;
+    //cout << " NODO AVISADO ?" << endl;
     //if(NPCinfo->getLLamada()) return true;
     return false;
 }
@@ -333,16 +337,17 @@ short Nodo_Avisado::run(int &id){
 Nodo_TengoSed::Nodo_TengoSed(){}
 Nodo_TengoSed::~Nodo_TengoSed(){}
 short Nodo_TengoSed::run(int &id){
-//    cout << "NODO TENGO SED" << endl;
+    //cout << "NODO TENGO SED" << endl;
     TypeRecords sed = R_FUENTE;
-    if(NPC_library::instance()->getMyBook(&id)->getThirst()>70){
-        if (World_BlackBoard::instance()->existRecord(sed, &id)) {
-            if (World_BlackBoard::instance()->hasAnswer(sed, &id)) {
-                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(sed, &id)->_answerInfo);
+    if(NPC_library::instance()->getMyBook(&id)->getThirst()>UMBRAL_SED){
+        if (World_BlackBoard::instance()->existRecord(sed, id)) {
+            if (World_BlackBoard::instance()->hasAnswer(sed, id)) {
+                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(sed, id)->_answerInfo);
                 return true;
             }
+            return false;
         }
-        World_BlackBoard::instance()->addRecord(sed, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
+        World_BlackBoard::instance()->addRecord(sed, id, NPC_library::instance()->getMyBook(&id)->getPosition());
     }
     return false;
 }
@@ -350,16 +355,17 @@ short Nodo_TengoSed::run(int &id){
 Nodo_TengoHambre::Nodo_TengoHambre(){}
 Nodo_TengoHambre::~Nodo_TengoHambre(){}
 short Nodo_TengoHambre::run(int &id){
-//    cout << "NODO TENGO HAMBRE" << endl;
+    //cout << "NODO TENGO HAMBRE" << endl;
     TypeRecords comida = R_COMIDA;
     if(NPC_library::instance()->getMyBook(&id)->getHungry()>=UMBRAL_HAMBRE){
-        if (World_BlackBoard::instance()->existRecord(comida, &id)) {
-            if (World_BlackBoard::instance()->hasAnswer(comida, &id)) {
-                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(comida, &id)->_answerInfo);
+        if (World_BlackBoard::instance()->existRecord(comida, id)) {
+            if (World_BlackBoard::instance()->hasAnswer(comida, id)) {
+                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(comida, id)->_answerInfo);
                 return true;
             }
+            return false;
         }
-        World_BlackBoard::instance()->addRecord(comida, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
+        World_BlackBoard::instance()->addRecord(comida, id, NPC_library::instance()->getMyBook(&id)->getPosition());
     }
     return false;
 }
@@ -367,7 +373,7 @@ short Nodo_TengoHambre::run(int &id){
 Nodo_VidaBaja::Nodo_VidaBaja(){}
 Nodo_VidaBaja::~Nodo_VidaBaja(){}
 short Nodo_VidaBaja::run(int &id){
-//    cout << " NODO VIDA BAJA?" << endl;
+    //cout << " NODO VIDA BAJA?" << endl;
     if(NPC_library::instance()->getMyBook(&id)->getLife()<=UMBRAL_VIDA)
         return true;
     return false;
@@ -376,15 +382,15 @@ short Nodo_VidaBaja::run(int &id){
 Nodo_TieneAgua::Nodo_TieneAgua(){}
 Nodo_TieneAgua::~Nodo_TieneAgua(){}
 short Nodo_TieneAgua::run(int &id){
-//    cout << " NODO FUENTE TIENE AGUA?" << endl;
-	
+    //cout << " NODO FUENTE TIENE AGUA?" << endl;
+    
     return true;
 }
 // NODO VER JUGADOR ?
 Nodo_VerJugador::Nodo_VerJugador(){}
 Nodo_VerJugador::~Nodo_VerJugador(){}
 short Nodo_VerJugador::run(int &id){
-//    cout << " NODO VES AL JUGADOR?" << endl;
+    //cout << " NODO VES AL JUGADOR?" << endl;
     return false;
 }
 // NODO ALARMA CERCA?
@@ -392,7 +398,11 @@ Nodo_AlarmaCerca::Nodo_AlarmaCerca(){}
 Nodo_AlarmaCerca::~Nodo_AlarmaCerca(){}
 short Nodo_AlarmaCerca::run(int &id){
     
-//    cout << " NODO ALARMA CERCA?" << endl;
+    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_ALARMA_CERCA)) {
+        NPC_library::instance()->getMyBook(&id)->EventPosObjetivo(EVENTO_ALARMA_CERCA);
+        return true;
+    }
+    //cout << " NODO ALARMA CERCA?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -402,22 +412,26 @@ short Nodo_AlarmaCerca::run(int &id){
 Nodo_HayBotiquin::Nodo_HayBotiquin(){}
 Nodo_HayBotiquin::~Nodo_HayBotiquin(){}
 short Nodo_HayBotiquin::run(int &id){
-//    cout << "NODO HAY BOTIQUIN" << endl;
+    //cout << "NODO HAY BOTIQUIN" << endl;
     TypeRecords botiquin = R_BOTIQUIN;
-    if (World_BlackBoard::instance()->existRecord(botiquin, &id)) {
-        if (World_BlackBoard::instance()->hasAnswer(botiquin, &id)) {
-            NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(botiquin, &id)->_answerInfo);
+    if (World_BlackBoard::instance()->existRecord(botiquin, id)) {
+        if (World_BlackBoard::instance()->hasAnswer(botiquin, id)) {
+            NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(botiquin, id)->_answerInfo);
             return true;
         }
     }
-    World_BlackBoard::instance()->addRecord(botiquin, &id, NPC_library::instance()->getMyBook(&id)->getPosition());
+    World_BlackBoard::instance()->addRecord(botiquin, id, NPC_library::instance()->getMyBook(&id)->getPosition());
     return false;
 }
 // NODO SUENA ALARMA ?
 Nodo_SuenaAlarma::Nodo_SuenaAlarma(){}
 Nodo_SuenaAlarma::~Nodo_SuenaAlarma(){}
 short Nodo_SuenaAlarma::run(int &id){
-//    cout << " NODO SUENA ALARMA?" << endl;
+    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_ALARMA)) {
+        NPC_library::instance()->getMyBook(&id)->setState(ALERTA);
+        return true;
+    }
+    //cout << " NODO SUENA ALARMA?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -427,14 +441,18 @@ short Nodo_SuenaAlarma::run(int &id){
 Nodo_EstasAsustado::Nodo_EstasAsustado(){}
 Nodo_EstasAsustado::~Nodo_EstasAsustado(){}
 short Nodo_EstasAsustado::run(int &id){
-//    cout << " NODO ASUSTADO?" << endl;
+    //cout << " NODO ASUSTADO?" << endl;
     return false;
 }
 // NODO HAY PARA HABLAR ?
 Nodo_HayParaHablar::Nodo_HayParaHablar(){}
 Nodo_HayParaHablar::~Nodo_HayParaHablar(){}
 short Nodo_HayParaHablar::run(int &id){
-//    cout << " NODO ALGUIEN HABLAR?" << endl;
+    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_HABLAR)) {
+        NPC_library::instance()->getMyBook(&id)->EventPosObjetivo(EVENTO_HABLAR);
+        return true;
+    }
+    //cout << " NODO ALGUIEN HABLAR?" << endl;
     /*######################################
      TRIGGER SYSTEM
      #####################################*/
@@ -445,41 +463,60 @@ short Nodo_HayParaHablar::run(int &id){
 Nodo_HayAlguienCerca::Nodo_HayAlguienCerca(){}
 Nodo_HayAlguienCerca::~Nodo_HayAlguienCerca(){}
 short Nodo_HayAlguienCerca::run(int &id){
-//    cout << "NODO HAY ALGUIEN CERCA " << endl;
-    /*######################################
-     TRIGGER SYSTEM
-     #####################################*/
+    TypeRecords radio = R_RADIO;
+    TypeRecords cercano = R_CERCA;
+    if(World_BlackBoard::instance()->existRecord(radio, id)) return false;
+    if(World_BlackBoard::instance()->existRecord(cercano, id)){
+        if(World_BlackBoard::instance()->hasAnswer(cercano, id)){
+            return true;
+        }
+        return false;
+    }
+    World_BlackBoard::instance()->addRecord(cercano, id, NPC_library::instance()->getMyBook(&id)->getPosition());
+    
+    //cout << "NODO HAY ALGUIEN CERCA " << endl;
     return false;
 }
 // NODO HAY ALGUIEN RADIO ?
 Nodo_HayAlguienRadio::Nodo_HayAlguienRadio(){}
 Nodo_HayAlguienRadio::~Nodo_HayAlguienRadio(){}
 short Nodo_HayAlguienRadio::run(int &id){
-//    cout << " NODO HAY NPCS POR RADIO?" << endl;
-    /*######################################
-     TRIGGER SYSTEM
-     #####################################*/
+    TypeRecords radio = R_RADIO;
+    TypeRecords cercano = R_CERCA;
+    if(World_BlackBoard::instance()->existRecord(cercano, id)) return false;
+    if(World_BlackBoard::instance()->existRecord(radio, id)){
+        if(World_BlackBoard::instance()->hasAnswer(radio, id)){
+            return true;
+        }
+        return false;
+    }
+    World_BlackBoard::instance()->addRecord(radio, id, NPC_library::instance()->getMyBook(&id)->getPosition());
+    
+    return false;
+    
+    //cout << " NODO HAY NPCS POR RADIO?" << endl;
+    
     return false;
 }
 // NODO ESTAS CERCA JUGADOR ?
 Nodo_EstasCercaJugador::Nodo_EstasCercaJugador(){}
 Nodo_EstasCercaJugador::~Nodo_EstasCercaJugador(){}
 short Nodo_EstasCercaJugador::run(int &id){
-//    cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
+    //cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
     return false;
 }
 // NODO ESTAS LEJOS JUGADOR ?
 Nodo_EstasLejosJugador::Nodo_EstasLejosJugador(){}
 Nodo_EstasLejosJugador::~Nodo_EstasLejosJugador(){}
 short Nodo_EstasLejosJugador::run(int &id){
-//    cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
+    //cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
     return false;
 }
 // NODO TIEMPO INACTIVO ?
 Nodo_TiempoInactivo::Nodo_TiempoInactivo(){}
 Nodo_TiempoInactivo::~Nodo_TiempoInactivo(){}
 short Nodo_TiempoInactivo::run(int &id){
-//    cout << " NODO TIEMPO INACTIVO?" << endl;
+    //cout << " NODO TIEMPO INACTIVO?" << endl;
     return false;
 }
 

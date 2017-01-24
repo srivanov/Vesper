@@ -17,13 +17,15 @@
 using namespace std;
 
 /*###################
-    CLASES GENERALES
+ CLASES GENERALES
  ###################*/
 class Nodo {
 public:
+    Nodo(){}
     virtual short run(int &id) = 0;
-    //virtual ~Nodo();
+    virtual ~Nodo(){}
 protected:
+    bool borrable; // TO DO:
 };
 
 class NodoSecuencia : public Nodo {
@@ -89,7 +91,11 @@ public:
     NodoVigilar();
     short run(int &id);
 private:
-    // Iniciar Tiempo
+    float CalcularDistancia(dvector3D a, dvector3D b);
+    dvector3D * vigilar;
+    dvector3D * _movement;
+    int aux;
+    float xABS, yABS;
 };
 class NodoPatrullar : public Nodo {
 public:
@@ -270,6 +276,7 @@ public:
     Nodo_HayAlguienRadio();
     short run(int &id);
 private:
+    time_t time;
 };
 
 class NodoAvisar : public Nodo {

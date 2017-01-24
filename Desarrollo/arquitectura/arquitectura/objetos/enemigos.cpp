@@ -1,6 +1,7 @@
 
 #include "enemigos.hpp"
 #include "BlackBoards.hpp"
+#include "trigger_system.hpp"
 
 enemigos::enemigos(int& ID){
 	this->ID = ID;
@@ -36,34 +37,46 @@ enemigos::enemigos(int& ID){
 	salud = 100;
 	srand(time(NULL));
 	sed = rand()%20 + 1;
-	hambre = rand()%20 + 1;
+	hambre = rand()%30 + 1;
     estado = 0;
     STD = new estados();
+    trigger_system::_instance()->subs(this);
+    
+    
 }
 
 enemigos::~enemigos(){
+    book = NULL;
 	if(NPC_library::instance()->ExistMyBook(&ID))
 		NPC_library::instance()->RemoveBook(&ID);
     delete STD;
 }
 
+void enemigos::notify(dvector3D& position, int type){book->notify(position, type);}
+bool enemigos::EventUsed(int type){return book->EventUsed(type);}
 void enemigos::update(){
-	GameObject::update();
-    if(k%600){
+    // CODIGO GUARRO
+    if(k%15==0){
         hambre++;
-//        std::cout << hambre << std::endl;
+        std::cout << hambre << std::endl;
+        std::cout << getPosicion()->x << "|" << getPosicion()->y << std::endl;
         k = 0;
     }
     k++;
-	
-	if(!NPC_library::instance()->ExistMyBook(&ID))
-		NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, getPosicion());
-	else
-		NPC_library::instance()->updateMyBook(&ID, salud, hambre, sed, getPosicion());
-    STD->run(ID);
-    if(NPC_library::instance()->getMyBook(&ID)->getVMovement()!=NULL){
-        this->mover(*NPC_library::instance()->getMyBook(&ID)->getVMovement());
+    // FIN CODIGO GUARRO
+    if(!NPC_library::instance()->ExistMyBook(&ID)){
+        NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, getPosicion());
+        book = NPC_library::instance()->getMyBook(&ID);
     }
     
+    
+    STD->run(ID);
+    
+    this->mover(*book->getVMovement());
+    
+    dvector3D aux;
+    aux = *getPosicion() + *book->getVMovement();
+    this->rotarConRaton(aux);
+    GameObject::update();
 	
 }

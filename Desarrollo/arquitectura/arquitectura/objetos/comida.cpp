@@ -49,11 +49,13 @@ void comida::gestorTiempo(){
 void comida::update(){
     gestorTiempo();
     TypeRecords comida = R_COMIDA;
-    if (World_BlackBoard::instance()->hasAnswer(comida, &ID) && !consumido) {
-        World_BlackBoard::instance()->removeRecord(comida, &ID);
+    if (World_BlackBoard::instance()->hasAnswer(comida, ID) && !consumido) {
+        World_BlackBoard::instance()->removeRecord(comida, ID);
         consumido = true;
         _time = time(NULL) + TIEMPO_COMESTIBLE;
-    }else if(World_BlackBoard::instance()->countType(comida)>0 && !consumido){
-        World_BlackBoard::instance()->AnswerRecord(comida, &ID, getPosicion());
+        return;
+    }
+    if(World_BlackBoard::instance()->countType(comida)>0 && !consumido){
+        World_BlackBoard::instance()->AnswerRecord(comida, ID, getPosicion());
     }
 }

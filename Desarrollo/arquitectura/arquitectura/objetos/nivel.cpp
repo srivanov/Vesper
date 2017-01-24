@@ -84,16 +84,16 @@ void nivel::dibujarMapa(){
 
 void nivel::update(){
     //TO DO: revisar !!
-    std::vector<palaObj*>::iterator iter = powerups.begin();
-    while (iter!=powerups.end()) {
-        if(!(*(*iter)->getmuero())){
-            (*iter)->update();
-        }else{
-//            (*iter)->~palaObj();
-            powerups.erase(iter);
-        }
-        iter.operator++();
-    }
+//    std::vector<palaObj*>::iterator iter = powerups.begin();
+//    while (iter!=powerups.end()) {
+//        if(!(*(*iter)->getmuero())){
+//            (*iter)->update();
+//        }else{
+////            (*iter)->~palaObj();
+//            powerups.erase(iter);
+//        }
+//        iter.operator++();
+//    }
     piedra.update();
     moneda.update();
     llave.update();
