@@ -23,12 +23,17 @@ public:
     void update();
     void render();
     void set_window();
+    sf::RectangleShape* getLevelRec();
     sf::RenderWindow* window;
+    
 private:
     int num_menu;
     HUD *hud;
     sf::Texture textura;
     sf::RectangleShape rec;
+    
+    // Rectangulos para niveles
+    sf::RectangleShape *level_rec;
 };
 
 #endif /* menu_hpp */

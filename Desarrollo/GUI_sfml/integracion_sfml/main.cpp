@@ -24,8 +24,9 @@
 int main(int, char const**)
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Integracion SFML");
-
+//    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Integracion SFML", sf::Style::Fullscreen);
+    sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Integracion SFML");
+    
     menu menu;
     menu.window = &window;
 //    // Set the Icon
