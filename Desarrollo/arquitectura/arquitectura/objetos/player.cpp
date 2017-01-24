@@ -8,8 +8,6 @@ player::player(){
 	this->insertComponent((char*)"armas", aux);
 	aux = new physics();
 	this->insertComponent((char*)"physics", aux);
-	aux = new pala();
-    this->insertComponent((char*)"pala", aux);
 //	aux = new armasArrojadizas();
 //    this->insertComponent((char*)"armasArrojadizas", aux);
 //	aux = new piedra();
@@ -36,6 +34,7 @@ player::player(){
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
     
+    arma = (armas*)findComponent("armas");
     fisica->crearBodyDinamico(dim, pos);
 	aux = NULL;
 	setType(tPLAYER);
@@ -46,7 +45,7 @@ player::~player(){
 }
 
 void player::atacar(){
-	arma = (armas*)findComponent("armas");
+	
 	arma->shoot();
 }
 
@@ -57,6 +56,7 @@ void player::cambiarArma(){
 
 void player::contacto(GameObject *g){
 	if(*g->getType() == tPALA){
+        arma->insertarArma(9);
 		printf("\nCONTACTO CON PALA\n\n");
 	}
 }

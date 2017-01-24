@@ -13,6 +13,7 @@
 #include "chicle.hpp"
 #include "bombaHumo.hpp"
 #include "martilloDeJuguete.hpp"
+#include "pala.hpp"
 #include <vector>
 
 class armas : public component {
@@ -22,6 +23,8 @@ public:
 	void update() override;
 	void shoot();
 	void changeGun();
+    void insertarArma(int a);
+    void eliminarArma(std::vector<armaInterface*>::iterator iter);
 	
 private:
 //	armaInterface* aux;

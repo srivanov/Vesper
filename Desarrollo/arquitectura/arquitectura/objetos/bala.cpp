@@ -49,6 +49,9 @@ dvector3D* bala::getDireccion(){
 }
 
 void bala::update(){
+    
+    //TO DO: no crear y eliminar memoria de las balas, simplemente activar y desactivarlas
+    
 	//	std::map<char*, component>::iterator iter = components.begin();
 	//	while (iter != components.end()) {
 	//		iter->second.update();

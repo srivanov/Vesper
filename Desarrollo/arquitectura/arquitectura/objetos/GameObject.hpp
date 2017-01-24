@@ -23,7 +23,6 @@
 #include "../components/input.hpp"
 #include "../components/martilloDeJuguete.hpp"
 #include "../components/transform3D.hpp"
-#include "../components/pala.hpp"
 #include "../components/Physics.hpp"
 #include "../components/piedra.hpp"
 #include "../components/render.hpp"
