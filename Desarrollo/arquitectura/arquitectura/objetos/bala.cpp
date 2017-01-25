@@ -32,7 +32,7 @@ bala::bala(dvector3D &pos, dvector3D &dir, float vel){
 //	printf("%2.f %.2f\n", dir[0], dir[1]);
 	intervalo = clock();
 	tiempo_vida = vel;
-	muerto = false;
+	muero = false;
 	aux = NULL;
 	setType(tBALA);
 }
@@ -59,10 +59,17 @@ void bala::update(){
 	//	}
 //	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
 	GameObject::update();
-	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muerto == false)
-		muerto = true;
+	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muero == false)
+		muero = true;
 }
 
-bool bala::muero(){
-	return muerto;
+bool const* bala::getmuero(){
+	return &muero;
 }
+
+void bala::contacto(GameObject *g){
+//    if(*g->getType() == tENEMIGOS){
+//        muero = true;
+//    }
+}
+

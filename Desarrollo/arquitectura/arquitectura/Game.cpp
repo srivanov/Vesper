@@ -159,7 +159,7 @@ void Game::update(){
         bala_aux = *iter;
         bala_aux->mover(*bala_aux->getDireccion());
 		bala_aux->update();
-		if(bala_aux->muero()){
+		if(*bala_aux->getmuero()){
 			delete bala_aux;
             bala_aux = NULL;
 			iter = balas.erase(iter);

@@ -17,10 +17,13 @@ public:
     botiquin(int &ID);
     ~botiquin();
     void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
     int ID;
     unsigned int usos;
     bool gastado;
+    bool muero;
 };
 
 #endif /* botiquin_hpp */

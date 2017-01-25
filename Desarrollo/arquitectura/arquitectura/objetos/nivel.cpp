@@ -13,6 +13,7 @@ nivel::nivel(){
 		iter++;
 	}
 	
+    muero = false;
 	mapa_nivel = NULL;
 	cargador = new cargarMapa();
 	aux = NULL;
@@ -36,27 +37,53 @@ bool nivel::cargarNivel(char* numero){
 	alto = cargador->getHeight();
 	
 	dvector3D pos1(5,17,0);
-    palaObj* pala = new palaObj();
-	pala->addNodo("");
-	pala->setTexture("3d/pala.jpg");
-	pala->setPosicion(pos1);
+    GameObject* aux = new palaObj();
+	aux->addNodo("");
+	aux->setTexture("3d/pala.jpg");
+	aux->setPosicion(pos1);
     
-    powerups.push_back(pala);
+    powerups.push_back(aux);
+    
     
     dvector3D pos2(3,20,0);
-    piedra.addNodo("");
-    piedra.setTexture("3d/piedra.jpg");
-    piedra.setPosicion(pos2);
+    aux = new piedraObj();
+    aux->addNodo("");
+    aux->setTexture("3d/piedra.jpg");
+    aux->setPosicion(pos2);
+    
+    powerups.push_back(aux);
     
     dvector3D pos3(8,20,0);
-    moneda.addNodo("");
-    moneda.setTexture("3d/moneda.jpg");
-    moneda.setPosicion(pos3);
+    aux = new monedas();
+    aux->addNodo("");
+    aux->setTexture("3d/moneda.jpg");
+    aux->setPosicion(pos3);
+    
+    powerups.push_back(aux);
+    dvector3D pos5(8,22,0);
+    aux = new monedas();
+    aux->addNodo("");
+    aux->setTexture("3d/moneda.jpg");
+    aux->setPosicion(pos5);
+    
+    powerups.push_back(aux);
+    dvector3D pos6(8,24,0);
+    aux = new monedas();
+    aux->addNodo("");
+    aux->setTexture("3d/moneda.jpg");
+    aux->setPosicion(pos6);
+    
+    powerups.push_back(aux);
     
     dvector3D pos4(4,11,0);
-    llave.addNodo("");
-    llave.setTexture("3d/llave.jpg");
-    llave.setPosicion(pos4);
+    aux = new llaveObj();
+    aux->addNodo("");
+    aux->setTexture("3d/llave.jpg");
+    aux->setPosicion(pos4);
+    
+    powerups.push_back(aux);
+    
+    aux = NULL;
 
 	if(ancho == 0 || alto == 0)
 		return false;
@@ -64,6 +91,8 @@ bool nivel::cargarNivel(char* numero){
 		mapa_nivel = cargador->getMatriz();
 		return true;
 	}
+    
+    //AQUI CODIGO MUERTO
 }
 
 int nivel::getAncho(){
@@ -83,18 +112,24 @@ void nivel::dibujarMapa(){
 }
 
 void nivel::update(){
-    std::vector<palaObj*>::iterator iter = powerups.begin();
+    std::vector<GameObject*>::iterator iter = powerups.begin();
     while (iter!=powerups.end() && powerups.size() > 0) {
-        if(!(*(*iter)->getmuero())){
-            (*iter)->update();
-        }else{
-            (*iter)->~palaObj();
+        if(*(*iter)->getmuero()){
+            delete (*iter);
             powerups.erase(iter);
+        }else{
+            (*iter)->update();
         }
         ++iter;
     }
-    piedra.update();
-    moneda.update();
-    llave.update();
 }
 
+void nivel::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* nivel::getmuero(){
+    return &muero;
+}

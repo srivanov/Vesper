@@ -32,6 +32,7 @@ enemigos::enemigos(int& ID){
 	aux = NULL;
 	setType(tENEMIGOS);
 	
+    muero = false;
     k = 0;
 	salud = 100;
 	srand(time(NULL));
@@ -66,4 +67,14 @@ void enemigos::update(){
     }
     
 	
+}
+
+void enemigos::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* enemigos::getmuero(){
+    return &muero;
 }

@@ -15,9 +15,11 @@ public:
 	void atacar();
 	void cambiarArma();
 	void contacto(GameObject* g);
+    bool const* getmuero();
 	
 private:
 	armas* arma;
+    bool muero;
 };
 
 #endif /* player_hpp */

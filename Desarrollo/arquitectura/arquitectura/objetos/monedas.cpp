@@ -22,6 +22,7 @@ monedas::monedas(){
     
     fisica->crearBodyEstatico(dim, pos, 90.f);
 	
+    muero = false;
 	aux = NULL;
 	setType(tMONEDAS);
 }
@@ -33,3 +34,15 @@ monedas::~monedas(){
 void monedas::update(){
    GameObject::update();
 }
+
+void monedas::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){ //compruebo que choco con el player
+        muero = true;
+    }
+}
+
+bool const* monedas::getmuero(){
+    return &muero;
+}
+
+

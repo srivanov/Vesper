@@ -17,10 +17,12 @@ public:
     comida(int &ID);
     ~comida();
     void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
     void gestorTiempo();
     int ID;
-    bool consumido;
+    bool consumido, muero;
     time_t _time;
 };
 

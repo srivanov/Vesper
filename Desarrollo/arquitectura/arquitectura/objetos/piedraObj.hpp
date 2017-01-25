@@ -18,8 +18,10 @@ public:
     piedraObj();
     ~piedraObj();
     void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
-    
+    bool muero;
 };
 
 #endif /* piedraObj_hpp */

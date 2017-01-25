@@ -9,5 +9,9 @@ class puerta : public GameObject{
 public:
     puerta();
     ~puerta();
+    void contacto(GameObject* g);
+    bool const* getmuero();
+private:
+    bool muero;
 };
 #endif /* puerta_hpp */

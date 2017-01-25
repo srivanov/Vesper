@@ -86,6 +86,7 @@ public:
 	typeObj const* getType();
 	
 	virtual void contacto(GameObject* g){};
+    virtual bool const* getmuero() = 0;
     
 protected:
     bool renderizable;

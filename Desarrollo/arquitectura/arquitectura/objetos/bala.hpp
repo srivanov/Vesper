@@ -12,11 +12,12 @@ public:
     ~bala();
 	dvector3D* getDireccion();
 	void update();
-	bool muero();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
 	dvector3D direccion;
 	time_t intervalo;
 	float tiempo_vida, velocidad;
-	bool muerto;
+    bool muero;
 };
 #endif /* bala_hpp */

@@ -22,14 +22,14 @@ public:
     std::vector<int>* getMapa();
 	void dibujarMapa();
 	void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 	
 private:
 	std::vector<int>* mapa_nivel;
 	cargarMapa* cargador;
 	int ancho, alto;
-    std::vector<palaObj*> powerups;
-    piedraObj piedra;
-    monedas moneda;
-    llaveObj llave;
+    std::vector<GameObject*> powerups;
+    bool muero;
 };
 #endif /* nivel_hpp */

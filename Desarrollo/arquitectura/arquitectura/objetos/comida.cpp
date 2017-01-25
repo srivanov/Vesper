@@ -35,6 +35,7 @@ comida::comida(int & ID){
     
     fisica->crearBodyDinamico(dim, pos);
     
+    muero = false;
     aux = NULL;
 	setType(tCOMIDA);
 }
@@ -56,4 +57,14 @@ void comida::update(){
     }else if(World_BlackBoard::instance()->countType(comida)>0 && !consumido){
         World_BlackBoard::instance()->AnswerRecord(comida, &ID, getPosicion());
     }
+}
+
+void comida::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* comida::getmuero(){
+    return &muero;
 }

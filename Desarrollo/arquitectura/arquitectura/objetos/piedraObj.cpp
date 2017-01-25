@@ -30,6 +30,7 @@ piedraObj::piedraObj(){
     
     fisica->crearBodyEstatico(dim, pos, 90.f);
     
+    muero = false;
     aux = NULL;
 }
 
@@ -40,3 +41,16 @@ piedraObj::~piedraObj(){
 void piedraObj::update(){
     GameObject::update();
 }
+
+void piedraObj::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* piedraObj::getmuero(){
+    return &muero;
+}
+
+
+

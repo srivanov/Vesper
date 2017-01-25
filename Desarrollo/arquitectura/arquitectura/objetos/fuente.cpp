@@ -35,6 +35,7 @@ fuente::fuente(int & ID){
     
     fisica->crearBodyDinamico(dim, pos);
  
+    muero = false;
     aux = NULL;
 	setType(tFUENTE);
 }
@@ -55,4 +56,14 @@ void fuente::update(){
     if(World_BlackBoard::instance()->countType(fuente)>0 && !NPCKnows){
         World_BlackBoard::instance()->AnswerRecord(fuente, &ID, getPosicion());
     }
+}
+
+void fuente::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* fuente::getmuero(){
+    return &muero;
 }

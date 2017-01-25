@@ -17,6 +17,8 @@ camara::camara(){
 		iter->second->setFather(this);
 		iter++;
 	}
+    
+    muero = false;
 	//incremento en el movimiento
 	incrX = 0;
 	incrY = 0;
@@ -75,4 +77,14 @@ void camara::setZoom(bool z){
 
 bool camara::getZoom(){
     return cerca;
+}
+
+void camara::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* camara::getmuero(){
+    return &muero;
 }

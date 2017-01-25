@@ -16,9 +16,12 @@ public:
     void setCamSpeed(float vel);
     void setZoom(bool z);
     bool getZoom();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
 	class render* renderiza;
 	float incrX, incrY, incrZ, offsetX, offsetY, offsetZ, camSpeed;
     bool cerca;
+    bool muero;
 };
 #endif /* camara_hpp */

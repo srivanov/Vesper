@@ -18,8 +18,10 @@ public:
     llaveObj();
     ~llaveObj();
     void update();
+    void contacto(GameObject *g);
+    bool const* getmuero();
 private:
-    
+    bool muero;
 };
 
 #endif /* llaveObj_hpp */

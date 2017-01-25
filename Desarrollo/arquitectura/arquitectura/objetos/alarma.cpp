@@ -31,6 +31,7 @@ alarma::alarma(int &ID){
     
 	fisica->crearBodyEstatico(dim, pos, 90.f);
 	
+    muero = false;
     _time = 0;
     NPCKnows = false;
     aux = NULL;
@@ -64,4 +65,14 @@ void alarma::update(){
 //    else if(World_BlackBoard::instance()->countType(alarma)>0 && !NPCKnows){
 //        World_BlackBoard::instance()->AnswerRecord(alarma, &ID, getPosicion());
 //    }
+}
+
+void alarma::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* alarma::getmuero(){
+    return &muero;
 }

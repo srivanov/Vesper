@@ -12,6 +12,8 @@ public:
     alarma(int &ID);
     ~alarma();
     void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
     void gestorTiempo();
     int ID;
@@ -19,5 +21,6 @@ private:
     bool rota;
     bool NPCKnows;
     time_t _time;
+    bool muero;
 };
 #endif /* alarma_hpp */

@@ -34,6 +34,7 @@ player::player(){
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
     
+    muero = false;
     arma = (armas*)findComponent("armas");
     fisica->crearBodyDinamico(dim, pos);
 	aux = NULL;
@@ -61,4 +62,7 @@ void player::contacto(GameObject *g){
 	}
 }
 
+bool const* player::getmuero(){
+    return &muero;
+}
 

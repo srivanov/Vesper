@@ -10,5 +10,10 @@ public:
     habilidadEspecial();
     ~habilidadEspecial();
 	void update() override;
+    void aumentarMoneda();
+    void resetear();
+private:
+    const unsigned int numMonedas;
+    unsigned int actual, numUsos;
 };
 #endif /* habilidadEspecial_hpp */

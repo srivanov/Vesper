@@ -17,9 +17,11 @@ public:
     fuente(int &ID);
     ~fuente();
     void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
 private:
     int ID;
-    bool rota, NPCKnows;
+    bool rota, NPCKnows, muero;
 };
 
 #endif /* fuente_hpp */

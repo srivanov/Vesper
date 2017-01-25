@@ -11,5 +11,9 @@ public:
     monedas();
     ~monedas();
     void update();
+    void contacto(GameObject* g);
+    bool const* getmuero();
+private:
+    bool muero;
 };
 #endif /* monedas_hpp */

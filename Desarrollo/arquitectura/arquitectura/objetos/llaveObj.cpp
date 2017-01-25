@@ -30,6 +30,7 @@ llaveObj::llaveObj(){
     
     fisica->crearBodyEstatico(dim, pos, 90.f);
     
+    muero = false;
     aux = NULL;
 }
 
@@ -40,3 +41,14 @@ llaveObj::~llaveObj(){
 void llaveObj::update(){
     GameObject::update();
 }
+
+void llaveObj::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* llaveObj::getmuero(){
+    return &muero;
+}
+

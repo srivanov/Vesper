@@ -36,6 +36,7 @@ botiquin::botiquin(int &ID){
     
     fisica->crearBodyDinamico(dim, pos);
     
+    muero = false;
     usos = NUMERO_USOS;
     aux = NULL;
 	setType(tBOTIQUIN);
@@ -53,4 +54,15 @@ void botiquin::update(){
     if(World_BlackBoard::instance()->countType(botiquin)>0 && !gastado){
         World_BlackBoard::instance()->AnswerRecord(botiquin, &ID, getPosicion());
     }
+}
+
+
+void botiquin::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* botiquin::getmuero(){
+    return &muero;
 }

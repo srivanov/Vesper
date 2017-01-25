@@ -21,11 +21,21 @@ puerta::puerta(){
 	aux = new chirriante();
     this->insertComponent((char*)"chirriante", aux);
 	
-	
+    muero = false;
 	aux = NULL;
 	setType(tPUERTA);
 }
 
 puerta::~puerta(){
     
+}
+
+void puerta::contacto(GameObject *g){
+    if(*g->getType() == tPLAYER){
+        muero = true;
+    }
+}
+
+bool const* puerta::getmuero(){
+    return &muero;
 }
