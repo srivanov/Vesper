@@ -34,7 +34,7 @@ using namespace std;
 
 //TO DO: mantener actualizado
 enum typeObj{
-	NO_TYPE = -1,
+	tHabNO_TYPE = -1,
 	tALARMA,
 	tPALA,
 	tCAMARA,
@@ -46,7 +46,9 @@ enum typeObj{
 	tBALA,
 	tBOTIQUIN,
 	tCOMIDA,
-	tFUENTE
+	tFUENTE,
+	tLLAVE,
+	tPIEDRA
 };
 
 class component;

@@ -9,6 +9,9 @@
 #include "llaveObj.hpp"
 
 llaveObj::llaveObj(){
+	
+	//TO DO: Eliminar clase llave
+	
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);
     aux = new transform3D();
@@ -32,6 +35,7 @@ llaveObj::llaveObj(){
     
     muero = false;
     aux = NULL;
+	setType(tLLAVE);
 }
 
 llaveObj::~llaveObj(){

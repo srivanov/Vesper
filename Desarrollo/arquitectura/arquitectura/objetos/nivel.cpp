@@ -43,8 +43,7 @@ bool nivel::cargarNivel(char* numero){
 	aux->setPosicion(pos1);
     
     powerups.push_back(aux);
-    
-    
+	
     dvector3D pos2(3,20,0);
     aux = new piedraObj();
     aux->addNodo("");
@@ -60,6 +59,7 @@ bool nivel::cargarNivel(char* numero){
     aux->setPosicion(pos3);
     
     powerups.push_back(aux);
+	
     dvector3D pos5(8,22,0);
     aux = new monedas();
     aux->addNodo("");
@@ -117,10 +117,11 @@ void nivel::update(){
         if(*(*iter)->getmuero()){
             delete (*iter);
             powerups.erase(iter);
+			iter = powerups.begin();
         }else{
             (*iter)->update();
+			++iter;
         }
-        ++iter;
     }
 }
 

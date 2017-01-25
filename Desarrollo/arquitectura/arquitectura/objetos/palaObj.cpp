@@ -9,6 +9,9 @@
 #include "palaObj.hpp"
 
 palaObj::palaObj(){
+	
+	//TO DO: Eliminar clase pala
+	
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
 	aux = new transform3D();
@@ -52,5 +55,4 @@ void palaObj::contacto(GameObject *g){
 bool const* palaObj::getmuero(){
     return &muero;
 }
-
 

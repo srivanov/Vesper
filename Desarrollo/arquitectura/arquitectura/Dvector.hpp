@@ -21,6 +21,8 @@ struct dvector3D {
 	
 	void operator++() {this->x++; this->y++; this->z++;};
 	void operator--() {this->x--; this->y--; this->z--;};
+	
+	dvector3D& operator*=(const float &p);
 };
 
 struct dvector2D {

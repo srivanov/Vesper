@@ -8,18 +8,14 @@ player::player(){
 	this->insertComponent((char*)"armas", aux);
 	aux = new physics();
 	this->insertComponent((char*)"physics", aux);
-//	aux = new armasArrojadizas();
-//    this->insertComponent((char*)"armasArrojadizas", aux);
-//	aux = new piedra();
-//    this->insertComponent((char*)"piedra", aux);
+
 	aux = new habilidadEspecial();
+	((habilidadEspecial*)aux)->setTipo(tHabINVISIBLE);
     this->insertComponent((char*)"habilidadEspecial", aux);
-//	aux = new martilloDeJuguete();
-//    this->insertComponent((char*)"martilloDeJuguete", aux);
+
 	aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
-//	aux = new armasDisparo();
-//    this->insertComponent((char*)"armasDisparo", aux);
+
 	aux = new salud();
     this->insertComponent((char*)"salud", aux);
 	
@@ -33,7 +29,8 @@ player::player(){
     
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
-    
+	
+	velocidad = 1;
     muero = false;
     arma = (armas*)findComponent("armas");
     fisica->crearBodyDinamico(dim, pos);
@@ -58,11 +55,33 @@ void player::cambiarArma(){
 void player::contacto(GameObject *g){
 	if(*g->getType() == tPALA){
         arma->insertarArma(9);
-		printf("\nCONTACTO CON PALA\n\n");
+	}
+	if(*g->getType() == tMONEDAS){
+		((habilidadEspecial*)findComponent("habilidadEspecial"))->aumentarMoneda();
 	}
 }
 
 bool const* player::getmuero(){
     return &muero;
+}
+
+void player::mover(dvector3D &vel){
+	vel *= velocidad;
+	transform3D* go = (transform3D*)findComponent("transform3D");
+	if(go != NULL)
+		go->mover(vel);
+}
+
+void player::setVelocidad(unsigned int vel){
+	velocidad = vel;
+}
+
+void player::activarHab(){
+	if(habActiva())
+		((habilidadEspecial*)findComponent("habilidadEspecial"))->activar();
+}
+
+bool player::habActiva(){
+	return ((habilidadEspecial*)findComponent("habilidadEspecial"))->puedoUsar();
 }
 

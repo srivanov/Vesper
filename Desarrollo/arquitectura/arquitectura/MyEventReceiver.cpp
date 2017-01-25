@@ -60,6 +60,9 @@ bool MyEventReceiver::IsKeyDown(uint32_t keyCode) const
 		case 'D':
 			key = EKEY_CODE::KEY_KEY_D;
 			break;
+		case 'E':
+			key = EKEY_CODE::KEY_KEY_E;
+			break;
 		case 'L':
 			key = EKEY_CODE::KEY_KEY_L;
 			break;

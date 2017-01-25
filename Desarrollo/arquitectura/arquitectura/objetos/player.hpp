@@ -16,10 +16,15 @@ public:
 	void cambiarArma();
 	void contacto(GameObject* g);
     bool const* getmuero();
+	void mover(dvector3D &vel);
+	void setVelocidad(unsigned int vel);
+	void activarHab();
+	bool habActiva();
 	
 private:
 	armas* arma;
     bool muero;
+	unsigned int velocidad;
 };
 
 #endif /* player_hpp */

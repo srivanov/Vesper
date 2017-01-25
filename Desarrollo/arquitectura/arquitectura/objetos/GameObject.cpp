@@ -5,7 +5,7 @@
 
 GameObject::GameObject(){
     renderizable = false;
-	tipo = NO_TYPE;
+	tipo = tHabNO_TYPE;
 }
 
 GameObject::~GameObject(){

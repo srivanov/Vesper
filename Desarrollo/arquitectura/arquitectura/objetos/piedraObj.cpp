@@ -32,6 +32,7 @@ piedraObj::piedraObj(){
     
     muero = false;
     aux = NULL;
+	setType(tPIEDRA);
 }
 
 piedraObj::~piedraObj(){
