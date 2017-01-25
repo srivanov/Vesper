@@ -23,9 +23,13 @@
 
 int main(int, char const**)
 {
+    // Activo el antialiasing de forma global para que el boton de volver, p.e. no se vea mal
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+    
     // Create the main window
-//    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Integracion SFML", sf::Style::Fullscreen);
-    sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Integracion SFML");
+    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Integracion SFML", sf::Style::Fullscreen, settings);
+//    sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Integracion SFML");
     
     menu menu;
     menu.window = &window;

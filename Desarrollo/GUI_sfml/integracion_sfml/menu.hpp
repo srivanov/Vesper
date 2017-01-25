@@ -32,8 +32,18 @@ private:
     sf::Texture textura;
     sf::RectangleShape rec;
     
+    // Rectangulo para el menu principal
+    sf::RectangleShape principal_rec;
     // Rectangulos para niveles
     sf::RectangleShape *level_rec;
+    // Rectangulo para ajustes
+    sf::RectangleShape ajustes_rec;
+    
+    // Flecha volver
+    sf::ConvexShape boton;
+    
+    // Prueba
+    sf::RectangleShape smallest_screen;
 };
 
 #endif /* menu_hpp */
