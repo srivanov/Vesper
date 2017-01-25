@@ -13,6 +13,7 @@
 #include <iostream>
 #include <math.h>
 #include "Dvector.hpp"
+#include <math.h>
 
 using namespace std;
 
@@ -66,7 +67,6 @@ public:
     Nodo_VerJugador();
     short run(int &id);
 private:
-    // Sensor
 };
 class Nodo_HayRuido : public Nodo {
 public:
@@ -74,7 +74,6 @@ public:
     Nodo_HayRuido();
     short run(int &id);
 private:
-    // Sensor
 };
 class Nodo_SuenaAlarma : public Nodo {
 public:
@@ -82,7 +81,6 @@ public:
     Nodo_SuenaAlarma();
     short run(int &id);
 private:
-    // Alarma Activa
 };
 
 class NodoVigilar : public Nodo {
@@ -91,11 +89,12 @@ public:
     NodoVigilar();
     short run(int &id);
 private:
-    float CalcularDistancia(dvector3D a, dvector3D b);
-    dvector3D * vigilar;
-    dvector3D * _movement;
-    int aux;
-    float xABS, yABS;
+    //float CalcularDistancia(dvector3D a, dvector3D b);
+    //dvector3D * vigilar;
+    //dvector3D * _movement;
+    //int aux;
+    //float xABS, yABS;
+    time_t _time;
 };
 class NodoPatrullar : public Nodo {
 public:
@@ -121,8 +120,16 @@ public:
     NodoDarAlarma();
     short run(int &id);
 private:
-    // Estado de la Alarma (CAMBIA ESTADO)
 };
+
+class Nodo_TengoVigilar : public Nodo {
+    time_t _time;
+public:
+    Nodo_TengoVigilar();
+    ~Nodo_TengoVigilar();
+    short run(int &id);
+};
+
 class Nodo_Avisado : public Nodo {
 public:
     ~Nodo_Avisado();

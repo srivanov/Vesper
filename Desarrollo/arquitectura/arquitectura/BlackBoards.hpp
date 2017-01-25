@@ -91,6 +91,8 @@ class Personal_BlackBoard{
     dvector3D * _Vmov;
     float * velocity;
     std::vector<Events*> eventos;
+    float CalcularDistancia(dvector3D a, dvector3D b);
+    float absolute(float p);
 public:
     void EventPosObjetivo(int type);
     void notify(dvector3D& position,int type);
@@ -111,6 +113,7 @@ public:
     dvector3D * getVMovement() const {return _Vmov;}
     void setVMovement(dvector3D * Vmov);
     void update(unsigned int& life,unsigned int& hungry,unsigned int& thirst, unsigned int& state,dvector3D * position);
+    void updateEvent();
 };
 
 
@@ -122,7 +125,7 @@ class NPC_library{
     NPC_VALUES _values;
     NPC_VALUES::iterator it;
     static NPC_library * _library;
-public:
+    public:
     static NPC_library * instance();
     bool ExistMyBook(int * id);
     void AddBook(int * id,unsigned int& life,unsigned int& hungry,unsigned int& thirst,unsigned int& state,dvector3D * position);

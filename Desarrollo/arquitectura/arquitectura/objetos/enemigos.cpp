@@ -52,11 +52,13 @@ enemigos::~enemigos(){
     delete STD;
 }
 
-void enemigos::notify(dvector3D& position, int type){book->notify(position, type);}
+void enemigos::notify(dvector3D& position, int type){
+    book->notify(position, type);
+}
 bool enemigos::EventUsed(int type){return book->EventUsed(type);}
 void enemigos::update(){
     // CODIGO GUARRO
-    if(k%15==0){
+    if(k%30==0){
         hambre++;
         std::cout << hambre << std::endl;
         std::cout << getPosicion()->x << "|" << getPosicion()->y << std::endl;
@@ -67,6 +69,8 @@ void enemigos::update(){
     if(!NPC_library::instance()->ExistMyBook(&ID)){
         NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, getPosicion());
         book = NPC_library::instance()->getMyBook(&ID);
+        dvector3D yi = dvector3D(10,10,0);
+        this->notify(yi, 99);
     }
     
     

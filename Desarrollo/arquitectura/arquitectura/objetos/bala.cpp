@@ -1,4 +1,4 @@
-
+#include "trigger_system.hpp"
 #include "bala.hpp"
 
 bala::bala(dvector3D &pos, dvector3D &dir, float vel){
@@ -35,6 +35,8 @@ bala::bala(dvector3D &pos, dvector3D &dir, float vel){
 	muerto = false;
 	aux = NULL;
 	setType(tBALA);
+    ID = 99;
+    
 }
 
 bala::~bala(){
@@ -55,7 +57,9 @@ void bala::update(){
 	//		iter++;
 	//	}
 //	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
+    
 	GameObject::update();
+    trigger_system::_instance()->add_trigger(E_ruido, &ID, getPosicion(), 20, 1);
 	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muerto == false)
 		muerto = true;
 }

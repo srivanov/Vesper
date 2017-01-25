@@ -26,12 +26,19 @@
 estados::estados(){
     
     //GENERALES
+    _estandarObligatorio = new NodoSecuenciaPositiva;
+    
     NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
-    NodoVigilar * vigilar = new NodoVigilar;
+    NodoVigilar * vigilo = new NodoVigilar;
+    NodoSecuencia * vigilar = new NodoSecuencia;
+    Nodo_TengoVigilar * tengoVigilar = new Nodo_TengoVigilar;
     NodoPatrullar * patrullar = new NodoPatrullar;
     NodoSecuencia * avisado = new NodoSecuencia;
     Nodo_Avisado * recibido_aviso = new Nodo_Avisado;
     NodoMover * moverse = new NodoMover;
+    vigilar->anyadirHijo(tengoVigilar);
+    vigilar->anyadirHijo(moverse);
+    vigilar->anyadirHijo(vigilo);
     avisado->anyadirHijo(recibido_aviso);
     avisado->anyadirHijo(moverse);
     
@@ -40,14 +47,14 @@ estados::estados(){
     
     //CAMBIAR ESTADO AGRESIVO
     Nodo_VerJugador * agresivo = new Nodo_VerJugador;
-    _estandar->anyadirHijo(agresivo);
+    _estandarObligatorio->anyadirHijo(agresivo);
     
     //AVISADO
-    _estandar->anyadirHijo(avisado);
+    _estandarObligatorio->anyadirHijo(avisado);
     
     //CAMBIAR ESTADO ALERTA
     Nodo_SuenaAlarma * alerta = new Nodo_SuenaAlarma;
-    _estandar->anyadirHijo(alerta);
+    _estandarObligatorio->anyadirHijo(alerta);
     
     
     //BUSCAR RUIDO
@@ -58,7 +65,7 @@ estados::estados(){
     _buscar_ruido->anyadirHijo(vigilar);
     
     
-    _estandar->anyadirHijo(_buscar_ruido);
+    _estandarObligatorio->anyadirHijo(_buscar_ruido);
     
     // IR A BOTIQUIN - ESTANDAR
     NodoSecuencia * _ir_botiquin = new NodoSecuencia;
@@ -223,7 +230,7 @@ estados::estados(){
     
     //CAMBIAR ESTADO A ALERTA
     //VIGILAR TAMBIEN CAMBIA ESTADO
-    _combate->anyadirHijo(vigilar);
+    _combate->anyadirHijo(vigilo);
     
     //CONSTRUCCION DEL ARBOL ASUSTADO
     _asustado = new NodoSecuenciaPositiva;
@@ -244,7 +251,7 @@ estados::estados(){
 }
 
 estados::~estados(){
-    
+    delete _estandarObligatorio;
     delete _estandar;
     delete _alerta;
     delete _combate;

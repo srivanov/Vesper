@@ -40,6 +40,12 @@
 #define EVENTO_ALARMA_CERCA 5
 #define EVENTO_RADIO 6
 
+#define EVENTO_VIGILAR 99
+#define EVENTO_PATRULLAR 100
+
+#define TIEMPO_VIGILIA 10
+#define TIEMPO_ESTADO_ALTERADO 10
+
 /*
  enum TypeEvents{
  E_none = -1,
@@ -113,15 +119,19 @@ short NodoMover::run(int &id){
     //cout << "NODO MOVER" << endl;
     if(_movement==NULL) _movement = new dvector3D;
     if(aux==-1){
-        aux = CalcularDistancia(*NPC_library::instance()->getMyBook(&id)->getPosition(), *NPC_library::instance()->getMyBook(&id)->getPosObjetivo());
-        xABS = NPC_library::instance()->getMyBook(&id)->getPosObjetivo()->x-NPC_library::instance()->getMyBook(&id)->getPosition()->x;
-        yABS = NPC_library::instance()->getMyBook(&id)->getPosObjetivo()->y-NPC_library::instance()->getMyBook(&id)->getPosition()->y;
-    }else if(aux>0 && aux<0.5){
+        dvector3D posObjetivo,posPropia;
+        posPropia = *NPC_library::instance()->getMyBook(&id)->getPosition();
+        posObjetivo = *NPC_library::instance()->getMyBook(&id)->getPosObjetivo();
+        aux = CalcularDistancia(posPropia,posObjetivo);
+        xABS = posObjetivo.x-posPropia.x;
+        yABS = posObjetivo.y-posPropia.y;
+    }else if(aux>0 && aux<0.01){
+        NPC_library::instance()->getMyBook(&id)->updateEvent();
         aux=-1;
         return true;
     }else{
         float y=0,x=0;
-        if(aux<2){
+        if(aux<0.1){
             x = xABS;
             y = yABS;
         }else{
@@ -142,11 +152,11 @@ float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
     float y = fabs(a.y-b.y);
     return x+y;
 }
-float NodoVigilar::CalcularDistancia(dvector3D a, dvector3D b){
+/*float NodoVigilar::CalcularDistancia(dvector3D a, dvector3D b){
     float x = fabs(a.x-b.x);
     float y = fabs(a.y-b.y);
     return x+y;
-}
+}*/
 // NODO COMER
 NodoComer::NodoComer(){}
 short NodoComer::run(int &id){
@@ -216,10 +226,36 @@ short NodoCurarse::run(int &id){
     return true;
 }
 // NODO VIGILAR
-NodoVigilar::NodoVigilar(){vigilar = new dvector3D(10,10,0);aux=-1;_movement = new dvector3D(0,0,0);}
-NodoVigilar::~NodoVigilar(){delete _movement;delete vigilar;}
+NodoVigilar::NodoVigilar(){
+    //vigilar = new dvector3D(10,10,0);aux=-1;_movement = new dvector3D(0,0,0);
+    _time = 0;
+}
+NodoVigilar::~NodoVigilar(){
+    
+    /*delete _movement;delete vigilar;*/
+}
 short NodoVigilar::run(int &id){
-    //cout << " NODO VIGILAR" << endl;
+    //cout << "VIGILANDO" << std::endl;
+    if(_time==0) _time = time(NULL);
+    int estado = NPC_library::instance()->getMyBook(&id)->getState();
+    if(estado!=ESTANDAR){
+        if(_time+TIEMPO_VIGILIA+TIEMPO_ESTADO_ALTERADO<time(NULL)){
+            _time = 0;
+            if (estado==COMBATE) {
+                NPC_library::instance()->getMyBook(&id)->setState(ALERTA);
+                return true;
+            }
+            NPC_library::instance()->getMyBook(&id)->setState(ESTANDAR);
+            return true;
+        }
+    }else{
+        if(_time+TIEMPO_VIGILIA<time(NULL)){
+            _time = 0;
+            return true;
+        }
+    }
+    return false;
+    /*
     if(NPC_library::instance()->getMyBook(&id)->getPosObjetivo()!=vigilar)
         NPC_library::instance()->getMyBook(&id)->setPosObjetivo(vigilar);
     else{
@@ -247,7 +283,7 @@ short NodoVigilar::run(int &id){
             NPC_library::instance()->getMyBook(&id)->setVMovement(_movement);
             aux = -1;
         }
-    }
+    }*/
     return false;
 }
 // NODO CUBRISE
@@ -304,6 +340,18 @@ Nodo_PuedoAtacarDistancia::Nodo_PuedoAtacarDistancia(){}
 short Nodo_PuedoAtacarDistancia::run(int &id){
     //cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
     return false;
+}
+
+// NODO TENGO QUE VIGILAR
+Nodo_TengoVigilar::Nodo_TengoVigilar(){}
+Nodo_TengoVigilar::~Nodo_TengoVigilar(){}
+short Nodo_TengoVigilar::run(int &id){
+    //cout << "TENGO QUE VIGILAR" << endl;
+    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_VIGILAR)) {
+        NPC_library::instance()->getMyBook(&id)->EventPosObjetivo(EVENTO_VIGILAR);
+        return true;
+    }
+    return  false;
 }
 
 // NODO NECESITO AYUDA?

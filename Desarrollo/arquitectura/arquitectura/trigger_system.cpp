@@ -25,7 +25,7 @@ triggers::~triggers(){_idSource = NULL; delete _idSource;}
 trigger_system * trigger_system::_TSinstance = 0;
 trigger_system::trigger_system() {IDcont=0;}
 
-unsigned long trigger_system::add_trigger(TypeEvents type, int* id, dvector3D* pos, float radio, float duration){
+unsigned long trigger_system::add_trigger(TypeEvents type, int* id, dvector3D* pos, float radio, int duration){
     triggers * _trigger = new triggers(type,IDcont,id,pos,radio,duration);
     TRIGGER_VECTOR.push_back(_trigger);
     return _trigger->_idTrigger;
@@ -37,7 +37,7 @@ void trigger_system::update(){
             TRIGGER_VECTOR.erase(TRIGGER_VECTOR.begin()+i);
         }else{
             for (int j=0; j<AGENTS.size(); j++) {
-                if(!AGENTS[j]->EventUsed(TRIGGER_VECTOR[i]->_type))
+                if(AGENTS[j]->EventUsed(TRIGGER_VECTOR[i]->_type))
                     continue;
                 else if(AGENTS[j]->getID()==TRIGGER_VECTOR[i]->_idSource)
                     continue;

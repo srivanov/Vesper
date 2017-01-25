@@ -18,5 +18,6 @@ private:
 	time_t intervalo;
 	float tiempo_vida, velocidad;
 	bool muerto;
+    int ID;
 };
 #endif /* bala_hpp */

@@ -46,7 +46,7 @@ struct triggers{
 class trigger_system {
 public:
     static trigger_system * _instance();
-    unsigned long add_trigger(TypeEvents type, int* id, dvector3D* pos, float radio, float duration);
+    unsigned long add_trigger(TypeEvents type, int* id, dvector3D* pos, float radio, int duration);
     void remove_trigger(unsigned long id);
     void update();
     virtual ~trigger_system();
