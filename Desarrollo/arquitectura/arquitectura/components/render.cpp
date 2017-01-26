@@ -136,15 +136,14 @@ void render::dibujarMapa(){
 
     int h1 = static_cast<nivel*>(getFather())->getAlto();
     int w1 = static_cast<nivel*>(getFather())->getAncho();
-    
+	
     for(int j = 0; j<h1; j++){
         for(int k = w1-static_cast<nivel*>(getFather())->getAncho(); k<w1; k++){
-            
 			if(mapita->at(k) == 21 || mapita->at(k) == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
 				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
-				nodo->setPosition(vector3df(j,k,0));
+				nodo->setPosition(vector3df(j,k - w1 + static_cast<nivel*>(getFather())->getAncho(),0));
 //				nodo = NULL;
 			}
 //			if(mapita[0][i][j] == 86){

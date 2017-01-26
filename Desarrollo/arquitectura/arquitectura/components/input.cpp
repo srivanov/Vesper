@@ -32,10 +32,12 @@ void input::update(){
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('s')){
 		velocidad.x*=2; velocidad.y*=2;
+		//TO DO: aumentar velocidad de la camara
 	}
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('E')){
 		Game::Instance()->getPlayer()->activarHab();
+		//TO DO: aumentar velocidad de la camara
 	}
 	
     Game::Instance()->getPlayer()->mover(velocidad);

@@ -37,6 +37,8 @@ alarma::alarma(int &ID){
     aux = NULL;
 	setType(tALARMA);
 }
+//TO DO: activar las alarmas con los jugadores
+//TO DO: romper la alarma
 
 alarma::~alarma(){
     

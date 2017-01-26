@@ -47,7 +47,7 @@ void ContactListener::BeginContact(b2Contact* contact){
     GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
 	g1->contacto(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
     
-    g2->setTexture("3d/rocas.jpg");
+//    g2->setTexture("3d/rocas.jpg");
     g2->contacto(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 }
 
