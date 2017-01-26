@@ -4,6 +4,7 @@
 
 #include <time.h>
 #include <stdio.h>
+#include <iostream>
 #include "GameObject.hpp"
 #include "../Dvector.hpp"
 
@@ -13,7 +14,11 @@ public:
     ~alarma();
     void update();
     void contacto(GameObject* g);
+    void contactoEnd(GameObject* g);
     bool const* getmuero();
+    void activar();
+    bool estaActivado();
+    void muere();
 private:
     void gestorTiempo();
     int ID;

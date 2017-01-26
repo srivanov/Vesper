@@ -25,6 +25,7 @@ public:
 	void changeGun();
     void insertarArma(int a);
     void eliminarArma(std::vector<armaInterface*>::iterator iter);
+    armaInterface* getArmaActual();
 	
 private:
 //	armaInterface* aux;

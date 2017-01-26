@@ -73,3 +73,6 @@ void bala::contacto(GameObject *g){
 //    }
 }
 
+void bala::contactoEnd(GameObject *g){
+    
+}

@@ -52,5 +52,8 @@ void ContactListener::BeginContact(b2Contact* contact){
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
-
+    GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
+    GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+    g1->contactoEnd(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
+    g2->contactoEnd(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 }

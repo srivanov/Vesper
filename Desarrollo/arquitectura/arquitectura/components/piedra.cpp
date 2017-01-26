@@ -10,6 +10,7 @@ piedra::piedra(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tPIEDRAc;
 }
 
 piedra::~piedra(){
@@ -47,4 +48,8 @@ void piedra::setMunicion(unsigned int n){
 
 void piedra::destructor(){
 	this->~piedra();
+}
+
+typeArma const* piedra::getType(){
+    return &tipo;
 }

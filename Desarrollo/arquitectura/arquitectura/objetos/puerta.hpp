@@ -10,6 +10,7 @@ public:
     puerta();
     ~puerta();
     void contacto(GameObject* g);
+    void contactoEnd(GameObject* g);
     bool const* getmuero();
 private:
     bool muero;

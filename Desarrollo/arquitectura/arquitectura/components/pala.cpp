@@ -11,6 +11,7 @@ pala::pala(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
     tiempo_recarga = pTiempo_recarga;
     tiempo = clock();
     cargador = 6;
+    tipo = tPALAc;
 }
 
 pala::~pala(){
@@ -39,4 +40,8 @@ void pala::setMunicion(unsigned int n){
 
 void pala::destructor(){
     this->~pala();
+}
+
+typeArma const* pala::getType(){
+    return &tipo;
 }

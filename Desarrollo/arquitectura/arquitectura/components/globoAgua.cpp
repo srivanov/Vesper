@@ -10,6 +10,7 @@ globoAgua::globoAgua(unsigned int pMunicion, float pAlcance, float pTiempo_recar
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tGLOBOAGUA;
 }
 
 globoAgua::~globoAgua(){
@@ -47,4 +48,8 @@ void globoAgua::setMunicion(unsigned int n){
 
 void globoAgua::destructor(){
 	this->~globoAgua();
+}
+
+typeArma const* globoAgua::getType(){
+    return &tipo;
 }

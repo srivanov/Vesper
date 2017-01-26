@@ -10,6 +10,7 @@ bombaHumo::bombaHumo(unsigned int pMunicion, float pAlcance, float pTiempo_recar
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tBOMBAHUMO;
 }
 
 bombaHumo::~bombaHumo(){
@@ -47,4 +48,8 @@ void bombaHumo::setMunicion(unsigned int n){
 
 void bombaHumo::destructor(){
 	this->~bombaHumo();
+}
+
+typeArma const* bombaHumo::getType(){
+    return &tipo;
 }

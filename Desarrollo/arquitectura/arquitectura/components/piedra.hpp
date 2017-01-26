@@ -15,7 +15,8 @@ public:
 	void setMunicion(unsigned int n) override;
 	void update();
 	void destructor() override;
-	
+	typeArma const* getType() override;
+    
 private:
 	unsigned int cadencia, municion, cargador;
 	float tiempo_recarga, tiempo_vida, alcance;

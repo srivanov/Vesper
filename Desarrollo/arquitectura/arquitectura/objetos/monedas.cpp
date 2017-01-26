@@ -45,4 +45,6 @@ bool const* monedas::getmuero(){
     return &muero;
 }
 
-
+void monedas::contactoEnd(GameObject *g){
+    
+}

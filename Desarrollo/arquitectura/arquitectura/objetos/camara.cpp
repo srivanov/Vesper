@@ -104,3 +104,7 @@ void camara::setRapido(bool r){
 bool camara::getRapido(){
     return rapido;
 }
+
+void camara::contactoEnd(GameObject *g){
+    
+}

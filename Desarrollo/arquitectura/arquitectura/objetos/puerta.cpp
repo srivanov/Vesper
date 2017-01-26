@@ -39,3 +39,7 @@ void puerta::contacto(GameObject *g){
 bool const* puerta::getmuero(){
     return &muero;
 }
+
+void puerta::contactoEnd(GameObject *g){
+    
+}

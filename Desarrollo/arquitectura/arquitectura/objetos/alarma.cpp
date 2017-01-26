@@ -45,15 +45,18 @@ alarma::~alarma(){
 }
 
 void alarma::gestorTiempo(){
-    if(time(NULL)>_time){
-        activado = false;
+    if(activado){
+        if(2000.0 * (clock()-_time) / CLOCKS_PER_SEC >= (1000.0 * 3)){
+            activado = false;
+            printf("se ha desactivado");
+        }
     }
 }
 
 void alarma::update(){
 	GameObject::update();
 //    TypeRecords alarma = R_ALARMA;
-//    gestorTiempo();
+    gestorTiempo();
 //    if(World_BlackBoard::instance()->hasAnswer(alarma, &ID)){
 //        if (World_BlackBoard::instance()->getAnswer(alarma, &ID)->_idResponse<0) {rota=true;}
 //        else if(rota){NPCKnows=true;}
@@ -77,4 +80,22 @@ void alarma::contacto(GameObject *g){
 
 bool const* alarma::getmuero(){
     return &muero;
+}
+
+void alarma::contactoEnd(GameObject *g){
+    
+}
+
+void alarma::activar(){
+    activado = true;
+    _time = clock();
+}
+
+bool alarma::estaActivado(){
+    return activado;
+}
+
+//TO DO: implementar en todos los objetos, hacerlo virtual
+void alarma::muere(){
+    muero = true;
 }

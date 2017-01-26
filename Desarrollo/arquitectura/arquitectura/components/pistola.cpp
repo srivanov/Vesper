@@ -10,6 +10,7 @@ pistola::pistola(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tPISTOLA;
 }
 
 pistola::~pistola(){
@@ -47,4 +48,8 @@ void pistola::setMunicion(unsigned int n){
 
 void pistola::destructor(){
 	this->~pistola();
+}
+
+typeArma const* pistola::getType(){
+    return &tipo;
 }

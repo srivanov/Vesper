@@ -18,6 +18,7 @@ public:
     ~fuente();
     void update();
     void contacto(GameObject* g);
+    void contactoEnd(GameObject* g);
     bool const* getmuero();
 private:
     int ID;

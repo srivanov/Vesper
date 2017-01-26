@@ -13,6 +13,7 @@ public:
 	dvector3D* getDireccion();
 	void update();
     void contacto(GameObject* g);
+    void contactoEnd(GameObject* g);
     bool const* getmuero();
 private:
 	dvector3D direccion;

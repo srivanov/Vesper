@@ -56,3 +56,6 @@ bool const* llaveObj::getmuero(){
     return &muero;
 }
 
+void llaveObj::contactoEnd(GameObject *g){
+    
+}

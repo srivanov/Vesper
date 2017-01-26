@@ -42,14 +42,15 @@ void input::update(){
             if(cam->getRapido())
                 cam->setRapido(false);
         }
-            
-		//TO DO: aumentar velocidad de la camara
 	}
 	
-	if(MyEventReceiver::Instance()->IsKeyDown('E')){
+	if(MyEventReceiver::Instance()->IsKeyDown('c')){
 		Game::Instance()->getPlayer()->activarHab();
-		//TO DO: aumentar velocidad de la camara
 	}
+    
+    if(MyEventReceiver::Instance()->IsKeyDown('E')){
+        Game::Instance()->getPlayer()->accionar();
+    }
     
     if(velocidad != 0 || *(Game::Instance()->getPlayer()->getVel()) != 0)
     	Game::Instance()->getPlayer()->mover(velocidad);

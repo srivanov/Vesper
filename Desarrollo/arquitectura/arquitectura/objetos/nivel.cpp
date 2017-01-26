@@ -134,3 +134,7 @@ void nivel::contacto(GameObject *g){
 bool const* nivel::getmuero(){
     return &muero;
 }
+
+void nivel::contactoEnd(GameObject *g){
+    
+}

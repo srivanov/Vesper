@@ -98,6 +98,8 @@ void armas::eliminarArma(std::vector<armaInterface *>::iterator iter){
     interface.erase(iter);
 }
 
-
+armaInterface* armas::getArmaActual(){
+    return *seleccionada;
+}
 
 

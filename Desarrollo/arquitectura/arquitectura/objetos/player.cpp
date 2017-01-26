@@ -1,5 +1,6 @@
 
 #include "player.hpp"
+#include "alarma.hpp"
 
 player::player(){
 	component* aux = new class render();
@@ -30,6 +31,7 @@ player::player(){
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
 	
+    obj_colisionado = NULL;
 	velocidad = 1;
     muero = false;
     arma = (armas*)findComponent("armas");
@@ -43,22 +45,15 @@ player::~player(){
 }
 
 void player::atacar(){
-	
-	arma->shoot();
+	if(*(arma->getArmaActual()->getType()) == tPALAc)
+        cuerpoacuerpo();
+    else
+        arma->shoot();
 }
 
 void player::cambiarArma(){
 	arma = (armas*)findComponent("armas");
 	arma->changeGun();
-}
-
-void player::contacto(GameObject *g){
-	if(*g->getType() == tPALA){
-        arma->insertarArma(9);
-	}
-	if(*g->getType() == tMONEDAS){
-		((habilidadEspecial*)findComponent("habilidadEspecial"))->aumentarMoneda();
-	}
 }
 
 bool const* player::getmuero(){
@@ -87,5 +82,44 @@ bool player::habActiva(){
 
 unsigned int* player::getVel(){
     return &velocidad;
+}
+
+void player::contacto(GameObject *g){
+    if(*g->getType() == tPALA){
+        arma->insertarArma(9);
+    }
+    if(*g->getType() == tMONEDAS){
+        ((habilidadEspecial*)findComponent("habilidadEspecial"))->aumentarMoneda();
+    }
+    if(*g->getType() == tALARMA){
+        
+    }
+    obj_colisionado = g;
+}
+
+void player::contactoEnd(GameObject *g){
+    obj_colisionado = NULL;
+}
+
+void player::accionar(){
+    if(obj_colisionado != NULL){
+        if(*obj_colisionado->getType() == tALARMA){
+            if(!(static_cast<alarma*>(obj_colisionado)->estaActivado())){
+                static_cast<alarma*>(obj_colisionado)->activar();
+            }
+        }
+    }
+}
+
+void player::cuerpoacuerpo(){
+    //TO DO: revisar
+    if(obj_colisionado != NULL){
+        if(*obj_colisionado->getType() == tALARMA){
+            if(*(arma->getArmaActual()->getType()) == tPALAc){
+                static_cast<alarma*>(obj_colisionado)->muere();
+                obj_colisionado = NULL;
+            }
+        }
+    }
 }
 

@@ -10,6 +10,7 @@ martilloDeJuguete::martilloDeJuguete(unsigned int pMunicion, float pAlcance, flo
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tMARTILLO;
 }
 
 martilloDeJuguete::~martilloDeJuguete(){
@@ -38,4 +39,8 @@ void martilloDeJuguete::setMunicion(unsigned int n){
 
 void martilloDeJuguete::destructor(){
 	this->~martilloDeJuguete();
+}
+
+typeArma const* martilloDeJuguete::getType(){
+    return &tipo;
 }

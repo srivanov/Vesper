@@ -1,3 +1,4 @@
+
 //
 //  comida.hpp
 //  arquitectura
@@ -18,6 +19,7 @@ public:
     ~comida();
     void update();
     void contacto(GameObject* g);
+    void contactoEnd(GameObject* g);
     bool const* getmuero();
 private:
     void gestorTiempo();
