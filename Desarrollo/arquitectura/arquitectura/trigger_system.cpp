@@ -25,10 +25,12 @@ triggers::~triggers(){_idSource = NULL; delete _idSource;}
 trigger_system * trigger_system::_TSinstance = 0;
 trigger_system::trigger_system() {IDcont=0;}
 
-unsigned long trigger_system::add_trigger(TypeEvents type, int* id, dvector3D* pos, float radio, int duration){
-    triggers * _trigger = new triggers(type,IDcont,id,pos,radio,duration);
+void trigger_system::add_trigger(TypeEvents type, int id, dvector3D pos, float radio, int duration){
+    triggers * _trigger = new triggers(type,IDcont,&id,&pos,radio,duration);
     TRIGGER_VECTOR.push_back(_trigger);
-    return _trigger->_idTrigger;
+    _trigger = nullptr;
+    delete _trigger;
+    
 }
 void trigger_system::update(){
     for(int i=0;i<TRIGGER_VECTOR.size();i++){
@@ -46,7 +48,6 @@ void trigger_system::update(){
                 else
                     AGENTS[j]->notify(TRIGGER_VECTOR[i]->_pos, TRIGGER_VECTOR[i]->_type);
             }
-            
         }
     }
 }

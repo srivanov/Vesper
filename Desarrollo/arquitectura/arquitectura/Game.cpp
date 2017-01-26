@@ -154,6 +154,8 @@ void Game::update(){
 	jugador->update();
 	cam->movimientoInteligente(*jugador->getPosicion());
 	
+    trigger_system::_instance()->update();
+    
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
@@ -167,7 +169,7 @@ void Game::update(){
 			iter++;
     }
 	
-    trigger_system::_instance()->update();
+    
 	
 	std::vector<enemigos*>::iterator it = npcs.begin();
 	while (it != npcs.end()) {

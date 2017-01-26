@@ -57,7 +57,7 @@ void alarma::update(){
         else if(!activado){
             World_BlackBoard::instance()->removeRecord(alarma, ID);
             _time = time(NULL)+TIEMPOALARMA;
-            trigger_system::_instance()->add_trigger(E_alarma, &ID, getPosicion(), RADIOALARMA, TIEMPOALARMA);
+            trigger_system::_instance()->add_trigger(E_alarma, ID, *getPosicion(), RADIOALARMA, TIEMPOALARMA);
             this->activado = true;
         }
     }

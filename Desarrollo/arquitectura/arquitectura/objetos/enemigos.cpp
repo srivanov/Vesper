@@ -66,6 +66,7 @@ void enemigos::update(){
     }
     k++;
     // FIN CODIGO GUARRO
+    
     if(!NPC_library::instance()->ExistMyBook(&ID)){
         NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, getPosicion());
         book = NPC_library::instance()->getMyBook(&ID);
@@ -75,12 +76,8 @@ void enemigos::update(){
     
     
     STD->run(ID);
-    
     this->mover(*book->getVMovement());
-    
-    dvector3D aux;
-    aux = *getPosicion() + *book->getVMovement();
-    this->rotarConRaton(aux);
+    this->rotarConRaton(*getPosicion() + *book->getVMovement());
     GameObject::update();
 	
 }

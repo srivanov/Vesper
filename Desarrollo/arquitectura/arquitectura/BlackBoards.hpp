@@ -33,8 +33,6 @@ enum TypeRecords{
 };
 
 
-
-
 struct record {
     int * _idResponse;
     dvector3D * _info;

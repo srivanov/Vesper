@@ -1,6 +1,6 @@
 
 #include "BlackBoards.hpp"
-
+#include <math.h>
 
 float World_BlackBoard::absolute(float p){
     float aux = 0;
@@ -211,8 +211,7 @@ void Personal_BlackBoard::update(unsigned int& life, unsigned int& hungry, unsig
 }
 void Personal_BlackBoard::setVMovement(dvector3D *Vmov){_Vmov=Vmov;}
 void Personal_BlackBoard::notify(dvector3D& position, int type){
-    
-    if (!EventUsed(type)) eventos.push_back(new Events(position,type));
+eventos.push_back(new Events(position,type));
 }
 bool Personal_BlackBoard::EventUsed(int type){
     for (int i=0; i<eventos.size(); i++)
@@ -221,9 +220,9 @@ bool Personal_BlackBoard::EventUsed(int type){
 }
 
 float Personal_BlackBoard::CalcularDistancia(dvector3D a, dvector3D b){
-    float x = a.x-b.x;
-    float y = a.y-b.y;
-    return absolute(x)+absolute(y);
+    float x = fabs(a.x-b.x);
+    float y = fabs(a.y-b.y);
+    return x+y;
 }
 
 float Personal_BlackBoard::absolute(float p){
@@ -235,7 +234,7 @@ float Personal_BlackBoard::absolute(float p){
 
 void Personal_BlackBoard::updateEvent(){
     for (int i=0; i<eventos.size(); i++){
-        if(eventos[i]->_type==99 || eventos[i]->_type==100)
+        if(eventos[i]->_type>98)
             continue;
         if(CalcularDistancia(eventos[i]->_position, *_position)<0.5){
             delete eventos[i];

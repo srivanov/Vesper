@@ -25,6 +25,7 @@ public:
     Nodo(){}
     virtual short run(int &id) = 0;
     virtual ~Nodo(){}
+    virtual void reset() = 0;
 protected:
     bool borrable; // TO DO:
 };
@@ -34,10 +35,11 @@ public:
     NodoSecuencia();
     ~NodoSecuencia();
     short run(int &id);
+    void reset();
     void anyadirHijo(Nodo * hijo);
 private:
     vector<Nodo*> m_hijos;
-    size_t hijo = -1;
+    size_t hijo;
 };
 class NodoSecuenciaPositiva : public Nodo{
 public:
@@ -45,6 +47,7 @@ public:
     ~NodoSecuenciaPositiva();
     short run(int &id);
     void anyadirHijo(Nodo * hijo);
+    void reset();
 private:
     vector<Nodo*> m_hijos;
     size_t hijo = -1;
@@ -54,6 +57,7 @@ public:
     ~NodoMover();
     NodoMover();
     short run(int &id);
+    void reset(){}
 private:
     float CalcularDistancia(dvector3D a, dvector3D b);
     float aux = -1;
@@ -66,6 +70,7 @@ public:
     ~Nodo_VerJugador();
     Nodo_VerJugador();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_HayRuido : public Nodo {
@@ -73,6 +78,7 @@ public:
     ~Nodo_HayRuido();
     Nodo_HayRuido();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_SuenaAlarma : public Nodo {
@@ -80,6 +86,7 @@ public:
     ~Nodo_SuenaAlarma();
     Nodo_SuenaAlarma();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -89,11 +96,7 @@ public:
     NodoVigilar();
     short run(int &id);
 private:
-    //float CalcularDistancia(dvector3D a, dvector3D b);
-    //dvector3D * vigilar;
-    //dvector3D * _movement;
-    //int aux;
-    //float xABS, yABS;
+    void reset(){}
     time_t _time;
 };
 class NodoPatrullar : public Nodo {
@@ -101,17 +104,16 @@ public:
     ~NodoPatrullar();
     NodoPatrullar();
     short run(int &id);
+    void reset(){}
 private:
-    //float aux = -1;
-    //float xABS, yABS;
 };
 class Nodo_TiempoInactivo : public Nodo {
 public:
     ~Nodo_TiempoInactivo();
     Nodo_TiempoInactivo();
     short run(int &id);
+    void reset(){}
 private:
-    // Tiempo
 };
 
 class NodoDarAlarma : public Nodo {
@@ -119,6 +121,7 @@ public:
     ~NodoDarAlarma();
     NodoDarAlarma();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -128,6 +131,7 @@ public:
     Nodo_TengoVigilar();
     ~Nodo_TengoVigilar();
     short run(int &id);
+    void reset(){}
 };
 
 class Nodo_Avisado : public Nodo {
@@ -135,6 +139,7 @@ public:
     ~Nodo_Avisado();
     Nodo_Avisado();
     short run(int &id);
+    void reset(){}
 private:
     // Estado de la Alarma (CAMBIA ESTADO)
 };
@@ -147,6 +152,7 @@ public:
     ~Nodo_VidaBaja();
     Nodo_VidaBaja();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -155,6 +161,7 @@ public:
     Nodo_NecesitoAyuda();
     ~Nodo_NecesitoAyuda();
     short run(int &id);
+    void reset(){}
 private:
     
 };
@@ -164,9 +171,9 @@ public:
     ~Nodo_HayBotiquin();
     Nodo_HayBotiquin();
     short run(int &id);
+    void reset(){}
 private:
-    //vector3D * MasCercano(vector<vector3D*>& objetos,datos * NPCinfo);
-    // BOTIQUINES (BLACKBOARD)
+    
 };
 
 class NodoCurarse : public Nodo {
@@ -174,15 +181,15 @@ public:
     ~NodoCurarse();
     NodoCurarse();
     short run(int &id);
+    void reset(){}
 private:
-    // VIDA
-    // CUANTO CURA
 };
 class Nodo_TengoHambre : public Nodo {
 public:
     ~Nodo_TengoHambre();
     Nodo_TengoHambre();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_TengoSed : public Nodo {
@@ -190,6 +197,7 @@ public:
     ~Nodo_TengoSed();
     Nodo_TengoSed();
     short run(int &id);
+    void reset(){}
 private:
 };
 class NodoComer : public Nodo {
@@ -197,6 +205,7 @@ public:
     ~NodoComer();
     NodoComer();
     short run(int &id);
+    void reset(){}
 private:
 };
 class NodoBeber : public Nodo {
@@ -204,6 +213,7 @@ public:
     ~NodoBeber();
     NodoBeber();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_TieneAgua : public Nodo {
@@ -211,6 +221,7 @@ public:
     ~Nodo_TieneAgua();
     Nodo_TieneAgua();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_HayParaHablar : public Nodo {
@@ -218,6 +229,7 @@ public:
     ~Nodo_HayParaHablar();
     Nodo_HayParaHablar();
     short run(int &id);
+    void reset(){}
 private:
     
 };
@@ -226,8 +238,8 @@ public:
     ~NodoHablar();
     NodoHablar();
     short run(int &id);
+    void reset(){}
 private:
-    //  TEMAS RAMDOM
 };
 /*###################
  CLASES ALERTA
@@ -238,6 +250,7 @@ public:
     ~Nodo_AlarmaCerca();
     Nodo_AlarmaCerca();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -246,6 +259,7 @@ public:
     ~NodoRecorreZonaCercana();
     NodoRecorreZonaCercana();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -258,6 +272,7 @@ public:
     ~Nodo_PuedoAtacarDistancia();
     Nodo_PuedoAtacarDistancia();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -266,6 +281,7 @@ public:
     ~Nodo_EstasAsustado();
     Nodo_EstasAsustado();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_HayAlguienCerca : public Nodo {
@@ -273,15 +289,15 @@ public:
     ~Nodo_HayAlguienCerca();
     Nodo_HayAlguienCerca();
     short run(int &id);
-    //float CalcularDistancia(vector3D a, vector3D b);
+    void reset(){}
 private:
-    // COORDENADAS NPC + CERCANO
 };
 class Nodo_HayAlguienRadio : public Nodo {
 public:
     ~Nodo_HayAlguienRadio();
     Nodo_HayAlguienRadio();
     short run(int &id);
+    void reset(){}
 private:
     time_t time;
 };
@@ -291,6 +307,7 @@ public:
     ~NodoAvisar();
     NodoAvisar();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_EstasCercaJugador : public Nodo {
@@ -298,6 +315,7 @@ public:
     ~Nodo_EstasCercaJugador();
     Nodo_EstasCercaJugador();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_AlarmaRota : public Nodo {
@@ -305,6 +323,7 @@ public:
     Nodo_AlarmaRota();
     ~Nodo_AlarmaRota();
     short run(int &id);
+    void reset(){}
 private:
 };
 class Nodo_EstasLejosJugador : public Nodo {
@@ -312,6 +331,7 @@ public:
     ~Nodo_EstasLejosJugador();
     Nodo_EstasLejosJugador();
     short run(int &id);
+    void reset(){}
 private:
 };
 class NodoAtaqueCuerpo : public Nodo {
@@ -319,6 +339,7 @@ public:
     ~NodoAtaqueCuerpo();
     NodoAtaqueCuerpo();
     short run(int &id);
+    void reset(){}
 private:
 };
 class NodoAtaqueDistancia : public Nodo {
@@ -326,6 +347,7 @@ public:
     ~NodoAtaqueDistancia();
     NodoAtaqueDistancia();
     short run(int &id);
+    void reset(){}
 private:
 };
 class NodoCubrirse : public Nodo {
@@ -333,6 +355,7 @@ public:
     ~NodoCubrirse();
     NodoCubrirse();
     short run(int &id);
+    void reset(){}
 private:
 };
 
@@ -345,6 +368,7 @@ public:
     NodoHuir();
     ~NodoHuir();
     short run(int &id);
+    void reset(){}
 private:
 };
 
