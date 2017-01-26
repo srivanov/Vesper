@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D29475B31DCE44BA00AD3AEF"
-            BuildableName = "vesper.app"
-            BlueprintName = "vesper"
-            ReferencedContainer = "container:vesper.xcodeproj">
+            BuildableName = "raycast.app"
+            BlueprintName = "raycast"
+            ReferencedContainer = "container:raycast.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D29475B31DCE44BA00AD3AEF"
-            BuildableName = "vesper.app"
-            BlueprintName = "vesper"
-            ReferencedContainer = "container:vesper.xcodeproj">
+            BuildableName = "raycast.app"
+            BlueprintName = "raycast"
+            ReferencedContainer = "container:raycast.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

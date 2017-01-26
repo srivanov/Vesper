@@ -292,8 +292,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
-					"$(PROJECT_DIR)/Box2D/lib",
+					"$(PROJECT_DIR)/irrlicht/lib",
+					"$(PROJECT_DIR)/Box2D",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = skyscrapers.raycast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -313,8 +313,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/irrlicht/lib/MacOSX",
-					"$(PROJECT_DIR)/Box2D/lib",
+					"$(PROJECT_DIR)/irrlicht/lib",
+					"$(PROJECT_DIR)/Box2D",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = skyscrapers.raycast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
