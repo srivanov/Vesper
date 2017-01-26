@@ -17,7 +17,7 @@ camara::camara(){
 		iter->second->setFather(this);
 		iter++;
 	}
-    
+    rapido = false;
     muero = false;
 	//incremento en el movimiento
 	incrX = 0;
@@ -28,7 +28,7 @@ camara::camara(){
 	offsetY = -5;
 	offsetZ = -10;
 	//velocidad de la camara
-	camSpeed = 1.5;
+	camSpeed = 1.5f;
     //variable para zoom zoom zoom
     cerca = false;
 	aux = NULL;
@@ -87,4 +87,20 @@ void camara::contacto(GameObject *g){
 
 bool const* camara::getmuero(){
     return &muero;
+}
+
+float* camara::getCamSpeed(){
+    return &camSpeed;
+}
+
+void camara::setRapido(bool r){
+    rapido = r;
+    if(r)
+    	camSpeed*=0.5f;
+    else
+        camSpeed=1.5f;
+}
+
+bool camara::getRapido(){
+    return rapido;
 }

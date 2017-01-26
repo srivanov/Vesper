@@ -15,6 +15,10 @@ input::~input(){
 }
 
 void input::update(){
+    
+    //TO DO: reducir las llamadas para mover el objeto del jugador usando aux para guardar la ultima velocidad
+    
+    camara* cam = Game::Instance()->getCamara();
     dvector3D velocidad;
     
     if(MyEventReceiver::Instance()->IsKeyDown('W')){
@@ -32,6 +36,13 @@ void input::update(){
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('s')){
 		velocidad.x*=2; velocidad.y*=2;
+        if(!cam->getRapido()){
+            cam->setRapido(true);
+        }else{
+            if(cam->getRapido())
+                cam->setRapido(false);
+        }
+            
 		//TO DO: aumentar velocidad de la camara
 	}
 	
@@ -39,8 +50,9 @@ void input::update(){
 		Game::Instance()->getPlayer()->activarHab();
 		//TO DO: aumentar velocidad de la camara
 	}
-	
-    Game::Instance()->getPlayer()->mover(velocidad);
+    
+    if(velocidad != 0 || *(Game::Instance()->getPlayer()->getVel()) != 0)
+    	Game::Instance()->getPlayer()->mover(velocidad);
 	
     if(MyEventReceiver::Instance()->getLeftClick()){
 		Game::Instance()->atacarJugador();

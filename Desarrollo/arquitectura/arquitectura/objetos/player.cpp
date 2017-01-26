@@ -85,3 +85,7 @@ bool player::habActiva(){
 	return ((habilidadEspecial*)findComponent("habilidadEspecial"))->puedoUsar();
 }
 
+unsigned int* player::getVel(){
+    return &velocidad;
+}
+

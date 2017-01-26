@@ -45,6 +45,7 @@ public:
 	void atacarJugador();
 	void cambiarArmaJugador();
 	void rotarConRaton(dvector3D posRaton);
+    camara* getCamara();
 	
 protected:
 	Game();

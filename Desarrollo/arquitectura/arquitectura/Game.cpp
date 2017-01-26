@@ -203,3 +203,7 @@ void Game::cambiarArmaJugador(){
 void Game::rotarConRaton(dvector3D posRaton){
 	jugador->rotarConRaton(posRaton);
 }
+
+camara* Game::getCamara(){
+    return cam;
+}

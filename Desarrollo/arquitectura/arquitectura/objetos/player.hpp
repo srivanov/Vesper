@@ -20,6 +20,7 @@ public:
 	void setVelocidad(unsigned int vel);
 	void activarHab();
 	bool habActiva();
+    unsigned int* getVel();
 	
 private:
 	armas* arma;
