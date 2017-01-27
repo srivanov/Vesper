@@ -20,6 +20,7 @@ public:
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();
+    void muere();
 private:
     int ID;
     bool rota, NPCKnows, muero;

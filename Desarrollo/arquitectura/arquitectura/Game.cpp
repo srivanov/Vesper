@@ -52,60 +52,6 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
-	
-	contador_npc=0;
-	enemigos* npc = new enemigos(contador_npc);
-	contador_npc++;
-    dvector3D nodepos(10,15,0);
-	npc->setPosicion(nodepos);
-	npc->addNodo("");
-	npc->setTexture("3d/enemy.jpg");
-	npcs.insert(npcs.end(), npc);
-	
-    alarma * alarmita = new alarma(contador_npc);
-    alarmita->addNodo("3d/alarmita.3ds");
-    alarmita->setTexture("3d/alarmita.jpg");
-    dvector3D posal(5,3,0);
-    alarmita->setPosicion(posal);
-    
-    contador_npc++;
-    alarmas.insert(alarmas.end(), alarmita);
-	
-    //TO DO: descomentar codigo de abajo
-    
-    fuente * fuentezita = new fuente(contador_npc);
-    fuentezita->addNodo("");
-    fuentezita->setTexture("3d/fuenten.jpg");
-    dvector3D posf(0,10,0);
-    fuentezita->setPosicion(posf);
-    
-    contador_npc++;
-    fuentes.insert(fuentes.end(), fuentezita);
-    
-    comida * comidita = new comida(contador_npc);
-    comidita->addNodo("");
-    comidita->setTexture("3d/pizza.jpg");
-    dvector3D poscom(0,0,0);
-    comidita->setPosicion(poscom);
-    
-    contador_npc++;
-    comidas.insert(comidas.end(), comidita);
-    
-    botiquin * botiqueen = new botiquin(contador_npc);
-    botiqueen->addNodo("");
-    botiqueen->setTexture("3d/botiquin.jpg");
-    dvector3D posbot(10,0,0);
-    botiqueen->setPosicion(posbot);
-    
-    contador_npc++;
-    botiquines.insert(botiquines.end(), botiqueen);
-    
-    
-//  delete npc;
-//  delete alarmita;
-//	delete fuentezita;
-//	delete comidita;
-//	delete botiqueen;
 }
 
 void Game::stop(){
@@ -114,12 +60,6 @@ void Game::stop(){
 
 void Game::render(){
 	jugador->render();
-	
-	std::vector<enemigos*>::iterator it = npcs.begin();
-	while (it != npcs.end()) {
-		(*it)->render();
-		it++;
-	}
 	
     iter = balas.begin();
     while (iter != balas.end()){
@@ -169,22 +109,7 @@ void Game::update(){
 	
     trigger_system::_instance()->update();
 	
-	std::vector<enemigos*>::iterator it = npcs.begin();
-	while (it != npcs.end()) {
-		(*it)->update();
-		it++;
-	}
-    std::vector<comida*>::iterator it2 = comidas.begin();
-    while (it2 != comidas.end()) {
-        (*it2)->update();
-        it2++;
-    }
-	std::vector<alarma*>::iterator it3 = alarmas.begin();
-	while (it3 != alarmas.end()) {
-		(*it3)->update();
-		it3++;
-	}
-	Fps::Instance()->update();
+    Fps::Instance()->update();
 	mundoBox2D::Instance()->update();
 }
 

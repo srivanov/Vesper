@@ -71,7 +71,7 @@ void enemigos::update(){
 
 void enemigos::contacto(GameObject *g){
     if(*g->getType() == tPLAYER){
-        muero = true;
+//        muero = true;
     }
 }
 

@@ -33,7 +33,7 @@ fuente::fuente(int & ID){
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
     
-    fisica->crearBodyDinamico(dim, pos);
+    fisica->crearBodyEstatico(dim, pos, 90.0f);
  
     muero = false;
     aux = NULL;
@@ -60,7 +60,7 @@ void fuente::update(){
 
 void fuente::contacto(GameObject *g){
     if(*g->getType() == tPLAYER){
-        muero = true;
+//        muero = true;
     }
 }
 
@@ -70,4 +70,8 @@ bool const* fuente::getmuero(){
 
 void fuente::contactoEnd(GameObject *g){
     
+}
+
+void fuente::muere(){
+    muero = true;
 }

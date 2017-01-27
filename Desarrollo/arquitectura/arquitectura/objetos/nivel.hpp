@@ -9,6 +9,12 @@
 #include "monedas.hpp"
 #include "llaveObj.hpp"
 #include "../cargarMapa.hpp"
+#include "enemigos.hpp"
+#include "alarma.hpp"
+#include "botiquin.hpp"
+#include "comida.hpp"
+#include "fuente.hpp"
+#include "camara.hpp"
 
 
 class nivel : public GameObject{
@@ -22,6 +28,7 @@ public:
     std::vector<int>* getMapa();
 	void dibujarMapa();
 	void update();
+    void render();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();
@@ -29,8 +36,13 @@ public:
 private:
 	std::vector<int>* mapa_nivel;
 	cargarMapa* cargador;
-	int ancho, alto;
+    int ancho, alto, contador_npc;
     std::vector<GameObject*> powerups;
+    std::vector<enemigos*> npcs;
+    std::vector<alarma*> alarmas;
+    std::vector<fuente*> fuentes;
+    std::vector<comida*> comidas;
+    std::vector<botiquin*> botiquines;
     bool muero;
 };
 #endif /* nivel_hpp */

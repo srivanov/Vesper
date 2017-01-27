@@ -74,7 +74,7 @@ void alarma::update(){
 
 void alarma::contacto(GameObject *g){
     if(*g->getType() == tPLAYER){
-        muero = true;
+//        muero = true;
     }
 }
 

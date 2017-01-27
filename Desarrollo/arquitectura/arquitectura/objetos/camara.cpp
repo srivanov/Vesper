@@ -80,9 +80,7 @@ bool camara::getZoom(){
 }
 
 void camara::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-        muero = true;
-    }
+	
 }
 
 bool const* camara::getmuero(){

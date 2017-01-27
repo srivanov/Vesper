@@ -1,8 +1,10 @@
 
 #include "player.hpp"
 #include "alarma.hpp"
+#include "fuente.hpp"
 
 player::player(){
+    //TO DO: que se canse al correr
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
 	aux = new armas();
@@ -52,8 +54,8 @@ void player::atacar(){
 }
 
 void player::cambiarArma(){
-	arma = (armas*)findComponent("armas");
 	arma->changeGun();
+    std::cout << *arma->getArmaActual()->getType() << std::endl;
 }
 
 bool const* player::getmuero(){
@@ -117,6 +119,11 @@ void player::cuerpoacuerpo(){
         if(*obj_colisionado->getType() == tALARMA){
             if(*(arma->getArmaActual()->getType()) == tPALAc){
                 static_cast<alarma*>(obj_colisionado)->muere();
+                obj_colisionado = NULL;
+            }
+        }else if(*obj_colisionado->getType() == tFUENTE){
+            if(*(arma->getArmaActual()->getType()) == tPALAc){
+                static_cast<fuente*>(obj_colisionado)->muere();
                 obj_colisionado = NULL;
             }
         }

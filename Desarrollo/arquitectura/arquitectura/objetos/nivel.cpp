@@ -13,6 +13,7 @@ nivel::nivel(){
 		iter++;
 	}
 	
+    contador_npc = 0;
     muero = false;
 	mapa_nivel = NULL;
 	cargador = new cargarMapa();
@@ -83,6 +84,62 @@ bool nivel::cargarNivel(char* numero){
     
     powerups.push_back(aux);
     
+    
+    enemigos* npc = new enemigos(contador_npc);
+    npc->addNodo("");
+    npc->setTexture("3d/enemy.jpg");
+    dvector3D nodepos(10,15,0);
+    npc->setPosicion(nodepos);
+    
+    contador_npc++;
+    npcs.insert(npcs.end(), npc);
+    npc = NULL;
+    delete npc;
+    
+    alarma * alarmita = new alarma(contador_npc);
+    alarmita->addNodo("3d/alarmita.3ds");
+    alarmita->setTexture("3d/alarmita.jpg");
+    dvector3D posal(5,3,0);
+    alarmita->setPosicion(posal);
+    
+    contador_npc++;
+    alarmas.insert(alarmas.end(), alarmita);
+    alarmita = NULL;
+    delete alarmita;
+    
+    fuente * fuentezita = new fuente(contador_npc);
+    fuentezita->addNodo("");
+    fuentezita->setTexture("3d/fuenten.jpg");
+    dvector3D posf(0,10,0);
+    fuentezita->setPosicion(posf);
+    
+    contador_npc++;
+    fuentes.insert(fuentes.end(), fuentezita);
+    fuentezita = NULL;
+    delete fuentezita;
+    
+    comida * comidita = new comida(contador_npc);
+    comidita->addNodo("");
+    comidita->setTexture("3d/pizza.jpg");
+    dvector3D poscom(0,0,0);
+    comidita->setPosicion(poscom);
+    
+    contador_npc++;
+    comidas.insert(comidas.end(), comidita);
+    comidita = NULL;
+    delete comidita;
+    
+    botiquin * botiqueen = new botiquin(contador_npc);
+    botiqueen->addNodo("");
+    botiqueen->setTexture("3d/botiquin.jpg");
+    dvector3D posbot(10,0,0);
+    botiqueen->setPosicion(posbot);
+    
+    contador_npc++;
+    botiquines.insert(botiquines.end(), botiqueen);
+    botiqueen = NULL;
+    delete botiqueen;
+    
     aux = NULL;
 
 	if(ancho == 0 || alto == 0)
@@ -123,11 +180,68 @@ void nivel::update(){
 			++iter;
         }
     }
+    
+    std::vector<enemigos*>::iterator it = npcs.begin();
+    while (it != npcs.end() && npcs.size() > 0) {
+        if(*(*it)->getmuero()){
+            delete (*it);
+            npcs.erase(it);
+            it = npcs.begin();
+        }else{
+            (*it)->update();
+            ++it;
+        }
+        
+    }
+    std::vector<comida*>::iterator it2 = comidas.begin();
+    while (it2 != comidas.end() && comidas.size() > 0) {
+        if(*(*it2)->getmuero()){
+            delete (*it2);
+            comidas.erase(it2);
+            it2 = comidas.begin();
+        }else{
+            (*it2)->update();
+            ++it2;
+        }
+    }
+    std::vector<alarma*>::iterator it3 = alarmas.begin();
+    while (it3 != alarmas.end() && alarmas.size() > 0) {
+        if(*(*it3)->getmuero()){
+            delete (*it3);
+            alarmas.erase(it3);
+            it3 = alarmas.begin();
+        }else{
+            (*it3)->update();
+            ++it3;
+        }
+    }
+    std::vector<fuente*>::iterator it4 = fuentes.begin();
+    while (it4 != fuentes.end() && fuentes.size() > 0) {
+        if(*(*it4)->getmuero()){
+            delete (*it4);
+            fuentes.erase(it4);
+            it4 = fuentes.begin();
+        }else{
+            (*it4)->update();
+            ++it4;
+        }
+    }
+    std::vector<botiquin*>::iterator it5 = botiquines.begin();
+    while (it5 != botiquines.end() && botiquines.size() > 0) {
+        if(*(*it5)->getmuero()){
+            delete (*it5);
+            botiquines.erase(it5);
+            it5 = botiquines.begin();
+        }else{
+            (*it5)->update();
+            ++it5;
+        }
+    }
 }
 
 void nivel::contacto(GameObject *g){
     if(*g->getType() == tPLAYER){
-        muero = true;
+//        muero = true;
     }
 }
 
@@ -137,4 +251,12 @@ bool const* nivel::getmuero(){
 
 void nivel::contactoEnd(GameObject *g){
     
+}
+
+void nivel::render(){
+//    std::vector<enemigos*>::iterator it = npcs.begin();
+//    while (it != npcs.end()) {
+//        (*it)->render();
+//        it++;
+//    }
 }

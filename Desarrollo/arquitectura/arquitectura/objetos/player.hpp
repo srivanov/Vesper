@@ -2,7 +2,7 @@
 #ifndef player_hpp
 #define player_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include "GameObject.hpp"
 #include "../components/armas.hpp"
 #include "../components/pistola.hpp"

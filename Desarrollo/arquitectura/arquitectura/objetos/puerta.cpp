@@ -32,7 +32,7 @@ puerta::~puerta(){
 
 void puerta::contacto(GameObject *g){
     if(*g->getType() == tPLAYER){
-        muero = true;
+//        muero = true;
     }
 }
 
