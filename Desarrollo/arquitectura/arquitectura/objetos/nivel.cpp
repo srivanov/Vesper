@@ -95,9 +95,21 @@ bool nivel::cargarNivel(char* numero){
     npcs.insert(npcs.end(), npc);
     npc = NULL;
     delete npc;
-    
+	
+	puerta * puertita = new puerta();
+	puertita->addNodo("");
+	puertita->setTexture("3d/puerta.jpg");
+	dvector3D pospu(15,3,0);
+	puertita->setPosicion(pospu);
+	puertita->setTipo(tCHIRRIANTE);
+	
+	contador_npc++;
+	puertas.insert(puertas.end(), puertita);
+	puertita = NULL;
+	delete puertita;
+	
     alarma * alarmita = new alarma(contador_npc);
-    alarmita->addNodo("3d/alarmita.3ds");
+    alarmita->addNodo("");
     alarmita->setTexture("3d/alarmita.jpg");
     dvector3D posal(5,3,0);
     alarmita->setPosicion(posal);
@@ -237,6 +249,17 @@ void nivel::update(){
             ++it5;
         }
     }
+	std::vector<puerta*>::iterator it6 = puertas.begin();
+	while (it6 != puertas.end() && puertas.size() > 0) {
+		if(*(*it6)->getmuero()){
+			delete (*it6);
+			puertas.erase(it6);
+			it6 = puertas.begin();
+		}else{
+			(*it6)->update();
+			++it6;
+		}
+	}
 }
 
 void nivel::contacto(GameObject *g){

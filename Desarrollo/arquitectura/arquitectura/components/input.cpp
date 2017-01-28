@@ -51,7 +51,10 @@ void input::update(){
 	}
     
     if(MyEventReceiver::Instance()->IsKeyDown('E')){
-        Game::Instance()->getPlayer()->accionar();
+		if(2000.0 * (clock()-intervalo) / CLOCKS_PER_SEC >= 1000.0){
+        	Game::Instance()->getPlayer()->accionar();
+			intervalo = clock();
+		}
     }
     
     if(velocidad != 0 || *(Game::Instance()->getPlayer()->getVel()) != 0)

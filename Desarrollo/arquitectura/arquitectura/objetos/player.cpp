@@ -2,6 +2,7 @@
 #include "player.hpp"
 #include "alarma.hpp"
 #include "fuente.hpp"
+#include "puerta.hpp"
 
 player::player(){
     //TO DO: que se canse al correr
@@ -109,7 +110,12 @@ void player::accionar(){
             if(!(static_cast<alarma*>(obj_colisionado)->estaActivado())){
                 static_cast<alarma*>(obj_colisionado)->activar();
             }
-        }
+		}else if(*obj_colisionado->getType() == tPUERTA){
+			if(!(static_cast<puerta*>(obj_colisionado))->estasAbierta()){
+				static_cast<puerta*>(obj_colisionado)->abre();
+			}else
+				static_cast<puerta*>(obj_colisionado)->cierra();
+		}
     }
 }
 

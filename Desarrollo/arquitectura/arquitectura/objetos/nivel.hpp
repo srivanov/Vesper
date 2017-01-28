@@ -15,6 +15,7 @@
 #include "comida.hpp"
 #include "fuente.hpp"
 #include "camara.hpp"
+#include "puerta.hpp"
 
 
 class nivel : public GameObject{
@@ -43,6 +44,7 @@ private:
     std::vector<fuente*> fuentes;
     std::vector<comida*> comidas;
     std::vector<botiquin*> botiquines;
+	std::vector<puerta*> puertas;
     bool muero;
 };
 #endif /* nivel_hpp */
