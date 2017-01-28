@@ -1,10 +1,3 @@
-//
-//  cargarMapa.hpp
-//  mapa
-//
-//  Created by Julia Martínez Valera on 5/11/16.
-//  Copyright © 2016 Julia Martínez Valera. All rights reserved.
-//
 
 #ifndef cargarMapa_hpp
 #define cargarMapa_hpp

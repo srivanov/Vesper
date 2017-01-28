@@ -10,6 +10,7 @@
 		63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */; };
 		63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E301E26CFE6006BD3AB /* comida.cpp */; };
 		63B81E351E26D288006BD3AB /* fuente.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E331E26D288006BD3AB /* fuente.cpp */; };
+		880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 880949E51E3CFB9A00AE0C0E /* mapa1.tmx */; };
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
@@ -97,7 +98,6 @@
 		E9AC3ABA1DF0AABF00A91A97 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */; };
 		E9AC3AC21DF0ACED00A91A97 /* cargarMapa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */; };
 		E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */; };
-		E9AC3ADC1DF0AD3600A91A97 /* mapa.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E9AC3AD01DF0AD3600A91A97 /* mapa.tmx */; };
 		E9AC3ADD1DF0AD3600A91A97 /* mapa2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E9AC3AD11DF0AD3600A91A97 /* mapa2.tmx */; };
 		E9AC3ADE1DF0AD3600A91A97 /* mapa2c.tmx in Resources */ = {isa = PBXBuildFile; fileRef = E9AC3AD21DF0AD3600A91A97 /* mapa2c.tmx */; };
 		E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AC3AD31DF0AD3600A91A97 /* master-tileset.png */; };
@@ -117,6 +117,7 @@
 		63B81E311E26CFE6006BD3AB /* comida.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = comida.hpp; sourceTree = "<group>"; };
 		63B81E331E26D288006BD3AB /* fuente.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fuente.cpp; sourceTree = "<group>"; };
 		63B81E341E26D288006BD3AB /* fuente.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fuente.hpp; sourceTree = "<group>"; };
+		880949E51E3CFB9A00AE0C0E /* mapa1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa1.tmx; sourceTree = "<group>"; };
 		882FC8A21E369D7F0060347C /* piedraObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = piedraObj.cpp; sourceTree = "<group>"; };
 		882FC8A31E369D7F0060347C /* piedraObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = piedraObj.hpp; sourceTree = "<group>"; };
 		882FC8A51E369FAF0060347C /* llaveObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = llaveObj.cpp; sourceTree = "<group>"; };
@@ -256,7 +257,6 @@
 		E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cargarMapa.hpp; sourceTree = "<group>"; };
 		E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
 		E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml2.h; sourceTree = "<group>"; };
-		E9AC3AD01DF0AD3600A91A97 /* mapa.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa.tmx; sourceTree = "<group>"; };
 		E9AC3AD11DF0AD3600A91A97 /* mapa2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa2.tmx; sourceTree = "<group>"; };
 		E9AC3AD21DF0AD3600A91A97 /* mapa2c.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa2c.tmx; sourceTree = "<group>"; };
 		E9AC3AD31DF0AD3600A91A97 /* master-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "master-tileset.png"; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 		E9AC3ACF1DF0AD3600A91A97 /* tiled */ = {
 			isa = PBXGroup;
 			children = (
-				E9AC3AD01DF0AD3600A91A97 /* mapa.tmx */,
+				880949E51E3CFB9A00AE0C0E /* mapa1.tmx */,
 				E9AC3AD11DF0AD3600A91A97 /* mapa2.tmx */,
 				E9AC3AD21DF0AD3600A91A97 /* mapa2c.tmx */,
 				E9AC3AD31DF0AD3600A91A97 /* master-tileset.png */,
@@ -596,7 +596,6 @@
 				E9026F041E353CDE00B44AC3 /* muro.3ds in Resources */,
 				E9026EFC1E353CDE00B44AC3 /* colorverde.jpg in Resources */,
 				E9026F0B1E353CDE00B44AC3 /* sphere.3ds in Resources */,
-				E9AC3ADC1DF0AD3600A91A97 /* mapa.tmx in Resources */,
 				E9026F111E353CDE00B44AC3 /* Thumbs.db in Resources */,
 				E9026F061E353CDE00B44AC3 /* muro.blend1 in Resources */,
 				E9026F021E353CDE00B44AC3 /* gota.jpg in Resources */,
@@ -612,6 +611,7 @@
 				E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */,
 				E9026F091E353CDE00B44AC3 /* pizza.jpg in Resources */,
 				E9AC3ADD1DF0AD3600A91A97 /* mapa2.tmx in Resources */,
+				880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */,
 				E9026F031E353CDE00B44AC3 /* mapimg.png in Resources */,
 				E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */,
 				E9026EF81E353CDE00B44AC3 /* botiquin.3ds in Resources */,

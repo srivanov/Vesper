@@ -29,7 +29,6 @@ bool cargarMapa::leerMapa(char* fichero) {
 	if(doc.NoChildren())
 		return false;
 	
-    
     //tamanyo mapa y de los tiles
     XMLElement* map = doc.FirstChildElement("map");
     map->QueryIntAttribute("width", &_width);
@@ -40,18 +39,6 @@ bool cargarMapa::leerMapa(char* fichero) {
     
     cout << "width: "<<_width <<" height: "<<_height << endl; //w: tiles de ancho, h:tiles de alto del mapa tmx
     cout << "tilewd: "<<_tileWidth <<" tilehg: "<<_tileHeight << endl; //dimensiones del png de sprites
-    
-    //Imagen del tileset
-    XMLElement *img = map->FirstChildElement("tileset")->FirstChildElement("image");
-    const char *filename = img->Attribute("source");
-    
-    //guardar la altura y ancho de la tilesheet
-    int _tswidth;
-    int _tsheight;
-    _tsheight = atoi(img->Attribute("height"));
-    _tswidth = atoi(img->Attribute("width"));
-    cout << "source-> "<<filename << endl;
-    cout << "AnchoAllSprites: " <<_tswidth << " AltoAllSprites: "<<_tsheight<<endl<<endl;
     
     //Capas del mapa
     XMLElement *layer = map->FirstChildElement("layer"); //primera capa, la de patrones
@@ -80,6 +67,22 @@ bool cargarMapa::leerMapa(char* fichero) {
         //avanzo hasta al siguiente tag
         data = data->NextSiblingElement("tile");
     }
+    
+    //LEER CAPA DE OBJETOS
+    XMLElement* objectGroup = map->FirstChildElement("objectgroup");
+    XMLElement* object = objectGroup->FirstChildElement("object");
+//    for (tinyxml2::XMLElement* child = element->FirstChildElement("objectgroup"); child != NULL; child = child->NextSiblingElement("objectgroup"))
+    float* valor;
+//    std::vector<<#class _Tp#>>
+    while (object != NULL) {
+        XMLElement* polylinea = object->FirstChildElement("polyline");
+        while (polylinea != NULL) {
+//            polylinea->QueryFloatAttribute("points", valor);
+            std::cout << polylinea->ToElement()->Attribute("points") << std::endl;
+            polylinea = polylinea->NextSiblingElement();
+        }
+        object = object->NextSiblingElement();
+    }
 	return true;
 }
 
@@ -90,7 +93,6 @@ int cargarMapa::getWidth(){
 int cargarMapa::getHeight(){
     return _height;
 }
-
 
 void cargarMapa::mostrarMatriz(){
     int w1 = _width, h1 = _height;
