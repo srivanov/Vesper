@@ -55,12 +55,14 @@ bool const* puerta::getmuero(){
 
 void puerta::abre(){
 	if(door != NULL)
-		if(door->abre())
+        if(door->abre()){
 			abierta = true;
+    		this->setTexture("3d/rojo.png");
+        }
 }
 
 void puerta::cierra(){
-	printf("CERRADO\n");
+    this->setTexture("3d/puerta.jpg");
 	abierta = false;
 }
 

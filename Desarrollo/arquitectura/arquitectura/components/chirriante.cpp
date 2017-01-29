@@ -13,7 +13,6 @@ void chirriante::update(){
 	
 }
 
-bool chirriante::abre(){
-	printf("ABIERTO\n");
+bool chirriante::abre(){    
 	return true;
 }

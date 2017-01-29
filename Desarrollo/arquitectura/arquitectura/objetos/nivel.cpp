@@ -87,7 +87,7 @@ bool nivel::cargarNivel(char* numero){
     
     enemigos* npc = new enemigos(contador_npc);
     npc->addNodo("");
-    npc->setTexture("3d/enemy.jpg");
+    npc->setTexture("3d/naranja.jpg");
     dvector3D nodepos(10,15,0);
     npc->setPosicion(nodepos);
     

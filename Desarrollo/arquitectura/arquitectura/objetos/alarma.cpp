@@ -49,6 +49,7 @@ void alarma::gestorTiempo(){
         if(2000.0 * (clock()-_time) / CLOCKS_PER_SEC >= (1000.0 * 3)){
             activado = false;
             printf("se ha desactivado");
+            this->setTexture("3d/alarmita.jpg");
         }
     }
 }
@@ -89,6 +90,7 @@ void alarma::contactoEnd(GameObject *g){
 void alarma::activar(){
     activado = true;
     _time = clock();
+    this->setTexture("3d/rojo.png");
 }
 
 bool alarma::estaActivado(){
