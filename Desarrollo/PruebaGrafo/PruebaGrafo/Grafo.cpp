@@ -7,9 +7,6 @@
 //
 
 #include "Grafo.hpp"
-#include <math.h>
-#include <string>
-#include <cstring>
 
 
 const std::vector<std::string> grafo::explode (const std::string &s, const char &c){

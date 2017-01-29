@@ -7,8 +7,6 @@
 //
 
 #include <unistd.h>
-#include <term.h>
-#include <iostream>
 #include "Nodo.hpp"
 #include "Grafo.hpp"
 
@@ -63,7 +61,7 @@ void Nodo_values(char& c, vector2d& posiciones){
             posiciones.x=5;
             posiciones.y=10;
             break;
-        default: break;
+        default:break;
     }
 }
 
@@ -147,8 +145,8 @@ int main() {
      bool fin = true;
     string mensajes = "PATHPLANNING PRIMERA ITERACION \nPRUEBA DE ITERACION - BUSQUEDA DE CAMINOS\nGRAFO DE PRUEBA\n";
     string salida = "Para terminar la ejecucción -> X";
-    string peticion = "Introduce el Nodo Inicial :  ";
-    string peticion2 = "Introduce el Nodo Final :  ";
+    string peticion = "Introduce el NUMERO del Nodo Inicial :  ";
+    string peticion2 = "Introduce el NUMERO del Nodo Final :  ";
     
     char value;
 

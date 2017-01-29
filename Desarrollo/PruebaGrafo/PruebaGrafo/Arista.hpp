@@ -9,7 +9,6 @@
 #ifndef Arista_hpp
 #define Arista_hpp
 
-#include <stdio.h>
 
 struct vector2d{
     float x;

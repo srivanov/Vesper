@@ -8,9 +8,6 @@
 
 #ifndef Nodo_hpp
 #define Nodo_hpp
-
-#include <stdio.h>
-#include <map>
 #include <vector>
 #include "Arista.hpp"
 

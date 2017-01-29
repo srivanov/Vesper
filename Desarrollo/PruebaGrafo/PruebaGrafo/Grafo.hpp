@@ -10,9 +10,10 @@
 #define Grafo_hpp
 
 #include "Nodo.hpp"
-#include <stdio.h>
 #include <iostream>
-#include <stdlib.h>
+#include <math.h>
+#include <string>
+#include <cstring>
 
 class grafo{
     int*** matriz;

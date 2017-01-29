@@ -1,0 +1,40 @@
+####### INTRODUCCIÓN #######
+
+A falta de tiempo se ha realizado un ejecutable sencillo donde se muestra un
+Grafo de ejemplo en un programa de terminal. Dicha aplicación se encargará de
+calcular los caminos posibles entre dos nodos. Por ello al ejecutar el mismo te
+pedirá un nodo inicial y nodo final. Los nodos a escoger serán los mencionados a
+la derecha del grafo y tras realizar los cálculos te mostrara los caminos que ha
+podido tomar.
+
+####### COMO FUNCIONA #######
+
+El ejecutable funciona de la siguiente manera, desde el nodo final se va
+propagando hacia los siguientes nodos, pero siguiendo unas reglas.
+
+1-	Solo se puede propagar entre nodos conexos
+2-	No se pueden pasar varias veces por el mismo nodo (Hay excepciones)
+
+Son dos reglas simples, pero consiguen calcular y administrar las diferentes
+posibilidades. Como se ve en la segunda regla, hay excepciones y estas son las
+siguientes:
+
+Pongamos que debemos ir desde el Nodo número 1 hasta el Nodo 7 y en Nodo 4 tiene
+varios nodos conexos. Se generan dos caminos cuyos caminos empezarán por 1-2-3-4
+pero luego se añadirán los nodos nuevos pudiendo tener varios caminos con esos
+nodos repetidos.
+
+El ejecutable ha sido probado en el sistema OS X de Apple y en Windows de 
+Microsoft la versión 7 del sistema. El video de ejecución del programa es grabado
+Sobre el sistema de Apple.####### ENLACE VIDEO EJECUTABLE #######https://mega.nz/#!QFpF0KJC
+
+####### HERRAMIENTAS UTILIZADAS #######
+
+El código fuente referencia a un proyecto de Xcode 8.2, siendo un proyecto para un ejecutable en linea de comandos. Las librerías utilizadas para esta son:
+
+* math.h
+* unistd.h
+* vector
+* string
+* cstring
+* iostream
