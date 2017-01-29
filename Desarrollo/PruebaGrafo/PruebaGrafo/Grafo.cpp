@@ -32,15 +32,14 @@ const std::vector<std::string> grafo::explode (const std::string &s, const char 
 
 grafo::grafo(std::vector<Nodo*> nodos_vector){
     all_nodos = nodos_vector;
+    crearMatriz();
 }
 grafo::~grafo(){
     if (matriz) {
-        for (int i=0; i<size; i++) {
+        for (int i=0; i<all_nodos.size(); i++) {
             delete[] matriz[i];
-            matriz[i] = nullptr;
         }
         delete[] matriz;
-        matriz = nullptr;
     }
     for (int i=0; i<all_nodos.size(); i++) {
         delete all_nodos[i];
@@ -49,64 +48,72 @@ grafo::~grafo(){
 }
 
 void grafo::crearMatriz(){
-    ***matriz = *new float[all_nodos.size()];
+    matriz = new int **[all_nodos.size()];
     for (int i=0; i<all_nodos.size(); i++) {
-        **matriz = new float[all_nodos[i]->getSize()];
-        for (int j=0; j<all_nodos[i]->getSize(); j++) {
-            *matriz[i][j]=all_nodos[i]->getConnectID(j);
+        matriz[i] = new int*[all_nodos[i]->conexiones().size()];
+        for (int j=0; j<all_nodos[i]->conexiones().size(); j++) {
+            matriz[i][j]= new int(all_nodos[i]->conexiones()[j]->getID());
         }
     }
 }
-/*
- float x = b.x-a.x;
- float y = b.y-a.y;
- distancia = fabsf(x+y);
- */
+
 void grafo::calcularCamino(vector2d posIni,vector2d posFin){
     float distanciaCalculo,disNodoInicial = 666,disNodoFinal = 999;
     for (int i=0; i<all_nodos.size(); i++) {
-        float x = all_nodos[i]->getPosition().x-posIni.x;
-        float y = all_nodos[i]->getPosition().y-posIni.y;
-        distanciaCalculo = fabsf(x+y);
+        float x = fabsf(all_nodos[i]->getPosition().x-posIni.x);
+        float y = fabsf(all_nodos[i]->getPosition().y-posIni.y);
+        distanciaCalculo = x+y;
         if (disNodoInicial>distanciaCalculo) {
             disNodoInicial= distanciaCalculo;
             nodo_inicial = i;
         }
-        x = all_nodos[i]->getPosition().x-posFin.x;
-        y = all_nodos[i]->getPosition().y-posFin.y;
-        distanciaCalculo = fabsf(x+y);
+        x = fabsf(all_nodos[i]->getPosition().x-posFin.x);
+        y = fabsf(all_nodos[i]->getPosition().y-posFin.y);
+        distanciaCalculo = x+y;
         if (disNodoFinal>distanciaCalculo) {
             disNodoFinal= distanciaCalculo;
             nodo_final = i;
         }
         continue;
     }
-    if (nodo_inicial==0) return;
+    //if (nodo_inicial==0) return;
     while (iteacion());
     cleanWays();
     for (int i=0; i<caminos.size(); i++) {
         std::cout << caminos[i] << std::endl;
     }
+    caminos.clear();
 }
 
 void grafo::cleanWays(){
     for (int i=0; i<caminos.size(); i++) {
         std::vector<std::string> v{explode(caminos[i],'-')};
         int nodo =  stoi(v[v.size()-1]);
-        if(nodo!=nodo_final) caminos.erase(caminos.begin()+i);
+        if(nodo!=nodo_final) {
+            caminos.erase(caminos.begin()+i);
+            i=0;
+        }
     }
 }
 
-
+void grafo::reset(){
+    for (int i=0; i<all_nodos.size(); i++) {
+        all_nodos[i]->reset();
+    }
+}
 bool grafo::iteacion(){
     int changes = 0;
-    if (caminos.size()==0) {
+    if (caminos.empty()) {
+        // Crea el primer camino
         all_nodos[nodo_inicial]->pasado();
         std::string camino = std::to_string(nodo_inicial);
         caminos.push_back(camino);
         changes++;
     }else{
-        for (int i=0; i<caminos.size(); i++) {
+        // COMO EL TAMAÑO ES MODIFICADO EN EL BUCLE MANTENEMOS EL TAMAÑO ANTERIOR
+        size_t ActualSize = caminos.size();
+        // A partir del primer camino calcula los siguientes
+        for (int i=0; i<ActualSize; i++) {
             std::string camino = caminos[i];
             // sacar ultimo nodo y convertirlo a int
             std::vector<std::string> v{explode(camino,'-')};
@@ -114,14 +121,15 @@ bool grafo::iteacion(){
             if (nodo==nodo_final) continue;
             // obtener nodos conexos sin utilizar
             std::vector<int> nodos_nuevos;
-            for (int j=0; j<all_nodos[nodo]->getSize();i++) {
-                if(!all_nodos[all_nodos[nodo]->getConnectID(j)]->getPass()){
-                    nodos_nuevos.push_back(all_nodos[nodo]->getConnectID(j));
-                    all_nodos[all_nodos[nodo]->getConnectID(j)]->pasado();
+            for (int j=0; j<all_nodos[nodo]->conexiones().size();j++) {
+                if(!all_nodos[nodo]->conexiones()[j]->getPass()){
+                    nodos_nuevos.push_back(all_nodos[nodo]->conexiones()[j]->getID());
+                    if(all_nodos[nodo]->conexiones()[j]->getID()!=nodo_final)
+                        all_nodos[nodo]->conexiones()[j]->pasado();
                 }
             }
             // añado los nuevos nodos y los nuevos caminos
-            for (int j=0; nodos_nuevos.size(); j++) {
+            for (int j=0; j<nodos_nuevos.size(); j++) {
                 changes++;
                 std::string Act_camino = camino+"-"+std::to_string(nodos_nuevos[j]);
                 if (j==0) caminos[i] = Act_camino;

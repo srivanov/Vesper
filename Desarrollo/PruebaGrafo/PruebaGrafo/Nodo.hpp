@@ -23,11 +23,10 @@ public:
     void conectar(Nodo * a);
     vector2d getPosition() {return posicion;}
     int getID() const {return ID;}
-    size_t getSize() const {return conecta_con.size();}
     void pasado() {pase=true;}
     void reset() {pase=false;}
     bool getPass(){return pase;}
-    int getConnectID(int pos)const;
+    std::vector<Nodo*> conexiones() const {return conecta_con;}
 private:
     void anyadirArista(vector2d posA, vector2d posB);
     int ID;

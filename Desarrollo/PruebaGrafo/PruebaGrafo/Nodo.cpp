@@ -29,14 +29,9 @@ void Nodo::conectar(Nodo * a){
     //conecta_con.insert(std::pair<int, Nodo*>(a->getID(),a));
     conecta_con.push_back(a);
     anyadirArista(this->posicion, a->posicion);
+    a->conectar(this);
 };
 
 void Nodo::anyadirArista(vector2d posA, vector2d posB){
     aristas.push_back(new arista(posA,posB));
-}
-int Nodo::getConnectID(int pos) const{
-    if(pos<conecta_con.size()){
-        return conecta_con[pos]->getID();
-    }
-    return false;
 }
