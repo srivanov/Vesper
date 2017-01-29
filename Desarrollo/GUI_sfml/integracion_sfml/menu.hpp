@@ -12,7 +12,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "HUD.hpp"
+#include "Texto.hpp"
+//#include "HUD.hpp"
 
 class menu {
 public:
@@ -23,27 +24,35 @@ public:
     void update();
     void render();
     void set_window();
-    sf::RectangleShape* getLevelRec();
     sf::RenderWindow* window;
     
 private:
     int num_menu;
-    HUD *hud;
+//    HUD* hud_textos;
+    
     sf::Texture textura;
     sf::RectangleShape rec;
     
-    // Rectangulo para el menu principal
+    // Rectangulo para el menu principal y botones
     sf::RectangleShape principal_rec;
+    sf::RectangleShape *principal_botones;
+    Texto *principal_textos;
+    
     // Rectangulos para niveles
     sf::RectangleShape *level_rec;
-    // Rectangulo para ajustes
+    sf::Texture *levels_tex;
+    sf::RectangleShape *rec_img_levels;
+    Texto level_nombre;
+    
+    // Rectangulo para ajustes y botones
     sf::RectangleShape ajustes_rec;
+    sf::RectangleShape *ajustes_botones;
+    Texto *ajustes_textos;
+    Texto ajustes_nombre;
     
     // Flecha volver
     sf::ConvexShape boton;
-    
-    // Prueba
-    sf::RectangleShape smallest_screen;
+    Texto boton_texto;
 };
 
 #endif /* menu_hpp */
