@@ -14,8 +14,6 @@
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
-		D2F319BA1E1D68910033372E /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F319B61E1D68910033372E /* estados.cpp */; };
-		D2F319BB1E1D68910033372E /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F319B81E1D68910033372E /* Nodos.cpp */; };
 		E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9026ED21E35299B00B44AC3 /* palaObj.cpp */; };
 		E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED61E353CDE00B44AC3 /* alarmita.3ds */; };
 		E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED71E353CDE00B44AC3 /* alarmita.blend */; };
@@ -46,7 +44,6 @@
 		E9026F0E1E353CDE00B44AC3 /* suelo.blend in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF01E353CDE00B44AC3 /* suelo.blend */; };
 		E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF11E353CDE00B44AC3 /* suelo.blend1 */; };
 		E9026F101E353CDE00B44AC3 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF21E353CDE00B44AC3 /* texture.png */; };
-		E9026F111E353CDE00B44AC3 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF31E353CDE00B44AC3 /* Thumbs.db */; };
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
 		E98661271DF99ED30028AC64 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
 		E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */; };
@@ -103,6 +100,8 @@
 		E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AC3AD31DF0AD3600A91A97 /* master-tileset.png */; };
 		E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */; };
 		E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */; };
+		E9DA50ED1E3E005800CACF9F /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9DA50E91E3E005800CACF9F /* estados.cpp */; };
+		E9DA50EE1E3E005800CACF9F /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9DA50EB1E3E005800CACF9F /* Nodos.cpp */; };
 		E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
 		E9F0BE871DFAC61400F6ED67 /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */; };
 		E9FA20551E1C24C1003F9CA0 /* BlackBoards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */; };
@@ -124,10 +123,6 @@
 		882FC8A61E369FAF0060347C /* llaveObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = llaveObj.hpp; sourceTree = "<group>"; };
 		884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bala.cpp; sourceTree = "<group>"; };
 		884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bala.hpp; sourceTree = "<group>"; };
-		D2F319B61E1D68910033372E /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = estados.cpp; path = "../STD Vanila/estados.cpp"; sourceTree = "<group>"; };
-		D2F319B71E1D68910033372E /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = estados.hpp; path = "../STD Vanila/estados.hpp"; sourceTree = "<group>"; };
-		D2F319B81E1D68910033372E /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = "../STD Vanila/Nodos.cpp"; sourceTree = "<group>"; };
-		D2F319B91E1D68910033372E /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodos.hpp; path = "../STD Vanila/Nodos.hpp"; sourceTree = "<group>"; };
 		E9026ED21E35299B00B44AC3 /* palaObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = palaObj.cpp; sourceTree = "<group>"; };
 		E9026ED31E35299B00B44AC3 /* palaObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = palaObj.hpp; sourceTree = "<group>"; };
 		E9026ED61E353CDE00B44AC3 /* alarmita.3ds */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarmita.3ds; sourceTree = "<group>"; };
@@ -159,7 +154,6 @@
 		E9026EF01E353CDE00B44AC3 /* suelo.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = suelo.blend; sourceTree = "<group>"; };
 		E9026EF11E353CDE00B44AC3 /* suelo.blend1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = suelo.blend1; sourceTree = "<group>"; };
 		E9026EF21E353CDE00B44AC3 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
-		E9026EF31E353CDE00B44AC3 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		E942C0571DF1EDE600CC5763 /* ventana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ventana.cpp; sourceTree = "<group>"; };
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
@@ -265,6 +259,10 @@
 		E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mundoBox2D.hpp; sourceTree = "<group>"; };
 		E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeMesh.cpp; sourceTree = "<group>"; };
 		E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nodeMesh.hpp; sourceTree = "<group>"; };
+		E9DA50E91E3E005800CACF9F /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = estados.cpp; path = arquitectura/estados.cpp; sourceTree = "<group>"; };
+		E9DA50EA1E3E005800CACF9F /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = estados.hpp; path = arquitectura/estados.hpp; sourceTree = "<group>"; };
+		E9DA50EB1E3E005800CACF9F /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = arquitectura/Nodos.cpp; sourceTree = "<group>"; };
+		E9DA50EC1E3E005800CACF9F /* Nodos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodos.hpp; path = arquitectura/Nodos.hpp; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/libIrrlicht.a; sourceTree = "<group>"; };
 		E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoards.cpp; sourceTree = "<group>"; };
@@ -295,10 +293,10 @@
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
-				D2F319B61E1D68910033372E /* estados.cpp */,
-				D2F319B71E1D68910033372E /* estados.hpp */,
-				D2F319B81E1D68910033372E /* Nodos.cpp */,
-				D2F319B91E1D68910033372E /* Nodos.hpp */,
+				E9DA50E91E3E005800CACF9F /* estados.cpp */,
+				E9DA50EA1E3E005800CACF9F /* estados.hpp */,
+				E9DA50EB1E3E005800CACF9F /* Nodos.cpp */,
+				E9DA50EC1E3E005800CACF9F /* Nodos.hpp */,
 			);
 			name = "sistema decision";
 			path = ..;
@@ -336,7 +334,6 @@
 				E9026EF01E353CDE00B44AC3 /* suelo.blend */,
 				E9026EF11E353CDE00B44AC3 /* suelo.blend1 */,
 				E9026EF21E353CDE00B44AC3 /* texture.png */,
-				E9026EF31E353CDE00B44AC3 /* Thumbs.db */,
 			);
 			path = 3d;
 			sourceTree = "<group>";
@@ -596,7 +593,6 @@
 				E9026F041E353CDE00B44AC3 /* muro.3ds in Resources */,
 				E9026EFC1E353CDE00B44AC3 /* colorverde.jpg in Resources */,
 				E9026F0B1E353CDE00B44AC3 /* sphere.3ds in Resources */,
-				E9026F111E353CDE00B44AC3 /* Thumbs.db in Resources */,
 				E9026F061E353CDE00B44AC3 /* muro.blend1 in Resources */,
 				E9026F021E353CDE00B44AC3 /* gota.jpg in Resources */,
 				E9026F081E353CDE00B44AC3 /* pala.png in Resources */,
@@ -634,7 +630,6 @@
 				E9AC3AC21DF0ACED00A91A97 /* cargarMapa.cpp in Sources */,
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
 				E9A346401E045F0500E6EC25 /* globoAgua.cpp in Sources */,
-				D2F319BB1E1D68910033372E /* Nodos.cpp in Sources */,
 				882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */,
 				E9AC3AA81DF0AA5000A91A97 /* pala.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
@@ -652,6 +647,7 @@
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
 				E9AC3A601DF0AA4800A91A97 /* enemigos.cpp in Sources */,
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
+				E9DA50EE1E3E005800CACF9F /* Nodos.cpp in Sources */,
 				882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */,
 				E9FA20551E1C24C1003F9CA0 /* BlackBoards.cpp in Sources */,
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
@@ -659,11 +655,11 @@
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */,
+				E9DA50ED1E3E005800CACF9F /* estados.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
 				E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */,
 				63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */,
 				E9AC3A611DF0AA4800A91A97 /* nivel.cpp in Sources */,
-				D2F319BA1E1D68910033372E /* estados.cpp in Sources */,
 				E9A346461E0460C400E6EC25 /* bombaHumo.cpp in Sources */,
 				E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */,
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,

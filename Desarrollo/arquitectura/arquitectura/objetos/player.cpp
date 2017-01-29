@@ -5,6 +5,11 @@
 #include "puerta.hpp"
 
 player::player(){
+	setType(tPLAYER);
+	obj_colisionado = NULL;
+	velocidad = 1;
+	muero = false;
+	
     //TO DO: que se canse al correr
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
@@ -30,17 +35,13 @@ player::player(){
 	}
 	setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
-    
+    arma = (armas*)findComponent("armas");
+	
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
+	fisica->crearBodyDinamico(dim, pos);
 	
-    obj_colisionado = NULL;
-	velocidad = 1;
-    muero = false;
-    arma = (armas*)findComponent("armas");
-    fisica->crearBodyDinamico(dim, pos);
 	aux = NULL;
-	setType(tPLAYER);
 }
 
 player::~player(){

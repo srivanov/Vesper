@@ -6,7 +6,6 @@
 physics::physics(){
     body = NULL;
 	
-	
 //	b2BodyDef myBodyDef;
 //	b2PolygonShape polygonShape;
 //	b2FixtureDef myFixtureDef;
@@ -49,6 +48,15 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
 	this->rotacion = 0;
 	vel.x = 0;
 	vel.y = 0;
+	
+	if(*getFather()->getType() == tPLAYER){
+		b2PolygonShape polygonShape;
+		polygonShape.SetAsBox(2.0f, 2.0f);
+//		polygonShape.m_radius = 3;
+		myFixtureDef.shape = &polygonShape;
+		myFixtureDef.isSensor = true;
+		body->CreateFixture(&myFixtureDef);
+	}
 }
 
 void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion){
@@ -73,66 +81,11 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 //void physics::update(float* anguloFinal, float* angulo, float* mousePosition){
 void physics::update(){
 	//TO DO: COMPROBAR QUE EL BODY NO SEA ESTATICO
-	//inside Step()
-
-	body->SetLinearVelocity( vel );
-	
-//	getFather()->setPosicion(new float[3]{body->GetPosition().x, body->GetPosition().y, 0});
-    dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
-    
-    getFather()->setPosicion(aux);
-	
-//	posicion[0] = body->GetPosition().x;
-//	posicion[1] = body->GetPosition().y;
-	
-//	if(mousePosition != NULL){
-//        angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
-//        angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
-//		
-//        anguloFinal[2] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
-//		
-//		//paso el coseno y seno de la rotacion a unitario
-//		float length = sqrt((angulo[0]*angulo[0])+(angulo[1]*angulo[1]));
-//		angulo[0] = angulo[0] / length;
-//		angulo[1] = angulo[1] / length;
-//		
-////		printf("%.2f %.2f\n", angulo[0], angulo[1]);
-//        body->SetTransform(body->GetPosition(), anguloFinal[2]);
-//	}
-//	b2Vec2* verts;
-//	for( b2Fixture *fix = body->GetFixtureList(); fix; fix = fix->GetNext() ){
-//		if( fix->GetType() == b2_staticBody ){
-//			b2PolygonShape *poly = (b2PolygonShape*)fix->GetShape();
-//			
-//			int count = poly->GetVertexCount();
-//			verts = (b2Vec2*) poly->m_vertices;
-//			
-//			for( int i = 0; i < count; i++ ){
-//				verts[i] = body->GetWorldPoint( verts[i] );
-//			}
-//			//verts now contains world co-ords of all the verts
-//		}
-//	}
-//	//set up vertex array
-//	GLfloat glverts[16]; //allow for polygons up to 8 vertices
-//	glVertexPointer(2, GL_FLOAT, 0, glverts); //tell OpenGL where to find vertices
-//	glEnableClientState(GL_VERTEX_ARRAY); //use vertices in subsequent calls to glDrawArrays
-//	
-//	//fill in vertex positions as directed by Box2D
-//	for (int i = 0; i < verts->Length(); i++) {
-//		glverts[i*2]   = verts[i].x;
-//		glverts[i*2+1] = verts[i].y;
-//	}
-//	
-//	//draw solid area
-//	glColor4f( 249, 51, 255, 1);
-//	glDrawArrays(GL_TRIANGLE_FAN, 0, verts->Length());
-//	
-//	//draw lines
-//	glLineWidth(3); //fat lines
-//	glColor4f( 1, 0, 1, 1 ); //purple
-//	glDrawArrays(GL_LINE_LOOP, 0, verts->Length());
-	
+	if(body->GetType() != b2_staticBody){
+		body->SetLinearVelocity( vel );
+		dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
+		getFather()->setPosicion(aux);
+	}
 }
 
 void physics::setPosition(dvector3D &pos){
@@ -145,7 +98,6 @@ void physics::setVelocity(dvector3D &veloc){
 }
 
 float physics::rotarConRaton(dvector3D &posRaton){
-//	if(posRaton != NULL){
 		
     b2Vec2 aux;
     //TO DO: Mirar si se puede hacer en una linea
@@ -164,10 +116,10 @@ float physics::rotarConRaton(dvector3D &posRaton){
     body->SetTransform(body->GetPosition(), rotacion);
     
     return rotacion;
-//	}
-	return 0.0f;
 }
 
 void physics::rotar(float anguloRotacion){
 	body->SetTransform(body->GetPosition(), anguloRotacion);
 }
+
+

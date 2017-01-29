@@ -22,6 +22,7 @@ public:
 	void setVelocity(dvector3D &veloc);
 	float rotarConRaton(dvector3D &posRaton);
 	void rotar(float anguloRotacion);
+	void raycast();
 private:
     b2Body *body;
     float rotacion;
