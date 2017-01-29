@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include "../Dvector.hpp"
 
+class Personal_BlackBoard;
+
 class enemigos : public GameObject{
 public:
     enemigos(int& ID);
@@ -17,6 +19,9 @@ public:
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();
+	int * getID(){return &ID;}
+	void notify(dvector3D& position, int type);
+	bool EventUsed(int type);
 private:
     int k ; // GUARRRADA!!!
     estados * STD;
@@ -24,5 +29,7 @@ private:
 	unsigned int salud, sed, hambre;
     unsigned int estado;
     bool muero;
+	
+	Personal_BlackBoard * book;
 };
 #endif /* enemigos_hpp */

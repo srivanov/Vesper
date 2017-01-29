@@ -26,12 +26,19 @@
 estados::estados(){
     
     //GENERALES
+    _estandarObligatorio = new NodoSecuenciaPositiva;
+    
     NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
-    NodoVigilar * vigilar = new NodoVigilar;
+    NodoVigilar * vigilo = new NodoVigilar;
+    NodoSecuencia * vigilar = new NodoSecuencia;
+    Nodo_TengoVigilar * tengoVigilar = new Nodo_TengoVigilar;
     NodoPatrullar * patrullar = new NodoPatrullar;
     NodoSecuencia * avisado = new NodoSecuencia;
     Nodo_Avisado * recibido_aviso = new Nodo_Avisado;
     NodoMover * moverse = new NodoMover;
+    vigilar->anyadirHijo(tengoVigilar);
+    vigilar->anyadirHijo(moverse);
+    vigilar->anyadirHijo(vigilo);
     avisado->anyadirHijo(recibido_aviso);
     avisado->anyadirHijo(moverse);
     
@@ -40,25 +47,27 @@ estados::estados(){
     
     //CAMBIAR ESTADO AGRESIVO
     Nodo_VerJugador * agresivo = new Nodo_VerJugador;
-    _estandar->anyadirHijo(agresivo);
+    _estandarObligatorio->anyadirHijo(agresivo);
     
     //AVISADO
-    _estandar->anyadirHijo(avisado);
+    _estandarObligatorio->anyadirHijo(avisado);
     
     //CAMBIAR ESTADO ALERTA
     Nodo_SuenaAlarma * alerta = new Nodo_SuenaAlarma;
-    _estandar->anyadirHijo(alerta);
+    
+    _estandarObligatorio->anyadirHijo(alerta);
     
     
     //BUSCAR RUIDO
     NodoSecuencia * _buscar_ruido = new NodoSecuencia;
     Nodo_HayRuido * ruido = new Nodo_HayRuido;
+    
     _buscar_ruido->anyadirHijo(ruido);
     _buscar_ruido->anyadirHijo(moverse);
-    _buscar_ruido->anyadirHijo(vigilar);
+    _buscar_ruido->anyadirHijo(vigilo);
     
     
-    _estandar->anyadirHijo(_buscar_ruido);
+    _estandarObligatorio->anyadirHijo(_buscar_ruido);
     
     // IR A BOTIQUIN - ESTANDAR
     NodoSecuencia * _ir_botiquin = new NodoSecuencia;
@@ -77,45 +86,39 @@ estados::estados(){
     
     NodoSecuenciaPositiva * _ingerir = new NodoSecuenciaPositiva;
     
-    for (int i=0; i<INGERIR_ESTANDAR; i++) {
-        if(i==0){//COMER
-                NodoSecuencia * comer = new NodoSecuencia;
-                Nodo_TengoHambre * tengo_hambre = new Nodo_TengoHambre;
-                comer->anyadirHijo(tengo_hambre);
-                comer->anyadirHijo(moverse);
-                NodoComer * comiendo = new NodoComer;
-                comer->anyadirHijo(comiendo);
-                _ingerir->anyadirHijo(comer);
-        }else if(i==1){//BEBER
-                NodoSecuencia * beber = new NodoSecuencia;
-                Nodo_TengoSed * tengo_sed = new Nodo_TengoSed;
-                beber->anyadirHijo(tengo_sed);
-                beber->anyadirHijo(moverse);
-                NodoBeber * bebiendo = new NodoBeber;
-                beber->anyadirHijo(bebiendo);
-                _ingerir->anyadirHijo(beber);
-        }
-        else{cout << "ERROR - FALTA RUTINA DE INGERIR - ESTANDAR" << endl;}
-    }
+    //COMER
+    NodoSecuencia * comer = new NodoSecuencia;
+    Nodo_TengoHambre * tengo_hambre = new Nodo_TengoHambre;
+    comer->anyadirHijo(tengo_hambre);
+    comer->anyadirHijo(moverse);
+    NodoComer * comiendo = new NodoComer;
+    comer->anyadirHijo(comiendo);
+    _ingerir->anyadirHijo(comer);
+    //BEBER
+    NodoSecuencia * beber = new NodoSecuencia;
+    Nodo_TengoSed * tengo_sed = new Nodo_TengoSed;
+    beber->anyadirHijo(tengo_sed);
+    beber->anyadirHijo(moverse);
+    NodoBeber * bebiendo = new NodoBeber;
+    beber->anyadirHijo(bebiendo);
+    _ingerir->anyadirHijo(beber);
+    
     _estandar->anyadirHijo(_ingerir);
     
     // ACCIONES - ESTANDAR
     NodoSecuenciaPositiva * _acciones = new NodoSecuenciaPositiva;
     
-    for (int i=0; i<ACCIONES_GENERALES_ESTANDAR; i++) {
-        if(i==0) {// HABLAR
-                NodoSecuencia * _hablar = new NodoSecuencia;
-                Nodo_HayParaHablar * _se_puede = new Nodo_HayParaHablar;
-                NodoHablar * hablamos = new NodoHablar;
-                _hablar->anyadirHijo(_se_puede);
-                _hablar->anyadirHijo(hablamos);
-                _acciones->anyadirHijo(_hablar);
-        }else if(i==1){// VIGILAR
-                _acciones->anyadirHijo(vigilar);
-        }else if(i==2){// PATRULLAR
-                _acciones->anyadirHijo(patrullar);
-        }else{cout << "ERROR - ACCION ESTANDAR SIN DEFINIR" << endl;break;}
-    }
+    // HABLAR
+    NodoSecuencia * _hablar = new NodoSecuencia;
+    Nodo_HayParaHablar * _se_puede = new Nodo_HayParaHablar;
+    NodoHablar * hablamos = new NodoHablar;
+    _hablar->anyadirHijo(_se_puede);
+    _hablar->anyadirHijo(hablamos);
+    _acciones->anyadirHijo(_hablar);
+    // VIGILAR
+    _acciones->anyadirHijo(vigilar);
+    // PATRULLAR
+    _acciones->anyadirHijo(patrullar);
     _estandar->anyadirHijo(_acciones);
 
     // CONSTRUCCION DE ARBOL ALERTA
@@ -223,7 +226,7 @@ estados::estados(){
     
     //CAMBIAR ESTADO A ALERTA
     //VIGILAR TAMBIEN CAMBIA ESTADO
-    _combate->anyadirHijo(vigilar);
+    _combate->anyadirHijo(vigilo);
     
     //CONSTRUCCION DEL ARBOL ASUSTADO
     _asustado = new NodoSecuenciaPositiva;
@@ -241,10 +244,184 @@ estados::estados(){
     NodoHuir * huir = new NodoHuir;
     _asustado->anyadirHijo(huir);
     
+    
+    
+    _pedir_ayuda = nullptr; //NO BORRABLE
+     vigilo = nullptr; //NO BORRABLE
+     vigilar = nullptr; //NO BORRABLE
+     tengoVigilar = nullptr; //NO BORRABLE
+     patrullar = nullptr; //NO BORRABLE
+     avisado = nullptr; //PENDIENTE
+     recibido_aviso = nullptr; //PENDIENTE
+     moverse = nullptr; //NO BORRABLE
+    
+     agresivo = nullptr; //NO BORRABLE
+    
+     alerta = nullptr; //NO BORRABLE
+    
+    
+    //BUSCAR RUIDO
+     ruido = nullptr ; //PENDIENTE
+     _buscar_ruido = nullptr; //PENDIENTE
+    
+    // IR A BOTIQUIN - ESTANDAR
+     vida_baja = nullptr; //NO BORRABLE
+     hay_botiquin = nullptr; //NO BORRABLE
+     curarse = nullptr; //NO BORRABLE
+    
+    // INGERIR
+     _ingerir = nullptr; //NO BORRABLE
+    
+    //COMER
+     comer = nullptr; //NO BORRABLE
+     tengo_hambre = nullptr; //NO BORRABLE
+     comiendo = nullptr; //NO BORRABLE
+    
+    //BEBER
+     beber = nullptr; //NO BORRABLE
+     tengo_sed = nullptr; //NO BORRABLE
+     bebiendo = nullptr; //NO BORRABLE
+    
+    // ACCIONES - ESTANDAR
+     _acciones = nullptr; //NO BORRABLE
+    
+    // HABLAR
+     _hablar = nullptr; //NO BORRABLE
+     _se_puede = nullptr; //NO BORRABLE
+     hablamos = nullptr; //NO BORRABLE
+    
+    //CAMBIAR ESTADO ESTANDAR
+     estandar = nullptr;
+    
+    //ALARMA ACTIVA
+     alarm_cerca = nullptr; //NO BORRABLE
+     recorrer_zona = nullptr; //NO BORRABLE
+     _alarma_activa = nullptr; //NO BORRABLE
+    
+    //CAMBIAR ESTADO A ASUSTADO
+     estar_asustado = nullptr;
+    
+    //PEDIR AYUDA
+     ayuda = nullptr;
+     alguien_cerca = nullptr;
+     alguien_radio = nullptr;
+     ayuda_cercana = nullptr;
+     ayuda_radio = nullptr;
+     ayuda_alarma = nullptr;
+     alarma_cerca = nullptr;
+     alarma_rota = nullptr;
+     avisar = nullptr;
+    
+     necesito = nullptr;
+    
+    //COMBATIR
+     _combatir = nullptr;
+     _cubrir = nullptr;
+     _ataques = nullptr;
+     _distancia_jugador = nullptr;
+     _cuerpo_cuerpo = nullptr;
+     _a_distancia = nullptr;
+     distatack = nullptr;
+     cerca_jug = nullptr;
+     lejos_jug = nullptr;
+     ataque_cuerpo = nullptr;
+     ataque_distancia = nullptr;
+     cubrirse = nullptr; //NO BORRABLE
+    
+    //HUIR
+     huir = nullptr;
+    
+    
+    delete _pedir_ayuda; //NO BORRABLE
+    delete vigilo; //NO BORRABLE
+    delete vigilar; //NO BORRABLE
+    delete tengoVigilar; //NO BORRABLE
+    delete patrullar; //NO BORRABLE
+    delete avisado; //PENDIENTE
+    delete recibido_aviso; //PENDIENTE
+    delete moverse; //NO BORRABLE
+    
+    delete agresivo; //NO BORRABLE
+    
+    delete alerta; //NO BORRABLE
+    
+    
+    //BUSCAR RUIDO
+    delete ruido ; //PENDIENTE
+    delete _buscar_ruido; //PENDIENTE
+    
+    // IR A BOTIQUIN - ESTANDAR
+    delete vida_baja; //NO BORRABLE
+    delete hay_botiquin; //NO BORRABLE
+    delete curarse; //NO BORRABLE
+    
+    // INGERIR
+    delete _ingerir; //NO BORRABLE
+    
+    //COMER
+    delete comer; //NO BORRABLE
+    delete tengo_hambre; //NO BORRABLE
+    delete comiendo; //NO BORRABLE
+    
+    //BEBER
+    delete beber; //NO BORRABLE
+    delete tengo_sed; //NO BORRABLE
+    delete bebiendo; //NO BORRABLE
+    
+    // ACCIONES - ESTANDAR
+    delete _acciones; //NO BORRABLE
+    
+    // HABLAR
+    delete _hablar; //NO BORRABLE
+    delete _se_puede; //NO BORRABLE
+    delete hablamos; //NO BORRABLE
+    
+    //CAMBIAR ESTADO ESTANDAR
+    delete estandar;
+    
+    //ALARMA ACTIVA
+    delete alarm_cerca; //NO BORRABLE
+    delete recorrer_zona; //NO BORRABLE
+    delete _alarma_activa; //NO BORRABLE
+    
+    //CAMBIAR ESTADO A ASUSTADO
+    delete estar_asustado;
+    
+    //PEDIR AYUDA
+    delete ayuda;
+    delete alguien_cerca;
+    delete alguien_radio;
+    delete ayuda_cercana;
+    delete ayuda_radio;
+    delete ayuda_alarma;
+    delete alarma_cerca;
+    delete alarma_rota;
+    delete avisar;
+    
+    delete necesito;
+    
+    //COMBATIR
+    delete _combatir;
+    delete _cubrir;
+    delete _ataques;
+    delete _distancia_jugador;
+    delete _cuerpo_cuerpo;
+    delete _a_distancia;
+    delete distatack;
+    delete cerca_jug;
+    delete lejos_jug;
+    delete ataque_cuerpo;
+    delete ataque_distancia;
+    delete cubrirse; //NO BORRABLE
+    
+    //HUIR
+    delete huir;
+    
+
 }
 
 estados::~estados(){
-    
+    delete _estandarObligatorio;
     delete _estandar;
     delete _alerta;
     delete _combate;
@@ -263,7 +440,11 @@ void estados::run(int &id){
 }
 
 void estados::estandar(int &id){
-    _estandar->run(id);
+    short ans = _estandarObligatorio->run(id);
+    if(ans==0)
+        _estandar->run(id);
+    else
+        _estandar->reset();
 }
 
 void estados::alerta(int &id){
@@ -277,8 +458,3 @@ void estados::combate(int &id){
 void estados::asustado(int &id){
     _asustado->run(id);
 }
-
-
-
-
-

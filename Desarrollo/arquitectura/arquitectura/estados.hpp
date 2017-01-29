@@ -25,6 +25,7 @@ private:
     NodoSecuenciaPositiva* _alerta;
     NodoSecuenciaPositiva* _combate;
     NodoSecuenciaPositiva* _asustado;
+    NodoSecuenciaPositiva* _estandarObligatorio;
 };
 
 #endif /* estados_hpp */

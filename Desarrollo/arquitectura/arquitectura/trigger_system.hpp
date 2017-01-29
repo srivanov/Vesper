@@ -17,15 +17,16 @@
 #include <time.h>
 #include <vector>
 #include "Dvector.hpp"
+#include "enemigos.hpp"
 
 enum TypeEvents{
-    E_none = -1,
-    E_ruido,
+    E_ruido=0,
     E_aviso,
     E_hablar,
     E_puerta,
-    E_alarma
-    
+    E_alarma,
+    E_near_alarma,
+    E_radio
 };
 
 
@@ -36,7 +37,7 @@ struct triggers{
     dvector3D _pos;
     float _radio;
     time_t _duration;
-    triggers(const TypeEvents& type, unsigned int& idTrigger, int* idSource, dvector3D* pos, float radio, float duration);
+    triggers(TypeEvents& type, unsigned int& idTrigger, int* idSource, dvector3D* pos, float radio, float duration);
     ~triggers();
 };
 
@@ -44,15 +45,19 @@ struct triggers{
 class trigger_system {
 public:
     static trigger_system * _instance();
-    unsigned long add_trigger(const TypeEvents& type, int* id, dvector3D* pos, float radio, float duration);
+    void add_trigger(TypeEvents type, int id, dvector3D pos, float radio, int duration);
     void remove_trigger(unsigned long id);
     void update();
     virtual ~trigger_system();
+    bool ExistTrigger(TypeEvents& type, int& ID);
+    void subs(enemigos* npc);
 private:
     trigger_system();
+    float CalcularDistancia(dvector3D a, dvector3D b);
     void clear();
     static trigger_system * _TSinstance;
     std::vector<triggers*> TRIGGER_VECTOR;
+    std::vector<enemigos*> AGENTS;
     unsigned int IDcont;
 };
 
