@@ -11,6 +11,7 @@ lanzaCaramelos::lanzaCaramelos(unsigned int pMunicion, float pAlcance, float pTi
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tLANZACARAMELOS;
 }
 
 lanzaCaramelos::~lanzaCaramelos(){
@@ -48,4 +49,8 @@ void lanzaCaramelos::setMunicion(unsigned int n){
 
 void lanzaCaramelos::destructor(){
 	this->~lanzaCaramelos();
+}
+
+typeArma const* lanzaCaramelos::getType(){
+    return &tipo;
 }

@@ -8,8 +8,9 @@
 class conAlarma : public component{
 public:
 	conAlarma();
+//	~conAlarma() override;
 	~conAlarma();
-	void update();
+	void update() override;
 	
 };
 

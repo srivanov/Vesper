@@ -10,6 +10,7 @@ escopeta::escopeta(unsigned int pMunicion, float pAlcance, float pTiempo_recarga
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 2;
+    tipo = tESCOPETA;
 }
 
 escopeta::~escopeta(){
@@ -47,4 +48,8 @@ void escopeta::setMunicion(unsigned int n){
 
 void escopeta::destructor(){
 	this->~escopeta();
+}
+
+typeArma const* escopeta::getType(){
+    return &tipo;
 }

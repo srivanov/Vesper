@@ -4,18 +4,21 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "../Dvector.hpp"
 
 class bala : public GameObject{
 public:
-    bala(float* pos, float* dir, float vel);
+    bala(dvector3D &pos, dvector3D &dir, float vel);
     ~bala();
-	float* getDireccion();
+	dvector3D* getDireccion();
 	void update();
-	bool muero();
+    void contacto(GameObject* g);
+    void contactoEnd(GameObject* g);
+    bool const* getmuero();
 private:
-	float direccion[2];
+	dvector3D direccion;
 	time_t intervalo;
 	float tiempo_vida, velocidad;
-	bool muerto;
+    bool muero;
 };
 #endif /* bala_hpp */

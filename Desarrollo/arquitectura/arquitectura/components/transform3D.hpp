@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "component.hpp"
+#include "../Dvector.hpp"
 
 
 class transform3D : public component{
@@ -11,9 +12,9 @@ public:
 	transform3D();
     ~transform3D();
 	void update();
-	void setPosition(float* pos);
-	void mover(float* velocidad);
-	float rotarConRaton(float* rotacion);
+	void setPosition(dvector3D &pos);
+	void mover(dvector3D &velocidad);
+	float rotarConRaton(dvector3D &rotacion);
 	void rotar(float anguloRotacion);
 
 };

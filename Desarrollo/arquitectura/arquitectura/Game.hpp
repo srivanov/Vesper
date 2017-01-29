@@ -13,12 +13,14 @@
 #include "components/render.hpp"
 #include "components/input.hpp"
 #include "objetos/player.hpp"
-#include "objetos/camara.hpp"
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
 #include "objetos/bala.hpp"
-#include "objetos/escenarios.hpp"
+#include "objetos/nivel.hpp"
+#include "BlackBoards.hpp"
+#include "trigger_system.hpp"
 #include <vector>
+#include "Dvector.hpp"
 
 class Game {
 public:
@@ -36,7 +38,8 @@ public:
     void zoom(bool z);
 	void atacarJugador();
 	void cambiarArmaJugador();
-	void rotarConRaton(float* posRaton);
+	void rotarConRaton(dvector3D posRaton);
+    camara* getCamara();
 	
 protected:
 	Game();
@@ -51,7 +54,7 @@ private:
     vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
-	escenarios* nivel;
+	nivel* nivelazo;
 };
 
 #endif /* Game_hpp */

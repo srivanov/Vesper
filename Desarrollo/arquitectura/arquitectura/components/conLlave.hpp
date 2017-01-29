@@ -9,7 +9,7 @@ class conLlave : public component{
 public:
 	conLlave();
 	~conLlave();
-	void update();
+	void update() override;
 	
 };
 

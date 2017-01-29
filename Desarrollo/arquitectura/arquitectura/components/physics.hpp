@@ -6,24 +6,27 @@
 #include "component.hpp"
 #include <Box2D/Box2D.h>
 #include "../mundoBox2D.hpp"
+#include "../Dvector.hpp"
 
 class physics : public component {
 public:
     physics();
     ~physics();
-    void crearBodyDinamico(float* dimension, float* posicion);
-	void crearBodyEstatico(float* dimension, float* posicion, float rotacion);
+    void crearBodyDinamico(dvector3D &dimension, dvector3D &posicion);
+	void crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion);
 //    void update(float* anguloFinal, float* angulo, float* mousePosition);
 	void update();
 	
-	void setPosition(float* pos);
+	void setPosition(dvector3D &pos);
 	
-	void setVelocity(float* vel);
-	float rotarConRaton(float* posRaton);
+	void setVelocity(dvector3D &veloc);
+	float rotarConRaton(dvector3D &posRaton);
 	void rotar(float anguloRotacion);
 private:
     b2Body *body;
-    float rotacion, velocidad[2], angulo_disparo[2];
+    float rotacion;
+    b2Vec2 vel;
+    dvector3D angulo_disparo;
 	
 };
 #endif /* physics_hpp */

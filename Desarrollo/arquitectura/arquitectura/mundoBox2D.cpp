@@ -1,5 +1,6 @@
 
 #include "mundoBox2D.hpp"
+#include "objetos/GameObject.hpp"
 
 mundoBox2D* mundoBox2D::pinstance = 0;
 
@@ -20,6 +21,8 @@ mundoBox2D::mundoBox2D()
 	timeStep = 1/20.0;      //the length of time passed to simulate (seconds)
 	velocityIterations = 8;   //how strongly to correct velocity
 	positionIterations = 3;   //how strongly to correct position
+	
+	world->SetContactListener(&contacto);
 }
 
 mundoBox2D:: ~mundoBox2D() { //borra todos los cuerpos y joints. No usar sus punteros despues
@@ -33,4 +36,24 @@ b2World* mundoBox2D::getWorld(){
 
 void mundoBox2D::update(){
 	world->Step(timeStep, velocityIterations, positionIterations);
+}
+
+//TO DO: implementar instansceof
+
+void ContactListener::BeginContact(b2Contact* contact){
+	//Si los dos son bodys dinamicos el fixtureA es el que choca
+	//Si uno es estatico sera el fixtureB, el fixtureA sera el dinamico
+	GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
+    GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+	g1->contacto(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
+    
+//    g2->setTexture("3d/rocas.jpg");
+    g2->contacto(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
+}
+
+void ContactListener::EndContact(b2Contact* contact) {
+    GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
+    GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+    g1->contactoEnd(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
+    g2->contactoEnd(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
 }

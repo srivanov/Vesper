@@ -11,8 +11,8 @@ public:
 	component();
 	void setFather(GameObject* p);
 	GameObject* getFather();
-	~component();
-	virtual void update();
+	virtual void update()=0;
+	virtual ~component(){}
 private:
 	GameObject* padre;
 };

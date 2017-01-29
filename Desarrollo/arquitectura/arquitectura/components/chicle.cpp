@@ -10,6 +10,7 @@ chicle::chicle(unsigned int pMunicion, float pAlcance, float pTiempo_recarga){
 	tiempo_recarga = pTiempo_recarga;
 	tiempo = clock();
 	cargador = 6;
+    tipo = tCHICLE;
 }
 
 chicle::~chicle(){
@@ -47,4 +48,8 @@ void chicle::setMunicion(unsigned int n){
 
 void chicle::destructor(){
 	this->~chicle();
+}
+
+typeArma const* chicle::getType(){
+    return &tipo;
 }

@@ -1,16 +1,10 @@
-//
-//  nodeMesh.hpp
-//  mapa
-//
-//  Created by Julia Martínez Valera on 17/11/16.
-//  Copyright © 2016 Julia Martínez Valera. All rights reserved.
-//
 
 #ifndef nodeMesh_hpp
 #define nodeMesh_hpp
 
 #include <stdio.h>
 #include <irrlicht.h>
+#include "Dvector.hpp"
 
 using namespace irr;
 using namespace core;
@@ -26,12 +20,12 @@ public:
     ISceneNode* _getNode();
 	void _setNode(ISceneNode* node);
 	bool _setMaterialTexture(ITexture* tex);
-	void _setNodePosition(float* posicion);
-	void _setNodeRotation(float* rotacion);
+	void _setNodePosition(dvector3D &posicion);
+	void _setNodeRotation(dvector3D &rotacion);
 	void _setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger);
 	
-	float* _getNodePosition();
-	float* _getNodeRotation();
+	dvector3D* _getNodePosition();
+	dvector3D* _getNodeRotation();
 	
 private:
     ISceneNode* object;

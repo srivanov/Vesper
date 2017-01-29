@@ -13,18 +13,22 @@
 #include "chicle.hpp"
 #include "bombaHumo.hpp"
 #include "martilloDeJuguete.hpp"
+#include "pala.hpp"
 #include <vector>
 
 class armas : public component {
 public:
     armas();
     ~armas();
-	void update();
+	void update() override;
 	void shoot();
 	void changeGun();
+    void insertarArma(int a);
+    void eliminarArma(std::vector<armaInterface*>::iterator iter);
+    armaInterface* getArmaActual();
 	
 private:
-	armaInterface* aux;
+//	armaInterface* aux;
 	std::vector<armaInterface*>::iterator seleccionada;
 	std::vector<armaInterface*> interface;
 };

@@ -18,17 +18,21 @@ Game::Game(){
 	running = true;
     jugador = new player();
 	cam = new camara();
-	nivel = new escenarios();
+	nivelazo = new nivel();
 }
 
 Game::~Game(){
+	//TO DO: revisar deletes de ncp, alarmita... (estan abajo en start)
 	delete entrada;
 	delete cam;
-	delete nivel;
-    renderizador->closeWindow();
-	delete renderizador;
+	delete nivelazo;
+	balas.clear();
 	delete jugador;
-//	delete pinstance;
+	renderizador->closeWindow();
+	delete renderizador;
+    if(bala_aux == NULL)
+        delete bala_aux;
+    
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -37,13 +41,17 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //	renderizador->setTexto();
     jugador->addNodo("3d/sphere.3ds");
 	jugador->setTexture("3d/texture.png");
-	float* p = new float[3]{10, 10, 0};
-	jugador->setPosicion(new float[3]{10, 10, 0});
-	cam->addCamara(new float[3]{p[0], p[1]-5, p[2]-10}, jugador->getPosicion());
+    dvector3D jpos(10,10,0);
+	jugador->setPosicion(jpos);
+	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
+	cam->addCamara(campos, *jugador->getPosicion());
 	
-	if(nivel->cargarNivel("2"))
-		nivel->dibujarMapa();
+	if(nivelazo->cargarNivel("1"))
+		nivelazo->dibujarMapa();
 	
+	World_BlackBoard::instance();
+	NPC_library::instance();
+	trigger_system::_instance();
 }
 
 void Game::stop(){
@@ -52,6 +60,7 @@ void Game::stop(){
 
 void Game::render(){
 	jugador->render();
+	
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
@@ -72,29 +81,36 @@ player* Game::getPlayer(){
 }
 
 bala* Game::insertBala(float vel){
-    bala_aux = new bala(jugador->getPosicion(), jugador->getDirDisparo(), vel);
+    //TO DO: Hacer la gestion de las balas en la clase bala
+    bala_aux = new bala(*jugador->getPosicion(), *jugador->getDirDisparo(), vel);
     bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
     return bala_aux;
 }
 
 void Game::update(){
+	nivelazo->update();
 	entrada->update();
 	jugador->update();
-	cam->movimientoInteligente(jugador->getPosicion());
+	cam->movimientoInteligente(*jugador->getPosicion());
+	
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
-        bala_aux->mover(bala_aux->getDireccion());
+        bala_aux->mover(*bala_aux->getDireccion());
 		bala_aux->update();
-		if(bala_aux->muero()){
+		if(*bala_aux->getmuero()){
 			delete bala_aux;
+            bala_aux = NULL;
 			iter = balas.erase(iter);
 		}else
 			iter++;
     }
-	Fps::Instance()->update();
-    mundoBox2D::Instance()->update();
+	
+    trigger_system::_instance()->update();
+	
+    Fps::Instance()->update();
+	mundoBox2D::Instance()->update();
 }
 
 void Game::zoom(bool z){
@@ -109,6 +125,10 @@ void Game::cambiarArmaJugador(){
 	jugador->cambiarArma();
 }
 
-void Game::rotarConRaton(float* posRaton){
+void Game::rotarConRaton(dvector3D posRaton){
 	jugador->rotarConRaton(posRaton);
+}
+
+camara* Game::getCamara(){
+    return cam;
 }

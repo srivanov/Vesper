@@ -1,10 +1,3 @@
-//
-//  cargarMapa.hpp
-//  mapa
-//
-//  Created by Julia Martínez Valera on 5/11/16.
-//  Copyright © 2016 Julia Martínez Valera. All rights reserved.
-//
 
 #ifndef cargarMapa_hpp
 #define cargarMapa_hpp
@@ -12,6 +5,7 @@
 #include <stdio.h>
 #include "tinyxml2.h"
 #include <iostream>
+#include <vector>
 using namespace tinyxml2;
 
 
@@ -27,9 +21,9 @@ public:
     int * getLevel();
     //int getMatriz()[][][] const;
     //virtual ~cargarMapa();
-    int ***_tilemap;
+    std::vector<int> _tilemap;
     void mostrarMatriz();
-    int*** getMatriz();
+    std::vector<int>* getMatriz();
     
 private:
     
@@ -39,7 +33,6 @@ private:
     int _tileHeight;
     int _numLayers;
     int *_level;
-    int ***matrizMapa;
     
    // int matrizMapa[][][];
     

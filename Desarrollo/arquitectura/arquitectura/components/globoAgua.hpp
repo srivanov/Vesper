@@ -17,11 +17,12 @@ class globoAgua : public armaInterface{
 public:
 	globoAgua(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
 	~globoAgua();
-	void atacar();
-	unsigned int getMunicion();
-	void setMunicion(unsigned int n);
-	void destructor();
+	void atacar() override;
+	unsigned int getMunicion() override;
+	void setMunicion(unsigned int n) override;
 	void update();
+	void destructor() override;
+    typeArma const* getType() override;
 	
 private:
 	unsigned int cadencia, municion, cargador;

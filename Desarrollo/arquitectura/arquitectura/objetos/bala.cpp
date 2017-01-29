@@ -1,7 +1,7 @@
 
 #include "bala.hpp"
 
-bala::bala(float* pos, float* dir, float vel){
+bala::bala(dvector3D &pos, dvector3D &dir, float vel){
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);
     aux = new physics();
@@ -16,31 +16,42 @@ bala::bala(float* pos, float* dir, float vel){
     }
     setRenderizable(true);
     physics* fisica = (physics*)findComponent("physics");
-	fisica->crearBodyDinamico(new float[2]{(float)(0.1),(float)(0.1)}, new float[2]{pos[0]+dir[0]*1.5f, pos[1]+dir[1]*1.5f});
+    
+    dvector3D dim(0.1, 0.1, 0);
+
+    pos.x += dir.x*1.5f;
+    pos.y += dir.y*1.5f;
+    pos.z = 0;
+    
+	fisica->crearBodyDinamico(dim, pos);
 	
 	velocidad = 3.0f;
-	direccion[0] = dir[0] * velocidad;
-	direccion[1] = dir[1] * velocidad;
+    
+	direccion.x = dir.x * velocidad;
+	direccion.y = dir.y * velocidad;
 //	printf("%2.f %.2f\n", dir[0], dir[1]);
 	intervalo = clock();
 	tiempo_vida = vel;
-	muerto = false;
+	muero = false;
+	aux = NULL;
+	setType(tBALA);
 }
 
 bala::~bala(){
-//	printf("DELETE bala\n");
-//	delete direccion;
 	class render* ren = (class render*)findComponent("render");
 	if (ren != NULL)
 		ren->deleteNode();
 
 }
 
-float* bala::getDireccion(){
-	return direccion;
+dvector3D* bala::getDireccion(){
+	return &direccion;
 }
 
 void bala::update(){
+    
+    //TO DO: no crear y eliminar memoria de las balas, simplemente activar y desactivarlas
+    
 	//	std::map<char*, component>::iterator iter = components.begin();
 	//	while (iter != components.end()) {
 	//		iter->second.update();
@@ -48,10 +59,20 @@ void bala::update(){
 	//	}
 //	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
 	GameObject::update();
-	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muerto == false)
-		muerto = true;
+	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muero == false)
+		muero = true;
 }
 
-bool bala::muero(){
-	return muerto;
+bool const* bala::getmuero(){
+	return &muero;
+}
+
+void bala::contacto(GameObject *g){
+//    if(*g->getType() == tENEMIGOS){
+//        muero = true;
+//    }
+}
+
+void bala::contactoEnd(GameObject *g){
+    
 }

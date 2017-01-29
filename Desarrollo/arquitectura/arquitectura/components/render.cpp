@@ -1,7 +1,7 @@
 
 #include "render.hpp"
 #include "../objetos/GameObject.hpp"
-#include "../objetos/escenarios.hpp"
+#include "../objetos/nivel.hpp"
 
 render::render(){
 	nodo = NULL;
@@ -10,12 +10,14 @@ render::render(){
 }
 
 render::~render(){
-//	printf("DELETE render\n");
 	delete nodo;
+	nodo = NULL;
 }
 
 void render::update(){
-	
+	if (nodo != NULL) {
+		nodo->_setNodePosition(*getFather()->getPosicion());
+	}
 }
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -36,7 +38,7 @@ void render::setNode(char *filename){
 		else
 			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
 		aux = NULL;
-		nodo->_setNodePosition(getFather()->getPosicion());
+		nodo->_setNodePosition(*getFather()->getPosicion());
 //		printf("cargado!\n");
     }
 }
@@ -44,11 +46,11 @@ void render::setNode(char *filename){
 void render::setNodeTexture(char* filename){
 	if(nodo != NULL){
 		nodo->_setMaterialFlag(EMF_LIGHTING, false);
-		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture("3d/texture.png"));
+		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture(filename));
 	}
 }
 
-bool render::setNodePosition(float* pos){
+bool render::setNodePosition(dvector3D &pos){
 	if(nodo != NULL){
 		nodo->_setNodePosition(pos);
 		return true;
@@ -56,7 +58,7 @@ bool render::setNodePosition(float* pos){
 	return false;
 }
 
-bool render::setNodeRotation(float* rot){
+bool render::setNodeRotation(dvector3D &rot){
 	if(nodo != NULL){
 		nodo->_setNodeRotation(rot);
 		return true;
@@ -69,16 +71,8 @@ void render::dropNode(){
 }
 
 void render::deleteNode(){
-	nodo->~nodeMesh();
+	delete nodo;
 	nodo = NULL;
-}
-
-void render::actualizarRender(){
-	if(nodo != NULL){
-//		nodo->_setNodePosition(getFather()->getPosicion());
-//		getFather()->setRotacion(ventana::Instance()->posicionRaton(getFather()->getPosicion()));
-//		nodo->_setNodeRotation(getFather()->getRotacion());
-	}
 }
 
 void render::setTexto(){
@@ -95,8 +89,8 @@ void render::dibujar(){
     ventana::Instance()->getDriver()->endScene();
 }
 
-void render::addCamera(float* p, float* l){
-	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p[0], p[1], p[2]), vector3df(l[0], l[1], l[2]));
+void render::addCamera(dvector3D &p, dvector3D &l){
+	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p.x, p.y, p.z), vector3df(l.x, l.y, l.z));
     camara->setNearValue(1);
     camara->setFarValue(20);
 }
@@ -118,34 +112,38 @@ void render::dibujarMapa(){
 ////		return false;
 //	}
 	
-	int*** mapita;
-	mapita = static_cast<escenarios*>(getFather())->getMapa();
+	std::vector<int>* mapita;
+	mapita = static_cast<nivel*>(getFather())->getMapa();
 
 	ISceneNode* nodo;
 	ISceneNode* nodo_suelo;
     
-//	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<escenarios*>(getFather())->getAlto(), static_cast<escenarios*>(getFather())->getAncho(), 0.1));
+//	nodo_suelo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1,0,1,vector3df(0,0,0),vector3df(0,0,0),vector3df(static_cast<nivel*>(getFather())->getAlto(), static_cast<nivel*>(getFather())->getAncho(), 0.1));
 //	nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
 //	nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("../../../arquitectura/3d/verde.jpg"));
     
     //CARGAR PLANO
     
-    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<escenarios*>(getFather())->getAlto(),static_cast<escenarios*>(getFather())->getAncho()));
+    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<nivel*>(getFather())->getAlto(),static_cast<nivel*>(getFather())->getAncho()));
     nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
+    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/mapimg.png"));
     
-    nodo_suelo->setPosition(vector3df((static_cast<escenarios*>(getFather())->getAlto()/2)-0.5, (static_cast<escenarios*>(getFather())->getAncho()/2)-0.5, 0));
+    nodo_suelo->setPosition(vector3df((static_cast<nivel*>(getFather())->getAlto()/2)-0.5, (static_cast<nivel*>(getFather())->getAncho()/2)-0.5, 0));
     
     nodo_suelo->setRotation(vector3df(90,180,180));
 	
-    for(int i=0; i< static_cast<escenarios*>(getFather())->getAlto() ;i++){
-		for(int j=0; j< static_cast<escenarios*>(getFather())->getAncho() ; j++){
-			if(mapita[0][i][j] == 21 || mapita[0][i][j] == 9){
+
+    int h1 = static_cast<nivel*>(getFather())->getAlto();
+    int w1 = static_cast<nivel*>(getFather())->getAncho();
+	
+    for(int j = 0; j<h1; j++){
+        for(int k = w1-static_cast<nivel*>(getFather())->getAncho(); k<w1; k++){
+			if(mapita->at(k) == 21 || mapita->at(k) == 9){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
 				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
-				nodo->setPosition(vector3df(i,j,0));
+				nodo->setPosition(vector3df(j,k - w1 + static_cast<nivel*>(getFather())->getAncho(),0));
 //				nodo = NULL;
 			}
 //			if(mapita[0][i][j] == 86){
@@ -156,23 +154,22 @@ void render::dibujarMapa(){
 ////				nodo_suelo = NULL;
 //			}
 		}
+        w1 += static_cast<nivel*>(getFather())->getAncho();
 	}
+    
 //	return true;
 
 }
 
-void render::setCamPos(float* pos){
-	camara->setPosition(vector3df(pos[0], pos[1], pos[2]));
+void render::setCamPos(dvector3D &pos){
+	camara->setPosition(vector3df(pos.x, pos.y, pos.z));
 }
 
-float* render::getCamPos(){
-	float* p = new float[3];
-	p[0] = camara->getPosition().X;
-	p[1] = camara->getPosition().Y;
-	p[2] = camara->getPosition().Z;
-	return p;
+dvector3D* render::getCamPos(){
+    dvector3D getcam(camara->getPosition().X, camara->getPosition().Y, camara->getPosition().Z);
+    return &getcam;
 }
 
-void render::setCamTarget(float *pos){
-	camara->setTarget(vector3df(pos[0], pos[1], pos[2]));
+void render::setCamTarget(dvector3D &pos){
+	camara->setTarget(vector3df(pos.x, pos.y, pos.z));
 }
