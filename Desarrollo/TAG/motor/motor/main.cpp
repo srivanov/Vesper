@@ -98,7 +98,7 @@ int main(int argc, const char * argv[]) {
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	
 	// creamos una ventana con glfw
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "LearnOpenGL", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "TAGengine", nullptr, nullptr);
 	if (window == nullptr){
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -140,8 +140,15 @@ int main(int argc, const char * argv[]) {
 	//creamos la clase Shader y compilamos los shaders
 	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
-	Modelo modelo("../Models/cube.obj");
+	Modelo modelo("../Models/microwave.obj");
 	modelo.imprimirDatos();
+	
+	Modelo modelo2("../Models/cube.obj");
+	modelo2.imprimirDatos();
+	
+	Modelo modelo3("../Models/nanosuit/nanosuit.obj");
+	modelo3.imprimirDatos();
+	
 //	GLfloat vertices[] = {
 //		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 //		0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
@@ -348,13 +355,13 @@ int main(int argc, const char * argv[]) {
 		
 		GLint lightPosLoc = glGetUniformLocation(miShader.Program, "light.position");
 		GLint viewPosLoc  = glGetUniformLocation(miShader.Program, "viewPos");
-		glUniform3f(lightPosLoc, 3.0f, 5.0f, 3.0f);
+		glUniform3f(lightPosLoc, 3.0f, 2.0f, 3.0f);
 		glUniform3f(viewPosLoc,  camara.Position.x, camara.Position.y, camara.Position.z);
 		
 		//propiedades de la luz
 		glUniform3f(glGetUniformLocation(miShader.Program, "light.ambient"),   0.5f, 0.5f, 0.5f);
-		glUniform3f(glGetUniformLocation(miShader.Program, "light.diffuse"),   1.2f, 1.2f, 1.2f);
-		glUniform3f(glGetUniformLocation(miShader.Program, "light.specular"),  3.0f, 3.0f, 3.0f);
+		glUniform3f(glGetUniformLocation(miShader.Program, "light.diffuse"),   1.5f, 1.5f, 1.5f);
+		glUniform3f(glGetUniformLocation(miShader.Program, "light.specular"),  4.0f, 4.0f, 4.0f);
 		glUniform1f(glGetUniformLocation(miShader.Program, "light.constant"),  1.0f);
 		glUniform1f(glGetUniformLocation(miShader.Program, "light.linear"),    0.09);
 		glUniform1f(glGetUniformLocation(miShader.Program, "light.quadratic"), 0.032);
@@ -399,9 +406,21 @@ int main(int argc, const char * argv[]) {
 		
 		glm::mat4 model;
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
+		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
 		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		modelo.Draw(miShader);
+		
+		glm::mat4 model2;
+		model2 = glm::translate(model2, glm::vec3(3.0f, -2.0f, 0.0f));
+		model2 = glm::scale(model2, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model2));
+		modelo2.Draw(miShader);
+		
+		glm::mat4 model3;
+		model3 = glm::translate(model3, glm::vec3(-2.0f, -2.0f, 0.0f));
+		model3 = glm::scale(model3, glm::vec3(0.2f, 0.2f, 0.2f));
+		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model3));
+		modelo3.Draw(miShader);
 		
 //		//linkamos el VAO
 //		glBindVertexArray(VAO);
