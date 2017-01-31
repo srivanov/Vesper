@@ -44,7 +44,6 @@
 		E9026F0E1E353CDE00B44AC3 /* suelo.blend in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF01E353CDE00B44AC3 /* suelo.blend */; };
 		E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF11E353CDE00B44AC3 /* suelo.blend1 */; };
 		E9026F101E353CDE00B44AC3 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF21E353CDE00B44AC3 /* texture.png */; };
-		E9026F111E353CDE00B44AC3 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = E9026EF31E353CDE00B44AC3 /* Thumbs.db */; };
 		E92BC5A61E3DFFBF008E1F5B /* estados.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92BC5A21E3DFFBF008E1F5B /* estados.cpp */; };
 		E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92BC5A41E3DFFBF008E1F5B /* Nodos.cpp */; };
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
@@ -155,7 +154,6 @@
 		E9026EF01E353CDE00B44AC3 /* suelo.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = suelo.blend; sourceTree = "<group>"; };
 		E9026EF11E353CDE00B44AC3 /* suelo.blend1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = suelo.blend1; sourceTree = "<group>"; };
 		E9026EF21E353CDE00B44AC3 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
-		E9026EF31E353CDE00B44AC3 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		E92BC5A21E3DFFBF008E1F5B /* estados.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = estados.cpp; path = arquitectura/estados.cpp; sourceTree = "<group>"; };
 		E92BC5A31E3DFFBF008E1F5B /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = estados.hpp; path = arquitectura/estados.hpp; sourceTree = "<group>"; };
 		E92BC5A41E3DFFBF008E1F5B /* Nodos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodos.cpp; path = arquitectura/Nodos.cpp; sourceTree = "<group>"; };
@@ -292,13 +290,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2AC402E1E41475E0091076F /* Nodos */ = {
+			isa = PBXGroup;
+			children = (
+				E92BC5A41E3DFFBF008E1F5B /* Nodos.cpp */,
+				E92BC5A51E3DFFBF008E1F5B /* Nodos.hpp */,
+			);
+			name = Nodos;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
 				E92BC5A21E3DFFBF008E1F5B /* estados.cpp */,
 				E92BC5A31E3DFFBF008E1F5B /* estados.hpp */,
-				E92BC5A41E3DFFBF008E1F5B /* Nodos.cpp */,
-				E92BC5A51E3DFFBF008E1F5B /* Nodos.hpp */,
 			);
 			name = "sistema decision";
 			path = ..;
@@ -336,7 +342,6 @@
 				E9026EF01E353CDE00B44AC3 /* suelo.blend */,
 				E9026EF11E353CDE00B44AC3 /* suelo.blend1 */,
 				E9026EF21E353CDE00B44AC3 /* texture.png */,
-				E9026EF31E353CDE00B44AC3 /* Thumbs.db */,
 			);
 			path = 3d;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
+				D2AC402E1E41475E0091076F /* Nodos */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
 				E9AC3ACF1DF0AD3600A91A97 /* tiled */,
@@ -596,7 +602,6 @@
 				E9026F041E353CDE00B44AC3 /* muro.3ds in Resources */,
 				E9026EFC1E353CDE00B44AC3 /* colorverde.jpg in Resources */,
 				E9026F0B1E353CDE00B44AC3 /* sphere.3ds in Resources */,
-				E9026F111E353CDE00B44AC3 /* Thumbs.db in Resources */,
 				E9026F061E353CDE00B44AC3 /* muro.blend1 in Resources */,
 				E9026F021E353CDE00B44AC3 /* gota.jpg in Resources */,
 				E9026F081E353CDE00B44AC3 /* pala.png in Resources */,
