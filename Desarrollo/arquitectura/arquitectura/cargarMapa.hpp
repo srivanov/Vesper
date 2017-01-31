@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "tinyxml2.h"
+#include "Dvector.hpp"
 #include <iostream>
 #include <vector>
 using namespace tinyxml2;
@@ -21,9 +22,9 @@ public:
     int * getLevel();
     //int getMatriz()[][][] const;
     //virtual ~cargarMapa();
-    std::vector<int> _tilemap;
     void mostrarMatriz();
     std::vector<int>* getMatriz();
+	std::vector<dvector2D>* getObjetos();
     
 private:
     
@@ -33,7 +34,9 @@ private:
     int _tileHeight;
     int _numLayers;
     int *_level;
-    
+	
+	std::vector<int> _tilemap;
+	std::vector<dvector2D> _objetos;
    // int matrizMapa[][][];
     
     //sf::Vector2f pos_ini;

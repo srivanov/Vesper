@@ -83,8 +83,8 @@ bool nivel::cargarNivel(char* numero){
     aux->setPosicion(pos4);
     
     powerups.push_back(aux);
-    
-    
+	
+	
     enemigos* npc = new enemigos(contador_npc);
     npc->addNodo("");
     npc->setTexture("3d/naranja.jpg");
@@ -158,6 +158,7 @@ bool nivel::cargarNivel(char* numero){
 		return false;
 	else{
 		mapa_nivel = cargador->getMatriz();
+		objetos_col = cargador->getObjetos();
 		return true;
 	}
     
@@ -178,6 +179,7 @@ std::vector<int>* nivel::getMapa(){
 
 void nivel::dibujarMapa(){
 	static_cast<class render*>(findComponent("render"))->dibujarMapa();
+	static_cast<physics*>(findComponent("physics"))->crearObjetosEstaticos(*objetos_col);
 }
 
 void nivel::update(){

@@ -7,6 +7,7 @@
 #include <Box2D/Box2D.h>
 #include "../mundoBox2D.hpp"
 #include "../Dvector.hpp"
+#include <vector>
 
 class physics : public component {
 public:
@@ -14,11 +15,10 @@ public:
     ~physics();
     void crearBodyDinamico(dvector3D &dimension, dvector3D &posicion);
 	void crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion);
-//    void update(float* anguloFinal, float* angulo, float* mousePosition);
+	void crearObjetosEstaticos(std::vector<dvector2D> &v);
 	void update();
 	
 	void setPosition(dvector3D &pos);
-	
 	void setVelocity(dvector3D &veloc);
 	float rotarConRaton(dvector3D &posRaton);
 	void rotar(float anguloRotacion);

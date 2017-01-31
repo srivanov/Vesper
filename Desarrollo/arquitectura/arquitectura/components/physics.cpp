@@ -70,7 +70,18 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 	vel.y = 0;
 }
 
-//void physics::update(float* anguloFinal, float* angulo, float* mousePosition){
+void physics::crearObjetosEstaticos(std::vector<dvector2D> &v){
+	b2PolygonShape poligono;
+	std::vector<dvector2D>::iterator iter_sep = std::find(v.begin(), v.end(), INT_MAX), it = v.begin();
+	if(iter_sep != v.end())
+		printf("ENCONTRADO: %d\n", iter_sep);
+	int i=0;
+	while (it != iter_sep) {
+		i++;
+		it++;
+	}
+}
+
 void physics::update(){
 	//TO DO: COMPROBAR QUE EL BODY NO SEA ESTATICO
 	//inside Step()

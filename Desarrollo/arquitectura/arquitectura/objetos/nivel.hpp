@@ -36,6 +36,7 @@ public:
 	
 private:
 	std::vector<int>* mapa_nivel;
+	std::vector<dvector2D>* objetos_col;
 	cargarMapa* cargador;
     int ancho, alto, contador_npc;
     std::vector<GameObject*> powerups;
