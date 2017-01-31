@@ -10,7 +10,7 @@
 
 menu::menu() {
     num_menu = 1;
-    textura.loadFromFile("../img_menu/cargarpartida.png");
+    textura.loadFromFile("../img_menu/menu_principal_03.png");
     rec.setTexture(&textura);
     
     // Rectangulo para el menu principal
@@ -293,5 +293,11 @@ void menu::render() {
 }
 
 menu::~menu() {
-    
+//    delete principal_textos;
+//    delete principal_botones;
+//    delete level_rec;
+//    delete levels_tex;
+//    delete rec_img_levels;
+//    delete ajustes_botones;
+//    delete ajustes_textos;
 }
