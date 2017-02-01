@@ -14,6 +14,45 @@
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
+		D2AC40331E42013A0091076F /* Nodo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40311E42013A0091076F /* Nodo.cpp */; };
+		D2AC40361E4202D20091076F /* NodoSecuencia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40341E4202D20091076F /* NodoSecuencia.cpp */; };
+		D2AC40391E4207500091076F /* NodoSecuenciaPositiva.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40371E4207500091076F /* NodoSecuenciaPositiva.cpp */; };
+		D2AC403C1E4209C10091076F /* NodoMover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC403A1E4209C10091076F /* NodoMover.cpp */; };
+		D2AC403F1E420B790091076F /* Nodo_VerJugador.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC403D1E420B790091076F /* Nodo_VerJugador.cpp */; };
+		D2AC40421E420D2D0091076F /* Nodo_HayRuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40401E420D2D0091076F /* Nodo_HayRuido.cpp */; };
+		D2AC40451E420E5E0091076F /* Nodo_SuenaAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40431E420E5E0091076F /* Nodo_SuenaAlarma.cpp */; };
+		D2AC40481E420F1B0091076F /* NodoVigilar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40461E420F1B0091076F /* NodoVigilar.cpp */; };
+		D2AC404B1E42100C0091076F /* NodoPatrullar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40491E42100C0091076F /* NodoPatrullar.cpp */; };
+		D2AC404E1E4212280091076F /* Nodo_TiempoInactivo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC404C1E4212280091076F /* Nodo_TiempoInactivo.cpp */; };
+		D2AC40511E42129E0091076F /* NodoDarAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC404F1E42129E0091076F /* NodoDarAlarma.cpp */; };
+		D2AC40541E4213E40091076F /* Nodo_TengoVigilar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40521E4213E40091076F /* Nodo_TengoVigilar.cpp */; };
+		D2AC40571E42144C0091076F /* Nodo_Avisado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40551E42144C0091076F /* Nodo_Avisado.cpp */; };
+		D2AC405B1E4232070091076F /* Nodo_VidaBaja.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40591E4232070091076F /* Nodo_VidaBaja.cpp */; };
+		D2AC405E1E42331C0091076F /* Nodo_NecesitoAyuda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC405C1E42331C0091076F /* Nodo_NecesitoAyuda.cpp */; };
+		D2AC40611E42340B0091076F /* Nodo_HayBotiquin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC405F1E42340B0091076F /* Nodo_HayBotiquin.cpp */; };
+		D2AC40641E4234AF0091076F /* NodoCurarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40621E4234AF0091076F /* NodoCurarse.cpp */; };
+		D2AC40671E4236170091076F /* Nodo_TengoHambre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40651E4236170091076F /* Nodo_TengoHambre.cpp */; };
+		D2AC406A1E4236AC0091076F /* Nodo_TengoSed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40681E4236AC0091076F /* Nodo_TengoSed.cpp */; };
+		D2AC406D1E4237D70091076F /* NodoComer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC406B1E4237D70091076F /* NodoComer.cpp */; };
+		D2AC40701E4238BA0091076F /* NodoBeber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC406E1E4238BA0091076F /* NodoBeber.cpp */; };
+		D2AC40731E4239990091076F /* Nodo_TieneAgua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40711E4239990091076F /* Nodo_TieneAgua.cpp */; };
+		D2AC40761E423A2D0091076F /* Nodo_HayParaHablar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40741E423A2D0091076F /* Nodo_HayParaHablar.cpp */; };
+		D2AC40791E423A970091076F /* NodoHablar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40771E423A970091076F /* NodoHablar.cpp */; };
+		D2AC407D1E423B650091076F /* Nodo_AlarmaCerca.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC407B1E423B650091076F /* Nodo_AlarmaCerca.cpp */; };
+		D2AC40801E423C370091076F /* NodoRecorreZonaCercana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC407E1E423C370091076F /* NodoRecorreZonaCercana.cpp */; };
+		D2AC40841E423D1C0091076F /* Nodo_PuedoAtacarDistancia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40821E423D1C0091076F /* Nodo_PuedoAtacarDistancia.cpp */; };
+		D2AC40871E423D900091076F /* Nodo_EstasAsustado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40851E423D900091076F /* Nodo_EstasAsustado.cpp */; };
+		D2AC408A1E423E080091076F /* Nodo_HayAlguienCerca.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40881E423E080091076F /* Nodo_HayAlguienCerca.cpp */; };
+		D2AC408D1E423E920091076F /* Nodo_HayAlguienRadio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC408B1E423E920091076F /* Nodo_HayAlguienRadio.cpp */; };
+		D2AC40901E423F410091076F /* NodoAvisar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC408E1E423F410091076F /* NodoAvisar.cpp */; };
+		D2AC40931E423FBA0091076F /* Nodo_EstasCercaJugador.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40911E423FBA0091076F /* Nodo_EstasCercaJugador.cpp */; };
+		D2AC40961E4240250091076F /* Nodo_AlarmaRota.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40941E4240250091076F /* Nodo_AlarmaRota.cpp */; };
+		D2AC40991E4240770091076F /* Nodo_EstasLejosJugador.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40971E4240770091076F /* Nodo_EstasLejosJugador.cpp */; };
+		D2AC409C1E42410C0091076F /* NodoAtaqueCuerpo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC409A1E42410C0091076F /* NodoAtaqueCuerpo.cpp */; };
+		D2AC409F1E42421F0091076F /* NodoAtaqueDistancia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC409D1E42421F0091076F /* NodoAtaqueDistancia.cpp */; };
+		D2AC40A21E4242900091076F /* NodoCubrirse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40A01E4242900091076F /* NodoCubrirse.cpp */; };
+		D2AC40A61E4243060091076F /* NodoHuir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40A41E4243060091076F /* NodoHuir.cpp */; };
+		D2AC40A91E4245730091076F /* behaviour_trees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40A71E4245730091076F /* behaviour_trees.cpp */; };
 		E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9026ED21E35299B00B44AC3 /* palaObj.cpp */; };
 		E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED61E353CDE00B44AC3 /* alarmita.3ds */; };
 		E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED71E353CDE00B44AC3 /* alarmita.blend */; };
@@ -123,6 +162,84 @@
 		882FC8A61E369FAF0060347C /* llaveObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = llaveObj.hpp; sourceTree = "<group>"; };
 		884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bala.cpp; sourceTree = "<group>"; };
 		884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bala.hpp; sourceTree = "<group>"; };
+		D2AC40311E42013A0091076F /* Nodo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo.cpp; sourceTree = "<group>"; };
+		D2AC40321E42013A0091076F /* Nodo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo.hpp; sourceTree = "<group>"; };
+		D2AC40341E4202D20091076F /* NodoSecuencia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoSecuencia.cpp; sourceTree = "<group>"; };
+		D2AC40351E4202D20091076F /* NodoSecuencia.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoSecuencia.hpp; sourceTree = "<group>"; };
+		D2AC40371E4207500091076F /* NodoSecuenciaPositiva.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoSecuenciaPositiva.cpp; sourceTree = "<group>"; };
+		D2AC40381E4207500091076F /* NodoSecuenciaPositiva.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoSecuenciaPositiva.hpp; sourceTree = "<group>"; };
+		D2AC403A1E4209C10091076F /* NodoMover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoMover.cpp; sourceTree = "<group>"; };
+		D2AC403B1E4209C10091076F /* NodoMover.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoMover.hpp; sourceTree = "<group>"; };
+		D2AC403D1E420B790091076F /* Nodo_VerJugador.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_VerJugador.cpp; sourceTree = "<group>"; };
+		D2AC403E1E420B790091076F /* Nodo_VerJugador.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_VerJugador.hpp; sourceTree = "<group>"; };
+		D2AC40401E420D2D0091076F /* Nodo_HayRuido.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_HayRuido.cpp; sourceTree = "<group>"; };
+		D2AC40411E420D2D0091076F /* Nodo_HayRuido.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_HayRuido.hpp; sourceTree = "<group>"; };
+		D2AC40431E420E5E0091076F /* Nodo_SuenaAlarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_SuenaAlarma.cpp; sourceTree = "<group>"; };
+		D2AC40441E420E5E0091076F /* Nodo_SuenaAlarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_SuenaAlarma.hpp; sourceTree = "<group>"; };
+		D2AC40461E420F1B0091076F /* NodoVigilar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoVigilar.cpp; sourceTree = "<group>"; };
+		D2AC40471E420F1B0091076F /* NodoVigilar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoVigilar.hpp; sourceTree = "<group>"; };
+		D2AC40491E42100C0091076F /* NodoPatrullar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoPatrullar.cpp; sourceTree = "<group>"; };
+		D2AC404A1E42100C0091076F /* NodoPatrullar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoPatrullar.hpp; sourceTree = "<group>"; };
+		D2AC404C1E4212280091076F /* Nodo_TiempoInactivo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_TiempoInactivo.cpp; sourceTree = "<group>"; };
+		D2AC404D1E4212280091076F /* Nodo_TiempoInactivo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_TiempoInactivo.hpp; sourceTree = "<group>"; };
+		D2AC404F1E42129E0091076F /* NodoDarAlarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoDarAlarma.cpp; sourceTree = "<group>"; };
+		D2AC40501E42129E0091076F /* NodoDarAlarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoDarAlarma.hpp; sourceTree = "<group>"; };
+		D2AC40521E4213E40091076F /* Nodo_TengoVigilar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_TengoVigilar.cpp; sourceTree = "<group>"; };
+		D2AC40531E4213E40091076F /* Nodo_TengoVigilar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_TengoVigilar.hpp; sourceTree = "<group>"; };
+		D2AC40551E42144C0091076F /* Nodo_Avisado.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_Avisado.cpp; sourceTree = "<group>"; };
+		D2AC40561E42144C0091076F /* Nodo_Avisado.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_Avisado.hpp; sourceTree = "<group>"; };
+		D2AC40591E4232070091076F /* Nodo_VidaBaja.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_VidaBaja.cpp; sourceTree = "<group>"; };
+		D2AC405A1E4232070091076F /* Nodo_VidaBaja.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_VidaBaja.hpp; sourceTree = "<group>"; };
+		D2AC405C1E42331C0091076F /* Nodo_NecesitoAyuda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_NecesitoAyuda.cpp; sourceTree = "<group>"; };
+		D2AC405D1E42331C0091076F /* Nodo_NecesitoAyuda.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_NecesitoAyuda.hpp; sourceTree = "<group>"; };
+		D2AC405F1E42340B0091076F /* Nodo_HayBotiquin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_HayBotiquin.cpp; sourceTree = "<group>"; };
+		D2AC40601E42340B0091076F /* Nodo_HayBotiquin.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_HayBotiquin.hpp; sourceTree = "<group>"; };
+		D2AC40621E4234AF0091076F /* NodoCurarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoCurarse.cpp; sourceTree = "<group>"; };
+		D2AC40631E4234AF0091076F /* NodoCurarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoCurarse.hpp; sourceTree = "<group>"; };
+		D2AC40651E4236170091076F /* Nodo_TengoHambre.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_TengoHambre.cpp; sourceTree = "<group>"; };
+		D2AC40661E4236170091076F /* Nodo_TengoHambre.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_TengoHambre.hpp; sourceTree = "<group>"; };
+		D2AC40681E4236AC0091076F /* Nodo_TengoSed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_TengoSed.cpp; sourceTree = "<group>"; };
+		D2AC40691E4236AC0091076F /* Nodo_TengoSed.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_TengoSed.hpp; sourceTree = "<group>"; };
+		D2AC406B1E4237D70091076F /* NodoComer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoComer.cpp; sourceTree = "<group>"; };
+		D2AC406C1E4237D70091076F /* NodoComer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoComer.hpp; sourceTree = "<group>"; };
+		D2AC406E1E4238BA0091076F /* NodoBeber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoBeber.cpp; sourceTree = "<group>"; };
+		D2AC406F1E4238BA0091076F /* NodoBeber.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoBeber.hpp; sourceTree = "<group>"; };
+		D2AC40711E4239990091076F /* Nodo_TieneAgua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_TieneAgua.cpp; sourceTree = "<group>"; };
+		D2AC40721E4239990091076F /* Nodo_TieneAgua.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_TieneAgua.hpp; sourceTree = "<group>"; };
+		D2AC40741E423A2D0091076F /* Nodo_HayParaHablar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_HayParaHablar.cpp; sourceTree = "<group>"; };
+		D2AC40751E423A2D0091076F /* Nodo_HayParaHablar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_HayParaHablar.hpp; sourceTree = "<group>"; };
+		D2AC40771E423A970091076F /* NodoHablar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoHablar.cpp; sourceTree = "<group>"; };
+		D2AC40781E423A970091076F /* NodoHablar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoHablar.hpp; sourceTree = "<group>"; };
+		D2AC407B1E423B650091076F /* Nodo_AlarmaCerca.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AlarmaCerca.cpp; sourceTree = "<group>"; };
+		D2AC407C1E423B650091076F /* Nodo_AlarmaCerca.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AlarmaCerca.hpp; sourceTree = "<group>"; };
+		D2AC407E1E423C370091076F /* NodoRecorreZonaCercana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoRecorreZonaCercana.cpp; sourceTree = "<group>"; };
+		D2AC407F1E423C370091076F /* NodoRecorreZonaCercana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoRecorreZonaCercana.hpp; sourceTree = "<group>"; };
+		D2AC40821E423D1C0091076F /* Nodo_PuedoAtacarDistancia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_PuedoAtacarDistancia.cpp; sourceTree = "<group>"; };
+		D2AC40831E423D1C0091076F /* Nodo_PuedoAtacarDistancia.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_PuedoAtacarDistancia.hpp; sourceTree = "<group>"; };
+		D2AC40851E423D900091076F /* Nodo_EstasAsustado.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_EstasAsustado.cpp; sourceTree = "<group>"; };
+		D2AC40861E423D900091076F /* Nodo_EstasAsustado.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_EstasAsustado.hpp; sourceTree = "<group>"; };
+		D2AC40881E423E080091076F /* Nodo_HayAlguienCerca.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_HayAlguienCerca.cpp; sourceTree = "<group>"; };
+		D2AC40891E423E080091076F /* Nodo_HayAlguienCerca.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_HayAlguienCerca.hpp; sourceTree = "<group>"; };
+		D2AC408B1E423E920091076F /* Nodo_HayAlguienRadio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_HayAlguienRadio.cpp; sourceTree = "<group>"; };
+		D2AC408C1E423E920091076F /* Nodo_HayAlguienRadio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_HayAlguienRadio.hpp; sourceTree = "<group>"; };
+		D2AC408E1E423F410091076F /* NodoAvisar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoAvisar.cpp; sourceTree = "<group>"; };
+		D2AC408F1E423F410091076F /* NodoAvisar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoAvisar.hpp; sourceTree = "<group>"; };
+		D2AC40911E423FBA0091076F /* Nodo_EstasCercaJugador.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_EstasCercaJugador.cpp; sourceTree = "<group>"; };
+		D2AC40921E423FBA0091076F /* Nodo_EstasCercaJugador.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_EstasCercaJugador.hpp; sourceTree = "<group>"; };
+		D2AC40941E4240250091076F /* Nodo_AlarmaRota.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AlarmaRota.cpp; sourceTree = "<group>"; };
+		D2AC40951E4240250091076F /* Nodo_AlarmaRota.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AlarmaRota.hpp; sourceTree = "<group>"; };
+		D2AC40971E4240770091076F /* Nodo_EstasLejosJugador.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_EstasLejosJugador.cpp; sourceTree = "<group>"; };
+		D2AC40981E4240770091076F /* Nodo_EstasLejosJugador.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_EstasLejosJugador.hpp; sourceTree = "<group>"; };
+		D2AC409A1E42410C0091076F /* NodoAtaqueCuerpo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoAtaqueCuerpo.cpp; sourceTree = "<group>"; };
+		D2AC409B1E42410C0091076F /* NodoAtaqueCuerpo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoAtaqueCuerpo.hpp; sourceTree = "<group>"; };
+		D2AC409D1E42421F0091076F /* NodoAtaqueDistancia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoAtaqueDistancia.cpp; sourceTree = "<group>"; };
+		D2AC409E1E42421F0091076F /* NodoAtaqueDistancia.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoAtaqueDistancia.hpp; sourceTree = "<group>"; };
+		D2AC40A01E4242900091076F /* NodoCubrirse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoCubrirse.cpp; sourceTree = "<group>"; };
+		D2AC40A11E4242900091076F /* NodoCubrirse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoCubrirse.hpp; sourceTree = "<group>"; };
+		D2AC40A41E4243060091076F /* NodoHuir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoHuir.cpp; sourceTree = "<group>"; };
+		D2AC40A51E4243060091076F /* NodoHuir.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoHuir.hpp; sourceTree = "<group>"; };
+		D2AC40A71E4245730091076F /* behaviour_trees.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = behaviour_trees.cpp; sourceTree = "<group>"; };
+		D2AC40A81E4245730091076F /* behaviour_trees.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = behaviour_trees.hpp; sourceTree = "<group>"; };
 		E9026ED21E35299B00B44AC3 /* palaObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = palaObj.cpp; sourceTree = "<group>"; };
 		E9026ED31E35299B00B44AC3 /* palaObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = palaObj.hpp; sourceTree = "<group>"; };
 		E9026ED61E353CDE00B44AC3 /* alarmita.3ds */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarmita.3ds; sourceTree = "<group>"; };
@@ -300,6 +417,132 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		D2AC402F1E4200F40091076F /* Behaviour_trees */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC40A71E4245730091076F /* behaviour_trees.cpp */,
+				D2AC40A81E4245730091076F /* behaviour_trees.hpp */,
+				D2AC40A31E4242F50091076F /* Clases asustado */,
+				D2AC40811E423CE70091076F /* Clases combate */,
+				D2AC407A1E423B4D0091076F /* Clases alerta */,
+				D2AC40581E4231A00091076F /* Clases estandar */,
+				D2AC40301E4201080091076F /* Clases generales */,
+				D2AC402E1E41475E0091076F /* Nodos */,
+			);
+			name = Behaviour_trees;
+			sourceTree = "<group>";
+		};
+		D2AC40301E4201080091076F /* Clases generales */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC40311E42013A0091076F /* Nodo.cpp */,
+				D2AC40321E42013A0091076F /* Nodo.hpp */,
+				D2AC40341E4202D20091076F /* NodoSecuencia.cpp */,
+				D2AC40351E4202D20091076F /* NodoSecuencia.hpp */,
+				D2AC40371E4207500091076F /* NodoSecuenciaPositiva.cpp */,
+				D2AC40381E4207500091076F /* NodoSecuenciaPositiva.hpp */,
+				D2AC403A1E4209C10091076F /* NodoMover.cpp */,
+				D2AC403B1E4209C10091076F /* NodoMover.hpp */,
+				D2AC403D1E420B790091076F /* Nodo_VerJugador.cpp */,
+				D2AC403E1E420B790091076F /* Nodo_VerJugador.hpp */,
+				D2AC40401E420D2D0091076F /* Nodo_HayRuido.cpp */,
+				D2AC40411E420D2D0091076F /* Nodo_HayRuido.hpp */,
+				D2AC40431E420E5E0091076F /* Nodo_SuenaAlarma.cpp */,
+				D2AC40441E420E5E0091076F /* Nodo_SuenaAlarma.hpp */,
+				D2AC40461E420F1B0091076F /* NodoVigilar.cpp */,
+				D2AC40471E420F1B0091076F /* NodoVigilar.hpp */,
+				D2AC40491E42100C0091076F /* NodoPatrullar.cpp */,
+				D2AC404A1E42100C0091076F /* NodoPatrullar.hpp */,
+				D2AC404C1E4212280091076F /* Nodo_TiempoInactivo.cpp */,
+				D2AC404D1E4212280091076F /* Nodo_TiempoInactivo.hpp */,
+				D2AC404F1E42129E0091076F /* NodoDarAlarma.cpp */,
+				D2AC40501E42129E0091076F /* NodoDarAlarma.hpp */,
+				D2AC40521E4213E40091076F /* Nodo_TengoVigilar.cpp */,
+				D2AC40531E4213E40091076F /* Nodo_TengoVigilar.hpp */,
+				D2AC40551E42144C0091076F /* Nodo_Avisado.cpp */,
+				D2AC40561E42144C0091076F /* Nodo_Avisado.hpp */,
+			);
+			name = "Clases generales";
+			sourceTree = "<group>";
+		};
+		D2AC40581E4231A00091076F /* Clases estandar */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC40591E4232070091076F /* Nodo_VidaBaja.cpp */,
+				D2AC405A1E4232070091076F /* Nodo_VidaBaja.hpp */,
+				D2AC405C1E42331C0091076F /* Nodo_NecesitoAyuda.cpp */,
+				D2AC405D1E42331C0091076F /* Nodo_NecesitoAyuda.hpp */,
+				D2AC405F1E42340B0091076F /* Nodo_HayBotiquin.cpp */,
+				D2AC40601E42340B0091076F /* Nodo_HayBotiquin.hpp */,
+				D2AC40621E4234AF0091076F /* NodoCurarse.cpp */,
+				D2AC40631E4234AF0091076F /* NodoCurarse.hpp */,
+				D2AC40651E4236170091076F /* Nodo_TengoHambre.cpp */,
+				D2AC40661E4236170091076F /* Nodo_TengoHambre.hpp */,
+				D2AC40681E4236AC0091076F /* Nodo_TengoSed.cpp */,
+				D2AC40691E4236AC0091076F /* Nodo_TengoSed.hpp */,
+				D2AC406B1E4237D70091076F /* NodoComer.cpp */,
+				D2AC406C1E4237D70091076F /* NodoComer.hpp */,
+				D2AC406E1E4238BA0091076F /* NodoBeber.cpp */,
+				D2AC406F1E4238BA0091076F /* NodoBeber.hpp */,
+				D2AC40711E4239990091076F /* Nodo_TieneAgua.cpp */,
+				D2AC40721E4239990091076F /* Nodo_TieneAgua.hpp */,
+				D2AC40741E423A2D0091076F /* Nodo_HayParaHablar.cpp */,
+				D2AC40751E423A2D0091076F /* Nodo_HayParaHablar.hpp */,
+				D2AC40771E423A970091076F /* NodoHablar.cpp */,
+				D2AC40781E423A970091076F /* NodoHablar.hpp */,
+			);
+			name = "Clases estandar";
+			sourceTree = "<group>";
+		};
+		D2AC407A1E423B4D0091076F /* Clases alerta */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC407B1E423B650091076F /* Nodo_AlarmaCerca.cpp */,
+				D2AC407C1E423B650091076F /* Nodo_AlarmaCerca.hpp */,
+				D2AC407E1E423C370091076F /* NodoRecorreZonaCercana.cpp */,
+				D2AC407F1E423C370091076F /* NodoRecorreZonaCercana.hpp */,
+			);
+			name = "Clases alerta";
+			sourceTree = "<group>";
+		};
+		D2AC40811E423CE70091076F /* Clases combate */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC40821E423D1C0091076F /* Nodo_PuedoAtacarDistancia.cpp */,
+				D2AC40831E423D1C0091076F /* Nodo_PuedoAtacarDistancia.hpp */,
+				D2AC40851E423D900091076F /* Nodo_EstasAsustado.cpp */,
+				D2AC40861E423D900091076F /* Nodo_EstasAsustado.hpp */,
+				D2AC40881E423E080091076F /* Nodo_HayAlguienCerca.cpp */,
+				D2AC40891E423E080091076F /* Nodo_HayAlguienCerca.hpp */,
+				D2AC408B1E423E920091076F /* Nodo_HayAlguienRadio.cpp */,
+				D2AC408C1E423E920091076F /* Nodo_HayAlguienRadio.hpp */,
+				D2AC408E1E423F410091076F /* NodoAvisar.cpp */,
+				D2AC408F1E423F410091076F /* NodoAvisar.hpp */,
+				D2AC40911E423FBA0091076F /* Nodo_EstasCercaJugador.cpp */,
+				D2AC40921E423FBA0091076F /* Nodo_EstasCercaJugador.hpp */,
+				D2AC40941E4240250091076F /* Nodo_AlarmaRota.cpp */,
+				D2AC40951E4240250091076F /* Nodo_AlarmaRota.hpp */,
+				D2AC40971E4240770091076F /* Nodo_EstasLejosJugador.cpp */,
+				D2AC40981E4240770091076F /* Nodo_EstasLejosJugador.hpp */,
+				D2AC409A1E42410C0091076F /* NodoAtaqueCuerpo.cpp */,
+				D2AC409B1E42410C0091076F /* NodoAtaqueCuerpo.hpp */,
+				D2AC409D1E42421F0091076F /* NodoAtaqueDistancia.cpp */,
+				D2AC409E1E42421F0091076F /* NodoAtaqueDistancia.hpp */,
+				D2AC40A01E4242900091076F /* NodoCubrirse.cpp */,
+				D2AC40A11E4242900091076F /* NodoCubrirse.hpp */,
+			);
+			name = "Clases combate";
+			sourceTree = "<group>";
+		};
+		D2AC40A31E4242F50091076F /* Clases asustado */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC40A41E4243060091076F /* NodoHuir.cpp */,
+				D2AC40A51E4243060091076F /* NodoHuir.hpp */,
+			);
+			name = "Clases asustado";
+			sourceTree = "<group>";
+		};
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +609,7 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
-				D2AC402E1E41475E0091076F /* Nodos */,
+				D2AC402F1E4200F40091076F /* Behaviour_trees */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
 				E9AC3ACF1DF0AD3600A91A97 /* tiled */,
@@ -640,35 +883,63 @@
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
 				E9A346401E045F0500E6EC25 /* globoAgua.cpp in Sources */,
 				882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */,
+				D2AC40361E4202D20091076F /* NodoSecuencia.cpp in Sources */,
 				E9AC3AA81DF0AA5000A91A97 /* pala.cpp in Sources */,
+				D2AC40801E423C370091076F /* NodoRecorreZonaCercana.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
+				D2AC40991E4240770091076F /* Nodo_EstasLejosJugador.cpp in Sources */,
+				D2AC40931E423FBA0091076F /* Nodo_EstasCercaJugador.cpp in Sources */,
 				E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */,
 				E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */,
 				E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */,
 				E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */,
+				D2AC40421E420D2D0091076F /* Nodo_HayRuido.cpp in Sources */,
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
 				E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */,
 				E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */,
 				E9A346341E04162700E6EC25 /* armaInterface.cpp in Sources */,
+				D2AC408D1E423E920091076F /* Nodo_HayAlguienRadio.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
+				D2AC407D1E423B650091076F /* Nodo_AlarmaCerca.cpp in Sources */,
+				D2AC40451E420E5E0091076F /* Nodo_SuenaAlarma.cpp in Sources */,
+				D2AC406D1E4237D70091076F /* NodoComer.cpp in Sources */,
 				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
+				D2AC40901E423F410091076F /* NodoAvisar.cpp in Sources */,
+				D2AC403C1E4209C10091076F /* NodoMover.cpp in Sources */,
+				D2AC406A1E4236AC0091076F /* Nodo_TengoSed.cpp in Sources */,
 				E9AC3A601DF0AA4800A91A97 /* enemigos.cpp in Sources */,
+				D2AC40731E4239990091076F /* Nodo_TieneAgua.cpp in Sources */,
+				D2AC409C1E42410C0091076F /* NodoAtaqueCuerpo.cpp in Sources */,
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
+				D2AC40671E4236170091076F /* Nodo_TengoHambre.cpp in Sources */,
+				D2AC40871E423D900091076F /* Nodo_EstasAsustado.cpp in Sources */,
+				D2AC405E1E42331C0091076F /* Nodo_NecesitoAyuda.cpp in Sources */,
+				D2AC40A61E4243060091076F /* NodoHuir.cpp in Sources */,
+				D2AC40611E42340B0091076F /* Nodo_HayBotiquin.cpp in Sources */,
 				E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */,
 				882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */,
 				E9FA20551E1C24C1003F9CA0 /* BlackBoards.cpp in Sources */,
+				D2AC40701E4238BA0091076F /* NodoBeber.cpp in Sources */,
+				D2AC404B1E42100C0091076F /* NodoPatrullar.cpp in Sources */,
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */,
 				E92BC5A61E3DFFBF008E1F5B /* estados.cpp in Sources */,
+				D2AC40541E4213E40091076F /* Nodo_TengoVigilar.cpp in Sources */,
+				D2AC40331E42013A0091076F /* Nodo.cpp in Sources */,
+				D2AC40791E423A970091076F /* NodoHablar.cpp in Sources */,
+				D2AC40511E42129E0091076F /* NodoDarAlarma.cpp in Sources */,
+				D2AC405B1E4232070091076F /* Nodo_VidaBaja.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
 				E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */,
+				D2AC404E1E4212280091076F /* Nodo_TiempoInactivo.cpp in Sources */,
 				63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */,
 				E9AC3A611DF0AA4800A91A97 /* nivel.cpp in Sources */,
+				D2AC40641E4234AF0091076F /* NodoCurarse.cpp in Sources */,
 				E9A346461E0460C400E6EC25 /* bombaHumo.cpp in Sources */,
 				E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */,
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,
@@ -677,21 +948,32 @@
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
 				E9A3463A1E0434BA00E6EC25 /* escopeta.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
+				D2AC408A1E423E080091076F /* Nodo_HayAlguienCerca.cpp in Sources */,
 				E9A346431E045FD000E6EC25 /* chicle.cpp in Sources */,
+				D2AC40A91E4245730091076F /* behaviour_trees.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
+				D2AC403F1E420B790091076F /* Nodo_VerJugador.cpp in Sources */,
 				E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */,
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
+				D2AC409F1E42421F0091076F /* NodoAtaqueDistancia.cpp in Sources */,
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,
 				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
+				D2AC40761E423A2D0091076F /* Nodo_HayParaHablar.cpp in Sources */,
+				D2AC40571E42144C0091076F /* Nodo_Avisado.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */,
 				63B81E351E26D288006BD3AB /* fuente.cpp in Sources */,
+				D2AC40481E420F1B0091076F /* NodoVigilar.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,
+				D2AC40391E4207500091076F /* NodoSecuenciaPositiva.cpp in Sources */,
 				E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */,
 				E9AC3A5F1DF0AA4800A91A97 /* camara.cpp in Sources */,
 				884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */,
+				D2AC40A21E4242900091076F /* NodoCubrirse.cpp in Sources */,
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
 				E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */,
+				D2AC40961E4240250091076F /* Nodo_AlarmaRota.cpp in Sources */,
+				D2AC40841E423D1C0091076F /* Nodo_PuedoAtacarDistancia.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

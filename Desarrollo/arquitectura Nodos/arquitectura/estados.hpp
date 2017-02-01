@@ -9,7 +9,7 @@
 #ifndef estados_hpp
 #define estados_hpp
 
-#include "Nodos.hpp"
+#include "NodoSecuenciaPositiva.hpp"
 
 class estados {
 public:
