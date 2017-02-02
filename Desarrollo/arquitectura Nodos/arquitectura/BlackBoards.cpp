@@ -1,13 +1,14 @@
 
 #include "BlackBoards.hpp"
 #include <math.h>
+#include "EasyMath.hpp"
 
-float World_BlackBoard::absolute(float p){
-    float aux = 0;
-    if(p<0) aux=-p;
-    else aux = p;
-    return aux;
-}
+//float World_BlackBoard::absolute(float p){
+//    float aux = 0;
+//    if(p<0) aux=-p;
+//    else aux = p;
+//    return aux;
+//}
 
 record::record(dvector3D* info){
     _info = info;
@@ -74,8 +75,8 @@ bool World_BlackBoard::regulator(dvector3D* info) {
     float Answer1X = it->second->_answerInfo->x, Answer1Y = it->second->_answerInfo->y;
     float Answer2X = info->x, Answer2Y = info->y;
     float dist1, dist2;
-    dist1 = absolute((targetX-Answer1X)+(targetY-Answer1Y));
-    dist2 = absolute((targetX-Answer2X)+(targetY-Answer2Y));
+    dist1 = EasyMath::absolute((targetX-Answer1X)+(targetY-Answer1Y));
+    dist2 = EasyMath::absolute((targetX-Answer2X)+(targetY-Answer2Y));
     if(dist1<dist2) return false;
     return true;
 }
@@ -219,24 +220,13 @@ bool Personal_BlackBoard::EventUsed(int type){
     return false;
 }
 
-float Personal_BlackBoard::CalcularDistancia(dvector3D a, dvector3D b){
-    float x = fabs(a.x-b.x);
-    float y = fabs(a.y-b.y);
-    return x+y;
-}
 
-float Personal_BlackBoard::absolute(float p){
-    float aux = 0;
-    if(p<0) aux=-p;
-    else aux = p;
-    return aux;
-}
 
 void Personal_BlackBoard::updateEvent(){
     for (int i=0; i<eventos.size(); i++){
         if(eventos[i]->_type>98)
             continue;
-        if(CalcularDistancia(eventos[i]->_position, *_position)<0.5){
+        if(EasyMath::CalcularDistancia(eventos[i]->_position, *_position)<0.5){
             delete eventos[i];
             eventos.erase(eventos.begin()+i);
         }

@@ -18,6 +18,7 @@
 #include <vector>
 #include "Dvector.hpp"
 #include "enemigos.hpp"
+#include "EasyMath.hpp"
 
 enum TypeEvents{
     E_ruido=0,
@@ -53,7 +54,7 @@ public:
     void subs(enemigos* npc);
 private:
     trigger_system();
-    float CalcularDistancia(dvector3D a, dvector3D b);
+    //float CalcularDistancia(dvector3D a, dvector3D b);
     void clear();
     static trigger_system * _TSinstance;
     std::vector<triggers*> TRIGGER_VECTOR;

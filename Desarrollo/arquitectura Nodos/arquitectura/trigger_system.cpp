@@ -43,7 +43,7 @@ void trigger_system::update(){
                     continue;
                 else if(AGENTS[j]->getID()==TRIGGER_VECTOR[i]->_idSource)
                     continue;
-                else if(CalcularDistancia(*AGENTS[j]->getPosicion(), TRIGGER_VECTOR[i]->_pos)>TRIGGER_VECTOR[i]->_radio)
+                else if(EasyMath::CalcularDistancia(*AGENTS[j]->getPosicion(), TRIGGER_VECTOR[i]->_pos)>TRIGGER_VECTOR[i]->_radio)
                     continue;
                 else
                     AGENTS[j]->notify(TRIGGER_VECTOR[i]->_pos, TRIGGER_VECTOR[i]->_type);
@@ -71,11 +71,11 @@ trigger_system * trigger_system::_instance(){
     return _TSinstance;
 }
 
-float trigger_system::CalcularDistancia(dvector3D a, dvector3D b){
-    float x = fabs(a.x-b.x);
-    float y = fabs(a.y-b.y);
-    return x+y;
-}
+//float trigger_system::CalcularDistancia(dvector3D a, dvector3D b){
+//    float x = fabs(a.x-b.x);
+//    float y = fabs(a.y-b.y);
+//    return x+y;
+//}
 void trigger_system::subs(enemigos* npc){
     AGENTS.push_back(npc);
 }

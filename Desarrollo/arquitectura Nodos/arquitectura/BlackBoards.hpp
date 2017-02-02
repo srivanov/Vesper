@@ -55,7 +55,7 @@ class World_BlackBoard {
     static World_BlackBoard * _blackboard;
     BLACKBOARD_MAP _map;
     BLACKBOARD_MAP::iterator it;
-    float absolute(float p);
+   
 public:
     static World_BlackBoard * instance();
     void AnswerRecord(TypeRecords& type, int& id, dvector3D * info);
@@ -89,8 +89,7 @@ class Personal_BlackBoard{
     dvector3D * _Vmov;
     float * velocity;
     std::vector<Events*> eventos;
-    float CalcularDistancia(dvector3D a, dvector3D b);
-    float absolute(float p);
+
 public:
     void EventPosObjetivo(int type);
     void notify(dvector3D& position,int type);

@@ -23,7 +23,7 @@ short NodoMover::run(int &id){
         dvector3D posObjetivo,posPropia;
         posPropia = *NPC_library::instance()->getMyBook(&id)->getPosition();
         posObjetivo = *NPC_library::instance()->getMyBook(&id)->getPosObjetivo();
-        aux = CalcularDistancia(posPropia,posObjetivo);
+        aux = EasyMath::CalcularDistancia(posPropia,posObjetivo);
         xABS = posObjetivo.x-posPropia.x;
         yABS = posObjetivo.y-posPropia.y;
     }else if(aux>0 && aux<1.5f){
@@ -48,8 +48,8 @@ short NodoMover::run(int &id){
     }
     return RUNNING;
 }
-float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
-    float x = fabs(a.x-b.x);
-    float y = fabs(a.y-b.y);
-    return x+y;
-}
+//float NodoMover::CalcularDistancia(dvector3D a, dvector3D b){
+//    float x = fabs(a.x-b.x);
+//    float y = fabs(a.y-b.y);
+//    return x+y;
+//}

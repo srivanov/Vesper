@@ -52,7 +52,7 @@
 		D2AC409F1E42421F0091076F /* NodoAtaqueDistancia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC409D1E42421F0091076F /* NodoAtaqueDistancia.cpp */; };
 		D2AC40A21E4242900091076F /* NodoCubrirse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40A01E4242900091076F /* NodoCubrirse.cpp */; };
 		D2AC40A61E4243060091076F /* NodoHuir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40A41E4243060091076F /* NodoHuir.cpp */; };
-		D2AC40A91E4245730091076F /* behaviour_trees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40A71E4245730091076F /* behaviour_trees.cpp */; };
+		D2AC40AC1E43367D0091076F /* EasyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40AA1E43367D0091076F /* EasyMath.cpp */; };
 		E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9026ED21E35299B00B44AC3 /* palaObj.cpp */; };
 		E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED61E353CDE00B44AC3 /* alarmita.3ds */; };
 		E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED71E353CDE00B44AC3 /* alarmita.blend */; };
@@ -238,8 +238,9 @@
 		D2AC40A11E4242900091076F /* NodoCubrirse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoCubrirse.hpp; sourceTree = "<group>"; };
 		D2AC40A41E4243060091076F /* NodoHuir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoHuir.cpp; sourceTree = "<group>"; };
 		D2AC40A51E4243060091076F /* NodoHuir.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoHuir.hpp; sourceTree = "<group>"; };
-		D2AC40A71E4245730091076F /* behaviour_trees.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = behaviour_trees.cpp; sourceTree = "<group>"; };
 		D2AC40A81E4245730091076F /* behaviour_trees.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = behaviour_trees.hpp; sourceTree = "<group>"; };
+		D2AC40AA1E43367D0091076F /* EasyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EasyMath.cpp; sourceTree = "<group>"; };
+		D2AC40AB1E43367D0091076F /* EasyMath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EasyMath.hpp; sourceTree = "<group>"; };
 		E9026ED21E35299B00B44AC3 /* palaObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = palaObj.cpp; sourceTree = "<group>"; };
 		E9026ED31E35299B00B44AC3 /* palaObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = palaObj.hpp; sourceTree = "<group>"; };
 		E9026ED61E353CDE00B44AC3 /* alarmita.3ds */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarmita.3ds; sourceTree = "<group>"; };
@@ -420,14 +421,12 @@
 		D2AC402F1E4200F40091076F /* Behaviour_trees */ = {
 			isa = PBXGroup;
 			children = (
-				D2AC40A71E4245730091076F /* behaviour_trees.cpp */,
 				D2AC40A81E4245730091076F /* behaviour_trees.hpp */,
-				D2AC40A31E4242F50091076F /* Clases asustado */,
-				D2AC40811E423CE70091076F /* Clases combate */,
-				D2AC407A1E423B4D0091076F /* Clases alerta */,
 				D2AC40581E4231A00091076F /* Clases estandar */,
 				D2AC40301E4201080091076F /* Clases generales */,
 				D2AC402E1E41475E0091076F /* Nodos */,
+				D2AC40811E423CE70091076F /* Clases combate */,
+				D2AC40A31E4242F50091076F /* Clases asustado */,
 			);
 			name = Behaviour_trees;
 			sourceTree = "<group>";
@@ -537,6 +536,7 @@
 		D2AC40A31E4242F50091076F /* Clases asustado */ = {
 			isa = PBXGroup;
 			children = (
+				D2AC407A1E423B4D0091076F /* Clases alerta */,
 				D2AC40A41E4243060091076F /* NodoHuir.cpp */,
 				D2AC40A51E4243060091076F /* NodoHuir.hpp */,
 			);
@@ -609,6 +609,8 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
+				D2AC40AA1E43367D0091076F /* EasyMath.cpp */,
+				D2AC40AB1E43367D0091076F /* EasyMath.hpp */,
 				D2AC402F1E4200F40091076F /* Behaviour_trees */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
@@ -948,9 +950,9 @@
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
 				E9A3463A1E0434BA00E6EC25 /* escopeta.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
+				D2AC40AC1E43367D0091076F /* EasyMath.cpp in Sources */,
 				D2AC408A1E423E080091076F /* Nodo_HayAlguienCerca.cpp in Sources */,
 				E9A346431E045FD000E6EC25 /* chicle.cpp in Sources */,
-				D2AC40A91E4245730091076F /* behaviour_trees.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				D2AC403F1E420B790091076F /* Nodo_VerJugador.cpp in Sources */,
 				E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */,

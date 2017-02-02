@@ -10,7 +10,7 @@
 #define NodoMover_hpp
 
 #include "Nodo.hpp"
-
+#include "EasyMath.hpp"
 
 class NodoMover : public Nodo {
 public:
@@ -19,7 +19,7 @@ public:
     short run(int &id);
     void reset(){}
 private:
-    float CalcularDistancia(dvector3D a, dvector3D b);
+   // float CalcularDistancia(dvector3D a, dvector3D b);
     float aux = -1;
     float xABS, yABS;
     dvector3D * _movement;
