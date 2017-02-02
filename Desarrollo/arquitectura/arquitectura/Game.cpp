@@ -1,6 +1,7 @@
 
 #include "Game.hpp"
 #include <cstdlib>
+#include "GUI/GUIManager.h"
 //Game* Game::pinstance = 0;
 
 Game* Game::Instance(){
@@ -46,12 +47,13 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
 	cam->addCamara(campos, *jugador->getPosicion());
 	
-	if(nivelazo->cargarNivel("1"))
+	if(nivelazo->cargarNivel("2"))
 		nivelazo->dibujarMapa();
 	
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
+    menu.inicializar();
 }
 
 void Game::stop(){
@@ -111,6 +113,7 @@ void Game::update(){
 	
     Fps::Instance()->update();
 	mundoBox2D::Instance()->update();
+    GUIManager::i().updateAllGuis();
 }
 
 void Game::zoom(bool z){

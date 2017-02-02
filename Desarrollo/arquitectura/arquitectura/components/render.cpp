@@ -2,6 +2,7 @@
 #include "render.hpp"
 #include "../objetos/GameObject.hpp"
 #include "../objetos/nivel.hpp"
+#include "../GUI/GUIManager.h"
 
 render::render(){
 	nodo = NULL;
@@ -86,6 +87,7 @@ void render::dibujar(){
     ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
     ventana::Instance()->getSceneManager()->drawAll();
 	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
+    GUIManager::i().drawAllGuis();
     ventana::Instance()->getDriver()->endScene();
 }
 

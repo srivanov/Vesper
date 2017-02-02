@@ -71,15 +71,30 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 }
 
 void physics::crearObjetosEstaticos(std::vector<dvector2D> &v){
-	b2PolygonShape poligono;
-	std::vector<dvector2D>::iterator iter_sep = std::find(v.begin(), v.end(), INT_MAX), it = v.begin();
-	if(iter_sep != v.end())
-		printf("ENCONTRADO: %d\n", iter_sep);
-	int i=0;
-	while (it != iter_sep) {
-		i++;
-		it++;
-	}
+//	b2PolygonShape poligono, p2;
+//	p2.SetAsBox(3, 3);
+//	b2FixtureDef myFixtureDef;
+//	b2BodyDef myBody;
+//	b2Body* body_aux;
+//	std::vector<dvector2D>::iterator iter_sep, it = v.begin();
+//	
+//	iter_sep = std::find(v.begin(), v.end(), INT_MAX);
+//	
+//	int i=0;
+//	if(iter_sep != v.end()){
+//		
+//		while (it != iter_sep) {
+//			poligono.m_vertices[i].Set(it->x, it->y);
+//			it++; i++;
+//		}
+////		poligono.m_vertices[7].Set(0, 0);
+////		poligono.m_vertices[8].Set(0, 0);
+//		myFixtureDef.shape = &p2;
+//		myBody.type = b2_staticBody;
+//		myBody.position.Set(0, 0);
+//		body_aux = mundoBox2D::Instance()->getWorld()->CreateBody(&myBody);
+//		body_aux->CreateFixture(&myFixtureDef);
+//	}
 }
 
 void physics::update(){
