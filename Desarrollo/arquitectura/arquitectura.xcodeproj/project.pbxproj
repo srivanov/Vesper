@@ -1057,7 +1057,7 @@
 				E9AC3A331DF0A9C100A91A97 /* Sources */,
 				E9AC3A341DF0A9C100A91A97 /* Frameworks */,
 				E9AC3A351DF0A9C100A91A97 /* Resources */,
-				C1A0AF021E434CD6009699FD /* ShellScript */,
+				C1A0AF021E434CD6009699FD /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1279,13 +1279,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C1A0AF021E434CD6009699FD /* ShellScript */ = {
+		C1A0AF021E434CD6009699FD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1473,6 +1474,7 @@
 					"$(PROJECT_DIR)/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = sia.arquitectura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1494,6 +1496,7 @@
 					"$(PROJECT_DIR)/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = sia.arquitectura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

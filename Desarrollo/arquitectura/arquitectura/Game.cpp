@@ -47,7 +47,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
 	cam->addCamara(campos, *jugador->getPosicion());
 	
-	if(nivelazo->cargarNivel("2"))
+	if(nivelazo->cargarNivel("1"))
 		nivelazo->dibujarMapa();
 	
 	World_BlackBoard::instance();
