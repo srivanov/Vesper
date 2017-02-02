@@ -1,0 +1,4 @@
+<Imageset autoScaled="false" imagefile="imageset_menu.png" name="Prueba" nativeHorzRes="800" nativeVertRes="600" version="2">
+    <Image height="263" name="fondo" width="470" xPos="0" yPos="0" />
+    <Image height="50" name="crema" width="50" xPos="473" yPos="4" />
+</Imageset>

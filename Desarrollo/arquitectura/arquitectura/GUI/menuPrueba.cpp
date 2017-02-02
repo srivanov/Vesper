@@ -12,12 +12,16 @@
 void menuPrueba::inicializar(){
     init("3d/GUI", ventana::Instance()->getDevice());
     
-    loadScheme("AlfiskoSkin.scheme");
+//    loadScheme("AlfiskoSkin.scheme");
+    loadScheme("OgreTray.scheme");
+    loadScheme("menu.scheme");
     loadLayout("prueba.layout");
     
-    label_prueba = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(69));
+//    label_prueba = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(69));
+//    
+//    label_prueba->setText("HOLA CATHERINE");
     
-    label_prueba->setText("HOLA CATHERINE");
+    
 }
 
 void menuPrueba::update(){
