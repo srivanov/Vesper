@@ -15,13 +15,25 @@
 #include <string>
 #include <cstring>
 
+struct BolsaNodos{
+    BolsaNodos(){}
+    ~BolsaNodos(){nodos.clear();F.clear();}
+    void add_nodo(Nodo* nodo, float _F);
+    void recalcular();
+    void camino();
+private:
+    std::vector<Nodo*> nodos;
+    std::vector<float> F;
+};
+
 class grafo{
-    int*** matriz;
     std::vector<Nodo*> all_nodos;
-    std::vector<std::string> caminos;
-    void crearMatriz();
-    void cleanWays();
+    BolsaNodos abierta;
     bool iteacion();
+    
+    
+    std::vector<std::string> caminos;
+    void cleanWays();
     int nodo_inicial = 0, nodo_final = 0;
     const std::vector<std::string> explode(const std::string& s, const char& c);
 public:

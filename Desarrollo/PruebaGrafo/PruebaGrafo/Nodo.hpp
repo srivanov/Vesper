@@ -20,9 +20,9 @@ public:
     void conectar(Nodo * a);
     vector2d getPosition() {return posicion;}
     int getID() const {return ID;}
-    void pasado() {pase=true;}
-    void reset() {pase=false;}
+    void setPass(bool value){pase=value;}
     bool getPass(){return pase;}
+    arista * getArista(int it) const{ return aristas[it];}
     std::vector<Nodo*> conexiones() const {return conecta_con;}
 private:
     void anyadirArista(vector2d posA, vector2d posB);

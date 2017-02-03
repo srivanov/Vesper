@@ -9,11 +9,20 @@
 #include "Grafo.hpp"
 
 
+void BolsaNodos::add_nodo(Nodo *nodo , float _F){
+    nodos.push_back(nodo);
+    F.push_back(_F);
+}
+
+void BolsaNodos::camino(){
+    for (int i=0; i<nodos.size(); i++) {
+        std::cout << nodos[i]->getID() << " " << std::endl;
+    }
+}
+
 const std::vector<std::string> grafo::explode (const std::string &s, const char &c){
- 
     std::string buff{""};
     std::vector<std::string> v;
-    
     for(auto n:s)
     {
         if(n != c) buff+=n; else
@@ -29,57 +38,43 @@ const std::vector<std::string> grafo::explode (const std::string &s, const char 
 
 grafo::grafo(std::vector<Nodo*> nodos_vector){
     all_nodos = nodos_vector;
-    crearMatriz();
 }
 grafo::~grafo(){
-    if (matriz) {
-        for (int i=0; i<all_nodos.size(); i++) {
-            delete[] matriz[i];
-        }
-        delete[] matriz;
-    }
     for (int i=0; i<all_nodos.size(); i++) {
         delete all_nodos[i];
     }
     all_nodos.clear();
 }
 
-void grafo::crearMatriz(){
-    matriz = new int **[all_nodos.size()];
-    for (int i=0; i<all_nodos.size(); i++) {
-        matriz[i] = new int*[all_nodos[i]->conexiones().size()];
-        for (int j=0; j<all_nodos[i]->conexiones().size(); j++) {
-            matriz[i][j]= new int(all_nodos[i]->conexiones()[j]->getID());
-        }
-    }
-}
 
 void grafo::calcularCamino(vector2d posIni,vector2d posFin){
-    float distanciaCalculo,disNodoInicial = 666,disNodoFinal = 999;
+    float distanciaCalculo,disNodoInicial = -1,disNodoFinal = -1;
+    float x, y;
     for (int i=0; i<all_nodos.size(); i++) {
-        float x = fabsf(all_nodos[i]->getPosition().x-posIni.x);
-        float y = fabsf(all_nodos[i]->getPosition().y-posIni.y);
+        x = fabsf(all_nodos[i]->getPosition().x-posIni.x);
+        y = fabsf(all_nodos[i]->getPosition().y-posIni.y);
         distanciaCalculo = x+y;
-        if (disNodoInicial>distanciaCalculo) {
+        if (disNodoInicial==-1 || disNodoInicial>distanciaCalculo) {
             disNodoInicial= distanciaCalculo;
-            nodo_inicial = i;
+            nodo_inicial = all_nodos[i]->getID();
         }
         x = fabsf(all_nodos[i]->getPosition().x-posFin.x);
         y = fabsf(all_nodos[i]->getPosition().y-posFin.y);
         distanciaCalculo = x+y;
-        if (disNodoFinal>distanciaCalculo) {
+        if (disNodoFinal==-1 || disNodoFinal>distanciaCalculo) {
             disNodoFinal= distanciaCalculo;
-            nodo_final = i;
+            nodo_final = all_nodos[i]->getID();
         }
         continue;
     }
-    //if (nodo_inicial==0) return;
+    abierta.add_nodo(all_nodos[nodo_inicial], 1.f);
     while (iteacion());
-    cleanWays();
-    for (int i=0; i<caminos.size(); i++) {
+    abierta.camino();
+    //cleanWays();
+    /*for (int i=0; i<caminos.size(); i++) {
         std::cout << caminos[i] << std::endl;
     }
-    caminos.clear();
+    caminos.clear();*/
 }
 
 void grafo::cleanWays(){
@@ -95,17 +90,45 @@ void grafo::cleanWays(){
 
 void grafo::reset(){
     for (int i=0; i<all_nodos.size(); i++) {
-        all_nodos[i]->reset();
+        all_nodos[i]->setPass(false);
     }
 }
 bool grafo::iteacion(){
-    int changes = 0;
-    if (caminos.empty()) {
+    bool response;
+    std::vector<float> F;
+    int NodoBolsa = -1;
+    std::vector<Nodo*> vecAux = all_nodos[nodo_inicial]->conexiones();
+    for (int i=0; i<vecAux.size(); i++) {
+        float f, x , y ;
+        x = fabsf(all_nodos[nodo_final]->getPosition().x-vecAux[i]->getPosition().x);
+        y = fabsf(all_nodos[nodo_final]->getPosition().y-vecAux[i]->getPosition().y);
+        f = all_nodos[nodo_inicial]->getArista(i)->getValue() + x + y;
+        F.push_back(f);
+    }
+    float aux = -1;
+    for (int i=0; i<F.size(); i++) {
+        if(aux==-1 || (F[i]<aux && !vecAux[i]->getPass())){
+            aux = F[i];
+            NodoBolsa = i;
+        }
+    }
+    if (vecAux[NodoBolsa]->getID()==nodo_final) response = false;
+    else response = true;
+    vecAux[NodoBolsa]->setPass(true);
+    abierta.add_nodo(vecAux[NodoBolsa], F[NodoBolsa]);
+    nodo_inicial = vecAux[NodoBolsa]->getID();
+    
+    vecAux.clear();
+    F.clear();
+    //int changes = 0;
+    /*
+     if (caminos.empty()) {
         // Crea el primer camino
         all_nodos[nodo_inicial]->pasado();
         std::string camino = std::to_string(nodo_inicial);
         caminos.push_back(camino);
         changes++;
+        
     }else{
         // COMO EL TAMAÑO ES MODIFICADO EN EL BUCLE MANTENEMOS EL TAMAÑO ANTERIOR
         size_t ActualSize = caminos.size();
@@ -134,5 +157,6 @@ bool grafo::iteacion(){
             }
         }
     }
-    return changes;
+     */
+    return response;
 }

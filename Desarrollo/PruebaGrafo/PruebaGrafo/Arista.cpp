@@ -10,8 +10,8 @@
 #include <math.h>
 
 arista::arista(vector2d a,vector2d b){
-    float x = b.x-a.x;
-    float y = b.y-a.y;
-    distancia = fabsf(x+y);
+    float x = fabsf(b.x-a.x);
+    float y = fabsf(b.y-a.y);
+    distancia = x+y;
 }
 arista::~arista(){}
