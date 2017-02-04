@@ -18,7 +18,7 @@ public:
     ~menuPrueba(){}
     void inicializar();
     void update();
-    void onClickStartGame(const CEGUI::EventArgs &e);
+    bool onClickStartGame(const CEGUI::EventArgs &e);
     
 private:
 //    CEGUI::DefaultWindow *label_prueba;

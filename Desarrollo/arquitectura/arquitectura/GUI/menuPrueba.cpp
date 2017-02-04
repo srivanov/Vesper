@@ -37,6 +37,10 @@ void menuPrueba::update(){
     
 }
 
-void menuPrueba::onClickStartGame(const CEGUI::EventArgs &e) {
+bool menuPrueba::onClickStartGame(const CEGUI::EventArgs &e) {
+    injectMouseClick();
     printf("Empieza una nueva partida");
+    
+    
+    return true;
 }

@@ -61,14 +61,14 @@ void Game::stop(){
 }
 
 void Game::render(){
-	jugador->render();
-	
-    iter = balas.begin();
-    while (iter != balas.end()){
-        bala_aux = *iter;
-        bala_aux->render();
-        iter++;
-    }
+//	jugador->render();
+//	
+//    iter = balas.begin();
+//    while (iter != balas.end()){
+//        bala_aux = *iter;
+//        bala_aux->render();
+//        iter++;
+//    }
     renderizador->dibujar();
 }
 
@@ -91,28 +91,28 @@ bala* Game::insertBala(float vel){
 }
 
 void Game::update(){
-	nivelazo->update();
-	entrada->update();
-	jugador->update();
-	cam->movimientoInteligente(*jugador->getPosicion());
-	
-    iter = balas.begin();
-    while (iter != balas.end()){
-        bala_aux = *iter;
-        bala_aux->mover(*bala_aux->getDireccion());
-		bala_aux->update();
-		if(*bala_aux->getmuero()){
-			delete bala_aux;
-            bala_aux = NULL;
-			iter = balas.erase(iter);
-		}else
-			iter++;
-    }
-	
-    trigger_system::_instance()->update();
-	
+//	nivelazo->update();
+//	entrada->update();
+//	jugador->update();
+//	cam->movimientoInteligente(*jugador->getPosicion());
+//	
+//    iter = balas.begin();
+//    while (iter != balas.end()){
+//        bala_aux = *iter;
+//        bala_aux->mover(*bala_aux->getDireccion());
+//		bala_aux->update();
+//		if(*bala_aux->getmuero()){
+//			delete bala_aux;
+//            bala_aux = NULL;
+//			iter = balas.erase(iter);
+//		}else
+//			iter++;
+//    }
+//	
+//    trigger_system::_instance()->update();
+//	
     Fps::Instance()->update();
-	mundoBox2D::Instance()->update();
+//	mundoBox2D::Instance()->update();
     GUIManager::i().updateAllGuis();
 }
 

@@ -54,6 +54,11 @@ namespace Motor{
 		void injectRightMouseButton() {
 			m_context->injectMouseButtonDown(CEGUI::MouseButton::RightButton);
 		}
+        
+        void injectMouseClick() {
+            m_context->injectMouseButtonClick(CEGUI::MouseButton::LeftButton);
+            printf("funciona algo");
+        }
 
 
 		static void setWidgetDestRect(CEGUI::Window* widget, const vec4f& destRectPerc, const vec4f& destRectPix);
