@@ -14,132 +14,134 @@
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
-		C14718C41E450E6E002BFA77 /* example.anims in Resources */ = {isa = PBXBuildFile; fileRef = C147183F1E450E6E002BFA77 /* example.anims */; };
-		C14718C51E450E6E002BFA77 /* GameMenu.anims in Resources */ = {isa = PBXBuildFile; fileRef = C14718401E450E6E002BFA77 /* GameMenu.anims */; };
-		C14718C61E450E6E002BFA77 /* Batang-18.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718421E450E6E002BFA77 /* Batang-18.font */; };
-		C14718C71E450E6E002BFA77 /* batang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718431E450E6E002BFA77 /* batang.ttf */; };
-		C14718C81E450E6E002BFA77 /* DejaVuSans-10-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718441E450E6E002BFA77 /* DejaVuSans-10-NoScale.font */; };
-		C14718C91E450E6F002BFA77 /* DejaVuSans-10.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718451E450E6E002BFA77 /* DejaVuSans-10.font */; };
-		C14718CA1E450E6F002BFA77 /* DejaVuSans-12-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718461E450E6E002BFA77 /* DejaVuSans-12-NoScale.font */; };
-		C14718CB1E450E6F002BFA77 /* DejaVuSans-12.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718471E450E6E002BFA77 /* DejaVuSans-12.font */; };
-		C14718CC1E450E6F002BFA77 /* DejaVuSans-14-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718481E450E6E002BFA77 /* DejaVuSans-14-NoScale.font */; };
-		C14718CD1E450E6F002BFA77 /* DejaVuSans-14.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718491E450E6E002BFA77 /* DejaVuSans-14.font */; };
-		C14718CE1E450E6F002BFA77 /* DejaVuSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147184A1E450E6E002BFA77 /* DejaVuSans.ttf */; };
-		C14718CF1E450E6F002BFA77 /* DejaVuSerif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147184B1E450E6E002BFA77 /* DejaVuSerif.ttf */; };
-		C14718D01E450E6F002BFA77 /* FairChar-30.font in Resources */ = {isa = PBXBuildFile; fileRef = C147184C1E450E6E002BFA77 /* FairChar-30.font */; };
-		C14718D11E450E6F002BFA77 /* FetteClassicUNZFraktur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147184D1E450E6E002BFA77 /* FetteClassicUNZFraktur.ttf */; };
-		C14718D21E450E6F002BFA77 /* Futhark Adapted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147184E1E450E6E002BFA77 /* Futhark Adapted.ttf */; };
-		C14718D31E450E6F002BFA77 /* GreatVibes-16.font in Resources */ = {isa = PBXBuildFile; fileRef = C147184F1E450E6E002BFA77 /* GreatVibes-16.font */; };
-		C14718D41E450E6F002BFA77 /* GreatVibes-22.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718501E450E6E002BFA77 /* GreatVibes-22.font */; };
-		C14718D51E450E6F002BFA77 /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718511E450E6E002BFA77 /* GreatVibes-Regular.ttf */; };
-		C14718D61E450E6F002BFA77 /* IMFePIrm29P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718521E450E6E002BFA77 /* IMFePIrm29P.ttf */; };
-		C14718D71E450E6F002BFA77 /* Junicode-13.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718531E450E6E002BFA77 /* Junicode-13.font */; };
-		C14718D81E450E6F002BFA77 /* Junicode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718541E450E6E002BFA77 /* Junicode.ttf */; };
-		C14718D91E450E6F002BFA77 /* Jura-10.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718551E450E6E002BFA77 /* Jura-10.font */; };
-		C14718DA1E450E6F002BFA77 /* Jura-13.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718561E450E6E002BFA77 /* Jura-13.font */; };
-		C14718DB1E450E6F002BFA77 /* Jura-18.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718571E450E6E002BFA77 /* Jura-18.font */; };
-		C14718DC1E450E6F002BFA77 /* Jura-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718581E450E6E002BFA77 /* Jura-DemiBold.ttf */; };
-		C14718DD1E450E6F002BFA77 /* Jura-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718591E450E6E002BFA77 /* Jura-Light.ttf */; };
-		C14718DE1E450E6F002BFA77 /* Jura-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147185A1E450E6E002BFA77 /* Jura-Medium.ttf */; };
-		C14718DF1E450E6F002BFA77 /* Jura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147185B1E450E6E002BFA77 /* Jura-Regular.ttf */; };
-		C14718E01E450E6F002BFA77 /* Klingon-pIqaD-HaSta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147185C1E450E6E002BFA77 /* Klingon-pIqaD-HaSta.ttf */; };
-		C14718E11E450E6F002BFA77 /* Legal.txt in Resources */ = {isa = PBXBuildFile; fileRef = C147185D1E450E6E002BFA77 /* Legal.txt */; };
-		C14718E21E450E6F002BFA77 /* LicenseApache.txt in Resources */ = {isa = PBXBuildFile; fileRef = C147185E1E450E6E002BFA77 /* LicenseApache.txt */; };
-		C14718E31E450E6F002BFA77 /* LicenseDejaVu.txt in Resources */ = {isa = PBXBuildFile; fileRef = C147185F1E450E6E002BFA77 /* LicenseDejaVu.txt */; };
-		C14718E41E450E6F002BFA77 /* LicenseGPL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14718601E450E6E002BFA77 /* LicenseGPL.txt */; };
-		C14718E51E450E6F002BFA77 /* LicenseMIT.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14718611E450E6E002BFA77 /* LicenseMIT.txt */; };
-		C14718E61E450E6F002BFA77 /* LicenseSIL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14718621E450E6E002BFA77 /* LicenseSIL.txt */; };
-		C14718E71E450E6F002BFA77 /* LicenseUbuntuFont.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14718631E450E6E002BFA77 /* LicenseUbuntuFont.txt */; };
-		C14718E81E450E6F002BFA77 /* mizufalp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718641E450E6E002BFA77 /* mizufalp.ttf */; };
-		C14718E91E450E6F002BFA77 /* OpenSans-8.font in Resources */ = {isa = PBXBuildFile; fileRef = C14718651E450E6E002BFA77 /* OpenSans-8.font */; };
-		C14718EA1E450E6F002BFA77 /* OpenSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718661E450E6E002BFA77 /* OpenSans.ttf */; };
-		C14718EB1E450E6F002BFA77 /* RichStyle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718671E450E6E002BFA77 /* RichStyle.ttf */; };
-		C14718EC1E450E6F002BFA77 /* Tnua-Libre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14718681E450E6E002BFA77 /* Tnua-Libre.ttf */; };
-		C14718ED1E450E6F002BFA77 /* AlfiskoSkin.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C147186A1E450E6E002BFA77 /* AlfiskoSkin.imageset */; };
-		C14718EE1E450E6F002BFA77 /* AlfiskoSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = C147186B1E450E6E002BFA77 /* AlfiskoSkin.png */; };
-		C14718EF1E450E6F002BFA77 /* AlfiskoSkin.png.OLD in Resources */ = {isa = PBXBuildFile; fileRef = C147186C1E450E6E002BFA77 /* AlfiskoSkin.png.OLD */; };
-		C14718F01E450E6F002BFA77 /* Aliasing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C147186D1E450E6E002BFA77 /* Aliasing.jpg */; };
-		C14718F11E450E6F002BFA77 /* BackgroundSampleBrowser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C147186E1E450E6E002BFA77 /* BackgroundSampleBrowser.jpg */; };
-		C14718F21E450E6F002BFA77 /* DriveIcons.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C147186F1E450E6E002BFA77 /* DriveIcons.imageset */; };
-		C14718F31E450E6F002BFA77 /* DriveIcons.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718701E450E6E002BFA77 /* DriveIcons.png */; };
-		C14718F41E450E6F002BFA77 /* FairChar.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718711E450E6E002BFA77 /* FairChar.imageset */; };
-		C14718F51E450E6F002BFA77 /* FairChar.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718721E450E6E002BFA77 /* FairChar.png */; };
-		C14718F61E450E6F002BFA77 /* GameMenu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718731E450E6E002BFA77 /* GameMenu.imageset */; };
-		C14718F71E450E6F002BFA77 /* GameMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718741E450E6E002BFA77 /* GameMenu.png */; };
-		C14718F81E450E6F002BFA77 /* GWEN.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718751E450E6E002BFA77 /* GWEN.imageset */; };
-		C14718F91E450E6F002BFA77 /* GWENDefaultSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718761E450E6E002BFA77 /* GWENDefaultSkin.png */; };
-		C14718FA1E450E6F002BFA77 /* HUDDemo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718771E450E6E002BFA77 /* HUDDemo.imageset */; };
-		C14718FB1E450E6F002BFA77 /* HUDDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718781E450E6E002BFA77 /* HUDDemo.png */; };
-		C14718FC1E450E6F002BFA77 /* HUDDemoGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718791E450E6E002BFA77 /* HUDDemoGameOver.png */; };
-		C14718FD1E450E6F002BFA77 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C147187A1E450E6E002BFA77 /* logo.png */; };
-		C14718FE1E450E6F002BFA77 /* OgreTray.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C147187B1E450E6E002BFA77 /* OgreTray.imageset */; };
-		C14718FF1E450E6F002BFA77 /* OgreTrayImages.png in Resources */ = {isa = PBXBuildFile; fileRef = C147187C1E450E6E002BFA77 /* OgreTrayImages.png */; };
-		C14719001E450E6F002BFA77 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = C147187D1E450E6E002BFA77 /* ReadMe.txt */; };
-		C14719011E450E6F002BFA77 /* SampleBrowser.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C147187E1E450E6E002BFA77 /* SampleBrowser.imageset */; };
-		C14719021E450E6F002BFA77 /* SampleBrowser.png in Resources */ = {isa = PBXBuildFile; fileRef = C147187F1E450E6E002BFA77 /* SampleBrowser.png */; };
-		C14719031E450E6F002BFA77 /* SpaceBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C14718801E450E6E002BFA77 /* SpaceBackground.jpg */; };
-		C14719041E450E6F002BFA77 /* TaharezLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718811E450E6E002BFA77 /* TaharezLook.imageset */; };
-		C14719051E450E6F002BFA77 /* TaharezLook.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718821E450E6E002BFA77 /* TaharezLook.png */; };
-		C14719061E450E6F002BFA77 /* Vanilla.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718831E450E6E002BFA77 /* Vanilla.imageset */; };
-		C14719071E450E6F002BFA77 /* vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718841E450E6E002BFA77 /* vanilla.png */; };
-		C14719081E450E6F002BFA77 /* WindowsLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14718851E450E6E002BFA77 /* WindowsLook.imageset */; };
-		C14719091E450E6F002BFA77 /* WindowsLook.png in Resources */ = {isa = PBXBuildFile; fileRef = C14718861E450E6E002BFA77 /* WindowsLook.png */; };
-		C147190A1E450E6F002BFA77 /* application_templates.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718881E450E6E002BFA77 /* application_templates.layout */; };
-		C147190B1E450E6F002BFA77 /* Console.wnd in Resources */ = {isa = PBXBuildFile; fileRef = C14718891E450E6E002BFA77 /* Console.wnd */; };
-		C147190C1E450E6F002BFA77 /* Demo8.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147188A1E450E6E002BFA77 /* Demo8.layout */; };
-		C147190D1E450E6F002BFA77 /* DragDropDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147188B1E450E6E002BFA77 /* DragDropDemo.layout */; };
-		C147190E1E450E6F002BFA77 /* EffectsDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147188C1E450E6E002BFA77 /* EffectsDemo.layout */; };
-		C147190F1E450E6F002BFA77 /* FontDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147188D1E450E6E002BFA77 /* FontDemo.layout */; };
-		C14719101E450E6F002BFA77 /* GameMenu.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147188E1E450E6E002BFA77 /* GameMenu.layout */; };
-		C14719111E450E6F002BFA77 /* HUDDemoGameOver.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147188F1E450E6E002BFA77 /* HUDDemoGameOver.layout */; };
-		C14719121E450E6F002BFA77 /* HUDDemoIngame.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718901E450E6E002BFA77 /* HUDDemoIngame.layout */; };
-		C14719131E450E6F002BFA77 /* prueba.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718911E450E6E002BFA77 /* prueba.layout */; };
-		C14719141E450E6F002BFA77 /* SampleBrowser.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718921E450E6E002BFA77 /* SampleBrowser.layout */; };
-		C14719151E450E6F002BFA77 /* SampleBrowserLoadScreen.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718931E450E6E002BFA77 /* SampleBrowserLoadScreen.layout */; };
-		C14719161E450E6F002BFA77 /* SimpleDebug.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718941E450E6E002BFA77 /* SimpleDebug.layout */; };
-		C14719171E450E6F002BFA77 /* TabControlDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718951E450E6E002BFA77 /* TabControlDemo.layout */; };
-		C14719181E450E6F002BFA77 /* TabPage.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718961E450E6E002BFA77 /* TabPage.layout */; };
-		C14719191E450E6F002BFA77 /* TabPage1.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718971E450E6E002BFA77 /* TabPage1.layout */; };
-		C147191A1E450E6F002BFA77 /* TabPage2.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718981E450E6E002BFA77 /* TabPage2.layout */; };
-		C147191B1E450E6F002BFA77 /* TaharezLookOverview.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14718991E450E6E002BFA77 /* TaharezLookOverview.layout */; };
-		C147191C1E450E6F002BFA77 /* TextDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147189A1E450E6E002BFA77 /* TextDemo.layout */; };
-		C147191D1E450E6F002BFA77 /* TreeDemoTaharez.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147189B1E450E6E002BFA77 /* TreeDemoTaharez.layout */; };
-		C147191E1E450E6F002BFA77 /* VanillaConsole.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147189C1E450E6E002BFA77 /* VanillaConsole.layout */; };
-		C147191F1E450E6F002BFA77 /* VanillaLookOverview.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147189D1E450E6E002BFA77 /* VanillaLookOverview.layout */; };
-		C14719201E450E6F002BFA77 /* VanillaWindows.layout in Resources */ = {isa = PBXBuildFile; fileRef = C147189E1E450E6E002BFA77 /* VanillaWindows.layout */; };
-		C14719211E450E6F002BFA77 /* AlfiskoSkin.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A01E450E6E002BFA77 /* AlfiskoSkin.looknfeel */; };
-		C14719221E450E6F002BFA77 /* GameMenu.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A11E450E6E002BFA77 /* GameMenu.looknfeel */; };
-		C14719231E450E6F002BFA77 /* Generic.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A21E450E6E002BFA77 /* Generic.looknfeel */; };
-		C14719241E450E6F002BFA77 /* GWEN.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A31E450E6E002BFA77 /* GWEN.looknfeel */; };
-		C14719251E450E6F002BFA77 /* HUDDemo.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A41E450E6E002BFA77 /* HUDDemo.looknfeel */; };
-		C14719261E450E6F002BFA77 /* InventoryComponents.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A51E450E6E002BFA77 /* InventoryComponents.looknfeel */; };
-		C14719271E450E6F002BFA77 /* OgreTray.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A61E450E6E002BFA77 /* OgreTray.looknfeel */; };
-		C14719281E450E6F002BFA77 /* SampleBrowser.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A71E450E6E002BFA77 /* SampleBrowser.looknfeel */; };
-		C14719291E450E6F002BFA77 /* TaharezLook.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A81E450E6E002BFA77 /* TaharezLook.looknfeel */; };
-		C147192A1E450E6F002BFA77 /* Vanilla.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718A91E450E6E002BFA77 /* Vanilla.looknfeel */; };
-		C147192B1E450E6F002BFA77 /* VanillaCommonDialogs.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718AA1E450E6E002BFA77 /* VanillaCommonDialogs.looknfeel */; };
-		C147192C1E450E6F002BFA77 /* WindowsLook.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14718AB1E450E6E002BFA77 /* WindowsLook.looknfeel */; };
-		C147192D1E450E6F002BFA77 /* demo8.lua in Resources */ = {isa = PBXBuildFile; fileRef = C14718AD1E450E6E002BFA77 /* demo8.lua */; };
-		C147192E1E450E6F002BFA77 /* prueba.project in Resources */ = {isa = PBXBuildFile; fileRef = C14718AE1E450E6E002BFA77 /* prueba.project */; };
-		C147192F1E450E6F002BFA77 /* AlfiskoSkin.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B01E450E6E002BFA77 /* AlfiskoSkin.scheme */; };
-		C14719301E450E6F002BFA77 /* GameMenu.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B11E450E6E002BFA77 /* GameMenu.scheme */; };
-		C14719311E450E6F002BFA77 /* Generic.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B21E450E6E002BFA77 /* Generic.scheme */; };
-		C14719321E450E6F002BFA77 /* GWEN.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B31E450E6E002BFA77 /* GWEN.scheme */; };
-		C14719331E450E6F002BFA77 /* HUDDemo.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B41E450E6E002BFA77 /* HUDDemo.scheme */; };
-		C14719341E450E6F002BFA77 /* OgreTray.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B51E450E6E002BFA77 /* OgreTray.scheme */; };
-		C14719351E450E6F002BFA77 /* SampleBrowser.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B61E450E6E002BFA77 /* SampleBrowser.scheme */; };
-		C14719361E450E6F002BFA77 /* TaharezLook.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B71E450E6E002BFA77 /* TaharezLook.scheme */; };
-		C14719371E450E6F002BFA77 /* VanillaCommonDialogs.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B81E450E6E002BFA77 /* VanillaCommonDialogs.scheme */; };
-		C14719381E450E6F002BFA77 /* VanillaSkin.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718B91E450E6E002BFA77 /* VanillaSkin.scheme */; };
-		C14719391E450E6F002BFA77 /* WindowsLook.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14718BA1E450E6E002BFA77 /* WindowsLook.scheme */; };
-		C147193A1E450E6F002BFA77 /* Animation.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718BC1E450E6E002BFA77 /* Animation.xsd */; };
-		C147193B1E450E6F002BFA77 /* CEGUIConfig.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718BD1E450E6E002BFA77 /* CEGUIConfig.xsd */; };
-		C147193C1E450E6F002BFA77 /* Falagard.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718BE1E450E6E002BFA77 /* Falagard.xsd */; };
-		C147193D1E450E6F002BFA77 /* Font.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718BF1E450E6E002BFA77 /* Font.xsd */; };
-		C147193E1E450E6F002BFA77 /* GUILayout.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718C01E450E6E002BFA77 /* GUILayout.xsd */; };
-		C147193F1E450E6F002BFA77 /* GUIScheme.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718C11E450E6E002BFA77 /* GUIScheme.xsd */; };
-		C14719401E450E6F002BFA77 /* Imageset.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718C21E450E6E002BFA77 /* Imageset.xsd */; };
-		C14719411E450E6F002BFA77 /* Samples.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14718C31E450E6E002BFA77 /* Samples.xsd */; };
+		C14B6E6B1E4654E100FBA756 /* example.anims in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DE41E4654E100FBA756 /* example.anims */; };
+		C14B6E6C1E4654E100FBA756 /* GameMenu.anims in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DE51E4654E100FBA756 /* GameMenu.anims */; };
+		C14B6E6D1E4654E100FBA756 /* Batang-18.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DE71E4654E100FBA756 /* Batang-18.font */; };
+		C14B6E6E1E4654E100FBA756 /* batang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DE81E4654E100FBA756 /* batang.ttf */; };
+		C14B6E6F1E4654E100FBA756 /* DejaVuSans-10-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DE91E4654E100FBA756 /* DejaVuSans-10-NoScale.font */; };
+		C14B6E701E4654E100FBA756 /* DejaVuSans-10.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DEA1E4654E100FBA756 /* DejaVuSans-10.font */; };
+		C14B6E711E4654E100FBA756 /* DejaVuSans-12-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DEB1E4654E100FBA756 /* DejaVuSans-12-NoScale.font */; };
+		C14B6E721E4654E100FBA756 /* DejaVuSans-12.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DEC1E4654E100FBA756 /* DejaVuSans-12.font */; };
+		C14B6E731E4654E100FBA756 /* DejaVuSans-14-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DED1E4654E100FBA756 /* DejaVuSans-14-NoScale.font */; };
+		C14B6E741E4654E100FBA756 /* DejaVuSans-14.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DEE1E4654E100FBA756 /* DejaVuSans-14.font */; };
+		C14B6E751E4654E100FBA756 /* DejaVuSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DEF1E4654E100FBA756 /* DejaVuSans.ttf */; };
+		C14B6E761E4654E100FBA756 /* DejaVuSerif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF01E4654E100FBA756 /* DejaVuSerif.ttf */; };
+		C14B6E771E4654E100FBA756 /* FairChar-30.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF11E4654E100FBA756 /* FairChar-30.font */; };
+		C14B6E781E4654E100FBA756 /* FetteClassicUNZFraktur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF21E4654E100FBA756 /* FetteClassicUNZFraktur.ttf */; };
+		C14B6E791E4654E100FBA756 /* Futhark Adapted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF31E4654E100FBA756 /* Futhark Adapted.ttf */; };
+		C14B6E7A1E4654E100FBA756 /* GreatVibes-16.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF41E4654E100FBA756 /* GreatVibes-16.font */; };
+		C14B6E7B1E4654E100FBA756 /* GreatVibes-22.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF51E4654E100FBA756 /* GreatVibes-22.font */; };
+		C14B6E7C1E4654E100FBA756 /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF61E4654E100FBA756 /* GreatVibes-Regular.ttf */; };
+		C14B6E7D1E4654E100FBA756 /* IMFePIrm29P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF71E4654E100FBA756 /* IMFePIrm29P.ttf */; };
+		C14B6E7E1E4654E100FBA756 /* Junicode-13.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF81E4654E100FBA756 /* Junicode-13.font */; };
+		C14B6E7F1E4654E100FBA756 /* Junicode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DF91E4654E100FBA756 /* Junicode.ttf */; };
+		C14B6E801E4654E100FBA756 /* Jura-10.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DFA1E4654E100FBA756 /* Jura-10.font */; };
+		C14B6E811E4654E100FBA756 /* Jura-13.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DFB1E4654E100FBA756 /* Jura-13.font */; };
+		C14B6E821E4654E100FBA756 /* Jura-18.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DFC1E4654E100FBA756 /* Jura-18.font */; };
+		C14B6E831E4654E100FBA756 /* Jura-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DFD1E4654E100FBA756 /* Jura-DemiBold.ttf */; };
+		C14B6E841E4654E100FBA756 /* Jura-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DFE1E4654E100FBA756 /* Jura-Light.ttf */; };
+		C14B6E851E4654E100FBA756 /* Jura-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6DFF1E4654E100FBA756 /* Jura-Medium.ttf */; };
+		C14B6E861E4654E100FBA756 /* Jura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E001E4654E100FBA756 /* Jura-Regular.ttf */; };
+		C14B6E871E4654E100FBA756 /* Klingon-pIqaD-HaSta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E011E4654E100FBA756 /* Klingon-pIqaD-HaSta.ttf */; };
+		C14B6E881E4654E100FBA756 /* Legal.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E021E4654E100FBA756 /* Legal.txt */; };
+		C14B6E891E4654E100FBA756 /* LicenseApache.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E031E4654E100FBA756 /* LicenseApache.txt */; };
+		C14B6E8A1E4654E100FBA756 /* LicenseDejaVu.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E041E4654E100FBA756 /* LicenseDejaVu.txt */; };
+		C14B6E8B1E4654E100FBA756 /* LicenseGPL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E051E4654E100FBA756 /* LicenseGPL.txt */; };
+		C14B6E8C1E4654E100FBA756 /* LicenseMIT.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E061E4654E100FBA756 /* LicenseMIT.txt */; };
+		C14B6E8D1E4654E100FBA756 /* LicenseSIL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E071E4654E100FBA756 /* LicenseSIL.txt */; };
+		C14B6E8E1E4654E100FBA756 /* LicenseUbuntuFont.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E081E4654E100FBA756 /* LicenseUbuntuFont.txt */; };
+		C14B6E8F1E4654E100FBA756 /* mizufalp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E091E4654E100FBA756 /* mizufalp.ttf */; };
+		C14B6E901E4654E100FBA756 /* OpenSans-8.font in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E0A1E4654E100FBA756 /* OpenSans-8.font */; };
+		C14B6E911E4654E100FBA756 /* OpenSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E0B1E4654E100FBA756 /* OpenSans.ttf */; };
+		C14B6E921E4654E100FBA756 /* RichStyle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E0C1E4654E100FBA756 /* RichStyle.ttf */; };
+		C14B6E931E4654E100FBA756 /* Tnua-Libre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E0D1E4654E100FBA756 /* Tnua-Libre.ttf */; };
+		C14B6E941E4654E100FBA756 /* AlfiskoSkin.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E0F1E4654E100FBA756 /* AlfiskoSkin.imageset */; };
+		C14B6E951E4654E100FBA756 /* AlfiskoSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E101E4654E100FBA756 /* AlfiskoSkin.png */; };
+		C14B6E961E4654E100FBA756 /* AlfiskoSkin.png.OLD in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E111E4654E100FBA756 /* AlfiskoSkin.png.OLD */; };
+		C14B6E971E4654E100FBA756 /* Aliasing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E121E4654E100FBA756 /* Aliasing.jpg */; };
+		C14B6E981E4654E100FBA756 /* BackgroundSampleBrowser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E131E4654E100FBA756 /* BackgroundSampleBrowser.jpg */; };
+		C14B6E991E4654E100FBA756 /* DriveIcons.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E141E4654E100FBA756 /* DriveIcons.imageset */; };
+		C14B6E9A1E4654E100FBA756 /* DriveIcons.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E151E4654E100FBA756 /* DriveIcons.png */; };
+		C14B6E9B1E4654E100FBA756 /* FairChar.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E161E4654E100FBA756 /* FairChar.imageset */; };
+		C14B6E9C1E4654E100FBA756 /* FairChar.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E171E4654E100FBA756 /* FairChar.png */; };
+		C14B6E9D1E4654E100FBA756 /* GameMenu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E181E4654E100FBA756 /* GameMenu.imageset */; };
+		C14B6E9E1E4654E100FBA756 /* GameMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E191E4654E100FBA756 /* GameMenu.png */; };
+		C14B6E9F1E4654E100FBA756 /* GWEN.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E1A1E4654E100FBA756 /* GWEN.imageset */; };
+		C14B6EA01E4654E100FBA756 /* GWENDefaultSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E1B1E4654E100FBA756 /* GWENDefaultSkin.png */; };
+		C14B6EA11E4654E100FBA756 /* HUDDemo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E1C1E4654E100FBA756 /* HUDDemo.imageset */; };
+		C14B6EA21E4654E100FBA756 /* HUDDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E1D1E4654E100FBA756 /* HUDDemo.png */; };
+		C14B6EA31E4654E100FBA756 /* HUDDemoGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E1E1E4654E100FBA756 /* HUDDemoGameOver.png */; };
+		C14B6EA41E4654E100FBA756 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E1F1E4654E100FBA756 /* logo.png */; };
+		C14B6EA51E4654E100FBA756 /* OgreTray.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E201E4654E100FBA756 /* OgreTray.imageset */; };
+		C14B6EA61E4654E100FBA756 /* OgreTrayImages.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E211E4654E100FBA756 /* OgreTrayImages.png */; };
+		C14B6EA71E4654E100FBA756 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E221E4654E100FBA756 /* ReadMe.txt */; };
+		C14B6EA81E4654E100FBA756 /* SampleBrowser.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E231E4654E100FBA756 /* SampleBrowser.imageset */; };
+		C14B6EA91E4654E100FBA756 /* SampleBrowser.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E241E4654E100FBA756 /* SampleBrowser.png */; };
+		C14B6EAA1E4654E100FBA756 /* SpaceBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E251E4654E100FBA756 /* SpaceBackground.jpg */; };
+		C14B6EAB1E4654E100FBA756 /* TaharezLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E261E4654E100FBA756 /* TaharezLook.imageset */; };
+		C14B6EAC1E4654E100FBA756 /* TaharezLook.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E271E4654E100FBA756 /* TaharezLook.png */; };
+		C14B6EAD1E4654E100FBA756 /* Vanilla.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E281E4654E100FBA756 /* Vanilla.imageset */; };
+		C14B6EAE1E4654E100FBA756 /* vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E291E4654E100FBA756 /* vanilla.png */; };
+		C14B6EAF1E4654E100FBA756 /* WindowsLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E2A1E4654E100FBA756 /* WindowsLook.imageset */; };
+		C14B6EB01E4654E100FBA756 /* WindowsLook.png in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E2B1E4654E100FBA756 /* WindowsLook.png */; };
+		C14B6EB11E4654E100FBA756 /* application_templates.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E2D1E4654E100FBA756 /* application_templates.layout */; };
+		C14B6EB21E4654E100FBA756 /* Console.wnd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E2E1E4654E100FBA756 /* Console.wnd */; };
+		C14B6EB31E4654E100FBA756 /* Demo8.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E2F1E4654E100FBA756 /* Demo8.layout */; };
+		C14B6EB41E4654E100FBA756 /* DragDropDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E301E4654E100FBA756 /* DragDropDemo.layout */; };
+		C14B6EB51E4654E100FBA756 /* EffectsDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E311E4654E100FBA756 /* EffectsDemo.layout */; };
+		C14B6EB61E4654E100FBA756 /* FontDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E321E4654E100FBA756 /* FontDemo.layout */; };
+		C14B6EB71E4654E100FBA756 /* GameMenu.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E331E4654E100FBA756 /* GameMenu.layout */; };
+		C14B6EB81E4654E100FBA756 /* HUDDemoGameOver.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E341E4654E100FBA756 /* HUDDemoGameOver.layout */; };
+		C14B6EB91E4654E100FBA756 /* HUDDemoIngame.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E351E4654E100FBA756 /* HUDDemoIngame.layout */; };
+		C14B6EBA1E4654E100FBA756 /* MenuPrincipal.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E361E4654E100FBA756 /* MenuPrincipal.layout */; };
+		C14B6EBB1E4654E100FBA756 /* prueba.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E371E4654E100FBA756 /* prueba.layout */; };
+		C14B6EBC1E4654E100FBA756 /* SampleBrowser.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E381E4654E100FBA756 /* SampleBrowser.layout */; };
+		C14B6EBD1E4654E100FBA756 /* SampleBrowserLoadScreen.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E391E4654E100FBA756 /* SampleBrowserLoadScreen.layout */; };
+		C14B6EBE1E4654E100FBA756 /* SimpleDebug.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E3A1E4654E100FBA756 /* SimpleDebug.layout */; };
+		C14B6EBF1E4654E100FBA756 /* TabControlDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E3B1E4654E100FBA756 /* TabControlDemo.layout */; };
+		C14B6EC01E4654E100FBA756 /* TabPage.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E3C1E4654E100FBA756 /* TabPage.layout */; };
+		C14B6EC11E4654E100FBA756 /* TabPage1.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E3D1E4654E100FBA756 /* TabPage1.layout */; };
+		C14B6EC21E4654E100FBA756 /* TabPage2.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E3E1E4654E100FBA756 /* TabPage2.layout */; };
+		C14B6EC31E4654E100FBA756 /* TaharezLookOverview.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E3F1E4654E100FBA756 /* TaharezLookOverview.layout */; };
+		C14B6EC41E4654E100FBA756 /* TextDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E401E4654E100FBA756 /* TextDemo.layout */; };
+		C14B6EC51E4654E100FBA756 /* TreeDemoTaharez.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E411E4654E100FBA756 /* TreeDemoTaharez.layout */; };
+		C14B6EC61E4654E100FBA756 /* VanillaConsole.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E421E4654E100FBA756 /* VanillaConsole.layout */; };
+		C14B6EC71E4654E100FBA756 /* VanillaLookOverview.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E431E4654E100FBA756 /* VanillaLookOverview.layout */; };
+		C14B6EC81E4654E100FBA756 /* VanillaWindows.layout in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E441E4654E100FBA756 /* VanillaWindows.layout */; };
+		C14B6EC91E4654E100FBA756 /* AlfiskoSkin.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E461E4654E100FBA756 /* AlfiskoSkin.looknfeel */; };
+		C14B6ECA1E4654E100FBA756 /* GameMenu.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E471E4654E100FBA756 /* GameMenu.looknfeel */; };
+		C14B6ECB1E4654E100FBA756 /* Generic.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E481E4654E100FBA756 /* Generic.looknfeel */; };
+		C14B6ECC1E4654E100FBA756 /* GWEN.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E491E4654E100FBA756 /* GWEN.looknfeel */; };
+		C14B6ECD1E4654E100FBA756 /* HUDDemo.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E4A1E4654E100FBA756 /* HUDDemo.looknfeel */; };
+		C14B6ECE1E4654E100FBA756 /* InventoryComponents.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E4B1E4654E100FBA756 /* InventoryComponents.looknfeel */; };
+		C14B6ECF1E4654E100FBA756 /* OgreTray.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E4C1E4654E100FBA756 /* OgreTray.looknfeel */; };
+		C14B6ED01E4654E100FBA756 /* SampleBrowser.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E4D1E4654E100FBA756 /* SampleBrowser.looknfeel */; };
+		C14B6ED11E4654E100FBA756 /* TaharezLook.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E4E1E4654E100FBA756 /* TaharezLook.looknfeel */; };
+		C14B6ED21E4654E100FBA756 /* Vanilla.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E4F1E4654E100FBA756 /* Vanilla.looknfeel */; };
+		C14B6ED31E4654E100FBA756 /* VanillaCommonDialogs.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E501E4654E100FBA756 /* VanillaCommonDialogs.looknfeel */; };
+		C14B6ED41E4654E100FBA756 /* WindowsLook.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E511E4654E100FBA756 /* WindowsLook.looknfeel */; };
+		C14B6ED51E4654E100FBA756 /* demo8.lua in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E531E4654E100FBA756 /* demo8.lua */; };
+		C14B6ED61E4654E100FBA756 /* Menu.project in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E541E4654E100FBA756 /* Menu.project */; };
+		C14B6ED71E4654E100FBA756 /* prueba.project in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E551E4654E100FBA756 /* prueba.project */; };
+		C14B6ED81E4654E100FBA756 /* AlfiskoSkin.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E571E4654E100FBA756 /* AlfiskoSkin.scheme */; };
+		C14B6ED91E4654E100FBA756 /* GameMenu.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E581E4654E100FBA756 /* GameMenu.scheme */; };
+		C14B6EDA1E4654E100FBA756 /* Generic.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E591E4654E100FBA756 /* Generic.scheme */; };
+		C14B6EDB1E4654E100FBA756 /* GWEN.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E5A1E4654E100FBA756 /* GWEN.scheme */; };
+		C14B6EDC1E4654E100FBA756 /* HUDDemo.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E5B1E4654E100FBA756 /* HUDDemo.scheme */; };
+		C14B6EDD1E4654E100FBA756 /* OgreTray.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E5C1E4654E100FBA756 /* OgreTray.scheme */; };
+		C14B6EDE1E4654E100FBA756 /* SampleBrowser.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E5D1E4654E100FBA756 /* SampleBrowser.scheme */; };
+		C14B6EDF1E4654E100FBA756 /* TaharezLook.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E5E1E4654E100FBA756 /* TaharezLook.scheme */; };
+		C14B6EE01E4654E100FBA756 /* VanillaCommonDialogs.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E5F1E4654E100FBA756 /* VanillaCommonDialogs.scheme */; };
+		C14B6EE11E4654E100FBA756 /* VanillaSkin.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E601E4654E100FBA756 /* VanillaSkin.scheme */; };
+		C14B6EE21E4654E100FBA756 /* WindowsLook.scheme in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E611E4654E100FBA756 /* WindowsLook.scheme */; };
+		C14B6EE31E4654E100FBA756 /* Animation.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E631E4654E100FBA756 /* Animation.xsd */; };
+		C14B6EE41E4654E100FBA756 /* CEGUIConfig.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E641E4654E100FBA756 /* CEGUIConfig.xsd */; };
+		C14B6EE51E4654E100FBA756 /* Falagard.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E651E4654E100FBA756 /* Falagard.xsd */; };
+		C14B6EE61E4654E100FBA756 /* Font.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E661E4654E100FBA756 /* Font.xsd */; };
+		C14B6EE71E4654E100FBA756 /* GUILayout.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E671E4654E100FBA756 /* GUILayout.xsd */; };
+		C14B6EE81E4654E100FBA756 /* GUIScheme.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E681E4654E100FBA756 /* GUIScheme.xsd */; };
+		C14B6EE91E4654E100FBA756 /* Imageset.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E691E4654E100FBA756 /* Imageset.xsd */; };
+		C14B6EEA1E4654E100FBA756 /* Samples.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14B6E6A1E4654E100FBA756 /* Samples.xsd */; };
 		C1A0ADDC1E434BA9009699FD /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADD61E434BA9009699FD /* GUI.cpp */; };
 		C1A0ADDD1E434BA9009699FD /* GUIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADD81E434BA9009699FD /* GUIManager.cpp */; };
 		C1A0ADDE1E434BA9009699FD /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADDA1E434BA9009699FD /* menuPrueba.cpp */; };
@@ -267,132 +269,134 @@
 		882FC8A61E369FAF0060347C /* llaveObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = llaveObj.hpp; sourceTree = "<group>"; };
 		884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bala.cpp; sourceTree = "<group>"; };
 		884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bala.hpp; sourceTree = "<group>"; };
-		C147183F1E450E6E002BFA77 /* example.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.anims; sourceTree = "<group>"; };
-		C14718401E450E6E002BFA77 /* GameMenu.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.anims; sourceTree = "<group>"; };
-		C14718421E450E6E002BFA77 /* Batang-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Batang-18.font"; sourceTree = "<group>"; };
-		C14718431E450E6E002BFA77 /* batang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = batang.ttf; sourceTree = "<group>"; };
-		C14718441E450E6E002BFA77 /* DejaVuSans-10-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-10-NoScale.font"; sourceTree = "<group>"; };
-		C14718451E450E6E002BFA77 /* DejaVuSans-10.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-10.font"; sourceTree = "<group>"; };
-		C14718461E450E6E002BFA77 /* DejaVuSans-12-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-12-NoScale.font"; sourceTree = "<group>"; };
-		C14718471E450E6E002BFA77 /* DejaVuSans-12.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-12.font"; sourceTree = "<group>"; };
-		C14718481E450E6E002BFA77 /* DejaVuSans-14-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-14-NoScale.font"; sourceTree = "<group>"; };
-		C14718491E450E6E002BFA77 /* DejaVuSans-14.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-14.font"; sourceTree = "<group>"; };
-		C147184A1E450E6E002BFA77 /* DejaVuSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSans.ttf; sourceTree = "<group>"; };
-		C147184B1E450E6E002BFA77 /* DejaVuSerif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSerif.ttf; sourceTree = "<group>"; };
-		C147184C1E450E6E002BFA77 /* FairChar-30.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "FairChar-30.font"; sourceTree = "<group>"; };
-		C147184D1E450E6E002BFA77 /* FetteClassicUNZFraktur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FetteClassicUNZFraktur.ttf; sourceTree = "<group>"; };
-		C147184E1E450E6E002BFA77 /* Futhark Adapted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futhark Adapted.ttf"; sourceTree = "<group>"; };
-		C147184F1E450E6E002BFA77 /* GreatVibes-16.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GreatVibes-16.font"; sourceTree = "<group>"; };
-		C14718501E450E6E002BFA77 /* GreatVibes-22.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GreatVibes-22.font"; sourceTree = "<group>"; };
-		C14718511E450E6E002BFA77 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
-		C14718521E450E6E002BFA77 /* IMFePIrm29P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMFePIrm29P.ttf; sourceTree = "<group>"; };
-		C14718531E450E6E002BFA77 /* Junicode-13.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Junicode-13.font"; sourceTree = "<group>"; };
-		C14718541E450E6E002BFA77 /* Junicode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Junicode.ttf; sourceTree = "<group>"; };
-		C14718551E450E6E002BFA77 /* Jura-10.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-10.font"; sourceTree = "<group>"; };
-		C14718561E450E6E002BFA77 /* Jura-13.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-13.font"; sourceTree = "<group>"; };
-		C14718571E450E6E002BFA77 /* Jura-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-18.font"; sourceTree = "<group>"; };
-		C14718581E450E6E002BFA77 /* Jura-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-DemiBold.ttf"; sourceTree = "<group>"; };
-		C14718591E450E6E002BFA77 /* Jura-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Light.ttf"; sourceTree = "<group>"; };
-		C147185A1E450E6E002BFA77 /* Jura-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Medium.ttf"; sourceTree = "<group>"; };
-		C147185B1E450E6E002BFA77 /* Jura-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Regular.ttf"; sourceTree = "<group>"; };
-		C147185C1E450E6E002BFA77 /* Klingon-pIqaD-HaSta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Klingon-pIqaD-HaSta.ttf"; sourceTree = "<group>"; };
-		C147185D1E450E6E002BFA77 /* Legal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Legal.txt; sourceTree = "<group>"; };
-		C147185E1E450E6E002BFA77 /* LicenseApache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseApache.txt; sourceTree = "<group>"; };
-		C147185F1E450E6E002BFA77 /* LicenseDejaVu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseDejaVu.txt; sourceTree = "<group>"; };
-		C14718601E450E6E002BFA77 /* LicenseGPL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseGPL.txt; sourceTree = "<group>"; };
-		C14718611E450E6E002BFA77 /* LicenseMIT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseMIT.txt; sourceTree = "<group>"; };
-		C14718621E450E6E002BFA77 /* LicenseSIL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseSIL.txt; sourceTree = "<group>"; };
-		C14718631E450E6E002BFA77 /* LicenseUbuntuFont.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseUbuntuFont.txt; sourceTree = "<group>"; };
-		C14718641E450E6E002BFA77 /* mizufalp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mizufalp.ttf; sourceTree = "<group>"; };
-		C14718651E450E6E002BFA77 /* OpenSans-8.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "OpenSans-8.font"; sourceTree = "<group>"; };
-		C14718661E450E6E002BFA77 /* OpenSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSans.ttf; sourceTree = "<group>"; };
-		C14718671E450E6E002BFA77 /* RichStyle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RichStyle.ttf; sourceTree = "<group>"; };
-		C14718681E450E6E002BFA77 /* Tnua-Libre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tnua-Libre.ttf"; sourceTree = "<group>"; };
-		C147186A1E450E6E002BFA77 /* AlfiskoSkin.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlfiskoSkin.imageset; sourceTree = "<group>"; };
-		C147186B1E450E6E002BFA77 /* AlfiskoSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlfiskoSkin.png; sourceTree = "<group>"; };
-		C147186C1E450E6E002BFA77 /* AlfiskoSkin.png.OLD */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlfiskoSkin.png.OLD; sourceTree = "<group>"; };
-		C147186D1E450E6E002BFA77 /* Aliasing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aliasing.jpg; sourceTree = "<group>"; };
-		C147186E1E450E6E002BFA77 /* BackgroundSampleBrowser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackgroundSampleBrowser.jpg; sourceTree = "<group>"; };
-		C147186F1E450E6E002BFA77 /* DriveIcons.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DriveIcons.imageset; sourceTree = "<group>"; };
-		C14718701E450E6E002BFA77 /* DriveIcons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DriveIcons.png; sourceTree = "<group>"; };
-		C14718711E450E6E002BFA77 /* FairChar.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FairChar.imageset; sourceTree = "<group>"; };
-		C14718721E450E6E002BFA77 /* FairChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairChar.png; sourceTree = "<group>"; };
-		C14718731E450E6E002BFA77 /* GameMenu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.imageset; sourceTree = "<group>"; };
-		C14718741E450E6E002BFA77 /* GameMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameMenu.png; sourceTree = "<group>"; };
-		C14718751E450E6E002BFA77 /* GWEN.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.imageset; sourceTree = "<group>"; };
-		C14718761E450E6E002BFA77 /* GWENDefaultSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GWENDefaultSkin.png; sourceTree = "<group>"; };
-		C14718771E450E6E002BFA77 /* HUDDemo.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HUDDemo.imageset; sourceTree = "<group>"; };
-		C14718781E450E6E002BFA77 /* HUDDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemo.png; sourceTree = "<group>"; };
-		C14718791E450E6E002BFA77 /* HUDDemoGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemoGameOver.png; sourceTree = "<group>"; };
-		C147187A1E450E6E002BFA77 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		C147187B1E450E6E002BFA77 /* OgreTray.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.imageset; sourceTree = "<group>"; };
-		C147187C1E450E6E002BFA77 /* OgreTrayImages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OgreTrayImages.png; sourceTree = "<group>"; };
-		C147187D1E450E6E002BFA77 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		C147187E1E450E6E002BFA77 /* SampleBrowser.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleBrowser.imageset; sourceTree = "<group>"; };
-		C147187F1E450E6E002BFA77 /* SampleBrowser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleBrowser.png; sourceTree = "<group>"; };
-		C14718801E450E6E002BFA77 /* SpaceBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpaceBackground.jpg; sourceTree = "<group>"; };
-		C14718811E450E6E002BFA77 /* TaharezLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaharezLook.imageset; sourceTree = "<group>"; };
-		C14718821E450E6E002BFA77 /* TaharezLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TaharezLook.png; sourceTree = "<group>"; };
-		C14718831E450E6E002BFA77 /* Vanilla.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vanilla.imageset; sourceTree = "<group>"; };
-		C14718841E450E6E002BFA77 /* vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanilla.png; sourceTree = "<group>"; };
-		C14718851E450E6E002BFA77 /* WindowsLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.imageset; sourceTree = "<group>"; };
-		C14718861E450E6E002BFA77 /* WindowsLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WindowsLook.png; sourceTree = "<group>"; };
-		C14718881E450E6E002BFA77 /* application_templates.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = application_templates.layout; sourceTree = "<group>"; };
-		C14718891E450E6E002BFA77 /* Console.wnd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Console.wnd; sourceTree = "<group>"; };
-		C147188A1E450E6E002BFA77 /* Demo8.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Demo8.layout; sourceTree = "<group>"; };
-		C147188B1E450E6E002BFA77 /* DragDropDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DragDropDemo.layout; sourceTree = "<group>"; };
-		C147188C1E450E6E002BFA77 /* EffectsDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EffectsDemo.layout; sourceTree = "<group>"; };
-		C147188D1E450E6E002BFA77 /* FontDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FontDemo.layout; sourceTree = "<group>"; };
-		C147188E1E450E6E002BFA77 /* GameMenu.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.layout; sourceTree = "<group>"; };
-		C147188F1E450E6E002BFA77 /* HUDDemoGameOver.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemoGameOver.layout; sourceTree = "<group>"; };
-		C14718901E450E6E002BFA77 /* HUDDemoIngame.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemoIngame.layout; sourceTree = "<group>"; };
-		C14718911E450E6E002BFA77 /* prueba.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = prueba.layout; sourceTree = "<group>"; };
-		C14718921E450E6E002BFA77 /* SampleBrowser.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.layout; sourceTree = "<group>"; };
-		C14718931E450E6E002BFA77 /* SampleBrowserLoadScreen.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowserLoadScreen.layout; sourceTree = "<group>"; };
-		C14718941E450E6E002BFA77 /* SimpleDebug.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpleDebug.layout; sourceTree = "<group>"; };
-		C14718951E450E6E002BFA77 /* TabControlDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabControlDemo.layout; sourceTree = "<group>"; };
-		C14718961E450E6E002BFA77 /* TabPage.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage.layout; sourceTree = "<group>"; };
-		C14718971E450E6E002BFA77 /* TabPage1.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage1.layout; sourceTree = "<group>"; };
-		C14718981E450E6E002BFA77 /* TabPage2.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage2.layout; sourceTree = "<group>"; };
-		C14718991E450E6E002BFA77 /* TaharezLookOverview.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLookOverview.layout; sourceTree = "<group>"; };
-		C147189A1E450E6E002BFA77 /* TextDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TextDemo.layout; sourceTree = "<group>"; };
-		C147189B1E450E6E002BFA77 /* TreeDemoTaharez.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TreeDemoTaharez.layout; sourceTree = "<group>"; };
-		C147189C1E450E6E002BFA77 /* VanillaConsole.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaConsole.layout; sourceTree = "<group>"; };
-		C147189D1E450E6E002BFA77 /* VanillaLookOverview.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaLookOverview.layout; sourceTree = "<group>"; };
-		C147189E1E450E6E002BFA77 /* VanillaWindows.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaWindows.layout; sourceTree = "<group>"; };
-		C14718A01E450E6E002BFA77 /* AlfiskoSkin.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlfiskoSkin.looknfeel; sourceTree = "<group>"; };
-		C14718A11E450E6E002BFA77 /* GameMenu.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.looknfeel; sourceTree = "<group>"; };
-		C14718A21E450E6E002BFA77 /* Generic.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Generic.looknfeel; sourceTree = "<group>"; };
-		C14718A31E450E6E002BFA77 /* GWEN.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.looknfeel; sourceTree = "<group>"; };
-		C14718A41E450E6E002BFA77 /* HUDDemo.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemo.looknfeel; sourceTree = "<group>"; };
-		C14718A51E450E6E002BFA77 /* InventoryComponents.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InventoryComponents.looknfeel; sourceTree = "<group>"; };
-		C14718A61E450E6E002BFA77 /* OgreTray.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.looknfeel; sourceTree = "<group>"; };
-		C14718A71E450E6E002BFA77 /* SampleBrowser.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.looknfeel; sourceTree = "<group>"; };
-		C14718A81E450E6E002BFA77 /* TaharezLook.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLook.looknfeel; sourceTree = "<group>"; };
-		C14718A91E450E6E002BFA77 /* Vanilla.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Vanilla.looknfeel; sourceTree = "<group>"; };
-		C14718AA1E450E6E002BFA77 /* VanillaCommonDialogs.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaCommonDialogs.looknfeel; sourceTree = "<group>"; };
-		C14718AB1E450E6E002BFA77 /* WindowsLook.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.looknfeel; sourceTree = "<group>"; };
-		C14718AD1E450E6E002BFA77 /* demo8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo8.lua; sourceTree = "<group>"; };
-		C14718AE1E450E6E002BFA77 /* prueba.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = prueba.project; sourceTree = "<group>"; };
-		C14718B01E450E6E002BFA77 /* AlfiskoSkin.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlfiskoSkin.scheme; sourceTree = "<group>"; };
-		C14718B11E450E6E002BFA77 /* GameMenu.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.scheme; sourceTree = "<group>"; };
-		C14718B21E450E6E002BFA77 /* Generic.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Generic.scheme; sourceTree = "<group>"; };
-		C14718B31E450E6E002BFA77 /* GWEN.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.scheme; sourceTree = "<group>"; };
-		C14718B41E450E6E002BFA77 /* HUDDemo.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemo.scheme; sourceTree = "<group>"; };
-		C14718B51E450E6E002BFA77 /* OgreTray.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.scheme; sourceTree = "<group>"; };
-		C14718B61E450E6E002BFA77 /* SampleBrowser.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.scheme; sourceTree = "<group>"; };
-		C14718B71E450E6E002BFA77 /* TaharezLook.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLook.scheme; sourceTree = "<group>"; };
-		C14718B81E450E6E002BFA77 /* VanillaCommonDialogs.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaCommonDialogs.scheme; sourceTree = "<group>"; };
-		C14718B91E450E6E002BFA77 /* VanillaSkin.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaSkin.scheme; sourceTree = "<group>"; };
-		C14718BA1E450E6E002BFA77 /* WindowsLook.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.scheme; sourceTree = "<group>"; };
-		C14718BC1E450E6E002BFA77 /* Animation.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Animation.xsd; sourceTree = "<group>"; };
-		C14718BD1E450E6E002BFA77 /* CEGUIConfig.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CEGUIConfig.xsd; sourceTree = "<group>"; };
-		C14718BE1E450E6E002BFA77 /* Falagard.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Falagard.xsd; sourceTree = "<group>"; };
-		C14718BF1E450E6E002BFA77 /* Font.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Font.xsd; sourceTree = "<group>"; };
-		C14718C01E450E6E002BFA77 /* GUILayout.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUILayout.xsd; sourceTree = "<group>"; };
-		C14718C11E450E6E002BFA77 /* GUIScheme.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUIScheme.xsd; sourceTree = "<group>"; };
-		C14718C21E450E6E002BFA77 /* Imageset.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Imageset.xsd; sourceTree = "<group>"; };
-		C14718C31E450E6E002BFA77 /* Samples.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Samples.xsd; sourceTree = "<group>"; };
+		C14B6DE41E4654E100FBA756 /* example.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.anims; sourceTree = "<group>"; };
+		C14B6DE51E4654E100FBA756 /* GameMenu.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.anims; sourceTree = "<group>"; };
+		C14B6DE71E4654E100FBA756 /* Batang-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Batang-18.font"; sourceTree = "<group>"; };
+		C14B6DE81E4654E100FBA756 /* batang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = batang.ttf; sourceTree = "<group>"; };
+		C14B6DE91E4654E100FBA756 /* DejaVuSans-10-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-10-NoScale.font"; sourceTree = "<group>"; };
+		C14B6DEA1E4654E100FBA756 /* DejaVuSans-10.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-10.font"; sourceTree = "<group>"; };
+		C14B6DEB1E4654E100FBA756 /* DejaVuSans-12-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-12-NoScale.font"; sourceTree = "<group>"; };
+		C14B6DEC1E4654E100FBA756 /* DejaVuSans-12.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-12.font"; sourceTree = "<group>"; };
+		C14B6DED1E4654E100FBA756 /* DejaVuSans-14-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-14-NoScale.font"; sourceTree = "<group>"; };
+		C14B6DEE1E4654E100FBA756 /* DejaVuSans-14.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-14.font"; sourceTree = "<group>"; };
+		C14B6DEF1E4654E100FBA756 /* DejaVuSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSans.ttf; sourceTree = "<group>"; };
+		C14B6DF01E4654E100FBA756 /* DejaVuSerif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSerif.ttf; sourceTree = "<group>"; };
+		C14B6DF11E4654E100FBA756 /* FairChar-30.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "FairChar-30.font"; sourceTree = "<group>"; };
+		C14B6DF21E4654E100FBA756 /* FetteClassicUNZFraktur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FetteClassicUNZFraktur.ttf; sourceTree = "<group>"; };
+		C14B6DF31E4654E100FBA756 /* Futhark Adapted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futhark Adapted.ttf"; sourceTree = "<group>"; };
+		C14B6DF41E4654E100FBA756 /* GreatVibes-16.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GreatVibes-16.font"; sourceTree = "<group>"; };
+		C14B6DF51E4654E100FBA756 /* GreatVibes-22.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GreatVibes-22.font"; sourceTree = "<group>"; };
+		C14B6DF61E4654E100FBA756 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
+		C14B6DF71E4654E100FBA756 /* IMFePIrm29P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMFePIrm29P.ttf; sourceTree = "<group>"; };
+		C14B6DF81E4654E100FBA756 /* Junicode-13.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Junicode-13.font"; sourceTree = "<group>"; };
+		C14B6DF91E4654E100FBA756 /* Junicode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Junicode.ttf; sourceTree = "<group>"; };
+		C14B6DFA1E4654E100FBA756 /* Jura-10.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-10.font"; sourceTree = "<group>"; };
+		C14B6DFB1E4654E100FBA756 /* Jura-13.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-13.font"; sourceTree = "<group>"; };
+		C14B6DFC1E4654E100FBA756 /* Jura-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-18.font"; sourceTree = "<group>"; };
+		C14B6DFD1E4654E100FBA756 /* Jura-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-DemiBold.ttf"; sourceTree = "<group>"; };
+		C14B6DFE1E4654E100FBA756 /* Jura-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Light.ttf"; sourceTree = "<group>"; };
+		C14B6DFF1E4654E100FBA756 /* Jura-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Medium.ttf"; sourceTree = "<group>"; };
+		C14B6E001E4654E100FBA756 /* Jura-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Regular.ttf"; sourceTree = "<group>"; };
+		C14B6E011E4654E100FBA756 /* Klingon-pIqaD-HaSta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Klingon-pIqaD-HaSta.ttf"; sourceTree = "<group>"; };
+		C14B6E021E4654E100FBA756 /* Legal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Legal.txt; sourceTree = "<group>"; };
+		C14B6E031E4654E100FBA756 /* LicenseApache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseApache.txt; sourceTree = "<group>"; };
+		C14B6E041E4654E100FBA756 /* LicenseDejaVu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseDejaVu.txt; sourceTree = "<group>"; };
+		C14B6E051E4654E100FBA756 /* LicenseGPL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseGPL.txt; sourceTree = "<group>"; };
+		C14B6E061E4654E100FBA756 /* LicenseMIT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseMIT.txt; sourceTree = "<group>"; };
+		C14B6E071E4654E100FBA756 /* LicenseSIL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseSIL.txt; sourceTree = "<group>"; };
+		C14B6E081E4654E100FBA756 /* LicenseUbuntuFont.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseUbuntuFont.txt; sourceTree = "<group>"; };
+		C14B6E091E4654E100FBA756 /* mizufalp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mizufalp.ttf; sourceTree = "<group>"; };
+		C14B6E0A1E4654E100FBA756 /* OpenSans-8.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "OpenSans-8.font"; sourceTree = "<group>"; };
+		C14B6E0B1E4654E100FBA756 /* OpenSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSans.ttf; sourceTree = "<group>"; };
+		C14B6E0C1E4654E100FBA756 /* RichStyle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RichStyle.ttf; sourceTree = "<group>"; };
+		C14B6E0D1E4654E100FBA756 /* Tnua-Libre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tnua-Libre.ttf"; sourceTree = "<group>"; };
+		C14B6E0F1E4654E100FBA756 /* AlfiskoSkin.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlfiskoSkin.imageset; sourceTree = "<group>"; };
+		C14B6E101E4654E100FBA756 /* AlfiskoSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlfiskoSkin.png; sourceTree = "<group>"; };
+		C14B6E111E4654E100FBA756 /* AlfiskoSkin.png.OLD */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlfiskoSkin.png.OLD; sourceTree = "<group>"; };
+		C14B6E121E4654E100FBA756 /* Aliasing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aliasing.jpg; sourceTree = "<group>"; };
+		C14B6E131E4654E100FBA756 /* BackgroundSampleBrowser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackgroundSampleBrowser.jpg; sourceTree = "<group>"; };
+		C14B6E141E4654E100FBA756 /* DriveIcons.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DriveIcons.imageset; sourceTree = "<group>"; };
+		C14B6E151E4654E100FBA756 /* DriveIcons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DriveIcons.png; sourceTree = "<group>"; };
+		C14B6E161E4654E100FBA756 /* FairChar.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FairChar.imageset; sourceTree = "<group>"; };
+		C14B6E171E4654E100FBA756 /* FairChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairChar.png; sourceTree = "<group>"; };
+		C14B6E181E4654E100FBA756 /* GameMenu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.imageset; sourceTree = "<group>"; };
+		C14B6E191E4654E100FBA756 /* GameMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameMenu.png; sourceTree = "<group>"; };
+		C14B6E1A1E4654E100FBA756 /* GWEN.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.imageset; sourceTree = "<group>"; };
+		C14B6E1B1E4654E100FBA756 /* GWENDefaultSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GWENDefaultSkin.png; sourceTree = "<group>"; };
+		C14B6E1C1E4654E100FBA756 /* HUDDemo.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HUDDemo.imageset; sourceTree = "<group>"; };
+		C14B6E1D1E4654E100FBA756 /* HUDDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemo.png; sourceTree = "<group>"; };
+		C14B6E1E1E4654E100FBA756 /* HUDDemoGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemoGameOver.png; sourceTree = "<group>"; };
+		C14B6E1F1E4654E100FBA756 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		C14B6E201E4654E100FBA756 /* OgreTray.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OgreTray.imageset; sourceTree = "<group>"; };
+		C14B6E211E4654E100FBA756 /* OgreTrayImages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OgreTrayImages.png; sourceTree = "<group>"; };
+		C14B6E221E4654E100FBA756 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		C14B6E231E4654E100FBA756 /* SampleBrowser.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleBrowser.imageset; sourceTree = "<group>"; };
+		C14B6E241E4654E100FBA756 /* SampleBrowser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleBrowser.png; sourceTree = "<group>"; };
+		C14B6E251E4654E100FBA756 /* SpaceBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpaceBackground.jpg; sourceTree = "<group>"; };
+		C14B6E261E4654E100FBA756 /* TaharezLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaharezLook.imageset; sourceTree = "<group>"; };
+		C14B6E271E4654E100FBA756 /* TaharezLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TaharezLook.png; sourceTree = "<group>"; };
+		C14B6E281E4654E100FBA756 /* Vanilla.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vanilla.imageset; sourceTree = "<group>"; };
+		C14B6E291E4654E100FBA756 /* vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanilla.png; sourceTree = "<group>"; };
+		C14B6E2A1E4654E100FBA756 /* WindowsLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.imageset; sourceTree = "<group>"; };
+		C14B6E2B1E4654E100FBA756 /* WindowsLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WindowsLook.png; sourceTree = "<group>"; };
+		C14B6E2D1E4654E100FBA756 /* application_templates.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = application_templates.layout; sourceTree = "<group>"; };
+		C14B6E2E1E4654E100FBA756 /* Console.wnd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Console.wnd; sourceTree = "<group>"; };
+		C14B6E2F1E4654E100FBA756 /* Demo8.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Demo8.layout; sourceTree = "<group>"; };
+		C14B6E301E4654E100FBA756 /* DragDropDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DragDropDemo.layout; sourceTree = "<group>"; };
+		C14B6E311E4654E100FBA756 /* EffectsDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EffectsDemo.layout; sourceTree = "<group>"; };
+		C14B6E321E4654E100FBA756 /* FontDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FontDemo.layout; sourceTree = "<group>"; };
+		C14B6E331E4654E100FBA756 /* GameMenu.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.layout; sourceTree = "<group>"; };
+		C14B6E341E4654E100FBA756 /* HUDDemoGameOver.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemoGameOver.layout; sourceTree = "<group>"; };
+		C14B6E351E4654E100FBA756 /* HUDDemoIngame.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemoIngame.layout; sourceTree = "<group>"; };
+		C14B6E361E4654E100FBA756 /* MenuPrincipal.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MenuPrincipal.layout; sourceTree = "<group>"; };
+		C14B6E371E4654E100FBA756 /* prueba.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = prueba.layout; sourceTree = "<group>"; };
+		C14B6E381E4654E100FBA756 /* SampleBrowser.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.layout; sourceTree = "<group>"; };
+		C14B6E391E4654E100FBA756 /* SampleBrowserLoadScreen.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowserLoadScreen.layout; sourceTree = "<group>"; };
+		C14B6E3A1E4654E100FBA756 /* SimpleDebug.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpleDebug.layout; sourceTree = "<group>"; };
+		C14B6E3B1E4654E100FBA756 /* TabControlDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabControlDemo.layout; sourceTree = "<group>"; };
+		C14B6E3C1E4654E100FBA756 /* TabPage.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage.layout; sourceTree = "<group>"; };
+		C14B6E3D1E4654E100FBA756 /* TabPage1.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage1.layout; sourceTree = "<group>"; };
+		C14B6E3E1E4654E100FBA756 /* TabPage2.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage2.layout; sourceTree = "<group>"; };
+		C14B6E3F1E4654E100FBA756 /* TaharezLookOverview.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLookOverview.layout; sourceTree = "<group>"; };
+		C14B6E401E4654E100FBA756 /* TextDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TextDemo.layout; sourceTree = "<group>"; };
+		C14B6E411E4654E100FBA756 /* TreeDemoTaharez.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TreeDemoTaharez.layout; sourceTree = "<group>"; };
+		C14B6E421E4654E100FBA756 /* VanillaConsole.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaConsole.layout; sourceTree = "<group>"; };
+		C14B6E431E4654E100FBA756 /* VanillaLookOverview.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaLookOverview.layout; sourceTree = "<group>"; };
+		C14B6E441E4654E100FBA756 /* VanillaWindows.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaWindows.layout; sourceTree = "<group>"; };
+		C14B6E461E4654E100FBA756 /* AlfiskoSkin.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlfiskoSkin.looknfeel; sourceTree = "<group>"; };
+		C14B6E471E4654E100FBA756 /* GameMenu.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.looknfeel; sourceTree = "<group>"; };
+		C14B6E481E4654E100FBA756 /* Generic.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Generic.looknfeel; sourceTree = "<group>"; };
+		C14B6E491E4654E100FBA756 /* GWEN.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.looknfeel; sourceTree = "<group>"; };
+		C14B6E4A1E4654E100FBA756 /* HUDDemo.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemo.looknfeel; sourceTree = "<group>"; };
+		C14B6E4B1E4654E100FBA756 /* InventoryComponents.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InventoryComponents.looknfeel; sourceTree = "<group>"; };
+		C14B6E4C1E4654E100FBA756 /* OgreTray.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.looknfeel; sourceTree = "<group>"; };
+		C14B6E4D1E4654E100FBA756 /* SampleBrowser.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.looknfeel; sourceTree = "<group>"; };
+		C14B6E4E1E4654E100FBA756 /* TaharezLook.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLook.looknfeel; sourceTree = "<group>"; };
+		C14B6E4F1E4654E100FBA756 /* Vanilla.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Vanilla.looknfeel; sourceTree = "<group>"; };
+		C14B6E501E4654E100FBA756 /* VanillaCommonDialogs.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaCommonDialogs.looknfeel; sourceTree = "<group>"; };
+		C14B6E511E4654E100FBA756 /* WindowsLook.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.looknfeel; sourceTree = "<group>"; };
+		C14B6E531E4654E100FBA756 /* demo8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo8.lua; sourceTree = "<group>"; };
+		C14B6E541E4654E100FBA756 /* Menu.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Menu.project; sourceTree = "<group>"; };
+		C14B6E551E4654E100FBA756 /* prueba.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = prueba.project; sourceTree = "<group>"; };
+		C14B6E571E4654E100FBA756 /* AlfiskoSkin.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlfiskoSkin.scheme; sourceTree = "<group>"; };
+		C14B6E581E4654E100FBA756 /* GameMenu.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.scheme; sourceTree = "<group>"; };
+		C14B6E591E4654E100FBA756 /* Generic.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Generic.scheme; sourceTree = "<group>"; };
+		C14B6E5A1E4654E100FBA756 /* GWEN.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.scheme; sourceTree = "<group>"; };
+		C14B6E5B1E4654E100FBA756 /* HUDDemo.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemo.scheme; sourceTree = "<group>"; };
+		C14B6E5C1E4654E100FBA756 /* OgreTray.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.scheme; sourceTree = "<group>"; };
+		C14B6E5D1E4654E100FBA756 /* SampleBrowser.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.scheme; sourceTree = "<group>"; };
+		C14B6E5E1E4654E100FBA756 /* TaharezLook.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLook.scheme; sourceTree = "<group>"; };
+		C14B6E5F1E4654E100FBA756 /* VanillaCommonDialogs.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaCommonDialogs.scheme; sourceTree = "<group>"; };
+		C14B6E601E4654E100FBA756 /* VanillaSkin.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaSkin.scheme; sourceTree = "<group>"; };
+		C14B6E611E4654E100FBA756 /* WindowsLook.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.scheme; sourceTree = "<group>"; };
+		C14B6E631E4654E100FBA756 /* Animation.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Animation.xsd; sourceTree = "<group>"; };
+		C14B6E641E4654E100FBA756 /* CEGUIConfig.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CEGUIConfig.xsd; sourceTree = "<group>"; };
+		C14B6E651E4654E100FBA756 /* Falagard.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Falagard.xsd; sourceTree = "<group>"; };
+		C14B6E661E4654E100FBA756 /* Font.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Font.xsd; sourceTree = "<group>"; };
+		C14B6E671E4654E100FBA756 /* GUILayout.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUILayout.xsd; sourceTree = "<group>"; };
+		C14B6E681E4654E100FBA756 /* GUIScheme.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUIScheme.xsd; sourceTree = "<group>"; };
+		C14B6E691E4654E100FBA756 /* Imageset.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Imageset.xsd; sourceTree = "<group>"; };
+		C14B6E6A1E4654E100FBA756 /* Samples.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Samples.xsd; sourceTree = "<group>"; };
 		C1A0ADD61E434BA9009699FD /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
 		C1A0ADD71E434BA9009699FD /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
 		C1A0ADD81E434BA9009699FD /* GUIManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIManager.cpp; sourceTree = "<group>"; };
@@ -588,199 +592,201 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C147183D1E450E6E002BFA77 /* GUI */ = {
+		C14B6DE21E4654E100FBA756 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				C147183E1E450E6E002BFA77 /* animations */,
-				C14718411E450E6E002BFA77 /* fonts */,
-				C14718691E450E6E002BFA77 /* imagesets */,
-				C14718871E450E6E002BFA77 /* layouts */,
-				C147189F1E450E6E002BFA77 /* looknfeel */,
-				C14718AC1E450E6E002BFA77 /* lua_scripts */,
-				C14718AE1E450E6E002BFA77 /* prueba.project */,
-				C14718AF1E450E6E002BFA77 /* schemes */,
-				C14718BB1E450E6E002BFA77 /* xml_schemas */,
+				C14B6DE31E4654E100FBA756 /* animations */,
+				C14B6DE61E4654E100FBA756 /* fonts */,
+				C14B6E0E1E4654E100FBA756 /* imagesets */,
+				C14B6E2C1E4654E100FBA756 /* layouts */,
+				C14B6E451E4654E100FBA756 /* looknfeel */,
+				C14B6E521E4654E100FBA756 /* lua_scripts */,
+				C14B6E541E4654E100FBA756 /* Menu.project */,
+				C14B6E551E4654E100FBA756 /* prueba.project */,
+				C14B6E561E4654E100FBA756 /* schemes */,
+				C14B6E621E4654E100FBA756 /* xml_schemas */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
 		};
-		C147183E1E450E6E002BFA77 /* animations */ = {
+		C14B6DE31E4654E100FBA756 /* animations */ = {
 			isa = PBXGroup;
 			children = (
-				C147183F1E450E6E002BFA77 /* example.anims */,
-				C14718401E450E6E002BFA77 /* GameMenu.anims */,
+				C14B6DE41E4654E100FBA756 /* example.anims */,
+				C14B6DE51E4654E100FBA756 /* GameMenu.anims */,
 			);
 			path = animations;
 			sourceTree = "<group>";
 		};
-		C14718411E450E6E002BFA77 /* fonts */ = {
+		C14B6DE61E4654E100FBA756 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C14718421E450E6E002BFA77 /* Batang-18.font */,
-				C14718431E450E6E002BFA77 /* batang.ttf */,
-				C14718441E450E6E002BFA77 /* DejaVuSans-10-NoScale.font */,
-				C14718451E450E6E002BFA77 /* DejaVuSans-10.font */,
-				C14718461E450E6E002BFA77 /* DejaVuSans-12-NoScale.font */,
-				C14718471E450E6E002BFA77 /* DejaVuSans-12.font */,
-				C14718481E450E6E002BFA77 /* DejaVuSans-14-NoScale.font */,
-				C14718491E450E6E002BFA77 /* DejaVuSans-14.font */,
-				C147184A1E450E6E002BFA77 /* DejaVuSans.ttf */,
-				C147184B1E450E6E002BFA77 /* DejaVuSerif.ttf */,
-				C147184C1E450E6E002BFA77 /* FairChar-30.font */,
-				C147184D1E450E6E002BFA77 /* FetteClassicUNZFraktur.ttf */,
-				C147184E1E450E6E002BFA77 /* Futhark Adapted.ttf */,
-				C147184F1E450E6E002BFA77 /* GreatVibes-16.font */,
-				C14718501E450E6E002BFA77 /* GreatVibes-22.font */,
-				C14718511E450E6E002BFA77 /* GreatVibes-Regular.ttf */,
-				C14718521E450E6E002BFA77 /* IMFePIrm29P.ttf */,
-				C14718531E450E6E002BFA77 /* Junicode-13.font */,
-				C14718541E450E6E002BFA77 /* Junicode.ttf */,
-				C14718551E450E6E002BFA77 /* Jura-10.font */,
-				C14718561E450E6E002BFA77 /* Jura-13.font */,
-				C14718571E450E6E002BFA77 /* Jura-18.font */,
-				C14718581E450E6E002BFA77 /* Jura-DemiBold.ttf */,
-				C14718591E450E6E002BFA77 /* Jura-Light.ttf */,
-				C147185A1E450E6E002BFA77 /* Jura-Medium.ttf */,
-				C147185B1E450E6E002BFA77 /* Jura-Regular.ttf */,
-				C147185C1E450E6E002BFA77 /* Klingon-pIqaD-HaSta.ttf */,
-				C147185D1E450E6E002BFA77 /* Legal.txt */,
-				C147185E1E450E6E002BFA77 /* LicenseApache.txt */,
-				C147185F1E450E6E002BFA77 /* LicenseDejaVu.txt */,
-				C14718601E450E6E002BFA77 /* LicenseGPL.txt */,
-				C14718611E450E6E002BFA77 /* LicenseMIT.txt */,
-				C14718621E450E6E002BFA77 /* LicenseSIL.txt */,
-				C14718631E450E6E002BFA77 /* LicenseUbuntuFont.txt */,
-				C14718641E450E6E002BFA77 /* mizufalp.ttf */,
-				C14718651E450E6E002BFA77 /* OpenSans-8.font */,
-				C14718661E450E6E002BFA77 /* OpenSans.ttf */,
-				C14718671E450E6E002BFA77 /* RichStyle.ttf */,
-				C14718681E450E6E002BFA77 /* Tnua-Libre.ttf */,
+				C14B6DE71E4654E100FBA756 /* Batang-18.font */,
+				C14B6DE81E4654E100FBA756 /* batang.ttf */,
+				C14B6DE91E4654E100FBA756 /* DejaVuSans-10-NoScale.font */,
+				C14B6DEA1E4654E100FBA756 /* DejaVuSans-10.font */,
+				C14B6DEB1E4654E100FBA756 /* DejaVuSans-12-NoScale.font */,
+				C14B6DEC1E4654E100FBA756 /* DejaVuSans-12.font */,
+				C14B6DED1E4654E100FBA756 /* DejaVuSans-14-NoScale.font */,
+				C14B6DEE1E4654E100FBA756 /* DejaVuSans-14.font */,
+				C14B6DEF1E4654E100FBA756 /* DejaVuSans.ttf */,
+				C14B6DF01E4654E100FBA756 /* DejaVuSerif.ttf */,
+				C14B6DF11E4654E100FBA756 /* FairChar-30.font */,
+				C14B6DF21E4654E100FBA756 /* FetteClassicUNZFraktur.ttf */,
+				C14B6DF31E4654E100FBA756 /* Futhark Adapted.ttf */,
+				C14B6DF41E4654E100FBA756 /* GreatVibes-16.font */,
+				C14B6DF51E4654E100FBA756 /* GreatVibes-22.font */,
+				C14B6DF61E4654E100FBA756 /* GreatVibes-Regular.ttf */,
+				C14B6DF71E4654E100FBA756 /* IMFePIrm29P.ttf */,
+				C14B6DF81E4654E100FBA756 /* Junicode-13.font */,
+				C14B6DF91E4654E100FBA756 /* Junicode.ttf */,
+				C14B6DFA1E4654E100FBA756 /* Jura-10.font */,
+				C14B6DFB1E4654E100FBA756 /* Jura-13.font */,
+				C14B6DFC1E4654E100FBA756 /* Jura-18.font */,
+				C14B6DFD1E4654E100FBA756 /* Jura-DemiBold.ttf */,
+				C14B6DFE1E4654E100FBA756 /* Jura-Light.ttf */,
+				C14B6DFF1E4654E100FBA756 /* Jura-Medium.ttf */,
+				C14B6E001E4654E100FBA756 /* Jura-Regular.ttf */,
+				C14B6E011E4654E100FBA756 /* Klingon-pIqaD-HaSta.ttf */,
+				C14B6E021E4654E100FBA756 /* Legal.txt */,
+				C14B6E031E4654E100FBA756 /* LicenseApache.txt */,
+				C14B6E041E4654E100FBA756 /* LicenseDejaVu.txt */,
+				C14B6E051E4654E100FBA756 /* LicenseGPL.txt */,
+				C14B6E061E4654E100FBA756 /* LicenseMIT.txt */,
+				C14B6E071E4654E100FBA756 /* LicenseSIL.txt */,
+				C14B6E081E4654E100FBA756 /* LicenseUbuntuFont.txt */,
+				C14B6E091E4654E100FBA756 /* mizufalp.ttf */,
+				C14B6E0A1E4654E100FBA756 /* OpenSans-8.font */,
+				C14B6E0B1E4654E100FBA756 /* OpenSans.ttf */,
+				C14B6E0C1E4654E100FBA756 /* RichStyle.ttf */,
+				C14B6E0D1E4654E100FBA756 /* Tnua-Libre.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		C14718691E450E6E002BFA77 /* imagesets */ = {
+		C14B6E0E1E4654E100FBA756 /* imagesets */ = {
 			isa = PBXGroup;
 			children = (
-				C147186A1E450E6E002BFA77 /* AlfiskoSkin.imageset */,
-				C147186B1E450E6E002BFA77 /* AlfiskoSkin.png */,
-				C147186C1E450E6E002BFA77 /* AlfiskoSkin.png.OLD */,
-				C147186D1E450E6E002BFA77 /* Aliasing.jpg */,
-				C147186E1E450E6E002BFA77 /* BackgroundSampleBrowser.jpg */,
-				C147186F1E450E6E002BFA77 /* DriveIcons.imageset */,
-				C14718701E450E6E002BFA77 /* DriveIcons.png */,
-				C14718711E450E6E002BFA77 /* FairChar.imageset */,
-				C14718721E450E6E002BFA77 /* FairChar.png */,
-				C14718731E450E6E002BFA77 /* GameMenu.imageset */,
-				C14718741E450E6E002BFA77 /* GameMenu.png */,
-				C14718751E450E6E002BFA77 /* GWEN.imageset */,
-				C14718761E450E6E002BFA77 /* GWENDefaultSkin.png */,
-				C14718771E450E6E002BFA77 /* HUDDemo.imageset */,
-				C14718781E450E6E002BFA77 /* HUDDemo.png */,
-				C14718791E450E6E002BFA77 /* HUDDemoGameOver.png */,
-				C147187A1E450E6E002BFA77 /* logo.png */,
-				C147187B1E450E6E002BFA77 /* OgreTray.imageset */,
-				C147187C1E450E6E002BFA77 /* OgreTrayImages.png */,
-				C147187D1E450E6E002BFA77 /* ReadMe.txt */,
-				C147187E1E450E6E002BFA77 /* SampleBrowser.imageset */,
-				C147187F1E450E6E002BFA77 /* SampleBrowser.png */,
-				C14718801E450E6E002BFA77 /* SpaceBackground.jpg */,
-				C14718811E450E6E002BFA77 /* TaharezLook.imageset */,
-				C14718821E450E6E002BFA77 /* TaharezLook.png */,
-				C14718831E450E6E002BFA77 /* Vanilla.imageset */,
-				C14718841E450E6E002BFA77 /* vanilla.png */,
-				C14718851E450E6E002BFA77 /* WindowsLook.imageset */,
-				C14718861E450E6E002BFA77 /* WindowsLook.png */,
+				C14B6E0F1E4654E100FBA756 /* AlfiskoSkin.imageset */,
+				C14B6E101E4654E100FBA756 /* AlfiskoSkin.png */,
+				C14B6E111E4654E100FBA756 /* AlfiskoSkin.png.OLD */,
+				C14B6E121E4654E100FBA756 /* Aliasing.jpg */,
+				C14B6E131E4654E100FBA756 /* BackgroundSampleBrowser.jpg */,
+				C14B6E141E4654E100FBA756 /* DriveIcons.imageset */,
+				C14B6E151E4654E100FBA756 /* DriveIcons.png */,
+				C14B6E161E4654E100FBA756 /* FairChar.imageset */,
+				C14B6E171E4654E100FBA756 /* FairChar.png */,
+				C14B6E181E4654E100FBA756 /* GameMenu.imageset */,
+				C14B6E191E4654E100FBA756 /* GameMenu.png */,
+				C14B6E1A1E4654E100FBA756 /* GWEN.imageset */,
+				C14B6E1B1E4654E100FBA756 /* GWENDefaultSkin.png */,
+				C14B6E1C1E4654E100FBA756 /* HUDDemo.imageset */,
+				C14B6E1D1E4654E100FBA756 /* HUDDemo.png */,
+				C14B6E1E1E4654E100FBA756 /* HUDDemoGameOver.png */,
+				C14B6E1F1E4654E100FBA756 /* logo.png */,
+				C14B6E201E4654E100FBA756 /* OgreTray.imageset */,
+				C14B6E211E4654E100FBA756 /* OgreTrayImages.png */,
+				C14B6E221E4654E100FBA756 /* ReadMe.txt */,
+				C14B6E231E4654E100FBA756 /* SampleBrowser.imageset */,
+				C14B6E241E4654E100FBA756 /* SampleBrowser.png */,
+				C14B6E251E4654E100FBA756 /* SpaceBackground.jpg */,
+				C14B6E261E4654E100FBA756 /* TaharezLook.imageset */,
+				C14B6E271E4654E100FBA756 /* TaharezLook.png */,
+				C14B6E281E4654E100FBA756 /* Vanilla.imageset */,
+				C14B6E291E4654E100FBA756 /* vanilla.png */,
+				C14B6E2A1E4654E100FBA756 /* WindowsLook.imageset */,
+				C14B6E2B1E4654E100FBA756 /* WindowsLook.png */,
 			);
 			path = imagesets;
 			sourceTree = "<group>";
 		};
-		C14718871E450E6E002BFA77 /* layouts */ = {
+		C14B6E2C1E4654E100FBA756 /* layouts */ = {
 			isa = PBXGroup;
 			children = (
-				C14718881E450E6E002BFA77 /* application_templates.layout */,
-				C14718891E450E6E002BFA77 /* Console.wnd */,
-				C147188A1E450E6E002BFA77 /* Demo8.layout */,
-				C147188B1E450E6E002BFA77 /* DragDropDemo.layout */,
-				C147188C1E450E6E002BFA77 /* EffectsDemo.layout */,
-				C147188D1E450E6E002BFA77 /* FontDemo.layout */,
-				C147188E1E450E6E002BFA77 /* GameMenu.layout */,
-				C147188F1E450E6E002BFA77 /* HUDDemoGameOver.layout */,
-				C14718901E450E6E002BFA77 /* HUDDemoIngame.layout */,
-				C14718911E450E6E002BFA77 /* prueba.layout */,
-				C14718921E450E6E002BFA77 /* SampleBrowser.layout */,
-				C14718931E450E6E002BFA77 /* SampleBrowserLoadScreen.layout */,
-				C14718941E450E6E002BFA77 /* SimpleDebug.layout */,
-				C14718951E450E6E002BFA77 /* TabControlDemo.layout */,
-				C14718961E450E6E002BFA77 /* TabPage.layout */,
-				C14718971E450E6E002BFA77 /* TabPage1.layout */,
-				C14718981E450E6E002BFA77 /* TabPage2.layout */,
-				C14718991E450E6E002BFA77 /* TaharezLookOverview.layout */,
-				C147189A1E450E6E002BFA77 /* TextDemo.layout */,
-				C147189B1E450E6E002BFA77 /* TreeDemoTaharez.layout */,
-				C147189C1E450E6E002BFA77 /* VanillaConsole.layout */,
-				C147189D1E450E6E002BFA77 /* VanillaLookOverview.layout */,
-				C147189E1E450E6E002BFA77 /* VanillaWindows.layout */,
+				C14B6E2D1E4654E100FBA756 /* application_templates.layout */,
+				C14B6E2E1E4654E100FBA756 /* Console.wnd */,
+				C14B6E2F1E4654E100FBA756 /* Demo8.layout */,
+				C14B6E301E4654E100FBA756 /* DragDropDemo.layout */,
+				C14B6E311E4654E100FBA756 /* EffectsDemo.layout */,
+				C14B6E321E4654E100FBA756 /* FontDemo.layout */,
+				C14B6E331E4654E100FBA756 /* GameMenu.layout */,
+				C14B6E341E4654E100FBA756 /* HUDDemoGameOver.layout */,
+				C14B6E351E4654E100FBA756 /* HUDDemoIngame.layout */,
+				C14B6E361E4654E100FBA756 /* MenuPrincipal.layout */,
+				C14B6E371E4654E100FBA756 /* prueba.layout */,
+				C14B6E381E4654E100FBA756 /* SampleBrowser.layout */,
+				C14B6E391E4654E100FBA756 /* SampleBrowserLoadScreen.layout */,
+				C14B6E3A1E4654E100FBA756 /* SimpleDebug.layout */,
+				C14B6E3B1E4654E100FBA756 /* TabControlDemo.layout */,
+				C14B6E3C1E4654E100FBA756 /* TabPage.layout */,
+				C14B6E3D1E4654E100FBA756 /* TabPage1.layout */,
+				C14B6E3E1E4654E100FBA756 /* TabPage2.layout */,
+				C14B6E3F1E4654E100FBA756 /* TaharezLookOverview.layout */,
+				C14B6E401E4654E100FBA756 /* TextDemo.layout */,
+				C14B6E411E4654E100FBA756 /* TreeDemoTaharez.layout */,
+				C14B6E421E4654E100FBA756 /* VanillaConsole.layout */,
+				C14B6E431E4654E100FBA756 /* VanillaLookOverview.layout */,
+				C14B6E441E4654E100FBA756 /* VanillaWindows.layout */,
 			);
 			path = layouts;
 			sourceTree = "<group>";
 		};
-		C147189F1E450E6E002BFA77 /* looknfeel */ = {
+		C14B6E451E4654E100FBA756 /* looknfeel */ = {
 			isa = PBXGroup;
 			children = (
-				C14718A01E450E6E002BFA77 /* AlfiskoSkin.looknfeel */,
-				C14718A11E450E6E002BFA77 /* GameMenu.looknfeel */,
-				C14718A21E450E6E002BFA77 /* Generic.looknfeel */,
-				C14718A31E450E6E002BFA77 /* GWEN.looknfeel */,
-				C14718A41E450E6E002BFA77 /* HUDDemo.looknfeel */,
-				C14718A51E450E6E002BFA77 /* InventoryComponents.looknfeel */,
-				C14718A61E450E6E002BFA77 /* OgreTray.looknfeel */,
-				C14718A71E450E6E002BFA77 /* SampleBrowser.looknfeel */,
-				C14718A81E450E6E002BFA77 /* TaharezLook.looknfeel */,
-				C14718A91E450E6E002BFA77 /* Vanilla.looknfeel */,
-				C14718AA1E450E6E002BFA77 /* VanillaCommonDialogs.looknfeel */,
-				C14718AB1E450E6E002BFA77 /* WindowsLook.looknfeel */,
+				C14B6E461E4654E100FBA756 /* AlfiskoSkin.looknfeel */,
+				C14B6E471E4654E100FBA756 /* GameMenu.looknfeel */,
+				C14B6E481E4654E100FBA756 /* Generic.looknfeel */,
+				C14B6E491E4654E100FBA756 /* GWEN.looknfeel */,
+				C14B6E4A1E4654E100FBA756 /* HUDDemo.looknfeel */,
+				C14B6E4B1E4654E100FBA756 /* InventoryComponents.looknfeel */,
+				C14B6E4C1E4654E100FBA756 /* OgreTray.looknfeel */,
+				C14B6E4D1E4654E100FBA756 /* SampleBrowser.looknfeel */,
+				C14B6E4E1E4654E100FBA756 /* TaharezLook.looknfeel */,
+				C14B6E4F1E4654E100FBA756 /* Vanilla.looknfeel */,
+				C14B6E501E4654E100FBA756 /* VanillaCommonDialogs.looknfeel */,
+				C14B6E511E4654E100FBA756 /* WindowsLook.looknfeel */,
 			);
 			path = looknfeel;
 			sourceTree = "<group>";
 		};
-		C14718AC1E450E6E002BFA77 /* lua_scripts */ = {
+		C14B6E521E4654E100FBA756 /* lua_scripts */ = {
 			isa = PBXGroup;
 			children = (
-				C14718AD1E450E6E002BFA77 /* demo8.lua */,
+				C14B6E531E4654E100FBA756 /* demo8.lua */,
 			);
 			path = lua_scripts;
 			sourceTree = "<group>";
 		};
-		C14718AF1E450E6E002BFA77 /* schemes */ = {
+		C14B6E561E4654E100FBA756 /* schemes */ = {
 			isa = PBXGroup;
 			children = (
-				C14718B01E450E6E002BFA77 /* AlfiskoSkin.scheme */,
-				C14718B11E450E6E002BFA77 /* GameMenu.scheme */,
-				C14718B21E450E6E002BFA77 /* Generic.scheme */,
-				C14718B31E450E6E002BFA77 /* GWEN.scheme */,
-				C14718B41E450E6E002BFA77 /* HUDDemo.scheme */,
-				C14718B51E450E6E002BFA77 /* OgreTray.scheme */,
-				C14718B61E450E6E002BFA77 /* SampleBrowser.scheme */,
-				C14718B71E450E6E002BFA77 /* TaharezLook.scheme */,
-				C14718B81E450E6E002BFA77 /* VanillaCommonDialogs.scheme */,
-				C14718B91E450E6E002BFA77 /* VanillaSkin.scheme */,
-				C14718BA1E450E6E002BFA77 /* WindowsLook.scheme */,
+				C14B6E571E4654E100FBA756 /* AlfiskoSkin.scheme */,
+				C14B6E581E4654E100FBA756 /* GameMenu.scheme */,
+				C14B6E591E4654E100FBA756 /* Generic.scheme */,
+				C14B6E5A1E4654E100FBA756 /* GWEN.scheme */,
+				C14B6E5B1E4654E100FBA756 /* HUDDemo.scheme */,
+				C14B6E5C1E4654E100FBA756 /* OgreTray.scheme */,
+				C14B6E5D1E4654E100FBA756 /* SampleBrowser.scheme */,
+				C14B6E5E1E4654E100FBA756 /* TaharezLook.scheme */,
+				C14B6E5F1E4654E100FBA756 /* VanillaCommonDialogs.scheme */,
+				C14B6E601E4654E100FBA756 /* VanillaSkin.scheme */,
+				C14B6E611E4654E100FBA756 /* WindowsLook.scheme */,
 			);
 			path = schemes;
 			sourceTree = "<group>";
 		};
-		C14718BB1E450E6E002BFA77 /* xml_schemas */ = {
+		C14B6E621E4654E100FBA756 /* xml_schemas */ = {
 			isa = PBXGroup;
 			children = (
-				C14718BC1E450E6E002BFA77 /* Animation.xsd */,
-				C14718BD1E450E6E002BFA77 /* CEGUIConfig.xsd */,
-				C14718BE1E450E6E002BFA77 /* Falagard.xsd */,
-				C14718BF1E450E6E002BFA77 /* Font.xsd */,
-				C14718C01E450E6E002BFA77 /* GUILayout.xsd */,
-				C14718C11E450E6E002BFA77 /* GUIScheme.xsd */,
-				C14718C21E450E6E002BFA77 /* Imageset.xsd */,
-				C14718C31E450E6E002BFA77 /* Samples.xsd */,
+				C14B6E631E4654E100FBA756 /* Animation.xsd */,
+				C14B6E641E4654E100FBA756 /* CEGUIConfig.xsd */,
+				C14B6E651E4654E100FBA756 /* Falagard.xsd */,
+				C14B6E661E4654E100FBA756 /* Font.xsd */,
+				C14B6E671E4654E100FBA756 /* GUILayout.xsd */,
+				C14B6E681E4654E100FBA756 /* GUIScheme.xsd */,
+				C14B6E691E4654E100FBA756 /* Imageset.xsd */,
+				C14B6E6A1E4654E100FBA756 /* Samples.xsd */,
 			);
 			path = xml_schemas;
 			sourceTree = "<group>";
@@ -813,7 +819,7 @@
 		E9026ED51E353CDE00B44AC3 /* 3d */ = {
 			isa = PBXGroup;
 			children = (
-				C147183D1E450E6E002BFA77 /* GUI */,
+				C14B6DE21E4654E100FBA756 /* GUI */,
 				E9026ED61E353CDE00B44AC3 /* alarmita.3ds */,
 				E9026ED71E353CDE00B44AC3 /* alarmita.blend */,
 				E9026ED81E353CDE00B44AC3 /* alarmita.jpg */,
@@ -1107,172 +1113,174 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9026F101E353CDE00B44AC3 /* texture.png in Resources */,
-				C147192D1E450E6F002BFA77 /* demo8.lua in Resources */,
-				C14718F61E450E6F002BFA77 /* GameMenu.imageset in Resources */,
-				C14718FD1E450E6F002BFA77 /* logo.png in Resources */,
-				C147191D1E450E6F002BFA77 /* TreeDemoTaharez.layout in Resources */,
-				C14719281E450E6F002BFA77 /* SampleBrowser.looknfeel in Resources */,
-				C14718D81E450E6F002BFA77 /* Junicode.ttf in Resources */,
+				C14B6E9D1E4654E100FBA756 /* GameMenu.imageset in Resources */,
+				C14B6EE31E4654E100FBA756 /* Animation.xsd in Resources */,
+				C14B6ED31E4654E100FBA756 /* VanillaCommonDialogs.looknfeel in Resources */,
+				C14B6EA41E4654E100FBA756 /* logo.png in Resources */,
+				C14B6E7F1E4654E100FBA756 /* Junicode.ttf in Resources */,
+				C14B6ECD1E4654E100FBA756 /* HUDDemo.looknfeel in Resources */,
 				E9026F051E353CDE00B44AC3 /* muro.blend in Resources */,
-				C14719221E450E6F002BFA77 /* GameMenu.looknfeel in Resources */,
 				E9026F0D1E353CDE00B44AC3 /* suelo.3ds in Resources */,
 				E9026F001E353CDE00B44AC3 /* fuente.3ds in Resources */,
-				C14719381E450E6F002BFA77 /* VanillaSkin.scheme in Resources */,
 				E9026EF71E353CDE00B44AC3 /* bala.3ds in Resources */,
 				E9026F0C1E353CDE00B44AC3 /* sphere.blend in Resources */,
-				C14718DE1E450E6F002BFA77 /* Jura-Medium.ttf in Resources */,
-				C14718C61E450E6E002BFA77 /* Batang-18.font in Resources */,
-				C14719331E450E6F002BFA77 /* HUDDemo.scheme in Resources */,
-				C147190C1E450E6F002BFA77 /* Demo8.layout in Resources */,
-				C14718FE1E450E6F002BFA77 /* OgreTray.imageset in Resources */,
-				C147191B1E450E6F002BFA77 /* TaharezLookOverview.layout in Resources */,
-				C14718F31E450E6F002BFA77 /* DriveIcons.png in Resources */,
-				C14718DB1E450E6F002BFA77 /* Jura-18.font in Resources */,
-				C14719121E450E6F002BFA77 /* HUDDemoIngame.layout in Resources */,
-				C14718CB1E450E6F002BFA77 /* DejaVuSans-12.font in Resources */,
-				C14718DC1E450E6F002BFA77 /* Jura-DemiBold.ttf in Resources */,
-				C14718E21E450E6F002BFA77 /* LicenseApache.txt in Resources */,
-				C14719191E450E6F002BFA77 /* TabPage1.layout in Resources */,
-				C147192B1E450E6F002BFA77 /* VanillaCommonDialogs.looknfeel in Resources */,
-				C14718FB1E450E6F002BFA77 /* HUDDemo.png in Resources */,
-				C14718D31E450E6F002BFA77 /* GreatVibes-16.font in Resources */,
+				C14B6E851E4654E100FBA756 /* Jura-Medium.ttf in Resources */,
+				C14B6E6D1E4654E100FBA756 /* Batang-18.font in Resources */,
+				C14B6EB31E4654E100FBA756 /* Demo8.layout in Resources */,
+				C14B6EA51E4654E100FBA756 /* OgreTray.imageset in Resources */,
+				C14B6ED81E4654E100FBA756 /* AlfiskoSkin.scheme in Resources */,
+				C14B6E9A1E4654E100FBA756 /* DriveIcons.png in Resources */,
+				C14B6E821E4654E100FBA756 /* Jura-18.font in Resources */,
+				C14B6EB91E4654E100FBA756 /* HUDDemoIngame.layout in Resources */,
+				C14B6E721E4654E100FBA756 /* DejaVuSans-12.font in Resources */,
+				C14B6E831E4654E100FBA756 /* Jura-DemiBold.ttf in Resources */,
+				C14B6E891E4654E100FBA756 /* LicenseApache.txt in Resources */,
+				C14B6EC71E4654E100FBA756 /* VanillaLookOverview.layout in Resources */,
+				C14B6EA21E4654E100FBA756 /* HUDDemo.png in Resources */,
+				C14B6E7A1E4654E100FBA756 /* GreatVibes-16.font in Resources */,
 				E9026F0A1E353CDE00B44AC3 /* rocas.jpg in Resources */,
-				C14718C91E450E6F002BFA77 /* DejaVuSans-10.font in Resources */,
-				C14719341E450E6F002BFA77 /* OgreTray.scheme in Resources */,
+				C14B6E701E4654E100FBA756 /* DejaVuSans-10.font in Resources */,
+				C14B6EC91E4654E100FBA756 /* AlfiskoSkin.looknfeel in Resources */,
 				E9026F011E353CDE00B44AC3 /* fuente.blend in Resources */,
-				C14718FC1E450E6F002BFA77 /* HUDDemoGameOver.png in Resources */,
-				C14718D41E450E6F002BFA77 /* GreatVibes-22.font in Resources */,
+				C14B6EE61E4654E100FBA756 /* Font.xsd in Resources */,
+				C14B6EA31E4654E100FBA756 /* HUDDemoGameOver.png in Resources */,
+				C14B6ECA1E4654E100FBA756 /* GameMenu.looknfeel in Resources */,
+				C14B6E7B1E4654E100FBA756 /* GreatVibes-22.font in Resources */,
 				E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */,
 				E9AC3ADE1DF0AD3600A91A97 /* mapa2c.tmx in Resources */,
 				E9026F041E353CDE00B44AC3 /* muro.3ds in Resources */,
-				C14718F41E450E6F002BFA77 /* FairChar.imageset in Resources */,
-				C14719001E450E6F002BFA77 /* ReadMe.txt in Resources */,
-				C14719071E450E6F002BFA77 /* vanilla.png in Resources */,
-				C147191A1E450E6F002BFA77 /* TabPage2.layout in Resources */,
-				C147190E1E450E6F002BFA77 /* EffectsDemo.layout in Resources */,
-				C14719041E450E6F002BFA77 /* TaharezLook.imageset in Resources */,
-				C14719081E450E6F002BFA77 /* WindowsLook.imageset in Resources */,
-				C14718DD1E450E6F002BFA77 /* Jura-Light.ttf in Resources */,
-				C14718F81E450E6F002BFA77 /* GWEN.imageset in Resources */,
-				C147192F1E450E6F002BFA77 /* AlfiskoSkin.scheme in Resources */,
+				C14B6ECE1E4654E100FBA756 /* InventoryComponents.looknfeel in Resources */,
+				C14B6E9B1E4654E100FBA756 /* FairChar.imageset in Resources */,
+				C14B6EA71E4654E100FBA756 /* ReadMe.txt in Resources */,
+				C14B6ECC1E4654E100FBA756 /* GWEN.looknfeel in Resources */,
+				C14B6EAE1E4654E100FBA756 /* vanilla.png in Resources */,
+				C14B6EC11E4654E100FBA756 /* TabPage1.layout in Resources */,
+				C14B6ED01E4654E100FBA756 /* SampleBrowser.looknfeel in Resources */,
+				C14B6EB51E4654E100FBA756 /* EffectsDemo.layout in Resources */,
+				C14B6EDF1E4654E100FBA756 /* TaharezLook.scheme in Resources */,
+				C14B6EAB1E4654E100FBA756 /* TaharezLook.imageset in Resources */,
+				C14B6EAF1E4654E100FBA756 /* WindowsLook.imageset in Resources */,
+				C14B6ED21E4654E100FBA756 /* Vanilla.looknfeel in Resources */,
+				C14B6EE21E4654E100FBA756 /* WindowsLook.scheme in Resources */,
+				C14B6E841E4654E100FBA756 /* Jura-Light.ttf in Resources */,
+				C14B6EC31E4654E100FBA756 /* TaharezLookOverview.layout in Resources */,
+				C14B6EBA1E4654E100FBA756 /* MenuPrincipal.layout in Resources */,
+				C14B6EBC1E4654E100FBA756 /* SampleBrowser.layout in Resources */,
+				C14B6E9F1E4654E100FBA756 /* GWEN.imageset in Resources */,
 				E9026EFC1E353CDE00B44AC3 /* colorverde.jpg in Resources */,
-				C14719211E450E6F002BFA77 /* AlfiskoSkin.looknfeel in Resources */,
-				C14719291E450E6F002BFA77 /* TaharezLook.looknfeel in Resources */,
-				C14719301E450E6F002BFA77 /* GameMenu.scheme in Resources */,
-				C14718D21E450E6F002BFA77 /* Futhark Adapted.ttf in Resources */,
-				C14718FF1E450E6F002BFA77 /* OgreTrayImages.png in Resources */,
-				C147191F1E450E6F002BFA77 /* VanillaLookOverview.layout in Resources */,
-				C14719141E450E6F002BFA77 /* SampleBrowser.layout in Resources */,
-				C14718EE1E450E6F002BFA77 /* AlfiskoSkin.png in Resources */,
-				C14719401E450E6F002BFA77 /* Imageset.xsd in Resources */,
-				C14719011E450E6F002BFA77 /* SampleBrowser.imageset in Resources */,
-				C14719091E450E6F002BFA77 /* WindowsLook.png in Resources */,
-				C14718CC1E450E6F002BFA77 /* DejaVuSans-14-NoScale.font in Resources */,
-				C14718EC1E450E6F002BFA77 /* Tnua-Libre.ttf in Resources */,
-				C14718DA1E450E6F002BFA77 /* Jura-13.font in Resources */,
-				C14718E41E450E6F002BFA77 /* LicenseGPL.txt in Resources */,
-				C14719271E450E6F002BFA77 /* OgreTray.looknfeel in Resources */,
-				C147190D1E450E6F002BFA77 /* DragDropDemo.layout in Resources */,
+				C14B6EE51E4654E100FBA756 /* Falagard.xsd in Resources */,
+				C14B6E791E4654E100FBA756 /* Futhark Adapted.ttf in Resources */,
+				C14B6EA61E4654E100FBA756 /* OgreTrayImages.png in Resources */,
+				C14B6EBE1E4654E100FBA756 /* SimpleDebug.layout in Resources */,
+				C14B6E951E4654E100FBA756 /* AlfiskoSkin.png in Resources */,
+				C14B6EBF1E4654E100FBA756 /* TabControlDemo.layout in Resources */,
+				C14B6EA81E4654E100FBA756 /* SampleBrowser.imageset in Resources */,
+				C14B6EB01E4654E100FBA756 /* WindowsLook.png in Resources */,
+				C14B6EEA1E4654E100FBA756 /* Samples.xsd in Resources */,
+				C14B6E731E4654E100FBA756 /* DejaVuSans-14-NoScale.font in Resources */,
+				C14B6ECB1E4654E100FBA756 /* Generic.looknfeel in Resources */,
+				C14B6E931E4654E100FBA756 /* Tnua-Libre.ttf in Resources */,
+				C14B6E811E4654E100FBA756 /* Jura-13.font in Resources */,
+				C14B6ED51E4654E100FBA756 /* demo8.lua in Resources */,
+				C14B6E8B1E4654E100FBA756 /* LicenseGPL.txt in Resources */,
+				C14B6EB41E4654E100FBA756 /* DragDropDemo.layout in Resources */,
 				E9026F0B1E353CDE00B44AC3 /* sphere.3ds in Resources */,
 				E9026F061E353CDE00B44AC3 /* muro.blend1 in Resources */,
-				C14719241E450E6F002BFA77 /* GWEN.looknfeel in Resources */,
-				C147193E1E450E6F002BFA77 /* GUILayout.xsd in Resources */,
-				C14718EF1E450E6F002BFA77 /* AlfiskoSkin.png.OLD in Resources */,
+				C14B6E961E4654E100FBA756 /* AlfiskoSkin.png.OLD in Resources */,
 				E9026F021E353CDE00B44AC3 /* gota.jpg in Resources */,
-				C14718F01E450E6F002BFA77 /* Aliasing.jpg in Resources */,
+				C14B6E971E4654E100FBA756 /* Aliasing.jpg in Resources */,
 				E9026F081E353CDE00B44AC3 /* pala.png in Resources */,
-				C14718E71E450E6F002BFA77 /* LicenseUbuntuFont.txt in Resources */,
-				C147192C1E450E6F002BFA77 /* WindowsLook.looknfeel in Resources */,
-				C14718E61E450E6F002BFA77 /* LicenseSIL.txt in Resources */,
-				C14719391E450E6F002BFA77 /* WindowsLook.scheme in Resources */,
-				C14718D61E450E6F002BFA77 /* IMFePIrm29P.ttf in Resources */,
-				C14719101E450E6F002BFA77 /* GameMenu.layout in Resources */,
-				C14718E91E450E6F002BFA77 /* OpenSans-8.font in Resources */,
-				C147193D1E450E6F002BFA77 /* Font.xsd in Resources */,
+				C14B6EC41E4654E100FBA756 /* TextDemo.layout in Resources */,
+				C14B6E8E1E4654E100FBA756 /* LicenseUbuntuFont.txt in Resources */,
+				C14B6E8D1E4654E100FBA756 /* LicenseSIL.txt in Resources */,
+				C14B6EE01E4654E100FBA756 /* VanillaCommonDialogs.scheme in Resources */,
+				C14B6E7D1E4654E100FBA756 /* IMFePIrm29P.ttf in Resources */,
+				C14B6EB71E4654E100FBA756 /* GameMenu.layout in Resources */,
+				C14B6EE81E4654E100FBA756 /* GUIScheme.xsd in Resources */,
+				C14B6E901E4654E100FBA756 /* OpenSans-8.font in Resources */,
 				E9026EF61E353CDE00B44AC3 /* alarmita.jpg in Resources */,
-				C14718D01E450E6F002BFA77 /* FairChar-30.font in Resources */,
-				C14718F91E450E6F002BFA77 /* GWENDefaultSkin.png in Resources */,
-				C14719411E450E6F002BFA77 /* Samples.xsd in Resources */,
-				C14719361E450E6F002BFA77 /* TaharezLook.scheme in Resources */,
-				C147193F1E450E6F002BFA77 /* GUIScheme.xsd in Resources */,
-				C14719251E450E6F002BFA77 /* HUDDemo.looknfeel in Resources */,
-				C14718EB1E450E6F002BFA77 /* RichStyle.ttf in Resources */,
+				C14B6EE71E4654E100FBA756 /* GUILayout.xsd in Resources */,
+				C14B6ED71E4654E100FBA756 /* prueba.project in Resources */,
+				C14B6E771E4654E100FBA756 /* FairChar-30.font in Resources */,
+				C14B6EA01E4654E100FBA756 /* GWENDefaultSkin.png in Resources */,
+				C14B6E921E4654E100FBA756 /* RichStyle.ttf in Resources */,
 				E9026EFF1E353CDE00B44AC3 /* enemy.jpg in Resources */,
-				C14718CF1E450E6F002BFA77 /* DejaVuSerif.ttf in Resources */,
-				C14718E11E450E6F002BFA77 /* Legal.txt in Resources */,
-				C14719111E450E6F002BFA77 /* HUDDemoGameOver.layout in Resources */,
-				C14718C81E450E6E002BFA77 /* DejaVuSans-10-NoScale.font in Resources */,
-				C14718FA1E450E6F002BFA77 /* HUDDemo.imageset in Resources */,
+				C14B6E761E4654E100FBA756 /* DejaVuSerif.ttf in Resources */,
+				C14B6E881E4654E100FBA756 /* Legal.txt in Resources */,
+				C14B6EB81E4654E100FBA756 /* HUDDemoGameOver.layout in Resources */,
+				C14B6E6F1E4654E100FBA756 /* DejaVuSans-10-NoScale.font in Resources */,
+				C14B6EC01E4654E100FBA756 /* TabPage.layout in Resources */,
+				C14B6EA11E4654E100FBA756 /* HUDDemo.imageset in Resources */,
+				C14B6EDC1E4654E100FBA756 /* HUDDemo.scheme in Resources */,
 				C1A0AEF11E434BBD009699FD /* piedra.jpg in Resources */,
 				C1A0AEED1E434BBD009699FD /* llave.jpg in Resources */,
-				C14718D51E450E6F002BFA77 /* GreatVibes-Regular.ttf in Resources */,
+				C14B6EC21E4654E100FBA756 /* TabPage2.layout in Resources */,
+				C14B6E7C1E4654E100FBA756 /* GreatVibes-Regular.ttf in Resources */,
 				C1A0AEF31E434BBD009699FD /* rojo.png in Resources */,
-				C14718C41E450E6E002BFA77 /* example.anims in Resources */,
+				C14B6E6B1E4654E100FBA756 /* example.anims in Resources */,
 				E9026F071E353CDE00B44AC3 /* pala.jpg in Resources */,
 				C1A0AE6E1E434BBD009699FD /* fuenten.jpg in Resources */,
 				E9026EFB1E353CDE00B44AC3 /* cesped.jpg in Resources */,
+				C14B6ED61E4654E100FBA756 /* Menu.project in Resources */,
+				C14B6EBB1E4654E100FBA756 /* prueba.layout in Resources */,
 				E9026EFA1E353CDE00B44AC3 /* botiquin.jpg in Resources */,
-				C14719161E450E6F002BFA77 /* SimpleDebug.layout in Resources */,
-				C14718D91E450E6F002BFA77 /* Jura-10.font in Resources */,
-				C14718D11E450E6F002BFA77 /* FetteClassicUNZFraktur.ttf in Resources */,
-				C14719051E450E6F002BFA77 /* TaharezLook.png in Resources */,
-				C14719171E450E6F002BFA77 /* TabControlDemo.layout in Resources */,
-				C14719061E450E6F002BFA77 /* Vanilla.imageset in Resources */,
-				C147193C1E450E6F002BFA77 /* Falagard.xsd in Resources */,
+				C14B6E801E4654E100FBA756 /* Jura-10.font in Resources */,
+				C14B6E781E4654E100FBA756 /* FetteClassicUNZFraktur.ttf in Resources */,
+				C14B6EAC1E4654E100FBA756 /* TaharezLook.png in Resources */,
+				C14B6EAD1E4654E100FBA756 /* Vanilla.imageset in Resources */,
 				C1A0AEEE1E434BBD009699FD /* moneda.jpg in Resources */,
-				C14718D71E450E6F002BFA77 /* Junicode-13.font in Resources */,
-				C14718C71E450E6E002BFA77 /* batang.ttf in Resources */,
+				C14B6EDE1E4654E100FBA756 /* SampleBrowser.scheme in Resources */,
+				C14B6E7E1E4654E100FBA756 /* Junicode-13.font in Resources */,
+				C14B6ED11E4654E100FBA756 /* TaharezLook.looknfeel in Resources */,
+				C14B6E6E1E4654E100FBA756 /* batang.ttf in Resources */,
 				E9026EFE1E353CDE00B44AC3 /* comida.blend in Resources */,
-				C14719351E450E6F002BFA77 /* SampleBrowser.scheme in Resources */,
+				C14B6EDA1E4654E100FBA756 /* Generic.scheme in Resources */,
 				E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */,
-				C14719201E450E6F002BFA77 /* VanillaWindows.layout in Resources */,
 				E9026EF91E353CDE00B44AC3 /* botiquin.blend in Resources */,
-				C14718F51E450E6F002BFA77 /* FairChar.png in Resources */,
-				C14719151E450E6F002BFA77 /* SampleBrowserLoadScreen.layout in Resources */,
+				C14B6E9C1E4654E100FBA756 /* FairChar.png in Resources */,
 				C1A0AEF01E434BBD009699FD /* negro.jpg in Resources */,
-				C14718ED1E450E6F002BFA77 /* AlfiskoSkin.imageset in Resources */,
+				C14B6E941E4654E100FBA756 /* AlfiskoSkin.imageset in Resources */,
 				E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */,
-				C14719371E450E6F002BFA77 /* VanillaCommonDialogs.scheme in Resources */,
-				C14719031E450E6F002BFA77 /* SpaceBackground.jpg in Resources */,
+				C14B6EE91E4654E100FBA756 /* Imageset.xsd in Resources */,
+				C14B6EC61E4654E100FBA756 /* VanillaConsole.layout in Resources */,
+				C14B6EAA1E4654E100FBA756 /* SpaceBackground.jpg in Resources */,
 				E9026F091E353CDE00B44AC3 /* pizza.jpg in Resources */,
-				C14718CA1E450E6F002BFA77 /* DejaVuSans-12-NoScale.font in Resources */,
+				C14B6E711E4654E100FBA756 /* DejaVuSans-12-NoScale.font in Resources */,
 				E9AC3ADD1DF0AD3600A91A97 /* mapa2.tmx in Resources */,
-				C14718EA1E450E6F002BFA77 /* OpenSans.ttf in Resources */,
-				C14718F21E450E6F002BFA77 /* DriveIcons.imageset in Resources */,
+				C14B6ECF1E4654E100FBA756 /* OgreTray.looknfeel in Resources */,
+				C14B6ED41E4654E100FBA756 /* WindowsLook.looknfeel in Resources */,
+				C14B6E911E4654E100FBA756 /* OpenSans.ttf in Resources */,
+				C14B6EDD1E4654E100FBA756 /* OgreTray.scheme in Resources */,
+				C14B6E991E4654E100FBA756 /* DriveIcons.imageset in Resources */,
 				880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */,
 				C1A0AEF21E434BBD009699FD /* puerta.jpg in Resources */,
-				C147192A1E450E6F002BFA77 /* Vanilla.looknfeel in Resources */,
 				E9026F031E353CDE00B44AC3 /* mapimg.png in Resources */,
-				C14718C51E450E6E002BFA77 /* GameMenu.anims in Resources */,
+				C14B6E6C1E4654E100FBA756 /* GameMenu.anims in Resources */,
 				E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */,
-				C147191E1E450E6F002BFA77 /* VanillaConsole.layout in Resources */,
-				C14718CD1E450E6F002BFA77 /* DejaVuSans-14.font in Resources */,
-				C147190B1E450E6F002BFA77 /* Console.wnd in Resources */,
-				C14718E81E450E6F002BFA77 /* mizufalp.ttf in Resources */,
-				C14718F71E450E6F002BFA77 /* GameMenu.png in Resources */,
-				C147193A1E450E6F002BFA77 /* Animation.xsd in Resources */,
-				C14719261E450E6F002BFA77 /* InventoryComponents.looknfeel in Resources */,
-				C14718E01E450E6F002BFA77 /* Klingon-pIqaD-HaSta.ttf in Resources */,
+				C14B6E741E4654E100FBA756 /* DejaVuSans-14.font in Resources */,
+				C14B6EB21E4654E100FBA756 /* Console.wnd in Resources */,
+				C14B6E8F1E4654E100FBA756 /* mizufalp.ttf in Resources */,
+				C14B6E9E1E4654E100FBA756 /* GameMenu.png in Resources */,
+				C14B6E871E4654E100FBA756 /* Klingon-pIqaD-HaSta.ttf in Resources */,
+				C14B6EC51E4654E100FBA756 /* TreeDemoTaharez.layout in Resources */,
+				C14B6ED91E4654E100FBA756 /* GameMenu.scheme in Resources */,
 				E9026EF81E353CDE00B44AC3 /* botiquin.3ds in Resources */,
-				C14718DF1E450E6F002BFA77 /* Jura-Regular.ttf in Resources */,
+				C14B6EE11E4654E100FBA756 /* VanillaSkin.scheme in Resources */,
+				C14B6E861E4654E100FBA756 /* Jura-Regular.ttf in Resources */,
 				E9026F0E1E353CDE00B44AC3 /* suelo.blend in Resources */,
-				C147190F1E450E6F002BFA77 /* FontDemo.layout in Resources */,
+				C14B6EB61E4654E100FBA756 /* FontDemo.layout in Resources */,
+				C14B6EC81E4654E100FBA756 /* VanillaWindows.layout in Resources */,
 				C1A0AEEF1E434BBD009699FD /* naranja.jpg in Resources */,
-				C14719021E450E6F002BFA77 /* SampleBrowser.png in Resources */,
-				C14719131E450E6F002BFA77 /* prueba.layout in Resources */,
-				C147192E1E450E6F002BFA77 /* prueba.project in Resources */,
-				C147193B1E450E6F002BFA77 /* CEGUIConfig.xsd in Resources */,
-				C14719231E450E6F002BFA77 /* Generic.looknfeel in Resources */,
-				C147190A1E450E6F002BFA77 /* application_templates.layout in Resources */,
-				C14718CE1E450E6F002BFA77 /* DejaVuSans.ttf in Resources */,
-				C14719311E450E6F002BFA77 /* Generic.scheme in Resources */,
-				C14718F11E450E6F002BFA77 /* BackgroundSampleBrowser.jpg in Resources */,
+				C14B6EDB1E4654E100FBA756 /* GWEN.scheme in Resources */,
+				C14B6EBD1E4654E100FBA756 /* SampleBrowserLoadScreen.layout in Resources */,
+				C14B6EA91E4654E100FBA756 /* SampleBrowser.png in Resources */,
+				C14B6EB11E4654E100FBA756 /* application_templates.layout in Resources */,
+				C14B6E751E4654E100FBA756 /* DejaVuSans.ttf in Resources */,
+				C14B6E981E4654E100FBA756 /* BackgroundSampleBrowser.jpg in Resources */,
 				E9026EFD1E353CDE00B44AC3 /* comida.3ds in Resources */,
-				C14718E51E450E6F002BFA77 /* LicenseMIT.txt in Resources */,
-				C14719181E450E6F002BFA77 /* TabPage.layout in Resources */,
-				C14718E31E450E6F002BFA77 /* LicenseDejaVu.txt in Resources */,
-				C147191C1E450E6F002BFA77 /* TextDemo.layout in Resources */,
-				C14719321E450E6F002BFA77 /* GWEN.scheme in Resources */,
+				C14B6E8C1E4654E100FBA756 /* LicenseMIT.txt in Resources */,
+				C14B6EE41E4654E100FBA756 /* CEGUIConfig.xsd in Resources */,
+				C14B6E8A1E4654E100FBA756 /* LicenseDejaVu.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

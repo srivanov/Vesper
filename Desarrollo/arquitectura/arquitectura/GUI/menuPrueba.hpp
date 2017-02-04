@@ -18,8 +18,16 @@ public:
     ~menuPrueba(){}
     void inicializar();
     void update();
+    void onClickStartGame(const CEGUI::EventArgs &e);
+    
 private:
-    CEGUI::DefaultWindow *label_prueba;
+//    CEGUI::DefaultWindow *label_prueba;
+    CEGUI::DefaultWindow *label_titulo;
+    CEGUI::PushButton *button_nueva;
+    CEGUI::PushButton *button_cargar;
+    CEGUI::PushButton *button_opciones;
+    CEGUI::PushButton *button_creditos;
+    CEGUI::PushButton *button_salir;
 };
 
 #endif /* menuPrueba_hpp */

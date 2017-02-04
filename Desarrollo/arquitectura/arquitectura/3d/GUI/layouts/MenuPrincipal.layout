@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="DefaultWindow" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/Image" name="background" >
+            <Property name="ID" value="1" />
+            <Property name="Area" value="{{0,0},{0,0},{0.9,128},{0.822222,128}}" />
+            <Property name="Image" value="OgreTrayImages/Shade" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="contenedor" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{-0.00234375,0},{0.06875,0},{0.142969,128},{0.320139,128}}" />
+            <Property name="Image" value="OgreTrayImages/TrayM" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="VerticalAlignment" value="Centre" />
+            <Property name="HorizontalAlignment" value="Centre" />
+            <Window type="OgreTray/Button" name="button_nueva" >
+                <Property name="ID" value="3" />
+                <Property name="Area" value="{{0.101947,0},{0.233871,0},{0.528698,96},{0.211217,32}}" />
+                <Property name="Text" value="Nueva partida" />
+            </Window>
+            <Window type="OgreTray/Button" name="button_cargar" >
+                <Property name="ID" value="4" />
+                <Property name="Area" value="{{0.101947,0},{0.37724,0},{0.528698,96},{0.354587,32}}" />
+                <Property name="Text" value="Cargar partida" />
+            </Window>
+            <Window type="OgreTray/Button" name="button_opciones" >
+                <Property name="ID" value="5" />
+                <Property name="Area" value="{{0.101947,0},{0.520609,0},{0.528698,96},{0.497956,32}}" />
+                <Property name="Text" value="Opciones" />
+            </Window>
+            <Window type="OgreTray/Button" name="button_creditos" >
+                <Property name="ID" value="6" />
+                <Property name="Area" value="{{0.101947,0},{0.663979,0},{0.528698,96},{0.641326,32}}" />
+                <Property name="Text" value="Creditos" />
+            </Window>
+            <Window type="OgreTray/Button" name="button_salir" >
+                <Property name="ID" value="7" />
+                <Property name="Area" value="{{0.101947,0},{0.807348,0},{0.528698,96},{0.784695,32}}" />
+                <Property name="Text" value="Salir" />
+            </Window>
+        </Window>
+        <Window type="OgreTray/Label" name="titulo" >
+            <Property name="ID" value="8" />
+            <Property name="Area" value="{{0,0},{0.0347222,0},{0.376563,128},{0.233333,32}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+    </Window>
+</GUILayout>
