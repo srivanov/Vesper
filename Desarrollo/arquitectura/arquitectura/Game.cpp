@@ -70,6 +70,7 @@ void Game::render(){
 //        iter++;
 //    }
     renderizador->dibujar();
+    menu.injectMousePosition(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
 }
 
 bool Game::isRunning(){
@@ -91,6 +92,7 @@ bala* Game::insertBala(float vel){
 }
 
 void Game::update(){
+    processEvents();
 //	nivelazo->update();
 //	entrada->update();
 //	jugador->update();
@@ -134,4 +136,12 @@ void Game::rotarConRaton(dvector3D posRaton){
 
 camara* Game::getCamara(){
     return cam;
+}
+
+void Game::processEvents() {
+    if(MyEventReceiver::Instance()->getLeftClick()) {
+        menu.injectLeftMouseButton();
+    } else if(!MyEventReceiver::Instance()->getLeftClick()) {
+        menu.injectLeftMouseButtonUp();
+    }
 }

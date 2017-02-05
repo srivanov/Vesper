@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "GUI.h"
+#include "../MyEventReceiver.hpp"
 
 class menuPrueba : public Motor::GUI {
 public:
@@ -28,6 +29,18 @@ private:
     CEGUI::PushButton *button_opciones;
     CEGUI::PushButton *button_creditos;
     CEGUI::PushButton *button_salir;
+    
+    CEGUI::DefaultWindow *label_ajustes;
+    CEGUI::PushButton *button_controles;
+    CEGUI::PushButton *button_sonido;
+    CEGUI::PushButton *button_pantalla;
+    
+    CEGUI::DefaultWindow *label_cargar;
+    CEGUI::PushButton *button_partida_01;
+    CEGUI::PushButton *button_partida_02;
+    CEGUI::PushButton *button_partida_03;
+    
+    CEGUI::PushButton *button_volver;
 };
 
 #endif /* menuPrueba_hpp */

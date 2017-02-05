@@ -18,6 +18,8 @@ public:
 	~MyEventReceiver();
 	dvector3D mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node);
 	bool getLeftClick();
+    
+    dvector2D getMousePosition();
 protected:
 	MyEventReceiver();
 private:

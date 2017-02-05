@@ -57,6 +57,8 @@ private:
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;
     menuPrueba menu;
+    
+    void processEvents();
 };
 
 #endif /* Game_hpp */
