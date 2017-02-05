@@ -20,6 +20,8 @@ public:
 	void Draw(Shader shader);
 	void imprimirDatos();
 	
+	void setTexture(std::string ruta);
+	
 private:
 	std::vector<Mesh> meshes;
 	std::string directorio;

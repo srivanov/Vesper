@@ -44,7 +44,6 @@
 		E94394681E09A81C0053DBE7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E954B0911E17DC4F00F1BEB6 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
 		E954B0921E17F7EC00F1BEB6 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = libs/libSOIL.a; sourceTree = "<group>"; };
-		E954B0941E17FFAD00F1BEB6 /* libIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIL.a; path = libs/libIL.a; sourceTree = "<group>"; };
 		E960F3EE1E1E6C4300A90C05 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		E960F3EF1E1E6C4300A90C05 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
@@ -123,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				E9B3EF891E1F21E90039E88A /* libzlibstatic.a */,
-				E954B0941E17FFAD00F1BEB6 /* libIL.a */,
 				E954B0921E17F7EC00F1BEB6 /* libSOIL.a */,
 				E907FC591E09F89F00C260C5 /* libassimp.a */,
 				E907FC5A1E09F89F00C260C5 /* libGLEW.a */,

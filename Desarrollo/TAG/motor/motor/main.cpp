@@ -141,171 +141,15 @@ int main(int argc, const char * argv[]) {
 	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
 	Modelo modelo("../Models/microwave.obj");
-	modelo.imprimirDatos();
-	
+//	modelo.imprimirDatos();
+	modelo.setTexture("../Textures/awesomeface.png");
 	Modelo modelo2("../Models/cube.obj");
-	modelo2.imprimirDatos();
+//	modelo2.imprimirDatos();
+//
+//	Modelo modelo3("../Models/nanosuit/nanosuit.obj");
+//	modelo3.imprimirDatos();
 	
-	Modelo modelo3("../Models/nanosuit/nanosuit.obj");
-	modelo3.imprimirDatos();
 	
-//	GLfloat vertices[] = {
-//		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-//		0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-//		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-//		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-//		
-//		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//		0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-//		0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-//		0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-//		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-//		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//		
-//		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//		-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//		
-//		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//		0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//		0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//		0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//		
-//		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//		0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-//		0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-//		0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-//		-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//		
-//		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-//		0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//		0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//		-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-//		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-//	};
-//	
-//	// para dibujar 10 cubos
-//	glm::vec3 cubePositions[] = {
-//		glm::vec3( 0.0f,  0.0f,  0.0f),
-//		glm::vec3( 2.0f,  5.0f, -15.0f),
-//		glm::vec3(-1.5f, -2.2f, -2.5f),
-//		glm::vec3(-3.8f, -2.0f, -12.3f),
-//		glm::vec3( 2.4f, -0.4f, -3.5f),
-//		glm::vec3(-1.7f,  3.0f, -7.5f),
-//		glm::vec3( 1.3f, -2.0f, -2.5f),
-//		glm::vec3( 1.5f,  2.0f, -2.5f),
-//		glm::vec3( 1.5f,  0.2f, -1.5f),
-//		glm::vec3(-1.3f,  1.0f, -1.5f)
-//	};
-//	
-//	GLuint indices[] = {  // Note that we start from 0!
-//		0, 1, 3,   // First Triangle
-//		1, 2, 3    // Second Triangle
-//	};
-	
-	//genera el vertex buffer
-//	GLuint VBO, VAO, EBO;
-//	//generamos el Vertex Array Object
-//	glGenVertexArrays(1, &VAO);
-//	glGenBuffers(1, &VBO);
-//	glGenBuffers(1, &EBO);
-//	//linkamos el VAO
-//	glBindVertexArray(VAO);
-//	
-//	//linkamos el buffer GL_ARRAY_BUFFER al puntero VBO
-//	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-//	
-//	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
-//	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-//	
-//	//linkamos el array de elementos al EBO
-//	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-//	
-//	//copiamos los indices en el array de elementos
-//	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-	
-//	/*
-//	* aqui le decimos a OpenGL como interpretar el buffer de vertices cuando tenga que dibujar
-//	* el primer parametro es el indice del vertice que queremos configurar
-//	* el segundo es el numero de ejes que contiene cada vertice, 1 2 3 o 4
-//	* el tercero especifica el tipo de dato que vamos a manejar
-//	* el cuarto indica si queremos normalizar los valores o no
-//	* el quinto especifica el tamaño de que tiene cada vertice en el buffer, ahora son 3 floats
-//	* el sexto es un puntero a la posicion que queremos empezar la figura, esto sirve para cuando tengamos mas de uno
-//	* en la otra funcion activamos los atributos de vertices ya que estan desactivados por defecto
-//	*/
-//	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);
-//	glEnableVertexAttribArray(0);
-//	
-////	// atributos del color
-////	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3* sizeof(GLfloat)));
-////	glEnableVertexAttribArray(1);
-//	
-//	// atributos de las texturas
-//	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
-//	glEnableVertexAttribArray(2);
-	
-//	//deslinkamos el buffer VBO
-//	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	
-//	//deslinkamos el VAO por seguridad
-//	glBindVertexArray(0);
-//	
-//	//cargamos la imagen desde el archivo
-//	int tex_width, tex_height;
-//	unsigned char* image = SOIL_load_image("../Textures/container.jpg", &tex_width, &tex_height, 0, SOIL_LOAD_RGB);
-//	
-//	//generamos la textura, se pueden crear varias a la vez cambiando el primer parametro de la funcion
-//	GLuint texture1;
-//	glGenTextures(1, &texture1);
-//	
-//	//linkamos la textura al objeto en el primer parametro
-//	glBindTexture(GL_TEXTURE_2D, texture1);
-//	
-//	// Set our texture parameters
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// Set texture wrapping to GL_REPEAT
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//	// Set texture filtering
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//	
-//	/*
-//	 * asignamos la imagen a la textura de OpenGL
-//	 * el primer argumento especifica a que textura queremos asignar la imagen
-//	 * el segundo indica el nivel de mipmap, se pone a 0 porque las generamos automaticamente en la siguiente linea
-//	 * el tercero indica el tipo en el que queremos almacenar la textura
-//	 * el quinto y sexto indica el ancho y alto de la imagen
-//	 * el siguiente siempre tiene que ser 0
-//	 * el septimo y octavo especifican el tipo y el formato de la imagen fuente cargada
-//	 * el ultimo es la imagen
-//	 */
-//	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tex_width, tex_height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-//	
-//	//hacemos que OpenGL genere el mipmap de la textura automaticamente
-//	glGenerateMipmap(GL_TEXTURE_2D);
-//	
-//	//liberamos la memoria de la imagen y deslinkamos el objeto de textura
-//	SOIL_free_image_data(image);
-//	glBindTexture(GL_TEXTURE_2D, 0);
-//	
-//	//segunda textura
-//	GLuint texture2;
-//	glGenTextures(1, &texture2);
-//	glBindTexture(GL_TEXTURE_2D, texture2);
-//	image = SOIL_load_image("../Textures/awesomeface.png", &tex_width, &tex_height, 0, SOIL_LOAD_RGB);
-//	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tex_width, tex_height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-//	glGenerateMipmap(GL_TEXTURE_2D);
-//	SOIL_free_image_data(image);
-//	glBindTexture(GL_TEXTURE_2D, 0);
 	
 	GLuint modelLoc, viewLoc, projectionLoc;
 	
@@ -415,12 +259,12 @@ int main(int argc, const char * argv[]) {
 		model2 = glm::scale(model2, glm::vec3(0.5f, 0.5f, 0.5f));
 		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model2));
 		modelo2.Draw(miShader);
-		
-		glm::mat4 model3;
-		model3 = glm::translate(model3, glm::vec3(-2.0f, -2.0f, 0.0f));
-		model3 = glm::scale(model3, glm::vec3(0.2f, 0.2f, 0.2f));
-		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model3));
-		modelo3.Draw(miShader);
+//
+//		glm::mat4 model3;
+//		model3 = glm::translate(model3, glm::vec3(-2.0f, -2.0f, 0.0f));
+//		model3 = glm::scale(model3, glm::vec3(0.2f, 0.2f, 0.2f));
+//		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model3));
+//		modelo3.Draw(miShader);
 		
 //		//linkamos el VAO
 //		glBindVertexArray(VAO);

@@ -194,5 +194,19 @@ void Modelo::imprimirDatos(){
 		std::cout << "Coordenadas de textura: False" << std::endl;
 }
 
+void Modelo::setTexture(std::string ruta){
+	std::string d = ruta.substr(0, ruta.find_last_of('/'));
+	const char* r = ruta.substr(ruta.find_last_of('/')+1, ruta.size()).c_str();
+	meshes.at(0).texturas.clear();
+	
+	std::vector<Texture> textures;
+	Texture texture;
+	texture.id = TextureFromFile(r, d);
+	texture.type = "texture_normal";
+	texture.path = ruta.c_str();
+	textures.push_back(texture);
+	meshes.at(0).texturas = textures;
+}
+
 
 
