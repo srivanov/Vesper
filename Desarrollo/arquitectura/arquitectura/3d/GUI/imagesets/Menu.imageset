@@ -1,0 +1,4 @@
+<Imageset autoScaled="vertical" imagefile="Menu.png" name="Menu" nativeHorzRes="800" nativeVertRes="600" version="2">
+    <Image height="265" name="fondo" width="470" xPos="0" yPos="0" />
+    <Image height="56" name="crema" width="51" xPos="473" yPos="2" />
+</Imageset>

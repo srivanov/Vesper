@@ -7,7 +7,7 @@
         <Window type="Generic/Image" name="background" >
             <Property name="ID" value="1" />
             <Property name="Area" value="{{0,0},{0,0},{0.9,128},{0.822222,128}}" />
-            <Property name="Image" value="OgreTrayImages/Shade" />
+            <Property name="Image" value="Menu/fondo" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="Generic/Image" name="contenedor" >

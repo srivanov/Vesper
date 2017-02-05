@@ -14,6 +14,7 @@ void menuPrueba::inicializar(){
     
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
+    loadScheme("Menu.scheme");
     loadLayout("MenuPrincipal.layout");
     
     setMouseCursor("OgreTrayImages/MouseArrow");
