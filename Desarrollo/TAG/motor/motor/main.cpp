@@ -142,7 +142,9 @@ int main(int argc, const char * argv[]) {
 	
 	Modelo modelo("../Models/microwave.obj");
 //	modelo.imprimirDatos();
-	modelo.setTexture("../Textures/awesomeface.png");
+//	modelo.setTexture("../Textures/awesomeface.png");
+//	modelo.setRotation(glm::vec3(0.0f, 0.0f, 0.0f));
+	modelo.setRotation(glm::vec3(90.0f, 90.0f, 0.0f));
 	Modelo modelo2("../Models/cube.obj");
 //	modelo2.imprimirDatos();
 //
@@ -248,10 +250,10 @@ int main(int argc, const char * argv[]) {
 		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		
-		glm::mat4 model;
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
-		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+//		glm::mat4 model;
+//		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
+//		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
+//		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		modelo.Draw(miShader);
 		
 		glm::mat4 model2;

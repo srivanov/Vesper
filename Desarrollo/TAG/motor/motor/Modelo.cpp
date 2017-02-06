@@ -6,15 +6,17 @@ Modelo::Modelo(GLchar* ruta){
 	loadModel(ruta);
 }
 
+Modelo::~Modelo(){
+	
+}
+
 void Modelo::Draw(Shader shader){
+	glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
 	std::vector<Mesh>::iterator it = meshes.begin();
 	while(it != meshes.end()){
 		it->Draw(shader);
 		it++;
 	}
-	
-//	for (GLuint i=0; i<this->meshes.size(); i++)
-//		this->meshes[i].Draw(shader);
 }
 
 void Modelo::loadModel(std::string ruta){
@@ -35,13 +37,10 @@ void Modelo::processNode(aiNode *node, const aiScene *scene){
 		//cojo de la escena entera los meshes del nodo
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
 		this->meshes.push_back(this->processMesh(mesh, scene));
-		
 	}
-	
 	for (GLuint i=0; i<node->mNumChildren; i++) {
 		this->processNode(node->mChildren[i], scene);
 	}
-	
 }
 
 Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
@@ -115,8 +114,7 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 
 std::vector<Texture> Modelo::loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName){
 	std::vector<Texture> textures;
-	for(GLuint i = 0; i < mat->GetTextureCount(type); i++)
-	{
+	for(GLuint i = 0; i < mat->GetTextureCount(type); i++){
 		aiString str;
 		mat->GetTexture(type, i, &str);
 		Texture texture;
@@ -208,5 +206,66 @@ void Modelo::setTexture(std::string ruta){
 	meshes.at(0).texturas = textures;
 }
 
+void Modelo::setPosition(glm::vec3 pos){
+	if(pos != position){
+		modelMatrix = glm::translate(modelMatrix, pos);
+		position = pos;
+	}
+}
+
+void Modelo::setRotation(glm::vec3 rot){
+	rot = rot - rotation;
+	if(rot.x != 0.0f || rot.y != 0.0f || rot.z != 0.0f){
+		
+		if (rot.z != 0)
+			modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+		
+		if (rot.y != 0)
+			modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+		
+		if (rot.x != 0)
+			modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
+		
+		rotation = rot;
+	}
+}
 
 
+/*
+ glm::vec3 aux(0.0f, 0.0f, 0.0f);
+	GLfloat r = 0.0f;
+	rot = rot - rotation;
+	if(rot.x != 0.0f || rot.y != 0.0f || rot.z != 0.0f){
+ if (rot.x != 0) {
+ aux.x = 1.0f;
+ r = rot.x;
+ }
+ 
+ if (rot.y != 0) {
+ if(r != 0.0f){
+ if(rot.y != r)
+ modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+ else
+ aux.y = 2.0f;
+ }else{
+ aux.y = 1.0f;
+ r = rot.y;
+ }
+ }
+ 
+ if (rot.z != 0) {
+ if(r != 0.0f){
+ if(rot.y != r)
+ modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+ else
+ aux.z = 2.0f;
+ }else{
+ aux.z = 1.0f;
+ r = rot.z;
+ }
+ 
+ }
+ modelMatrix = glm::rotate(modelMatrix, glm::radians(r), aux);
+ rotation = rot;
+	}
+ */
