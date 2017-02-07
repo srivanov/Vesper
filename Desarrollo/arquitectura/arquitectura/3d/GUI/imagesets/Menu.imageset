@@ -6,4 +6,5 @@
     <Image height="57" name="volver" width="54" xPos="955" yPos="0" />
     <Image height="264" name="fondo_ajustes" width="469" xPos="0" yPos="266" />
     <Image height="261" name="fondo_cargar" width="467" xPos="473" yPos="71" />
+    <Image height="50" name="boton_hover" width="116" xPos="821" yPos="0" />
 </Imageset>

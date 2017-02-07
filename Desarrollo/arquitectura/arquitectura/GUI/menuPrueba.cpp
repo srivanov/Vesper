@@ -24,6 +24,7 @@ void menuPrueba::inicializar(){
 //    label_titulo->setFont("GreatVibes-22.font");
     
     button_nueva = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(3));
+//    button_nueva->setText("Nueva partida");
     button_nueva->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&menuPrueba::onClickStartGame, this));
     
 //    loadLayout("Opciones.layout");

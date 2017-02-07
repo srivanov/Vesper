@@ -34,12 +34,13 @@
             </Window>
             <Window type="Generic/ImageButton" name="button_nueva" >
                 <Property name="ID" value="3" />
-                <Property name="Area" value="{{0,45},{0,57},{0,275},{0,92}}" />
+                <Property name="Area" value="{{0,9},{0,50},{0,239},{0,85}}" />
+                <Property name="HoverImage" value="Menu/boton_hover" />
                 <Property name="NormalImage" value="Menu/boton_normal" />
             </Window>
             <Window type="Generic/ImageButton" name="button_cargar" >
                 <Property name="ID" value="4" />
-                <Property name="Area" value="{{0,45},{0,110},{0,275},{0,145}}" />
+                <Property name="Area" value="{{0,9},{0,95},{0,239},{0,130}}" />
                 <Property name="NormalImage" value="Menu/boton_normal" />
             </Window>
         </Window>
