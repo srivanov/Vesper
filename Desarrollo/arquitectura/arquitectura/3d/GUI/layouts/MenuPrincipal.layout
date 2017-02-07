@@ -7,7 +7,7 @@
         <Window type="Generic/Image" name="background" >
             <Property name="ID" value="1" />
             <Property name="Area" value="{{0,0},{0,0},{0.9,128},{0.822222,128}}" />
-            <Property name="Image" value="Menu/fondo" />
+            <Property name="Image" value="Menu/fondo_principal" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="Generic/Image" name="contenedor" >
@@ -17,11 +17,6 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="VerticalAlignment" value="Centre" />
             <Property name="HorizontalAlignment" value="Centre" />
-            <Window type="OgreTray/Button" name="button_cargar" >
-                <Property name="ID" value="4" />
-                <Property name="Area" value="{{0.101947,12},{0.37724,3},{0.528698,108},{0.354587,35}}" />
-                <Property name="Text" value="Cargar partida" />
-            </Window>
             <Window type="OgreTray/Button" name="button_opciones" >
                 <Property name="ID" value="5" />
                 <Property name="Area" value="{{0.101947,12},{0.520609,4},{0.528698,108},{0.497956,36}}" />
@@ -39,7 +34,12 @@
             </Window>
             <Window type="Generic/ImageButton" name="button_nueva" >
                 <Property name="ID" value="3" />
-                <Property name="Area" value="{{0,45},{0,60},{0,275},{0,95}}" />
+                <Property name="Area" value="{{0,45},{0,57},{0,275},{0,92}}" />
+                <Property name="NormalImage" value="Menu/boton_normal" />
+            </Window>
+            <Window type="Generic/ImageButton" name="button_cargar" >
+                <Property name="ID" value="4" />
+                <Property name="Area" value="{{0,45},{0,110},{0,275},{0,145}}" />
                 <Property name="NormalImage" value="Menu/boton_normal" />
             </Window>
         </Window>
