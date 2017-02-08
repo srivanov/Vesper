@@ -179,7 +179,7 @@ std::vector<int>* nivel::getMapa(){
 
 void nivel::dibujarMapa(){
 	static_cast<class render*>(findComponent("render"))->dibujarMapa();
-	static_cast<physics*>(findComponent("physics"))->crearObjetosEstaticos(*objetos_col);
+	static_cast<physics*>(findComponent("physics"))->crearObjetosEstaticos(*objetos_col, *cargador->get_posObjetos(), cargador->getTileWidth(), cargador->getTileHeight());
 }
 
 void nivel::update(){

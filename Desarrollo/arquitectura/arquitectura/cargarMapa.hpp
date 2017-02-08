@@ -25,6 +25,7 @@ public:
     void mostrarMatriz();
     std::vector<int>* getMatriz();
 	std::vector<dvector2D>* getObjetos();
+	std::vector<dvector2D>* get_posObjetos();
     
 private:
     
@@ -36,7 +37,7 @@ private:
     int *_level;
 	
 	std::vector<int> _tilemap;
-	std::vector<dvector2D> _objetos;
+	std::vector<dvector2D> _objetos, _pos_objetos;
    // int matrizMapa[][][];
     
     //sf::Vector2f pos_ini;

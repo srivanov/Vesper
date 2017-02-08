@@ -53,7 +53,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
-    menu.inicializar();
+//    menu.inicializar();
 }
 
 void Game::stop(){
@@ -113,7 +113,7 @@ void Game::update(){
 	
     Fps::Instance()->update();
 	mundoBox2D::Instance()->update();
-    GUIManager::i().updateAllGuis();
+//    GUIManager::i().updateAllGuis();
 }
 
 void Game::zoom(bool z){

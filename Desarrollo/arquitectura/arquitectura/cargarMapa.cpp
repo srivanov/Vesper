@@ -71,38 +71,42 @@ bool cargarMapa::leerMapa(char* fichero) {
     //LEER CAPA DE OBJETOS
     XMLElement* objectGroup = map->FirstChildElement("objectgroup");
     XMLElement* object = objectGroup->FirstChildElement("object");
-//    for (tinyxml2::XMLElement* child = element->FirstChildElement("objectgroup"); child != NULL; child = child->NextSiblingElement("objectgroup"))
 	
-	dvector2D separador(INT_MAX, INT_MAX);
-    while (object != NULL) {
-        XMLElement* polylinea = object->FirstChildElement("polyline");
-        while (polylinea != NULL) {
-//            polylinea->QueryFloatAttribute("points", valor);
-//            std::cout << polylinea->ToElement()->Attribute("points") << std::endl;
-			
-			char *puntosLinea = strdup(polylinea->ToElement()->Attribute("points"));
-			
-			char* punto = strtok(puntosLinea, " ");
-			
-			while (punto)
-			{
-				dvector2D point;
-				sscanf(punto, "%f,%f", &point.x, &point.y);
+	for (tinyxml2::XMLElement* child = map->FirstChildElement("objectgroup"); child != NULL; child = child->NextSiblingElement("objectgroup")){
+	
+		dvector2D separador(INT_MAX, INT_MAX);
+		while (object != NULL){
+			dvector2D a(atoi(object->ToElement()->Attribute("x"))/_tileWidth, atoi(object->ToElement()->Attribute("y"))/_tileHeight);
+			_pos_objetos.push_back(a);
+			XMLElement* polylinea = object->FirstChildElement("polyline");
+			while (polylinea != NULL) {
+	//            polylinea->QueryFloatAttribute("points", valor);
+	//            std::cout << polylinea->ToElement()->Attribute("points") << std::endl;
 				
-				_objetos.push_back(point);
+				char *puntosLinea = strdup(polylinea->ToElement()->Attribute("points"));
 				
-				punto = strtok(0, " ");
+				char* punto = strtok(puntosLinea, " ");
+				
+				while (punto){
+					dvector2D point;
+					sscanf(punto, "%f,%f", &point.x, &point.y);
+					
+					_objetos.push_back(point);
+					
+					punto = strtok(0, " ");
+				}
+				free(puntosLinea);
+				
+				polylinea = polylinea->NextSiblingElement();
+				_objetos.push_back(separador);
+				
+				
 			}
+			object = object->NextSiblingElement();
 			
-			free(puntosLinea);
-			
-            polylinea = polylinea->NextSiblingElement();
-			_objetos.push_back(separador);
-			
-        }
-        object = object->NextSiblingElement();
-    }
-	
+		}
+	}
+//	_objetos.back() = dvector2D(INT_MIN, INT_MIN);
 	return true;
 }
 
@@ -138,6 +142,10 @@ std::vector<int>* cargarMapa::getMatriz(){
 
 std::vector<dvector2D>* cargarMapa::getObjetos(){
 	return &_objetos;
+}
+
+std::vector<dvector2D>* cargarMapa::get_posObjetos(){
+	return &_pos_objetos;
 }
 
 int cargarMapa::getTileWidth(){

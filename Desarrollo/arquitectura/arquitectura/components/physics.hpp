@@ -15,7 +15,7 @@ public:
     ~physics();
     void crearBodyDinamico(dvector3D &dimension, dvector3D &posicion);
 	void crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion);
-	void crearObjetosEstaticos(std::vector<dvector2D> &v);
+	void crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvector2D> &p, int ancho, int alto);
 	void update();
 	
 	void setPosition(dvector3D &pos);

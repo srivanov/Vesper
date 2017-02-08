@@ -58,8 +58,8 @@ void enemigos::update(){
 	// CODIGO GUARRO
 	if(k%30==0){
 		hambre++;
-		std::cout << hambre << std::endl;
-		std::cout << getPosicion()->x << "|" << getPosicion()->y << std::endl;
+//		std::cout << hambre << std::endl;
+//		std::cout << getPosicion()->x << "|" << getPosicion()->y << std::endl;
 		k = 0;
 	}
 	k++;

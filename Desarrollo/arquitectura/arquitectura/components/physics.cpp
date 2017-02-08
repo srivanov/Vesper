@@ -37,7 +37,7 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
     //fixture definition
     b2FixtureDef myFixtureDef;
     myFixtureDef.shape = &circleShape;
-    myFixtureDef.density = 1;
+    myFixtureDef.density = 1.0f;
 	
     //create dynamic body
     myBodyDef.position.Set(posicion.x, posicion.y);
@@ -49,6 +49,10 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
 	this->rotacion = 0;
 	vel.x = 0;
 	vel.y = 0;
+	
+	if(*getFather()->getType() == tPLAYER){
+		
+	}
 }
 
 void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion){
@@ -68,33 +72,77 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 	this->rotacion = rotacion;
 	vel.x = 0;
 	vel.y = 0;
+	
+//	b2PolygonShape polygonShape2;
+//	//add semicircle radar sensor to tower
+//	float radius = 3;
+//	b2Vec2 vertices[3];
+//	vertices[0].Set(0,0);
+//	for (int i = 0; i < 2; i++) {
+//		float angle = i / 2.0 * 90 * DEGTORAD;
+//		vertices[i+1].Set( radius * cosf(angle), radius * sinf(angle) );
+//	}
+//	polygonShape2.Set(vertices, 3);
+//	myFixtureDef.shape = &polygonShape2;
+//	myFixtureDef.isSensor = true;
+//	myFixtureDef.density = 0.0f;
+//	body->CreateFixture(&myFixtureDef);
 }
 
-void physics::crearObjetosEstaticos(std::vector<dvector2D> &v){
-//	b2PolygonShape poligono, p2;
-//	p2.SetAsBox(3, 3);
-//	b2FixtureDef myFixtureDef;
-//	b2BodyDef myBody;
-//	b2Body* body_aux;
-//	std::vector<dvector2D>::iterator iter_sep, it = v.begin();
-//	
-//	iter_sep = std::find(v.begin(), v.end(), INT_MAX);
-//	
-//	int i=0;
-//	if(iter_sep != v.end()){
-//		
-//		while (it != iter_sep) {
-//			poligono.m_vertices[i].Set(it->x, it->y);
+void physics::crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvector2D> &p, int ancho, int alto){
+	b2FixtureDef myFixtureDef;
+	b2BodyDef myBody;
+	b2Body* body_aux;
+	
+	std::vector<dvector2D>::iterator it = v.begin(), itp = p.begin();
+	std::vector<int> longitud;
+	b2Vec2 *vertices;
+	
+	int i=0;
+	while(it != v.end()){
+		if((*it) == INT_MAX){
+			longitud.push_back(i);
+			i=0;
+			it++;
+		}else{
+			it++; i++;
+		}
+	}
+	
+	it = v.begin();
+	for (auto j=longitud.begin(); j != longitud.end(); j++) {
+		i=0;
+		vertices = new b2Vec2[(*j)];
+		while (i < (*j)) {
+			vertices[i].Set((*it).y/ancho, (*it).x/alto);
+			i++; it++;
+		}
+		b2ChainShape poligono;
+		poligono.CreateChain(vertices, (*j));
+		myFixtureDef.shape = &poligono;
+		myBody.type = b2_staticBody;
+		myBody.position.Set((*itp).y - 0.5, (*itp).x - 0.5);
+		body_aux = mundoBox2D::Instance()->getWorld()->CreateBody(&myBody);
+		body_aux->CreateFixture(&myFixtureDef);
+//		body_aux->SetTransform(body_aux->GetPosition(), 90 * DEGTORAD);
+		
+		it++; itp++;
+	}
+		
+//		while ((*it) != INT_MAX) {
+//			vertices[i].Set(it->x/32, -it->y/32);
 //			it++; i++;
 //		}
-////		poligono.m_vertices[7].Set(0, 0);
-////		poligono.m_vertices[8].Set(0, 0);
-//		myFixtureDef.shape = &p2;
+//		poligono.CreateChain(vertices, longitud);
+//		//poligono.SetNextVertex(b2Vec2(0,0));
+//		//poligono.SetNextVertex(b2Vec2(3,0));
+//		
+//		myFixtureDef.shape = &poligono;
 //		myBody.type = b2_staticBody;
-//		myBody.position.Set(0, 0);
+//		myBody.position.Set(2 - 0.5, 7 - 0.5);
 //		body_aux = mundoBox2D::Instance()->getWorld()->CreateBody(&myBody);
 //		body_aux->CreateFixture(&myFixtureDef);
-//	}
+//		body_aux->SetTransform(body_aux->GetPosition(), 90 * DEGTORAD);
 }
 
 void physics::update(){
