@@ -11,8 +11,10 @@
 
 class TEntidad{
 public:
-	virtual void beginDraw();
-	virtual void endDraw();
+	TEntidad(){}
+	~TEntidad(){}
+	virtual void beginDraw()=0;
+	virtual void endDraw()=0;
 };
 
 #endif /* TEntidad_hpp */

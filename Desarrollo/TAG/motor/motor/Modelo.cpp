@@ -217,13 +217,13 @@ void Modelo::setRotation(glm::vec3 rot){
 	rot = rot - rotation;
 	if(rot.x != 0.0f || rot.y != 0.0f || rot.z != 0.0f){
 		
-		if (rot.z != 0)
+		if (rot.z != 0.0f)
 			modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
 		
-		if (rot.y != 0)
+		if (rot.y != 0.0f)
 			modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
 		
-		if (rot.x != 0)
+		if (rot.x != 0.0f)
 			modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
 		
 		rotation = rot;
@@ -231,41 +231,3 @@ void Modelo::setRotation(glm::vec3 rot){
 }
 
 
-/*
- glm::vec3 aux(0.0f, 0.0f, 0.0f);
-	GLfloat r = 0.0f;
-	rot = rot - rotation;
-	if(rot.x != 0.0f || rot.y != 0.0f || rot.z != 0.0f){
- if (rot.x != 0) {
- aux.x = 1.0f;
- r = rot.x;
- }
- 
- if (rot.y != 0) {
- if(r != 0.0f){
- if(rot.y != r)
- modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
- else
- aux.y = 2.0f;
- }else{
- aux.y = 1.0f;
- r = rot.y;
- }
- }
- 
- if (rot.z != 0) {
- if(r != 0.0f){
- if(rot.y != r)
- modelMatrix = glm::rotate(modelMatrix, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
- else
- aux.z = 2.0f;
- }else{
- aux.z = 1.0f;
- r = rot.z;
- }
- 
- }
- modelMatrix = glm::rotate(modelMatrix, glm::radians(r), aux);
- rotation = rot;
-	}
- */
