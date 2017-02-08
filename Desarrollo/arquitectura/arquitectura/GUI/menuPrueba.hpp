@@ -19,7 +19,12 @@ public:
     ~menuPrueba(){}
     void inicializar();
     void update();
-    bool onClickStartGame(const CEGUI::EventArgs &e);
+    void onClickStartGame(const CEGUI::EventArgs &e);
+    void onClickLoadScreen(const CEGUI::EventArgs &e);
+    void onClickOptions(const CEGUI::EventArgs &e);
+    void onClickCredits(const CEGUI::EventArgs &e);
+    void onClickStopGame(const CEGUI::EventArgs &e);
+    void setLayout(int e);
     
 private:
 //    CEGUI::DefaultWindow *label_prueba;
@@ -30,17 +35,13 @@ private:
     CEGUI::PushButton *button_creditos;
     CEGUI::PushButton *button_salir;
     
-    CEGUI::DefaultWindow *label_ajustes;
-    CEGUI::PushButton *button_controles;
-    CEGUI::PushButton *button_sonido;
-    CEGUI::PushButton *button_pantalla;
-    
     CEGUI::DefaultWindow *label_cargar;
     CEGUI::PushButton *button_partida_01;
     CEGUI::PushButton *button_partida_02;
     CEGUI::PushButton *button_partida_03;
     
     CEGUI::PushButton *button_volver;
+    int layout;
 };
 
 #endif /* menuPrueba_hpp */

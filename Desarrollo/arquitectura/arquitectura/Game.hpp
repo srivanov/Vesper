@@ -41,6 +41,7 @@ public:
 	void cambiarArmaJugador();
 	void rotarConRaton(dvector3D posRaton);
     camara* getCamara();
+    void setEstado(int e);
 	
 protected:
 	Game();
@@ -49,7 +50,7 @@ private:
 	//static Game* pinstance;
 	class render *renderizador;
 	class input* entrada;
-	bool running;
+    bool running;
     player* jugador;
     camara* cam;
     vector<bala*> balas;
@@ -57,6 +58,7 @@ private:
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;
     menuPrueba menu;
+    int estado;
     
     void processEvents();
 };

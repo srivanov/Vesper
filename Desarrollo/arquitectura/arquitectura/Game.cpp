@@ -20,6 +20,7 @@ Game::Game(){
     jugador = new player();
 	cam = new camara();
 	nivelazo = new nivel();
+    estado = 0;
 }
 
 Game::~Game(){
@@ -143,5 +144,14 @@ void Game::processEvents() {
         menu.injectLeftMouseButton();
     } else if(!MyEventReceiver::Instance()->getLeftClick()) {
         menu.injectLeftMouseButtonUp();
+    }
+}
+
+void Game::setEstado(int e){
+    estado = e;
+    
+    switch(estado){
+        case 0:
+            cargarMapa();
     }
 }
