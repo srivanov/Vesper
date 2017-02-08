@@ -58,7 +58,7 @@ bool cargarMapa::leerMapa(char* fichero) {
     
     for(int k=0; k < w ; k++){
        //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
-        _level[cont] = data->IntAttribute("gid")-1; //hasta q llega a 260 desde 1(ancho*alto)
+        _level[cont] = data->IntAttribute("gid")-1;
         cont++;
         
         data->QueryIntAttribute("gid", &query);

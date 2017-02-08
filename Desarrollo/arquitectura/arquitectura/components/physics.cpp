@@ -89,6 +89,25 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 //	body->CreateFixture(&myFixtureDef);
 }
 
+void physics::crearBodyKinematico(dvector3D &dimension, dvector3D &posicion, float rotacion){
+	b2BodyDef myBodyDef;
+	b2PolygonShape polygonShape;
+	b2FixtureDef myFixtureDef;
+	myFixtureDef.shape = &polygonShape;
+	myFixtureDef.density = 1;
+	myBodyDef.type = b2_kinematicBody;
+	myBodyDef.position.Set(posicion.x, posicion.y);
+	body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
+	polygonShape.SetAsBox(dimension.x/2.0f, dimension.y/2.0f);
+	body->CreateFixture(&myFixtureDef);
+	
+	body->SetUserData(getFather());
+	
+	this->rotacion = rotacion;
+	vel.x = 0;
+	vel.y = 0;
+}
+
 void physics::crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvector2D> &p, int ancho, int alto){
 	b2FixtureDef myFixtureDef;
 	b2BodyDef myBody;
@@ -128,21 +147,6 @@ void physics::crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvect
 		
 		it++; itp++;
 	}
-		
-//		while ((*it) != INT_MAX) {
-//			vertices[i].Set(it->x/32, -it->y/32);
-//			it++; i++;
-//		}
-//		poligono.CreateChain(vertices, longitud);
-//		//poligono.SetNextVertex(b2Vec2(0,0));
-//		//poligono.SetNextVertex(b2Vec2(3,0));
-//		
-//		myFixtureDef.shape = &poligono;
-//		myBody.type = b2_staticBody;
-//		myBody.position.Set(2 - 0.5, 7 - 0.5);
-//		body_aux = mundoBox2D::Instance()->getWorld()->CreateBody(&myBody);
-//		body_aux->CreateFixture(&myFixtureDef);
-//		body_aux->SetTransform(body_aux->GetPosition(), 90 * DEGTORAD);
 }
 
 void physics::update(){
