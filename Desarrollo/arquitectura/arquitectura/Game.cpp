@@ -54,7 +54,6 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
-    menu.inicializar();
 }
 
 void Game::stop(){
@@ -71,7 +70,6 @@ void Game::render(){
 //        iter++;
 //    }
     renderizador->dibujar();
-    menu.injectMousePosition(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
 }
 
 bool Game::isRunning(){
@@ -93,7 +91,9 @@ bala* Game::insertBala(float vel){
 }
 
 void Game::update(){
+//    menu.injectMousePosition(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
     processEvents();
+    
 //	nivelazo->update();
 //	entrada->update();
 //	jugador->update();
@@ -141,9 +141,9 @@ camara* Game::getCamara(){
 
 void Game::processEvents() {
     if(MyEventReceiver::Instance()->getLeftClick()) {
-        menu.injectLeftMouseButton();
+//        menu.injectLeftMouseButton();
     } else if(!MyEventReceiver::Instance()->getLeftClick()) {
-        menu.injectLeftMouseButtonUp();
+//        menu.injectLeftMouseButtonUp();
     }
 }
 

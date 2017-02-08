@@ -12,13 +12,13 @@
 
 void menuPrueba::inicializar(){
     init("3d/GUI", ventana::Instance()->getDevice());
-    layout = 0;
+    //layout = 0;
     
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
     loadLayout("MenuPrincipal.layout");
-    
+    estado = STATE_PRINCIPAL;
     setMouseCursor("OgreTrayImages/MouseArrow");
     
     //    loadLayout("CargarPartida.layout");
@@ -46,7 +46,28 @@ void menuPrueba::inicializar(){
 }
 
 void menuPrueba::update(){
-    
+//    switch (estado) {
+//        case STATE_PRINCIPAL:
+//            loadLayout("MenuPrincipal.layout");
+//    
+//            break;
+//        case STATE_CARGAR:            loadLayout("CargarPartida.layout");
+//            
+//            break;
+//            
+//        case STATE_OPCIONES:
+//            loadLayout("Opciones.layout");
+//            
+//            break;
+//            
+//        case STATE_CREDITOS:
+//            //loadLayout("Creditos.layout");
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
 }
 
 void menuPrueba::onClickStartGame(const CEGUI::EventArgs &e) {
@@ -57,6 +78,7 @@ void menuPrueba::onClickStartGame(const CEGUI::EventArgs &e) {
 
 void menuPrueba::onClickLoadScreen(const CEGUI::EventArgs &e){
     //TO DO: que lleve a la pantalla de cargar partida
+    estado = STATE_CARGAR;
     printf("Voy a la pantalla cargar partida");
 }
 
@@ -76,16 +98,16 @@ void menuPrueba::onClickStopGame(const CEGUI::EventArgs &e){
     Game::Instance()->stop();
 }
 
-void menuPrueba::setLayout(int e){
-    layout = e;
-    
-    if(layout == 0){
-        loadLayout("MenuPrincipal.layout");
-    }else if(layout == 1){
-        loadLayout("CargarPartida.layout");
-    }else if(layout == 2){
-        loadLayout("Opciones.layout");
-    }else if(layout == 3){
-        loadLayout("Creditos.layout");
-    }
-}
+//void menuPrueba::setLayout(int e){
+//    layout = e;
+//    
+//    if(layout == 0){
+//        loadLayout("MenuPrincipal.layout");
+//    }else if(layout == 1){
+//        loadLayout("CargarPartida.layout");
+//    }else if(layout == 2){
+//        loadLayout("Opciones.layout");
+//    }else if(layout == 3){
+//        loadLayout("Creditos.layout");
+//    }
+//}

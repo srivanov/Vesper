@@ -21,7 +21,6 @@
 #include "trigger_system.hpp"
 #include <vector>
 #include "Dvector.hpp"
-#include "GUI/menuPrueba.hpp"
 
 class Game {
 public:
@@ -57,7 +56,7 @@ private:
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;
-    menuPrueba menu;
+    
     int estado;
     
     void processEvents();

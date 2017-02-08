@@ -13,6 +13,13 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
+enum State {
+    STATE_PRINCIPAL=0,
+    STATE_CARGAR,
+    STATE_OPCIONES,
+    STATE_CREDITOS
+};
+
 class menuPrueba : public Motor::GUI {
 public:
     menuPrueba(){}
@@ -25,6 +32,10 @@ public:
     void onClickCredits(const CEGUI::EventArgs &e);
     void onClickStopGame(const CEGUI::EventArgs &e);
     void setLayout(int e);
+    tLayout getLayout(){return tMenuPrincipalLayout;}
+    
+protected:
+    State estado;
     
 private:
 //    CEGUI::DefaultWindow *label_prueba;
@@ -41,7 +52,7 @@ private:
     CEGUI::PushButton *button_partida_03;
     
     CEGUI::PushButton *button_volver;
-    int layout;
+//    int layout;
 };
 
 #endif /* menuPrueba_hpp */

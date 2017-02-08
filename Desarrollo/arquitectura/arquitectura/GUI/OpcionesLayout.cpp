@@ -7,17 +7,60 @@
 //
 
 #include "OpcionesLayout.hpp"
+#include "../components/ventana.hpp"
+#include "Game.hpp"
 
 OpcionesLayout::OpcionesLayout(){
-     loadLayout("Opciones.layout");
+    init("3d/GUI", ventana::Instance()->getDevice());
+    
+    layout = 2;
+    
+    loadScheme("Generic.scheme");
+    loadScheme("OgreTray.scheme");
+    loadScheme("Menu.scheme");
+    loadLayout("Opciones.layout");
+    setMouseCursor("OgreTrayImages/MouseArrow");
+    
+    
+    label_ajustes = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(7));
+    
+    button_controles = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(3));
+    button_controles->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcioinesLayout::onClickControles, this));
+    
+    button_sonido = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(4));
+    button_sonido->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcioinesLayout::onClickControles, this));
+    
+    button_pantalla = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(5));
+    button_pantalla->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcioinesLayout::onClickControles, this));
+    
+    button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(6));
+    button_volver->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcioinesLayout::onClickControles, this));
 }
 
 OpcionesLayout::~OpcionesLayout(){
     
 }
 
-void OpcionesLayout::inicializar(){
-    
-    label_ajustes = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(7));
-    
+void OpcionesLayout::update() {
+
+}
+
+int OpcionesLayout::getLayout() {
+    return &layout;
+}
+
+void OpcionesLayout::onClickControles(const CEGUI::EventArgs &e) {
+    printf("Pulsado boton controles");
+}
+
+void OpcionesLayout::onClickSonido(const CEGUI::EventArgs &e) {
+    printf("Pulsado boton sonido");
+}
+
+void OpcionesLayout::onClickPantalla(const CEGUI::EventArgs &e) {
+    printf("Pulsado boton pantalla");
+}
+
+void OpcionesLayout::onClickVolver(const CEGUI::EventArgs &e) {
+    layout = 0;
 }

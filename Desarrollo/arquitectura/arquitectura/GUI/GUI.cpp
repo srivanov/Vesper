@@ -56,7 +56,7 @@ CEGUI::Window* Motor::GUI::createWidget(const std::string& type, const vec4f& de
 }
 
 CEGUI::Window * Motor::GUI::loadLayout(const std::string & layout) {
-	CEGUI::Window *newWindow = CEGUI::WindowManager::getSingleton().loadLayoutFromFile(layout);
+    CEGUI::Window *newWindow = CEGUI::WindowManager::getSingleton().loadLayoutFromFile(layout);
 	m_root->addChild(newWindow);
 	return newWindow;
 }

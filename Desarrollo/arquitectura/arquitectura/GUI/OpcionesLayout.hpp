@@ -14,16 +14,23 @@
 #include "../MyEventReceiver.hpp"
 #include "menuPrueba.hpp"
 
-class OpcionesLayout : public Motor::GUI{
+class OpcionesLayout : public Motor::GUI {
 public:
     OpcionesLayout();
     ~OpcionesLayout();
-    void inicializar();
+    void update() override;
+    tLayout getLayout() override;
+    void onClickControles(const CEGUI::EventArgs &e);
+    void onClickSonido(const CEGUI::EventArgs &e);
+    void onClickPantalla(const CEGUI::EventArgs &e);
+    void onClickVolver(const CEGUI::EventArgs &e);
+    
 private:
     CEGUI::DefaultWindow *label_ajustes;
     CEGUI::PushButton *button_controles;
     CEGUI::PushButton *button_sonido;
     CEGUI::PushButton *button_pantalla;
+    CEGUI::PushButton *button_volver;
 };
 
 #endif /* OpcionesLayout_hpp */

@@ -4,12 +4,17 @@
         <Item name="imagesets" type="folder">
             <Item path="imagesets/OgreTray.imageset" type="file" />
             <Item path="imagesets/OgreTrayImages.png" type="file" />
+            <Item path="imagesets/Menu.imageset" type="file" />
+            <Item path="imagesets/Menu.png" type="file" />
         </Item>
         <Item name="layouts" type="folder">
             <Item path="layouts/MenuPrincipal.layout" type="file" />
+            <Item path="layouts/CargarPartida.layout" type="file" />
+            <Item path="layouts/Opciones.layout" type="file" />
         </Item>
         <Item name="schemes" type="folder">
             <Item path="schemes/OgreTray.scheme" type="file" />
+            <Item path="schemes/Menu.scheme" type="file" />
         </Item>
     </Items>
 </Project>

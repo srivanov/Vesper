@@ -9,6 +9,12 @@
 
 #include "../MyEventReceiver.hpp"
 
+enum tLayout {
+    tMenuPrincipalLayout = 0,
+    tCargarPartidaLayout,
+    tOpcionesLayout,
+    tCreditosLayout
+};
 
 struct vec4f{
 	float x, y, z, w;
@@ -68,7 +74,9 @@ namespace Motor{
 		const CEGUI::GUIContext* getContext() { return m_context; }
 
 		bool debugInput = false;
-
+        virtual tLayout getLayout() = 0;
+    protected:
+        tLayout layout;
 	private:
 		CEGUI::OpenGL3Renderer* m_renderer;
 		//CEGUI::IrrlichtRenderer* m_rendererIrrlicht;
