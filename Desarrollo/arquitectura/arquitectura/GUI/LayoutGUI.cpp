@@ -28,10 +28,15 @@ LayoutGUI::LayoutGUI(){
     aux->setPadre(this);
     vector.push_back(aux);
     
+    aux = new CreditosLayout();
+    aux->ocultar();
+    aux->setPadre(this);
+    vector.push_back(aux);
     
-//    aux = new CreditosLayout();
-//    aux->ocultar();
-//    vector.push_back(aux);
+    aux = new HUDLayout();
+    aux->ocultar();
+    aux->setPadre(this);
+    vector.push_back(aux);
     
     iter = vector.begin();
 }
@@ -54,13 +59,7 @@ void LayoutGUI::update(){
 void LayoutGUI::setActiveLayout(tLayout nuevo){
     seleccionado->ocultar();
     activeLayout = nuevo;
-    //TO DO: hacer aqui el cambio de un layout a otro segun el tipo en activeLayout aka borrar el layout actual y cargar el nuevo. Si los ocultamos, se haria en este metodo tambien.
-    
-    // Recorrer el vector ocultando todos los layouts menos el que tenga el tipo activeLayout.
-    
-    // Ocultar el vector en plan, solo el vector, no hace falta recorrer
-    
-    // O sea, ocultamos el actual y recorremos el vector para mostrar unicamente el nuevo/activo
+
     iter = vector.begin();
     while(iter != vector.end()) {
         if(activeLayout == (*iter)->getLayout()){

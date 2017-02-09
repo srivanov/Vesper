@@ -52,6 +52,7 @@ tLayout MenuPrincipalLayout::getLayout() {
 void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
     // TO DO: que lleve a empezar nueva partida
     printf("Empieza una nueva partida");
+    padre->setActiveLayout(tHUD);
     
 }
 

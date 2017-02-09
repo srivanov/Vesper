@@ -36,7 +36,7 @@
         </Window>
         <Window type="OgreTray/Button" name="button_volver" >
             <Property name="ID" value="6" />
-            <Property name="Area" value="{{0,45},{0,530},{0,141},{0,562}}" />
+            <Property name="Area" value="{{0,50},{0,635},{0,146},{0,667}}" />
             <Property name="Text" value="Volver" />
         </Window>
         <Window type="OgreTray/Label" name="label_ajustes" >

@@ -14,6 +14,8 @@
 #include "MenuPrincipalLayout.hpp"
 #include "CargarPartidaLayout.hpp"
 #include "OpcionesLayout.hpp"
+#include "CreditosLayout.hpp"
+#include "HUDLayout.hpp"
 #include <vector>
 
 class LayoutGUI {

@@ -6,7 +6,7 @@
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Window type="Generic/Image" name="background" >
             <Property name="ID" value="1" />
-            <Property name="Area" value="{{0,0},{0,0},{0,800},{0,600}}" />
+            <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
             <Property name="Image" value="Menu/fondo_cargar" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
@@ -67,7 +67,7 @@
         </Window>
         <Window type="OgreTray/Button" name="button_volver" >
             <Property name="ID" value="6" />
-            <Property name="Area" value="{{0,25},{0,540},{0,121},{0,572}}" />
+            <Property name="Area" value="{{0,45},{0,630},{0,141},{0,662}}" />
             <Property name="Text" value="Volver" />
         </Window>
         <Window type="Generic/Label" name="label_cargar" >
