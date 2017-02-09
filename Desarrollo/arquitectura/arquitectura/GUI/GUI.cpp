@@ -12,6 +12,13 @@ void Motor::GUI::init(const std::string& resourcesPath, irr::IrrlichtDevice *dev
 	GUIManager::i().addGui(this);
 }
 
+Motor::GUI::~GUI(){
+    
+}
+
+void Motor::GUI::update(){
+    GUIManager::i().updateAllGuis();
+}
 
 void Motor::GUI::destroy() {
 	CEGUI::System::getSingleton().destroyGUIContext(*m_context);
@@ -160,3 +167,21 @@ void Motor::GUI::setWidgetDestRect(CEGUI::Window* widget, const vec4f& destRectP
 	widget->setPosition(CEGUI::UVector2(CEGUI::UDim(destRectPerc.x, destRectPix.x), CEGUI::UDim(destRectPerc.y, destRectPix.y)));
 	widget->setSize(CEGUI::USize(CEGUI::UDim(destRectPerc.z, destRectPix.w), CEGUI::UDim(destRectPerc.z, destRectPix.w)));
 }
+
+bool Motor::GUI::mostrar() {
+    GUIManager::i().addGui(this);
+    
+    printf("Se ha mostrado el layout \n");
+    return true;
+}
+
+bool Motor::GUI::ocultar() {
+    GUIManager::i().removeGui(this);
+    printf("Se ha ocultado el layout \n");
+    return true;
+}
+
+void Motor::GUI::setPadre(LayoutGUI* p){
+    padre = p;
+}
+

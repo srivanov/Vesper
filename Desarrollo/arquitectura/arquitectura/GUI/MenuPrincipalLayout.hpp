@@ -17,8 +17,9 @@ class MenuPrincipalLayout : public Motor::GUI {
 public:
     MenuPrincipalLayout();
     ~MenuPrincipalLayout();
-    void update() override;
+//    void update() override;
     tLayout getLayout() override;
+    void inicializar();
     
     void onClickStartGame(const CEGUI::EventArgs &e);
     void onClickLoadScreen(const CEGUI::EventArgs &e);

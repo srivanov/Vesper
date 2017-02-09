@@ -23,7 +23,7 @@
 class LayoutInterface {
 public:
     virtual void update() = 0;
-    virtual int getLayout2() = 0;
+    virtual int getLayout() = 0;
     
 protected:
     tLayout layout;

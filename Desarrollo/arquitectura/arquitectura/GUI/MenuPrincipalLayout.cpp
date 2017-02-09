@@ -11,6 +11,11 @@
 #include "../Game.hpp"
 
 MenuPrincipalLayout::MenuPrincipalLayout() {
+    // El codigo que habia aqui esta ahora en inicializar()
+    inicializar();
+}
+
+void MenuPrincipalLayout::inicializar() {
     init("3d/GUI", ventana::Instance()->getDevice());
     
     layout = tMenuPrincipalLayout;
@@ -52,19 +57,22 @@ void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
 
 void MenuPrincipalLayout::onClickLoadScreen(const CEGUI::EventArgs &e){
     //TO DO: que lleve a la pantalla de cargar partida
-    layout = tCargarPartidaLayout; // Estado 1 = CargarPartida
+//    layout = tCargarPartidaLayout; // Estado 1 = CargarPartida
+    padre->setActiveLayout(tCargarPartidaLayout);
     printf("Voy a la pantalla cargar partida");
 }
 
 void MenuPrincipalLayout::onClickOptions(const CEGUI::EventArgs &e){
     //TO DO: que lleve a la pantalla de opciones
-    layout = tOpcionesLayout;
+//    layout = tOpcionesLayout;
+    padre->setActiveLayout(tOpcionesLayout);
     printf("Lleva al menú opciones");
 }
 
 void MenuPrincipalLayout::onClickCredits(const CEGUI::EventArgs &e){
     //TO DO: pantalla de creditos
-    layout = tCreditosLayout;
+//    layout = tCreditosLayout;
+    padre->setActiveLayout(tCreditosLayout);
     printf("Lleva a la pantalla de creditos");
 }
 
@@ -73,3 +81,5 @@ void MenuPrincipalLayout::onClickStopGame(const CEGUI::EventArgs &e){
     printf("Salgo del juego");
     Game::Instance()->stop();
 }
+
+

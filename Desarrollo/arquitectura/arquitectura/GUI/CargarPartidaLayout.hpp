@@ -12,13 +12,12 @@
 #include <stdio.h>
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
-#include "menuPrueba.hpp"
 
 class CargarPartidaLayout : public Motor::GUI {
 public:
     CargarPartidaLayout();
     ~CargarPartidaLayout();
-    void update() override;
+//    void update() override;
     tLayout getLayout() override;
     void onClickPartida1(const CEGUI::EventArgs &e);
     void onClickPartida2(const CEGUI::EventArgs &e);

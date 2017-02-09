@@ -1,8 +1,6 @@
 
 #include "Game.hpp"
 #include <cstdlib>
-#include "GUI/GUIManager.h"
-//Game* Game::pinstance = 0;
 
 Game* Game::Instance(){
 	static Game pinstance;
@@ -54,6 +52,7 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
+    layoutPrueba = new LayoutGUI();
 }
 
 void Game::stop(){
@@ -70,6 +69,11 @@ void Game::render(){
 //        iter++;
 //    }
     renderizador->dibujar();
+    layoutPrueba->posicionarRaton(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
+    if(MyEventReceiver::Instance()->getLeftClick())
+        layoutPrueba->inyectarClick();
+    else
+        layoutPrueba->inyectarClickUP();
 }
 
 bool Game::isRunning(){
@@ -92,6 +96,7 @@ bala* Game::insertBala(float vel){
 
 void Game::update(){
 //    menu.injectMousePosition(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
+
     processEvents();
     
 //	nivelazo->update();
@@ -116,7 +121,9 @@ void Game::update(){
 //	
     Fps::Instance()->update();
 //	mundoBox2D::Instance()->update();
-    GUIManager::i().updateAllGuis();
+//    GUIManager::i().updateAllGuis();
+    layoutPrueba->update();
+    
 }
 
 void Game::zoom(bool z){

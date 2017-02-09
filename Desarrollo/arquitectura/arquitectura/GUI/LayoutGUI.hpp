@@ -10,7 +10,7 @@
 #define LayoutGUI_hpp
 
 #include <stdio.h>
-#include "LayoutInterface.hpp"
+#include "GUI.h"
 #include "MenuPrincipalLayout.hpp"
 #include "CargarPartidaLayout.hpp"
 #include "OpcionesLayout.hpp"
@@ -22,10 +22,16 @@ public:
     ~LayoutGUI();
     void update();
     void setActiveLayout(tLayout nuevo);
+    void posicionarRaton(float x, float y);
+    void inyectarClick();
+    void inyectarClickUP();
     
 private:
     tLayout activeLayout;
-    std::vector<LayoutInterface*> vector;
+    std::vector<Motor::GUI*>::iterator iter;
+    std::vector<Motor::GUI*> vector;
+    Motor::GUI* seleccionado;
+    bool activo;
 };
 
 #endif /* LayoutGUI_hpp */

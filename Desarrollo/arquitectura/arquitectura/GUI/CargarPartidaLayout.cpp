@@ -41,9 +41,9 @@ CargarPartidaLayout::~CargarPartidaLayout(){
     
 }
 
-void CargarPartidaLayout::update() {
-    
-}
+//void CargarPartidaLayout::update() {
+//    
+//}
 
 tLayout CargarPartidaLayout::getLayout() {
     return layout;
@@ -62,5 +62,7 @@ void CargarPartidaLayout::onClickPartida3(const CEGUI::EventArgs &e) {
 }
 
 void CargarPartidaLayout::onClickVolver(const CEGUI::EventArgs &e) {
-    layout = tMenuPrincipalLayout;
+    padre->setActiveLayout(tMenuPrincipalLayout);
 }
+
+

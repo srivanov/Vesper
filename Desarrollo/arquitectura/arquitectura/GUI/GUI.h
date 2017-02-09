@@ -9,6 +9,7 @@
 
 #include "../MyEventReceiver.hpp"
 
+class LayoutGUI;
 enum tLayout {
     tMenuPrincipalLayout = 0,
     tCargarPartidaLayout,
@@ -26,8 +27,9 @@ namespace Motor{
 		void init(const std::string& resourcesPath, irr::IrrlichtDevice *device);
 		void destroy();
 		void draw();
+        ~GUI();
 
-		virtual void update()=0;
+        void update();
 
 		void loadScheme(const std::string& schemeFile);
 		void setFont(const std::string& fontFile);
@@ -63,7 +65,6 @@ namespace Motor{
         
         void injectMouseClick() {
             m_context->injectMouseButtonClick(CEGUI::MouseButton::LeftButton);
-            printf("funciona algo");
         }
 
 
@@ -74,9 +75,16 @@ namespace Motor{
 		const CEGUI::GUIContext* getContext() { return m_context; }
 
 		bool debugInput = false;
+        
         virtual tLayout getLayout() = 0;
+        bool mostrar();
+        bool ocultar();
+        void setPadre(LayoutGUI* p);
+        
     protected:
         tLayout layout;
+        bool activo;
+        LayoutGUI* padre = NULL;
 	private:
 		CEGUI::OpenGL3Renderer* m_renderer;
 		//CEGUI::IrrlichtRenderer* m_rendererIrrlicht;

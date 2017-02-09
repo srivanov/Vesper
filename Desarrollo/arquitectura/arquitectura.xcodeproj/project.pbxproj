@@ -166,7 +166,6 @@
 		C1A0AF001E434BD8009699FD /* libCEGUILibXMLParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEF91E434BD8009699FD /* libCEGUILibXMLParser_d.dylib */; };
 		C1A0AF011E434BD8009699FD /* libCEGUISILLYImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEFA1E434BD8009699FD /* libCEGUISILLYImageCodec_d.dylib */; };
 		C1B3EA0C1E4B8F4A00D96553 /* MenuPrincipalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B3EA0A1E4B8F4A00D96553 /* MenuPrincipalLayout.cpp */; };
-		C1B3EA0F1E4B93C200D96553 /* LayoutInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B3EA0D1E4B93C200D96553 /* LayoutInterface.cpp */; };
 		C1B3EA121E4B9AC500D96553 /* CargarPartidaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B3EA101E4B9AC500D96553 /* CargarPartidaLayout.cpp */; };
 		C1B3EA151E4B9D7A00D96553 /* LayoutGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B3EA131E4B9D7A00D96553 /* LayoutGUI.cpp */; };
 		E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9026ED21E35299B00B44AC3 /* palaObj.cpp */; };
@@ -434,8 +433,6 @@
 		C1A0AEFA1E434BD8009699FD /* libCEGUISILLYImageCodec_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUISILLYImageCodec_d.dylib; path = libs/libCEGUISILLYImageCodec_d.dylib; sourceTree = "<group>"; };
 		C1B3EA0A1E4B8F4A00D96553 /* MenuPrincipalLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuPrincipalLayout.cpp; sourceTree = "<group>"; };
 		C1B3EA0B1E4B8F4A00D96553 /* MenuPrincipalLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MenuPrincipalLayout.hpp; sourceTree = "<group>"; };
-		C1B3EA0D1E4B93C200D96553 /* LayoutInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutInterface.cpp; sourceTree = "<group>"; };
-		C1B3EA0E1E4B93C200D96553 /* LayoutInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutInterface.hpp; sourceTree = "<group>"; };
 		C1B3EA101E4B9AC500D96553 /* CargarPartidaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CargarPartidaLayout.cpp; sourceTree = "<group>"; };
 		C1B3EA111E4B9AC500D96553 /* CargarPartidaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CargarPartidaLayout.hpp; sourceTree = "<group>"; };
 		C1B3EA131E4B9D7A00D96553 /* LayoutGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutGUI.cpp; sourceTree = "<group>"; };
@@ -829,8 +826,6 @@
 				88E26F171E4B286700E8FB06 /* OpcionesLayout.hpp */,
 				C1B3EA0A1E4B8F4A00D96553 /* MenuPrincipalLayout.cpp */,
 				C1B3EA0B1E4B8F4A00D96553 /* MenuPrincipalLayout.hpp */,
-				C1B3EA0D1E4B93C200D96553 /* LayoutInterface.cpp */,
-				C1B3EA0E1E4B93C200D96553 /* LayoutInterface.hpp */,
 				C1B3EA101E4B9AC500D96553 /* CargarPartidaLayout.cpp */,
 				C1B3EA111E4B9AC500D96553 /* CargarPartidaLayout.hpp */,
 				C1B3EA131E4B9D7A00D96553 /* LayoutGUI.cpp */,
@@ -1375,7 +1370,6 @@
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
 				E9AC3A601DF0AA4800A91A97 /* enemigos.cpp in Sources */,
 				C1A0ADDD1E434BA9009699FD /* GUIManager.cpp in Sources */,
-				C1B3EA0F1E4B93C200D96553 /* LayoutInterface.cpp in Sources */,
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
 				E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */,
 				882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */,

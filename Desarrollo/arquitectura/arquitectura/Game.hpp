@@ -21,6 +21,7 @@
 #include "trigger_system.hpp"
 #include <vector>
 #include "Dvector.hpp"
+#include "GUI/LayoutGUI.hpp"
 
 class Game {
 public:
@@ -60,6 +61,8 @@ private:
     int estado;
     
     void processEvents();
+    
+    LayoutGUI* layoutPrueba;
 };
 
 #endif /* Game_hpp */
