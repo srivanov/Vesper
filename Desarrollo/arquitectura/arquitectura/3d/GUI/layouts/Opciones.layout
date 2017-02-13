@@ -45,5 +45,54 @@
             <Property name="Text" value="AJUSTES" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
+        <Window type="Generic/Image" name="contenedor_pantalla" >
+            <Property name="ID" value="8" />
+            <Property name="Area" value="{{0,170},{0,208},{0,488},{0,514}}" />
+            <Property name="Image" value="Menu/crema" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Window type="OgreTray/Button" name="Button" >
+                <Property name="ID" value="9" />
+                <Property name="Area" value="{{0,65},{0,65},{0,220},{0,97}}" />
+                <Property name="Text" value="Resolución 800x600" />
+            </Window>
+            <Window type="OgreTray/Button" name="Button2" >
+                <Property name="ID" value="10" />
+                <Property name="Area" value="{{0,70},{0,215},{0,220},{0,252}}" />
+                <Property name="Text" value="Resolución 1280x1024" />
+            </Window>
+            <Window type="OgreTray/Button" name="Button3" >
+                <Property name="ID" value="16" />
+                <Property name="Area" value="{{0,65},{0,140},{0,215},{0,177}}" />
+                <Property name="Text" value="Resolución 1280x720" />
+            </Window>
+        </Window>
+        <Window type="Generic/Image" name="contenedor_sonido" >
+            <Property name="ID" value="11" />
+            <Property name="Area" value="{{0,170},{0,208},{0,488},{0,514}}" />
+            <Property name="Image" value="Menu/crema" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Window type="Generic/Label" name="Label" >
+                <Property name="ID" value="12" />
+                <Property name="Area" value="{{0,86},{0,64},{0,214},{0,96}}" />
+                <Property name="Text" value="Sonido" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Label" name="Label2" >
+                <Property name="ID" value="13" />
+                <Property name="Area" value="{{0,88},{0,161},{0,216},{0,193}}" />
+                <Property name="Text" value="Volumen" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="AlfiskoSkin/HorizontalSlider" name="HorizontalSlider" >
+                <Property name="ID" value="14" />
+                <Property name="Area" value="{{0,35},{0,220},{0,291},{0,252}}" />
+            </Window>
+        </Window>
+        <Window type="Generic/Image" name="contenedor_controles" >
+            <Property name="ID" value="15" />
+            <Property name="Area" value="{{0,170},{0,208},{0,488},{0,514}}" />
+            <Property name="Image" value="Menu/crema" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
     </Window>
 </GUILayout>

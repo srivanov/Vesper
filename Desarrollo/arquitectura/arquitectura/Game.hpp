@@ -42,6 +42,7 @@ public:
 	void rotarConRaton(dvector3D posRaton);
     camara* getCamara();
     void setEstado(int e);
+    void cambiarResolucion(uint32_t ancho, uint32_t alto);
 	
 protected:
 	Game();

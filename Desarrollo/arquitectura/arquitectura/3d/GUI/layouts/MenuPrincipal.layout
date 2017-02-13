@@ -32,16 +32,15 @@
                 <Property name="Area" value="{{0.101947,12},{0.807348,0},{0.528698,108},{0.784695,32}}" />
                 <Property name="Text" value="Salir" />
             </Window>
-            <Window type="Generic/ImageButton" name="button_nueva" >
+            <Window type="OgreTray/Button" name="button_nueva" >
                 <Property name="ID" value="3" />
-                <Property name="Area" value="{{0,9},{0,50},{0,239},{0,85}}" />
-                <Property name="HoverImage" value="Menu/boton_hover" />
-                <Property name="NormalImage" value="Menu/boton_normal" />
+                <Property name="Area" value="{{0,45},{0,65},{0,280},{0,92}}" />
+                <Property name="Text" value="Nueva partida" />
             </Window>
-            <Window type="Generic/ImageButton" name="button_cargar" >
+            <Window type="OgreTray/Button" name="button_cargar" >
                 <Property name="ID" value="4" />
-                <Property name="Area" value="{{0,9},{0,95},{0,239},{0,130}}" />
-                <Property name="NormalImage" value="Menu/boton_normal" />
+                <Property name="Area" value="{{0,45},{0,115},{0,275},{0,142}}" />
+                <Property name="Text" value="Cargar partida" />
             </Window>
         </Window>
         <Window type="OgreTray/Label" name="titulo" >

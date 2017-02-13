@@ -23,6 +23,9 @@ public:
     void onClickSonido(const CEGUI::EventArgs &e);
     void onClickPantalla(const CEGUI::EventArgs &e);
     void onClickVolver(const CEGUI::EventArgs &e);
+    void onClickResol1(const CEGUI::EventArgs &e);
+    void onClickResol2(const CEGUI::EventArgs &e);
+    void onClickResol3(const CEGUI::EventArgs &e);
     
 private:
     CEGUI::DefaultWindow *label_ajustes;
@@ -30,6 +33,14 @@ private:
     CEGUI::PushButton *button_sonido;
     CEGUI::PushButton *button_pantalla;
     CEGUI::PushButton *button_volver;
+    CEGUI::PushButton *button_resol1;
+    CEGUI::PushButton *button_resol2;
+    CEGUI::PushButton *button_resol3;
+    
+    CEGUI::DefaultWindow *contenedor_pantalla;
+    CEGUI::DefaultWindow *contenedor_sonido;
+    CEGUI::DefaultWindow *contenedor_controles;
+
 };
 
 #endif /* OpcionesLayout_hpp */

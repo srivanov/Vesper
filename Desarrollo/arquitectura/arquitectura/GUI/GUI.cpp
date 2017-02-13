@@ -171,13 +171,13 @@ void Motor::GUI::setWidgetDestRect(CEGUI::Window* widget, const vec4f& destRectP
 bool Motor::GUI::mostrar() {
     GUIManager::i().addGui(this);
     
-    printf("Se ha mostrado el layout \n");
+//    printf("Se ha mostrado el layout \n");
     return true;
 }
 
 bool Motor::GUI::ocultar() {
     GUIManager::i().removeGui(this);
-    printf("Se ha ocultado el layout \n");
+//    printf("Se ha ocultado el layout \n");
     return true;
 }
 
