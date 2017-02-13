@@ -13,7 +13,7 @@
 
 #include "Shader.h"
 #include "camera.hpp"
-#include "Modelo.hpp"
+#include "TModelo.hpp"
 
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -140,15 +140,15 @@ int main(int argc, const char * argv[]) {
 	//creamos la clase Shader y compilamos los shaders
 	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
-	Modelo modelo("../Models/microwave.obj");
+	TModelo modelo("../Models/microwave.obj");
 //	modelo.imprimirDatos();
 //	modelo.setTexture("../Textures/awesomeface.png");
 //	modelo.setRotation(glm::vec3(0.0f, 0.0f, 0.0f));
 	modelo.setRotation(glm::vec3(90.0f, 90.0f, 0.0f));
-	Modelo modelo2("../Models/cube.obj");
+	TModelo modelo2("../Models/cube.obj");
 //	modelo2.imprimirDatos();
 //
-//	Modelo modelo3("../Models/nanosuit/nanosuit.obj");
+//	TModelo modelo3("../Models/nanosuit/nanosuit.obj");
 //	modelo3.imprimirDatos();
 	
 	

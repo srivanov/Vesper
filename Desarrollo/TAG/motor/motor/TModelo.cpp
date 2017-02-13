@@ -1,16 +1,16 @@
 
-#include "Modelo.hpp"
+#include "TModelo.hpp"
 
-Modelo::Modelo(GLchar* ruta){
+TModelo::TModelo(GLchar* ruta){
 	nVertices=0;nNormales=0;nCaras=0;nIndices=0;bTex=false;
-	loadModel(ruta);
+	cargarMalla(ruta);
 }
 
-Modelo::~Modelo(){
+TModelo::~TModelo(){
 	
 }
 
-void Modelo::Draw(Shader shader){
+void TModelo::Draw(Shader shader){
 	glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
 	std::vector<Mesh>::iterator it = meshes.begin();
 	while(it != meshes.end()){
@@ -19,7 +19,7 @@ void Modelo::Draw(Shader shader){
 	}
 }
 
-void Modelo::loadModel(std::string ruta){
+void TModelo::cargarMalla(std::string ruta){
 	Assimp::Importer importer;
 	const aiScene* scene = importer.ReadFile(ruta, aiProcess_Triangulate);
 	
@@ -31,7 +31,7 @@ void Modelo::loadModel(std::string ruta){
 	this->processNode(scene->mRootNode, scene);
 }
 
-void Modelo::processNode(aiNode *node, const aiScene *scene){
+void TModelo::processNode(aiNode *node, const aiScene *scene){
 	
 	for (GLuint i=0; i<node->mNumMeshes; i++) {
 		//cojo de la escena entera los meshes del nodo
@@ -43,7 +43,7 @@ void Modelo::processNode(aiNode *node, const aiScene *scene){
 	}
 }
 
-Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
+Mesh TModelo::processMesh(aiMesh *mesh, const aiScene *scene){
 	
 	std::vector<Vertex> vertices;
 	std::vector<GLuint> indices;
@@ -112,7 +112,7 @@ Mesh Modelo::processMesh(aiMesh *mesh, const aiScene *scene){
 	return Mesh(vertices, indices, texturas);
 }
 
-std::vector<Texture> Modelo::loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName){
+std::vector<Texture> TModelo::loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName){
 	std::vector<Texture> textures;
 	for(GLuint i = 0; i < mat->GetTextureCount(type); i++){
 		aiString str;
@@ -126,7 +126,7 @@ std::vector<Texture> Modelo::loadMaterialTextures(aiMaterial *mat, aiTextureType
 	return textures;
 }
 
-GLuint Modelo::TextureFromFile(const char *ruta, std::string directorio){
+GLuint TModelo::TextureFromFile(const char *ruta, std::string directorio){
 	std::string filename = std::string(ruta);
 	this->rTextura = filename;
 	
@@ -173,7 +173,7 @@ GLuint Modelo::TextureFromFile(const char *ruta, std::string directorio){
 	return textureID;
 }
 
-void Modelo::imprimirDatos(){
+void TModelo::imprimirDatos(){
 	std::cout << "Archivo: " << this->rFile << std::endl;
 	
 	if(this->rTextura.length()==0)
@@ -192,7 +192,7 @@ void Modelo::imprimirDatos(){
 		std::cout << "Coordenadas de textura: False" << std::endl;
 }
 
-void Modelo::setTexture(std::string ruta){
+void TModelo::setTexture(std::string ruta){
 	std::string d = ruta.substr(0, ruta.find_last_of('/'));
 	const char* r = ruta.substr(ruta.find_last_of('/')+1, ruta.size()).c_str();
 	meshes.at(0).texturas.clear();
@@ -206,14 +206,14 @@ void Modelo::setTexture(std::string ruta){
 	meshes.at(0).texturas = textures;
 }
 
-void Modelo::setPosition(glm::vec3 pos){
+void TModelo::setPosition(glm::vec3 pos){
 	if(pos != position){
 		modelMatrix = glm::translate(modelMatrix, pos);
 		position = pos;
 	}
 }
 
-void Modelo::setRotation(glm::vec3 rot){
+void TModelo::setRotation(glm::vec3 rot){
 	rot = rot - rotation;
 	if(rot.x != 0.0f || rot.y != 0.0f || rot.z != 0.0f){
 		
@@ -229,5 +229,4 @@ void Modelo::setRotation(glm::vec3 rot){
 		rotation = rot;
 	}
 }
-
 

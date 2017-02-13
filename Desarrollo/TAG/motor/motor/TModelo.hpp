@@ -1,6 +1,6 @@
 
-#ifndef Modelo_hpp
-#define Modelo_hpp
+#ifndef TModelo_hpp
+#define TModelo_hpp
 
 #include <stdio.h>
 #include <vector>
@@ -19,18 +19,19 @@
 #include "Shader.h"
 #include "Mesh.hpp"
 
-class Modelo{
+class TModelo{
 public:
-	Modelo(GLchar* ruta);
-	~Modelo();
+	TModelo(GLchar* ruta);
+	~TModelo();
 	void Draw(Shader shader);
 	void imprimirDatos();
 	void setTexture(std::string ruta);
 	void setPosition(glm::vec3 pos);
 	void setRotation(glm::vec3 rot);
 	
+	
 private:
-	void loadModel(std::string ruta);
+	void cargarMalla(std::string ruta);
 	void processNode(aiNode* node, const aiScene* scene);
 	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
 	std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
@@ -44,4 +45,4 @@ private:
 	glm::vec3 position, rotation;
 };
 
-#endif /* Modelo_hpp */
+#endif /* TModelo_hpp */
