@@ -45,7 +45,15 @@ TNodo* TNodo::getPadre(){
 }
 
 void TNodo::draw(){
+	if(entidad != NULL)
+		entidad->beginDraw();
 	
+	for (auto it = hijos.begin(); it != hijos.end(); ++it) {
+		(*it)->draw();
+	}
+	
+	if(entidad != NULL)
+		entidad->endDraw();
 }
 
 

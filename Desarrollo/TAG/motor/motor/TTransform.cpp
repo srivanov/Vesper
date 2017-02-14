@@ -17,40 +17,46 @@ TTransform::~TTransform(){
 }
 
 void TTransform::identidad(){
-	matriz = glm::mat4();
+	actual = glm::mat4();
 }
 
 void TTransform::cargar(glm::mat4 &m){
-	matriz = m;
+	actual = m;
 }
 
 void TTransform::trasponer(){
-	matriz = glm::transpose(matriz);
+	actual = glm::transpose(actual);
 }
 
 void TTransform::trasladar(glm::vec3 pos){
-	matriz = glm::translate(matriz, pos);
+	actual = glm::translate(actual, pos);
 }
 
 void TTransform::rotar(glm::vec3 rot){
 	if (rot.z != 0.0f)
-		matriz = glm::rotate(matriz, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+		actual = glm::rotate(actual, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
 	
 	if (rot.y != 0.0f)
-		matriz = glm::rotate(matriz, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+		actual = glm::rotate(actual, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
 	
 	if (rot.x != 0.0f)
-		matriz = glm::rotate(matriz, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
+		actual = glm::rotate(actual, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
 }
 
 void TTransform::escalar(glm::vec3 esc){
-	matriz = glm::scale(matriz, esc);
+	actual = glm::scale(actual, esc);
 }
 
-void TTransform::beginDraw(){
+void TTransform::beginDraw(glm::mat4 &matriz){
+	//TO DO: mirar si es preorden o postorden
+	actual = actual * matriz;
+	pila.push(actual);
 	
 }
 
 void TTransform::endDraw(){
-	
+	actual = pila.top();
+	pila.pop();
 }
+
+

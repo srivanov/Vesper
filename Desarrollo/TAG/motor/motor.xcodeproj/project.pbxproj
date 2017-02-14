@@ -21,7 +21,8 @@
 		E9B3EF8A1E1F21E90039E88A /* libzlibstatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B3EF891E1F21E90039E88A /* libzlibstatic.a */; };
 		E9B3EF941E1F29820039E88A /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF931E1F29820039E88A /* Mesh.cpp */; };
 		E9B3EF981E1F2A230039E88A /* TModelo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF961E1F2A230039E88A /* TModelo.cpp */; };
-		E9E078101E51C68400BA7560 /* TMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9E0780E1E51C68400BA7560 /* TMalla.cpp */; };
+		E9B47DED1E535C75000466D7 /* TEscena.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B47DEB1E535C75000466D7 /* TEscena.cpp */; };
+		E9B47DF01E53643D000466D7 /* TMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B47DEE1E53643D000466D7 /* TMalla.cpp */; };
 		E9EFC4041E49EB94000E84B1 /* TNodo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9EFC4021E49EB94000E84B1 /* TNodo.cpp */; };
 		E9F59EED1E09B6910048E771 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EEC1E09B6910048E771 /* Cocoa.framework */; };
 		E9F59EF51E09B9880048E771 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF41E09B9880048E771 /* CoreVideo.framework */; };
@@ -47,7 +48,6 @@
 		E94394571E09A7CB0053DBE7 /* motor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = motor; sourceTree = BUILT_PRODUCTS_DIR; };
 		E943945A1E09A7CB0053DBE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E94394681E09A81C0053DBE7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		E954B0911E17DC4F00F1BEB6 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
 		E954B0921E17F7EC00F1BEB6 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = libs/libSOIL.a; sourceTree = "<group>"; };
 		E958EC311E4A1FD700478D49 /* TTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TTransform.cpp; sourceTree = "<group>"; };
 		E958EC321E4A1FD700478D49 /* TTransform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TTransform.hpp; sourceTree = "<group>"; };
@@ -66,12 +66,13 @@
 		E9B3EF931E1F29820039E88A /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		E9B3EF961E1F2A230039E88A /* TModelo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = TModelo.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E9B3EF971E1F2A230039E88A /* TModelo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; lineEnding = 0; path = TModelo.hpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		E9B47DEB1E535C75000466D7 /* TEscena.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TEscena.cpp; sourceTree = "<group>"; };
+		E9B47DEC1E535C75000466D7 /* TEscena.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TEscena.hpp; sourceTree = "<group>"; };
+		E9B47DEE1E53643D000466D7 /* TMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TMalla.cpp; sourceTree = "<group>"; };
+		E9B47DEF1E53643D000466D7 /* TMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TMalla.hpp; sourceTree = "<group>"; };
 		E9B8EB6A1E16CE93003811A4 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		E9CC8D191E22D433005D1408 /* texLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texLight.frag; sourceTree = "<group>"; };
 		E9CC8D1A1E22D433005D1408 /* texLight.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texLight.vs; sourceTree = "<group>"; };
-		E9DAC0401E1A58B100F2B347 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
-		E9E0780E1E51C68400BA7560 /* TMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TMalla.cpp; sourceTree = "<group>"; };
-		E9E0780F1E51C68400BA7560 /* TMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TMalla.hpp; sourceTree = "<group>"; };
 		E9EFC4001E49E9E8000E84B1 /* TEntidad.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TEntidad.hpp; sourceTree = "<group>"; };
 		E9EFC4021E49EB94000E84B1 /* TNodo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TNodo.cpp; sourceTree = "<group>"; };
 		E9EFC4031E49EB94000E84B1 /* TNodo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TNodo.hpp; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		E943944E1E09A7CB0053DBE7 = {
 			isa = PBXGroup;
 			children = (
-				E954B0901E17DC3700F1BEB6 /* Textures */,
 				E99573AD1E16F49B00487446 /* Shaders */,
 				E94394591E09A7CB0053DBE7 /* motor */,
 				E94394581E09A7CB0053DBE7 /* Products */,
@@ -139,8 +139,10 @@
 				E9EFC4031E49EB94000E84B1 /* TNodo.hpp */,
 				E958EC311E4A1FD700478D49 /* TTransform.cpp */,
 				E958EC321E4A1FD700478D49 /* TTransform.hpp */,
-				E9E0780E1E51C68400BA7560 /* TMalla.cpp */,
-				E9E0780F1E51C68400BA7560 /* TMalla.hpp */,
+				E9B47DEB1E535C75000466D7 /* TEscena.cpp */,
+				E9B47DEC1E535C75000466D7 /* TEscena.hpp */,
+				E9B47DEE1E53643D000466D7 /* TMalla.cpp */,
+				E9B47DEF1E53643D000466D7 /* TMalla.hpp */,
 			);
 			path = motor;
 			sourceTree = "<group>";
@@ -159,15 +161,6 @@
 				E94394681E09A81C0053DBE7 /* OpenGL.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E954B0901E17DC3700F1BEB6 /* Textures */ = {
-			isa = PBXGroup;
-			children = (
-				E9DAC0401E1A58B100F2B347 /* container.jpg */,
-				E954B0911E17DC4F00F1BEB6 /* wall.jpg */,
-			);
-			path = Textures;
 			sourceTree = "<group>";
 		};
 		E99573AD1E16F49B00487446 /* Shaders */ = {
@@ -246,7 +239,8 @@
 				E960F3F01E1E6C4300A90C05 /* Camera.cpp in Sources */,
 				E9B3EF941E1F29820039E88A /* Mesh.cpp in Sources */,
 				E958EC331E4A1FD700478D49 /* TTransform.cpp in Sources */,
-				E9E078101E51C68400BA7560 /* TMalla.cpp in Sources */,
+				E9B47DF01E53643D000466D7 /* TMalla.cpp in Sources */,
+				E9B47DED1E535C75000466D7 /* TEscena.cpp in Sources */,
 				E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */,
 				E9EFC4041E49EB94000E84B1 /* TNodo.cpp in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,

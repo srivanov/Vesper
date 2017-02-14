@@ -2,7 +2,7 @@
 //  TMalla.hpp
 //  motor
 //
-//  Created by Stoycho Ivanov Atanasov on 14/2/17.
+//  Created by Stoycho Ivanov Atanasov on 13/2/17.
 //  Copyright © 2017 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
@@ -23,6 +23,8 @@ public:
 	
 	void beginDraw();
 	void endDraw();
+	
+private:
 	
 };
 

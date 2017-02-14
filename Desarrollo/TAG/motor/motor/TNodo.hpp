@@ -16,6 +16,7 @@ class TNodo{
 public:
 	TNodo();
 	~TNodo();
+	
 	int addHijo(TNodo* n);
 	int remHijo(TNodo* n);
 	bool setEntidad(TEntidad* en);

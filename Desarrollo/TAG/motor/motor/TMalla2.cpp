@@ -1,10 +1,3 @@
-//
-//  TMalla.cpp
-//  motor
-//
-//  Created by Stoycho Ivanov Atanasov on 14/2/17.
-//  Copyright © 2017 Stoycho Ivanov Atanasov. All rights reserved.
-//
 
 #include "TMalla.hpp"
 
@@ -27,3 +20,5 @@ void TMalla::beginDraw(){
 void TMalla::endDraw(){
 	
 }
+
+

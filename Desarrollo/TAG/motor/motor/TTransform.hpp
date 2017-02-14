@@ -10,10 +10,10 @@
 #define TTransform_hpp
 
 #include <stdio.h>
-#include "TEntidad.hpp"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "TEntidad.hpp"
 
 class TTransform : public TEntidad{
 public:
@@ -27,10 +27,11 @@ public:
 	void rotar(glm::vec3 rot);
 	void escalar(glm::vec3 esc);
 	
-	void beginDraw();
+	void beginDraw(glm::mat4 &matriz);
 	void endDraw();
 private:
-	glm::mat4 matriz;
+	glm::mat4 actual;
+	std::stack<glm::mat4> pila;
 };
 
 #endif /* TTransform_hpp */

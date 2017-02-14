@@ -9,6 +9,8 @@
 #ifndef TEntidad_hpp
 #define TEntidad_hpp
 
+#include <stack>
+
 class TEntidad{
 public:
 	TEntidad(){}
