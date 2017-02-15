@@ -35,7 +35,6 @@ public:
 	void render();
 	bool isRunning();
     player* getPlayer();
-    bala* insertBala(float vel);
     void zoom(bool z);
 	void atacarJugador();
 	void cambiarArmaJugador();
@@ -52,7 +51,6 @@ private:
 	bool running;
     player* jugador;
     camara* cam;
-    vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;

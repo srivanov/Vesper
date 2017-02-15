@@ -3,19 +3,18 @@
 #define bombaHumo_hpp
 
 #include <stdio.h>
-#include "armaInterface.hpp"
 #include <time.h>
 
-class bombaHumo : public armaInterface{
+class bombaHumo {
 public:
 	bombaHumo(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
 	~bombaHumo();
-	void atacar() override;
-	unsigned int getMunicion() override;
-	void setMunicion(unsigned int n) override;
+	void atacar();
+	unsigned int getMunicion();
+	void setMunicion(unsigned int n);
 	void update();
-	void destructor() override;
-    typeArma const* getType() override;
+	void destructor();
+    typeArma const* getType();
 	
 private:
 	unsigned int cadencia, municion, cargador;

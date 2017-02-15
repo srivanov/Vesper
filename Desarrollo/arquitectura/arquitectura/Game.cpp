@@ -27,7 +27,6 @@ Game::~Game(){
 	delete entrada;
 	delete cam;
 	delete nivelazo;
-	balas.clear();
 	delete jugador;
 	renderizador->closeWindow();
 	delete renderizador;
@@ -62,13 +61,6 @@ void Game::stop(){
 
 void Game::render(){
 	jugador->render();
-	
-    iter = balas.begin();
-    while (iter != balas.end()){
-        bala_aux = *iter;
-        bala_aux->render();
-        iter++;
-    }
     renderizador->dibujar();
 }
 
@@ -82,32 +74,12 @@ player* Game::getPlayer(){
     return jugador;
 }
 
-bala* Game::insertBala(float vel){
-    //TO DO: Hacer la gestion de las balas en la clase bala
-    bala_aux = new bala(*jugador->getPosicion(), *jugador->getDirDisparo(), vel);
-    bala_aux->addNodo("3d/bala.3ds");
-    balas.insert(balas.begin(), bala_aux);
-    return bala_aux;
-}
 
 void Game::update(){
 	nivelazo->update();
 	entrada->update();
 	jugador->update();
 	cam->movimientoInteligente(*jugador->getPosicion());
-	
-    iter = balas.begin();
-    while (iter != balas.end()){
-        bala_aux = *iter;
-        bala_aux->mover(*bala_aux->getDireccion());
-		bala_aux->update();
-		if(*bala_aux->getmuero()){
-			delete bala_aux;
-            bala_aux = NULL;
-			iter = balas.erase(iter);
-		}else
-			iter++;
-    }
 	
     trigger_system::_instance()->update();
 	

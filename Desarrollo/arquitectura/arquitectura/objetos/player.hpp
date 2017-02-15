@@ -5,13 +5,15 @@
 #include <iostream>
 #include "GameObject.hpp"
 #include "../components/armas.hpp"
-#include "../components/pistola.hpp"
+#include "../components/gun.hpp"
 #include "../Dvector.hpp"
 
 class player : public GameObject{
 public:
     player();
     ~player();
+    void update();
+    void render();
 	void atacar();
 	void cambiarArma();
 	void contacto(GameObject* g);

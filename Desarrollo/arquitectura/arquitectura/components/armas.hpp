@@ -4,33 +4,26 @@
 
 #include <stdio.h>
 #include "component.hpp"
-#include "armaInterface.hpp"
-#include "pistola.hpp"
-#include "escopeta.hpp"
-#include "lanzaCaramelos.hpp"
-#include "piedra.hpp"
-#include "globoAgua.hpp"
-#include "chicle.hpp"
-#include "bombaHumo.hpp"
-#include "martilloDeJuguete.hpp"
-#include "pala.hpp"
+#include "gun.hpp"
 #include <vector>
+#include "Dvector.hpp"
 
 class armas : public component {
 public:
     armas();
     ~armas();
 	void update() override;
+    void render();
 	void shoot();
 	void changeGun();
     void insertarArma(int a);
-    void eliminarArma(std::vector<armaInterface*>::iterator iter);
-    armaInterface* getArmaActual();
+    void eliminarArma(std::vector<gun*>::iterator iter);
+    gun* getArmaActual();
 	
 private:
 //	armaInterface* aux;
-	std::vector<armaInterface*>::iterator seleccionada;
-	std::vector<armaInterface*> interface;
+	std::vector<gun*>::iterator seleccionada;
+	std::vector<gun*> interface;
 };
 
 #endif /* armas_hpp */

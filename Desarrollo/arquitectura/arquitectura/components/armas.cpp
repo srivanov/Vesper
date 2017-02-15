@@ -1,5 +1,6 @@
 
 #include "armas.hpp"
+#include "../objetos/GameObject.hpp"
 
 armas::armas(){
 
@@ -27,8 +28,8 @@ armas::armas(){
 //	aux = new martilloDeJuguete(10, 0.2f, 4.0f);
 //	interface.push_back(aux);
     
-    interface.push_back(new martilloDeJuguete(10, 0.2f, 4.0f));
-    interface.push_back(new pistola(8, 2.0f, 2.0f));
+    interface.push_back(new gun(10, 0.2f, 4.0f, 2, 6, tMARTILLO));
+    interface.push_back(new gun(8, 2.0f, 2.0f, 1, 6, tPISTOLA));
 	
 	seleccionada = interface.begin();
     
@@ -38,7 +39,7 @@ armas::armas(){
 armas::~armas(){
 	seleccionada = interface.begin();
 	while(seleccionada != interface.end()){
-        (*seleccionada)->destructor();
+        delete (*seleccionada);
 		seleccionada++;
 	}
 	interface.clear();
@@ -46,12 +47,18 @@ armas::~armas(){
 
 void armas::update(){
 	//TO DO: Hacer la gestion de las balas aqui y en la clase bala
+    (*seleccionada)->update();
+}
+
+void armas::render(){
+    (*seleccionada)->render();
 }
 
 void armas::shoot(){
 //	Game::Instance()->insertBala();
     if(interface.size() > 0)
-		(*seleccionada)->atacar();
+        (*seleccionada)->atacar(*getFather()->getPosicion(), *getFather()->getDirDisparo());
+    //pasarle a atacar dos Dvector que seran la posicion y la direccion de disparo
 }
 
 void armas::changeGun(){
@@ -62,27 +69,27 @@ void armas::changeGun(){
 }
 
 void armas::insertarArma(int a){
-    armaInterface* aux = *seleccionada;
+    gun* aux = *seleccionada;
     if(a < 1 || a > 9){
     	
     }else if(a == 1){
         
     }else if(a == 2){
-        interface.push_back(new escopeta(10, 0.2f, 4.0f));
+        interface.push_back(new gun(10, 0.2f, 4.0f, 1, 2, tESCOPETA));
     }else if(a == 3){
-        interface.push_back(new lanzaCaramelos(30, 3.0f, 4.0f));
+        interface.push_back(new gun(30, 3.0f, 4.0f, 5, 6, tLANZACARAMELOS));
     }else if(a == 4){
-        interface.push_back(new piedra(5, 5.0f, 4.0f));
+        interface.push_back(new gun(5, 5.0f, 4.0f, 2, 6, tPIEDRAc));
     }else if(a == 5){
-        interface.push_back(new globoAgua(3, 2.5f, 4.0f));
+        interface.push_back(new gun(3, 2.5f, 4.0f, 1, 6, tGLOBOAGUA));
     }else if(a == 6){
-        interface.push_back(new chicle(3, 2.5f, 4.0f));
+        interface.push_back(new gun(3, 2.5f, 4.0f, 1, 6, tCHICLE));
     }else if(a == 7){
-        interface.push_back(new bombaHumo(3, 2.5f, 4.0f));
+        interface.push_back(new gun(3, 2.5f, 4.0f, 1, 6, tBOMBAHUMO));
     }else if(a == 8){
         
     }else if(a == 9){
-        interface.push_back(new pala(10, 0.2f, 4.0f));
+        interface.push_back(new gun(10, 0.2f, 4.0f, 1, 6, tPALAc));
     }
     bool busca = true;
     seleccionada = interface.begin();
@@ -94,11 +101,11 @@ void armas::insertarArma(int a){
     }
 }
 
-void armas::eliminarArma(std::vector<armaInterface *>::iterator iter){
+void armas::eliminarArma(std::vector<gun *>::iterator iter){
     interface.erase(iter);
 }
 
-armaInterface* armas::getArmaActual(){
+gun* armas::getArmaActual(){
     return *seleccionada;
 }
 

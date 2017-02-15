@@ -47,6 +47,16 @@ player::~player(){
 	
 }
 
+void player::update(){
+    GameObject::update();
+    arma->update();
+}
+
+void player::render(){
+    GameObject::render();
+    arma->render();
+}
+
 void player::atacar(){
 	if(*(arma->getArmaActual()->getType()) == tPALAc)
         cuerpoacuerpo();

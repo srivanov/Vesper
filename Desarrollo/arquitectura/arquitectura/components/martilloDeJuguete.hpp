@@ -3,19 +3,18 @@
 #define martilloDeJuguete_hpp
 
 #include <stdio.h>
-#include "armaInterface.hpp"
 #include <time.h>
 
 class martilloDeJuguete : public armaInterface{
 public:
 	martilloDeJuguete(unsigned int pMunicion, float pAlcance, float pTiempo_recarga);
 	~martilloDeJuguete();
-	void atacar() override;
-	unsigned int getMunicion() override;
-	void setMunicion(unsigned int n) override;
+	void atacar();
+	unsigned int getMunicion();
+	void setMunicion(unsigned int n);
 	void update();
-	void destructor() override;
-    typeArma const* getType() override;
+	void destructor();
+    typeArma const* getType();
 	
 private:
 	unsigned int cadencia, municion, cargador;
