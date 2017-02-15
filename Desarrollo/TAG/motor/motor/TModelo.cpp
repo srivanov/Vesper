@@ -10,7 +10,7 @@ TModelo::~TModelo(){
 	
 }
 
-void TModelo::Draw(Shader shader){
+void TModelo::Draw(Shader &shader){
 	glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
 	std::vector<Mesh>::iterator it = meshes.begin();
 	while(it != meshes.end()){

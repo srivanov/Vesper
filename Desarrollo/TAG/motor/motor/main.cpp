@@ -13,7 +13,8 @@
 
 #include "Shader.h"
 #include "camera.hpp"
-#include "TModelo.hpp"
+//#include "TModelo.hpp"
+#include "TEscena.hpp"
 
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -140,18 +141,18 @@ int main(int argc, const char * argv[]) {
 	//creamos la clase Shader y compilamos los shaders
 	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
-	TModelo modelo("../Models/microwave.obj");
+//	TModelo modelo("../Models/microwave.obj");
 //	modelo.imprimirDatos();
 //	modelo.setTexture("../Textures/awesomeface.png");
 //	modelo.setRotation(glm::vec3(0.0f, 0.0f, 0.0f));
-	modelo.setRotation(glm::vec3(90.0f, 90.0f, 0.0f));
-	TModelo modelo2("../Models/cube.obj");
+//	modelo.setRotation(glm::vec3(90.0f, 90.0f, 0.0f));
+//	TModelo modelo2("../Models/cube.obj");
 //	modelo2.imprimirDatos();
 //
 //	TModelo modelo3("../Models/nanosuit/nanosuit.obj");
 //	modelo3.imprimirDatos();
 	
-	
+	TEscena escena(miShader);
 	
 	GLuint modelLoc, viewLoc, projectionLoc;
 	
@@ -254,19 +255,21 @@ int main(int argc, const char * argv[]) {
 //		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
 //		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
 //		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		modelo.Draw(miShader);
-		
-		glm::mat4 model2;
-		model2 = glm::translate(model2, glm::vec3(3.0f, -2.0f, 0.0f));
-		model2 = glm::scale(model2, glm::vec3(0.5f, 0.5f, 0.5f));
-		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model2));
-		modelo2.Draw(miShader);
+//		modelo.Draw(miShader);
+//		
+//		glm::mat4 model2;
+//		model2 = glm::translate(model2, glm::vec3(3.0f, -2.0f, 0.0f));
+//		model2 = glm::scale(model2, glm::vec3(0.5f, 0.5f, 0.5f));
+//		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model2));
+//		modelo2.Draw(miShader);
 //
 //		glm::mat4 model3;
 //		model3 = glm::translate(model3, glm::vec3(-2.0f, -2.0f, 0.0f));
 //		model3 = glm::scale(model3, glm::vec3(0.2f, 0.2f, 0.2f));
 //		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model3));
 //		modelo3.Draw(miShader);
+		
+		escena.Draw();
 		
 //		//linkamos el VAO
 //		glBindVertexArray(VAO);

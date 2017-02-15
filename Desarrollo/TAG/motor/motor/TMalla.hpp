@@ -13,7 +13,8 @@
 #include <string>
 
 #include "TEntidad.hpp"
-
+#include "TModelo.hpp"
+#include "Shader.h"
 
 class TMalla : public TEntidad{
 public:
@@ -23,7 +24,9 @@ public:
 	
 	void beginDraw();
 	void endDraw();
-	
+	Shader* sh;
+private:
+	TModelo malla;
 };
 
 #endif /* TMalla_hpp */

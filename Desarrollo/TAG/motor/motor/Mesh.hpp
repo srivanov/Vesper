@@ -30,7 +30,7 @@ public:
 	std::vector<Texture> texturas;
 	
 	Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> texturas);
-	void Draw(Shader shader);
+	void Draw(Shader &shader);
 	
 private:
 	

@@ -40,16 +40,20 @@ TEntidad* TNodo::getEntidad(){
 	return entidad;
 }
 
+void TNodo::setPadre(TNodo* p){
+	padre = p;
+}
+
 TNodo* TNodo::getPadre(){
 	return padre;
 }
 
-void TNodo::draw(){
+void TNodo::Draw(){
 	if(entidad != NULL)
 		entidad->beginDraw();
 	
 	for (auto it = hijos.begin(); it != hijos.end(); ++it) {
-		(*it)->draw();
+		(*it)->Draw();
 	}
 	
 	if(entidad != NULL)

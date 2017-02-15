@@ -21,8 +21,9 @@ public:
 	int remHijo(TNodo* n);
 	bool setEntidad(TEntidad* en);
 	TEntidad* getEntidad();
+	void setPadre(TNodo* p);
 	TNodo* getPadre();
-	void draw();
+	void Draw();
 	
 private:
 	TEntidad* entidad;

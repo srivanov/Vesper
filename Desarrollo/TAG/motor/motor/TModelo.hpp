@@ -21,17 +21,18 @@
 
 class TModelo{
 public:
+	TModelo(){}
 	TModelo(GLchar* ruta);
 	~TModelo();
-	void Draw(Shader shader);
+	void Draw(Shader &shader);
 	void imprimirDatos();
 	void setTexture(std::string ruta);
 	void setPosition(glm::vec3 pos);
 	void setRotation(glm::vec3 rot);
 	
-	
-private:
 	void cargarMalla(std::string ruta);
+private:
+	
 	void processNode(aiNode* node, const aiScene* scene);
 	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
 	std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);

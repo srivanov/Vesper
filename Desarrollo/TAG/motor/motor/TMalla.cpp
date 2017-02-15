@@ -17,11 +17,11 @@ TMalla::~TMalla(){
 }
 
 void TMalla::cargarMalla(std::string fichero){
-	
+	malla.cargarMalla(fichero);
 }
 
 void TMalla::beginDraw(){
-	//malla->Draw();
+	malla.Draw(*sh);
 }
 
 void TMalla::endDraw(){
