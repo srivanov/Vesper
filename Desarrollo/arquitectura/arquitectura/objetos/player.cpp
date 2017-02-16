@@ -35,7 +35,7 @@ player::player(){
     dvector3D pos(0,0,0);
 	
     obj_colisionado = NULL;
-	velocidad = 1;
+	velocidad = 2;
     muero = false;
     arma = (armas*)findComponent("armas");
     fisica->crearBodyDinamico(dim, pos);

@@ -129,7 +129,7 @@ void render::dibujarMapa(){
     IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(static_cast<nivel*>(getFather())->getAlto(),static_cast<nivel*>(getFather())->getAncho()));
     nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/mapimg.png"));
+    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
     
     nodo_suelo->setPosition(vector3df((static_cast<nivel*>(getFather())->getAlto()/2)-0.5, (static_cast<nivel*>(getFather())->getAncho()/2)-0.5, 0));
     
@@ -141,7 +141,7 @@ void render::dibujarMapa(){
 	
     for(int j = 0; j<h1; j++){
         for(int k = w1-static_cast<nivel*>(getFather())->getAncho(); k<w1; k++){
-			if(mapita->at(k) == 21 || mapita->at(k) == 9){
+			if(mapita->at(k) == 1){
 				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
 				nodo->setMaterialFlag(EMF_LIGHTING, false);
 				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));

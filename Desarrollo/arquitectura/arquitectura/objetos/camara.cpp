@@ -28,7 +28,7 @@ camara::camara(){
 	offsetY = -5;
 	offsetZ = -10;
 	//velocidad de la camara
-	camSpeed = 1.5f;
+	camSpeed = 1.5f; //TO DO: que la vel de la camara vaya acorde con la del player
     //variable para zoom zoom zoom
     cerca = false;
 	aux = NULL;

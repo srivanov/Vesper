@@ -37,15 +37,15 @@ bool nivel::cargarNivel(char* numero){
 	ancho = cargador->getWidth();
 	alto = cargador->getHeight();
 	
-	dvector3D pos1(5,17,0);
+	dvector3D pos1(16,32,0);
     GameObject* aux = new palaObj();
 	aux->addNodo("");
 	aux->setTexture("3d/pala.jpg");
 	aux->setPosicion(pos1);
-    
+
     powerups.push_back(aux);
 	
-    dvector3D pos2(3,20,0);
+    dvector3D pos2(27,95,0);
     aux = new piedraObj();
     aux->addNodo("");
     aux->setTexture("3d/piedra.jpg");
@@ -53,7 +53,15 @@ bool nivel::cargarNivel(char* numero){
     
     powerups.push_back(aux);
     
-    dvector3D pos3(8,20,0);
+    dvector3D pos6(40,25,0);
+    aux = new piedraObj();
+    aux->addNodo("");
+    aux->setTexture("3d/piedra.jpg");
+    aux->setPosicion(pos6);
+    
+    powerups.push_back(aux);
+    
+    dvector3D pos3(5,63,0);
     aux = new monedas();
     aux->addNodo("");
     aux->setTexture("3d/moneda.jpg");
@@ -61,57 +69,58 @@ bool nivel::cargarNivel(char* numero){
     
     powerups.push_back(aux);
 	
-    dvector3D pos5(8,22,0);
+    dvector3D pos5(24,33,0);
     aux = new monedas();
     aux->addNodo("");
     aux->setTexture("3d/moneda.jpg");
     aux->setPosicion(pos5);
     
     powerups.push_back(aux);
-    dvector3D pos6(8,24,0);
+    
+    dvector3D pos7(45,90,0);
     aux = new monedas();
     aux->addNodo("");
     aux->setTexture("3d/moneda.jpg");
-    aux->setPosicion(pos6);
+    aux->setPosicion(pos7);
     
     powerups.push_back(aux);
-    
-    dvector3D pos4(4,11,0);
+
+    dvector3D pos4(45,50,0);
     aux = new llaveObj();
     aux->addNodo("");
     aux->setTexture("3d/llave.jpg");
     aux->setPosicion(pos4);
     
     powerups.push_back(aux);
-	
-	
-    enemigos* npc = new enemigos(contador_npc);
-    npc->addNodo("");
-    npc->setTexture("3d/naranja.jpg");
-    dvector3D nodepos(10,15,0);
-    npc->setPosicion(nodepos);
-    
-    contador_npc++;
-    npcs.insert(npcs.end(), npc);
-    npc = NULL;
-    delete npc;
-	
+//
+//	
+//    enemigos* npc = new enemigos(contador_npc);
+//    npc->addNodo("");
+//    npc->setTexture("3d/naranja.jpg");
+//    dvector3D nodepos(10,15,0);
+//    npc->setPosicion(nodepos);
+//    
+//    contador_npc++;
+//    npcs.insert(npcs.end(), npc);
+//    npc = NULL;
+//    delete npc;
+//
 	puerta * puertita = new puerta();
 	puertita->addNodo("");
 	puertita->setTexture("3d/puerta.jpg");
-	dvector3D pospu(15,3,0);
+	dvector3D pospu(8,23,0);
 	puertita->setPosicion(pospu);
 	puertita->setTipo(tCHIRRIANTE);
-	
+
 	contador_npc++;
 	puertas.insert(puertas.end(), puertita);
 	puertita = NULL;
 	delete puertita;
-	
+
     alarma * alarmita = new alarma(contador_npc);
     alarmita->addNodo("");
     alarmita->setTexture("3d/alarmita.jpg");
-    dvector3D posal(5,3,0);
+    dvector3D posal(20,65,0);
     alarmita->setPosicion(posal);
     
     contador_npc++;
@@ -119,10 +128,21 @@ bool nivel::cargarNivel(char* numero){
     alarmita = NULL;
     delete alarmita;
     
+    alarma * alarmita2 = new alarma(contador_npc);
+    alarmita2->addNodo("");
+    alarmita2->setTexture("3d/alarmita.jpg");
+    dvector3D posal2(29,2,0);
+    alarmita2->setPosicion(posal2);
+    
+    contador_npc++;
+    alarmas.insert(alarmas.end(), alarmita2);
+    alarmita2 = NULL;
+    delete alarmita2;
+    
     fuente * fuentezita = new fuente(contador_npc);
     fuentezita->addNodo("");
     fuentezita->setTexture("3d/fuenten.jpg");
-    dvector3D posf(0,10,0);
+    dvector3D posf(5,55,0);
     fuentezita->setPosicion(posf);
     
     contador_npc++;
@@ -130,10 +150,21 @@ bool nivel::cargarNivel(char* numero){
     fuentezita = NULL;
     delete fuentezita;
     
+    fuente * fuentezita2 = new fuente(contador_npc);
+    fuentezita2->addNodo("");
+    fuentezita2->setTexture("3d/fuenten.jpg");
+    dvector3D posf2(39,6,0);
+    fuentezita2->setPosicion(posf2);
+    
+    contador_npc++;
+    fuentes.insert(fuentes.end(), fuentezita2);
+    fuentezita2 = NULL;
+    delete fuentezita2;
+    
     comida * comidita = new comida(contador_npc);
     comidita->addNodo("");
     comidita->setTexture("3d/pizza.jpg");
-    dvector3D poscom(0,0,0);
+    dvector3D poscom(4,26,0);
     comidita->setPosicion(poscom);
     
     contador_npc++;
@@ -141,10 +172,21 @@ bool nivel::cargarNivel(char* numero){
     comidita = NULL;
     delete comidita;
     
+    comida * comidita2 = new comida(contador_npc);
+    comidita2->addNodo("");
+    comidita2->setTexture("3d/pizza.jpg");
+    dvector3D poscom2(36,58,0);
+    comidita2->setPosicion(poscom2);
+    
+    contador_npc++;
+    comidas.insert(comidas.end(), comidita2);
+    comidita2 = NULL;
+    delete comidita2;
+    
     botiquin * botiqueen = new botiquin(contador_npc);
     botiqueen->addNodo("");
     botiqueen->setTexture("3d/botiquin.jpg");
-    dvector3D posbot(10,0,0);
+    dvector3D posbot(37,34,0);
     botiqueen->setPosicion(posbot);
     
     contador_npc++;
