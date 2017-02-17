@@ -9,12 +9,10 @@
 #ifndef TEntidad_hpp
 #define TEntidad_hpp
 
-#include <stack>
-
 class TEntidad{
 public:
 	TEntidad(){}
-	~TEntidad(){}
+	virtual ~TEntidad(){}
 	virtual void beginDraw()=0;
 	virtual void endDraw()=0;
 };

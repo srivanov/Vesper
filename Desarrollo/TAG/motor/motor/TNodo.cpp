@@ -49,6 +49,11 @@ TNodo* TNodo::getPadre(){
 }
 
 void TNodo::Draw(){
+	if(padre == NULL){
+		glm::mat4 m;
+		Pila::Instance()->push(m);
+		Pila::Instance()->pushMT(m);
+	}
 	if(entidad != NULL)
 		entidad->beginDraw();
 	

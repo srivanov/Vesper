@@ -11,6 +11,7 @@
 
 #include <vector>
 #include "TEntidad.hpp"
+#include "Pila.h"
 
 class TNodo{
 public:

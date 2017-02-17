@@ -72,6 +72,7 @@
 		E9B47DEE1E53643D000466D7 /* TMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TMalla.cpp; sourceTree = "<group>"; };
 		E9B47DEF1E53643D000466D7 /* TMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TMalla.hpp; sourceTree = "<group>"; };
 		E9B8EB6A1E16CE93003811A4 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E9BC146A1E574C3F0059710B /* Pila.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pila.h; sourceTree = "<group>"; };
 		E9CC8D191E22D433005D1408 /* texLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texLight.frag; sourceTree = "<group>"; };
 		E9CC8D1A1E22D433005D1408 /* texLight.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texLight.vs; sourceTree = "<group>"; };
 		E9E5A76B1E54C435005A7B72 /* TGestorRecursos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TGestorRecursos.cpp; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 				E9E5A76B1E54C435005A7B72 /* TGestorRecursos.cpp */,
 				E9E5A76C1E54C435005A7B72 /* TGestorRecursos.hpp */,
 				E9E5A76F1E54CF98005A7B72 /* TRecurso.hpp */,
+				E9BC146A1E574C3F0059710B /* Pila.h */,
 			);
 			path = motor;
 			sourceTree = "<group>";

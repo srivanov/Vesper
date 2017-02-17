@@ -9,6 +9,7 @@
 #ifndef TTransform_hpp
 #define TTransform_hpp
 
+#include "Pila.h"
 #include <stdio.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -27,11 +28,11 @@ public:
 	void rotar(glm::vec3 rot);
 	void escalar(glm::vec3 esc);
 	
-	void beginDraw(glm::mat4 &matriz);
+	void beginDraw();
 	void endDraw();
 private:
 	glm::mat4 actual;
-	std::stack<glm::mat4> pila;
+	Pila* pila;
 };
 
 #endif /* TTransform_hpp */

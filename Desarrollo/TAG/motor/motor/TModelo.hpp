@@ -30,6 +30,8 @@ public:
 	void setPosition(glm::vec3 pos);
 	void setRotation(glm::vec3 rot);
 	
+	void asignarMatrix(glm::mat4 *m);
+	
 	void cargarMalla(std::string ruta);
 private:
 	

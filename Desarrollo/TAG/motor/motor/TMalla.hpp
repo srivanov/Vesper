@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 
+#include "Pila.h"
 #include "TEntidad.hpp"
 #include "TModelo.hpp"
 #include "Shader.h"
@@ -27,6 +28,7 @@ public:
 	Shader* sh;
 private:
 	TModelo malla;
+	Pila* pila;
 };
 
 #endif /* TMalla_hpp */

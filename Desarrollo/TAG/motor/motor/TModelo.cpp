@@ -10,6 +10,10 @@ TModelo::~TModelo(){
 	
 }
 
+void TModelo::asignarMatrix(glm::mat4 *m){
+	modelMatrix = *m;
+}
+
 void TModelo::Draw(Shader &shader){
 	glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
 	std::vector<Mesh>::iterator it = meshes.begin();

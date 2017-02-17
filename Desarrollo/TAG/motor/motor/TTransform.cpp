@@ -9,7 +9,7 @@
 #include "TTransform.hpp"
 
 TTransform::TTransform(){
-	
+	pila = Pila::Instance();
 }
 
 TTransform::~TTransform(){
@@ -47,16 +47,18 @@ void TTransform::escalar(glm::vec3 esc){
 	actual = glm::scale(actual, esc);
 }
 
-void TTransform::beginDraw(glm::mat4 &matriz){
+void TTransform::beginDraw(){
 	//TO DO: mirar si es preorden o postorden
-	actual = actual * matriz;
-	pila.push(actual);
-	
+	pila->push(actual);
+	actual = actual * *pila->topMT();
+	pila->pushMT(actual);
+	printf("BEGIN DRAW Transform\n");
 }
 
 void TTransform::endDraw(){
-	actual = pila.top();
-	pila.pop();
+	actual = *pila->pop();
+	pila->popMT();
+	printf("END DRAW Transform\n");
 }
 
 

@@ -9,7 +9,7 @@
 #include "TMalla.hpp"
 
 TMalla::TMalla(){
-	
+	pila = Pila::Instance();
 }
 
 TMalla::~TMalla(){
@@ -21,9 +21,11 @@ void TMalla::cargarMalla(std::string fichero){
 }
 
 void TMalla::beginDraw(){
+	malla.asignarMatrix(pila->topMT());
 	malla.Draw(*sh);
+	printf("BEGIN DRAW Malla\n");
 }
 
 void TMalla::endDraw(){
-	
+	printf("END DRAW Malla\n");
 }
