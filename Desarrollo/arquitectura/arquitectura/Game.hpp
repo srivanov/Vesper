@@ -49,7 +49,6 @@ private:
 	class render *renderizador;
 	class input* entrada;
 	bool running;
-    player* jugador;
     camara* cam;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;

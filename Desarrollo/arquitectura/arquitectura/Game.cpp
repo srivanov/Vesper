@@ -17,7 +17,6 @@ Game::Game(){
 	renderizador = new class render();
 	entrada = new input();
 	running = true;
-    jugador = new player();
 	cam = new camara();
 	nivelazo = new nivel();
 }
@@ -27,7 +26,6 @@ Game::~Game(){
 	delete entrada;
 	delete cam;
 	delete nivelazo;
-	delete jugador;
 	renderizador->closeWindow();
 	delete renderizador;
     if(bala_aux == NULL)
@@ -39,12 +37,12 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	renderizador->setTexto();
-    jugador->addNodo("3d/sphere.3ds");
-	jugador->setTexture("3d/texture.png");
+    nivelazo->getPlayer()->addNodo("3d/sphere.3ds");
+	nivelazo->getPlayer()->setTexture("3d/texture.png");
     dvector3D jpos(10,10,0);
-	jugador->setPosicion(jpos);
+	nivelazo->getPlayer()->setPosicion(jpos);
 	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
-	cam->addCamara(campos, *jugador->getPosicion());
+	cam->addCamara(campos, *nivelazo->getPlayer()->getPosicion());
 	
 	if(nivelazo->cargarNivel("3"))
 		nivelazo->dibujarMapa();
@@ -60,7 +58,7 @@ void Game::stop(){
 }
 
 void Game::render(){
-	jugador->render();
+    nivelazo->render();
     renderizador->dibujar();
 }
 
@@ -70,16 +68,11 @@ bool Game::isRunning(){
 	return false;
 }
 
-player* Game::getPlayer(){
-    return jugador;
-}
-
 
 void Game::update(){
 	nivelazo->update();
 	entrada->update();
-	jugador->update();
-	cam->movimientoInteligente(*jugador->getPosicion());
+	cam->movimientoInteligente(*nivelazo->getPlayer()->getPosicion());
 	
     trigger_system::_instance()->update();
 	
@@ -93,17 +86,21 @@ void Game::zoom(bool z){
 }
 
 void Game::atacarJugador(){
-	jugador->atacar();
+    nivelazo->atacarJugador();
 }
 
 void Game::cambiarArmaJugador(){
-	jugador->cambiarArma();
+    nivelazo->cambiarArmaJugador();
 }
 
 void Game::rotarConRaton(dvector3D posRaton){
-	jugador->rotarConRaton(posRaton);
+    nivelazo->rotarConRaton(posRaton);
 }
 
 camara* Game::getCamara(){
     return cam;
+}
+
+player* Game::getPlayer() {
+    return nivelazo->getPlayer();
 }

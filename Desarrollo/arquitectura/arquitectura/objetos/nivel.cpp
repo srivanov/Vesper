@@ -19,10 +19,13 @@ nivel::nivel(){
 	cargador = new cargarMapa();
 	aux = NULL;
 	setType(tNIVEL);
+    
+    jugador = new player();
 }
 
 nivel::~nivel(){
 	delete cargador;
+    delete jugador;
 }
 
 bool nivel::cargarNivel(char* numero){
@@ -304,6 +307,8 @@ void nivel::update(){
 			++it6;
 		}
 	}
+    
+    jugador->update();
 }
 
 void nivel::contacto(GameObject *g){
@@ -326,4 +331,21 @@ void nivel::render(){
 //        (*it)->render();
 //        it++;
 //    }
+    jugador->render();
+}
+
+void nivel::cambiarArmaJugador() {
+    jugador->cambiarArma();
+}
+
+void nivel::atacarJugador() {
+    jugador->atacar();
+}
+
+void nivel::rotarConRaton(dvector3D posRaton) {
+    jugador->rotarConRaton(posRaton);
+}
+
+player* nivel::getPlayer() {
+    return jugador;
 }

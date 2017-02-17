@@ -16,6 +16,7 @@
 #include "fuente.hpp"
 #include "camara.hpp"
 #include "puerta.hpp"
+#include "player.hpp"
 
 
 class nivel : public GameObject{
@@ -33,6 +34,10 @@ public:
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();
+    void cambiarArmaJugador();
+    void atacarJugador();
+    void rotarConRaton(dvector3D posRaton);
+    player* getPlayer();
 	
 private:
 	std::vector<int>* mapa_nivel;
@@ -47,5 +52,8 @@ private:
     std::vector<botiquin*> botiquines;
 	std::vector<puerta*> puertas;
     bool muero;
+    player *jugador;
+    
+    
 };
 #endif /* nivel_hpp */
