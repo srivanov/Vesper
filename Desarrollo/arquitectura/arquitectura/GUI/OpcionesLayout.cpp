@@ -9,6 +9,9 @@
 #include "OpcionesLayout.hpp"
 #include "../components/ventana.hpp"
 #include "Game.hpp"
+#include "../JSON/json.hpp"
+
+using json = nlohmann::json;
 
 OpcionesLayout::OpcionesLayout(){
     init("3d/GUI", ventana::Instance()->getDevice());
@@ -53,7 +56,16 @@ OpcionesLayout::OpcionesLayout(){
     
     contenedor_controles = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(15));
     contenedor_controles->hide();
-
+    
+    check_sonido = static_cast<CEGUI::ToggleButton*>(contenedor_sonido->getChild(18));
+    
+    slider_volumen = static_cast<CEGUI::Slider*>(contenedor_sonido->getChild(14));
+    
+    button_guardar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(17));
+    button_guardar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickGuardar, this));
+    
+    // TO DO: Hacer un metodo que ponga los controles segun los datos que ponga en el archivo JSON
+    setControles();
 }
 
 OpcionesLayout::~OpcionesLayout(){
@@ -105,3 +117,22 @@ void OpcionesLayout::onClickResol3(const CEGUI::EventArgs &e){
     printf("pulsado resol3");
 }
 
+void OpcionesLayout::onClickGuardar(const CEGUI::EventArgs &e) {
+    json j;
+    
+    j["sonido"] = check_sonido->isSelected();
+    j["volumen"] = slider_volumen->getCurrentValue();
+    j["resolucion"] = "1280x720";
+    
+    std::ofstream o("controles.json");
+    o << j << std::endl;
+}
+
+void OpcionesLayout::setControles() {
+    std::ifstream i("controles.json");
+    json j;
+    i >> j;
+    
+    check_sonido->setSelected(j["sonido"]);
+    slider_volumen->setCurrentValue(j["volumen"]);
+}

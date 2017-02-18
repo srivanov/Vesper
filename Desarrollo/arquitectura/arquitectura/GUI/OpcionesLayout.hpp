@@ -26,6 +26,8 @@ public:
     void onClickResol1(const CEGUI::EventArgs &e);
     void onClickResol2(const CEGUI::EventArgs &e);
     void onClickResol3(const CEGUI::EventArgs &e);
+    void onClickGuardar(const CEGUI::EventArgs &e);
+    void setControles();
     
 private:
     CEGUI::DefaultWindow *label_ajustes;
@@ -36,11 +38,15 @@ private:
     CEGUI::PushButton *button_resol1;
     CEGUI::PushButton *button_resol2;
     CEGUI::PushButton *button_resol3;
+    CEGUI::PushButton *button_guardar;
+    CEGUI::ToggleButton *check_sonido;
+    CEGUI::Slider *slider_volumen;
     
     CEGUI::DefaultWindow *contenedor_pantalla;
     CEGUI::DefaultWindow *contenedor_sonido;
     CEGUI::DefaultWindow *contenedor_controles;
 
+    int volumen;
 };
 
 #endif /* OpcionesLayout_hpp */

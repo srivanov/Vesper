@@ -10,6 +10,7 @@
             <Property name="Text" value="Créditos" />
             <Property name="Image" value="Menu/crema" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="Disabled" value="true" />
         </Window>
         <Window type="Generic/Label" name="titulo" >
             <Property name="ID" value="2" />

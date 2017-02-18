@@ -46,6 +46,8 @@ void MenuPrincipalLayout::inicializar() {
     
     button_pausa = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(9));
     button_pausa->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickPausa, this));
+    
+    static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(1))->moveToBack();
 }
 
 tLayout MenuPrincipalLayout::getLayout() {
