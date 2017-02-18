@@ -26,6 +26,9 @@ public:
     void onClickOptions(const CEGUI::EventArgs &e);
     void onClickCredits(const CEGUI::EventArgs &e);
     void onClickStopGame(const CEGUI::EventArgs &e);
+    
+    // TO DO: provisisonal
+    void onClickPausa(const CEGUI::EventArgs &e);
 
 private:
     CEGUI::DefaultWindow *label_titulo;
@@ -34,6 +37,7 @@ private:
     CEGUI::PushButton *button_opciones;
     CEGUI::PushButton *button_creditos;
     CEGUI::PushButton *button_salir;
+    CEGUI::PushButton *button_pausa;
 
 };
 

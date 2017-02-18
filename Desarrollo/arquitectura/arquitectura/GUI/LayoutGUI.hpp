@@ -16,6 +16,7 @@
 #include "OpcionesLayout.hpp"
 #include "CreditosLayout.hpp"
 #include "HUDLayout.hpp"
+#include "PausaLayout.hpp"
 #include <vector>
 
 class LayoutGUI {
