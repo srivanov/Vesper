@@ -38,6 +38,11 @@ LayoutGUI::LayoutGUI(){
     aux->setPadre(this);
     vector.push_back(aux);
     
+    aux = new PausaLayout();
+    aux->ocultar();
+    aux->setPadre(this);
+    vector.push_back(aux);
+    
     iter = vector.begin();
 }
 

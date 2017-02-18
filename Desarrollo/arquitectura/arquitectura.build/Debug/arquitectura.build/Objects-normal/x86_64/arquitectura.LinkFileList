@@ -1,70 +1,70 @@
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Fps.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/martilloDeJuguete.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conAlarma.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Dvector.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/cargarMapa.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/salud.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/globoAgua.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/CargarPartidaLayout.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/llaveObj.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/LayoutGUI.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/pala.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conPuzzle.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MyEventReceiver.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/habilidadEspecial.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/mundoBox2D.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ataque.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/component.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IACamara.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/player.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armaInterface.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/render.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GUI.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/hambre.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ventana.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IAEnemigos.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/enemigos.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GUIManager.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/monedas.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Nodos.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/piedraObj.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/BlackBoards.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armas.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/PausaLayout.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armasArrojadizas.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puerta.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/destructiva.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/botiquin.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/estados.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Game.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/lanzaCaramelos.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/comida.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nivel.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bombaHumo.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nodeMesh.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/sed.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/tinyxml2.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/trigger_system.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/CreditosLayout.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MenuPrincipalLayout.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/piedra.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/escopeta.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bloqueada.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chicle.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/physics.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/palaObj.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/input.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/transform3D.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conLlave.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/pistola.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/fuente.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/OpcionesLayout.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chirriante.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GameObject.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/main.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/camara.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bala.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puertaInterface.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/HUDLayout.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/alarma.o
-/Users/Catherine/Documents/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/blindada.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Fps.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/martilloDeJuguete.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conAlarma.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Dvector.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/cargarMapa.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/salud.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/globoAgua.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/CargarPartidaLayout.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/llaveObj.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/LayoutGUI.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/pala.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conPuzzle.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MyEventReceiver.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/habilidadEspecial.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/mundoBox2D.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ataque.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/component.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IACamara.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/player.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armaInterface.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/render.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GUI.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/hambre.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ventana.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IAEnemigos.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/enemigos.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GUIManager.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/monedas.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Nodos.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/piedraObj.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/BlackBoards.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armas.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/PausaLayout.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armasArrojadizas.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puerta.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/destructiva.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/botiquin.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/estados.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Game.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/lanzaCaramelos.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/comida.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nivel.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bombaHumo.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nodeMesh.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/sed.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/tinyxml2.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/trigger_system.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/CreditosLayout.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MenuPrincipalLayout.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/piedra.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/escopeta.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bloqueada.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chicle.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/physics.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/palaObj.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/input.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/transform3D.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conLlave.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/pistola.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/fuente.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/OpcionesLayout.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chirriante.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GameObject.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/main.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/camara.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bala.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puertaInterface.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/HUDLayout.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/alarma.o
+/Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/blindada.o

@@ -18,7 +18,6 @@ PausaLayout::PausaLayout(){
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
-    loadScheme("AlfiskoSkin.scheme");
     loadLayout("Pause.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
     
