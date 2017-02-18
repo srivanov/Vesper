@@ -9,17 +9,15 @@
 #ifndef TRecurso_hpp
 #define TRecurso_hpp
 
-#include <GL/glew.h>
-
 class TRecurso{
 public:
-	TRecurso();
-	~TRecurso();
-	GLchar* GetNombre(){ return nombre; }
-	void SetNombre(GLchar* n){ nombre = n; }
-	
+	TRecurso(){}
+	virtual ~TRecurso(){}
+	char* GetNombre(){ return nombre; }
+	void SetNombre(char* n){ nombre = n; }
+	virtual void cargarFichero(char* name){}
 private:
-	GLchar* nombre;
+	char* nombre;
 };
 
 #endif /* TRecurso_hpp */

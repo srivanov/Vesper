@@ -16,9 +16,11 @@ class TGestorRecursos{
 public:
 	TGestorRecursos();
 	~TGestorRecursos();
+	TRecurso* getRecurso(char* name);
 	
 private:
 	std::vector<TRecurso*> recursos;
+	TRecurso* buscarRecurso(char* name);
 };
 
 #endif /* TGestorRecursos_hpp */

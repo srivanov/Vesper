@@ -15,6 +15,7 @@
 		E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E954B0921E17F7EC00F1BEB6 /* libSOIL.a */; };
 		E958EC331E4A1FD700478D49 /* TTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E958EC311E4A1FD700478D49 /* TTransform.cpp */; };
 		E960F3F01E1E6C4300A90C05 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E960F3EE1E1E6C4300A90C05 /* Camera.cpp */; };
+		E97C4E601E5864A6000C20FB /* TRecursoMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */; };
 		E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7801E4A53E1004D80EF /* TLuz.cpp */; };
 		E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7831E4A57F3004D80EF /* TCamara.cpp */; };
 		E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF831E1EE5E50039E88A /* textura.vs */; };
@@ -54,6 +55,8 @@
 		E958EC321E4A1FD700478D49 /* TTransform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TTransform.hpp; sourceTree = "<group>"; };
 		E960F3EE1E1E6C4300A90C05 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		E960F3EF1E1E6C4300A90C05 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TRecursoMalla.cpp; sourceTree = "<group>"; };
+		E97C4E5F1E5864A6000C20FB /* TRecursoMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TRecursoMalla.hpp; sourceTree = "<group>"; };
 		E992F7801E4A53E1004D80EF /* TLuz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TLuz.cpp; sourceTree = "<group>"; };
 		E992F7811E4A53E1004D80EF /* TLuz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TLuz.hpp; sourceTree = "<group>"; };
 		E992F7831E4A57F3004D80EF /* TCamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TCamara.cpp; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				E9E5A76B1E54C435005A7B72 /* TGestorRecursos.cpp */,
 				E9E5A76C1E54C435005A7B72 /* TGestorRecursos.hpp */,
 				E9E5A76F1E54CF98005A7B72 /* TRecurso.hpp */,
+				E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */,
+				E97C4E5F1E5864A6000C20FB /* TRecursoMalla.hpp */,
 				E9BC146A1E574C3F0059710B /* Pila.h */,
 			);
 			path = motor;
@@ -249,6 +254,7 @@
 				E9B3EF941E1F29820039E88A /* Mesh.cpp in Sources */,
 				E958EC331E4A1FD700478D49 /* TTransform.cpp in Sources */,
 				E9E5A76D1E54C435005A7B72 /* TGestorRecursos.cpp in Sources */,
+				E97C4E601E5864A6000C20FB /* TRecursoMalla.cpp in Sources */,
 				E9B47DF01E53643D000466D7 /* TMalla.cpp in Sources */,
 				E9B47DED1E535C75000466D7 /* TEscena.cpp in Sources */,
 				E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */,
