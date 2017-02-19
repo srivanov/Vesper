@@ -8,10 +8,9 @@
 
 #include "OpcionesLayout.hpp"
 #include "../components/ventana.hpp"
-#include "Game.hpp"
-#include "../JSON/json.hpp"
-
-using json = nlohmann::json;
+#include "../Game.hpp"
+#include "../JSONParser.hpp"
+#include <map>
 
 OpcionesLayout::OpcionesLayout(){
     init("3d/GUI", ventana::Instance()->getDevice());
@@ -118,21 +117,25 @@ void OpcionesLayout::onClickResol3(const CEGUI::EventArgs &e){
 }
 
 void OpcionesLayout::onClickGuardar(const CEGUI::EventArgs &e) {
-    json j;
+    std::map<char*, char*> valores;
+    char* sonido = (char*)(check_sonido->isSelected()  ? "true":"false");
+    char buf[3];
+    sprintf(buf,"%d", (int)slider_volumen->getCurrentValue());
     
-    j["sonido"] = check_sonido->isSelected();
-    j["volumen"] = slider_volumen->getCurrentValue();
-    j["resolucion"] = "1280x720";
+    valores.insert(std::pair<char*, char*>("sonido", sonido));
+    valores.insert(std::pair<char*, char*>("volumen", buf));
+    valores.insert(std::pair<char*, char*>("resolucion", "1280x720"));
     
-    std::ofstream o("controles.json");
-    o << j << std::endl;
+    JSONParser::guardar(valores);
 }
 
 void OpcionesLayout::setControles() {
-    std::ifstream i("controles.json");
-    json j;
-    i >> j;
+//    std::ifstream i("controles.json");
+//    json j;
+//    i >> j;
+
+    JSONParser::leer();
     
-    check_sonido->setSelected(j["sonido"]);
-    slider_volumen->setCurrentValue(j["volumen"]);
+//    check_sonido->setSelected(j["sonido"]);
+//    slider_volumen->setCurrentValue(j["volumen"]);
 }

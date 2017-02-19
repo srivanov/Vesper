@@ -154,6 +154,7 @@
 		C14CE6311E5874C000034B28 /* GUIScheme.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14CE5A91E5874C000034B28 /* GUIScheme.xsd */; };
 		C14CE6321E5874C000034B28 /* Imageset.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14CE5AA1E5874C000034B28 /* Imageset.xsd */; };
 		C14CE6331E5874C000034B28 /* Samples.xsd in Resources */ = {isa = PBXBuildFile; fileRef = C14CE5AB1E5874C000034B28 /* Samples.xsd */; };
+		C16A9D671E59B33A008C4E80 /* JSONParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C16A9D651E59B33A008C4E80 /* JSONParser.cpp */; };
 		C1A0ADDC1E434BA9009699FD /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADD61E434BA9009699FD /* GUI.cpp */; };
 		C1A0ADDD1E434BA9009699FD /* GUIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADD81E434BA9009699FD /* GUIManager.cpp */; };
 		C1A0AE6E1E434BBD009699FD /* fuenten.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0ADDF1E434BBC009699FD /* fuenten.jpg */; };
@@ -427,6 +428,8 @@
 		C14CE5A91E5874C000034B28 /* GUIScheme.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUIScheme.xsd; sourceTree = "<group>"; };
 		C14CE5AA1E5874C000034B28 /* Imageset.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Imageset.xsd; sourceTree = "<group>"; };
 		C14CE5AB1E5874C000034B28 /* Samples.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Samples.xsd; sourceTree = "<group>"; };
+		C16A9D651E59B33A008C4E80 /* JSONParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONParser.cpp; sourceTree = "<group>"; };
+		C16A9D661E59B33A008C4E80 /* JSONParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONParser.hpp; sourceTree = "<group>"; };
 		C1A0ADD61E434BA9009699FD /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
 		C1A0ADD71E434BA9009699FD /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
 		C1A0ADD81E434BA9009699FD /* GUIManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIManager.cpp; sourceTree = "<group>"; };
@@ -452,7 +455,6 @@
 		C1B3EA111E4B9AC500D96553 /* CargarPartidaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CargarPartidaLayout.hpp; sourceTree = "<group>"; };
 		C1B3EA131E4B9D7A00D96553 /* LayoutGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutGUI.cpp; sourceTree = "<group>"; };
 		C1B3EA141E4B9D7A00D96553 /* LayoutGUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutGUI.hpp; sourceTree = "<group>"; };
-		C1FE6ED21E58CD89001B21B1 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		E9026ED21E35299B00B44AC3 /* palaObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = palaObj.cpp; sourceTree = "<group>"; };
 		E9026ED31E35299B00B44AC3 /* palaObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = palaObj.hpp; sourceTree = "<group>"; };
 		E9026ED61E353CDE00B44AC3 /* alarmita.3ds */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarmita.3ds; sourceTree = "<group>"; };
@@ -859,14 +861,6 @@
 			path = GUI;
 			sourceTree = "<group>";
 		};
-		C1FE6ED11E58CD89001B21B1 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				C1FE6ED21E58CD89001B21B1 /* json.hpp */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,7 +938,6 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
-				C1FE6ED11E58CD89001B21B1 /* JSON */,
 				C1A0ADD51E434BA9009699FD /* GUI */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
@@ -972,6 +965,8 @@
 				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3AB01DF0AA5900A91A97 /* Game.hpp */,
 				E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */,
+				C16A9D651E59B33A008C4E80 /* JSONParser.cpp */,
+				C16A9D661E59B33A008C4E80 /* JSONParser.hpp */,
 			);
 			path = arquitectura;
 			sourceTree = "<group>";
@@ -1387,6 +1382,7 @@
 				E9AC3AC21DF0ACED00A91A97 /* cargarMapa.cpp in Sources */,
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
 				E9A346401E045F0500E6EC25 /* globoAgua.cpp in Sources */,
+				C16A9D671E59B33A008C4E80 /* JSONParser.cpp in Sources */,
 				C1B3EA121E4B9AC500D96553 /* CargarPartidaLayout.cpp in Sources */,
 				882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */,
 				C1B3EA151E4B9D7A00D96553 /* LayoutGUI.cpp in Sources */,
