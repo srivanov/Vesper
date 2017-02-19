@@ -126,16 +126,18 @@ void OpcionesLayout::onClickGuardar(const CEGUI::EventArgs &e) {
     valores.insert(std::pair<char*, char*>("volumen", buf));
     valores.insert(std::pair<char*, char*>("resolucion", "1280x720"));
     
-    JSONParser::guardar(valores);
+    JSONParser::guardar(controlesFile, valores);
 }
 
 void OpcionesLayout::setControles() {
-//    std::ifstream i("controles.json");
-//    json j;
-//    i >> j;
-
-    JSONParser::leer();
-    
-//    check_sonido->setSelected(j["sonido"]);
-//    slider_volumen->setCurrentValue(j["volumen"]);
+	
+	std::map<std::string, std::string> valores = JSONParser::leer(controlesFile);
+//	pruebas del parser
+//	std::cout << JSONParser::toBool(std::string("true")) << std::endl;
+//	std::cout << JSONParser::toBool(std::string("false")) << std::endl;
+//	std::cout << JSONParser::toInt(std::string("64")) << std::endl;
+//	std::cout << JSONParser::toInt(std::string("true")) << std::endl;
+	
+	check_sonido->setSelected(JSONParser::toBool(valores.at("sonido")));
+	slider_volumen->setCurrentValue(JSONParser::toInt(valores.at("volumen")));
 }

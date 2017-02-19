@@ -17,7 +17,9 @@ using json = nlohmann::json;
 
 class JSONParser {
 public:
-    static void guardar(std::map<char*, char*> valores);
-    static std::map<std::string, std::string> leer();
+    static void guardar(const char* filename, std::map<char*, char*> valores);
+    static std::map<std::string, std::string> leer(const char* filename);
+	static bool toBool(std::string s);
+	static int toInt(std::string s);
 };
 #endif /* JSONParser_hpp */

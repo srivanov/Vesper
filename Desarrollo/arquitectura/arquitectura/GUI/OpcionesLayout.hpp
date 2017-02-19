@@ -47,6 +47,7 @@ private:
     CEGUI::DefaultWindow *contenedor_controles;
 
     int volumen;
+	const char* controlesFile = "controles.json";
 };
 
 #endif /* OpcionesLayout_hpp */
