@@ -11,6 +11,7 @@
 
 #include <vector>
 #include "TRecurso.hpp"
+#include "TRecursoMalla.hpp"
 
 class TGestorRecursos{
 public:
