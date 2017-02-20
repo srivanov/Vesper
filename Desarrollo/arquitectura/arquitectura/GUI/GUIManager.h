@@ -37,6 +37,10 @@ public:
 	void addGui(Motor::GUI *gui) {
 		m_guis.push_back(gui);
 	}
+    void removeGui(Motor::GUI *gui) {
+        std::list<Motor::GUI*>::iterator it = std::find(m_guis.begin(), m_guis.end(), gui);
+        m_guis.erase(it);
+    }
 
 	void updateAllGuis() {
 		std::list<Motor::GUI*>::iterator it;

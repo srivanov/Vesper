@@ -120,3 +120,10 @@ bool MyEventReceiver::getLeftClick(){
 	return clickL;
 }
 
+dvector2D MyEventReceiver::getMousePosition() {
+	dvector2D pos;
+	pos.x = pos_Mouse.x;
+	pos.y = pos_Mouse.y;
+	
+	return pos;
+}

@@ -21,7 +21,7 @@
 #include "trigger_system.hpp"
 #include <vector>
 #include "Dvector.hpp"
-#include "GUI/menuPrueba.hpp"
+#include "GUI/LayoutGUI.hpp"
 
 class Game {
 public:
@@ -40,6 +40,7 @@ public:
 	void cambiarArmaJugador();
 	void rotarConRaton(dvector3D posRaton);
     camara* getCamara();
+	void setPausa(bool p);
 	
 protected:
 	Game();
@@ -48,12 +49,15 @@ private:
 	//static Game* pinstance;
 	class render *renderizador;
 	class input* entrada;
-	bool running;
+	bool running, pausa;
     camara* cam;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;
-    menuPrueba menu;
+	
+	void processEvents();
+	
+	LayoutGUI* layoutPrueba;
 };
 
 #endif /* Game_hpp */

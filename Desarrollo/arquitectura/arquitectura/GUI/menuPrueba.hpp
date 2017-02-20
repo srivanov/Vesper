@@ -11,6 +11,14 @@
 
 #include <stdio.h>
 #include "GUI.h"
+#include "../MyEventReceiver.hpp"
+
+enum State {
+    STATE_PRINCIPAL=0,
+    STATE_CARGAR,
+    STATE_OPCIONES,
+    STATE_CREDITOS
+};
 
 class menuPrueba : public Motor::GUI {
 public:
@@ -18,8 +26,33 @@ public:
     ~menuPrueba(){}
     void inicializar();
     void update();
+    void onClickStartGame(const CEGUI::EventArgs &e);
+    void onClickLoadScreen(const CEGUI::EventArgs &e);
+    void onClickOptions(const CEGUI::EventArgs &e);
+    void onClickCredits(const CEGUI::EventArgs &e);
+    void onClickStopGame(const CEGUI::EventArgs &e);
+    void setLayout(int e);
+    tLayout getLayout(){return tMenuPrincipalLayout;}
+    
+protected:
+    State estado;
+    
 private:
-    CEGUI::DefaultWindow *label_prueba;
+//    CEGUI::DefaultWindow *label_prueba;
+    CEGUI::DefaultWindow *label_titulo;
+    CEGUI::PushButton *button_nueva;
+    CEGUI::PushButton *button_cargar;
+    CEGUI::PushButton *button_opciones;
+    CEGUI::PushButton *button_creditos;
+    CEGUI::PushButton *button_salir;
+    
+    CEGUI::DefaultWindow *label_cargar;
+    CEGUI::PushButton *button_partida_01;
+    CEGUI::PushButton *button_partida_02;
+    CEGUI::PushButton *button_partida_03;
+    
+    CEGUI::PushButton *button_volver;
+//    int layout;
 };
 
 #endif /* menuPrueba_hpp */

@@ -74,7 +74,7 @@ void input::update(){
 	}
 	
     if(MyEventReceiver::Instance()->IsKeyDown('Q')){
-        Game::Instance()->stop();
+        Game::Instance()->setPausa(true);
     }
 	
     if(MyEventReceiver::Instance()->IsKeyDown('O')){

@@ -14,9 +14,6 @@
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
-		C1A0ADDC1E434BA9009699FD /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADD61E434BA9009699FD /* GUI.cpp */; };
-		C1A0ADDD1E434BA9009699FD /* GUIManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADD81E434BA9009699FD /* GUIManager.cpp */; };
-		C1A0ADDE1E434BA9009699FD /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1A0ADDA1E434BA9009699FD /* menuPrueba.cpp */; };
 		C1A0AE6E1E434BBD009699FD /* fuenten.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0ADDF1E434BBC009699FD /* fuenten.jpg */; };
 		C1A0AEED1E434BBD009699FD /* llave.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0AE671E434BBD009699FD /* llave.jpg */; };
 		C1A0AEEE1E434BBD009699FD /* moneda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0AE681E434BBD009699FD /* moneda.jpg */; };
@@ -66,6 +63,153 @@
 		E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92BC5A41E3DFFBF008E1F5B /* Nodos.cpp */; };
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
 		E98661271DF99ED30028AC64 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
+		E9898FAF1E5B757A0001A36A /* CargarPartidaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */; };
+		E9898FB01E5B757A0001A36A /* CreditosLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */; };
+		E9898FB11E5B757A0001A36A /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9E1E5B757A0001A36A /* GUI.cpp */; };
+		E9898FB21E5B757A0001A36A /* HUDLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA11E5B757A0001A36A /* HUDLayout.cpp */; };
+		E9898FB31E5B757A0001A36A /* LayoutGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA31E5B757A0001A36A /* LayoutGUI.cpp */; };
+		E9898FB41E5B757A0001A36A /* LayoutInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA51E5B757A0001A36A /* LayoutInterface.cpp */; };
+		E9898FB51E5B757A0001A36A /* MenuPrincipalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */; };
+		E9898FB61E5B757A0001A36A /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA91E5B757A0001A36A /* menuPrueba.cpp */; };
+		E9898FB71E5B757A0001A36A /* OpcionesLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */; };
+		E9898FB81E5B757A0001A36A /* PausaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */; };
+		E989904A1E5B758B0001A36A /* example.anims in Resources */ = {isa = PBXBuildFile; fileRef = E9898FBB1E5B758B0001A36A /* example.anims */; };
+		E989904B1E5B758B0001A36A /* GameMenu.anims in Resources */ = {isa = PBXBuildFile; fileRef = E9898FBC1E5B758B0001A36A /* GameMenu.anims */; };
+		E989904C1E5B758B0001A36A /* Batang-18.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FBE1E5B758B0001A36A /* Batang-18.font */; };
+		E989904D1E5B758B0001A36A /* batang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FBF1E5B758B0001A36A /* batang.ttf */; };
+		E989904E1E5B758B0001A36A /* DejaVuSans-10-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC01E5B758B0001A36A /* DejaVuSans-10-NoScale.font */; };
+		E989904F1E5B758B0001A36A /* DejaVuSans-10.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC11E5B758B0001A36A /* DejaVuSans-10.font */; };
+		E98990501E5B758B0001A36A /* DejaVuSans-12-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC21E5B758B0001A36A /* DejaVuSans-12-NoScale.font */; };
+		E98990511E5B758B0001A36A /* DejaVuSans-12.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC31E5B758B0001A36A /* DejaVuSans-12.font */; };
+		E98990521E5B758B0001A36A /* DejaVuSans-14-NoScale.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC41E5B758B0001A36A /* DejaVuSans-14-NoScale.font */; };
+		E98990531E5B758B0001A36A /* DejaVuSans-14.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC51E5B758B0001A36A /* DejaVuSans-14.font */; };
+		E98990541E5B758B0001A36A /* DejaVuSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC61E5B758B0001A36A /* DejaVuSans.ttf */; };
+		E98990551E5B758B0001A36A /* DejaVuSerif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC71E5B758B0001A36A /* DejaVuSerif.ttf */; };
+		E98990561E5B758B0001A36A /* FairChar-30.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC81E5B758B0001A36A /* FairChar-30.font */; };
+		E98990571E5B758B0001A36A /* FetteClassicUNZFraktur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FC91E5B758B0001A36A /* FetteClassicUNZFraktur.ttf */; };
+		E98990581E5B758B0001A36A /* Futhark Adapted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FCA1E5B758B0001A36A /* Futhark Adapted.ttf */; };
+		E98990591E5B758B0001A36A /* GreatVibes-16.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FCB1E5B758B0001A36A /* GreatVibes-16.font */; };
+		E989905A1E5B758B0001A36A /* GreatVibes-22.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FCC1E5B758B0001A36A /* GreatVibes-22.font */; };
+		E989905B1E5B758B0001A36A /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FCD1E5B758B0001A36A /* GreatVibes-Regular.ttf */; };
+		E989905C1E5B758B0001A36A /* IMFePIrm29P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FCE1E5B758B0001A36A /* IMFePIrm29P.ttf */; };
+		E989905D1E5B758B0001A36A /* Junicode-13.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FCF1E5B758B0001A36A /* Junicode-13.font */; };
+		E989905E1E5B758B0001A36A /* Junicode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD01E5B758B0001A36A /* Junicode.ttf */; };
+		E989905F1E5B758B0001A36A /* Jura-10.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD11E5B758B0001A36A /* Jura-10.font */; };
+		E98990601E5B758B0001A36A /* Jura-13.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD21E5B758B0001A36A /* Jura-13.font */; };
+		E98990611E5B758B0001A36A /* Jura-18.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD31E5B758B0001A36A /* Jura-18.font */; };
+		E98990621E5B758B0001A36A /* Jura-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD41E5B758B0001A36A /* Jura-DemiBold.ttf */; };
+		E98990631E5B758B0001A36A /* Jura-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD51E5B758B0001A36A /* Jura-Light.ttf */; };
+		E98990641E5B758B0001A36A /* Jura-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD61E5B758B0001A36A /* Jura-Medium.ttf */; };
+		E98990651E5B758B0001A36A /* Jura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD71E5B758B0001A36A /* Jura-Regular.ttf */; };
+		E98990661E5B758B0001A36A /* Klingon-pIqaD-HaSta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD81E5B758B0001A36A /* Klingon-pIqaD-HaSta.ttf */; };
+		E98990671E5B758B0001A36A /* Legal.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FD91E5B758B0001A36A /* Legal.txt */; };
+		E98990681E5B758B0001A36A /* LicenseApache.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FDA1E5B758B0001A36A /* LicenseApache.txt */; };
+		E98990691E5B758B0001A36A /* LicenseDejaVu.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FDB1E5B758B0001A36A /* LicenseDejaVu.txt */; };
+		E989906A1E5B758B0001A36A /* LicenseGPL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FDC1E5B758B0001A36A /* LicenseGPL.txt */; };
+		E989906B1E5B758B0001A36A /* LicenseMIT.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FDD1E5B758B0001A36A /* LicenseMIT.txt */; };
+		E989906C1E5B758B0001A36A /* LicenseSIL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FDE1E5B758B0001A36A /* LicenseSIL.txt */; };
+		E989906D1E5B758B0001A36A /* LicenseUbuntuFont.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FDF1E5B758B0001A36A /* LicenseUbuntuFont.txt */; };
+		E989906E1E5B758B0001A36A /* mizufalp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE01E5B758B0001A36A /* mizufalp.ttf */; };
+		E989906F1E5B758B0001A36A /* OpenSans-8.font in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE11E5B758B0001A36A /* OpenSans-8.font */; };
+		E98990701E5B758B0001A36A /* OpenSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE21E5B758B0001A36A /* OpenSans.ttf */; };
+		E98990711E5B758B0001A36A /* RichStyle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE31E5B758B0001A36A /* RichStyle.ttf */; };
+		E98990721E5B758B0001A36A /* Tnua-Libre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE41E5B758B0001A36A /* Tnua-Libre.ttf */; };
+		E98990731E5B758B0001A36A /* AlfiskoSkin.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE61E5B758B0001A36A /* AlfiskoSkin.imageset */; };
+		E98990741E5B758B0001A36A /* AlfiskoSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE71E5B758B0001A36A /* AlfiskoSkin.png */; };
+		E98990751E5B758B0001A36A /* AlfiskoSkin.png.OLD in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE81E5B758B0001A36A /* AlfiskoSkin.png.OLD */; };
+		E98990761E5B758B0001A36A /* Aliasing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9898FE91E5B758B0001A36A /* Aliasing.jpg */; };
+		E98990771E5B758B0001A36A /* BackgroundSampleBrowser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9898FEA1E5B758B0001A36A /* BackgroundSampleBrowser.jpg */; };
+		E98990781E5B758B0001A36A /* DriveIcons.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FEB1E5B758B0001A36A /* DriveIcons.imageset */; };
+		E98990791E5B758B0001A36A /* DriveIcons.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FEC1E5B758B0001A36A /* DriveIcons.png */; };
+		E989907A1E5B758B0001A36A /* FairChar.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FED1E5B758B0001A36A /* FairChar.imageset */; };
+		E989907B1E5B758B0001A36A /* FairChar.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FEE1E5B758B0001A36A /* FairChar.png */; };
+		E989907C1E5B758B0001A36A /* GameMenu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FEF1E5B758B0001A36A /* GameMenu.imageset */; };
+		E989907D1E5B758B0001A36A /* GameMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF01E5B758B0001A36A /* GameMenu.png */; };
+		E989907E1E5B758B0001A36A /* GWEN.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF11E5B758B0001A36A /* GWEN.imageset */; };
+		E989907F1E5B758B0001A36A /* GWENDefaultSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF21E5B758B0001A36A /* GWENDefaultSkin.png */; };
+		E98990801E5B758B0001A36A /* HUDDemo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF31E5B758B0001A36A /* HUDDemo.imageset */; };
+		E98990811E5B758B0001A36A /* HUDDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF41E5B758B0001A36A /* HUDDemo.png */; };
+		E98990821E5B758B0001A36A /* HUDDemoGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF51E5B758B0001A36A /* HUDDemoGameOver.png */; };
+		E98990831E5B758B0001A36A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF61E5B758B0001A36A /* logo.png */; };
+		E98990841E5B758B0001A36A /* Menu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF71E5B758B0001A36A /* Menu.imageset */; };
+		E98990851E5B758B0001A36A /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF81E5B758B0001A36A /* Menu.png */; };
+		E98990861E5B758B0001A36A /* OgreTray.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FF91E5B758B0001A36A /* OgreTray.imageset */; };
+		E98990871E5B758B0001A36A /* OgreTrayImages.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FFA1E5B758B0001A36A /* OgreTrayImages.png */; };
+		E98990881E5B758B0001A36A /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9898FFB1E5B758B0001A36A /* ReadMe.txt */; };
+		E98990891E5B758B0001A36A /* SampleBrowser.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FFC1E5B758B0001A36A /* SampleBrowser.imageset */; };
+		E989908A1E5B758B0001A36A /* SampleBrowser.png in Resources */ = {isa = PBXBuildFile; fileRef = E9898FFD1E5B758B0001A36A /* SampleBrowser.png */; };
+		E989908B1E5B758B0001A36A /* SpaceBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9898FFE1E5B758B0001A36A /* SpaceBackground.jpg */; };
+		E989908C1E5B758B0001A36A /* TaharezLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E9898FFF1E5B758B0001A36A /* TaharezLook.imageset */; };
+		E989908D1E5B758B0001A36A /* TaharezLook.png in Resources */ = {isa = PBXBuildFile; fileRef = E98990001E5B758B0001A36A /* TaharezLook.png */; };
+		E989908E1E5B758B0001A36A /* Vanilla.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E98990011E5B758B0001A36A /* Vanilla.imageset */; };
+		E989908F1E5B758B0001A36A /* vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = E98990021E5B758B0001A36A /* vanilla.png */; };
+		E98990901E5B758B0001A36A /* WindowsLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = E98990031E5B758B0001A36A /* WindowsLook.imageset */; };
+		E98990911E5B758B0001A36A /* WindowsLook.png in Resources */ = {isa = PBXBuildFile; fileRef = E98990041E5B758B0001A36A /* WindowsLook.png */; };
+		E98990921E5B758B0001A36A /* application_templates.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990061E5B758B0001A36A /* application_templates.layout */; };
+		E98990931E5B758B0001A36A /* CargarPartida.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990071E5B758B0001A36A /* CargarPartida.layout */; };
+		E98990941E5B758B0001A36A /* Console.wnd in Resources */ = {isa = PBXBuildFile; fileRef = E98990081E5B758B0001A36A /* Console.wnd */; };
+		E98990951E5B758B0001A36A /* CreditosLayout.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990091E5B758B0001A36A /* CreditosLayout.layout */; };
+		E98990961E5B758B0001A36A /* Demo8.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989900A1E5B758B0001A36A /* Demo8.layout */; };
+		E98990971E5B758B0001A36A /* DragDropDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989900B1E5B758B0001A36A /* DragDropDemo.layout */; };
+		E98990981E5B758B0001A36A /* EffectsDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989900C1E5B758B0001A36A /* EffectsDemo.layout */; };
+		E98990991E5B758B0001A36A /* FontDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989900D1E5B758B0001A36A /* FontDemo.layout */; };
+		E989909A1E5B758B0001A36A /* GameMenu.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989900E1E5B758B0001A36A /* GameMenu.layout */; };
+		E989909B1E5B758B0001A36A /* HUD.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989900F1E5B758B0001A36A /* HUD.layout */; };
+		E989909C1E5B758B0001A36A /* HUDDemoGameOver.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990101E5B758B0001A36A /* HUDDemoGameOver.layout */; };
+		E989909D1E5B758B0001A36A /* HUDDemoIngame.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990111E5B758B0001A36A /* HUDDemoIngame.layout */; };
+		E989909E1E5B758B0001A36A /* MenuPrincipal.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990121E5B758B0001A36A /* MenuPrincipal.layout */; };
+		E989909F1E5B758B0001A36A /* Opciones.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990131E5B758B0001A36A /* Opciones.layout */; };
+		E98990A01E5B758B0001A36A /* Pause.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990141E5B758B0001A36A /* Pause.layout */; };
+		E98990A11E5B758B0001A36A /* prueba.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990151E5B758B0001A36A /* prueba.layout */; };
+		E98990A21E5B758B0001A36A /* SampleBrowser.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990161E5B758B0001A36A /* SampleBrowser.layout */; };
+		E98990A31E5B758B0001A36A /* SampleBrowserLoadScreen.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990171E5B758B0001A36A /* SampleBrowserLoadScreen.layout */; };
+		E98990A41E5B758B0001A36A /* SimpleDebug.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990181E5B758B0001A36A /* SimpleDebug.layout */; };
+		E98990A51E5B758B0001A36A /* TabControlDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990191E5B758B0001A36A /* TabControlDemo.layout */; };
+		E98990A61E5B758B0001A36A /* TabPage.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989901A1E5B758B0001A36A /* TabPage.layout */; };
+		E98990A71E5B758B0001A36A /* TabPage1.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989901B1E5B758B0001A36A /* TabPage1.layout */; };
+		E98990A81E5B758B0001A36A /* TabPage2.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989901C1E5B758B0001A36A /* TabPage2.layout */; };
+		E98990A91E5B758B0001A36A /* TaharezLookOverview.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989901D1E5B758B0001A36A /* TaharezLookOverview.layout */; };
+		E98990AA1E5B758B0001A36A /* TextDemo.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989901E1E5B758B0001A36A /* TextDemo.layout */; };
+		E98990AB1E5B758B0001A36A /* TreeDemoTaharez.layout in Resources */ = {isa = PBXBuildFile; fileRef = E989901F1E5B758B0001A36A /* TreeDemoTaharez.layout */; };
+		E98990AC1E5B758B0001A36A /* VanillaConsole.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990201E5B758B0001A36A /* VanillaConsole.layout */; };
+		E98990AD1E5B758B0001A36A /* VanillaLookOverview.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990211E5B758B0001A36A /* VanillaLookOverview.layout */; };
+		E98990AE1E5B758B0001A36A /* VanillaWindows.layout in Resources */ = {isa = PBXBuildFile; fileRef = E98990221E5B758B0001A36A /* VanillaWindows.layout */; };
+		E98990AF1E5B758B0001A36A /* AlfiskoSkin.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E98990241E5B758B0001A36A /* AlfiskoSkin.looknfeel */; };
+		E98990B01E5B758B0001A36A /* GameMenu.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E98990251E5B758B0001A36A /* GameMenu.looknfeel */; };
+		E98990B11E5B758B0001A36A /* Generic.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E98990261E5B758B0001A36A /* Generic.looknfeel */; };
+		E98990B21E5B758B0001A36A /* GWEN.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E98990271E5B758B0001A36A /* GWEN.looknfeel */; };
+		E98990B31E5B758B0001A36A /* HUDDemo.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E98990281E5B758B0001A36A /* HUDDemo.looknfeel */; };
+		E98990B41E5B758B0001A36A /* InventoryComponents.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E98990291E5B758B0001A36A /* InventoryComponents.looknfeel */; };
+		E98990B51E5B758B0001A36A /* OgreTray.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E989902A1E5B758B0001A36A /* OgreTray.looknfeel */; };
+		E98990B61E5B758B0001A36A /* SampleBrowser.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E989902B1E5B758B0001A36A /* SampleBrowser.looknfeel */; };
+		E98990B71E5B758B0001A36A /* TaharezLook.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E989902C1E5B758B0001A36A /* TaharezLook.looknfeel */; };
+		E98990B81E5B758B0001A36A /* Vanilla.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E989902D1E5B758B0001A36A /* Vanilla.looknfeel */; };
+		E98990B91E5B758B0001A36A /* VanillaCommonDialogs.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E989902E1E5B758B0001A36A /* VanillaCommonDialogs.looknfeel */; };
+		E98990BA1E5B758B0001A36A /* WindowsLook.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = E989902F1E5B758B0001A36A /* WindowsLook.looknfeel */; };
+		E98990BB1E5B758B0001A36A /* demo8.lua in Resources */ = {isa = PBXBuildFile; fileRef = E98990311E5B758B0001A36A /* demo8.lua */; };
+		E98990BC1E5B758B0001A36A /* Menu.project in Resources */ = {isa = PBXBuildFile; fileRef = E98990321E5B758B0001A36A /* Menu.project */; };
+		E98990BD1E5B758B0001A36A /* prueba.project in Resources */ = {isa = PBXBuildFile; fileRef = E98990331E5B758B0001A36A /* prueba.project */; };
+		E98990BE1E5B758B0001A36A /* AlfiskoSkin.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E98990351E5B758B0001A36A /* AlfiskoSkin.scheme */; };
+		E98990BF1E5B758B0001A36A /* GameMenu.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E98990361E5B758B0001A36A /* GameMenu.scheme */; };
+		E98990C01E5B758B0001A36A /* Generic.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E98990371E5B758B0001A36A /* Generic.scheme */; };
+		E98990C11E5B758B0001A36A /* GWEN.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E98990381E5B758B0001A36A /* GWEN.scheme */; };
+		E98990C21E5B758B0001A36A /* HUDDemo.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E98990391E5B758B0001A36A /* HUDDemo.scheme */; };
+		E98990C31E5B758B0001A36A /* Menu.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E989903A1E5B758B0001A36A /* Menu.scheme */; };
+		E98990C41E5B758B0001A36A /* OgreTray.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E989903B1E5B758B0001A36A /* OgreTray.scheme */; };
+		E98990C51E5B758B0001A36A /* SampleBrowser.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E989903C1E5B758B0001A36A /* SampleBrowser.scheme */; };
+		E98990C61E5B758B0001A36A /* TaharezLook.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E989903D1E5B758B0001A36A /* TaharezLook.scheme */; };
+		E98990C71E5B758B0001A36A /* VanillaCommonDialogs.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E989903E1E5B758B0001A36A /* VanillaCommonDialogs.scheme */; };
+		E98990C81E5B758B0001A36A /* VanillaSkin.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E989903F1E5B758B0001A36A /* VanillaSkin.scheme */; };
+		E98990C91E5B758B0001A36A /* WindowsLook.scheme in Resources */ = {isa = PBXBuildFile; fileRef = E98990401E5B758B0001A36A /* WindowsLook.scheme */; };
+		E98990CA1E5B758B0001A36A /* Animation.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990421E5B758B0001A36A /* Animation.xsd */; };
+		E98990CB1E5B758B0001A36A /* CEGUIConfig.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990431E5B758B0001A36A /* CEGUIConfig.xsd */; };
+		E98990CC1E5B758B0001A36A /* Falagard.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990441E5B758B0001A36A /* Falagard.xsd */; };
+		E98990CD1E5B758B0001A36A /* Font.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990451E5B758B0001A36A /* Font.xsd */; };
+		E98990CE1E5B758B0001A36A /* GUILayout.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990461E5B758B0001A36A /* GUILayout.xsd */; };
+		E98990CF1E5B758B0001A36A /* GUIScheme.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990471E5B758B0001A36A /* GUIScheme.xsd */; };
+		E98990D01E5B758B0001A36A /* Imageset.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990481E5B758B0001A36A /* Imageset.xsd */; };
+		E98990D11E5B758B0001A36A /* Samples.xsd in Resources */ = {isa = PBXBuildFile; fileRef = E98990491E5B758B0001A36A /* Samples.xsd */; };
+		E98990D41E5B759F0001A36A /* JSONParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D21E5B759F0001A36A /* JSONParser.cpp */; };
 		E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */; };
 		E9A346371E0416FC00E6EC25 /* gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346351E0416FC00E6EC25 /* gun.cpp */; };
 		E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */; };
@@ -132,12 +276,6 @@
 		882FC8A61E369FAF0060347C /* llaveObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = llaveObj.hpp; sourceTree = "<group>"; };
 		884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bala.cpp; sourceTree = "<group>"; };
 		884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bala.hpp; sourceTree = "<group>"; };
-		C1A0ADD61E434BA9009699FD /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
-		C1A0ADD71E434BA9009699FD /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
-		C1A0ADD81E434BA9009699FD /* GUIManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUIManager.cpp; sourceTree = "<group>"; };
-		C1A0ADD91E434BA9009699FD /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIManager.h; sourceTree = "<group>"; };
-		C1A0ADDA1E434BA9009699FD /* menuPrueba.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menuPrueba.cpp; sourceTree = "<group>"; };
-		C1A0ADDB1E434BA9009699FD /* menuPrueba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = menuPrueba.hpp; sourceTree = "<group>"; };
 		C1A0ADDF1E434BBC009699FD /* fuenten.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fuenten.jpg; sourceTree = "<group>"; };
 		C1A0AE671E434BBD009699FD /* llave.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = llave.jpg; sourceTree = "<group>"; };
 		C1A0AE681E434BBD009699FD /* moneda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moneda.jpg; sourceTree = "<group>"; };
@@ -192,6 +330,165 @@
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
 		E98661261DF99ED30028AC64 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
+		E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CargarPartidaLayout.cpp; sourceTree = "<group>"; };
+		E9898F9B1E5B757A0001A36A /* CargarPartidaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CargarPartidaLayout.hpp; sourceTree = "<group>"; };
+		E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditosLayout.cpp; sourceTree = "<group>"; };
+		E9898F9D1E5B757A0001A36A /* CreditosLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CreditosLayout.hpp; sourceTree = "<group>"; };
+		E9898F9E1E5B757A0001A36A /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
+		E9898F9F1E5B757A0001A36A /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
+		E9898FA01E5B757A0001A36A /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIManager.h; sourceTree = "<group>"; };
+		E9898FA11E5B757A0001A36A /* HUDLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUDLayout.cpp; sourceTree = "<group>"; };
+		E9898FA21E5B757A0001A36A /* HUDLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HUDLayout.hpp; sourceTree = "<group>"; };
+		E9898FA31E5B757A0001A36A /* LayoutGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutGUI.cpp; sourceTree = "<group>"; };
+		E9898FA41E5B757A0001A36A /* LayoutGUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutGUI.hpp; sourceTree = "<group>"; };
+		E9898FA51E5B757A0001A36A /* LayoutInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutInterface.cpp; sourceTree = "<group>"; };
+		E9898FA61E5B757A0001A36A /* LayoutInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutInterface.hpp; sourceTree = "<group>"; };
+		E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuPrincipalLayout.cpp; sourceTree = "<group>"; };
+		E9898FA81E5B757A0001A36A /* MenuPrincipalLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MenuPrincipalLayout.hpp; sourceTree = "<group>"; };
+		E9898FA91E5B757A0001A36A /* menuPrueba.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menuPrueba.cpp; sourceTree = "<group>"; };
+		E9898FAA1E5B757A0001A36A /* menuPrueba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = menuPrueba.hpp; sourceTree = "<group>"; };
+		E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpcionesLayout.cpp; sourceTree = "<group>"; };
+		E9898FAC1E5B757A0001A36A /* OpcionesLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OpcionesLayout.hpp; sourceTree = "<group>"; };
+		E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PausaLayout.cpp; sourceTree = "<group>"; };
+		E9898FAE1E5B757A0001A36A /* PausaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PausaLayout.hpp; sourceTree = "<group>"; };
+		E9898FBB1E5B758B0001A36A /* example.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.anims; sourceTree = "<group>"; };
+		E9898FBC1E5B758B0001A36A /* GameMenu.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.anims; sourceTree = "<group>"; };
+		E9898FBE1E5B758B0001A36A /* Batang-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Batang-18.font"; sourceTree = "<group>"; };
+		E9898FBF1E5B758B0001A36A /* batang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = batang.ttf; sourceTree = "<group>"; };
+		E9898FC01E5B758B0001A36A /* DejaVuSans-10-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-10-NoScale.font"; sourceTree = "<group>"; };
+		E9898FC11E5B758B0001A36A /* DejaVuSans-10.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-10.font"; sourceTree = "<group>"; };
+		E9898FC21E5B758B0001A36A /* DejaVuSans-12-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-12-NoScale.font"; sourceTree = "<group>"; };
+		E9898FC31E5B758B0001A36A /* DejaVuSans-12.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-12.font"; sourceTree = "<group>"; };
+		E9898FC41E5B758B0001A36A /* DejaVuSans-14-NoScale.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-14-NoScale.font"; sourceTree = "<group>"; };
+		E9898FC51E5B758B0001A36A /* DejaVuSans-14.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "DejaVuSans-14.font"; sourceTree = "<group>"; };
+		E9898FC61E5B758B0001A36A /* DejaVuSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSans.ttf; sourceTree = "<group>"; };
+		E9898FC71E5B758B0001A36A /* DejaVuSerif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSerif.ttf; sourceTree = "<group>"; };
+		E9898FC81E5B758B0001A36A /* FairChar-30.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "FairChar-30.font"; sourceTree = "<group>"; };
+		E9898FC91E5B758B0001A36A /* FetteClassicUNZFraktur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FetteClassicUNZFraktur.ttf; sourceTree = "<group>"; };
+		E9898FCA1E5B758B0001A36A /* Futhark Adapted.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futhark Adapted.ttf"; sourceTree = "<group>"; };
+		E9898FCB1E5B758B0001A36A /* GreatVibes-16.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GreatVibes-16.font"; sourceTree = "<group>"; };
+		E9898FCC1E5B758B0001A36A /* GreatVibes-22.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "GreatVibes-22.font"; sourceTree = "<group>"; };
+		E9898FCD1E5B758B0001A36A /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
+		E9898FCE1E5B758B0001A36A /* IMFePIrm29P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMFePIrm29P.ttf; sourceTree = "<group>"; };
+		E9898FCF1E5B758B0001A36A /* Junicode-13.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Junicode-13.font"; sourceTree = "<group>"; };
+		E9898FD01E5B758B0001A36A /* Junicode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Junicode.ttf; sourceTree = "<group>"; };
+		E9898FD11E5B758B0001A36A /* Jura-10.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-10.font"; sourceTree = "<group>"; };
+		E9898FD21E5B758B0001A36A /* Jura-13.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-13.font"; sourceTree = "<group>"; };
+		E9898FD31E5B758B0001A36A /* Jura-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jura-18.font"; sourceTree = "<group>"; };
+		E9898FD41E5B758B0001A36A /* Jura-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-DemiBold.ttf"; sourceTree = "<group>"; };
+		E9898FD51E5B758B0001A36A /* Jura-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Light.ttf"; sourceTree = "<group>"; };
+		E9898FD61E5B758B0001A36A /* Jura-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Medium.ttf"; sourceTree = "<group>"; };
+		E9898FD71E5B758B0001A36A /* Jura-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jura-Regular.ttf"; sourceTree = "<group>"; };
+		E9898FD81E5B758B0001A36A /* Klingon-pIqaD-HaSta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Klingon-pIqaD-HaSta.ttf"; sourceTree = "<group>"; };
+		E9898FD91E5B758B0001A36A /* Legal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Legal.txt; sourceTree = "<group>"; };
+		E9898FDA1E5B758B0001A36A /* LicenseApache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseApache.txt; sourceTree = "<group>"; };
+		E9898FDB1E5B758B0001A36A /* LicenseDejaVu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseDejaVu.txt; sourceTree = "<group>"; };
+		E9898FDC1E5B758B0001A36A /* LicenseGPL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseGPL.txt; sourceTree = "<group>"; };
+		E9898FDD1E5B758B0001A36A /* LicenseMIT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseMIT.txt; sourceTree = "<group>"; };
+		E9898FDE1E5B758B0001A36A /* LicenseSIL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseSIL.txt; sourceTree = "<group>"; };
+		E9898FDF1E5B758B0001A36A /* LicenseUbuntuFont.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LicenseUbuntuFont.txt; sourceTree = "<group>"; };
+		E9898FE01E5B758B0001A36A /* mizufalp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mizufalp.ttf; sourceTree = "<group>"; };
+		E9898FE11E5B758B0001A36A /* OpenSans-8.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "OpenSans-8.font"; sourceTree = "<group>"; };
+		E9898FE21E5B758B0001A36A /* OpenSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSans.ttf; sourceTree = "<group>"; };
+		E9898FE31E5B758B0001A36A /* RichStyle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RichStyle.ttf; sourceTree = "<group>"; };
+		E9898FE41E5B758B0001A36A /* Tnua-Libre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tnua-Libre.ttf"; sourceTree = "<group>"; };
+		E9898FE61E5B758B0001A36A /* AlfiskoSkin.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlfiskoSkin.imageset; sourceTree = "<group>"; };
+		E9898FE71E5B758B0001A36A /* AlfiskoSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlfiskoSkin.png; sourceTree = "<group>"; };
+		E9898FE81E5B758B0001A36A /* AlfiskoSkin.png.OLD */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlfiskoSkin.png.OLD; sourceTree = "<group>"; };
+		E9898FE91E5B758B0001A36A /* Aliasing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aliasing.jpg; sourceTree = "<group>"; };
+		E9898FEA1E5B758B0001A36A /* BackgroundSampleBrowser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackgroundSampleBrowser.jpg; sourceTree = "<group>"; };
+		E9898FEB1E5B758B0001A36A /* DriveIcons.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DriveIcons.imageset; sourceTree = "<group>"; };
+		E9898FEC1E5B758B0001A36A /* DriveIcons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DriveIcons.png; sourceTree = "<group>"; };
+		E9898FED1E5B758B0001A36A /* FairChar.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FairChar.imageset; sourceTree = "<group>"; };
+		E9898FEE1E5B758B0001A36A /* FairChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairChar.png; sourceTree = "<group>"; };
+		E9898FEF1E5B758B0001A36A /* GameMenu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.imageset; sourceTree = "<group>"; };
+		E9898FF01E5B758B0001A36A /* GameMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameMenu.png; sourceTree = "<group>"; };
+		E9898FF11E5B758B0001A36A /* GWEN.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.imageset; sourceTree = "<group>"; };
+		E9898FF21E5B758B0001A36A /* GWENDefaultSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GWENDefaultSkin.png; sourceTree = "<group>"; };
+		E9898FF31E5B758B0001A36A /* HUDDemo.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HUDDemo.imageset; sourceTree = "<group>"; };
+		E9898FF41E5B758B0001A36A /* HUDDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemo.png; sourceTree = "<group>"; };
+		E9898FF51E5B758B0001A36A /* HUDDemoGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemoGameOver.png; sourceTree = "<group>"; };
+		E9898FF61E5B758B0001A36A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E9898FF71E5B758B0001A36A /* Menu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Menu.imageset; sourceTree = "<group>"; };
+		E9898FF81E5B758B0001A36A /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		E9898FF91E5B758B0001A36A /* OgreTray.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OgreTray.imageset; sourceTree = "<group>"; };
+		E9898FFA1E5B758B0001A36A /* OgreTrayImages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OgreTrayImages.png; sourceTree = "<group>"; };
+		E9898FFB1E5B758B0001A36A /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		E9898FFC1E5B758B0001A36A /* SampleBrowser.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleBrowser.imageset; sourceTree = "<group>"; };
+		E9898FFD1E5B758B0001A36A /* SampleBrowser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleBrowser.png; sourceTree = "<group>"; };
+		E9898FFE1E5B758B0001A36A /* SpaceBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpaceBackground.jpg; sourceTree = "<group>"; };
+		E9898FFF1E5B758B0001A36A /* TaharezLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaharezLook.imageset; sourceTree = "<group>"; };
+		E98990001E5B758B0001A36A /* TaharezLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TaharezLook.png; sourceTree = "<group>"; };
+		E98990011E5B758B0001A36A /* Vanilla.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vanilla.imageset; sourceTree = "<group>"; };
+		E98990021E5B758B0001A36A /* vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanilla.png; sourceTree = "<group>"; };
+		E98990031E5B758B0001A36A /* WindowsLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.imageset; sourceTree = "<group>"; };
+		E98990041E5B758B0001A36A /* WindowsLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WindowsLook.png; sourceTree = "<group>"; };
+		E98990061E5B758B0001A36A /* application_templates.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = application_templates.layout; sourceTree = "<group>"; };
+		E98990071E5B758B0001A36A /* CargarPartida.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CargarPartida.layout; sourceTree = "<group>"; };
+		E98990081E5B758B0001A36A /* Console.wnd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Console.wnd; sourceTree = "<group>"; };
+		E98990091E5B758B0001A36A /* CreditosLayout.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CreditosLayout.layout; sourceTree = "<group>"; };
+		E989900A1E5B758B0001A36A /* Demo8.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Demo8.layout; sourceTree = "<group>"; };
+		E989900B1E5B758B0001A36A /* DragDropDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DragDropDemo.layout; sourceTree = "<group>"; };
+		E989900C1E5B758B0001A36A /* EffectsDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EffectsDemo.layout; sourceTree = "<group>"; };
+		E989900D1E5B758B0001A36A /* FontDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FontDemo.layout; sourceTree = "<group>"; };
+		E989900E1E5B758B0001A36A /* GameMenu.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.layout; sourceTree = "<group>"; };
+		E989900F1E5B758B0001A36A /* HUD.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUD.layout; sourceTree = "<group>"; };
+		E98990101E5B758B0001A36A /* HUDDemoGameOver.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemoGameOver.layout; sourceTree = "<group>"; };
+		E98990111E5B758B0001A36A /* HUDDemoIngame.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemoIngame.layout; sourceTree = "<group>"; };
+		E98990121E5B758B0001A36A /* MenuPrincipal.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MenuPrincipal.layout; sourceTree = "<group>"; };
+		E98990131E5B758B0001A36A /* Opciones.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Opciones.layout; sourceTree = "<group>"; };
+		E98990141E5B758B0001A36A /* Pause.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Pause.layout; sourceTree = "<group>"; };
+		E98990151E5B758B0001A36A /* prueba.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = prueba.layout; sourceTree = "<group>"; };
+		E98990161E5B758B0001A36A /* SampleBrowser.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.layout; sourceTree = "<group>"; };
+		E98990171E5B758B0001A36A /* SampleBrowserLoadScreen.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowserLoadScreen.layout; sourceTree = "<group>"; };
+		E98990181E5B758B0001A36A /* SimpleDebug.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpleDebug.layout; sourceTree = "<group>"; };
+		E98990191E5B758B0001A36A /* TabControlDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabControlDemo.layout; sourceTree = "<group>"; };
+		E989901A1E5B758B0001A36A /* TabPage.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage.layout; sourceTree = "<group>"; };
+		E989901B1E5B758B0001A36A /* TabPage1.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage1.layout; sourceTree = "<group>"; };
+		E989901C1E5B758B0001A36A /* TabPage2.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TabPage2.layout; sourceTree = "<group>"; };
+		E989901D1E5B758B0001A36A /* TaharezLookOverview.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLookOverview.layout; sourceTree = "<group>"; };
+		E989901E1E5B758B0001A36A /* TextDemo.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TextDemo.layout; sourceTree = "<group>"; };
+		E989901F1E5B758B0001A36A /* TreeDemoTaharez.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TreeDemoTaharez.layout; sourceTree = "<group>"; };
+		E98990201E5B758B0001A36A /* VanillaConsole.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaConsole.layout; sourceTree = "<group>"; };
+		E98990211E5B758B0001A36A /* VanillaLookOverview.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaLookOverview.layout; sourceTree = "<group>"; };
+		E98990221E5B758B0001A36A /* VanillaWindows.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaWindows.layout; sourceTree = "<group>"; };
+		E98990241E5B758B0001A36A /* AlfiskoSkin.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlfiskoSkin.looknfeel; sourceTree = "<group>"; };
+		E98990251E5B758B0001A36A /* GameMenu.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.looknfeel; sourceTree = "<group>"; };
+		E98990261E5B758B0001A36A /* Generic.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Generic.looknfeel; sourceTree = "<group>"; };
+		E98990271E5B758B0001A36A /* GWEN.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.looknfeel; sourceTree = "<group>"; };
+		E98990281E5B758B0001A36A /* HUDDemo.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemo.looknfeel; sourceTree = "<group>"; };
+		E98990291E5B758B0001A36A /* InventoryComponents.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InventoryComponents.looknfeel; sourceTree = "<group>"; };
+		E989902A1E5B758B0001A36A /* OgreTray.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.looknfeel; sourceTree = "<group>"; };
+		E989902B1E5B758B0001A36A /* SampleBrowser.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.looknfeel; sourceTree = "<group>"; };
+		E989902C1E5B758B0001A36A /* TaharezLook.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLook.looknfeel; sourceTree = "<group>"; };
+		E989902D1E5B758B0001A36A /* Vanilla.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Vanilla.looknfeel; sourceTree = "<group>"; };
+		E989902E1E5B758B0001A36A /* VanillaCommonDialogs.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaCommonDialogs.looknfeel; sourceTree = "<group>"; };
+		E989902F1E5B758B0001A36A /* WindowsLook.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.looknfeel; sourceTree = "<group>"; };
+		E98990311E5B758B0001A36A /* demo8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo8.lua; sourceTree = "<group>"; };
+		E98990321E5B758B0001A36A /* Menu.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Menu.project; sourceTree = "<group>"; };
+		E98990331E5B758B0001A36A /* prueba.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = prueba.project; sourceTree = "<group>"; };
+		E98990351E5B758B0001A36A /* AlfiskoSkin.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlfiskoSkin.scheme; sourceTree = "<group>"; };
+		E98990361E5B758B0001A36A /* GameMenu.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameMenu.scheme; sourceTree = "<group>"; };
+		E98990371E5B758B0001A36A /* Generic.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Generic.scheme; sourceTree = "<group>"; };
+		E98990381E5B758B0001A36A /* GWEN.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.scheme; sourceTree = "<group>"; };
+		E98990391E5B758B0001A36A /* HUDDemo.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HUDDemo.scheme; sourceTree = "<group>"; };
+		E989903A1E5B758B0001A36A /* Menu.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Menu.scheme; sourceTree = "<group>"; };
+		E989903B1E5B758B0001A36A /* OgreTray.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OgreTray.scheme; sourceTree = "<group>"; };
+		E989903C1E5B758B0001A36A /* SampleBrowser.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SampleBrowser.scheme; sourceTree = "<group>"; };
+		E989903D1E5B758B0001A36A /* TaharezLook.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TaharezLook.scheme; sourceTree = "<group>"; };
+		E989903E1E5B758B0001A36A /* VanillaCommonDialogs.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaCommonDialogs.scheme; sourceTree = "<group>"; };
+		E989903F1E5B758B0001A36A /* VanillaSkin.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VanillaSkin.scheme; sourceTree = "<group>"; };
+		E98990401E5B758B0001A36A /* WindowsLook.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.scheme; sourceTree = "<group>"; };
+		E98990421E5B758B0001A36A /* Animation.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Animation.xsd; sourceTree = "<group>"; };
+		E98990431E5B758B0001A36A /* CEGUIConfig.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CEGUIConfig.xsd; sourceTree = "<group>"; };
+		E98990441E5B758B0001A36A /* Falagard.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Falagard.xsd; sourceTree = "<group>"; };
+		E98990451E5B758B0001A36A /* Font.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Font.xsd; sourceTree = "<group>"; };
+		E98990461E5B758B0001A36A /* GUILayout.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUILayout.xsd; sourceTree = "<group>"; };
+		E98990471E5B758B0001A36A /* GUIScheme.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUIScheme.xsd; sourceTree = "<group>"; };
+		E98990481E5B758B0001A36A /* Imageset.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Imageset.xsd; sourceTree = "<group>"; };
+		E98990491E5B758B0001A36A /* Samples.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Samples.xsd; sourceTree = "<group>"; };
+		E98990D21E5B759F0001A36A /* JSONParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONParser.cpp; sourceTree = "<group>"; };
+		E98990D31E5B759F0001A36A /* JSONParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONParser.hpp; sourceTree = "<group>"; };
 		E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = puertaInterface.cpp; sourceTree = "<group>"; };
 		E993C5BE1E3CB80B00EEA664 /* puertaInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puertaInterface.hpp; sourceTree = "<group>"; };
 		E9A346351E0416FC00E6EC25 /* gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gun.cpp; sourceTree = "<group>"; };
@@ -309,19 +606,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C1A0ADD51E434BA9009699FD /* GUI */ = {
-			isa = PBXGroup;
-			children = (
-				C1A0ADD61E434BA9009699FD /* GUI.cpp */,
-				C1A0ADD71E434BA9009699FD /* GUI.h */,
-				C1A0ADD81E434BA9009699FD /* GUIManager.cpp */,
-				C1A0ADD91E434BA9009699FD /* GUIManager.h */,
-				C1A0ADDA1E434BA9009699FD /* menuPrueba.cpp */,
-				C1A0ADDB1E434BA9009699FD /* menuPrueba.hpp */,
-			);
-			path = GUI;
-			sourceTree = "<group>";
-		};
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +621,7 @@
 		E9026ED51E353CDE00B44AC3 /* 3d */ = {
 			isa = PBXGroup;
 			children = (
+				E9898FB91E5B758B0001A36A /* GUI */,
 				E9026ED61E353CDE00B44AC3 /* alarmita.3ds */,
 				E9026ED71E353CDE00B44AC3 /* alarmita.blend */,
 				E9026ED81E353CDE00B44AC3 /* alarmita.jpg */,
@@ -378,6 +663,241 @@
 			path = 3d;
 			sourceTree = "<group>";
 		};
+		E9898F991E5B757A0001A36A /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */,
+				E9898F9B1E5B757A0001A36A /* CargarPartidaLayout.hpp */,
+				E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */,
+				E9898F9D1E5B757A0001A36A /* CreditosLayout.hpp */,
+				E9898F9E1E5B757A0001A36A /* GUI.cpp */,
+				E9898F9F1E5B757A0001A36A /* GUI.h */,
+				E9898FA01E5B757A0001A36A /* GUIManager.h */,
+				E9898FA11E5B757A0001A36A /* HUDLayout.cpp */,
+				E9898FA21E5B757A0001A36A /* HUDLayout.hpp */,
+				E9898FA31E5B757A0001A36A /* LayoutGUI.cpp */,
+				E9898FA41E5B757A0001A36A /* LayoutGUI.hpp */,
+				E9898FA51E5B757A0001A36A /* LayoutInterface.cpp */,
+				E9898FA61E5B757A0001A36A /* LayoutInterface.hpp */,
+				E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */,
+				E9898FA81E5B757A0001A36A /* MenuPrincipalLayout.hpp */,
+				E9898FA91E5B757A0001A36A /* menuPrueba.cpp */,
+				E9898FAA1E5B757A0001A36A /* menuPrueba.hpp */,
+				E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */,
+				E9898FAC1E5B757A0001A36A /* OpcionesLayout.hpp */,
+				E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */,
+				E9898FAE1E5B757A0001A36A /* PausaLayout.hpp */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		E9898FB91E5B758B0001A36A /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				E9898FBA1E5B758B0001A36A /* animations */,
+				E9898FBD1E5B758B0001A36A /* fonts */,
+				E9898FE51E5B758B0001A36A /* imagesets */,
+				E98990051E5B758B0001A36A /* layouts */,
+				E98990231E5B758B0001A36A /* looknfeel */,
+				E98990301E5B758B0001A36A /* lua_scripts */,
+				E98990321E5B758B0001A36A /* Menu.project */,
+				E98990331E5B758B0001A36A /* prueba.project */,
+				E98990341E5B758B0001A36A /* schemes */,
+				E98990411E5B758B0001A36A /* xml_schemas */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		E9898FBA1E5B758B0001A36A /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				E9898FBB1E5B758B0001A36A /* example.anims */,
+				E9898FBC1E5B758B0001A36A /* GameMenu.anims */,
+			);
+			path = animations;
+			sourceTree = "<group>";
+		};
+		E9898FBD1E5B758B0001A36A /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E9898FBE1E5B758B0001A36A /* Batang-18.font */,
+				E9898FBF1E5B758B0001A36A /* batang.ttf */,
+				E9898FC01E5B758B0001A36A /* DejaVuSans-10-NoScale.font */,
+				E9898FC11E5B758B0001A36A /* DejaVuSans-10.font */,
+				E9898FC21E5B758B0001A36A /* DejaVuSans-12-NoScale.font */,
+				E9898FC31E5B758B0001A36A /* DejaVuSans-12.font */,
+				E9898FC41E5B758B0001A36A /* DejaVuSans-14-NoScale.font */,
+				E9898FC51E5B758B0001A36A /* DejaVuSans-14.font */,
+				E9898FC61E5B758B0001A36A /* DejaVuSans.ttf */,
+				E9898FC71E5B758B0001A36A /* DejaVuSerif.ttf */,
+				E9898FC81E5B758B0001A36A /* FairChar-30.font */,
+				E9898FC91E5B758B0001A36A /* FetteClassicUNZFraktur.ttf */,
+				E9898FCA1E5B758B0001A36A /* Futhark Adapted.ttf */,
+				E9898FCB1E5B758B0001A36A /* GreatVibes-16.font */,
+				E9898FCC1E5B758B0001A36A /* GreatVibes-22.font */,
+				E9898FCD1E5B758B0001A36A /* GreatVibes-Regular.ttf */,
+				E9898FCE1E5B758B0001A36A /* IMFePIrm29P.ttf */,
+				E9898FCF1E5B758B0001A36A /* Junicode-13.font */,
+				E9898FD01E5B758B0001A36A /* Junicode.ttf */,
+				E9898FD11E5B758B0001A36A /* Jura-10.font */,
+				E9898FD21E5B758B0001A36A /* Jura-13.font */,
+				E9898FD31E5B758B0001A36A /* Jura-18.font */,
+				E9898FD41E5B758B0001A36A /* Jura-DemiBold.ttf */,
+				E9898FD51E5B758B0001A36A /* Jura-Light.ttf */,
+				E9898FD61E5B758B0001A36A /* Jura-Medium.ttf */,
+				E9898FD71E5B758B0001A36A /* Jura-Regular.ttf */,
+				E9898FD81E5B758B0001A36A /* Klingon-pIqaD-HaSta.ttf */,
+				E9898FD91E5B758B0001A36A /* Legal.txt */,
+				E9898FDA1E5B758B0001A36A /* LicenseApache.txt */,
+				E9898FDB1E5B758B0001A36A /* LicenseDejaVu.txt */,
+				E9898FDC1E5B758B0001A36A /* LicenseGPL.txt */,
+				E9898FDD1E5B758B0001A36A /* LicenseMIT.txt */,
+				E9898FDE1E5B758B0001A36A /* LicenseSIL.txt */,
+				E9898FDF1E5B758B0001A36A /* LicenseUbuntuFont.txt */,
+				E9898FE01E5B758B0001A36A /* mizufalp.ttf */,
+				E9898FE11E5B758B0001A36A /* OpenSans-8.font */,
+				E9898FE21E5B758B0001A36A /* OpenSans.ttf */,
+				E9898FE31E5B758B0001A36A /* RichStyle.ttf */,
+				E9898FE41E5B758B0001A36A /* Tnua-Libre.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		E9898FE51E5B758B0001A36A /* imagesets */ = {
+			isa = PBXGroup;
+			children = (
+				E9898FE61E5B758B0001A36A /* AlfiskoSkin.imageset */,
+				E9898FE71E5B758B0001A36A /* AlfiskoSkin.png */,
+				E9898FE81E5B758B0001A36A /* AlfiskoSkin.png.OLD */,
+				E9898FE91E5B758B0001A36A /* Aliasing.jpg */,
+				E9898FEA1E5B758B0001A36A /* BackgroundSampleBrowser.jpg */,
+				E9898FEB1E5B758B0001A36A /* DriveIcons.imageset */,
+				E9898FEC1E5B758B0001A36A /* DriveIcons.png */,
+				E9898FED1E5B758B0001A36A /* FairChar.imageset */,
+				E9898FEE1E5B758B0001A36A /* FairChar.png */,
+				E9898FEF1E5B758B0001A36A /* GameMenu.imageset */,
+				E9898FF01E5B758B0001A36A /* GameMenu.png */,
+				E9898FF11E5B758B0001A36A /* GWEN.imageset */,
+				E9898FF21E5B758B0001A36A /* GWENDefaultSkin.png */,
+				E9898FF31E5B758B0001A36A /* HUDDemo.imageset */,
+				E9898FF41E5B758B0001A36A /* HUDDemo.png */,
+				E9898FF51E5B758B0001A36A /* HUDDemoGameOver.png */,
+				E9898FF61E5B758B0001A36A /* logo.png */,
+				E9898FF71E5B758B0001A36A /* Menu.imageset */,
+				E9898FF81E5B758B0001A36A /* Menu.png */,
+				E9898FF91E5B758B0001A36A /* OgreTray.imageset */,
+				E9898FFA1E5B758B0001A36A /* OgreTrayImages.png */,
+				E9898FFB1E5B758B0001A36A /* ReadMe.txt */,
+				E9898FFC1E5B758B0001A36A /* SampleBrowser.imageset */,
+				E9898FFD1E5B758B0001A36A /* SampleBrowser.png */,
+				E9898FFE1E5B758B0001A36A /* SpaceBackground.jpg */,
+				E9898FFF1E5B758B0001A36A /* TaharezLook.imageset */,
+				E98990001E5B758B0001A36A /* TaharezLook.png */,
+				E98990011E5B758B0001A36A /* Vanilla.imageset */,
+				E98990021E5B758B0001A36A /* vanilla.png */,
+				E98990031E5B758B0001A36A /* WindowsLook.imageset */,
+				E98990041E5B758B0001A36A /* WindowsLook.png */,
+			);
+			path = imagesets;
+			sourceTree = "<group>";
+		};
+		E98990051E5B758B0001A36A /* layouts */ = {
+			isa = PBXGroup;
+			children = (
+				E98990061E5B758B0001A36A /* application_templates.layout */,
+				E98990071E5B758B0001A36A /* CargarPartida.layout */,
+				E98990081E5B758B0001A36A /* Console.wnd */,
+				E98990091E5B758B0001A36A /* CreditosLayout.layout */,
+				E989900A1E5B758B0001A36A /* Demo8.layout */,
+				E989900B1E5B758B0001A36A /* DragDropDemo.layout */,
+				E989900C1E5B758B0001A36A /* EffectsDemo.layout */,
+				E989900D1E5B758B0001A36A /* FontDemo.layout */,
+				E989900E1E5B758B0001A36A /* GameMenu.layout */,
+				E989900F1E5B758B0001A36A /* HUD.layout */,
+				E98990101E5B758B0001A36A /* HUDDemoGameOver.layout */,
+				E98990111E5B758B0001A36A /* HUDDemoIngame.layout */,
+				E98990121E5B758B0001A36A /* MenuPrincipal.layout */,
+				E98990131E5B758B0001A36A /* Opciones.layout */,
+				E98990141E5B758B0001A36A /* Pause.layout */,
+				E98990151E5B758B0001A36A /* prueba.layout */,
+				E98990161E5B758B0001A36A /* SampleBrowser.layout */,
+				E98990171E5B758B0001A36A /* SampleBrowserLoadScreen.layout */,
+				E98990181E5B758B0001A36A /* SimpleDebug.layout */,
+				E98990191E5B758B0001A36A /* TabControlDemo.layout */,
+				E989901A1E5B758B0001A36A /* TabPage.layout */,
+				E989901B1E5B758B0001A36A /* TabPage1.layout */,
+				E989901C1E5B758B0001A36A /* TabPage2.layout */,
+				E989901D1E5B758B0001A36A /* TaharezLookOverview.layout */,
+				E989901E1E5B758B0001A36A /* TextDemo.layout */,
+				E989901F1E5B758B0001A36A /* TreeDemoTaharez.layout */,
+				E98990201E5B758B0001A36A /* VanillaConsole.layout */,
+				E98990211E5B758B0001A36A /* VanillaLookOverview.layout */,
+				E98990221E5B758B0001A36A /* VanillaWindows.layout */,
+			);
+			path = layouts;
+			sourceTree = "<group>";
+		};
+		E98990231E5B758B0001A36A /* looknfeel */ = {
+			isa = PBXGroup;
+			children = (
+				E98990241E5B758B0001A36A /* AlfiskoSkin.looknfeel */,
+				E98990251E5B758B0001A36A /* GameMenu.looknfeel */,
+				E98990261E5B758B0001A36A /* Generic.looknfeel */,
+				E98990271E5B758B0001A36A /* GWEN.looknfeel */,
+				E98990281E5B758B0001A36A /* HUDDemo.looknfeel */,
+				E98990291E5B758B0001A36A /* InventoryComponents.looknfeel */,
+				E989902A1E5B758B0001A36A /* OgreTray.looknfeel */,
+				E989902B1E5B758B0001A36A /* SampleBrowser.looknfeel */,
+				E989902C1E5B758B0001A36A /* TaharezLook.looknfeel */,
+				E989902D1E5B758B0001A36A /* Vanilla.looknfeel */,
+				E989902E1E5B758B0001A36A /* VanillaCommonDialogs.looknfeel */,
+				E989902F1E5B758B0001A36A /* WindowsLook.looknfeel */,
+			);
+			path = looknfeel;
+			sourceTree = "<group>";
+		};
+		E98990301E5B758B0001A36A /* lua_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E98990311E5B758B0001A36A /* demo8.lua */,
+			);
+			path = lua_scripts;
+			sourceTree = "<group>";
+		};
+		E98990341E5B758B0001A36A /* schemes */ = {
+			isa = PBXGroup;
+			children = (
+				E98990351E5B758B0001A36A /* AlfiskoSkin.scheme */,
+				E98990361E5B758B0001A36A /* GameMenu.scheme */,
+				E98990371E5B758B0001A36A /* Generic.scheme */,
+				E98990381E5B758B0001A36A /* GWEN.scheme */,
+				E98990391E5B758B0001A36A /* HUDDemo.scheme */,
+				E989903A1E5B758B0001A36A /* Menu.scheme */,
+				E989903B1E5B758B0001A36A /* OgreTray.scheme */,
+				E989903C1E5B758B0001A36A /* SampleBrowser.scheme */,
+				E989903D1E5B758B0001A36A /* TaharezLook.scheme */,
+				E989903E1E5B758B0001A36A /* VanillaCommonDialogs.scheme */,
+				E989903F1E5B758B0001A36A /* VanillaSkin.scheme */,
+				E98990401E5B758B0001A36A /* WindowsLook.scheme */,
+			);
+			path = schemes;
+			sourceTree = "<group>";
+		};
+		E98990411E5B758B0001A36A /* xml_schemas */ = {
+			isa = PBXGroup;
+			children = (
+				E98990421E5B758B0001A36A /* Animation.xsd */,
+				E98990431E5B758B0001A36A /* CEGUIConfig.xsd */,
+				E98990441E5B758B0001A36A /* Falagard.xsd */,
+				E98990451E5B758B0001A36A /* Font.xsd */,
+				E98990461E5B758B0001A36A /* GUILayout.xsd */,
+				E98990471E5B758B0001A36A /* GUIScheme.xsd */,
+				E98990481E5B758B0001A36A /* Imageset.xsd */,
+				E98990491E5B758B0001A36A /* Samples.xsd */,
+			);
+			path = xml_schemas;
+			sourceTree = "<group>";
+		};
 		E9AC3A2E1DF0A9C100A91A97 = {
 			isa = PBXGroup;
 			children = (
@@ -398,33 +918,35 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
-				C1A0ADD51E434BA9009699FD /* GUI */,
-				D2F319BC1E1D68D20033372E /* sistema decision */,
+				E9898F991E5B757A0001A36A /* GUI */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
+				D2F319BC1E1D68D20033372E /* sistema decision */,
 				E9AC3ACF1DF0AD3600A91A97 /* tiled */,
 				E9AC3A661DF0AA5000A91A97 /* components */,
 				E9AC3A4D1DF0AA4800A91A97 /* objetos */,
-				E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */,
-				E9AC3AE01DF0AD7100A91A97 /* MyEventReceiver.hpp */,
-				E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */,
-				E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */,
-				E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */,
-				E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */,
-				E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */,
-				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
 				E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */,
 				E9FA20521E1C24C1003F9CA0 /* BlackBoards.hpp */,
-				E9FA20531E1C24C1003F9CA0 /* trigger_system.cpp */,
-				E9FA20541E1C24C1003F9CA0 /* trigger_system.hpp */,
-				E9FA20571E1C2501003F9CA0 /* Dvector.cpp */,
-				E9FA20581E1C2501003F9CA0 /* Dvector.hpp */,
 				E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */,
 				E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */,
+				E9FA20571E1C2501003F9CA0 /* Dvector.cpp */,
+				E9FA20581E1C2501003F9CA0 /* Dvector.hpp */,
 				E98661261DF99ED30028AC64 /* Fps.cpp */,
 				E98661241DF98D140028AC64 /* Fps.hpp */,
 				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3AB01DF0AA5900A91A97 /* Game.hpp */,
+				E98990D21E5B759F0001A36A /* JSONParser.cpp */,
+				E98990D31E5B759F0001A36A /* JSONParser.hpp */,
 				E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */,
+				E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */,
+				E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */,
+				E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */,
+				E9AC3AE01DF0AD7100A91A97 /* MyEventReceiver.hpp */,
+				E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */,
+				E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */,
+				E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */,
+				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
+				E9FA20531E1C24C1003F9CA0 /* trigger_system.cpp */,
+				E9FA20541E1C24C1003F9CA0 /* trigger_system.hpp */,
 			);
 			path = arquitectura;
 			sourceTree = "<group>";
@@ -611,47 +1133,183 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E989908A1E5B758B0001A36A /* SampleBrowser.png in Resources */,
 				E9026F101E353CDE00B44AC3 /* texture.png in Resources */,
+				E989907C1E5B758B0001A36A /* GameMenu.imageset in Resources */,
+				E98990A91E5B758B0001A36A /* TaharezLookOverview.layout in Resources */,
+				E98990831E5B758B0001A36A /* logo.png in Resources */,
+				E98990BD1E5B758B0001A36A /* prueba.project in Resources */,
+				E989905E1E5B758B0001A36A /* Junicode.ttf in Resources */,
 				E9026F051E353CDE00B44AC3 /* muro.blend in Resources */,
 				E9026F0D1E353CDE00B44AC3 /* suelo.3ds in Resources */,
 				E9026F001E353CDE00B44AC3 /* fuente.3ds in Resources */,
+				E98990841E5B758B0001A36A /* Menu.imageset in Resources */,
+				E98990A81E5B758B0001A36A /* TabPage2.layout in Resources */,
+				E98990AC1E5B758B0001A36A /* VanillaConsole.layout in Resources */,
 				E9026EF71E353CDE00B44AC3 /* bala.3ds in Resources */,
+				E989909A1E5B758B0001A36A /* GameMenu.layout in Resources */,
 				E9026F0C1E353CDE00B44AC3 /* sphere.blend in Resources */,
+				E98990CF1E5B758B0001A36A /* GUIScheme.xsd in Resources */,
+				E98990A21E5B758B0001A36A /* SampleBrowser.layout in Resources */,
+				E98990641E5B758B0001A36A /* Jura-Medium.ttf in Resources */,
+				E98990AE1E5B758B0001A36A /* VanillaWindows.layout in Resources */,
+				E98990C61E5B758B0001A36A /* TaharezLook.scheme in Resources */,
+				E98990C31E5B758B0001A36A /* Menu.scheme in Resources */,
+				E989904C1E5B758B0001A36A /* Batang-18.font in Resources */,
+				E98990B51E5B758B0001A36A /* OgreTray.looknfeel in Resources */,
+				E98990791E5B758B0001A36A /* DriveIcons.png in Resources */,
+				E98990611E5B758B0001A36A /* Jura-18.font in Resources */,
+				E98990511E5B758B0001A36A /* DejaVuSans-12.font in Resources */,
+				E98990621E5B758B0001A36A /* Jura-DemiBold.ttf in Resources */,
+				E98990A41E5B758B0001A36A /* SimpleDebug.layout in Resources */,
+				E98990681E5B758B0001A36A /* LicenseApache.txt in Resources */,
+				E98990811E5B758B0001A36A /* HUDDemo.png in Resources */,
+				E989909D1E5B758B0001A36A /* HUDDemoIngame.layout in Resources */,
+				E98990A51E5B758B0001A36A /* TabControlDemo.layout in Resources */,
+				E98990591E5B758B0001A36A /* GreatVibes-16.font in Resources */,
 				E9026F0A1E353CDE00B44AC3 /* rocas.jpg in Resources */,
+				E989908C1E5B758B0001A36A /* TaharezLook.imageset in Resources */,
+				E989904F1E5B758B0001A36A /* DejaVuSans-10.font in Resources */,
 				E9026F011E353CDE00B44AC3 /* fuente.blend in Resources */,
+				E98990821E5B758B0001A36A /* HUDDemoGameOver.png in Resources */,
+				E989905A1E5B758B0001A36A /* GreatVibes-22.font in Resources */,
+				E98990D01E5B758B0001A36A /* Imageset.xsd in Resources */,
+				E98990B11E5B758B0001A36A /* Generic.looknfeel in Resources */,
+				E98990C41E5B758B0001A36A /* OgreTray.scheme in Resources */,
 				E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */,
+				E98990A61E5B758B0001A36A /* TabPage.layout in Resources */,
+				E98990BF1E5B758B0001A36A /* GameMenu.scheme in Resources */,
 				E9AC3ADE1DF0AD3600A91A97 /* mapa2c.tmx in Resources */,
+				E98990B31E5B758B0001A36A /* HUDDemo.looknfeel in Resources */,
+				E98990921E5B758B0001A36A /* application_templates.layout in Resources */,
+				E98990BA1E5B758B0001A36A /* WindowsLook.looknfeel in Resources */,
 				E9026F041E353CDE00B44AC3 /* muro.3ds in Resources */,
+				E98990971E5B758B0001A36A /* DragDropDemo.layout in Resources */,
+				E989907A1E5B758B0001A36A /* FairChar.imageset in Resources */,
+				E98990631E5B758B0001A36A /* Jura-Light.ttf in Resources */,
+				E98990911E5B758B0001A36A /* WindowsLook.png in Resources */,
+				E98990CE1E5B758B0001A36A /* GUILayout.xsd in Resources */,
+				E98990CD1E5B758B0001A36A /* Font.xsd in Resources */,
+				E989907E1E5B758B0001A36A /* GWEN.imageset in Resources */,
+				E98990851E5B758B0001A36A /* Menu.png in Resources */,
+				E989908B1E5B758B0001A36A /* SpaceBackground.jpg in Resources */,
+				E98990991E5B758B0001A36A /* FontDemo.layout in Resources */,
 				E9026EFC1E353CDE00B44AC3 /* colorverde.jpg in Resources */,
+				E98990581E5B758B0001A36A /* Futhark Adapted.ttf in Resources */,
+				E98990741E5B758B0001A36A /* AlfiskoSkin.png in Resources */,
+				E98990CB1E5B758B0001A36A /* CEGUIConfig.xsd in Resources */,
+				E98990A11E5B758B0001A36A /* prueba.layout in Resources */,
+				E989909E1E5B758B0001A36A /* MenuPrincipal.layout in Resources */,
+				E98990931E5B758B0001A36A /* CargarPartida.layout in Resources */,
+				E98990521E5B758B0001A36A /* DejaVuSans-14-NoScale.font in Resources */,
+				E98990AD1E5B758B0001A36A /* VanillaLookOverview.layout in Resources */,
+				E98990721E5B758B0001A36A /* Tnua-Libre.ttf in Resources */,
+				E98990D11E5B758B0001A36A /* Samples.xsd in Resources */,
+				E98990981E5B758B0001A36A /* EffectsDemo.layout in Resources */,
+				E98990601E5B758B0001A36A /* Jura-13.font in Resources */,
+				E989906A1E5B758B0001A36A /* LicenseGPL.txt in Resources */,
 				E9026F0B1E353CDE00B44AC3 /* sphere.3ds in Resources */,
 				E9026F061E353CDE00B44AC3 /* muro.blend1 in Resources */,
+				E98990751E5B758B0001A36A /* AlfiskoSkin.png.OLD in Resources */,
+				E98990C21E5B758B0001A36A /* HUDDemo.scheme in Resources */,
 				E9026F021E353CDE00B44AC3 /* gota.jpg in Resources */,
+				E98990761E5B758B0001A36A /* Aliasing.jpg in Resources */,
 				E9026F081E353CDE00B44AC3 /* pala.png in Resources */,
+				E989906D1E5B758B0001A36A /* LicenseUbuntuFont.txt in Resources */,
+				E989908E1E5B758B0001A36A /* Vanilla.imageset in Resources */,
+				E98990901E5B758B0001A36A /* WindowsLook.imageset in Resources */,
+				E989906C1E5B758B0001A36A /* LicenseSIL.txt in Resources */,
+				E98990AA1E5B758B0001A36A /* TextDemo.layout in Resources */,
+				E989905C1E5B758B0001A36A /* IMFePIrm29P.ttf in Resources */,
+				E989906F1E5B758B0001A36A /* OpenSans-8.font in Resources */,
+				E98990B61E5B758B0001A36A /* SampleBrowser.looknfeel in Resources */,
 				E9026EF61E353CDE00B44AC3 /* alarmita.jpg in Resources */,
+				E98990561E5B758B0001A36A /* FairChar-30.font in Resources */,
+				E98990CC1E5B758B0001A36A /* Falagard.xsd in Resources */,
+				E989909C1E5B758B0001A36A /* HUDDemoGameOver.layout in Resources */,
+				E98990B71E5B758B0001A36A /* TaharezLook.looknfeel in Resources */,
+				E98990A71E5B758B0001A36A /* TabPage1.layout in Resources */,
+				E98990C51E5B758B0001A36A /* SampleBrowser.scheme in Resources */,
+				E989907F1E5B758B0001A36A /* GWENDefaultSkin.png in Resources */,
+				E98990C71E5B758B0001A36A /* VanillaCommonDialogs.scheme in Resources */,
+				E98990B91E5B758B0001A36A /* VanillaCommonDialogs.looknfeel in Resources */,
+				E98990711E5B758B0001A36A /* RichStyle.ttf in Resources */,
+				E989908D1E5B758B0001A36A /* TaharezLook.png in Resources */,
+				E98990B41E5B758B0001A36A /* InventoryComponents.looknfeel in Resources */,
+				E98990951E5B758B0001A36A /* CreditosLayout.layout in Resources */,
 				E9026EFF1E353CDE00B44AC3 /* enemy.jpg in Resources */,
+				E98990551E5B758B0001A36A /* DejaVuSerif.ttf in Resources */,
+				E98990871E5B758B0001A36A /* OgreTrayImages.png in Resources */,
+				E98990671E5B758B0001A36A /* Legal.txt in Resources */,
+				E989904E1E5B758B0001A36A /* DejaVuSans-10-NoScale.font in Resources */,
+				E98990801E5B758B0001A36A /* HUDDemo.imageset in Resources */,
 				C1A0AEF11E434BBD009699FD /* piedra.jpg in Resources */,
 				C1A0AEED1E434BBD009699FD /* llave.jpg in Resources */,
+				E98990941E5B758B0001A36A /* Console.wnd in Resources */,
+				E989905B1E5B758B0001A36A /* GreatVibes-Regular.ttf in Resources */,
 				C1A0AEF31E434BBD009699FD /* rojo.png in Resources */,
+				E98990CA1E5B758B0001A36A /* Animation.xsd in Resources */,
+				E989904A1E5B758B0001A36A /* example.anims in Resources */,
+				E989908F1E5B758B0001A36A /* vanilla.png in Resources */,
+				E98990BC1E5B758B0001A36A /* Menu.project in Resources */,
 				E9026F071E353CDE00B44AC3 /* pala.jpg in Resources */,
 				C1A0AE6E1E434BBD009699FD /* fuenten.jpg in Resources */,
 				E9026EFB1E353CDE00B44AC3 /* cesped.jpg in Resources */,
 				E9026EFA1E353CDE00B44AC3 /* botiquin.jpg in Resources */,
+				E98990A01E5B758B0001A36A /* Pause.layout in Resources */,
+				E989905F1E5B758B0001A36A /* Jura-10.font in Resources */,
+				E98990A31E5B758B0001A36A /* SampleBrowserLoadScreen.layout in Resources */,
+				E98990571E5B758B0001A36A /* FetteClassicUNZFraktur.ttf in Resources */,
+				E989909F1E5B758B0001A36A /* Opciones.layout in Resources */,
+				E989909B1E5B758B0001A36A /* HUD.layout in Resources */,
 				C1A0AEEE1E434BBD009699FD /* moneda.jpg in Resources */,
+				E989905D1E5B758B0001A36A /* Junicode-13.font in Resources */,
+				E989904D1E5B758B0001A36A /* batang.ttf in Resources */,
 				E9026EFE1E353CDE00B44AC3 /* comida.blend in Resources */,
 				E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */,
+				E98990C91E5B758B0001A36A /* WindowsLook.scheme in Resources */,
 				E9026EF91E353CDE00B44AC3 /* botiquin.blend in Resources */,
+				E98990AB1E5B758B0001A36A /* TreeDemoTaharez.layout in Resources */,
+				E989907B1E5B758B0001A36A /* FairChar.png in Resources */,
 				C1A0AEF01E434BBD009699FD /* negro.jpg in Resources */,
+				E98990731E5B758B0001A36A /* AlfiskoSkin.imageset in Resources */,
+				E98990881E5B758B0001A36A /* ReadMe.txt in Resources */,
 				E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */,
+				E98990AF1E5B758B0001A36A /* AlfiskoSkin.looknfeel in Resources */,
 				E9026F091E353CDE00B44AC3 /* pizza.jpg in Resources */,
+				E98990501E5B758B0001A36A /* DejaVuSans-12-NoScale.font in Resources */,
+				E98990891E5B758B0001A36A /* SampleBrowser.imageset in Resources */,
+				E98990C11E5B758B0001A36A /* GWEN.scheme in Resources */,
 				E9AC3ADD1DF0AD3600A91A97 /* mapa2.tmx in Resources */,
+				E98990BE1E5B758B0001A36A /* AlfiskoSkin.scheme in Resources */,
+				E98990701E5B758B0001A36A /* OpenSans.ttf in Resources */,
+				E98990781E5B758B0001A36A /* DriveIcons.imageset in Resources */,
 				880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */,
 				C1A0AEF21E434BBD009699FD /* puerta.jpg in Resources */,
 				E9026F031E353CDE00B44AC3 /* mapimg.png in Resources */,
+				E989904B1E5B758B0001A36A /* GameMenu.anims in Resources */,
 				E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */,
+				E98990531E5B758B0001A36A /* DejaVuSans-14.font in Resources */,
+				E989906E1E5B758B0001A36A /* mizufalp.ttf in Resources */,
+				E98990C01E5B758B0001A36A /* Generic.scheme in Resources */,
+				E989907D1E5B758B0001A36A /* GameMenu.png in Resources */,
+				E98990B21E5B758B0001A36A /* GWEN.looknfeel in Resources */,
+				E98990661E5B758B0001A36A /* Klingon-pIqaD-HaSta.ttf in Resources */,
+				E98990C81E5B758B0001A36A /* VanillaSkin.scheme in Resources */,
+				E98990961E5B758B0001A36A /* Demo8.layout in Resources */,
 				E9026EF81E353CDE00B44AC3 /* botiquin.3ds in Resources */,
+				E98990651E5B758B0001A36A /* Jura-Regular.ttf in Resources */,
 				E9026F0E1E353CDE00B44AC3 /* suelo.blend in Resources */,
 				C1A0AEEF1E434BBD009699FD /* naranja.jpg in Resources */,
+				E98990541E5B758B0001A36A /* DejaVuSans.ttf in Resources */,
+				E98990861E5B758B0001A36A /* OgreTray.imageset in Resources */,
+				E98990771E5B758B0001A36A /* BackgroundSampleBrowser.jpg in Resources */,
 				E9026EFD1E353CDE00B44AC3 /* comida.3ds in Resources */,
+				E989906B1E5B758B0001A36A /* LicenseMIT.txt in Resources */,
+				E98990BB1E5B758B0001A36A /* demo8.lua in Resources */,
+				E98990B81E5B758B0001A36A /* Vanilla.looknfeel in Resources */,
+				E98990B01E5B758B0001A36A /* GameMenu.looknfeel in Resources */,
+				E98990691E5B758B0001A36A /* LicenseDejaVu.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,12 +1337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9898FB71E5B757A0001A36A /* OpcionesLayout.cpp in Sources */,
 				E98661271DF99ED30028AC64 /* Fps.cpp in Sources */,
 				E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */,
 				E9FA20591E1C2501003F9CA0 /* Dvector.cpp in Sources */,
 				E9AC3AC21DF0ACED00A91A97 /* cargarMapa.cpp in Sources */,
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
 				882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */,
+				E9898FB31E5B757A0001A36A /* LayoutGUI.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
 				E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */,
 				E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */,
@@ -692,19 +1352,20 @@
 				E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */,
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
 				E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */,
+				E9898FB21E5B757A0001A36A /* HUDLayout.cpp in Sources */,
+				E9898FB11E5B757A0001A36A /* GUI.cpp in Sources */,
 				E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
-				C1A0ADDE1E434BA9009699FD /* menuPrueba.cpp in Sources */,
-				C1A0ADDC1E434BA9009699FD /* GUI.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
+				E9898FAF1E5B757A0001A36A /* CargarPartidaLayout.cpp in Sources */,
 				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
 				E9AC3A601DF0AA4800A91A97 /* enemigos.cpp in Sources */,
-				C1A0ADDD1E434BA9009699FD /* GUIManager.cpp in Sources */,
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
 				E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */,
 				882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */,
 				E9FA20551E1C24C1003F9CA0 /* BlackBoards.cpp in Sources */,
+				E9898FB41E5B757A0001A36A /* LayoutInterface.cpp in Sources */,
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
@@ -718,6 +1379,7 @@
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				E9FA20561E1C24C1003F9CA0 /* trigger_system.cpp in Sources */,
+				E9898FB81E5B757A0001A36A /* PausaLayout.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */,
@@ -727,13 +1389,17 @@
 				E9A346371E0416FC00E6EC25 /* gun.cpp in Sources */,
 				63B81E351E26D288006BD3AB /* fuente.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,
+				E98990D41E5B759F0001A36A /* JSONParser.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,
+				E9898FB61E5B757A0001A36A /* menuPrueba.cpp in Sources */,
 				E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */,
+				E9898FB01E5B757A0001A36A /* CreditosLayout.cpp in Sources */,
 				E9AC3A5F1DF0AA4800A91A97 /* camara.cpp in Sources */,
 				884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */,
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
 				E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,
+				E9898FB51E5B757A0001A36A /* MenuPrincipalLayout.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

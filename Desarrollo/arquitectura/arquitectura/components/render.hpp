@@ -25,7 +25,7 @@ public:
     void dropNode();
 	void deleteNode();
 	void setTexto();
-    void dibujar();
+    void dibujar(bool pausa);
 	void addCamera(dvector3D &p, dvector3D &l);
 	void closeWindow();
 	void dibujarMapa();

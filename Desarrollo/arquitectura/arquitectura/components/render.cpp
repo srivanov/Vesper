@@ -82,12 +82,16 @@ void render::setTexto(){
     texto->setOverrideColor(SColor(255,255,255,255));
 }
 
-void render::dibujar(){
+void render::dibujar(bool pausa){
 	texto->setText(irr::core::stringw(Fps::Instance()->get()).c_str());
-    ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
-    ventana::Instance()->getSceneManager()->drawAll();
+	ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
+	
+	if(pausa)
+		GUIManager::i().drawAllGuis();
+	else
+		ventana::Instance()->getSceneManager()->drawAll();
+	
 	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
-//    GUIManager::i().drawAllGuis();
     ventana::Instance()->getDriver()->endScene();
 }
 

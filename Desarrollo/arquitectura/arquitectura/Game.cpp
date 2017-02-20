@@ -50,7 +50,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
-//    menu.inicializar();
+	layoutPrueba = new LayoutGUI();
+	pausa = true;
 }
 
 void Game::stop(){
@@ -58,8 +59,10 @@ void Game::stop(){
 }
 
 void Game::render(){
-    nivelazo->render();
-    renderizador->dibujar();
+	if(!pausa){
+		nivelazo->render();
+	}
+	renderizador->dibujar(pausa);
 }
 
 bool Game::isRunning(){
@@ -68,17 +71,18 @@ bool Game::isRunning(){
 	return false;
 }
 
-
 void Game::update(){
-	nivelazo->update();
-	entrada->update();
-	cam->movimientoInteligente(*nivelazo->getPlayer()->getPosicion());
-	
-    trigger_system::_instance()->update();
-	
-    Fps::Instance()->update();
-	mundoBox2D::Instance()->update();
-//    GUIManager::i().updateAllGuis();
+	if(!pausa){
+		nivelazo->update();
+		entrada->update();
+		cam->movimientoInteligente(*nivelazo->getPlayer()->getPosicion());
+		trigger_system::_instance()->update();
+		mundoBox2D::Instance()->update();
+	}else{
+		processEvents();
+		layoutPrueba->update();
+	}
+	Fps::Instance()->update();
 }
 
 void Game::zoom(bool z){
@@ -101,6 +105,20 @@ camara* Game::getCamara(){
     return cam;
 }
 
+void Game::setPausa(bool p){
+	pausa = p;
+}
+
 player* Game::getPlayer() {
     return nivelazo->getPlayer();
 }
+
+void Game::processEvents() {
+	MyEventReceiver* rec = MyEventReceiver::Instance();
+	layoutPrueba->posicionarRaton(rec->getMousePosition().x, rec->getMousePosition().y);
+	if(rec->getLeftClick())
+		layoutPrueba->inyectarClick();
+	else
+		layoutPrueba->inyectarClickUP();
+}
+
