@@ -69,11 +69,11 @@ void Game::render(){
 //        iter++;
 //    }
     renderizador->dibujar();
-    layoutPrueba->posicionarRaton(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
-    if(MyEventReceiver::Instance()->getLeftClick())
-        layoutPrueba->inyectarClick();
-    else
-        layoutPrueba->inyectarClickUP();
+//    layoutPrueba->posicionarRaton(MyEventReceiver::Instance()->getMousePosition().x, MyEventReceiver::Instance()->getMousePosition().y);
+//    if(MyEventReceiver::Instance()->getLeftClick())
+//        layoutPrueba->inyectarClick();
+//    else
+//        layoutPrueba->inyectarClickUP();
 }
 
 bool Game::isRunning(){
@@ -147,11 +147,12 @@ camara* Game::getCamara(){
 }
 
 void Game::processEvents() {
-    if(MyEventReceiver::Instance()->getLeftClick()) {
-//        menu.injectLeftMouseButton();
-    } else if(!MyEventReceiver::Instance()->getLeftClick()) {
-//        menu.injectLeftMouseButtonUp();
-    }
+	MyEventReceiver* rec = MyEventReceiver::Instance();
+	layoutPrueba->posicionarRaton(rec->getMousePosition().x, rec->getMousePosition().y);
+	if(rec->getLeftClick())
+		layoutPrueba->inyectarClick();
+	else
+		layoutPrueba->inyectarClickUP();
 }
 
 void Game::setEstado(int e){
