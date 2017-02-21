@@ -13,6 +13,6 @@ NodoAtaqueCuerpo::NodoAtaqueCuerpo(){}
 NodoAtaqueCuerpo::~NodoAtaqueCuerpo(){}
 
 short NodoAtaqueCuerpo::run(int &id){
-    cout << " NODO ATAQUE A CUEPO" << endl;
+    //cout << " NODO ATAQUE A CUEPO" << endl;
     return false;
 }

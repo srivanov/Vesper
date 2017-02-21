@@ -19,6 +19,6 @@ Nodo_EstasAsustado::Nodo_EstasAsustado(){}
 Nodo_EstasAsustado::~Nodo_EstasAsustado(){}
 
 short Nodo_EstasAsustado::run(int &id){
-    cout << " NODO ASUSTADO?" << endl;
+    //cout << " NODO ASUSTADO?" << endl;
     return false;
 }

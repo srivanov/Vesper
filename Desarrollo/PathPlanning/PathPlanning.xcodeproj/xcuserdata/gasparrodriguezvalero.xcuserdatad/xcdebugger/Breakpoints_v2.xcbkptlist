@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathPlanning/PathPlanning.cpp"
-            timestampString = "507991775.299782"
+            timestampString = "508182958.079709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "NodeOpenBag::rebuild(NodeOpenBag * AUX)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathPlanning/PathPlanning.cpp"
-            timestampString = "507991775.299782"
+            timestampString = "508182958.079709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "NodeOpenBag::rebuild(NodeOpenBag * AUX)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathPlanning/PathPlanning.cpp"
-            timestampString = "507991775.299782"
+            timestampString = "508182958.079709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "NodeOpenBag::rebuild(NodeOpenBag * AUX)"
             landmarkType = "7">
          </BreakpointContent>

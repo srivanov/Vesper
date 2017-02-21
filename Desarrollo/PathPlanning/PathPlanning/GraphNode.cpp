@@ -28,7 +28,7 @@ bool GraphNode::conectar(GraphNode * Nodo){
     for (int i=0; i<conecta_con.size(); i++)
         if(Nodo->getID()==conecta_con[i]->ID) return false;
     
-    float peso = EasyMath::EcuCalcularDistancia(this->posicion , Nodo->posicion);
+    float peso = EasyMath::EucCalcularDistancia(this->posicion , Nodo->posicion);
     
     conecta_con.push_back(new conexos(Nodo->getID(),peso,Nodo->getPosition()));
     Nodo->conectar(this);

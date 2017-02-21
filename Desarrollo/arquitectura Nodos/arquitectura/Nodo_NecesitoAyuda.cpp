@@ -13,6 +13,8 @@ Nodo_NecesitoAyuda::~Nodo_NecesitoAyuda(){}
 Nodo_NecesitoAyuda::Nodo_NecesitoAyuda(){}
 
 short Nodo_NecesitoAyuda::run(int &id){
-    cout << " NODO NECESITO AYUDA ?" << endl;
+    //cout << " NODO NECESITO AYUDA ?" << endl;
+    if(!NpcLibrary::instancia()->recover_book(id)) return false;
+    
     return false;
 }

@@ -7,7 +7,6 @@
 //
 
 #include "botiquin.hpp"
-#include "BlackBoards.hpp"
 
 #define NUMERO_USOS 3
 
@@ -45,15 +44,14 @@ botiquin::~botiquin(){
 
 }
 void botiquin::update(){
-    TypeRecords botiquin = R_BOTIQUIN;
-    while (World_BlackBoard::instance()->hasAnswer(botiquin, ID)) {
-        World_BlackBoard::instance()->removeRecord(botiquin, ID);
+    
+    
+    while (LevelBlackBoard::instance()->exist_record(ID, P_VIDA)) {
+        LevelBlackBoard::instance()->RemoveRecord(ID, P_VIDA);
         if (usos>0) usos--;
         else gastado = true;
     }
-    if(World_BlackBoard::instance()->countType(botiquin)>0 && !gastado){
-        World_BlackBoard::instance()->AnswerRecord(botiquin, ID, getPosicion());
-    }
+    LevelBlackBoard::instance()->AnswerRecord(P_VIDA, ID, getPosicion());
 }
 
 

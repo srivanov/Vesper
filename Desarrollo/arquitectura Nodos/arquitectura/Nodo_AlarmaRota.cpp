@@ -18,7 +18,7 @@ Nodo_AlarmaRota::~Nodo_AlarmaRota(){}
 Nodo_AlarmaRota::Nodo_AlarmaRota(){}
 
 short Nodo_AlarmaRota::run(int &id){
-    cout << " NODO ALARMA ROTA ?" << endl;
+    //cout << " NODO ALARMA ROTA ?" << endl;
     // WorldInfo->comprobadaAlarma = true;
     //if(WorldInfo->estadoAlarma) return false;
     return true;

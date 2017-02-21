@@ -7,26 +7,16 @@
 //
 
 #include "Nodo_HayRuido.hpp"
-#include "BlackBoards.hpp"
 
-
-#define EVENTO_RUIDO 0
-
-
-//#############################
-//#    NODO DE CONDICION     #
-//#############################
-
-// NODO HAY RUIDO
 
 Nodo_HayRuido::Nodo_HayRuido(){}
 
 Nodo_HayRuido::~Nodo_HayRuido(){}
 short Nodo_HayRuido::run(int &id){
-    cout << " NODO HAY RUIDO ?" << endl;
-    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_RUIDO)) {
+    //cout << " NODO HAY RUIDO ?" << endl;
+    
+    if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_RUIDO)) {
         cout << "ESCUCHE" << endl;
-        NPC_library::instance()->getMyBook(&id)->EventPosObjetivo(EVENTO_RUIDO);
         return true;
     }
     return false;

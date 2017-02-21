@@ -18,16 +18,14 @@
 #define ASUSTADO 3
 
 #include "estados.hpp"
-#include "BlackBoards.hpp"
-#include "behaviour_trees.hpp"
+
 
 // QUE MOVER HABRA PUERTAS
 
 estados::estados(){
     
     //GENERALES
-    _estandarObligatorio = new NodoSecuenciaPositiva;
-    
+    NodoSecuenciaPositiva* _estandarObligatorio = new NodoSecuenciaPositiva;
     NodoSecuencia * _pedir_ayuda = new NodoSecuencia;
     NodoVigilar * vigilo = new NodoVigilar;
     NodoSecuencia * vigilar = new NodoSecuencia;
@@ -42,8 +40,14 @@ estados::estados(){
     avisado->anyadirHijo(recibido_aviso);
     avisado->anyadirHijo(moverse);
     
+    
+    
     //CONSTRUCCION ARBOL ESTANDAR
-    _estandar = new NodoSecuenciaPositiva;
+    NodoSecuenciaPositiva * _estandarBase = new NodoSecuenciaPositiva;
+    
+    _estandar = new NodoRaiz;
+    _estandar->anyadirHijo(_estandarObligatorio);
+    _estandar->anyadirHijo(_estandarBase);
     
     //CAMBIAR ESTADO AGRESIVO
     Nodo_VerJugador * agresivo = new Nodo_VerJugador;
@@ -80,7 +84,7 @@ estados::estados(){
     _ir_botiquin->anyadirHijo(moverse);
     _ir_botiquin->anyadirHijo(curarse);
     
-    _estandar->anyadirHijo(_ir_botiquin);
+    _estandarBase->anyadirHijo(_ir_botiquin);
     
     // INGERIR
     
@@ -103,7 +107,7 @@ estados::estados(){
     beber->anyadirHijo(bebiendo);
     _ingerir->anyadirHijo(beber);
     
-    _estandar->anyadirHijo(_ingerir);
+    _estandarBase->anyadirHijo(_ingerir);
     
     // ACCIONES - ESTANDAR
     NodoSecuenciaPositiva * _acciones = new NodoSecuenciaPositiva;
@@ -119,7 +123,7 @@ estados::estados(){
     _acciones->anyadirHijo(vigilar);
     // PATRULLAR
     _acciones->anyadirHijo(patrullar);
-    _estandar->anyadirHijo(_acciones);
+    _estandarBase->anyadirHijo(_acciones);
 
     // CONSTRUCCION DE ARBOL ALERTA
     _alerta = new NodoSecuenciaPositiva;
@@ -135,10 +139,10 @@ estados::estados(){
     _alerta->anyadirHijo(estandar);
     
     //ALARMA ACTIVA
-    Nodo_AlarmaCerca * alarm_cerca = new Nodo_AlarmaCerca;
+    Nodo_AlarmaCerca * alarma_cerca = new Nodo_AlarmaCerca;
     NodoRecorreZonaCercana * recorrer_zona = new NodoRecorreZonaCercana; // NODO SIN DEFINIR
     NodoSecuencia * _alarma_activa = new NodoSecuencia;
-    _alarma_activa->anyadirHijo(alarm_cerca);
+    _alarma_activa->anyadirHijo(alarma_cerca);
     _alarma_activa->anyadirHijo(moverse);
     _alarma_activa->anyadirHijo(recorrer_zona);
     _alerta->anyadirHijo(_alarma_activa);
@@ -165,7 +169,6 @@ estados::estados(){
     NodoSecuencia * ayuda_cercana = new NodoSecuencia;
     NodoSecuencia * ayuda_radio = new NodoSecuencia;
     NodoSecuencia * ayuda_alarma = new NodoSecuencia;
-    Nodo_AlarmaCerca * alarma_cerca = new Nodo_AlarmaCerca;
     Nodo_AlarmaRota * alarma_rota = new Nodo_AlarmaRota;
     NodoAvisar * avisar = new NodoAvisar;
     ayuda_cercana->anyadirHijo(alguien_cerca);
@@ -245,6 +248,60 @@ estados::estados(){
     _asustado->anyadirHijo(huir);
     
     
+    all_nodos.push_back(_pedir_ayuda);
+    all_nodos.push_back(vigilo);
+    all_nodos.push_back(vigilar);
+    all_nodos.push_back(tengoVigilar);
+    all_nodos.push_back(patrullar);
+    all_nodos.push_back(avisado);
+    all_nodos.push_back(recibido_aviso);
+    all_nodos.push_back(moverse);
+    all_nodos.push_back(agresivo);
+    all_nodos.push_back(alerta);
+    all_nodos.push_back(ruido);
+    all_nodos.push_back(_buscar_ruido);
+    all_nodos.push_back(vida_baja);
+    all_nodos.push_back(hay_botiquin);
+    all_nodos.push_back(curarse);
+    all_nodos.push_back(_ingerir);
+    all_nodos.push_back(comer);
+    all_nodos.push_back(tengo_hambre);
+    all_nodos.push_back(comiendo);
+    all_nodos.push_back(beber);
+    all_nodos.push_back(tengo_sed);
+    all_nodos.push_back(bebiendo);
+    all_nodos.push_back(_acciones);
+    all_nodos.push_back(_hablar);
+    all_nodos.push_back(_se_puede);
+    all_nodos.push_back(hablamos);
+    all_nodos.push_back(estandar);
+    all_nodos.push_back(alarma_cerca);
+    all_nodos.push_back(recorrer_zona);
+    all_nodos.push_back(_alarma_activa);
+    all_nodos.push_back(estar_asustado);
+    all_nodos.push_back(ayuda);
+    all_nodos.push_back(alguien_cerca);
+    all_nodos.push_back(alguien_radio);
+    all_nodos.push_back(ayuda_alarma);
+    all_nodos.push_back(alarma_rota);
+    all_nodos.push_back(avisar);
+    all_nodos.push_back(necesito);
+    all_nodos.push_back(_combatir);
+    all_nodos.push_back(_cubrir);
+    all_nodos.push_back(_ataques);
+    all_nodos.push_back(_distancia_jugador);
+    all_nodos.push_back(_cuerpo_cuerpo);
+    all_nodos.push_back(_a_distancia);
+    all_nodos.push_back(distatack);
+    all_nodos.push_back(cerca_jug);
+    all_nodos.push_back(lejos_jug);
+    all_nodos.push_back(ataque_cuerpo);
+    all_nodos.push_back(ataque_distancia);
+    all_nodos.push_back(cubrirse);
+    all_nodos.push_back(huir);
+    all_nodos.push_back(_estandarObligatorio);
+    all_nodos.push_back(_estandarBase);
+    
     
     _pedir_ayuda = nullptr; //NO BORRABLE
      vigilo = nullptr; //NO BORRABLE
@@ -254,7 +311,8 @@ estados::estados(){
      avisado = nullptr; //PENDIENTE
      recibido_aviso = nullptr; //PENDIENTE
      moverse = nullptr; //NO BORRABLE
-    
+    _estandarObligatorio = nullptr;
+    _estandarBase = nullptr;
      agresivo = nullptr; //NO BORRABLE
     
      alerta = nullptr; //NO BORRABLE
@@ -294,7 +352,7 @@ estados::estados(){
      estandar = nullptr;
     
     //ALARMA ACTIVA
-     alarm_cerca = nullptr; //NO BORRABLE
+     alarma_cerca = nullptr; //NO BORRABLE
      recorrer_zona = nullptr; //NO BORRABLE
      _alarma_activa = nullptr; //NO BORRABLE
     
@@ -308,7 +366,6 @@ estados::estados(){
      ayuda_cercana = nullptr;
      ayuda_radio = nullptr;
      ayuda_alarma = nullptr;
-     alarma_cerca = nullptr;
      alarma_rota = nullptr;
      avisar = nullptr;
     
@@ -326,7 +383,7 @@ estados::estados(){
      lejos_jug = nullptr;
      ataque_cuerpo = nullptr;
      ataque_distancia = nullptr;
-     cubrirse = nullptr; //NO BORRABLE
+     cubrirse = nullptr;
     
     //HUIR
      huir = nullptr;
@@ -380,12 +437,13 @@ estados::estados(){
     delete estandar;
     
     //ALARMA ACTIVA
-    delete alarm_cerca; //NO BORRABLE
     delete recorrer_zona; //NO BORRABLE
     delete _alarma_activa; //NO BORRABLE
     
     //CAMBIAR ESTADO A ASUSTADO
     delete estar_asustado;
+    delete _estandarBase;
+    delete _estandarObligatorio;
     
     //PEDIR AYUDA
     delete ayuda;
@@ -421,16 +479,17 @@ estados::estados(){
 }
 
 estados::~estados(){
-    delete _estandarObligatorio;
     delete _estandar;
     delete _alerta;
     delete _combate;
     delete _asustado;
+    for (int i=0; i<all_nodos.size(); i++) {
+        delete all_nodos[i];
+    }
 }
 
 void estados::run(int &id){
-    
-    switch (NPC_library::instance()->getMyBook(&id)->getState()) {
+    switch (NpcLibrary::instancia()->recover_book(id)->estado) {
         case ESTANDAR:estandar(id);break;
         case ALERTA:alerta(id);break;
         case COMBATE:combate(id);break;
@@ -440,11 +499,7 @@ void estados::run(int &id){
 }
 
 void estados::estandar(int &id){
-    short ans = _estandarObligatorio->run(id);
-    if(ans==0)
-        _estandar->run(id);
-    else
-        _estandar->reset();
+    _estandar->run(id);
 }
 
 void estados::alerta(int &id){

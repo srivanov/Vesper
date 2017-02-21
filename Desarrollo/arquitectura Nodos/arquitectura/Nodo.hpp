@@ -10,10 +10,16 @@
 #define Nodo_hpp
 
 #include <stdio.h>
-#include <vector>
 #include <iostream>
-#include <math.h>
-#include "Dvector.hpp"
+#include "NpcLibrary.hpp"
+#include "LevelBlackBoard.hpp"
+
+#define RUNNING 2
+
+#define ESTANDAR 0
+#define ALERTA 1
+#define COMBATE 2
+
 using namespace std;
 
 

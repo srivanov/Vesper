@@ -13,6 +13,6 @@ NodoCubrirse::NodoCubrirse(){}
 NodoCubrirse::~NodoCubrirse(){}
 
 short NodoCubrirse::run(int &id){
-    cout << " NODO CUBRIRSE" << endl;
+    //cout << " NODO CUBRIRSE" << endl;
     return false;
 }

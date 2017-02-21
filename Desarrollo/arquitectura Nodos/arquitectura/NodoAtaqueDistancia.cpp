@@ -13,6 +13,6 @@ NodoAtaqueDistancia::NodoAtaqueDistancia(){}
 NodoAtaqueDistancia::~NodoAtaqueDistancia(){}
 
 short NodoAtaqueDistancia::run(int &id){
-    cout << " NODO ATACO DISTANCIA" << endl;
+    //cout << " NODO ATACO DISTANCIA" << endl;
     return false;
 }

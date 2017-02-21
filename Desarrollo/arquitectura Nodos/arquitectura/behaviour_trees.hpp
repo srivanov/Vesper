@@ -10,8 +10,9 @@
 #define behaviour_trees_hpp
 
 #include <stdio.h>
-
+#include "NodoRaiz.hpp"
 #include "NodoSecuencia.hpp"
+#include "NodoSecuenciaPositiva.hpp"
 #include "NodoMover.hpp"
 #include "Nodo_Avisado.hpp"
 #include "NodoVigilar.hpp"

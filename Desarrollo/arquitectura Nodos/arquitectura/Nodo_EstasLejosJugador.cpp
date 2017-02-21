@@ -14,6 +14,6 @@ Nodo_EstasLejosJugador::Nodo_EstasLejosJugador(){}
 Nodo_EstasLejosJugador::~Nodo_EstasLejosJugador(){}
 
 short Nodo_EstasLejosJugador::run(int &id){
-    cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
+    //cout << " NODO ESTAS LEJOS DEL PLAYER?" << endl;
     return false;
 }

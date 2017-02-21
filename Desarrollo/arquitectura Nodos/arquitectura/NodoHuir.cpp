@@ -13,6 +13,6 @@ NodoHuir::NodoHuir(){}
 NodoHuir::~NodoHuir(){}
 
 short NodoHuir::run(int &id){
-    cout << " NODO HUIR" << endl;
+    //cout << " NODO HUIR" << endl;
     return false;
 }

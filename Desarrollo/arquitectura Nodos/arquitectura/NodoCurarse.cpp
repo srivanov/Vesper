@@ -13,13 +13,18 @@
 NodoCurarse::NodoCurarse(){}
 NodoCurarse::~NodoCurarse(){}
 short NodoCurarse::run(int &id){
-    cout << " NODO CURARSE" << endl;
-    TypeRecords botiquin = R_BOTIQUIN;
-    World_BlackBoard::instance()->addRecord(botiquin,
-                                            *World_BlackBoard::instance()->getAnswer(botiquin, id)->_idResponse,
-                                            World_BlackBoard::instance()->getAnswer(botiquin, id)->_answerInfo);
-    //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
-    World_BlackBoard::instance()->removeRecord(botiquin,id);
-    NPC_library::instance()->getMyBook(&id)->setLife(BOTIQUIN_CURA);
+    //cout << " NODO CURARSE" << endl;
+    Record * record = LevelBlackBoard::instance()->getRecord(id, P_VIDA);
+    
+    //CONDICIONES CRITICAS
+    if(!NpcLibrary::instancia()->recover_book(id) || !record)
+        return false;
+    
+    
+    LevelBlackBoard::instance()->CreateRecord(record->IDRespuesta, P_VIDA, record->posicionRespuesta);
+    LevelBlackBoard::instance()->RemoveRecord(id, P_VIDA);
+    NpcLibrary::instancia()->recover_book(id)->salud+=BOTIQUIN_CURA;
+    record = nullptr;
+    delete record;
     return true;
 }

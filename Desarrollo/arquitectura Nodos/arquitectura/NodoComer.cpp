@@ -7,24 +7,26 @@
 //
 
 #include "NodoComer.hpp"
-#include "BlackBoards.hpp"
 
 #define COMIDA_ALIMENTA 45
 
 NodoComer::NodoComer(){}
 
 short NodoComer::run(int &id){
-    cout << " NODO COMER" <<endl;
-    TypeRecords comida = R_COMIDA;
-    World_BlackBoard::instance()->addRecord(
-                                            comida,
-                                            *World_BlackBoard::instance()->getAnswer(comida,id)->_idResponse,
-                                            World_BlackBoard::instance()->getAnswer(comida, id)->_answerInfo
-                                            );
-    //World_BlackBoard::instance()->AnswerRecord(const TypeRecords &type, int *id, dvector3D *info)
-    World_BlackBoard::instance()->removeRecord(comida,id);
-    NPC_library::instance()->getMyBook(&id)->setHungry(COMIDA_ALIMENTA);
+    //cout << " NODO COMER" <<endl;
     
+    
+    Record * record = LevelBlackBoard::instance()->getRecord(id, P_HAMBRE);
+    
+    
+    if(!NpcLibrary::instancia()->recover_book(id) || !record) return false;
+    
+    LevelBlackBoard::instance()->CreateRecord(record->IDRespuesta, P_HAMBRE, record->posicionRespuesta);
+    
+    LevelBlackBoard::instance()->RemoveRecord(id, P_HAMBRE);
+    
+    NpcLibrary::instancia()->recover_book(id)->hambre-=COMIDA_ALIMENTA;
+    record = nullptr;
     return true;
 }
 

@@ -49,8 +49,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	if(nivelazo->cargarNivel("2"))
 		nivelazo->dibujarMapa();
 	
-	World_BlackBoard::instance();
-	NPC_library::instance();
+	LevelBlackBoard::instance();
+    NpcLibrary::instancia();
 	trigger_system::_instance();
 }
 

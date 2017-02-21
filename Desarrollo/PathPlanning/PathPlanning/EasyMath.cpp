@@ -11,10 +11,8 @@
 
 
 float EasyMath::absolute(float p){
-    float aux = 0;
-    if(p<0) aux=-p;
-    else aux = p;
-    return aux;
+    if (p<0) return -p;
+    return p;
 }
 
 float EasyMath::elevar_a(int exponente,float num){
@@ -28,12 +26,18 @@ float EasyMath::CalcularDistancia(dvector3D a, dvector3D b){
     float z = absolute(a.z-b.z);
     return x+y+z;
 }
+float EasyMath::EucCalcularDistancia(dvector3D a, dvector3D b){
+    float x = absolute(a.x-b.x);
+    float y = absolute(a.y-b.y);
+    float z = absolute(a.z-b.z);
+    return raiz_cuadrada(x+y+z);
+}
 float EasyMath::CalcularDistancia(dvector2D a, dvector2D b){
     float x = absolute(a.x-b.x);
     float y = absolute(a.y-b.y);
     return x+y;
 }
-float EasyMath::EcuCalcularDistancia(dvector2D a, dvector2D b){
+float EasyMath::EucCalcularDistancia(dvector2D a, dvector2D b){
     float x = elevar_a(2, absolute(a.x-b.x)) ;
     float y = elevar_a(2, absolute(a.y-b.y));
     return raiz_cuadrada(x+y);

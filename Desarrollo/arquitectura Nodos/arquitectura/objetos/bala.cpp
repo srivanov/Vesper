@@ -35,13 +35,17 @@ bala::bala(dvector3D &pos, dvector3D &dir, float vel){
 	muero = false;
 	aux = NULL;
 	setType(tBALA);
+    GameObject::update();
+    position = new dvector3D(getPosicion()->x,getPosicion()->y,getPosicion()->z);
+    trigger_system::_instance()->add_trigger(P_RUIDO, time(NULL),position, 100, 5);
 }
 
 bala::~bala(){
 	class render* ren = (class render*)findComponent("render");
-	if (ren != NULL)
+    if (ren != NULL)
 		ren->deleteNode();
-
+    position = nullptr;
+    delete position;
 }
 
 dvector3D* bala::getDireccion(){

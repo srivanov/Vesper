@@ -7,7 +7,6 @@
 //
 
 #include "fuente.hpp"
-#include "BlackBoards.hpp"
 
 fuente::fuente(int & ID){
     this->ID = ID;
@@ -46,16 +45,15 @@ fuente::~fuente(){
 
 void fuente::update(){
 	GameObject::update();
-    TypeRecords fuente = R_FUENTE;
-    while(World_BlackBoard::instance()->hasAnswer(fuente, ID)){
-        if(World_BlackBoard::instance()->getAnswer(fuente, ID)->_idResponse<0){
+    
+    while(LevelBlackBoard::instance()->exist_record(ID, P_SED)){
+        if(LevelBlackBoard::instance()->getRecord(ID, P_SED)->romper){
             rota = true;
         }else if(rota) NPCKnows = true;
-        World_BlackBoard::instance()->removeRecord(fuente, ID);
+        LevelBlackBoard::instance()->RemoveRecord(ID, P_SED);
     }
-    if(World_BlackBoard::instance()->countType(fuente)>0 && !NPCKnows){
-        World_BlackBoard::instance()->AnswerRecord(fuente, ID, getPosicion());
-    }
+    if (!NPCKnows)
+        LevelBlackBoard::instance()->AnswerRecord(P_SED, ID, getPosicion());
 }
 
 void fuente::contacto(GameObject *g){

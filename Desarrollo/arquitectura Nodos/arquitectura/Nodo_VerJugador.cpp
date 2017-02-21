@@ -15,6 +15,10 @@
 Nodo_VerJugador::Nodo_VerJugador(){}
 Nodo_VerJugador::~Nodo_VerJugador(){}
 short Nodo_VerJugador::run(int &id){
-    cout << " NODO VES AL JUGADOR?" << endl;
+    //cout << " NODO VES AL JUGADOR?" << endl;
+    
+    if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_ENEMIGO))
+        return true;
+    
     return false;
 }

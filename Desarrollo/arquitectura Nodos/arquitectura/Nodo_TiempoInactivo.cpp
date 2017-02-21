@@ -18,6 +18,6 @@ Nodo_TiempoInactivo::Nodo_TiempoInactivo(){}
 Nodo_TiempoInactivo::~Nodo_TiempoInactivo(){}
 
 short Nodo_TiempoInactivo::run(int &id){
-    cout << " NODO TIEMPO INACTIVO?" << endl;
+    //cout << " NODO TIEMPO INACTIVO?" << endl;
     return false;
 }

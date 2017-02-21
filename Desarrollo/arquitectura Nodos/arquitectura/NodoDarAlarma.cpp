@@ -14,6 +14,18 @@ NodoDarAlarma::NodoDarAlarma(){}
 NodoDarAlarma::~NodoDarAlarma(){}
 
 short NodoDarAlarma::run(int &id){
-    cout << " NODO DAR ALARMA" << endl;
-    return false;
+    //cout << " NODO DAR ALARMA" << endl;
+    
+    Record * record = LevelBlackBoard::instance()->getRecord(id, P_ALARMA);
+    bool respuesta = false;
+    
+    if(!record->romper)
+        respuesta = true;
+    
+    
+    LevelBlackBoard::instance()->CreateRecord(record->IDRespuesta, P_ALARMA, record->posicionRespuesta);
+    LevelBlackBoard::instance()->RemoveRecord(id, P_ALARMA);
+    
+    
+    return respuesta;
 }

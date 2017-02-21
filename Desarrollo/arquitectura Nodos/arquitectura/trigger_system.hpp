@@ -14,31 +14,17 @@
 #ifndef TRIGGER_SYSTEM_HPP
 #define TRIGGER_SYSTEM_HPP
 
-#include <time.h>
-#include <vector>
-#include "Dvector.hpp"
-#include "enemigos.hpp"
-#include "EasyMath.hpp"
-
-enum TypeEvents{
-    E_ruido=0,
-    E_aviso,
-    E_hablar,
-    E_puerta,
-    E_alarma,
-    E_near_alarma,
-    E_radio
-};
+#include "NpcLibrary.hpp"
 
 
 struct triggers{
-    TypeEvents _type;
-    unsigned int _idTrigger;
-    int * _idSource;
-    dvector3D _pos;
+    Prioridades _type;
+    int _idTrigger;
+    int  _idSource;
+    dvector3D *_pos;
     float _radio;
     time_t _duration;
-    triggers(TypeEvents& type, unsigned int& idTrigger, int* idSource, dvector3D* pos, float radio, float duration);
+    triggers(const Prioridades& type, unsigned int idTrigger, int idSource, dvector3D * pos, float radio, float duration);
     ~triggers();
 };
 
@@ -46,19 +32,18 @@ struct triggers{
 class trigger_system {
 public:
     static trigger_system * _instance();
-    void add_trigger(TypeEvents type, int id, dvector3D pos, float radio, int duration);
-    void remove_trigger(unsigned long id);
+    void add_trigger(const Prioridades& type, int id, dvector3D * pos, float radio, int duration);
+    void update_trigger();
     void update();
     virtual ~trigger_system();
-    bool ExistTrigger(TypeEvents& type, int& ID);
-    void subs(enemigos* npc);
+    bool ExistTrigger(const Prioridades& type, int& ID);
+    void subs(NpcBook* npc);
 private:
     trigger_system();
-    //float CalcularDistancia(dvector3D a, dvector3D b);
     void clear();
     static trigger_system * _TSinstance;
     std::vector<triggers*> TRIGGER_VECTOR;
-    std::vector<enemigos*> AGENTS;
+    std::vector<NpcBook*> AGENTS;
     unsigned int IDcont;
 };
 

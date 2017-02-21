@@ -7,7 +7,6 @@
 //
 
 #include "Nodo_VidaBaja.hpp"
-#include "BlackBoards.hpp"
 
 #define UMBRAL_VIDA 30
 
@@ -16,8 +15,10 @@
 Nodo_VidaBaja::Nodo_VidaBaja(){}
 Nodo_VidaBaja::~Nodo_VidaBaja(){}
 short Nodo_VidaBaja::run(int &id){
-    cout << " NODO VIDA BAJA?" << endl;
-    if(NPC_library::instance()->getMyBook(&id)->getLife()<=UMBRAL_VIDA)
+    //cout << " NODO VIDA BAJA?" << endl;
+    if(!NpcLibrary::instancia()->recover_book(id)) return false;
+    
+    if(NpcLibrary::instancia()->recover_book(id)->salud<=UMBRAL_VIDA)
         return true;
     return false;
 }

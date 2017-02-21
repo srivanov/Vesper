@@ -15,7 +15,7 @@
 NodoSecuenciaPositiva::NodoSecuenciaPositiva(){hijo=0;}
 
 short NodoSecuenciaPositiva::run(int &id){
-    cout << "NODO SECUENCIA POSITIVA" <<endl;
+    //cout << "NODO SECUENCIA POSITIVA" <<endl;
     for(;hijo<m_hijos.size();hijo++){
         short answer = m_hijos[hijo]->run(id);
         if(answer==SUCCESS){hijo=0;return SUCCESS;}

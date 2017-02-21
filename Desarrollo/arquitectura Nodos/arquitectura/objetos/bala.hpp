@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include "../Dvector.hpp"
+#include "trigger_system.hpp"
 
 class bala : public GameObject{
 public:
@@ -16,6 +17,7 @@ public:
     void contactoEnd(GameObject* g);
     bool const* getmuero();
 private:
+    dvector3D * position;
 	dvector3D direccion;
 	time_t intervalo;
 	float tiempo_vida, velocidad;

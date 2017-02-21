@@ -10,7 +10,7 @@
 #define fuente_hpp
 
 #include "GameObject.hpp"
-#include "Dvector.hpp"
+#include "LevelBlackBoard.hpp"
 
 class fuente : public GameObject{
 public:

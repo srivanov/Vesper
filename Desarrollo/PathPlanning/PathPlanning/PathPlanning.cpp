@@ -10,7 +10,6 @@
 
 PathPlanning::PathPlanning(Graph* grafo){
     this->grafo = new Graph(grafo);
-    
 }
 
 PathPlanning::PathPlanning(Graph* grafo,dvector2D initialPosition,dvector2D finalPosition){
@@ -32,15 +31,68 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector2D initialPosition,dve
     
     while(Pathbuilding());
     
-    BolsaNodos->add_node(final_camino);
+    //while (Pathbuilding2(BolsaNodos, final_camino,true));
+    
+    // CODIGO DEBUG
     
     for (int i=0; i<BolsaNodos->getNodes().size(); i++) {
         cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
     }
     cout << endl;
+    
     return BolsaNodos->getCamino();
 }
 
+bool PathPlanning::Pathbuilding2(NodeOpenBag * bolsaNodos, GraphNode * Nfinal,bool reiterativo){
+    
+    std::vector<conexos*> conexos = BolsaNodos->lastNode()->getConexos();
+    float F, heuristica, BestF = -1;
+    int select_conexo = 0;
+    int choosenOne = 0;
+    for (int i=0; i<conexos.size(); i++) {
+        
+        if (BolsaNodos->HasNode(conexos[i]->ID)) continue;
+        
+        heuristica = EasyMath::EucCalcularDistancia(final_camino->getPosition(), conexos[i]->posicion);
+        F = heuristica + conexos[i]->peso;
+        
+        if(BestF!=-1 && BestF<F) continue;
+        
+        choosenOne = i;
+        BestF = F;
+        select_conexo = conexos[i]->ID;
+    }
+    
+    BolsaNodos->peso += conexos[choosenOne]->peso;
+    GraphNode * resultante = grafo->getNode(select_conexo);
+    BolsaNodos->add_node(resultante);
+    
+    if (final_camino == resultante)
+        return false;
+    
+    if(reiterativo){
+        
+        NodeOpenBag * BolsaNodosAux = new NodeOpenBag(bolsaNodos->firstNode());
+        BolsaNodosAux->setDescartes(BolsaNodos->getDescartes());
+        GraphNode * AUX = Nfinal;
+        final_camino = BolsaNodos->lastNode();
+        while (Pathbuilding2(BolsaNodosAux, final_camino,false));
+        final_camino = AUX;
+        AUX = nullptr;
+    
+        if(BolsaNodosAux->peso<BolsaNodos->peso)
+            BolsaNodos->rebuild(BolsaNodosAux);
+        
+        /*
+        cout << "PESO AUX: " << BolsaNodosAux->peso << " | PESO : " << BolsaNodos->peso << endl;
+        */
+        
+        delete BolsaNodosAux;
+    }
+    
+    
+    return true;
+}
 
 bool PathPlanning::Pathbuilding(){
     std::vector<conexos*> conexos = BolsaNodos->lastNode()->getConexos();
@@ -50,21 +102,25 @@ bool PathPlanning::Pathbuilding(){
     for (int i=0; i<conexos.size(); i++) {
         
         if (BolsaNodos->HasNode(conexos[i]->ID)) continue;
-        heuristica = EasyMath::EcuCalcularDistancia(final_camino->getPosition(), conexos[i]->posicion);
+        
+        heuristica = EasyMath::EucCalcularDistancia(final_camino->getPosition(), conexos[i]->posicion);
         F = heuristica + conexos[i]->peso;
+        
         if(BestF!=-1 && BestF<F) continue;
+        
         choosenOne = i;
         BestF = F;
         select_conexo = conexos[i]->ID;
     }
     BolsaNodos->peso += conexos[choosenOne]->peso;
     GraphNode * resultante = grafo->getNode(select_conexo);
+    BolsaNodos->add_node(resultante);
     
     if (final_camino == resultante)
         return false;
     
     
-    BolsaNodos->add_node(resultante);
+    
     
     NodeOpenBag * BolsaNodosAux = new NodeOpenBag(grafo->getInitialNode(aux));
     BolsaNodosAux->setDescartes(BolsaNodos->getDescartes());
@@ -95,9 +151,12 @@ bool PathPlanning::Revalorar(NodeOpenBag* BolsaNodosAux){
     for (int i=0; i<conexos.size(); i++) {
         
         if (BolsaNodosAux->HasNode(conexos[i]->ID)) continue;
-        heuristica = EasyMath::EcuCalcularDistancia(final_camino->getPosition(), conexos[i]->posicion);
+        
+        heuristica = EasyMath::EucCalcularDistancia(final_camino->getPosition(), conexos[i]->posicion);
         F = heuristica + conexos[i]->peso;
+        
         if(BestF!=-1 && BestF<F) continue;
+        
         choosenOne = i;
         BestF = F;
         select_conexo = conexos[i]->ID;
@@ -112,16 +171,14 @@ bool PathPlanning::Revalorar(NodeOpenBag* BolsaNodosAux){
     return true;
 }
 
-void NodeOpenBag::add_node(GraphNode* nodo){
-    camino.push_back(nodo);
-}
-GraphNode * NodeOpenBag::lastNode(){
-    return camino[camino.size()-1];
-}
+void NodeOpenBag::add_node(GraphNode* nodo){camino.push_back(nodo);}
+
+
 NodeOpenBag::NodeOpenBag(GraphNode* initialNode){
     camino.push_back(initialNode);
     peso = 0.f;
 }
+
 NodeOpenBag::~NodeOpenBag(){
     camino.clear();
 }
@@ -157,18 +214,18 @@ void NodeOpenBag::disable_node(int ID){
     }
 }
 void NodeOpenBag::rebuild(NodeOpenBag * AUX){
-    for (int i=0; i<camino.size(); i++) {
+    for (int i=0; i<camino.size(); i++)
         descartes.push_back(camino[i]);
-    }
+    
     camino.clear();
     camino = AUX->getNodes();
-    for (int i=0; i<descartes.size(); i++) {
-        for (int j=0; j<camino.size(); j++) {
+    for (int i=0; i<descartes.size(); i++)
+        for (int j=0; j<camino.size(); j++)
             if(descartes[i]->getID()==camino[j]->getID())
                 descartes.erase(descartes.begin()+i);
-        }
-    }
     
+    
+    this->peso = AUX->peso;
 }
 void NodeOpenBag::setDescartes(std::vector<GraphNode *> discards){
     descartes=discards;

@@ -13,5 +13,9 @@ NodoPatrullar::NodoPatrullar(){}
 
 NodoPatrullar::~NodoPatrullar(){}
 short NodoPatrullar::run(int &id){
-    return true;
+    
+    if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_PATRULLAR))
+        return true;
+    
+    return false;
 }

@@ -56,7 +56,7 @@ void player::atacar(){
 
 void player::cambiarArma(){
 	arma->changeGun();
-    std::cout << *arma->getArmaActual()->getType() << std::endl;
+    //cout << *arma->getArmaActual()->getType() << std::endl;
 }
 
 bool const* player::getmuero(){

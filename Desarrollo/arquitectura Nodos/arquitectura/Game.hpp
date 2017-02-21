@@ -17,10 +17,9 @@
 #include "mundoBox2D.hpp"
 #include "objetos/bala.hpp"
 #include "objetos/nivel.hpp"
-#include "BlackBoards.hpp"
 #include "trigger_system.hpp"
-#include <vector>
-#include "Dvector.hpp"
+#include "LevelBlackBoard.hpp"
+#include "NpcLibrary.hpp"
 
 class Game {
 public:

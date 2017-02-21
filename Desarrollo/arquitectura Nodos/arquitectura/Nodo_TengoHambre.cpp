@@ -7,7 +7,6 @@
 //
 
 #include "Nodo_TengoHambre.hpp"
-#include "BlackBoards.hpp"
 
 #define UMBRAL_HAMBRE 60
 
@@ -17,17 +16,34 @@ Nodo_TengoHambre::Nodo_TengoHambre(){}
 Nodo_TengoHambre::~Nodo_TengoHambre(){}
 
 short Nodo_TengoHambre::run(int &id){
-    cout << "NODO TENGO HAMBRE" << endl;
-    TypeRecords comida = R_COMIDA;
-    if(NPC_library::instance()->getMyBook(&id)->getHungry()>=UMBRAL_HAMBRE){
-        if (World_BlackBoard::instance()->existRecord(comida, id)) {
-            if (World_BlackBoard::instance()->hasAnswer(comida, id)) {
-                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(comida, id)->_answerInfo);
-                return true;
+    //cout << "NODO TENGO HAMBRE" << endl;
+    
+    //CONDICION CRITICA
+    if(!NpcLibrary::instancia()->recover_book(id)) return false;
+    
+    if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_HAMBRE))
+        return true;
+    
+    NpcBook * book = NpcLibrary::instancia()->recover_book(id);
+    
+    if(book->hambre>=UMBRAL_HAMBRE){
+        if (LevelBlackBoard::instance()->exist_record(id, P_HAMBRE)) {
+            Record * record = LevelBlackBoard::instance()->getRecord(id, P_HAMBRE);
+            
+            if(!record) return false; // CONDICION CRITICA
+            
+            if (record->HasAnswer()) {
+                book->notify(record->IDRespuesta,P_HAMBRE, record->posicionRespuesta);
+                book = nullptr;
+                record = nullptr;
+                return RUNNING;
             }
+            book = nullptr;
+            record = nullptr;
             return false;
         }
-        World_BlackBoard::instance()->addRecord(comida, id, NPC_library::instance()->getMyBook(&id)->getPosition());
+        LevelBlackBoard::instance()->CreateRecord(id, P_HAMBRE, book->getPosition());
     }
+    book = nullptr;
     return false;
 }

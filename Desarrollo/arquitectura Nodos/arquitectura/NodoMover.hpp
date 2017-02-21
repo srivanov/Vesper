@@ -17,12 +17,12 @@ public:
     ~NodoMover();
     NodoMover();
     short run(int &id);
-    void reset(){}
+    void reset(){aux=-1;}
 private:
-   // float CalcularDistancia(dvector3D a, dvector3D b);
+    short updatePosition(int &id);
+    short updateVMovement(int &id);
     float aux = -1;
     float xABS, yABS;
-    dvector3D * _movement;
 };
 
 #endif /* NodoMover_hpp */

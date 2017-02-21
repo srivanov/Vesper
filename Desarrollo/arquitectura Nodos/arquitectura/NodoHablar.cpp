@@ -13,6 +13,6 @@ NodoHablar::NodoHablar(){}
 NodoHablar::~NodoHablar(){}
 
 short NodoHablar::run(int &id){
-    cout << " NODO HABLAR" << endl;
+    //cout << " NODO HABLAR" << endl;
     return false;
 }

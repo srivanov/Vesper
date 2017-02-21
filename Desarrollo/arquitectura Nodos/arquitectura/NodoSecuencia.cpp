@@ -26,7 +26,7 @@ NodoSecuencia::~NodoSecuencia(){
 }
 
 short NodoSecuencia::run(int &id){
-    cout << "NODO SECUENCIA" << endl;
+    //cout << "NODO SECUENCIA" << endl;
     for (;hijo<m_hijos.size(); hijo++) {
         short answer = m_hijos[hijo]->run(id);
         if (answer==FAILURE) {hijo=0;return FAILURE;}

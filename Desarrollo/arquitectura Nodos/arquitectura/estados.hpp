@@ -9,7 +9,7 @@
 #ifndef estados_hpp
 #define estados_hpp
 
-#include "NodoSecuenciaPositiva.hpp"
+#include "behaviour_trees.hpp"
 
 class estados {
 public:
@@ -17,15 +17,16 @@ public:
     ~estados();
     void run(int &id);
 private:
+    vector<Nodo*> all_nodos;
     void estandar(int &id);
     void alerta(int &id);
     void combate(int &id);
     void asustado(int &id);
-    NodoSecuenciaPositiva* _estandar;
+    NodoRaiz* _estandar;
     NodoSecuenciaPositiva* _alerta;
     NodoSecuenciaPositiva* _combate;
     NodoSecuenciaPositiva* _asustado;
-    NodoSecuenciaPositiva* _estandarObligatorio;
+    
 };
 
 #endif /* estados_hpp */

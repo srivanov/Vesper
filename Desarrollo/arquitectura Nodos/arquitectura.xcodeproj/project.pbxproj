@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635828751E4E299D0081B7F3 /* NpcLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635828731E4E299D0081B7F3 /* NpcLibrary.cpp */; };
+		635828791E4E3F170081B7F3 /* LevelBlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635828771E4E3F170081B7F3 /* LevelBlackBoard.cpp */; };
+		63847D281E521C8D00C86D01 /* NodoRaiz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63847D261E521C8D00C86D01 /* NodoRaiz.cpp */; };
+		6396E2801E4792C400589082 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396E27A1E4792C400589082 /* Graph.cpp */; };
+		6396E2811E4792C400589082 /* GraphNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396E27C1E4792C400589082 /* GraphNode.cpp */; };
+		6396E2821E4792C400589082 /* PathPlanning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6396E27E1E4792C400589082 /* PathPlanning.cpp */; };
 		63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */; };
 		63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E301E26CFE6006BD3AB /* comida.cpp */; };
 		63B81E351E26D288006BD3AB /* fuente.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E331E26D288006BD3AB /* fuente.cpp */; };
@@ -143,12 +149,24 @@
 		E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */; };
 		E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
 		E9F0BE871DFAC61400F6ED67 /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */; };
-		E9FA20551E1C24C1003F9CA0 /* BlackBoards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */; };
 		E9FA20561E1C24C1003F9CA0 /* trigger_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20531E1C24C1003F9CA0 /* trigger_system.cpp */; };
 		E9FA20591E1C2501003F9CA0 /* Dvector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20571E1C2501003F9CA0 /* Dvector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		635828731E4E299D0081B7F3 /* NpcLibrary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NpcLibrary.cpp; sourceTree = "<group>"; };
+		635828741E4E299D0081B7F3 /* NpcLibrary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NpcLibrary.hpp; sourceTree = "<group>"; };
+		635828761E4E29CC0081B7F3 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		635828771E4E3F170081B7F3 /* LevelBlackBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelBlackBoard.cpp; sourceTree = "<group>"; };
+		635828781E4E3F170081B7F3 /* LevelBlackBoard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LevelBlackBoard.hpp; sourceTree = "<group>"; };
+		63847D261E521C8D00C86D01 /* NodoRaiz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodoRaiz.cpp; sourceTree = "<group>"; };
+		63847D271E521C8D00C86D01 /* NodoRaiz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodoRaiz.hpp; sourceTree = "<group>"; };
+		6396E27A1E4792C400589082 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		6396E27B1E4792C400589082 /* Graph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
+		6396E27C1E4792C400589082 /* GraphNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphNode.cpp; sourceTree = "<group>"; };
+		6396E27D1E4792C400589082 /* GraphNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GraphNode.hpp; sourceTree = "<group>"; };
+		6396E27E1E4792C400589082 /* PathPlanning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathPlanning.cpp; sourceTree = "<group>"; };
+		6396E27F1E4792C400589082 /* PathPlanning.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PathPlanning.hpp; sourceTree = "<group>"; };
 		63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = botiquin.cpp; sourceTree = "<group>"; };
 		63B81E2E1E26C2C5006BD3AB /* botiquin.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = botiquin.hpp; sourceTree = "<group>"; };
 		63B81E301E26CFE6006BD3AB /* comida.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = comida.cpp; sourceTree = "<group>"; };
@@ -383,8 +401,6 @@
 		E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nodeMesh.hpp; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/libIrrlicht.a; sourceTree = "<group>"; };
-		E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackBoards.cpp; sourceTree = "<group>"; };
-		E9FA20521E1C24C1003F9CA0 /* BlackBoards.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlackBoards.hpp; sourceTree = "<group>"; };
 		E9FA20531E1C24C1003F9CA0 /* trigger_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = trigger_system.cpp; sourceTree = "<group>"; };
 		E9FA20541E1C24C1003F9CA0 /* trigger_system.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = trigger_system.hpp; sourceTree = "<group>"; };
 		E9FA20571E1C2501003F9CA0 /* Dvector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dvector.cpp; sourceTree = "<group>"; };
@@ -408,6 +424,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6358288D1E50D9040081B7F3 /* BlackBoard y TriggerSystem */ = {
+			isa = PBXGroup;
+			children = (
+				635828731E4E299D0081B7F3 /* NpcLibrary.cpp */,
+				635828741E4E299D0081B7F3 /* NpcLibrary.hpp */,
+				635828771E4E3F170081B7F3 /* LevelBlackBoard.cpp */,
+				635828781E4E3F170081B7F3 /* LevelBlackBoard.hpp */,
+				635828761E4E29CC0081B7F3 /* Types.h */,
+				E9FA20531E1C24C1003F9CA0 /* trigger_system.cpp */,
+				E9FA20541E1C24C1003F9CA0 /* trigger_system.hpp */,
+			);
+			name = "BlackBoard y TriggerSystem";
+			sourceTree = "<group>";
+		};
+		6358288E1E50D95C0081B7F3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC40AA1E43367D0091076F /* EasyMath.cpp */,
+				D2AC40AB1E43367D0091076F /* EasyMath.hpp */,
+				E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */,
+				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
+				E9FA20571E1C2501003F9CA0 /* Dvector.cpp */,
+				E9FA20581E1C2501003F9CA0 /* Dvector.hpp */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		6396E2831E4792DF00589082 /* PathPlanning */ = {
+			isa = PBXGroup;
+			children = (
+				6396E27A1E4792C400589082 /* Graph.cpp */,
+				6396E27B1E4792C400589082 /* Graph.hpp */,
+				6396E27C1E4792C400589082 /* GraphNode.cpp */,
+				6396E27D1E4792C400589082 /* GraphNode.hpp */,
+				6396E27E1E4792C400589082 /* PathPlanning.cpp */,
+				6396E27F1E4792C400589082 /* PathPlanning.hpp */,
+			);
+			name = PathPlanning;
+			sourceTree = "<group>";
+		};
 		D2AC402E1E41475E0091076F /* Nodos */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +485,7 @@
 				D2AC40A31E4242F50091076F /* Clases asustado */,
 			);
 			name = Behaviour_trees;
+			path = arquitectura;
 			sourceTree = "<group>";
 		};
 		D2AC40301E4201080091076F /* Clases generales */ = {
@@ -460,6 +517,8 @@
 				D2AC40531E4213E40091076F /* Nodo_TengoVigilar.hpp */,
 				D2AC40551E42144C0091076F /* Nodo_Avisado.cpp */,
 				D2AC40561E42144C0091076F /* Nodo_Avisado.hpp */,
+				63847D261E521C8D00C86D01 /* NodoRaiz.cpp */,
+				63847D271E521C8D00C86D01 /* NodoRaiz.hpp */,
 			);
 			name = "Clases generales";
 			sourceTree = "<group>";
@@ -546,6 +605,7 @@
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
+				D2AC402F1E4200F40091076F /* Behaviour_trees */,
 				E92BC5A21E3DFFBF008E1F5B /* estados.cpp */,
 				E92BC5A31E3DFFBF008E1F5B /* estados.hpp */,
 			);
@@ -609,9 +669,8 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
-				D2AC40AA1E43367D0091076F /* EasyMath.cpp */,
-				D2AC40AB1E43367D0091076F /* EasyMath.hpp */,
-				D2AC402F1E4200F40091076F /* Behaviour_trees */,
+				6396E2831E4792DF00589082 /* PathPlanning */,
+				6358288E1E50D95C0081B7F3 /* Tools */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
 				E9AC3ACF1DF0AD3600A91A97 /* tiled */,
@@ -623,14 +682,7 @@
 				E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */,
 				E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */,
 				E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */,
-				E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */,
-				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
-				E9FA20511E1C24C1003F9CA0 /* BlackBoards.cpp */,
-				E9FA20521E1C24C1003F9CA0 /* BlackBoards.hpp */,
-				E9FA20531E1C24C1003F9CA0 /* trigger_system.cpp */,
-				E9FA20541E1C24C1003F9CA0 /* trigger_system.hpp */,
-				E9FA20571E1C2501003F9CA0 /* Dvector.cpp */,
-				E9FA20581E1C2501003F9CA0 /* Dvector.hpp */,
+				6358288D1E50D9040081B7F3 /* BlackBoard y TriggerSystem */,
 				E9AC3AC01DF0ACED00A91A97 /* cargarMapa.cpp */,
 				E9AC3AC11DF0ACED00A91A97 /* cargarMapa.hpp */,
 				E98661261DF99ED30028AC64 /* Fps.cpp */,
@@ -802,7 +854,7 @@
 		E9AC3A2F1DF0A9C100A91A97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Stoycho Ivanov Atanasov";
 				TargetAttributes = {
 					E9AC3A361DF0A9C100A91A97 = {
@@ -877,6 +929,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635828791E4E3F170081B7F3 /* LevelBlackBoard.cpp in Sources */,
 				E98661271DF99ED30028AC64 /* Fps.cpp in Sources */,
 				E9AC3AA71DF0AA5000A91A97 /* martilloDeJuguete.cpp in Sources */,
 				E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */,
@@ -899,8 +952,10 @@
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
 				E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */,
 				E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */,
+				6396E2801E4792C400589082 /* Graph.cpp in Sources */,
 				E9A346341E04162700E6EC25 /* armaInterface.cpp in Sources */,
 				D2AC408D1E423E920091076F /* Nodo_HayAlguienRadio.cpp in Sources */,
+				6396E2821E4792C400589082 /* PathPlanning.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
 				D2AC407D1E423B650091076F /* Nodo_AlarmaCerca.cpp in Sources */,
@@ -922,9 +977,9 @@
 				D2AC40611E42340B0091076F /* Nodo_HayBotiquin.cpp in Sources */,
 				E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */,
 				882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */,
-				E9FA20551E1C24C1003F9CA0 /* BlackBoards.cpp in Sources */,
 				D2AC40701E4238BA0091076F /* NodoBeber.cpp in Sources */,
 				D2AC404B1E42100C0091076F /* NodoPatrullar.cpp in Sources */,
+				63847D281E521C8D00C86D01 /* NodoRaiz.cpp in Sources */,
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
@@ -936,6 +991,7 @@
 				D2AC40791E423A970091076F /* NodoHablar.cpp in Sources */,
 				D2AC40511E42129E0091076F /* NodoDarAlarma.cpp in Sources */,
 				D2AC405B1E4232070091076F /* Nodo_VidaBaja.cpp in Sources */,
+				635828751E4E299D0081B7F3 /* NpcLibrary.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
 				E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */,
 				D2AC404E1E4212280091076F /* Nodo_TiempoInactivo.cpp in Sources */,
@@ -962,6 +1018,7 @@
 				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
 				D2AC40761E423A2D0091076F /* Nodo_HayParaHablar.cpp in Sources */,
 				D2AC40571E42144C0091076F /* Nodo_Avisado.cpp in Sources */,
+				6396E2811E4792C400589082 /* GraphNode.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */,
 				63B81E351E26D288006BD3AB /* fuente.cpp in Sources */,
 				D2AC40481E420F1B0091076F /* NodoVigilar.cpp in Sources */,
@@ -1001,6 +1058,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1048,6 +1106,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

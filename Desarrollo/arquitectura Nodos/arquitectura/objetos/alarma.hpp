@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "GameObject.hpp"
-#include "../Dvector.hpp"
+#include "LevelBlackBoard.hpp"
 
 class alarma : public GameObject{
 public:

@@ -11,6 +11,7 @@
 
 #include "GameObject.hpp"
 #include "Dvector.hpp"
+#include "LevelBlackBoard.hpp"
 
 class botiquin : public GameObject{
 public:

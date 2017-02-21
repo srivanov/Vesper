@@ -17,6 +17,6 @@
 Nodo_EstasCercaJugador::Nodo_EstasCercaJugador(){}
 Nodo_EstasCercaJugador::~Nodo_EstasCercaJugador(){}
 short Nodo_EstasCercaJugador::run(int &id){
-    cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
+    //cout << " NODO ESTAS CERCA DEL PLAYER?" << endl;
     return false;
 }

@@ -7,7 +7,6 @@
 //
 
 #include "comida.hpp"
-#include "BlackBoards.hpp"
 
 #define TIEMPO_COMESTIBLE 10
 
@@ -49,16 +48,14 @@ void comida::gestorTiempo(){
 }
 void comida::update(){
 	gestorTiempo();
-	TypeRecords comida = R_COMIDA;
-	if (World_BlackBoard::instance()->hasAnswer(comida, ID) && !consumido) {
-		World_BlackBoard::instance()->removeRecord(comida, ID);
+    if (LevelBlackBoard::instance()->exist_record(ID, P_HAMBRE) && !consumido) {
+        LevelBlackBoard::instance()->RemoveRecord(ID, P_HAMBRE);
 		consumido = true;
 		_time = time(NULL) + TIEMPO_COMESTIBLE;
 		return;
 	}
-	if(World_BlackBoard::instance()->countType(comida)>0 && !consumido){
-		World_BlackBoard::instance()->AnswerRecord(comida, ID, getPosicion());
-	}
+    if(!consumido)
+        LevelBlackBoard::instance()->AnswerRecord(P_HAMBRE, ID, getPosicion());
 }
 
 void comida::contacto(GameObject *g){

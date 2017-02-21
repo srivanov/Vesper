@@ -25,7 +25,8 @@ public:
     void rebuild(NodeOpenBag*);
     void setDescartes(std::vector<GraphNode*> discards);
     std::vector<GraphNode*> getDescartes() const {return descartes;}
-    GraphNode * lastNode();
+    GraphNode * lastNode() const{return camino[camino.size()-1];};
+    GraphNode * firstNode() const{return camino[0];}
     bool HasNode(int& ID);
     NodeOpenBag(GraphNode *);
     ~NodeOpenBag();
@@ -36,6 +37,7 @@ class PathPlanning{
     Graph * grafo;
     NodeOpenBag * BolsaNodos;
     bool Pathbuilding();
+    bool Pathbuilding2(NodeOpenBag*,GraphNode*,bool);
     GraphNode* final_camino;
     bool Revalorar(NodeOpenBag *);
 public:

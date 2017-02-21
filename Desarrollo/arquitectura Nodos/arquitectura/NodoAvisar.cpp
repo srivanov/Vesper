@@ -13,6 +13,6 @@ NodoAvisar::NodoAvisar(){}
 NodoAvisar::~NodoAvisar(){}
 
 short NodoAvisar::run(int &id){
-    cout << " NODO AVISAR" << endl;
+    //cout << " NODO AVISAR" << endl;
     return false;
 }

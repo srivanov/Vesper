@@ -5,9 +5,8 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include "estados.hpp"
-#include <time.h>
 #include <stdlib.h>
-#include "../Dvector.hpp"
+#include "NpcLibrary.hpp"
 
 class Personal_BlackBoard;
 
@@ -19,17 +18,13 @@ public:
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();
-	int * getID(){return &ID;}
-	void notify(dvector3D& position, int type);
-	bool EventUsed(int type);
+	int&  getID(){return m_ID;}
 private:
     int k ; // GUARRRADA!!!
     estados * STD;
-	int ID;
-	unsigned int salud, sed, hambre;
-    unsigned int estado;
+	int m_ID;
     bool muero;
 	
-	Personal_BlackBoard * book;
+	NpcBook * book;
 };
 #endif /* enemigos_hpp */

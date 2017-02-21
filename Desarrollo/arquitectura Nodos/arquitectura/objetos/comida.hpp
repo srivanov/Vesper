@@ -11,6 +11,7 @@
 #define comida_hpp
 #include "GameObject.hpp"
 #include "Dvector.hpp"
+#include "LevelBlackBoard.hpp"
 #include <time.h>
 
 class comida : public GameObject {

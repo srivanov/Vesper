@@ -7,30 +7,38 @@
 //
 
 #include "Nodo_TengoSed.hpp"
-#include "BlackBoards.hpp"
 
 #define UMBRAL_SED 70
 
-
-//#############################
-//#    NODOS DE CONDICION     #
-//#############################
-
-// NODO TENGO SED ?
 Nodo_TengoSed::Nodo_TengoSed(){}
 Nodo_TengoSed::~Nodo_TengoSed(){}
 short Nodo_TengoSed::run(int &id){
-    cout << "NODO TENGO SED" << endl;
-    TypeRecords sed = R_FUENTE;
-    if(NPC_library::instance()->getMyBook(&id)->getThirst()>UMBRAL_SED){
-        if (World_BlackBoard::instance()->existRecord(sed, id)) {
-            if (World_BlackBoard::instance()->hasAnswer(sed, id)) {
-                NPC_library::instance()->getMyBook(&id)->setPosObjetivo(World_BlackBoard::instance()->getAnswer(sed, id)->_answerInfo);
-                return true;
+    //cout << "NODO TENGO SED" << endl;
+    
+    //CONDICION CRITICA
+    if(!NpcLibrary::instancia()->recover_book(id)) return false;
+    
+    if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_SED)) return true;
+    
+    NpcBook * book = NpcLibrary::instancia()->recover_book(id);
+    
+    
+    if(book->sed>UMBRAL_SED){
+        if (LevelBlackBoard::instance()->exist_record(id, P_SED)) {
+            Record * record = LevelBlackBoard::instance()->getRecord(id, P_SED);
+            
+            if(!record) return false; // CONDICION CRITICA
+            
+            if (record->HasAnswer()) {
+                book->notify(record->IDRespuesta,P_SED, record->posicionRespuesta);
+                book = nullptr;
+                return RUNNING;
             }
+            book = nullptr;
             return false;
         }
-        World_BlackBoard::instance()->addRecord(sed, id, NPC_library::instance()->getMyBook(&id)->getPosition());
+        LevelBlackBoard::instance()->CreateRecord(id, P_SED, book->getPosition());
     }
+    book = nullptr;
     return false;
 }

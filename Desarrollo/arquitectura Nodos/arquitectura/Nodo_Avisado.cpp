@@ -18,7 +18,8 @@ Nodo_Avisado::Nodo_Avisado(){};
 Nodo_Avisado::~Nodo_Avisado(){}
 
 short Nodo_Avisado::run(int &id){
-    cout << " NODO AVISADO ?" << endl;
-    //if(NPCinfo->getLLamada()) return true;
+    //cout << " NODO AVISADO ?" << endl;
+    if(NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_AVISO))
+        return true;
     return false;
 }

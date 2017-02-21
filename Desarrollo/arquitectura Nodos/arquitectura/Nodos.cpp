@@ -6,7 +6,6 @@
 //  Copyright © 2016 Gaspar Rodriguez Valero. All rights reserved.
 //
 #include "Nodos.hpp"
-#include "BlackBoards.hpp"
 #include "trigger_system.hpp"
 
 #define FAILURE 0
@@ -32,16 +31,7 @@
 #define ACTIVO true
 #define INACTIVO false
 
-#define EVENTO_RUIDO 0
-#define EVENTO_AVISO 1
-#define EVENTO_HABLAR 2
-#define EVENTO_PUERTA 3
-#define EVENTO_ALARMA 4
-#define EVENTO_ALARMA_CERCA 5
-#define EVENTO_RADIO 6
 
-#define EVENTO_VIGILAR 99
-#define EVENTO_PATRULLAR 100
 
 #define TIEMPO_VIGILIA 10
 #define TIEMPO_ESTADO_ALTERADO 10

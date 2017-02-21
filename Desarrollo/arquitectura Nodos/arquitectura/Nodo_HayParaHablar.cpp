@@ -7,9 +7,8 @@
 //
 
 #include "Nodo_HayParaHablar.hpp"
-#include "BlackBoards.hpp"
 
-#define EVENTO_HABLAR 2
+#define EVENTO_HABLAR 3
 
 
 Nodo_HayParaHablar::Nodo_HayParaHablar(){}
@@ -17,13 +16,13 @@ Nodo_HayParaHablar::Nodo_HayParaHablar(){}
 Nodo_HayParaHablar::~Nodo_HayParaHablar(){}
 
 short Nodo_HayParaHablar::run(int &id){
-    if (NPC_library::instance()->getMyBook(&id)->EventUsed(EVENTO_HABLAR)) {
-        NPC_library::instance()->getMyBook(&id)->EventPosObjetivo(EVENTO_HABLAR);
+    //cout << " NODO ALGUIEN HABLAR?" << endl;
+    
+    NpcBook * book = NpcLibrary::instancia()->recover_book(id);
+    if (book->ExistEventByType(P_HABLAR)) {
+        book = nullptr;
         return true;
     }
-    cout << " NODO ALGUIEN HABLAR?" << endl;
-    /*######################################
-     TRIGGER SYSTEM
-     #####################################*/
+    book = nullptr;
     return false;
 }

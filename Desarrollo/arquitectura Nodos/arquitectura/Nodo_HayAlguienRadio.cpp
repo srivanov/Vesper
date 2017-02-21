@@ -7,7 +7,6 @@
 //
 
 #include "Nodo_HayAlguienRadio.hpp"
-#include "BlackBoards.hpp"
 
 
 //#############################
@@ -18,18 +17,17 @@
 Nodo_HayAlguienRadio::Nodo_HayAlguienRadio(){}
 Nodo_HayAlguienRadio::~Nodo_HayAlguienRadio(){}
 short Nodo_HayAlguienRadio::run(int &id){
-    TypeRecords radio = R_RADIO;
-    TypeRecords cercano = R_CERCA;
-    if(World_BlackBoard::instance()->existRecord(cercano, id)) return false;
-    if(World_BlackBoard::instance()->existRecord(radio, id)){
-        if(World_BlackBoard::instance()->hasAnswer(radio, id)){
+    /*
+    if(World_BlackBoard::instance()->existRecord(R_CERCA, id)) return false;
+    if(World_BlackBoard::instance()->existRecord(R_RADIO, id)){
+        if(World_BlackBoard::instance()->hasAnswer(R_RADIO, id)){
             return true;
         }
         return false;
     }
-    World_BlackBoard::instance()->addRecord(radio, id, NPC_library::instance()->getMyBook(&id)->getPosition());
+    World_BlackBoard::instance()->addRecord(R_RADIO, id, NPC_library::instance()->getMyBook(id)->getPosition());
         
-    cout << " NODO HAY NPCS POR RADIO?" << endl;
-    
+    //cout << " NODO HAY NPCS POR RADIO?" << endl;
+    */
     return false;
 }

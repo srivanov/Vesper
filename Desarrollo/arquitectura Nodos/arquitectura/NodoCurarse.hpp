@@ -10,7 +10,6 @@
 #define NodoCurarse_hpp
 
 #include "Nodo.hpp"
-#include "BlackBoards.hpp"
 
 
 class NodoCurarse : public Nodo {

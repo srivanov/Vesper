@@ -1,9 +1,8 @@
 
 #include "alarma.hpp"
 #include "trigger_system.hpp"
-#include "BlackBoards.hpp"
 
-#define RADIOALARMA 40.f
+#define RADIOALARMA -1
 #define TIEMPOALARMA 20.f
 
 alarma::alarma(int &ID){
@@ -56,20 +55,18 @@ void alarma::gestorTiempo(){
 
 void alarma::update(){
 	GameObject::update();
-    TypeRecords alarma = R_ALARMA;
     gestorTiempo();
-	if(World_BlackBoard::instance()->hasAnswer(alarma, ID)){
-		if (World_BlackBoard::instance()->getAnswer(alarma, ID)->_idResponse<0) {rota=true;}
-		else if(rota){NPCKnows=true;}
-		else if(!activado){
-			World_BlackBoard::instance()->removeRecord(alarma, ID);
-			_time = time(NULL)+TIEMPOALARMA;
-			trigger_system::_instance()->add_trigger(E_alarma, ID, *getPosicion(), RADIOALARMA, TIEMPOALARMA);
-			this->activado = true;
-		}
+    
+    
+	if(LevelBlackBoard::instance()->exist_record(ID, P_ALARMA)){
+        if (LevelBlackBoard::instance()->getRecord(ID, P_ALARMA)->romper) rota=true;
+		else if(rota)NPCKnows=true;
+		else if(estaActivado())
+            activar();
+			
 	}
-	else if(World_BlackBoard::instance()->countType(alarma)>0 && !NPCKnows){
-		World_BlackBoard::instance()->AnswerRecord(alarma, ID, getPosicion());
+    if(!NPCKnows){
+		LevelBlackBoard::instance()->AnswerRecord(P_ALARMA, ID, getPosicion());
 	}
 }
 
@@ -91,6 +88,9 @@ void alarma::activar(){
     activado = true;
     _time = clock();
     this->setTexture("3d/rojo.png");
+    //_time = time(NULL)+TIEMPOALARMA;
+    if(trigger_system::_instance()->ExistTrigger(P_ALARMA, ID))
+        trigger_system::_instance()->add_trigger(P_ALARMA, ID,getPosicion(), RADIOALARMA, TIEMPOALARMA);
 }
 
 bool alarma::estaActivado(){

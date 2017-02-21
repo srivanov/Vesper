@@ -13,6 +13,6 @@ Nodo_PuedoAtacarDistancia::~Nodo_PuedoAtacarDistancia(){}
 Nodo_PuedoAtacarDistancia::Nodo_PuedoAtacarDistancia(){}
 
 short Nodo_PuedoAtacarDistancia::run(int &id){
-    cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
+    //cout << " NODO PUEDO ATACAR DISTANCIA ?" << endl;
     return false;
 }

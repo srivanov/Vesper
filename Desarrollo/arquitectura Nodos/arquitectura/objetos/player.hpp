@@ -3,6 +3,7 @@
 #define player_hpp
 
 #include <iostream>
+#include "PathPlanning.hpp"
 #include "GameObject.hpp"
 #include "../components/armas.hpp"
 #include "../components/pistola.hpp"
