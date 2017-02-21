@@ -9,15 +9,26 @@
 #ifndef TRecurso_hpp
 #define TRecurso_hpp
 
+#include <string>
+
+enum typeRecurso{
+	tNO_TYPE = -1,
+	tRMalla,
+	tRTextura
+};
+
 class TRecurso{
 public:
 	TRecurso(){}
 	virtual ~TRecurso(){}
-	char* GetNombre(){ return nombre; }
-	void SetNombre(char* n){ nombre = n; }
-	virtual void cargarFichero(char* name){}
+	std::string GetNombre(){ return nombre; }
+	void SetNombre(std::string n){ nombre = n; }
+	virtual void cargarFichero(std::string name)=0;
+	void setType(typeRecurso t){type = t;}
+	typeRecurso getType(){return type;}
 private:
-	char* nombre;
+	std::string nombre;
+	typeRecurso type;
 };
 
 #endif /* TRecurso_hpp */

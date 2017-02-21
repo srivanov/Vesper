@@ -10,6 +10,8 @@
 
 TMalla::TMalla(){
 	pila = Pila::Instance();
+	gestor = TGestorRecursos::Instance();
+	malla = NULL;
 }
 
 TMalla::~TMalla(){
@@ -17,15 +19,15 @@ TMalla::~TMalla(){
 }
 
 void TMalla::cargarMalla(std::string fichero){
-	malla.cargarMalla(fichero);
+	malla = static_cast<TRecursoMalla*>(gestor->getRecurso(fichero, tRMalla));
 }
 
 void TMalla::beginDraw(){
-	malla.asignarMatrix(pila->topMT());
-	malla.Draw(*sh);
-	printf("BEGIN DRAW Malla\n");
+	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
+	malla->Draw(*sh);
+//	printf("BEGIN DRAW Malla\n");
 }
 
 void TMalla::endDraw(){
-	printf("END DRAW Malla\n");
+//	printf("END DRAW Malla\n");
 }

@@ -55,15 +55,28 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
-void movimiento(){
-	if(keys[GLFW_KEY_W])
-		camara.ProcessKeyboard(FORWARD, deltaTime);
-	if(keys[GLFW_KEY_S])
-		camara.ProcessKeyboard(BACKWARD, deltaTime);
-	if(keys[GLFW_KEY_A])
-		camara.ProcessKeyboard(LEFT, deltaTime);
-	if(keys[GLFW_KEY_D])
-		camara.ProcessKeyboard(RIGHT, deltaTime);
+void movimiento(TEscena* escena){
+//	if(keys[GLFW_KEY_W])
+//		camara.ProcessKeyboard(FORWARD, deltaTime);
+//	if(keys[GLFW_KEY_S])
+//		camara.ProcessKeyboard(BACKWARD, deltaTime);
+//	if(keys[GLFW_KEY_A])
+//		camara.ProcessKeyboard(LEFT, deltaTime);
+//	if(keys[GLFW_KEY_D])
+//		camara.ProcessKeyboard(RIGHT, deltaTime);
+	
+	glm::vec3 mov;
+	
+	if (keys[GLFW_KEY_UP])
+		mov = glm::vec3(0.0f, 0.0f, 0.2f);
+	if (keys[GLFW_KEY_DOWN])
+		mov= glm::vec3(0.0f, 0.0f, -0.2f);
+	if (keys[GLFW_KEY_RIGHT])
+		mov = glm::vec3(0.2f, 0.0f, 0.0f);
+	if (keys[GLFW_KEY_LEFT])
+		mov = glm::vec3(-0.2f, 0.0f, 0.0f);
+	
+	escena->cambiar(mov);
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
@@ -167,7 +180,7 @@ int main(int argc, const char * argv[]) {
 		glfwPollEvents();
 		
 		//funcion de movimiento
-		movimiento();
+		movimiento(&escena);
 		
 		//limpia la pantalla asignando un color de fondo
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);

@@ -19,41 +19,29 @@ TNodo::~TNodo(){
 
 int TNodo::addHijo(TNodo* n){
 	hijos.push_back(n);
+	n->setPadre(this);
 	return 0;
 }
 
 int TNodo::remHijo(TNodo* n){
 	std::vector<TNodo*>::iterator it = std::find(hijos.begin(), hijos.end(), n);
-	hijos.erase(it);
+	if(it != hijos.end())
+		hijos.erase(it);
 	return 0;
 }
 
 bool TNodo::setEntidad(TEntidad* en){
-	if(entidad == NULL)
-		entidad = en;
-	else
+	if(entidad != NULL)
 		return false;
+	entidad = en;
 	return true;
-}
-
-TEntidad* TNodo::getEntidad(){
-	return entidad;
 }
 
 void TNodo::setPadre(TNodo* p){
 	padre = p;
 }
 
-TNodo* TNodo::getPadre(){
-	return padre;
-}
-
 void TNodo::Draw(){
-	if(padre == NULL){
-		glm::mat4 m;
-		Pila::Instance()->push(m);
-		Pila::Instance()->pushMT(m);
-	}
 	if(entidad != NULL)
 		entidad->beginDraw();
 	

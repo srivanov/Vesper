@@ -16,9 +16,8 @@ TRecursoMalla::~TRecursoMalla(){
 	
 }
 
-void TRecursoMalla::cargarFichero(char* name){
+void TRecursoMalla::cargarFichero(std::string ruta){
 	Assimp::Importer importer;
-	std::string ruta(name);
 	const aiScene* scene = importer.ReadFile(ruta, aiProcess_Triangulate);
 	
 	if(!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode){
@@ -31,6 +30,14 @@ void TRecursoMalla::cargarFichero(char* name){
 
 void TRecursoMalla::asignarMatrix(glm::mat4 *m){
 	modelMatrix = *m;
+}
+
+void TRecursoMalla::Draw(Shader &shader){
+	std::vector<Mesh>::iterator it = meshes.begin();
+	while(it != meshes.end()){
+		it->Draw(shader);
+		it++;
+	}
 }
 
 void TRecursoMalla::processNode(aiNode *node, const aiScene *scene){

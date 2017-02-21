@@ -21,9 +21,9 @@ public:
 	int addHijo(TNodo* n);
 	int remHijo(TNodo* n);
 	bool setEntidad(TEntidad* en);
-	TEntidad* getEntidad();
+	TEntidad* getEntidad(){ return entidad; }
 	void setPadre(TNodo* p);
-	TNodo* getPadre();
+	TNodo* getPadre(){ return padre; }
 	void Draw();
 	
 private:

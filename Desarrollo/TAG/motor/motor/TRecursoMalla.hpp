@@ -23,8 +23,8 @@ class TRecursoMalla : public TRecurso{
 public:
 	TRecursoMalla();
 	~TRecursoMalla();
-	void cargarFichero(char* name);
-	void Draw();
+	void cargarFichero(std::string ruta);
+	void Draw(Shader &shader);
 	void setTexture(std::string ruta);
 	void imprimirDatos();
 	void asignarMatrix(glm::mat4 *m);

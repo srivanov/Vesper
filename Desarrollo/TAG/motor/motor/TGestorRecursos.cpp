@@ -8,6 +8,11 @@
 
 #include "TGestorRecursos.hpp"
 
+TGestorRecursos* TGestorRecursos::Instance(){
+	static TGestorRecursos pinstance;
+	return &pinstance;
+}
+
 TGestorRecursos::TGestorRecursos(){
 	
 }
@@ -16,20 +21,26 @@ TGestorRecursos::~TGestorRecursos(){
 	
 }
 
-TRecurso* TGestorRecursos::getRecurso(char* name){
+TRecurso* TGestorRecursos::getRecurso(std::string name, typeRecurso tipo){
 	TRecurso* rec = buscarRecurso(name);
 	if(rec == NULL){
-		rec = new TRecurso();
+		if(tipo == tRMalla)
+			rec = new TRecursoMalla();
+		else if(tipo == tRTextura)
+			rec = new TRecursoTextura();
+		
 		rec->cargarFichero(name);
+		rec->SetNombre(name);
 		recursos.push_back(rec);
+		printf("RECURSOS: %d\n", (int)recursos.size());
 	}
 	return rec;
 }
 
-TRecurso* TGestorRecursos::buscarRecurso(char* name){
+TRecurso* TGestorRecursos::buscarRecurso(std::string name){
 	if(recursos.size() > 0){
 		for (std::vector<TRecurso*>::iterator it = recursos.begin();it!=recursos.end();++it){
-			if( strcmp((*it)->GetNombre(), name) == 0)
+			if((*it)->GetNombre().compare(name) == 0)
 				return (*it);
 		}
 	}

@@ -12,16 +12,20 @@
 #include <vector>
 #include "TRecurso.hpp"
 #include "TRecursoMalla.hpp"
+#include "TRecursoTextura.hpp"
 
 class TGestorRecursos{
 public:
+	static TGestorRecursos* Instance();
+	virtual ~TGestorRecursos();
+	TRecurso* getRecurso(std::string name, typeRecurso tipo);
+	
+protected:
 	TGestorRecursos();
-	~TGestorRecursos();
-	TRecurso* getRecurso(char* name);
 	
 private:
 	std::vector<TRecurso*> recursos;
-	TRecurso* buscarRecurso(char* name);
+	TRecurso* buscarRecurso(std::string name);
 };
 
 #endif /* TGestorRecursos_hpp */

@@ -30,24 +30,15 @@ public:
 		return p;
 	}
 	
-	void pushMT(glm::mat4 &m){
-		matrizTransform.push(m);
+	glm::mat4* top(){
+		return &pila.top();
 	}
 	
-	glm::mat4* popMT(){
-		glm::mat4* p = &matrizTransform.top();
-		matrizTransform.pop();
-		return p;
-	}
-	
-	glm::mat4* topMT(){
-		return &matrizTransform.top();
-	}
-	
+	glm::mat4 actual;
 protected:
-	Pila(){}
+	Pila(){ pila.push(glm::mat4(1.0f)); }
 private:
-	std::stack<glm::mat4> pila, matrizTransform;
+	std::stack<glm::mat4> pila;
 };
 
 #endif /* Pila_h */

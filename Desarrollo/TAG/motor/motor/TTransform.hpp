@@ -31,7 +31,7 @@ public:
 	void beginDraw();
 	void endDraw();
 private:
-	glm::mat4 actual;
+	glm::mat4 matriz;
 	Pila* pila;
 };
 
