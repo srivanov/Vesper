@@ -29,18 +29,7 @@ bool Record::HasAnswer(){
     if(IDRespuesta!=-1) return true;
     return false;
 }
-Record::~Record(){
-    if(posicionSolicitante){
-        posicionSolicitante = nullptr;
-        delete posicionSolicitante;
-    }
-    
-    if(posicionRespuesta){
-        posicionRespuesta = nullptr;
-        delete posicionRespuesta;
-    }
-        
-}
+Record::~Record(){}
 
 /*
  LEVEL_BLACKBOARD

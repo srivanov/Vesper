@@ -15,7 +15,7 @@ Nodo_HayRuido::~Nodo_HayRuido(){}
 short Nodo_HayRuido::run(int &id){
     //cout << " NODO HAY RUIDO ?" << endl;
     
-    if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_RUIDO)) {
+    if (NpcLibrary::instancia()->recover_book(id)->Ruido) {
         cout << "ESCUCHE" << endl;
         return true;
     }

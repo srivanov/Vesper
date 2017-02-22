@@ -30,8 +30,6 @@ short Nodo_HayBotiquin::run(int &id){
         
         else if(record->HasAnswer())
             NpcLibrary::instancia()->recover_book(id)->notify(record->IDRespuesta,P_VIDA, record->posicionRespuesta);
-        
-        record = nullptr;
         return RUNNING;
     }
     LevelBlackBoard::instance()->CreateRecord(id, P_VIDA, NpcLibrary::instancia()->recover_book(id)->getPosition());

@@ -27,6 +27,5 @@ short NodoBeber::run(int &id){
     LevelBlackBoard::instance()->RemoveRecord(id, P_SED);
     
     NpcLibrary::instancia()->recover_book(id)->sed-=AGUA_HIDATRA;
-    record = nullptr;
     return true;
 }

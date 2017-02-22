@@ -83,11 +83,10 @@ NpcBook::NpcBook(int& ID,dvector3D* posicion) : m_ID(&ID){
     hambre = rand()%20 + 1;
     PosicionPropia = posicion;
     VectorMovimiento = new dvector3D(0,0,0);
+    Enemigo = Aviso = Ruido = Alarma = Evento = false;
 }
 
-NpcBook::~NpcBook(){
-    m_ID = nullptr;
-}
+NpcBook::~NpcBook(){}
 
 void NpcBook::notify(int& ID,const Prioridades& tipo, dvector3D * posicion){add_Event(ID,tipo, posicion);}
 
@@ -98,12 +97,49 @@ void NpcBook::add_Event(int& ID,const Prioridades& tipo, dvector3D *posicion){
         pila.push_back(new Eventos(ID,tipo,posicion));
         return;
     }
-    for (int i=0; i<pila.size(); i++) {
-        if(tipo>=pila[i]->m_tipo) continue;
-        
-        pila.insert(pila.begin()+i, new Eventos(ID,tipo,posicion));
-        return;
+    if (tipo>4) {
+        for (int i=0; i<pila.size(); i++) {
+            if(tipo>=pila[i]->m_tipo) continue;
+            
+            pila.insert(pila.begin()+i, new Eventos(ID,tipo,posicion));
+            return;
+        }
     }
+    changeObjective(tipo, posicion);
+}
+
+void NpcBook::changeObjective(const Prioridades &tipo, dvector3D *posicion){
+    Evento = true;
+    switch (tipo) {
+        case P_ENEMIGO:
+            Enemigo = true; Ruido = false;
+            PosicionesDestino.clear();
+            PosicionesDestino = PathPlanning(posicion);
+            break;
+        case P_ALARMA:
+            Alarma = true;
+            break;
+        case P_AVISO:
+            Aviso = true;
+            if(Ruido) return;
+            PosicionesDestino.clear();
+            PosicionesDestino = PathPlanning(posicion);
+            break;
+        case P_RUIDO:
+            if (Enemigo) return;
+            Ruido = true;
+            PosicionesDestino.clear();
+            PosicionesDestino = PathPlanning(posicion);
+            break;
+        default:
+            break;
+    }
+}
+
+std::vector<dvector3D*> NpcBook::PathPlanning(dvector3D *posicionFinal){
+    std::vector<dvector3D*> resultado;
+    resultado.push_back(posicionFinal);
+    return  resultado;
 }
 
 void NpcBook::add_Event(int& ID, const Prioridades& tipo, std::vector<dvector3D*> posiciones){
@@ -111,12 +147,14 @@ void NpcBook::add_Event(int& ID, const Prioridades& tipo, std::vector<dvector3D*
         pila.push_back(new Eventos(ID,tipo,posiciones));
         return;
     }
+    
     for (int i=0; i<pila.size(); i++) {
         if(tipo>=pila[i]->m_tipo) continue;
         
         pila.insert(pila.begin()+i, new Eventos(ID,tipo,posiciones));
         return;
     }
+    
 }
 
 bool NpcBook::ExistEventByType(const Prioridades& tipo){

@@ -26,7 +26,6 @@ short NodoComer::run(int &id){
     LevelBlackBoard::instance()->RemoveRecord(id, P_HAMBRE);
     
     NpcLibrary::instancia()->recover_book(id)->hambre-=COMIDA_ALIMENTA;
-    record = nullptr;
     return true;
 }
 

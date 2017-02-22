@@ -31,14 +31,11 @@ short Nodo_TengoSed::run(int &id){
             
             if (record->HasAnswer()) {
                 book->notify(record->IDRespuesta,P_SED, record->posicionRespuesta);
-                book = nullptr;
                 return RUNNING;
             }
-            book = nullptr;
             return false;
         }
         LevelBlackBoard::instance()->CreateRecord(id, P_SED, book->getPosition());
     }
-    book = nullptr;
     return false;
 }

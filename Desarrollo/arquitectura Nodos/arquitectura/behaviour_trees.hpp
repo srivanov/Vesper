@@ -48,4 +48,11 @@
 #include "NodoHuir.hpp"
 
 
+class behaviour_tree {
+    
+    
+};
+
+
+
 #endif /* behaviour_trees_hpp */

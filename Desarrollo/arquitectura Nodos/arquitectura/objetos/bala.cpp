@@ -44,8 +44,6 @@ bala::~bala(){
 	class render* ren = (class render*)findComponent("render");
     if (ren != NULL)
 		ren->deleteNode();
-    position = nullptr;
-    delete position;
 }
 
 dvector3D* bala::getDireccion(){

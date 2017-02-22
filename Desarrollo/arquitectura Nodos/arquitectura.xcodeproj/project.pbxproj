@@ -16,6 +16,7 @@
 		63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E2D1E26C2C5006BD3AB /* botiquin.cpp */; };
 		63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E301E26CFE6006BD3AB /* comida.cpp */; };
 		63B81E351E26D288006BD3AB /* fuente.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B81E331E26D288006BD3AB /* fuente.cpp */; };
+		63CD44DE1E5CBFFD009D2A44 /* behaviour_trees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63CD44DD1E5CBFFD009D2A44 /* behaviour_trees.cpp */; };
 		880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 880949E51E3CFB9A00AE0C0E /* mapa1.tmx */; };
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
@@ -173,6 +174,7 @@
 		63B81E311E26CFE6006BD3AB /* comida.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = comida.hpp; sourceTree = "<group>"; };
 		63B81E331E26D288006BD3AB /* fuente.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fuente.cpp; sourceTree = "<group>"; };
 		63B81E341E26D288006BD3AB /* fuente.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fuente.hpp; sourceTree = "<group>"; };
+		63CD44DD1E5CBFFD009D2A44 /* behaviour_trees.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = behaviour_trees.cpp; sourceTree = "<group>"; };
 		880949E51E3CFB9A00AE0C0E /* mapa1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapa1.tmx; sourceTree = "<group>"; };
 		882FC8A21E369D7F0060347C /* piedraObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = piedraObj.cpp; sourceTree = "<group>"; };
 		882FC8A31E369D7F0060347C /* piedraObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = piedraObj.hpp; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AC40A81E4245730091076F /* behaviour_trees.hpp */,
+				63CD44DD1E5CBFFD009D2A44 /* behaviour_trees.cpp */,
 				D2AC40581E4231A00091076F /* Clases estandar */,
 				D2AC40301E4201080091076F /* Clases generales */,
 				D2AC402E1E41475E0091076F /* Nodos */,
@@ -1004,6 +1007,7 @@
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				E9FA20561E1C24C1003F9CA0 /* trigger_system.cpp in Sources */,
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
+				63CD44DE1E5CBFFD009D2A44 /* behaviour_trees.cpp in Sources */,
 				E9A3463A1E0434BA00E6EC25 /* escopeta.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
 				D2AC40AC1E43367D0091076F /* EasyMath.cpp in Sources */,

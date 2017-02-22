@@ -29,9 +29,6 @@ void trigger_system::add_trigger(const Prioridades& type, int id, dvector3D * po
     triggers * _trigger = new triggers(type,IDcont,id,pos,radio,duration);
     TRIGGER_VECTOR.push_back(_trigger);
     IDcont++;
-    _trigger = nullptr;
-    delete _trigger;
-    
 }
 void trigger_system::update(){
     update_trigger();

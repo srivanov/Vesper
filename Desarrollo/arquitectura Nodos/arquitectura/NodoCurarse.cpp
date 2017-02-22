@@ -24,7 +24,5 @@ short NodoCurarse::run(int &id){
     LevelBlackBoard::instance()->CreateRecord(record->IDRespuesta, P_VIDA, record->posicionRespuesta);
     LevelBlackBoard::instance()->RemoveRecord(id, P_VIDA);
     NpcLibrary::instancia()->recover_book(id)->salud+=BOTIQUIN_CURA;
-    record = nullptr;
-    delete record;
     return true;
 }

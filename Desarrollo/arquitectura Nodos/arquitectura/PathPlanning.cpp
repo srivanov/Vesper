@@ -21,8 +21,6 @@ PathPlanning::PathPlanning(Graph* grafo,dvector2D initialPosition,dvector2D fina
 PathPlanning::~PathPlanning(){
     delete grafo;
     delete BolsaNodos;
-    final_camino = nullptr;
-    delete final_camino;
 }
 
 std::vector<dvector3D> PathPlanning::obtenerCamino(dvector2D initialPosition,dvector2D finalPosition){
@@ -72,7 +70,6 @@ bool PathPlanning::Pathbuilding(){
     final_camino = BolsaNodos->lastNode();
     while (Revalorar(BolsaNodosAux));
     final_camino = AUX;
-    AUX = nullptr;
     
     cout << "PESO AUX: " << BolsaNodosAux->peso << " | PESO : " << BolsaNodos->peso << endl;
     

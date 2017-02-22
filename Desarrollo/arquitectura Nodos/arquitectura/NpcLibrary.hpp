@@ -12,6 +12,7 @@
 #include "Types.h"
 #include "Dvector.hpp"
 #include "EasyMath.hpp"
+#include "PathPlanning.hpp"
 #include <vector>
 #include <time.h>
 #include <stdlib.h>
@@ -48,11 +49,15 @@ class NpcBook{
     dvector3D * PosicionPropia;
     std::vector<dvector3D*> PosicionesDestino;
     std::vector<Eventos*> pila;
+    
     void add_Event(int&,const Prioridades& tipo, dvector3D * posicion);
     void add_Event(int&,const Prioridades& tipo, std::vector<dvector3D*> posicion);
     void changeObjective(const Prioridades&,int&);
+    void changeObjective(const Prioridades&,dvector3D*);
     void remove_Events(int&);
+    std::vector<dvector3D*> PathPlanning(dvector3D*);
 public:
+    bool Enemigo, Aviso, Ruido, Alarma,Evento;
     int * m_ID;
     void resetVectorMovimiento();
     NpcBook(int&,dvector3D*);

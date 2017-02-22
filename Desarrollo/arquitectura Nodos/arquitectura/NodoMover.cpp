@@ -40,8 +40,6 @@ short NodoMover::updateVMovement(int &id){
     _movement->z = 0;
     
     aux = -1;
-    
-    _movement = nullptr;
     return RUNNING;
 }
 short NodoMover::updatePosition(int &id){

@@ -34,16 +34,11 @@ short Nodo_TengoHambre::run(int &id){
             
             if (record->HasAnswer()) {
                 book->notify(record->IDRespuesta,P_HAMBRE, record->posicionRespuesta);
-                book = nullptr;
-                record = nullptr;
                 return RUNNING;
             }
-            book = nullptr;
-            record = nullptr;
             return false;
         }
         LevelBlackBoard::instance()->CreateRecord(id, P_HAMBRE, book->getPosition());
     }
-    book = nullptr;
     return false;
 }

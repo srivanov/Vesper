@@ -19,10 +19,6 @@ short Nodo_HayParaHablar::run(int &id){
     //cout << " NODO ALGUIEN HABLAR?" << endl;
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
-    if (book->ExistEventByType(P_HABLAR)) {
-        book = nullptr;
-        return true;
-    }
-    book = nullptr;
+    if (book->ExistEventByType(P_HABLAR)) return true;
     return false;
 }
