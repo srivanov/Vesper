@@ -37,7 +37,6 @@ private:
     CEGUI::PushButton *button_opciones;
     CEGUI::PushButton *button_creditos;
     CEGUI::PushButton *button_salir;
-    CEGUI::PushButton *button_pausa;
 
 };
 

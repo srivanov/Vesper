@@ -44,9 +44,6 @@ void MenuPrincipalLayout::inicializar() {
     button_salir = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(7));
     button_salir->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickStopGame, this));
     
-    button_pausa = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(9));
-    button_pausa->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickPausa, this));
-    
     static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(1))->moveToBack();
 }
 

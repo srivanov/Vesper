@@ -17,7 +17,11 @@
 #include "camara.hpp"
 #include "puerta.hpp"
 #include "player.hpp"
-
+#include "superSockerObj.hpp"
+#include "lanzaCaramelosObj.hpp"
+#include "globoAguaObj.hpp"
+#include "chicleObj.hpp"
+#include "bombaHumoObj.hpp"
 
 class nivel : public GameObject{
 public:

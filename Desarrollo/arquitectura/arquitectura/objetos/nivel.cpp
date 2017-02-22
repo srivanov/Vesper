@@ -47,7 +47,47 @@ bool nivel::cargarNivel(char* numero){
 	aux->setPosicion(pos1);
 
     powerups.push_back(aux);
+    
+    dvector3D pos8(0,3,0);
+    aux = new superSockerObj();
+    aux->addNodo("");
+    aux->setTexture("3d/letraE.png");
+    aux->setPosicion(pos8);
 	
+    powerups.push_back(aux);
+    
+    dvector3D pos9(0,6,0);
+    aux = new lanzaCaramelosObj();
+    aux->addNodo("");
+    aux->setTexture("3d/letraL.png");
+    aux->setPosicion(pos9);
+    
+    powerups.push_back(aux);
+    
+    dvector3D pos10(0,9,0);
+    aux = new globoAguaObj();
+    aux->addNodo("");
+    aux->setTexture("3d/globoagua.png");
+    aux->setPosicion(pos10);
+    
+    powerups.push_back(aux);
+    
+    dvector3D pos11(0,12,0);
+    aux = new chicleObj();
+    aux->addNodo("");
+    aux->setTexture("3d/chicle.png");
+    aux->setPosicion(pos11);
+    
+    powerups.push_back(aux);
+    
+    dvector3D pos12(0,16,0);
+    aux = new bombaHumoObj();
+    aux->addNodo("");
+    aux->setTexture("3d/bombahumo.png");
+    aux->setPosicion(pos12);
+    
+    powerups.push_back(aux);
+    
     dvector3D pos2(27,95,0);
     aux = new piedraObj();
     aux->addNodo("");

@@ -12,12 +12,12 @@
 enum typeArma{
     tArmaNO_TYPE = -1,
     tPISTOLA,
-    tESCOPETA,
-    tLANZACARAMELOS,
+    tESCOPETAc,
+    tLANZACARAMELOSc,
     tPIEDRAc,
-    tGLOBOAGUA,
-    tCHICLE,
-    tBOMBAHUMO,
+    tGLOBOAGUAc,
+    tCHICLEc,
+    tBOMBAHUMOc,
     tMARTILLO,
     tPALAc
 };
@@ -43,7 +43,7 @@ private:
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
     
-    const char* jotas[10] = {"tArmaNO_TYPE","tPISTOLA","tESCOPETA","tLANZACARAMELOS","tPIEDRAc","tGLOBOAGUA","tCHICLE","tBOMBAHUMO","tMARTILLO","tPALAc"};
+    const char* jotas[10] = {"tArmaNO_TYPE","tPISTOLA","tESCOPETAc","tLANZACARAMELOS","tPIEDRAc","tGLOBOAGUA","tCHICLE","tBOMBAHUMO","tMARTILLO","tPALAc"};
 };
 
 #endif /* gun_hpp */

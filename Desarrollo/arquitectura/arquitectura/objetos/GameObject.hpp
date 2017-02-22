@@ -41,7 +41,12 @@ enum typeObj{
 	tCOMIDA,
 	tFUENTE,
 	tLLAVE,
-	tPIEDRA
+	tPIEDRA,
+    tESCOPETA,
+    tLANZACARAMELOS,
+    tGLOBOAGUA,
+    tCHICLE,
+    tBOMBAHUMO
 };
 
 class component;
