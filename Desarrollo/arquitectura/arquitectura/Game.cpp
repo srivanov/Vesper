@@ -39,8 +39,11 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 //	renderizador->setTexto();
     nivelazo->getPlayer()->addNodo("3d/sphere.3ds");
 	nivelazo->getPlayer()->setTexture("3d/texture.png");
+//    nivelazo->getRehen()->setTexture("3d/rehen.jpg");
     dvector3D jpos(10,10,0);
+//    dvector3D jpos2(0,1,0);
 	nivelazo->getPlayer()->setPosicion(jpos);
+//    nivelazo->getRehen()->setPosicion(jpos2);
 	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
 	cam->addCamara(campos, *nivelazo->getPlayer()->getPosicion());
 	

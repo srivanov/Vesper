@@ -158,6 +158,7 @@
 		886F06C41E5DF9B400465532 /* globoAguaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886F06C21E5DF9B400465532 /* globoAguaObj.cpp */; };
 		886F06C71E5DFB9300465532 /* chicleObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886F06C51E5DFB9300465532 /* chicleObj.cpp */; };
 		886F06CA1E5DFC4400465532 /* bombaHumoObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886F06C81E5DFC4400465532 /* bombaHumoObj.cpp */; };
+		88CD095B1E5E04F800FCC7A7 /* rehen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88CD09591E5E04F800FCC7A7 /* rehen.cpp */; };
 		C1A0AE6E1E434BBD009699FD /* fuenten.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0ADDF1E434BBC009699FD /* fuenten.jpg */; };
 		C1A0AEED1E434BBD009699FD /* llave.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0AE671E434BBD009699FD /* llave.jpg */; };
 		C1A0AEEE1E434BBD009699FD /* moneda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1A0AE681E434BBD009699FD /* moneda.jpg */; };
@@ -433,6 +434,8 @@
 		886F06C61E5DFB9300465532 /* chicleObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = chicleObj.hpp; sourceTree = "<group>"; };
 		886F06C81E5DFC4400465532 /* bombaHumoObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bombaHumoObj.cpp; sourceTree = "<group>"; };
 		886F06C91E5DFC4400465532 /* bombaHumoObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bombaHumoObj.hpp; sourceTree = "<group>"; };
+		88CD09591E5E04F800FCC7A7 /* rehen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rehen.cpp; sourceTree = "<group>"; };
+		88CD095A1E5E04F800FCC7A7 /* rehen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rehen.hpp; sourceTree = "<group>"; };
 		C1A0ADDF1E434BBC009699FD /* fuenten.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fuenten.jpg; sourceTree = "<group>"; };
 		C1A0AE671E434BBD009699FD /* llave.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = llave.jpg; sourceTree = "<group>"; };
 		C1A0AE681E434BBD009699FD /* moneda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moneda.jpg; sourceTree = "<group>"; };
@@ -1016,6 +1019,8 @@
 				882FC8A31E369D7F0060347C /* piedraObj.hpp */,
 				E9AC3A5A1DF0AA4800A91A97 /* player.cpp */,
 				E9AC3A5B1DF0AA4800A91A97 /* player.hpp */,
+				88CD09591E5E04F800FCC7A7 /* rehen.cpp */,
+				88CD095A1E5E04F800FCC7A7 /* rehen.hpp */,
 				E9AC3A5C1DF0AA4800A91A97 /* puerta.cpp */,
 				E9AC3A5D1DF0AA4800A91A97 /* puerta.hpp */,
 			);
@@ -1438,6 +1443,7 @@
 				E9898FB01E5B757A0001A36A /* CreditosLayout.cpp in Sources */,
 				E9AC3A5F1DF0AA4800A91A97 /* camara.cpp in Sources */,
 				884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */,
+				88CD095B1E5E04F800FCC7A7 /* rehen.cpp in Sources */,
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
 				E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,

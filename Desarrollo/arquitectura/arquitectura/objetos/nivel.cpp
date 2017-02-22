@@ -21,6 +21,7 @@ nivel::nivel(){
 	setType(tNIVEL);
     
     jugador = new player();
+//    re = new rehen();
 }
 
 nivel::~nivel(){
@@ -389,3 +390,7 @@ void nivel::rotarConRaton(dvector3D posRaton) {
 player* nivel::getPlayer() {
     return jugador;
 }
+
+//rehen* nivel::getRehen(){
+//    return re;
+//}

@@ -22,6 +22,7 @@
 #include "globoAguaObj.hpp"
 #include "chicleObj.hpp"
 #include "bombaHumoObj.hpp"
+#include "rehen.hpp"
 
 class nivel : public GameObject{
 public:
@@ -42,6 +43,7 @@ public:
     void atacarJugador();
     void rotarConRaton(dvector3D posRaton);
     player* getPlayer();
+//    rehen* getRehen();
 	
 private:
 	std::vector<int>* mapa_nivel;
@@ -57,7 +59,7 @@ private:
 	std::vector<puerta*> puertas;
     bool muero;
     player *jugador;
-    
+//    rehen *re;
     
 };
 #endif /* nivel_hpp */

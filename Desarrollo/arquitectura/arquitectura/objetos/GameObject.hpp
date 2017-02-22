@@ -46,7 +46,8 @@ enum typeObj{
     tLANZACARAMELOS,
     tGLOBOAGUA,
     tCHICLE,
-    tBOMBAHUMO
+    tBOMBAHUMO,
+    tREHEN
 };
 
 class component;
