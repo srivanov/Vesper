@@ -47,7 +47,12 @@ armas::~armas(){
 
 void armas::update(){
 	//TO DO: Hacer la gestion de las balas aqui y en la clase bala
-    (*seleccionada)->update();
+//    (*seleccionada)->update();
+    aux = interface.begin();
+    while(aux != interface.end()){
+        (*aux)->update();
+        aux++;
+    }
 }
 
 void armas::render(){

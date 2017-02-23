@@ -2,6 +2,7 @@
 #include "nivel.hpp"
 
 nivel::nivel(){
+    setType(tNIVEL);
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
 	aux = new physics();
@@ -18,13 +19,11 @@ nivel::nivel(){
 	mapa_nivel = NULL;
 	cargador = new cargarMapa();
 	aux = NULL;
-	setType(tNIVEL);
-    
-    jugador = new player();
-//    re = new rehen();
+    jugador = NULL;
 }
 
 nivel::~nivel(){
+    //TO DO: falta por borrar todos los vectores
 	delete cargador;
     delete jugador;
 }
@@ -238,6 +237,13 @@ bool nivel::cargarNivel(char* numero){
     botiqueen = NULL;
     delete botiqueen;
     
+    jugador = new player();
+    jugador->addNodo("3d/sphere.3ds");
+    jugador->setTexture("3d/texture.png");
+    dvector3D jpos(10,10,0);
+    jugador->setPosicion(jpos);
+    
+    
     aux = NULL;
 
 	if(ancho == 0 || alto == 0)
@@ -353,9 +359,7 @@ void nivel::update(){
 }
 
 void nivel::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-//        muero = true;
-    }
+    
 }
 
 bool const* nivel::getmuero(){

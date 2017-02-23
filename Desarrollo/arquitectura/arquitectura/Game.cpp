@@ -19,6 +19,8 @@ Game::Game(){
 	running = true;
 	cam = new camara();
 	nivelazo = new nivel();
+    pausa = true;
+    layoutPrueba = NULL;
 }
 
 Game::~Game(){
@@ -37,24 +39,19 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	renderizador->setTexto();
-    nivelazo->getPlayer()->addNodo("3d/sphere.3ds");
-	nivelazo->getPlayer()->setTexture("3d/texture.png");
-//    nivelazo->getRehen()->setTexture("3d/rehen.jpg");
-    dvector3D jpos(10,10,0);
-//    dvector3D jpos2(0,1,0);
-	nivelazo->getPlayer()->setPosicion(jpos);
-//    nivelazo->getRehen()->setPosicion(jpos2);
-	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
-	cam->addCamara(campos, *nivelazo->getPlayer()->getPosicion());
-	
-	if(nivelazo->cargarNivel("3"))
-		nivelazo->dibujarMapa();
-	
+    dvector3D posJ, campos(0, -5, -10);
+    if(nivelazo->cargarNivel("3")) {
+        nivelazo->dibujarMapa();
+        posJ = *nivelazo->getPlayer()->getPosicion();
+    }
+    campos.operator+(posJ);
+    
+    cam->addCamara(campos, posJ);
+    
 	World_BlackBoard::instance();
 	NPC_library::instance();
 	trigger_system::_instance();
 	layoutPrueba = new LayoutGUI();
-	pausa = true;
 }
 
 void Game::stop(){

@@ -22,7 +22,7 @@ public:
 	
 private:
 //	armaInterface* aux;
-	std::vector<gun*>::iterator seleccionada;
+	std::vector<gun*>::iterator seleccionada, aux;
 	std::vector<gun*> interface;
 };
 

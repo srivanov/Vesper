@@ -69,7 +69,7 @@ bool const* bala::getmuero(){
 
 void bala::contacto(GameObject *g){
 //    if(*g->getType() == tENEMIGOS){
-//        muero = true;
+        muero = true;
 //    }
 }
 
