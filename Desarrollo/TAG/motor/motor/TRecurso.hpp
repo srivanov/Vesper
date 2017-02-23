@@ -23,7 +23,7 @@ public:
 	virtual ~TRecurso(){}
 	std::string GetNombre(){ return nombre; }
 	void SetNombre(std::string n){ nombre = n; }
-	virtual void cargarFichero(std::string name)=0;
+	virtual void cargarFichero(std::string &name)=0;
 	void setType(typeRecurso t){type = t;}
 	typeRecurso getType(){return type;}
 private:

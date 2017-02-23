@@ -22,7 +22,7 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 //ultima posicion del raton, inicializada al centro de la pantalla
 GLfloat lastX = WIDTH/2, lastY = HEIGHT/2;
 
-camera camara(glm::vec3(0.0f, 0.0f, 3.0f));
+//camera camara(glm::vec3(0.0f, 0.0f, 3.0f));
 
 //primer movimiento del raton
 bool firstMouse = true;
@@ -95,11 +95,11 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 	lastX = xpos;
 	lastY = ypos;
 	
-	camara.ProcessMouseMovement(xoffset, yoffset);
+//	camara.ProcessMouseMovement(xoffset, yoffset);
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
-	camara.ProcessMouseScroll(yoffset);
+//	camara.ProcessMouseScroll(yoffset);
 }
 
 int main(int argc, const char * argv[]) {
@@ -216,7 +216,7 @@ int main(int argc, const char * argv[]) {
 		GLint lightPosLoc = glGetUniformLocation(miShader.Program, "light.position");
 		GLint viewPosLoc  = glGetUniformLocation(miShader.Program, "viewPos");
 		glUniform3f(lightPosLoc, 3.0f, 2.0f, 3.0f);
-		glUniform3f(viewPosLoc,  camara.Position.x, camara.Position.y, camara.Position.z);
+//		glUniform3f(viewPosLoc,  camara.Position.x, camara.Position.y, camara.Position.z);
 		
 		//propiedades de la luz
 		glUniform3f(glGetUniformLocation(miShader.Program, "light.ambient"),   0.5f, 0.5f, 0.5f);
@@ -249,7 +249,7 @@ int main(int argc, const char * argv[]) {
 		// en este caso queremos movernos hacia atras con lo cual movemos la escena en el eje Z negativamente
 //		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		
-		view = camara.GetViewMatrix();
+//		view = camara.GetViewMatrix();
 		
 		//projection matrix
 		glm::mat4 projection;
@@ -260,7 +260,7 @@ int main(int argc, const char * argv[]) {
 		 * el tercero es el near value
 		 * el cuarto es el far value
 		 */
-		projection = glm::perspective(glm::radians(camara.Zoom), (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 1000.0f);
+//		projection = glm::perspective(glm::radians(camara.Zoom), (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 1000.0f);
 		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		

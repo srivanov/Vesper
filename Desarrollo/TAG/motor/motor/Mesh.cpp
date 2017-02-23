@@ -1,7 +1,7 @@
 
 #include "Mesh.hpp"
 
-Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> texturas){
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture*> texturas){
 	this->vertices = vertices;
 	this->indices = indices;
 	this->texturas = texturas;
@@ -21,7 +21,7 @@ void Mesh::Draw(Shader &shader){
 		// recogemos el numero de la textura
 		std::stringstream ss;
 		std::string number;
-		std::string name = this->texturas[i].type;
+		std::string name = this->texturas[i]->type;
 		
 		if(name == "texture_diffuse")
 			// cambiamos de GLuint a stream
@@ -33,7 +33,7 @@ void Mesh::Draw(Shader &shader){
 		number = ss.str();
 		
 		glUniform1f(glGetUniformLocation(shader.Program, (name + number).c_str()), i);
-		glBindTexture(GL_TEXTURE_2D, this->texturas[i].id);
+		glBindTexture(GL_TEXTURE_2D, this->texturas[i]->id);
 	}
 	
 	glActiveTexture(GL_TEXTURE0);

@@ -25,7 +25,7 @@ protected:
 	
 private:
 	std::vector<TRecurso*> recursos;
-	TRecurso* buscarRecurso(std::string name);
+	TRecurso* buscarRecurso(std::string name, typeRecurso tipo);
 };
 
 #endif /* TGestorRecursos_hpp */

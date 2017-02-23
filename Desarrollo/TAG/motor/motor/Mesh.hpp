@@ -27,9 +27,9 @@ public:
 	
 	std::vector<Vertex> vertices;
 	std::vector<GLuint> indices;
-	std::vector<Texture> texturas;
+	std::vector<Texture*> texturas;
 	
-	Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> texturas);
+	Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture*> texturas);
 	void Draw(Shader &shader);
 	
 private:
