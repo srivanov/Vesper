@@ -15,7 +15,7 @@
 
 class comida : public GameObject {
 public:
-    comida(int &ID);
+    comida();
     ~comida();
     void update();
     void contacto(GameObject* g);
@@ -23,7 +23,6 @@ public:
     bool const* getmuero();
 private:
     void gestorTiempo();
-    int ID;
     bool consumido, muero;
     time_t _time;
 };

@@ -9,8 +9,7 @@
 #include "fuente.hpp"
 #include "BlackBoards.hpp"
 
-fuente::fuente(int & ID){
-    this->ID = ID;
+fuente::fuente(){
     this->rota = false;
     this->NPCKnows = false;
     

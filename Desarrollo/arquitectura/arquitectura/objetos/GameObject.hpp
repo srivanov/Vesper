@@ -69,7 +69,7 @@ public:
     void setRenderizable(bool r);
 	
 	dvector3D* getPosicion();
-    void setPosicion(dvector3D &p3D);
+    void setPosicion(dvector3D p3D);
 	void setRotacion(float rot);
 	void rotarConRaton(dvector3D &posRaton);
 	dvector3D* getRotacion();
@@ -89,10 +89,11 @@ public:
 	virtual void contacto(GameObject* g){};
     virtual void contactoEnd(GameObject* g){};
     virtual bool const* getmuero() = 0;
-    
+    void setID(int &ID) { this->ID = ID; }
 protected:
     bool renderizable;
     dvector3D posicion, rotacion, anguloDisparo;
+	int ID;
 private:
 	//TO DO: crear el vector con componentes y no punteros
     std::map<char*, component*> components;

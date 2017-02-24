@@ -10,7 +10,7 @@
 
 class alarma : public GameObject{
 public:
-    alarma(int &ID);
+    alarma();
     ~alarma();
     void update();
     void contacto(GameObject* g);
@@ -21,7 +21,6 @@ public:
     void muere();
 private:
     void gestorTiempo();
-    int ID;
     bool activado;
     bool rota;
     bool NPCKnows;

@@ -11,8 +11,7 @@
 
 #define TIEMPO_COMESTIBLE 10
 
-comida::comida(int & ID){
-    this->ID = ID;
+comida::comida(){
     this->consumido = false;
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);

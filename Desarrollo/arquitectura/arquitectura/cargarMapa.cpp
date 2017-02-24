@@ -17,7 +17,6 @@ cargarMapa::cargarMapa(){
 
 cargarMapa::~cargarMapa() {
     _tilemap.clear();
-	delete _level;
 }
 
 bool cargarMapa::leerMapa(char* fichero) {
@@ -46,28 +45,45 @@ bool cargarMapa::leerMapa(char* fichero) {
         _numLayers++;
         layer = layer->NextSiblingElement("layer"); //Creamos a capa
     }
-    
-    //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
-    _level = new int [_width*_height];
-    int cont = 0;
+	
     //cargar los gids de diversas capas
 	
     //Carga la primera capa de textura
-    XMLElement *data = map->FirstChildElement("layer")->FirstChildElement("data")->FirstChildElement("tile");
-    int w = _width*_height*_numLayers, query;
+	layer = map->FirstChildElement("layer");
+    XMLElement *data = layer->FirstChildElement("data")->FirstChildElement("tile");
+    int w = _width*_height, query;
     
     for(int k=0; k < w ; k++){
-       //en el vector level de tamaño del alto por ancho del mapa(capa), guardo todos los valores de los tiles de la capa
-        _level[cont] = data->IntAttribute("gid")-1;
-        cont++;
-        
         data->QueryIntAttribute("gid", &query);
         _tilemap.push_back(query);
         
         //avanzo hasta al siguiente tag
         data = data->NextSiblingElement("tile");
     }
-    
+	
+	//leemos los objetos que hay por el mapa
+	if(_numLayers > 1){
+		layer = layer->NextSiblingElement("layer");
+		
+		data = layer->FirstChildElement("data")->FirstChildElement("tile");
+		
+		int a = _width*_height, obj, x=0, y=0;
+		
+		for(int k=0; k < a ; k++){
+			data->QueryIntAttribute("gid", &obj);
+			if(obj != 0)
+				_obj_map.push_back(dvector3D(x,y,obj));
+			
+			if(x == _width-1){
+				x=0;
+				y++;
+			}else
+				x++;
+			//avanzo hasta al siguiente tag
+			data = data->NextSiblingElement("tile");
+		}
+	}
+	
     //LEER CAPA DE OBJETOS
     XMLElement* objectGroup = map->FirstChildElement("objectgroup");
     XMLElement* object = objectGroup->FirstChildElement("object");
@@ -140,11 +156,11 @@ std::vector<int>* cargarMapa::getMatriz(){
     return &_tilemap;
 }
 
-std::vector<dvector2D>* cargarMapa::getObjetos(){
+std::vector<dvector2D>* cargarMapa::getParedes(){
 	return &_objetos;
 }
 
-std::vector<dvector2D>* cargarMapa::get_posObjetos(){
+std::vector<dvector2D>* cargarMapa::get_posParedes(){
 	return &_pos_objetos;
 }
 
@@ -155,3 +171,9 @@ int cargarMapa::getTileWidth(){
 int cargarMapa::getTileHeight(){
     return _tileHeight;
 }
+
+std::vector<dvector3D>* cargarMapa::get_PosObjetos(){
+	return &_obj_map;
+}
+
+

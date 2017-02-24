@@ -6,9 +6,8 @@
 #define RADIOALARMA 40.f
 #define TIEMPOALARMA 20.f
 
-alarma::alarma(int &ID){
+alarma::alarma(){
     this->activado = false;
-    this->ID = ID;
     this->rota = false;
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);

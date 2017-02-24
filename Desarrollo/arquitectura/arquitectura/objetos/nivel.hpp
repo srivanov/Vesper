@@ -24,6 +24,12 @@
 #include "bombaHumoObj.hpp"
 #include "rehen.hpp"
 
+struct obj_mapping{
+	int key;
+	std::string tex;
+	GameObject* (*pfunc)();
+};
+
 class nivel : public GameObject{
 public:
     nivel();
@@ -59,6 +65,7 @@ private:
 	std::vector<puerta*> puertas;
     bool muero;
     player *jugador;
+	obj_mapping* objs;
 //    rehen *re;
     
 };

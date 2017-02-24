@@ -58,7 +58,7 @@ dvector3D* GameObject::getPosicion(){
     return &posicion;
 }
 
-void GameObject::setPosicion(dvector3D &p3D){
+void GameObject::setPosicion(dvector3D p3D){
 //    if(p3D != NULL){
     posicion = p3D;
     transform3D* go = (transform3D*)this->findComponent("transform3D");

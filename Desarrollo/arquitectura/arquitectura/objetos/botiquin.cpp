@@ -11,8 +11,7 @@
 
 #define NUMERO_USOS 3
 
-botiquin::botiquin(int &ID){
-    this->ID = ID;
+botiquin::botiquin(){
     this->gastado = false;
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);

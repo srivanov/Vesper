@@ -19,14 +19,12 @@ public:
     int getHeight();
     int getTileWidth();
     int getTileHeight();
-    int * getLevel();
-    //int getMatriz()[][][] const;
-    //virtual ~cargarMapa();
     void mostrarMatriz();
     std::vector<int>* getMatriz();
-	std::vector<dvector2D>* getObjetos();
-	std::vector<dvector2D>* get_posObjetos();
-    
+	std::vector<dvector2D>* getParedes();
+	std::vector<dvector2D>* get_posParedes();
+	std::vector<dvector3D>* get_PosObjetos();
+	
 private:
     
 	int _width;
@@ -34,9 +32,9 @@ private:
     int _tileWidth;
     int _tileHeight;
     int _numLayers;
-    int *_level;
 	
 	std::vector<int> _tilemap;
+	std::vector<dvector3D> _obj_map;
 	std::vector<dvector2D> _objetos, _pos_objetos;
    // int matrizMapa[][][];
     

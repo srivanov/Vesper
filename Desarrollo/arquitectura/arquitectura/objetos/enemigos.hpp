@@ -13,7 +13,7 @@ class Personal_BlackBoard;
 
 class enemigos : public GameObject{
 public:
-    enemigos(int& ID);
+    enemigos();
     ~enemigos();
 	void update();
     void contacto(GameObject* g);
@@ -25,7 +25,6 @@ public:
 private:
     int k ; // GUARRRADA!!!
     estados * STD;
-	int ID;
 	unsigned int salud, sed, hambre;
     unsigned int estado;
     bool muero;

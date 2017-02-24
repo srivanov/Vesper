@@ -3,9 +3,8 @@
 #include "BlackBoards.hpp"
 #include "trigger_system.hpp"
 
-enemigos::enemigos(int& ID){
-	this->ID = ID;
-	
+enemigos::enemigos(){
+	setType(tENEMIGOS);
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
 	aux = new physics();
@@ -31,7 +30,6 @@ enemigos::enemigos(int& ID){
 	fisica->crearBodyDinamico(dim, pos);
 	
 	aux = NULL;
-	setType(tENEMIGOS);
 	
     muero = false;
     k = 0;
