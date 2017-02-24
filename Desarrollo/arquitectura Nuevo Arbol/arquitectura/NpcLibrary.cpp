@@ -30,7 +30,7 @@ NpcLibrary::~NpcLibrary(){
     libros.clear();
 }
 
-NpcBook * NpcLibrary::add_book(int &ID, dvector3D *posicion){
+NpcBook * NpcLibrary::add_book(const int &ID, dvector3D *posicion){
     it=libros.find(ID);
     if (it!=libros.end()) return nullptr;
     
@@ -40,7 +40,7 @@ NpcBook * NpcLibrary::add_book(int &ID, dvector3D *posicion){
     return book;
 }
 
-bool NpcLibrary::remove_book(int &ID){
+bool NpcLibrary::remove_book(const int &ID){
     it=libros.find(ID);
     if (it==libros.end()) return false;
     
@@ -49,7 +49,7 @@ bool NpcLibrary::remove_book(int &ID){
     return true;
 }
 
-NpcBook * NpcLibrary::recover_book(int &ID){
+NpcBook * NpcLibrary::recover_book(const int &ID){
     it=libros.find(ID);
     if (it==libros.end()) return nullptr;
     return it->second;
@@ -75,7 +75,8 @@ Eventos::~Eventos(){}
  NPC_BOOK
  */
 
-NpcBook::NpcBook(int& ID,dvector3D* posicion) : m_ID(&ID){
+NpcBook::NpcBook(const int& ID,dvector3D* posicion){
+    m_ID = ID;
     salud = 100;
     estado = 0;
     srand(time(NULL));
@@ -83,7 +84,7 @@ NpcBook::NpcBook(int& ID,dvector3D* posicion) : m_ID(&ID){
     hambre = rand()%20 + 1;
     PosicionPropia = posicion;
     VectorMovimiento = new dvector3D(0,0,0);
-    Enemigo = Aviso = Ruido = Alarma = Evento = false;
+    Enemigo = Aviso = Ruido = Alarma = Evento = Alerta = false;
 }
 
 NpcBook::~NpcBook(){}
@@ -93,11 +94,12 @@ void NpcBook::notify(int& ID,const Prioridades& tipo, dvector3D * posicion){add_
 void NpcBook::notify(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posiciones){add_Event(ID,tipo, posiciones);}
 
 void NpcBook::add_Event(int& ID,const Prioridades& tipo, dvector3D *posicion){
+    Evento = true;
     if (pila.empty()) {
         pila.push_back(new Eventos(ID,tipo,posicion));
         return;
     }
-    if (tipo>4) {
+    if (tipo>P_RUIDO) {
         for (int i=0; i<pila.size(); i++) {
             if(tipo>=pila[i]->m_tipo) continue;
             
@@ -109,7 +111,6 @@ void NpcBook::add_Event(int& ID,const Prioridades& tipo, dvector3D *posicion){
 }
 
 void NpcBook::changeObjective(const Prioridades &tipo, dvector3D *posicion){
-    Evento = true;
     switch (tipo) {
         case P_ENEMIGO:
             Enemigo = true; Ruido = false;
@@ -134,6 +135,11 @@ void NpcBook::changeObjective(const Prioridades &tipo, dvector3D *posicion){
         default:
             break;
     }
+}
+
+int NpcBook::getMoral(){
+    int calculo = (salud * 50)+(hambre * 30)+(sed * 20);
+    return calculo/100;
 }
 
 std::vector<dvector3D*> NpcBook::PathPlanning(dvector3D *posicionFinal){
@@ -170,14 +176,19 @@ void NpcBook::changeObjective(const Prioridades& tipo,int& it){
     // TO DO: PATHPLANNING
     PosicionesDestino.clear();
     PosicionesDestino = pila[it]->m_posiciones;
-    if(tipo==P_VIGILAR || tipo==P_PATRULLAR) return;
-    remove_Events(it);
+    
 }
 
-void NpcBook::remove_Events(int &it){
-    if(pila[it]){
-        delete pila[it];
-        pila.erase(pila.begin()+it);
+void NpcBook::remove_Events(const Prioridades&tipo){
+    for (int i=0; i<pila.size(); i++) {
+        if(pila[i]->m_tipo == P_PATRULLAR ||
+           pila[i]->m_tipo == P_VIGILAR)
+            continue;
+        if(pila[i]->m_tipo==tipo){
+            delete pila[i];
+            pila.erase(pila.begin()+i);
+            return;
+        }
     }
 }
 
@@ -200,11 +211,15 @@ void NpcBook::resetVectorMovimiento(){
 void NpcBook::updateBook(){
     time_t aux = time(NULL);
     for (int i=0; i<pila.size(); i++) {
-        if (pila[i]->m_tipo==P_PATRULLAR || pila[i]->m_tipo==P_VIGILAR)
-            continue;
-        if(pila[i]->m_time<=aux){
+        if(pila[i]->m_time<=aux &&
+           (
+            pila[i]->m_tipo!=P_PATRULLAR &&
+            pila[i]->m_tipo!=P_VIGILAR
+            )
+           ){
             delete pila[i];
             pila.erase(pila.begin()+i);
+            i=-1;
         }
     }
 }

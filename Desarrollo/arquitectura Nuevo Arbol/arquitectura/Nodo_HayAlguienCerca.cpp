@@ -14,7 +14,7 @@ Nodo_HayAlguienCerca::~Nodo_HayAlguienCerca(){}
 short Nodo_HayAlguienCerca::run(int &id){
    //cout << "NODO HAY ALGUIEN CERCA " << endl;
     
-    if(LevelBlackBoard::instance()->exist_record(id, P_RADIO)) return false;
+    if(LevelBlackBoard::instance()->exist_record(id, P_AVISO)) return false;
     
     if (NpcLibrary::instancia()->recover_book(id)->ExistEventByType(P_AVISO)) return true;
     

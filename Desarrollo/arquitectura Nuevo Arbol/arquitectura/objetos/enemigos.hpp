@@ -4,7 +4,8 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
-#include "estados.hpp"
+//#include "estados.hpp"
+#include "Behaviour_tree2.hpp"
 #include <stdlib.h>
 #include "NpcLibrary.hpp"
 
@@ -21,7 +22,8 @@ public:
 	int&  getID(){return m_ID;}
 private:
     int k ; // GUARRRADA!!!
-    estados * STD;
+    //estados * STD;
+    Nodo_base * tree;
 	int m_ID;
     bool muero;
 	

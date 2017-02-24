@@ -29,9 +29,9 @@ class NpcLibrary{
 public:
     ~NpcLibrary();
     static NpcLibrary * instancia();
-    NpcBook * add_book(int&,dvector3D*);
-    bool remove_book(int&);
-    NpcBook * recover_book(int&);
+    NpcBook * add_book(const int&,dvector3D*);
+    bool remove_book(const int&);
+    NpcBook * recover_book(const int&);
     
 };
 
@@ -49,18 +49,19 @@ class NpcBook{
     dvector3D * PosicionPropia;
     std::vector<dvector3D*> PosicionesDestino;
     std::vector<Eventos*> pila;
-    
+    void remove_Events(int&);
     void add_Event(int&,const Prioridades& tipo, dvector3D * posicion);
     void add_Event(int&,const Prioridades& tipo, std::vector<dvector3D*> posicion);
     void changeObjective(const Prioridades&,int&);
     void changeObjective(const Prioridades&,dvector3D*);
-    void remove_Events(int&);
     std::vector<dvector3D*> PathPlanning(dvector3D*);
 public:
-    bool Enemigo, Aviso, Ruido, Alarma,Evento;
-    int * m_ID;
+    int getMoral();
+    void remove_Events(const Prioridades&);
+    bool Enemigo , Aviso , Ruido, Alarma , Evento , Alerta ;
+    int m_ID;
     void resetVectorMovimiento();
-    NpcBook(int&,dvector3D*);
+    NpcBook(const int&,dvector3D*);
     void notify(int&,const Prioridades&,dvector3D *);
     void notify(int&,const Prioridades&,std::vector<dvector3D*>);
     dvector3D * getPosition() const {return PosicionPropia;}

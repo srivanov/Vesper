@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6337FDA01E5E14B000126C35 /* Nodo_Secuencia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FD9E1E5E14B000126C35 /* Nodo_Secuencia.cpp */; };
+		6337FDA51E5E191600126C35 /* Nodo_SecuenciaPlus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDA31E5E191600126C35 /* Nodo_SecuenciaPlus.cpp */; };
+		6337FDA91E5E1B1A00126C35 /* Nodo_QAvisado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDA71E5E1B1A00126C35 /* Nodo_QAvisado.cpp */; };
+		6337FDAC1E5E1DA200126C35 /* Nodo_RAvisado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDAA1E5E1DA200126C35 /* Nodo_RAvisado.cpp */; };
+		6337FDAF1E5E1E7500126C35 /* Nodo_QRuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDAD1E5E1E7500126C35 /* Nodo_QRuido.cpp */; };
+		6337FDB31E5E1F4900126C35 /* Nodo_RRuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDB11E5E1F4900126C35 /* Nodo_RRuido.cpp */; };
+		6337FDB71E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDB51E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.cpp */; };
+		6337FDBC1E5E23F200126C35 /* Nodo_Condicional_Secuencial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDBB1E5E23F200126C35 /* Nodo_Condicional_Secuencial.cpp */; };
+		6337FDBF1E5E3C1F00126C35 /* Nodo_QAyudar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDBD1E5E3C1F00126C35 /* Nodo_QAyudar.cpp */; };
+		6337FDC21E5E3E3800126C35 /* Nodo_Qhuir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDC01E5E3E3800126C35 /* Nodo_Qhuir.cpp */; };
+		6337FDC51E5E3F7F00126C35 /* Nodo_Mover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDC31E5E3F7F00126C35 /* Nodo_Mover.cpp */; };
+		6337FDC81E5E42D400126C35 /* Nodo_AVigilar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDC61E5E42D400126C35 /* Nodo_AVigilar.cpp */; };
+		6337FDCB1E5F251D00126C35 /* Behaviour_tree2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDC91E5F251D00126C35 /* Behaviour_tree2.cpp */; };
+		6337FDD01E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDCE1E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp */; };
+		6337FDD31E5F293D00126C35 /* Nodo_QCombatir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDD11E5F293D00126C35 /* Nodo_QCombatir.cpp */; };
+		6337FDD61E5F2F5900126C35 /* Nodo_AAyudar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDD41E5F2F5900126C35 /* Nodo_AAyudar.cpp */; };
+		6337FDD91E5F308A00126C35 /* Nodo_RAlarma_Cercana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDD71E5F308A00126C35 /* Nodo_RAlarma_Cercana.cpp */; };
+		6337FDDC1E5F364A00126C35 /* Nodo_QAlarma_Cercano.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDDA1E5F364A00126C35 /* Nodo_QAlarma_Cercano.cpp */; };
+		6337FDDF1E5F39F500126C35 /* Nodo_AAlarma_Cercano.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDDD1E5F39F500126C35 /* Nodo_AAlarma_Cercano.cpp */; };
+		6337FDE21E5F420100126C35 /* Nodo_AHuir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDE01E5F420100126C35 /* Nodo_AHuir.cpp */; };
+		6337FDE51E5F45B800126C35 /* Nodo_QCurarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDE31E5F45B800126C35 /* Nodo_QCurarse.cpp */; };
+		6337FDE81E5F472000126C35 /* Nodo_QAlimentarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDE61E5F472000126C35 /* Nodo_QAlimentarse.cpp */; };
+		6337FDEB1E5F484500126C35 /* Nodo_QHidratarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDE91E5F484500126C35 /* Nodo_QHidratarse.cpp */; };
+		6337FDEE1E5F48AA00126C35 /* Nodo_ACurarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDEC1E5F48AA00126C35 /* Nodo_ACurarse.cpp */; };
+		6337FDF11E5F4A5400126C35 /* Nodo_AHidratarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDEF1E5F4A5400126C35 /* Nodo_AHidratarse.cpp */; };
+		6337FDF41E5F4B5E00126C35 /* Nodo_AAlimentarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDF21E5F4B5E00126C35 /* Nodo_AAlimentarse.cpp */; };
+		6337FDF71E5F4FCB00126C35 /* Nodo_ARuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDF51E5F4FCB00126C35 /* Nodo_ARuido.cpp */; };
+		6337FDFA1E5F521900126C35 /* Nodo_QHablar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDF81E5F521900126C35 /* Nodo_QHablar.cpp */; };
+		6337FDFD1E5F52B500126C35 /* Nodo_QVigilar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDFB1E5F52B500126C35 /* Nodo_QVigilar.cpp */; };
+		6337FE001E5F55B300126C35 /* Nodo_AHablar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FDFE1E5F55B300126C35 /* Nodo_AHablar.cpp */; };
+		6337FE031E5F574700126C35 /* Nodo_QPatrullar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FE011E5F574700126C35 /* Nodo_QPatrullar.cpp */; };
+		6337FE061E5F57E200126C35 /* Nodo_APatrullar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6337FE041E5F57E200126C35 /* Nodo_APatrullar.cpp */; };
 		635828751E4E299D0081B7F3 /* NpcLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635828731E4E299D0081B7F3 /* NpcLibrary.cpp */; };
 		635828791E4E3F170081B7F3 /* LevelBlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 635828771E4E3F170081B7F3 /* LevelBlackBoard.cpp */; };
 		63847D281E521C8D00C86D01 /* NodoRaiz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63847D261E521C8D00C86D01 /* NodoRaiz.cpp */; };
@@ -155,6 +187,71 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6337FD9C1E5E13AF00126C35 /* Nodo_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_base.hpp; sourceTree = "<group>"; };
+		6337FD9E1E5E14B000126C35 /* Nodo_Secuencia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_Secuencia.cpp; sourceTree = "<group>"; };
+		6337FD9F1E5E14B000126C35 /* Nodo_Secuencia.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_Secuencia.hpp; sourceTree = "<group>"; };
+		6337FDA31E5E191600126C35 /* Nodo_SecuenciaPlus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_SecuenciaPlus.cpp; sourceTree = "<group>"; };
+		6337FDA41E5E191600126C35 /* Nodo_SecuenciaPlus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_SecuenciaPlus.hpp; sourceTree = "<group>"; };
+		6337FDA71E5E1B1A00126C35 /* Nodo_QAvisado.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QAvisado.cpp; sourceTree = "<group>"; };
+		6337FDA81E5E1B1A00126C35 /* Nodo_QAvisado.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QAvisado.hpp; sourceTree = "<group>"; };
+		6337FDAA1E5E1DA200126C35 /* Nodo_RAvisado.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_RAvisado.cpp; sourceTree = "<group>"; };
+		6337FDAB1E5E1DA200126C35 /* Nodo_RAvisado.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_RAvisado.hpp; sourceTree = "<group>"; };
+		6337FDAD1E5E1E7500126C35 /* Nodo_QRuido.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QRuido.cpp; sourceTree = "<group>"; };
+		6337FDAE1E5E1E7500126C35 /* Nodo_QRuido.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QRuido.hpp; sourceTree = "<group>"; };
+		6337FDB11E5E1F4900126C35 /* Nodo_RRuido.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_RRuido.cpp; sourceTree = "<group>"; };
+		6337FDB21E5E1F4900126C35 /* Nodo_RRuido.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_RRuido.hpp; sourceTree = "<group>"; };
+		6337FDB51E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QEnemigo_QAlarma.cpp; sourceTree = "<group>"; };
+		6337FDB61E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QEnemigo_QAlarma.hpp; sourceTree = "<group>"; };
+		6337FDB91E5E232200126C35 /* Nodo_Condicional_Secuencial.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_Condicional_Secuencial.hpp; sourceTree = "<group>"; };
+		6337FDBB1E5E23F200126C35 /* Nodo_Condicional_Secuencial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_Condicional_Secuencial.cpp; sourceTree = "<group>"; };
+		6337FDBD1E5E3C1F00126C35 /* Nodo_QAyudar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QAyudar.cpp; sourceTree = "<group>"; };
+		6337FDBE1E5E3C1F00126C35 /* Nodo_QAyudar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QAyudar.hpp; sourceTree = "<group>"; };
+		6337FDC01E5E3E3800126C35 /* Nodo_Qhuir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_Qhuir.cpp; sourceTree = "<group>"; };
+		6337FDC11E5E3E3800126C35 /* Nodo_Qhuir.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_Qhuir.hpp; sourceTree = "<group>"; };
+		6337FDC31E5E3F7F00126C35 /* Nodo_Mover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_Mover.cpp; sourceTree = "<group>"; };
+		6337FDC41E5E3F7F00126C35 /* Nodo_Mover.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_Mover.hpp; sourceTree = "<group>"; };
+		6337FDC61E5E42D400126C35 /* Nodo_AVigilar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AVigilar.cpp; sourceTree = "<group>"; };
+		6337FDC71E5E42D400126C35 /* Nodo_AVigilar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AVigilar.hpp; sourceTree = "<group>"; };
+		6337FDC91E5F251D00126C35 /* Behaviour_tree2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Behaviour_tree2.cpp; sourceTree = "<group>"; };
+		6337FDCA1E5F251D00126C35 /* Behaviour_tree2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Behaviour_tree2.hpp; sourceTree = "<group>"; };
+		6337FDCE1E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QPedir_Ayuda.cpp; sourceTree = "<group>"; };
+		6337FDCF1E5F271B00126C35 /* Nodo_QPedir_Ayuda.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QPedir_Ayuda.hpp; sourceTree = "<group>"; };
+		6337FDD11E5F293D00126C35 /* Nodo_QCombatir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QCombatir.cpp; sourceTree = "<group>"; };
+		6337FDD21E5F293D00126C35 /* Nodo_QCombatir.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QCombatir.hpp; sourceTree = "<group>"; };
+		6337FDD41E5F2F5900126C35 /* Nodo_AAyudar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AAyudar.cpp; sourceTree = "<group>"; };
+		6337FDD51E5F2F5900126C35 /* Nodo_AAyudar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AAyudar.hpp; sourceTree = "<group>"; };
+		6337FDD71E5F308A00126C35 /* Nodo_RAlarma_Cercana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_RAlarma_Cercana.cpp; sourceTree = "<group>"; };
+		6337FDD81E5F308A00126C35 /* Nodo_RAlarma_Cercana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_RAlarma_Cercana.hpp; sourceTree = "<group>"; };
+		6337FDDA1E5F364A00126C35 /* Nodo_QAlarma_Cercano.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QAlarma_Cercano.cpp; sourceTree = "<group>"; };
+		6337FDDB1E5F364A00126C35 /* Nodo_QAlarma_Cercano.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QAlarma_Cercano.hpp; sourceTree = "<group>"; };
+		6337FDDD1E5F39F500126C35 /* Nodo_AAlarma_Cercano.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AAlarma_Cercano.cpp; sourceTree = "<group>"; };
+		6337FDDE1E5F39F500126C35 /* Nodo_AAlarma_Cercano.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AAlarma_Cercano.hpp; sourceTree = "<group>"; };
+		6337FDE01E5F420100126C35 /* Nodo_AHuir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AHuir.cpp; sourceTree = "<group>"; };
+		6337FDE11E5F420100126C35 /* Nodo_AHuir.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AHuir.hpp; sourceTree = "<group>"; };
+		6337FDE31E5F45B800126C35 /* Nodo_QCurarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QCurarse.cpp; sourceTree = "<group>"; };
+		6337FDE41E5F45B800126C35 /* Nodo_QCurarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QCurarse.hpp; sourceTree = "<group>"; };
+		6337FDE61E5F472000126C35 /* Nodo_QAlimentarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QAlimentarse.cpp; sourceTree = "<group>"; };
+		6337FDE71E5F472000126C35 /* Nodo_QAlimentarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QAlimentarse.hpp; sourceTree = "<group>"; };
+		6337FDE91E5F484500126C35 /* Nodo_QHidratarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QHidratarse.cpp; sourceTree = "<group>"; };
+		6337FDEA1E5F484500126C35 /* Nodo_QHidratarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QHidratarse.hpp; sourceTree = "<group>"; };
+		6337FDEC1E5F48AA00126C35 /* Nodo_ACurarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_ACurarse.cpp; sourceTree = "<group>"; };
+		6337FDED1E5F48AA00126C35 /* Nodo_ACurarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_ACurarse.hpp; sourceTree = "<group>"; };
+		6337FDEF1E5F4A5400126C35 /* Nodo_AHidratarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AHidratarse.cpp; sourceTree = "<group>"; };
+		6337FDF01E5F4A5400126C35 /* Nodo_AHidratarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AHidratarse.hpp; sourceTree = "<group>"; };
+		6337FDF21E5F4B5E00126C35 /* Nodo_AAlimentarse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AAlimentarse.cpp; sourceTree = "<group>"; };
+		6337FDF31E5F4B5E00126C35 /* Nodo_AAlimentarse.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AAlimentarse.hpp; sourceTree = "<group>"; };
+		6337FDF51E5F4FCB00126C35 /* Nodo_ARuido.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_ARuido.cpp; sourceTree = "<group>"; };
+		6337FDF61E5F4FCB00126C35 /* Nodo_ARuido.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_ARuido.hpp; sourceTree = "<group>"; };
+		6337FDF81E5F521900126C35 /* Nodo_QHablar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QHablar.cpp; sourceTree = "<group>"; };
+		6337FDF91E5F521900126C35 /* Nodo_QHablar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QHablar.hpp; sourceTree = "<group>"; };
+		6337FDFB1E5F52B500126C35 /* Nodo_QVigilar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QVigilar.cpp; sourceTree = "<group>"; };
+		6337FDFC1E5F52B500126C35 /* Nodo_QVigilar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QVigilar.hpp; sourceTree = "<group>"; };
+		6337FDFE1E5F55B300126C35 /* Nodo_AHablar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_AHablar.cpp; sourceTree = "<group>"; };
+		6337FDFF1E5F55B300126C35 /* Nodo_AHablar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_AHablar.hpp; sourceTree = "<group>"; };
+		6337FE011E5F574700126C35 /* Nodo_QPatrullar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_QPatrullar.cpp; sourceTree = "<group>"; };
+		6337FE021E5F574700126C35 /* Nodo_QPatrullar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_QPatrullar.hpp; sourceTree = "<group>"; };
+		6337FE041E5F57E200126C35 /* Nodo_APatrullar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo_APatrullar.cpp; sourceTree = "<group>"; };
+		6337FE051E5F57E200126C35 /* Nodo_APatrullar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Nodo_APatrullar.hpp; sourceTree = "<group>"; };
 		635828731E4E299D0081B7F3 /* NpcLibrary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NpcLibrary.cpp; sourceTree = "<group>"; };
 		635828741E4E299D0081B7F3 /* NpcLibrary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NpcLibrary.hpp; sourceTree = "<group>"; };
 		635828761E4E29CC0081B7F3 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
@@ -426,6 +523,126 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6337FDA11E5E14EA00126C35 /* Behaviour_trees v2 */ = {
+			isa = PBXGroup;
+			children = (
+				6337FDA21E5E150400126C35 /* Nodo Base */,
+				6337FDB01E5E1F2B00126C35 /* Nodos Condicionales Secuenciales */,
+				6337FDB41E5E1FB800126C35 /* Nodos ResetFlags */,
+				6337FDA61E5E1A1900126C35 /* Nodos Secuenciales */,
+				6337FDCC1E5F253800126C35 /* Nodos Condicionales */,
+				6337FDCD1E5F254900126C35 /* Nodos de Accion */,
+				6337FDC91E5F251D00126C35 /* Behaviour_tree2.cpp */,
+				6337FDCA1E5F251D00126C35 /* Behaviour_tree2.hpp */,
+			);
+			name = "Behaviour_trees v2";
+			sourceTree = "<group>";
+		};
+		6337FDA21E5E150400126C35 /* Nodo Base */ = {
+			isa = PBXGroup;
+			children = (
+				6337FD9C1E5E13AF00126C35 /* Nodo_base.hpp */,
+			);
+			name = "Nodo Base";
+			sourceTree = "<group>";
+		};
+		6337FDA61E5E1A1900126C35 /* Nodos Secuenciales */ = {
+			isa = PBXGroup;
+			children = (
+				6337FDB91E5E232200126C35 /* Nodo_Condicional_Secuencial.hpp */,
+				6337FDBB1E5E23F200126C35 /* Nodo_Condicional_Secuencial.cpp */,
+				6337FD9E1E5E14B000126C35 /* Nodo_Secuencia.cpp */,
+				6337FD9F1E5E14B000126C35 /* Nodo_Secuencia.hpp */,
+				6337FDA31E5E191600126C35 /* Nodo_SecuenciaPlus.cpp */,
+				6337FDA41E5E191600126C35 /* Nodo_SecuenciaPlus.hpp */,
+			);
+			name = "Nodos Secuenciales";
+			sourceTree = "<group>";
+		};
+		6337FDB01E5E1F2B00126C35 /* Nodos Condicionales Secuenciales */ = {
+			isa = PBXGroup;
+			children = (
+				6337FDDA1E5F364A00126C35 /* Nodo_QAlarma_Cercano.cpp */,
+				6337FDDB1E5F364A00126C35 /* Nodo_QAlarma_Cercano.hpp */,
+				6337FDE61E5F472000126C35 /* Nodo_QAlimentarse.cpp */,
+				6337FDE71E5F472000126C35 /* Nodo_QAlimentarse.hpp */,
+				6337FDA71E5E1B1A00126C35 /* Nodo_QAvisado.cpp */,
+				6337FDA81E5E1B1A00126C35 /* Nodo_QAvisado.hpp */,
+				6337FDBD1E5E3C1F00126C35 /* Nodo_QAyudar.cpp */,
+				6337FDBE1E5E3C1F00126C35 /* Nodo_QAyudar.hpp */,
+				6337FDD11E5F293D00126C35 /* Nodo_QCombatir.cpp */,
+				6337FDD21E5F293D00126C35 /* Nodo_QCombatir.hpp */,
+				6337FDE31E5F45B800126C35 /* Nodo_QCurarse.cpp */,
+				6337FDE41E5F45B800126C35 /* Nodo_QCurarse.hpp */,
+				6337FDB51E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.cpp */,
+				6337FDB61E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.hpp */,
+				6337FDF81E5F521900126C35 /* Nodo_QHablar.cpp */,
+				6337FDF91E5F521900126C35 /* Nodo_QHablar.hpp */,
+				6337FDE91E5F484500126C35 /* Nodo_QHidratarse.cpp */,
+				6337FDEA1E5F484500126C35 /* Nodo_QHidratarse.hpp */,
+				6337FDC01E5E3E3800126C35 /* Nodo_Qhuir.cpp */,
+				6337FDC11E5E3E3800126C35 /* Nodo_Qhuir.hpp */,
+				6337FDCE1E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp */,
+				6337FDCF1E5F271B00126C35 /* Nodo_QPedir_Ayuda.hpp */,
+				6337FDAD1E5E1E7500126C35 /* Nodo_QRuido.cpp */,
+				6337FDAE1E5E1E7500126C35 /* Nodo_QRuido.hpp */,
+				6337FDFB1E5F52B500126C35 /* Nodo_QVigilar.cpp */,
+				6337FDFC1E5F52B500126C35 /* Nodo_QVigilar.hpp */,
+				6337FE011E5F574700126C35 /* Nodo_QPatrullar.cpp */,
+				6337FE021E5F574700126C35 /* Nodo_QPatrullar.hpp */,
+			);
+			name = "Nodos Condicionales Secuenciales";
+			sourceTree = "<group>";
+		};
+		6337FDB41E5E1FB800126C35 /* Nodos ResetFlags */ = {
+			isa = PBXGroup;
+			children = (
+				6337FDAA1E5E1DA200126C35 /* Nodo_RAvisado.cpp */,
+				6337FDAB1E5E1DA200126C35 /* Nodo_RAvisado.hpp */,
+				6337FDB11E5E1F4900126C35 /* Nodo_RRuido.cpp */,
+				6337FDB21E5E1F4900126C35 /* Nodo_RRuido.hpp */,
+				6337FDD71E5F308A00126C35 /* Nodo_RAlarma_Cercana.cpp */,
+				6337FDD81E5F308A00126C35 /* Nodo_RAlarma_Cercana.hpp */,
+			);
+			name = "Nodos ResetFlags";
+			sourceTree = "<group>";
+		};
+		6337FDCC1E5F253800126C35 /* Nodos Condicionales */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Nodos Condicionales";
+			sourceTree = "<group>";
+		};
+		6337FDCD1E5F254900126C35 /* Nodos de Accion */ = {
+			isa = PBXGroup;
+			children = (
+				6337FDDD1E5F39F500126C35 /* Nodo_AAlarma_Cercano.cpp */,
+				6337FDDE1E5F39F500126C35 /* Nodo_AAlarma_Cercano.hpp */,
+				6337FDF21E5F4B5E00126C35 /* Nodo_AAlimentarse.cpp */,
+				6337FDF31E5F4B5E00126C35 /* Nodo_AAlimentarse.hpp */,
+				6337FDD41E5F2F5900126C35 /* Nodo_AAyudar.cpp */,
+				6337FDD51E5F2F5900126C35 /* Nodo_AAyudar.hpp */,
+				6337FDEC1E5F48AA00126C35 /* Nodo_ACurarse.cpp */,
+				6337FDED1E5F48AA00126C35 /* Nodo_ACurarse.hpp */,
+				6337FDEF1E5F4A5400126C35 /* Nodo_AHidratarse.cpp */,
+				6337FDF01E5F4A5400126C35 /* Nodo_AHidratarse.hpp */,
+				6337FDE01E5F420100126C35 /* Nodo_AHuir.cpp */,
+				6337FDE11E5F420100126C35 /* Nodo_AHuir.hpp */,
+				6337FDF51E5F4FCB00126C35 /* Nodo_ARuido.cpp */,
+				6337FDF61E5F4FCB00126C35 /* Nodo_ARuido.hpp */,
+				6337FDC61E5E42D400126C35 /* Nodo_AVigilar.cpp */,
+				6337FDC71E5E42D400126C35 /* Nodo_AVigilar.hpp */,
+				6337FDC31E5E3F7F00126C35 /* Nodo_Mover.cpp */,
+				6337FDC41E5E3F7F00126C35 /* Nodo_Mover.hpp */,
+				6337FDFE1E5F55B300126C35 /* Nodo_AHablar.cpp */,
+				6337FDFF1E5F55B300126C35 /* Nodo_AHablar.hpp */,
+				6337FE041E5F57E200126C35 /* Nodo_APatrullar.cpp */,
+				6337FE051E5F57E200126C35 /* Nodo_APatrullar.hpp */,
+			);
+			name = "Nodos de Accion";
+			sourceTree = "<group>";
+		};
 		6358288D1E50D9040081B7F3 /* BlackBoard y TriggerSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +827,7 @@
 			children = (
 				D2AC402F1E4200F40091076F /* Behaviour_trees */,
 				E92BC5A21E3DFFBF008E1F5B /* estados.cpp */,
+				6337FDA11E5E14EA00126C35 /* Behaviour_trees v2 */,
 				E92BC5A31E3DFFBF008E1F5B /* estados.hpp */,
 			);
 			name = "sistema decision";
@@ -934,6 +1152,10 @@
 			files = (
 				635828791E4E3F170081B7F3 /* LevelBlackBoard.cpp in Sources */,
 				E98661271DF99ED30028AC64 /* Fps.cpp in Sources */,
+				6337FDEB1E5F484500126C35 /* Nodo_QHidratarse.cpp in Sources */,
+				6337FDAC1E5E1DA200126C35 /* Nodo_RAvisado.cpp in Sources */,
+				6337FDCB1E5F251D00126C35 /* Behaviour_tree2.cpp in Sources */,
+				6337FDA91E5E1B1A00126C35 /* Nodo_QAvisado.cpp in Sources */,
 				E9AC3AA71DF0AA5000A91A97 /* martilloDeJuguete.cpp in Sources */,
 				E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */,
 				E9FA20591E1C2501003F9CA0 /* Dvector.cpp in Sources */,
@@ -950,22 +1172,35 @@
 				E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */,
 				E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */,
 				E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */,
+				6337FDA51E5E191600126C35 /* Nodo_SecuenciaPlus.cpp in Sources */,
+				6337FDBF1E5E3C1F00126C35 /* Nodo_QAyudar.cpp in Sources */,
+				6337FDC81E5E42D400126C35 /* Nodo_AVigilar.cpp in Sources */,
 				E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */,
 				D2AC40421E420D2D0091076F /* Nodo_HayRuido.cpp in Sources */,
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
 				E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */,
 				E9AC3A641DF0AA4800A91A97 /* player.cpp in Sources */,
+				6337FDC21E5E3E3800126C35 /* Nodo_Qhuir.cpp in Sources */,
+				6337FDF11E5F4A5400126C35 /* Nodo_AHidratarse.cpp in Sources */,
 				6396E2801E4792C400589082 /* Graph.cpp in Sources */,
 				E9A346341E04162700E6EC25 /* armaInterface.cpp in Sources */,
+				6337FDD91E5F308A00126C35 /* Nodo_RAlarma_Cercana.cpp in Sources */,
+				6337FDF41E5F4B5E00126C35 /* Nodo_AAlimentarse.cpp in Sources */,
 				D2AC408D1E423E920091076F /* Nodo_HayAlguienRadio.cpp in Sources */,
 				6396E2821E4792C400589082 /* PathPlanning.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
 				D2AC407D1E423B650091076F /* Nodo_AlarmaCerca.cpp in Sources */,
+				6337FDFA1E5F521900126C35 /* Nodo_QHablar.cpp in Sources */,
 				D2AC40451E420E5E0091076F /* Nodo_SuenaAlarma.cpp in Sources */,
+				6337FDE21E5F420100126C35 /* Nodo_AHuir.cpp in Sources */,
+				6337FDBC1E5E23F200126C35 /* Nodo_Condicional_Secuencial.cpp in Sources */,
+				6337FDC51E5E3F7F00126C35 /* Nodo_Mover.cpp in Sources */,
 				D2AC406D1E4237D70091076F /* NodoComer.cpp in Sources */,
 				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
+				6337FDAF1E5E1E7500126C35 /* Nodo_QRuido.cpp in Sources */,
+				6337FE031E5F574700126C35 /* Nodo_QPatrullar.cpp in Sources */,
 				D2AC40901E423F410091076F /* NodoAvisar.cpp in Sources */,
 				D2AC403C1E4209C10091076F /* NodoMover.cpp in Sources */,
 				D2AC406A1E4236AC0091076F /* Nodo_TengoSed.cpp in Sources */,
@@ -975,11 +1210,14 @@
 				E9AC3A631DF0AA4800A91A97 /* monedas.cpp in Sources */,
 				D2AC40671E4236170091076F /* Nodo_TengoHambre.cpp in Sources */,
 				D2AC40871E423D900091076F /* Nodo_EstasAsustado.cpp in Sources */,
+				6337FE001E5F55B300126C35 /* Nodo_AHablar.cpp in Sources */,
 				D2AC405E1E42331C0091076F /* Nodo_NecesitoAyuda.cpp in Sources */,
 				D2AC40A61E4243060091076F /* NodoHuir.cpp in Sources */,
 				D2AC40611E42340B0091076F /* Nodo_HayBotiquin.cpp in Sources */,
 				E92BC5A71E3DFFBF008E1F5B /* Nodos.cpp in Sources */,
+				6337FDE81E5F472000126C35 /* Nodo_QAlimentarse.cpp in Sources */,
 				882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */,
+				6337FDB31E5E1F4900126C35 /* Nodo_RRuido.cpp in Sources */,
 				D2AC40701E4238BA0091076F /* NodoBeber.cpp in Sources */,
 				D2AC404B1E42100C0091076F /* NodoPatrullar.cpp in Sources */,
 				63847D281E521C8D00C86D01 /* NodoRaiz.cpp in Sources */,
@@ -988,25 +1226,33 @@
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */,
+				6337FDEE1E5F48AA00126C35 /* Nodo_ACurarse.cpp in Sources */,
 				E92BC5A61E3DFFBF008E1F5B /* estados.cpp in Sources */,
 				D2AC40541E4213E40091076F /* Nodo_TengoVigilar.cpp in Sources */,
+				6337FE061E5F57E200126C35 /* Nodo_APatrullar.cpp in Sources */,
 				D2AC40331E42013A0091076F /* Nodo.cpp in Sources */,
 				D2AC40791E423A970091076F /* NodoHablar.cpp in Sources */,
 				D2AC40511E42129E0091076F /* NodoDarAlarma.cpp in Sources */,
 				D2AC405B1E4232070091076F /* Nodo_VidaBaja.cpp in Sources */,
+				6337FDB71E5E203C00126C35 /* Nodo_QEnemigo_QAlarma.cpp in Sources */,
 				635828751E4E299D0081B7F3 /* NpcLibrary.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
+				6337FDE51E5F45B800126C35 /* Nodo_QCurarse.cpp in Sources */,
 				E9A3463D1E045CB000E6EC25 /* lanzaCaramelos.cpp in Sources */,
+				6337FDDF1E5F39F500126C35 /* Nodo_AAlarma_Cercano.cpp in Sources */,
 				D2AC404E1E4212280091076F /* Nodo_TiempoInactivo.cpp in Sources */,
 				63B81E321E26CFE6006BD3AB /* comida.cpp in Sources */,
 				E9AC3A611DF0AA4800A91A97 /* nivel.cpp in Sources */,
 				D2AC40641E4234AF0091076F /* NodoCurarse.cpp in Sources */,
+				6337FDD61E5F2F5900126C35 /* Nodo_AAyudar.cpp in Sources */,
 				E9A346461E0460C400E6EC25 /* bombaHumo.cpp in Sources */,
 				E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */,
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,
+				6337FDF71E5F4FCB00126C35 /* Nodo_ARuido.cpp in Sources */,
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				E9FA20561E1C24C1003F9CA0 /* trigger_system.cpp in Sources */,
 				E9AC3AAA1DF0AA5000A91A97 /* piedra.cpp in Sources */,
+				6337FDA01E5E14B000126C35 /* Nodo_Secuencia.cpp in Sources */,
 				63CD44DE1E5CBFFD009D2A44 /* behaviour_trees.cpp in Sources */,
 				E9A3463A1E0434BA00E6EC25 /* escopeta.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
@@ -1020,6 +1266,7 @@
 				D2AC409F1E42421F0091076F /* NodoAtaqueDistancia.cpp in Sources */,
 				E9AC3AAE1DF0AA5000A91A97 /* transform3D.cpp in Sources */,
 				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
+				6337FDD01E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp in Sources */,
 				D2AC40761E423A2D0091076F /* Nodo_HayParaHablar.cpp in Sources */,
 				D2AC40571E42144C0091076F /* Nodo_Avisado.cpp in Sources */,
 				6396E2811E4792C400589082 /* GraphNode.cpp in Sources */,
@@ -1032,12 +1279,15 @@
 				E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */,
 				E9AC3A5F1DF0AA4800A91A97 /* camara.cpp in Sources */,
 				884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */,
+				6337FDFD1E5F52B500126C35 /* Nodo_QVigilar.cpp in Sources */,
 				D2AC40A21E4242900091076F /* NodoCubrirse.cpp in Sources */,
+				6337FDDC1E5F364A00126C35 /* Nodo_QAlarma_Cercano.cpp in Sources */,
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
 				E9AC3A5E1DF0AA4800A91A97 /* alarma.cpp in Sources */,
 				D2AC40961E4240250091076F /* Nodo_AlarmaRota.cpp in Sources */,
 				D2AC40841E423D1C0091076F /* Nodo_PuedoAtacarDistancia.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,
+				6337FDD31E5F293D00126C35 /* Nodo_QCombatir.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

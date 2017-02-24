@@ -13,7 +13,7 @@ enum Prioridades{
     P_ENEMIGO = 0,
     P_ALARMA,
     P_AVISO,
-    P_RADIO,
+    P_AYUDA,
     P_RUIDO,
     P_VIDA,
     P_HAMBRE,

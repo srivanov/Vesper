@@ -12,14 +12,14 @@
  RECORDS
  */
 
-Record::Record(int&ID , dvector3D* posicion) : posicionRespuesta(nullptr){
+Record::Record(const int&ID , dvector3D* posicion) : posicionRespuesta(nullptr){
     romper = false;
     IDRespuesta = -1;
     IDSolicitante = ID;
     posicionSolicitante = posicion;
 }
 
-Record::Record(int& ID, bool b) : posicionSolicitante(nullptr) , posicionRespuesta(nullptr){
+Record::Record(const int& ID, bool b) : posicionSolicitante(nullptr) , posicionRespuesta(nullptr){
     romper = b;
     IDRespuesta = -1;
     IDSolicitante = ID;
@@ -57,11 +57,11 @@ LevelBlackBoard::~LevelBlackBoard(){
 }
 
 
-std::string LevelBlackBoard::key_converter(int &ID, const Prioridades &tipo){
+std::string LevelBlackBoard::key_converter(const int &ID, const Prioridades &tipo){
     return std::to_string(ID)+"-"+std::to_string(tipo);
 }
 
-bool LevelBlackBoard::exist_record(int &ID, const Prioridades& tipo){
+bool LevelBlackBoard::exist_record(const int &ID, const Prioridades& tipo){
     it = m_peticiones.find(key_converter(ID,tipo));
     if(it!=m_peticiones.end()) return true;
     return false;
@@ -87,21 +87,21 @@ bool LevelBlackBoard::AnswerRecord(const Prioridades &tipo,int& ID_Res, dvector3
     return respuesta;
 }
 
-bool LevelBlackBoard::CreateRecord(int &ID, const Prioridades &tipo, dvector3D * posicion){
+bool LevelBlackBoard::CreateRecord(const int &ID, const Prioridades &tipo, dvector3D * posicion){
     if (exist_record(ID, tipo)) return false;
     
     m_peticiones.insert(std::pair<std::string, Record*>(key_converter(ID, tipo),new Record(ID,posicion)));
     return true;
 }
 
-bool LevelBlackBoard::CreateRecord(int &ID, const Prioridades &tipo, bool accion){
+bool LevelBlackBoard::CreateRecord(const int &ID, const Prioridades &tipo, bool accion){
     if (exist_record(ID, tipo)) return false;
     
     m_peticiones.insert(std::pair<std::string, Record*>(key_converter(ID, tipo),new Record(ID,accion)));
     return true;
 }
 
-bool LevelBlackBoard::RemoveRecord(int &ID, const Prioridades &tipo){
+bool LevelBlackBoard::RemoveRecord(const int &ID, const Prioridades &tipo){
     if (exist_record(ID, tipo)) {
         delete it->second;
         m_peticiones.erase(it);
@@ -110,7 +110,7 @@ bool LevelBlackBoard::RemoveRecord(int &ID, const Prioridades &tipo){
     return false;
 }
 
-Record * LevelBlackBoard::getRecord(int &ID, const Prioridades &tipo){
+Record * LevelBlackBoard::getRecord(const int &ID, const Prioridades &tipo){
     if(!exist_record(ID, tipo)) return nullptr;
     return it->second;
 }

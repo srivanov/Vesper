@@ -24,8 +24,8 @@ public:
     int IDRespuesta;
     dvector3D * posicionRespuesta;
     dvector3D * const getPosition() const{return posicionSolicitante;}
-    Record(int&,dvector3D*);
-    Record(int&,bool);
+    Record(const int&,dvector3D*);
+    Record(const int&,bool);
     bool HasAnswer();
     ~Record();
 };
@@ -35,16 +35,16 @@ class LevelBlackBoard{
     LevelBlackBoard();
     std::map<std::string,Record*>::iterator it;
     std::map<std::string,Record*> m_peticiones;
-    std::string key_converter(int& ID,const Prioridades& tipo);
+    std::string key_converter(const int& ID,const Prioridades& tipo);
     bool regulator(dvector3D*);
 public:
     ~LevelBlackBoard();
-    Record * getRecord(int&,const Prioridades&);
-    bool exist_record(int&,const Prioridades&);
+    Record * getRecord(const int&,const Prioridades&);
+    bool exist_record(const int&,const Prioridades&);
     bool AnswerRecord(const Prioridades&,int&,dvector3D*);
-    bool CreateRecord(int&,const Prioridades&,dvector3D*);
-    bool CreateRecord(int&,const Prioridades&,bool);
-    bool RemoveRecord(int&,const Prioridades&);
+    bool CreateRecord(const int&,const Prioridades&,dvector3D*);
+    bool CreateRecord(const int&,const Prioridades&,bool);
+    bool RemoveRecord(const int&,const Prioridades&);
     static LevelBlackBoard * instance();
 };
 
