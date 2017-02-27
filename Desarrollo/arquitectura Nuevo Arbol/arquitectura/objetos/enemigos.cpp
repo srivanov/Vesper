@@ -26,10 +26,8 @@ enemigos::enemigos(int& ID){
     
     dvector3D dim(1,1,1);
     dvector3D pos(0,0,0);
-    
-	fisica->crearBodyDinamico(dim, pos);
+    fisica->crearBodyDinamico(dim, pos);
 	
-	aux = NULL;
 	setType(tENEMIGOS);
 	
     k = 0; // PROVISIONAL
@@ -37,14 +35,6 @@ enemigos::enemigos(int& ID){
     
     muero = false; // VARIABLE ARQUITECTURA
     
-    // VARIABLES
-    /*
-	srand(time(NULL));
-	int sed = rand()%20 + 1;
-	int hambre = rand()%20 + 1;
-     */
-    // SISTEMA DE DECISION
-    //STD = new estados();
     
     // PERSONAL BLACKBOARD
     book = NpcLibrary::instancia()->add_book(ID, getPosicion());
@@ -60,13 +50,12 @@ enemigos::enemigos(int& ID){
 
 enemigos::~enemigos(){
     delete tree;
-    if(!NpcLibrary::instancia()->remove_book(m_ID))
-        std::cout << "ERROR AL BORRAR LIBRO" << std::endl;
-    //delete STD;
+    NpcLibrary::instancia()->remove_book(m_ID);
 }
 
 void enemigos::update(){
 	// CODIGO GUARRO
+    k++;
 	if(k%30==0){
         book->hambre++;
 		cout << "HAMBRE : " << book->hambre << std::endl;
@@ -74,20 +63,21 @@ void enemigos::update(){
         cout << "SED : " << book->sed << std::endl;
         k = 0;
 	}
-	k++;
-    
 	// FIN CODIGO GUARRO
+    
+    
+    
+    
+    tree->run(m_ID);
+	mover(*book->VectorMovimiento);
+	rotarConRaton(*getPosicion() + *book->VectorMovimiento);
+	GameObject::update();
     book->updateBook();
+    
     if (book->Evento) {
         tree->reset();
         book->Evento = false;
     }
-    tree->run(m_ID);
-	//STD->run(m_ID);
-    
-	this->mover(*book->VectorMovimiento);
-	this->rotarConRaton(*getPosicion() + *book->VectorMovimiento);
-	GameObject::update();
 }
 
 void enemigos::contacto(GameObject *g){

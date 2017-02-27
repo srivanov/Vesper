@@ -13,7 +13,6 @@
 #include <time.h>
 
 class Nodo_AVigilar : public Nodo_base {
-    time_t tiempo;
 public:
     Nodo_AVigilar(){}
     ~Nodo_AVigilar(){}

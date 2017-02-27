@@ -9,7 +9,7 @@
 #include "Nodo_QAlarma_Cercano.hpp"
 
 short Nodo_QAlarma_Cercano::run(const int &ID){
-    cout << "ALARMA CERCANA?" << endl;
+    //cout << "ALARMA CERCANA?" << endl;
     if(activado){
         short answer = runHijos(ID);
         if(answer==FUNCIONO) activado = false;

@@ -9,7 +9,7 @@
 #include "Nodo_QAyudar.hpp"
 
 short Nodo_QAyudar::run(const int &ID){
-    cout << "AYUDAR?" << endl;
+    //cout << "AYUDAR?" << endl;
     if(activado){
         short answer = runHijos(ID);
         if(answer==FUNCIONO) activado = false;

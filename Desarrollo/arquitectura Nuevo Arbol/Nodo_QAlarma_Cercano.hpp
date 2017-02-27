@@ -12,7 +12,6 @@
 #include "Nodo_Condicional_Secuencial.hpp"
 
 class Nodo_QAlarma_Cercano : public Nodo_Condicional_Secuencial{
-    int hijo;
 public:
     short run(const int&);
     Nodo_QAlarma_Cercano(){hijo=0;}

@@ -9,7 +9,7 @@
 #include "Nodo_QHidratarse.hpp"
 
 short Nodo_QHidratarse::run(const int &ID){
-    cout << "BEBER?" << endl;
+    //cout << "BEBER?" << endl;
     if(activado){
         short answer = runHijos(ID);
         if(answer==FUNCIONO) activado = false;
@@ -26,13 +26,8 @@ short Nodo_QHidratarse::run(const int &ID){
     Record * record = Level->getRecord(ID, P_SED);
     if (book->sed>UMBRALSED) {
         if(!record)
-            Level->CreateRecord(
-                                ID,
-                                P_SED,
-                                book->getPosition()
-                                );
-        else if(record && record->HasAnswer()){
-            
+            Level->CreateRecord(ID,P_SED,book->getPosition());
+        else if(record->HasAnswer()){
             book->notify(record->IDRespuesta,P_SED, record->posicionRespuesta);
             return RUNNING;
         }

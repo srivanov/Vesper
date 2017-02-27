@@ -34,9 +34,6 @@ void trigger_system::update(){
     update_trigger();
     for(int i=0;i<TRIGGER_VECTOR.size();i++){
         for (int j=0; j<AGENTS.size(); j++) {
-            if(AGENTS[j]->ExistEventByID(TRIGGER_VECTOR[i]->_idTrigger))
-                continue;
-            
             if (TRIGGER_VECTOR[i]->_radio==-1) {
                 AGENTS[j]->notify(TRIGGER_VECTOR[i]->_idTrigger, TRIGGER_VECTOR[i]->_type, TRIGGER_VECTOR[i]->_pos);
                 continue;

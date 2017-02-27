@@ -100,11 +100,10 @@ class Behaviour_tree2 {
     Nodo_base * ConstruirSubRamaVigilar();
     Nodo_base * ConstruirSubRamaPatrullar();
     
-    Nodo_base * SingleTree;
+    
     static Behaviour_tree2 * constructor;
 public:
     static Behaviour_tree2 * instancia();
-    Nodo_base * getSingleTree();
     
     Nodo_base * ArbolPorDefecto();
     

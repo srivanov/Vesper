@@ -40,7 +40,6 @@ struct Eventos{
     Eventos(int& ,const Prioridades&, std::vector<dvector3D*>);
     ~Eventos();
     int m_ID;
-    Prioridades m_tipo;
     time_t m_time;
     std::vector<dvector3D*> m_posiciones;
 };
@@ -48,16 +47,14 @@ struct Eventos{
 class NpcBook{
     dvector3D * PosicionPropia;
     std::vector<dvector3D*> PosicionesDestino;
-    std::vector<Eventos*> pila;
-    void remove_Events(int&);
-    void add_Event(int&,const Prioridades& tipo, dvector3D * posicion);
-    void add_Event(int&,const Prioridades& tipo, std::vector<dvector3D*> posicion);
-    void changeObjective(const Prioridades&,int&);
-    void changeObjective(const Prioridades&,dvector3D*);
-    std::vector<dvector3D*> PathPlanning(dvector3D*);
+    std::map<Prioridades,Eventos*> pila;
+    std::map<Prioridades,Eventos*>::iterator it;
+    void valueObjective(const Prioridades&);
+    void changeObjective();
+    std::vector<dvector3D*> PathPlanning(std::vector<dvector3D*>);
 public:
     int getMoral();
-    void remove_Events(const Prioridades&);
+    void remove_EventsByType(const Prioridades&);
     bool Enemigo , Aviso , Ruido, Alarma , Evento , Alerta ;
     int m_ID;
     void resetVectorMovimiento();
@@ -65,10 +62,9 @@ public:
     void notify(int&,const Prioridades&,dvector3D *);
     void notify(int&,const Prioridades&,std::vector<dvector3D*>);
     dvector3D * getPosition() const {return PosicionPropia;}
-    bool ExistEventByID(int& ID);
     dvector3D * lastPosition() const;
     void updateBook();
-    bool updatePilaObjetivo();
+    bool updateObjetivo();
     bool ExistEventByType(const Prioridades&);
     ~NpcBook();
     dvector3D * VectorMovimiento;

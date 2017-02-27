@@ -9,9 +9,9 @@
 #include "Nodo_ACurarse.hpp"
 
 short Nodo_ACurarse::run(const int &ID){
-    cout << "ME CURO" << endl;
+    //cout << "ME CURO" << endl;
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
-    book->remove_Events(P_VIDA);
+    book->remove_EventsByType(P_VIDA);
     book->salud+=CURACION;
     return FUNCIONO;
 }

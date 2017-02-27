@@ -9,6 +9,6 @@
 #include "Nodo_AHuir.hpp"
 
 short Nodo_AHuir::run(const int &ID){
-    cout << "HUYO" << endl;
+    //cout << "HUYO" << endl;
     return FUNCIONO;
 }

@@ -33,9 +33,9 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector2D initialPosition,dve
     BolsaNodos->add_node(final_camino);
     
     for (int i=0; i<BolsaNodos->getNodes().size(); i++) {
-        cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
+        //cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
     }
-    cout << endl;
+    //cout << endl;
     return BolsaNodos->getCamino();
 }
 
@@ -71,7 +71,7 @@ bool PathPlanning::Pathbuilding(){
     while (Revalorar(BolsaNodosAux));
     final_camino = AUX;
     
-    cout << "PESO AUX: " << BolsaNodosAux->peso << " | PESO : " << BolsaNodos->peso << endl;
+    //cout << "PESO AUX: " << BolsaNodosAux->peso << " | PESO : " << BolsaNodos->peso << endl;
     
     if(BolsaNodosAux->peso<BolsaNodos->peso)
         BolsaNodos->rebuild(BolsaNodosAux);

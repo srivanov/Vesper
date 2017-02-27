@@ -13,19 +13,19 @@
 
 Nodo_Mover::~Nodo_Mover(){}
 short Nodo_Mover::run(const int &id){
-    //cout << "NODO MOVER" << endl;
+    ////cout << "NODO MOVER" << endl;
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     
     book->resetVectorMovimiento();
     
-    if (book->lastPosition()) {
+    if(book->lastPosition()){
         if(aux==-1)
             return updatePosition(id);
         else
             return updateVMovement(id);
     }
-    return true;
+    return FUNCIONO;
 }
 
 short Nodo_Mover::updateVMovement(const int &id){
@@ -49,10 +49,9 @@ short Nodo_Mover::updatePosition(const int &id){
     yABS = posObjetivo.y-posPropia.y;
     
     if(aux<1.5f){
-        book->updatePilaObjetivo();
-        aux = -1;
+        book->updateObjetivo();
+        reset();
     }
-    
     return RUNNING;
 }
 

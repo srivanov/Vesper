@@ -9,6 +9,6 @@
 #include "Nodo_AHablar.hpp"
 
 short Nodo_AHablar::run(const int &ID){
-    cout << "HE HABLADO" << endl;
+    //cout << "HE HABLADO" << endl;
     return FUNCIONO;
 }

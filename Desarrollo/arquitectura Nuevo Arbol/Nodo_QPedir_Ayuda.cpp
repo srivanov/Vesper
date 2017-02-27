@@ -9,7 +9,7 @@
 #include "Nodo_QPedir_Ayuda.hpp"
 
 short Nodo_QPedir_Ayuda::run(const int &ID){
-    cout << "PEDIR AYUDA?" << endl;
+    //cout << "PEDIR AYUDA?" << endl;
     //TO DO: POR DEFINIR FUNCION
     return FALLO;
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);

@@ -9,9 +9,9 @@
 #include "Nodo_AHidratarse.hpp"
 
 short Nodo_AHidratarse::run(const int &ID){
-    cout << "ME HIDRATO" << endl;
+    //cout << "ME HIDRATO" << endl;
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
-    book->remove_Events(P_SED);
+    book->remove_EventsByType(P_SED);
     book->sed-=HIDRATACION;
     return FUNCIONO;
 }

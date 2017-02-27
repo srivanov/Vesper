@@ -10,8 +10,10 @@
 #define Types_h
 
 enum Prioridades{
-    P_ENEMIGO = 0,
+    P_VOID = 0,
+    P_ENEMIGO,
     P_ALARMA,
+    P_ALERTA,
     P_AVISO,
     P_AYUDA,
     P_RUIDO,

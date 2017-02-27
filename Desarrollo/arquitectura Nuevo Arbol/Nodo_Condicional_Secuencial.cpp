@@ -25,9 +25,6 @@ short Nodo_Condicional_Secuencial::runHijos(const int& ID){
 }
 
 void Nodo_Condicional_Secuencial::reset(){
-    for (int i=0; i<hijos.size(); i++) {
-        hijos[i]->reset();
-    }
+    Nodo_Secuencia::reset();
     activado = false;
-    hijo = 0;
 }

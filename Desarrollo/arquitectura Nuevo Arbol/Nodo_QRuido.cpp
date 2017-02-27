@@ -9,7 +9,7 @@
 #include "Nodo_QRuido.hpp"
 
 short Nodo_QRuido::run(const int &ID){
-    cout << "RUIDO?" << endl;
+    //cout << "RUIDO?" << endl;
     
     if(activado){
         short answer = runHijos(ID);

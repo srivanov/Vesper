@@ -6,80 +6,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "arquitectura/NpcLibrary.cpp"
-            timestampString = "509633187.256018"
+            timestampString = "509913443.673001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "NpcBook::updatePilaObjetivo()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "NpcBook::notify(int&amp; ID,const Prioridades&amp; tipo, dvector3D * posicion)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "arquitectura/NpcLibrary.cpp"
-            timestampString = "509633187.256018"
+            timestampString = "509913465.783294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "NpcBook::updatePilaObjetivo()"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "NpcBook::valueObjective(const Prioridades &amp;tipo)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "arquitectura/NpcLibrary.cpp"
-            timestampString = "509633187.256018"
+            timestampString = "509913467.693227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "NpcBook::updatePilaObjetivo()"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "NpcBook::valueObjective(const Prioridades &amp;tipo)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Nodo_Mover.cpp"
-            timestampString = "509572390.413321"
+            filePath = "arquitectura/NpcLibrary.cpp"
+            timestampString = "509913468.503032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "Nodo_Mover::run(const int &amp;id)"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "NpcBook::valueObjective(const Prioridades &amp;tipo)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Nodo_Mover.cpp"
-            timestampString = "509572399.253115"
+            filePath = "arquitectura/NpcLibrary.cpp"
+            timestampString = "509913470.32512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "Nodo_Mover::run(const int &amp;id)"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "NpcBook::valueObjective(const Prioridades &amp;tipo)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

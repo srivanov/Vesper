@@ -59,14 +59,12 @@ NpcBook * NpcLibrary::recover_book(const int &ID){
  */
 
 Eventos::Eventos(int& ID, const Prioridades& tipo, dvector3D * posicion){
-    m_tipo = tipo;
     m_ID = ID;
     m_posiciones.push_back(posicion);
     m_time = time(NULL) + 3;
 }
 Eventos::Eventos(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posiciones){
     m_ID = ID;
-    m_tipo = tipo;
     m_posiciones = posiciones;
 }
 Eventos::~Eventos(){}
@@ -85,56 +83,66 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion){
     PosicionPropia = posicion;
     VectorMovimiento = new dvector3D(0,0,0);
     Enemigo = Aviso = Ruido = Alarma = Evento = Alerta = false;
+    pila.clear();
 }
 
 NpcBook::~NpcBook(){}
 
-void NpcBook::notify(int& ID,const Prioridades& tipo, dvector3D * posicion){add_Event(ID,tipo, posicion);}
-
-void NpcBook::notify(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posiciones){add_Event(ID,tipo, posiciones);}
-
-void NpcBook::add_Event(int& ID,const Prioridades& tipo, dvector3D *posicion){
+void NpcBook::notify(int& ID,const Prioridades& tipo, dvector3D * posicion){
     Evento = true;
-    if (pila.empty()) {
-        pila.push_back(new Eventos(ID,tipo,posicion));
-        return;
-    }
-    if (tipo>P_RUIDO) {
-        for (int i=0; i<pila.size(); i++) {
-            if(tipo>=pila[i]->m_tipo) continue;
-            
-            pila.insert(pila.begin()+i, new Eventos(ID,tipo,posicion));
-            return;
-        }
-    }
-    changeObjective(tipo, posicion);
+    it = pila.find(tipo);
+    if(it!=pila.end()) remove_EventsByType(it->first);
+    
+    pila.insert(std::pair<Prioridades, Eventos*>(tipo,new Eventos(ID,tipo,posicion)));
+    
+    if(tipo<P_VIDA)
+        valueObjective(tipo);
 }
 
-void NpcBook::changeObjective(const Prioridades &tipo, dvector3D *posicion){
-    switch (tipo) {
+void NpcBook::notify(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posiciones){
+    Evento = true;
+    it = pila.find(tipo);
+    if(it!=pila.end()) remove_EventsByType(it->first);
+    
+    pila.insert(std::pair<Prioridades, Eventos*>(tipo,new Eventos(ID,tipo,posiciones)));
+}
+
+
+
+void NpcBook::valueObjective(const Prioridades &tipo){
+    it = pila.find(tipo);
+    if(it!=pila.end()) return;
+    switch (it->first) {
         case P_ENEMIGO:
-            Enemigo = true; Ruido = false;
-            PosicionesDestino.clear();
-            PosicionesDestino = PathPlanning(posicion);
+            Enemigo = true;
+            changeObjective();
+            Ruido = false;
+            remove_EventsByType(P_RUIDO);
+            break;
+        case P_ALERTA:
+            Alerta = true;
             break;
         case P_ALARMA:
+            if(Enemigo) return;
             Alarma = true;
-            break;
+            changeObjective();
         case P_AVISO:
             Aviso = true;
             if(Ruido) return;
-            PosicionesDestino.clear();
-            PosicionesDestino = PathPlanning(posicion);
+            changeObjective();
             break;
         case P_RUIDO:
             if (Enemigo) return;
             Ruido = true;
-            PosicionesDestino.clear();
-            PosicionesDestino = PathPlanning(posicion);
+            changeObjective();
             break;
-        default:
-            break;
+        case P_VOID: break;
+        default:changeObjective();break;
     }
+}
+void NpcBook::changeObjective(){
+    PosicionesDestino.clear();
+    PosicionesDestino = PathPlanning(it->second->m_posiciones);
 }
 
 int NpcBook::getMoral(){
@@ -142,57 +150,18 @@ int NpcBook::getMoral(){
     return calculo/100;
 }
 
-std::vector<dvector3D*> NpcBook::PathPlanning(dvector3D *posicionFinal){
-    std::vector<dvector3D*> resultado;
-    resultado.push_back(posicionFinal);
-    return  resultado;
-}
-
-void NpcBook::add_Event(int& ID, const Prioridades& tipo, std::vector<dvector3D*> posiciones){
-    if (pila.empty()) {
-        pila.push_back(new Eventos(ID,tipo,posiciones));
-        return;
-    }
-    
-    for (int i=0; i<pila.size(); i++) {
-        if(tipo>=pila[i]->m_tipo) continue;
-        
-        pila.insert(pila.begin()+i, new Eventos(ID,tipo,posiciones));
-        return;
-    }
-    
+std::vector<dvector3D*> NpcBook::PathPlanning(std::vector<dvector3D*> posiciones){
+    return  posiciones;
 }
 
 bool NpcBook::ExistEventByType(const Prioridades& tipo){
-    for (int i=0; i<pila.size(); i++) {
-        if(pila[i]->m_tipo!=tipo) continue;
-        changeObjective(tipo,i);
-        return true;
-    }
-    return false;
+    it = pila.find(tipo);
+    if(it==pila.end()) return false;
+    valueObjective(tipo);
+    return true;
 }
 
-void NpcBook::changeObjective(const Prioridades& tipo,int& it){
-    // TO DO: PATHPLANNING
-    PosicionesDestino.clear();
-    PosicionesDestino = pila[it]->m_posiciones;
-    
-}
-
-void NpcBook::remove_Events(const Prioridades&tipo){
-    for (int i=0; i<pila.size(); i++) {
-        if(pila[i]->m_tipo == P_PATRULLAR ||
-           pila[i]->m_tipo == P_VIGILAR)
-            continue;
-        if(pila[i]->m_tipo==tipo){
-            delete pila[i];
-            pila.erase(pila.begin()+i);
-            return;
-        }
-    }
-}
-
-bool NpcBook::updatePilaObjetivo(){
+bool NpcBook::updateObjetivo(){
     if(PosicionesDestino.empty()) return false;
     PosicionesDestino.erase(PosicionesDestino.begin());
     return true;
@@ -209,25 +178,24 @@ void NpcBook::resetVectorMovimiento(){
     VectorMovimiento->z = 0;
 }
 void NpcBook::updateBook(){
-    time_t aux = time(NULL);
-    for (int i=0; i<pila.size(); i++) {
-        if(pila[i]->m_time<=aux &&
-           (
-            pila[i]->m_tipo!=P_PATRULLAR &&
-            pila[i]->m_tipo!=P_VIGILAR
-            )
-           ){
-            delete pila[i];
-            pila.erase(pila.begin()+i);
-            i=-1;
+    it = pila.begin();
+    while(it!=pila.end()){
+        if(it->second->m_time<=time(NULL)
+           && it->first!=P_PATRULLAR
+           && it->first!=P_VIGILAR){
+            delete it->second;
+            pila.erase(it);
+            it = pila.begin();
+            continue;
         }
+        it++;
     }
 }
 
-bool NpcBook::ExistEventByID(int &ID){
-    for (int i=0; i<pila.size(); i++) {
-        if(pila[i]->m_ID == ID)
-            return true;
-    }
-    return false;
+void NpcBook::remove_EventsByType(const Prioridades &tipo){
+    it = pila.find(tipo);
+    if(it==pila.end()) return;
+    
+    delete it->second;
+    pila.erase(it);
 }

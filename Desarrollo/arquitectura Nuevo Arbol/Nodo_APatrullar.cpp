@@ -9,6 +9,6 @@
 #include "Nodo_APatrullar.hpp"
 
 short Nodo_APatrullar::run(const int &ID){
-    cout << "HE PATRULLADO" << endl;
+    //cout << "HE PATRULLADO" << endl;
     return FUNCIONO;
 }

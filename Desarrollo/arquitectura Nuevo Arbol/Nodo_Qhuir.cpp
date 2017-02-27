@@ -9,7 +9,7 @@
 #include "Nodo_Qhuir.hpp"
 
 short Nodo_Qhuir::run(const int &ID){
-    cout << "HUIR?" << endl;
+    //cout << "HUIR?" << endl;
     if(activado){
         short answer = runHijos(ID);
         if(answer==FUNCIONO) activado = false;

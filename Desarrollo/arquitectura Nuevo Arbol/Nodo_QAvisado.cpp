@@ -9,7 +9,7 @@
 #include "Nodo_QAvisado.hpp"
 
 short Nodo_QAvisado::run(const int &ID){
-    cout << "AVISADO?" << endl;
+    //cout << "AVISADO?" << endl;
     if(activado){
         short answer = runHijos(ID);
         if(answer==FUNCIONO) activado = false;

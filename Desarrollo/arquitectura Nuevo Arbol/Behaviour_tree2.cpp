@@ -214,15 +214,5 @@ Nodo_base * Behaviour_tree2::ConstruirSubRamaPatrullar(){
     return NodoSuperior;
 }
 
-Behaviour_tree2::~Behaviour_tree2(){
-    if (SingleTree)
-        delete SingleTree;
-}
+Behaviour_tree2::~Behaviour_tree2(){}
 
-
-Nodo_base * Behaviour_tree2::getSingleTree(){
-    if(!SingleTree)
-        SingleTree = ArbolPorDefecto();
-    
-    return SingleTree;
-}

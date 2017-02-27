@@ -51,7 +51,8 @@ void botiquin::update(){
         if (usos>0) usos--;
         else gastado = true;
     }
-    LevelBlackBoard::instance()->AnswerRecord(P_VIDA, ID, getPosicion());
+    if(!gastado)
+        LevelBlackBoard::instance()->AnswerRecord(P_VIDA, ID, getPosicion());
 }
 
 
