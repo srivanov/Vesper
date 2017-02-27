@@ -45,7 +45,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
         posJ = *nivelazo->getPlayer()->getPosicion();
     }
     campos.operator+(posJ);
-    
+//    campos = dvector3D(10,0,-10);
+//    dvector3D k;
     cam->addCamara(campos, posJ);
     
 	World_BlackBoard::instance();

@@ -50,6 +50,10 @@ GameObject* accion14(){
 	return NULL;
 }
 
+GameObject* accion15(){
+    return new superSockerObj();
+}
+
 obj_mapping mapping[] = {
 
 	{	1		,	""					,		0		},
@@ -66,6 +70,7 @@ obj_mapping mapping[] = {
 	{	12		,	"3d/pizza.jpg"		,	accion12	},
 	{	13		,	""					,		0		},
 	{	14		,	""					,	0	},
+    {	15 		,	"3d/letraE.png"					,	accion15	},
 	{	0		,	""					,		0		}
 
 };

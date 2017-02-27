@@ -12,6 +12,7 @@
 12	-	morado			-	COMIDA
 13	-	verde oscuro	-	CESPED
 14	-	verde + oscuro	-	REHEN
+15	-	azul turquesa 	-	ESCOPETA (SUPERSOCKER)
 
 
 
@@ -29,6 +30,7 @@
 { 12	,	"3d/pizza.jpg"		,	accion12	},
 { 13	,	""					,	accion13	},
 { 14	,	""					,	accion14	}
+{ 15	,	“3d/letraE.png”			,	accion15	}
 
 GameObject* accion1(){
 	

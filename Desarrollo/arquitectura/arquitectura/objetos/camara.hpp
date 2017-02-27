@@ -27,5 +27,6 @@ private:
 	class render* renderiza;
 	float incrX, incrY, incrZ, offsetX, offsetY, offsetZ, camSpeed;
     bool cerca, muero, rapido;
+    const float speed = 1.0f;
 };
 #endif /* camara_hpp */

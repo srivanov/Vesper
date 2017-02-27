@@ -135,7 +135,7 @@ void render::dibujarMapa(){
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
     nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
     
-    nodo_suelo->setPosition(vector3df((static_cast<nivel*>(getFather())->getAlto()/2)-0.5, (static_cast<nivel*>(getFather())->getAncho()/2)-0.5, 0));
+    nodo_suelo->setPosition(vector3df((static_cast<nivel*>(getFather())->getAlto()/2)-0.5, (static_cast<nivel*>(getFather())->getAncho()/2)-0.5, 0.5));
     
     nodo_suelo->setRotation(vector3df(90,180,180));
 	

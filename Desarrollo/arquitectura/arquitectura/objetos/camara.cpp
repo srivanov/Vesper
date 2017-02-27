@@ -28,7 +28,7 @@ camara::camara(){
 	offsetY = -5;
 	offsetZ = -10;
 	//velocidad de la camara
-	camSpeed = 1.5f; //TO DO: que la vel de la camara vaya acorde con la del player
+	camSpeed = 1.0f; //TO DO: que la vel de la camara vaya acorde con la del player
     //variable para zoom zoom zoom
     cerca = false;
 	aux = NULL;
@@ -67,11 +67,11 @@ void camara::setZoom(bool z){
     if(cerca){
         //distancia con zoom
         offsetX = 0; offsetY = -2.5; offsetZ = -5;
-        setCamSpeed(0.5);
+        setCamSpeed(speed*0.5);
     }else{
         //distancia normal
         offsetX = 0; offsetY = -5; offsetZ = -10;
-        setCamSpeed(1.5);
+        setCamSpeed(speed);
     }
 }
 
@@ -94,9 +94,9 @@ float* camara::getCamSpeed(){
 void camara::setRapido(bool r){
     rapido = r;
     if(r)
-    	camSpeed*=0.5f;
+    	camSpeed= speed * 0.5f;
     else
-        camSpeed=1.5f;
+        camSpeed=1.0f;
 }
 
 bool camara::getRapido(){
