@@ -111,7 +111,7 @@ void NpcBook::notify(int& ID,const Prioridades& tipo, std::vector<dvector3D*> po
 
 void NpcBook::valueObjective(const Prioridades &tipo){
     it = pila.find(tipo);
-    if(it!=pila.end()) return;
+    if(it==pila.end()) return;
     switch (it->first) {
         case P_ENEMIGO:
             Enemigo = true;

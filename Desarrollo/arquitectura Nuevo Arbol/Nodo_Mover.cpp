@@ -13,7 +13,7 @@
 
 Nodo_Mover::~Nodo_Mover(){}
 short Nodo_Mover::run(const int &id){
-    ////cout << "NODO MOVER" << endl;
+    //cout << "NODO MOVER" << endl;
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     
@@ -35,7 +35,7 @@ short Nodo_Mover::updateVMovement(const int &id){
     _movement->y = yABS*((VELOCIDAD*100/aux)/100);
     _movement->z = 0;
     
-    aux = -1;
+    reset();
     return RUNNING;
 }
 short Nodo_Mover::updatePosition(const int &id){
