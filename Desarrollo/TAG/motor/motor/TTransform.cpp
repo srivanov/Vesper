@@ -48,7 +48,7 @@ void TTransform::escalar(glm::vec3 esc){
 }
 
 void TTransform::beginDraw(){
-	//TO DO: mirar si es preorden o postorden
+	//IMPORTANTE: siempre postorden
 	pila->push(matriz);
 	pila->actual = pila->actual * *pila->top();
 //	printf("BEGIN DRAW Transform\n");

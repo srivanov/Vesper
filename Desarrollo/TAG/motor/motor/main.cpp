@@ -12,12 +12,12 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Shader.h"
-#include "camera.hpp"
+//#include "camera.hpp"
 //#include "TModelo.hpp"
 #include "TEscena.hpp"
 
-// dimensiones de la ventana
-const GLuint WIDTH = 800, HEIGHT = 600;
+//// dimensiones de la ventana
+//const GLuint WIDTH = 800, HEIGHT = 600;
 
 //ultima posicion del raton, inicializada al centro de la pantalla
 GLfloat lastX = WIDTH/2, lastY = HEIGHT/2;
@@ -68,13 +68,13 @@ void movimiento(TEscena* escena){
 	glm::vec3 mov;
 	
 	if (keys[GLFW_KEY_UP])
-		mov = glm::vec3(0.0f, 0.0f, 0.2f);
+		mov.z = 0.2f;
 	if (keys[GLFW_KEY_DOWN])
-		mov= glm::vec3(0.0f, 0.0f, -0.2f);
+		mov.z = -0.2f;
 	if (keys[GLFW_KEY_RIGHT])
-		mov = glm::vec3(0.2f, 0.0f, 0.0f);
+		mov.x = 0.2f;
 	if (keys[GLFW_KEY_LEFT])
-		mov = glm::vec3(-0.2f, 0.0f, 0.0f);
+		mov.x = -0.2f;
 	
 	escena->cambiar(mov);
 }
@@ -213,6 +213,8 @@ int main(int argc, const char * argv[]) {
 //		GLfloat camX = sin(glfwGetTime()) * radius;
 //		GLfloat camZ = cos(glfwGetTime()) * radius;
 		
+		
+		/*_______________________________________
 		GLint lightPosLoc = glGetUniformLocation(miShader.Program, "light.position");
 		GLint viewPosLoc  = glGetUniformLocation(miShader.Program, "viewPos");
 		glUniform3f(lightPosLoc, 3.0f, 2.0f, 3.0f);
@@ -226,6 +228,8 @@ int main(int argc, const char * argv[]) {
 		glUniform1f(glGetUniformLocation(miShader.Program, "light.linear"),    0.09);
 		glUniform1f(glGetUniformLocation(miShader.Program, "light.quadratic"), 0.032);
 		
+		__________________________________________*/
+		/*
 		// luz 2
 		GLint lightPosLoc2 = glGetUniformLocation(miShader.Program, "light2.position");
 		glUniform3f(lightPosLoc2, -5.0f, 5.0f, -3.0f);
@@ -241,9 +245,9 @@ int main(int argc, const char * argv[]) {
 		// brillantez del material
 		glUniform1f(glGetUniformLocation(miShader.Program, "shininess"), 32.0f);
 		
-		
+		*/
 		//view matrix
-		glm::mat4 view;
+//		glm::mat4 view;
 		
 		// para la camara trasladamos la escena entera en la direccion contraria a donde queremos movernos
 		// en este caso queremos movernos hacia atras con lo cual movemos la escena en el eje Z negativamente
@@ -252,7 +256,7 @@ int main(int argc, const char * argv[]) {
 //		view = camara.GetViewMatrix();
 		
 		//projection matrix
-		glm::mat4 projection;
+//		glm::mat4 projection;
 		
 		/*
 		 * primer parametro es FOV (Field of view), cambiando este valor conseguimos efecto de zoom
@@ -261,8 +265,8 @@ int main(int argc, const char * argv[]) {
 		 * el cuarto es el far value
 		 */
 //		projection = glm::perspective(glm::radians(camara.Zoom), (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 1000.0f);
-		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+//		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+//		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		
 //		glm::mat4 model;
 //		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));

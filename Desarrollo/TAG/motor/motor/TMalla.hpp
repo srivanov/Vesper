@@ -9,11 +9,7 @@
 #ifndef TMalla_hpp
 #define TMalla_hpp
 
-#include <stdio.h>
 #include <string>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_access.hpp>
-#include <glm/gtc/type_ptr.hpp>
 
 #include "Pila.h"
 #include "TEntidad.hpp"
@@ -29,6 +25,7 @@ public:
 	
 	void beginDraw();
 	void endDraw();
+	
 	//sucia
 	Shader* sh;
 private:

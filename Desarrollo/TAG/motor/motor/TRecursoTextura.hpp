@@ -28,8 +28,6 @@ public:
 	Texture* getTexture(){ return &texture; }
 private:
 	GLuint tex2OpenGL(unsigned char* image, int &tex_width, int &tex_height);
-	
-	
 	Texture texture;
 };
 

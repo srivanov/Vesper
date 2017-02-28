@@ -9,11 +9,6 @@
 #ifndef TTransform_hpp
 #define TTransform_hpp
 
-#include "Pila.h"
-#include <stdio.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include "TEntidad.hpp"
 
 class TTransform : public TEntidad{
@@ -28,6 +23,7 @@ public:
 	void rotar(glm::vec3 rot);
 	void escalar(glm::vec3 esc);
 	
+	glm::mat4 getMT() { return matriz; }
 	void beginDraw();
 	void endDraw();
 private:

@@ -7,9 +7,12 @@
 //
 
 #include "TCamara.hpp"
+#include "TNodo.hpp"
 
-TCamara::TCamara(){
-	
+TCamara::TCamara() : ID(0), Zoom(ZOOM){
+	esPerspectiva = true;
+	nearV = 0.1f;
+	farV = 20.0f;
 }
 
 TCamara::~TCamara(){
@@ -34,10 +37,39 @@ void TCamara::setFarValue(float f){
 	farV = f;
 }
 
-void TCamara::beginDraw(){
+void TCamara::Draw(TNodo* n){
 	
+	
+	while(n->getPadre()){
+		n = n->getPadre();
+		if(n->getEntidad())
+			trans.push(n->getEntidad()->getMT());
+	}
+	
+	glm::mat4 aux;
+	matriz = glm::mat4();
+	
+	while(trans.size() > 0){
+		aux = glm::inverse(trans.top());
+		matriz = matriz * aux;
+		trans.pop();
+	}
+	matriz = glm::inverse(matriz);
+	
+//	for (int i=0; i<matriz.length(); i++) {
+//		printf("%.1f %.1f %.1f %.1f \n",matriz[i].x,matriz[i].y,matriz[i].z,matriz[i].w);
+//	}
+//	std::cout << std::endl;
+	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "view"), 1, GL_FALSE, glm::value_ptr(matriz));
+	
+	projection = glm::perspective(glm::radians(Zoom), (GLfloat)w/(GLfloat)h, 0.1f, 1000.0f);
+	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+	/*
+	- nodoCamara = getCamaraActiva ();
+	+ recorrer el árbol a la inversa desde nodoCamara hasta la raiz
+	+ guardar el recorrido en una lista auxiliar de nodos de transformación invertir la lista auxiliar
+	+ recorrer la lista auxiliar multiplicando las matrices en una matriz auxiliar invertir la matriz auxiliar
+	 cargar la matriz auxiliar en la matriz MODELVIEW de la librería gráfica*/
 }
 
-void TCamara::endDraw(){
-	
-}
+
