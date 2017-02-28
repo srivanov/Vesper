@@ -17,6 +17,7 @@
 17	-	azul clarito	-	GLOBO DE AGUA
 18 	-	rosa clarito 	-	CHICLE
 19 	-	verde clarito	-	bomba humo
+20 	- 	marrón rojizo	-	arbustos delimitan mapa
 
 
 
