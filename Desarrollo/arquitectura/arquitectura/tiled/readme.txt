@@ -13,6 +13,10 @@
 13	-	verde oscuro	-	CESPED
 14	-	verde + oscuro	-	REHEN
 15	-	azul turquesa 	-	ESCOPETA (SUPERSOCKER)
+16	-	carne 		-	LANZACARAMELOS
+17	-	azul clarito	-	GLOBO DE AGUA
+18 	-	rosa clarito 	-	CHICLE
+19 	-	verde clarito	-	bomba humo
 
 
 
@@ -29,8 +33,12 @@
 { 11	,	"3d/puerta.jpg"		,	accion11	},
 { 12	,	"3d/pizza.jpg"		,	accion12	},
 { 13	,	""					,	accion13	},
-{ 14	,	""					,	accion14	}
-{ 15	,	“3d/letraE.png”			,	accion15	}
+{ 14	,	""					,	accion14	},
+{ 15	,	“3d/letraE.png”		,	accion15	},
+{ 16	,	“3d/letraL.png”		,	accion16	},
+{ 17	,	“3d/globoagua.png”	,	accion17	},
+{ 18	,	“3d/chicle.png”		,	accion18	},
+{ 19	,	“3d/bombahumo.png”	,	accion19	},
 
 GameObject* accion1(){
 	
