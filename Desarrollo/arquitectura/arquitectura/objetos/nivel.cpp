@@ -54,6 +54,22 @@ GameObject* accion15(){
     return new superSockerObj();
 }
 
+GameObject* accion16(){
+    return new lanzaCaramelosObj();
+}
+
+GameObject* accion17(){
+    return new globoAguaObj();
+}
+
+GameObject* accion18(){
+    return new chicleObj();
+}
+
+GameObject* accion19(){
+    return new bombaHumoObj();
+}
+
 obj_mapping mapping[] = {
 
 	{	1		,	""					,		0		},
@@ -70,7 +86,11 @@ obj_mapping mapping[] = {
 	{	12		,	"3d/pizza.jpg"		,	accion12	},
 	{	13		,	""					,		0		},
 	{	14		,	""					,	0	},
-    {	15 		,	"3d/letraE.png"					,	accion15	},
+    {	15 		,	"3d/letraE.png"		,	accion15	},
+    {	16 		,	"3d/letraL.png"		,	accion16	},
+    {	17 		,	"3d/globoagua.png"		,	accion17	},
+    {	18 		,	"3d/chicle.png"		,	accion18	},
+    {	19 		,	"3d/bombahumo.png"		,	accion19	},
 	{	0		,	""					,		0		}
 
 };
