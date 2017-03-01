@@ -15,7 +15,8 @@ TRecursoMalla::TRecursoMalla(){
 }
 
 TRecursoMalla::~TRecursoMalla(){
-	
+	gestor = nullptr;
+	meshes.clear();
 }
 
 void TRecursoMalla::cargarFichero(std::string &ruta){

@@ -15,7 +15,10 @@ TMalla::TMalla(){
 }
 
 TMalla::~TMalla(){
-	
+	sh = nullptr;
+	pila = nullptr;
+	malla = nullptr;
+	gestor = nullptr;
 }
 
 void TMalla::cargarMalla(std::string fichero){

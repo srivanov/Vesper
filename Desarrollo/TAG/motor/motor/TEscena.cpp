@@ -12,12 +12,16 @@ TEscena::TEscena(Shader &shader){
 	septimo = new TNodo();
 	
 	root->addHijo(uno);
-	uno->addHijo(dos);
-	uno->addHijo(sexto);
-	dos->addHijo(tres);
-	root->addHijo(cuarto);
+	root->addHijo(dos);
+	root->addHijo(sexto);
+
 	sexto->addHijo(quinto);
 	sexto->addHijo(septimo);
+	
+	uno->addHijo(tres);
+	
+	dos->addHijo(cuarto);
+
 	
 	t.sh = &shader;
 	t.cargarMalla("../Models/cube.obj");
@@ -31,6 +35,7 @@ TEscena::TEscena(Shader &shader){
 	
 	luz.sh = &shader;
 	
+	root->setEntidad(&troot);
 	uno->setEntidad(&tr);
 	dos->setEntidad(&tr2);
 	tres->setEntidad(&t);
@@ -40,17 +45,17 @@ TEscena::TEscena(Shader &shader){
 	septimo->setEntidad(&luz);
 	
 	tr.trasladar(glm::vec3(-0.8f, 0.0f, 0.0f));
-	tr2.trasladar(glm::vec3(3.0f, 0.0f, 0.0f));
+	tr2.trasladar(glm::vec3(3.0f, 2.0f, 0.0f));
 	
-	trCam.trasladar(glm::vec3(0.0f, 0.0f, -5.0f));
+	trCam.trasladar(glm::vec3(0.0f, 0.0f, 5.0f));
 }
 
 TEscena::~TEscena(){
 	delete root;
-	delete uno;
-	delete dos;
-	delete tres;
-	delete cuarto;
+//	delete uno;
+//	delete dos;
+//	delete tres;
+//	delete cuarto;
 }
 
 void TEscena::Draw(){

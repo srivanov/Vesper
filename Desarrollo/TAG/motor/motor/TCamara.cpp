@@ -16,7 +16,7 @@ TCamara::TCamara() : ID(0), Zoom(ZOOM){
 }
 
 TCamara::~TCamara(){
-	
+	sh = nullptr;
 }
 
 void TCamara::setPerspectiva(){
@@ -50,26 +50,25 @@ void TCamara::Draw(TNodo* n){
 	matriz = glm::mat4();
 	
 	while(trans.size() > 0){
-		aux = glm::inverse(trans.top());
+		aux = trans.top();
 		matriz = matriz * aux;
 		trans.pop();
 	}
-	matriz = glm::inverse(matriz);
 	
-//	for (int i=0; i<matriz.length(); i++) {
-//		printf("%.1f %.1f %.1f %.1f \n",matriz[i].x,matriz[i].y,matriz[i].z,matriz[i].w);
-//	}
-//	std::cout << std::endl;
+	matriz = glm::inverse(matriz);
+//	glm::vec3 pos = glm::column(matriz, 3);
+//	matriz = glm::lookAt(pos, pos + glm::vec3(0,0,-1), glm::vec3(0,1,0));
+	
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "view"), 1, GL_FALSE, glm::value_ptr(matriz));
 	
 	projection = glm::perspective(glm::radians(Zoom), (GLfloat)w/(GLfloat)h, 0.1f, 1000.0f);
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-	/*
-	- nodoCamara = getCamaraActiva ();
-	+ recorrer el árbol a la inversa desde nodoCamara hasta la raiz
-	+ guardar el recorrido en una lista auxiliar de nodos de transformación invertir la lista auxiliar
-	+ recorrer la lista auxiliar multiplicando las matrices en una matriz auxiliar invertir la matriz auxiliar
-	 cargar la matriz auxiliar en la matriz MODELVIEW de la librería gráfica*/
+	
+//	matriz = glm::inverse(matriz);
+//	for (int i=0; i<matriz.length(); i++) {
+//		printf("%.1f %.1f %.1f %.1f \n",matriz[i].x,matriz[i].y,matriz[i].z,matriz[i].w);
+//	}
+//	std::cout << std::endl;
 }
 
 

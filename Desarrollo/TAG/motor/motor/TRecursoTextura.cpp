@@ -12,9 +12,7 @@ TRecursoTextura::TRecursoTextura(){
 	
 }
 
-TRecursoTextura::~TRecursoTextura(){
-	
-}
+TRecursoTextura::~TRecursoTextura(){}
 
 void TRecursoTextura::cargarFichero(std::string &name){
 	int tex_width, tex_height;

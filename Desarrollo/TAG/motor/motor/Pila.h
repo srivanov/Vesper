@@ -36,7 +36,7 @@ public:
 	
 	glm::mat4 actual;
 protected:
-	Pila(){ pila.push(glm::mat4(1.0f)); }
+	Pila(){}
 private:
 	std::stack<glm::mat4> pila;
 };

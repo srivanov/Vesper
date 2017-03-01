@@ -18,7 +18,11 @@ TGestorRecursos::TGestorRecursos(){
 }
 
 TGestorRecursos::~TGestorRecursos(){
-	
+	for(std::vector<TRecurso*>::iterator it = recursos.begin();it!=recursos.end();++it){
+		delete (*it);
+		(*it) = 0;
+	}
+	recursos.clear();
 }
 
 TRecurso* TGestorRecursos::getRecurso(std::string name, typeRecurso tipo){

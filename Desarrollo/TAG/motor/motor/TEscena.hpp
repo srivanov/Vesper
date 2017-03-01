@@ -23,7 +23,7 @@ private:
 	TNodo *root, *uno, *dos, *tres, *cuarto, *quinto, *sexto, *septimo;
 	TGestorRecursos* gestor;
 	TMalla t, t2;
-	TTransform tr, tr2, trCam;
+	TTransform tr, tr2, trCam, troot;
 	TCamara cam;
 	TLuz luz;
 };

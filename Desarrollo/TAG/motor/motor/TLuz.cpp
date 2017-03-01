@@ -14,7 +14,7 @@ TLuz::TLuz(){
 }
 
 TLuz::~TLuz(){
-	
+	sh = nullptr;
 }
 
 void TLuz::setIntensidad(glm::vec4 c){
@@ -37,12 +37,12 @@ void TLuz::Draw(TNodo* n){
 	matriz = glm::mat4();
 	
 	while(trans.size() > 0){
-		aux = glm::inverse(trans.top());
+		aux = trans.top();
 		matriz = matriz * aux;
 		trans.pop();
 	}
 	pos = glm::column(matriz, 3);
-//	printf("%.1f %.1f %.1f \n", pos.x, pos.y, pos.z);
+//	printf("LUZ:         %.1f %.1f %.1f \n", pos.x, pos.y, pos.z);
 	glUniform3f(glGetUniformLocation(sh->Program, "light.position"), pos.x, pos.y, pos.z);
 	
 	//propiedades de la luz

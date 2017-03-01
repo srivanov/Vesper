@@ -13,7 +13,7 @@ TTransform::TTransform(){
 }
 
 TTransform::~TTransform(){
-	
+	pila = nullptr;
 }
 
 void TTransform::identidad(){

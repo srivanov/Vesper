@@ -68,9 +68,9 @@ void movimiento(TEscena* escena){
 	glm::vec3 mov;
 	
 	if (keys[GLFW_KEY_UP])
-		mov.z = 0.2f;
-	if (keys[GLFW_KEY_DOWN])
 		mov.z = -0.2f;
+	if (keys[GLFW_KEY_DOWN])
+		mov.z = 0.2f;
 	if (keys[GLFW_KEY_RIGHT])
 		mov.x = 0.2f;
 	if (keys[GLFW_KEY_LEFT])

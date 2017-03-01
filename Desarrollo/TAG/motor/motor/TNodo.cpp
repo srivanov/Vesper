@@ -14,20 +14,28 @@ TNodo::TNodo(){
 }
 
 TNodo::~TNodo(){
+	padre = nullptr;
+//	if (entidad)
+//		delete entidad;
+	std::vector<TNodo*>::iterator it = hijos.begin();
+	while(it != hijos.end()){
+		delete (*it);
+		++it;
+	}
 	hijos.clear();
 }
 
 int TNodo::addHijo(TNodo* n){
 	hijos.push_back(n);
 	n->setPadre(this);
-	return 0;
+	return (int)hijos.size();
 }
 
 int TNodo::remHijo(TNodo* n){
 	std::vector<TNodo*>::iterator it = std::find(hijos.begin(), hijos.end(), n);
 	if(it != hijos.end())
 		hijos.erase(it);
-	return 0;
+	return (int)hijos.size();
 }
 
 bool TNodo::setEntidad(TEntidad* en){
