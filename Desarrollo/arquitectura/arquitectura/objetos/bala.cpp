@@ -2,6 +2,7 @@
 #include "bala.hpp"
 
 bala::bala(dvector3D &pos, dvector3D &dir, float vel){
+	setType(tBALA);
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);
     aux = new physics();
@@ -25,16 +26,16 @@ bala::bala(dvector3D &pos, dvector3D &dir, float vel){
     
 	fisica->crearBodyDinamico(dim, pos);
 	
-	velocidad = 3.0f;
+	velocidad = vel;
     
 	direccion.x = dir.x * velocidad;
 	direccion.y = dir.y * velocidad;
 //	printf("%2.f %.2f\n", dir[0], dir[1]);
-	intervalo = clock();
-	tiempo_vida = vel;
+//	intervalo = clock();
+	tiempo_vida = 1.0f;
 	muero = false;
 	aux = NULL;
-	setType(tBALA);
+	temp.start();
 }
 
 bala::~bala(){
@@ -59,8 +60,10 @@ void bala::update(){
 	//	}
 //	if(difftime(time(NULL), tiempo_vida) >= 3.0 && muerto == false)
 	GameObject::update();
-	if(2000.0 * (clock() - intervalo) / CLOCKS_PER_SEC >= tiempo_vida*1000.0 && muero == false)
+	if(temp.tTranscurrido(tiempo_vida) && muero == false)
 		muero = true;
+	else
+		mover(direccion);
 }
 
 bool const* bala::getmuero(){

@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <string>
-#include <time.h>
+#include "../tiempo.h"
 #include "Dvector.hpp"
 #include <vector>
 #include "bala.hpp"
@@ -38,7 +38,7 @@ private:
     typeArma tipo;
 	unsigned int cadencia, municion, cargador;
 	float tiempo_recarga, tiempo_vida, alcance;
-	time_t tiempo;
+	tiempo temp;
     std::vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;

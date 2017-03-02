@@ -8,7 +8,7 @@ gun::gun(unsigned int pMunicion, float pAlcance, float pTiempo_recarga, unsigned
 	municion = pMunicion;
 	tiempo_vida = alcance/3.0f;
 	tiempo_recarga = pTiempo_recarga;
-	tiempo = clock();
+	temp.start();
 	cargador = carga;
     tipo = t;
 }
@@ -21,7 +21,7 @@ void gun::update(){
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
-        bala_aux->mover(*bala_aux->getDireccion());
+//        bala_aux->mover(*bala_aux->getDireccion());
         bala_aux->update();
         if(*bala_aux->getmuero()){
             delete bala_aux;
@@ -34,7 +34,8 @@ void gun::update(){
 
 void gun::render(){
     iter = balas.begin();
-    while (iter != balas.end()){
+    while (iter != balas.end())
+	{
         bala_aux = *iter;
         bala_aux->render();
         iter++;
@@ -42,20 +43,18 @@ void gun::render(){
 }
 
 void gun::atacar(dvector3D &pos, dvector3D &dir){
-	if(municion > 0){
-		if(cargador > 0 && 2000.0 * (clock()-tiempo) / CLOCKS_PER_SEC >= (1000.0 / cadencia)){
-//			printf("%s ", jotas[tipo+1]);
-//			Game::Instance()->insertBala(tiempo_vida);
-            insertBala(pos, dir, 0.6f);
-			municion--;
-			cargador--;
-			tiempo = clock();
-            
-		}else{
-			
-			if(2000.0 * (clock()-tiempo) / CLOCKS_PER_SEC >= (1000.0 * tiempo_recarga)){
+	if(municion > 0)
+	{
+		if(temp.tTranscurrido(1.0f/cadencia))
+		{
+			temp.reset();
+            insertBala(pos, dir, 3.0f);
+			if(tipo != tMARTILLO && tipo != tPALAc) { municion--; cargador--; }
+		}
+		else
+		{
+			if(temp.tTranscurrido(tiempo_recarga))
 				cargador = 6;
-			}
 		}
 	}
 }

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include "../Dvector.hpp"
+#include "../tiempo.h"
 
 class bala : public GameObject{
 public:
@@ -17,7 +18,7 @@ public:
     bool const* getmuero();
 private:
 	dvector3D direccion;
-	time_t intervalo;
+	tiempo temp;
 	float tiempo_vida, velocidad;
     bool muero;
 };
