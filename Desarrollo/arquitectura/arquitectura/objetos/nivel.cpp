@@ -74,6 +74,10 @@ GameObject* accion20(){
     return NULL;
 }
 
+GameObject* accion21(){
+    return new rehen();
+}
+
 obj_mapping mapping[] = {
 
 	{	1		,	""					,		0		},
@@ -89,12 +93,12 @@ obj_mapping mapping[] = {
 	{	11		,	"3d/puerta.jpg"		,	accion11	},
 	{	12		,	"3d/pizza.jpg"		,	accion12	},
 	{	13		,	""					,		0		},
-	{	14		,	""					,	0	},
+	{	14		,	"3d/rehen.jpg"		,	accion21	},
     {	15 		,	"3d/letraE.png"		,	accion15	},
     {	16 		,	"3d/letraL.png"		,	accion16	},
-    {	17 		,	"3d/globoagua.png"		,	accion17	},
+    {	17 		,	"3d/globoagua.png"	,	accion17	},
     {	18 		,	"3d/chicle.png"		,	accion18	},
-    {	19 		,	"3d/bombahumo.png"		,	accion19	},
+    {	19 		,	"3d/bombahumo.png"	,	accion19	},
     {	20 		,	""		,	0	},
 	{	0		,	""					,		0		}
 
