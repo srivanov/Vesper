@@ -51,6 +51,26 @@
 		882FC8A41E369D7F0060347C /* piedraObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A21E369D7F0060347C /* piedraObj.cpp */; };
 		882FC8A71E369FAF0060347C /* llaveObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 882FC8A51E369FAF0060347C /* llaveObj.cpp */; };
 		884F0CCE1DFAD7BA00C0FFE9 /* bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */; };
+		D26407981E68888A00162A9E /* libCEGUILibXMLParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407911E68888900162A9E /* libCEGUILibXMLParser_d.dylib */; };
+		D26407991E68888A00162A9E /* libCEGUIBase-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407921E68888900162A9E /* libCEGUIBase-0_d.dylib */; };
+		D264079A1E68888A00162A9E /* libCEGUIIrrlichtRenderer-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407931E68888900162A9E /* libCEGUIIrrlichtRenderer-0_d.dylib */; };
+		D264079B1E68888A00162A9E /* libCEGUISILLYImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407941E68888900162A9E /* libCEGUISILLYImageCodec_d.dylib */; };
+		D264079C1E68888A00162A9E /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407951E68888900162A9E /* libCEGUICoreWindowRendererSet_d.dylib */; };
+		D264079D1E68888A00162A9E /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407961E68888900162A9E /* libCEGUICommonDialogs-0_d.dylib */; };
+		D264079E1E68888A00162A9E /* libCEGUIExpatParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407971E68888A00162A9E /* libCEGUIExpatParser_d.dylib */; };
+		D26407CD1E6889DE00162A9E /* animations in Resources */ = {isa = PBXBuildFile; fileRef = D26407C21E6889DE00162A9E /* animations */; };
+		D26407CE1E6889DE00162A9E /* IA_visual.project in Resources */ = {isa = PBXBuildFile; fileRef = D26407C31E6889DE00162A9E /* IA_visual.project */; };
+		D26407CF1E6889DE00162A9E /* layouts in Resources */ = {isa = PBXBuildFile; fileRef = D26407C41E6889DE00162A9E /* layouts */; };
+		D26407D01E6889DE00162A9E /* looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = D26407C51E6889DE00162A9E /* looknfeel */; };
+		D26407D11E6889DE00162A9E /* lua_scripts in Resources */ = {isa = PBXBuildFile; fileRef = D26407C61E6889DE00162A9E /* lua_scripts */; };
+		D26407D21E6889DE00162A9E /* prueba.project in Resources */ = {isa = PBXBuildFile; fileRef = D26407C71E6889DE00162A9E /* prueba.project */; };
+		D26407D31E6889DE00162A9E /* schemes in Resources */ = {isa = PBXBuildFile; fileRef = D26407C81E6889DE00162A9E /* schemes */; };
+		D26407D41E6889DE00162A9E /* xml_schemas in Resources */ = {isa = PBXBuildFile; fileRef = D26407C91E6889DE00162A9E /* xml_schemas */; };
+		D26407D51E6889DE00162A9E /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = D26407CA1E6889DE00162A9E /* fonts */; };
+		D26407D61E6889DE00162A9E /* imagesets in Resources */ = {isa = PBXBuildFile; fileRef = D26407CB1E6889DE00162A9E /* imagesets */; };
+		D26407D71E6889DE00162A9E /* Menu.project in Resources */ = {isa = PBXBuildFile; fileRef = D26407CC1E6889DE00162A9E /* Menu.project */; };
+		D26407E01E688BBB00162A9E /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26407DC1E688BBB00162A9E /* menuPrueba.cpp */; };
+		D26407E11E688BBB00162A9E /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26407DD1E688BBB00162A9E /* GUI.cpp */; };
 		D2AC40AC1E43367D0091076F /* EasyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40AA1E43367D0091076F /* EasyMath.cpp */; };
 		E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9026ED21E35299B00B44AC3 /* palaObj.cpp */; };
 		E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED61E353CDE00B44AC3 /* alarmita.3ds */; };
@@ -234,6 +254,29 @@
 		882FC8A61E369FAF0060347C /* llaveObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = llaveObj.hpp; sourceTree = "<group>"; };
 		884F0CCC1DFAD7BA00C0FFE9 /* bala.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bala.cpp; sourceTree = "<group>"; };
 		884F0CCD1DFAD7BA00C0FFE9 /* bala.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bala.hpp; sourceTree = "<group>"; };
+		D26407911E68888900162A9E /* libCEGUILibXMLParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUILibXMLParser_d.dylib; path = libs/libCEGUILibXMLParser_d.dylib; sourceTree = "<group>"; };
+		D26407921E68888900162A9E /* libCEGUIBase-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIBase-0_d.dylib"; path = "libs/libCEGUIBase-0_d.dylib"; sourceTree = "<group>"; };
+		D26407931E68888900162A9E /* libCEGUIIrrlichtRenderer-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIIrrlichtRenderer-0_d.dylib"; path = "libs/libCEGUIIrrlichtRenderer-0_d.dylib"; sourceTree = "<group>"; };
+		D26407941E68888900162A9E /* libCEGUISILLYImageCodec_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUISILLYImageCodec_d.dylib; path = libs/libCEGUISILLYImageCodec_d.dylib; sourceTree = "<group>"; };
+		D26407951E68888900162A9E /* libCEGUICoreWindowRendererSet_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUICoreWindowRendererSet_d.dylib; path = libs/libCEGUICoreWindowRendererSet_d.dylib; sourceTree = "<group>"; };
+		D26407961E68888900162A9E /* libCEGUICommonDialogs-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUICommonDialogs-0_d.dylib"; path = "libs/libCEGUICommonDialogs-0_d.dylib"; sourceTree = "<group>"; };
+		D26407971E68888A00162A9E /* libCEGUIExpatParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUIExpatParser_d.dylib; path = libs/libCEGUIExpatParser_d.dylib; sourceTree = "<group>"; };
+		D26407C21E6889DE00162A9E /* animations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = animations; path = GUI/animations; sourceTree = "<group>"; };
+		D26407C31E6889DE00162A9E /* IA_visual.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = IA_visual.project; path = GUI/IA_visual.project; sourceTree = "<group>"; };
+		D26407C41E6889DE00162A9E /* layouts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = layouts; path = GUI/layouts; sourceTree = "<group>"; };
+		D26407C51E6889DE00162A9E /* looknfeel */ = {isa = PBXFileReference; lastKnownFileType = folder; name = looknfeel; path = GUI/looknfeel; sourceTree = "<group>"; };
+		D26407C61E6889DE00162A9E /* lua_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lua_scripts; path = GUI/lua_scripts; sourceTree = "<group>"; };
+		D26407C71E6889DE00162A9E /* prueba.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = prueba.project; path = GUI/prueba.project; sourceTree = "<group>"; };
+		D26407C81E6889DE00162A9E /* schemes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = schemes; path = GUI/schemes; sourceTree = "<group>"; };
+		D26407C91E6889DE00162A9E /* xml_schemas */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xml_schemas; path = GUI/xml_schemas; sourceTree = "<group>"; };
+		D26407CA1E6889DE00162A9E /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = GUI/fonts; sourceTree = "<group>"; };
+		D26407CB1E6889DE00162A9E /* imagesets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imagesets; path = GUI/imagesets; sourceTree = "<group>"; };
+		D26407CC1E6889DE00162A9E /* Menu.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Menu.project; path = GUI/Menu.project; sourceTree = "<group>"; };
+		D26407DB1E688BBB00162A9E /* menuPrueba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = menuPrueba.hpp; path = GUI/menuPrueba.hpp; sourceTree = "<group>"; };
+		D26407DC1E688BBB00162A9E /* menuPrueba.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = menuPrueba.cpp; path = GUI/menuPrueba.cpp; sourceTree = "<group>"; };
+		D26407DD1E688BBB00162A9E /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUI.cpp; path = GUI/GUI.cpp; sourceTree = "<group>"; };
+		D26407DE1E688BBB00162A9E /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUI.h; path = GUI/GUI.h; sourceTree = "<group>"; };
+		D26407DF1E688BBB00162A9E /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIManager.h; path = GUI/GUIManager.h; sourceTree = "<group>"; };
 		D2AC40AA1E43367D0091076F /* EasyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EasyMath.cpp; sourceTree = "<group>"; };
 		D2AC40AB1E43367D0091076F /* EasyMath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EasyMath.hpp; sourceTree = "<group>"; };
 		E9026ED21E35299B00B44AC3 /* palaObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = palaObj.cpp; sourceTree = "<group>"; };
@@ -386,6 +429,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26407981E68888A00162A9E /* libCEGUILibXMLParser_d.dylib in Frameworks */,
+				D26407991E68888A00162A9E /* libCEGUIBase-0_d.dylib in Frameworks */,
+				D264079A1E68888A00162A9E /* libCEGUIIrrlichtRenderer-0_d.dylib in Frameworks */,
+				D264079B1E68888A00162A9E /* libCEGUISILLYImageCodec_d.dylib in Frameworks */,
+				D264079C1E68888A00162A9E /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */,
+				D264079D1E68888A00162A9E /* libCEGUICommonDialogs-0_d.dylib in Frameworks */,
+				D264079E1E68888A00162A9E /* libCEGUIExpatParser_d.dylib in Frameworks */,
 				E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */,
 				E9F0BE871DFAC61400F6ED67 /* libIrrlicht.a in Frameworks */,
 				E9AC3ABA1DF0AABF00A91A97 /* IOKit.framework in Frameworks */,
@@ -558,6 +608,36 @@
 			name = PathPlanning;
 			sourceTree = "<group>";
 		};
+		D26407C11E6889CC00162A9E /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				D26407C21E6889DE00162A9E /* animations */,
+				D26407C31E6889DE00162A9E /* IA_visual.project */,
+				D26407C41E6889DE00162A9E /* layouts */,
+				D26407C51E6889DE00162A9E /* looknfeel */,
+				D26407C61E6889DE00162A9E /* lua_scripts */,
+				D26407C71E6889DE00162A9E /* prueba.project */,
+				D26407C81E6889DE00162A9E /* schemes */,
+				D26407C91E6889DE00162A9E /* xml_schemas */,
+				D26407CA1E6889DE00162A9E /* fonts */,
+				D26407CB1E6889DE00162A9E /* imagesets */,
+				D26407CC1E6889DE00162A9E /* Menu.project */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		D26407DA1E688BA400162A9E /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				D26407DB1E688BBB00162A9E /* menuPrueba.hpp */,
+				D26407DC1E688BBB00162A9E /* menuPrueba.cpp */,
+				D26407DD1E688BBB00162A9E /* GUI.cpp */,
+				D26407DE1E688BBB00162A9E /* GUI.h */,
+				D26407DF1E688BBB00162A9E /* GUIManager.h */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +651,7 @@
 		E9026ED51E353CDE00B44AC3 /* 3d */ = {
 			isa = PBXGroup;
 			children = (
+				D26407C11E6889CC00162A9E /* GUI */,
 				E9026ED61E353CDE00B44AC3 /* alarmita.3ds */,
 				E9026ED71E353CDE00B44AC3 /* alarmita.blend */,
 				E9026ED81E353CDE00B44AC3 /* alarmita.jpg */,
@@ -624,6 +705,7 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
+				D26407DA1E688BA400162A9E /* GUI */,
 				6396E2831E4792DF00589082 /* PathPlanning */,
 				6358288E1E50D95C0081B7F3 /* Tools */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
@@ -762,6 +844,13 @@
 		E9AC3AB21DF0AAAD00A91A97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D26407911E68888900162A9E /* libCEGUILibXMLParser_d.dylib */,
+				D26407921E68888900162A9E /* libCEGUIBase-0_d.dylib */,
+				D26407931E68888900162A9E /* libCEGUIIrrlichtRenderer-0_d.dylib */,
+				D26407941E68888900162A9E /* libCEGUISILLYImageCodec_d.dylib */,
+				D26407951E68888900162A9E /* libCEGUICoreWindowRendererSet_d.dylib */,
+				D26407961E68888900162A9E /* libCEGUICommonDialogs-0_d.dylib */,
+				D26407971E68888A00162A9E /* libCEGUIExpatParser_d.dylib */,
 				E9F0BE841DFAC61400F6ED67 /* libBox2D.a */,
 				E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */,
 				E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */,
@@ -793,6 +882,7 @@
 				E9AC3A331DF0A9C100A91A97 /* Sources */,
 				E9AC3A341DF0A9C100A91A97 /* Frameworks */,
 				E9AC3A351DF0A9C100A91A97 /* Resources */,
+				D26407901E68876700162A9E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -844,9 +934,15 @@
 				E9026F101E353CDE00B44AC3 /* texture.png in Resources */,
 				E9026F051E353CDE00B44AC3 /* muro.blend in Resources */,
 				E9026F0D1E353CDE00B44AC3 /* suelo.3ds in Resources */,
+				D26407D51E6889DE00162A9E /* fonts in Resources */,
+				D26407CD1E6889DE00162A9E /* animations in Resources */,
+				D26407D11E6889DE00162A9E /* lua_scripts in Resources */,
 				E9026F001E353CDE00B44AC3 /* fuente.3ds in Resources */,
 				E9026EF71E353CDE00B44AC3 /* bala.3ds in Resources */,
+				D26407D31E6889DE00162A9E /* schemes in Resources */,
 				E9026F0C1E353CDE00B44AC3 /* sphere.blend in Resources */,
+				D26407D71E6889DE00162A9E /* Menu.project in Resources */,
+				D26407D01E6889DE00162A9E /* looknfeel in Resources */,
 				E9026F0A1E353CDE00B44AC3 /* rocas.jpg in Resources */,
 				E9026F011E353CDE00B44AC3 /* fuente.blend in Resources */,
 				E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */,
@@ -861,11 +957,16 @@
 				E9026EFF1E353CDE00B44AC3 /* enemy.jpg in Resources */,
 				E9026F071E353CDE00B44AC3 /* pala.jpg in Resources */,
 				E9026EFB1E353CDE00B44AC3 /* cesped.jpg in Resources */,
+				D26407D61E6889DE00162A9E /* imagesets in Resources */,
 				E9026EFA1E353CDE00B44AC3 /* botiquin.jpg in Resources */,
 				E9026EFE1E353CDE00B44AC3 /* comida.blend in Resources */,
+				D26407CE1E6889DE00162A9E /* IA_visual.project in Resources */,
+				D26407CF1E6889DE00162A9E /* layouts in Resources */,
+				D26407D21E6889DE00162A9E /* prueba.project in Resources */,
 				E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */,
 				E9026EF91E353CDE00B44AC3 /* botiquin.blend in Resources */,
 				E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */,
+				D26407D41E6889DE00162A9E /* xml_schemas in Resources */,
 				E9026F091E353CDE00B44AC3 /* pizza.jpg in Resources */,
 				E9AC3ADD1DF0AD3600A91A97 /* mapa2.tmx in Resources */,
 				880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */,
@@ -878,6 +979,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D26407901E68876700162A9E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export DYLIB=libexpat_d.dylib\n\nif [ ! -d \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\" ]; then\n\nmkdir \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\n# Control will enter here if $DIRECTORY doesn't exist.\nfi\n\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libfreetype_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libglew_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\n\nexport DYLIB=libglfw_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libjpeg_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libpcre_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libpng_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libSILLY_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n\nexport DYLIB=libzlib_d.dylib\ncp -f \"$SRCROOT/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change @executable_path/$DYLIB @loader_path/../Frameworks/$DYLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E9AC3A331DF0A9C100A91A97 /* Sources */ = {
@@ -935,6 +1052,7 @@
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
+				D26407E11E688BBB00162A9E /* GUI.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */,
 				6337FDEE1E5F48AA00126C35 /* Nodo_ACurarse.cpp in Sources */,
@@ -968,6 +1086,7 @@
 				6337FDD01E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp in Sources */,
 				6396E2811E4792C400589082 /* GraphNode.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */,
+				D26407E01E688BBB00162A9E /* menuPrueba.cpp in Sources */,
 				63B81E351E26D288006BD3AB /* fuente.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,
@@ -1092,6 +1211,7 @@
 					"$(PROJECT_DIR)/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = sia.arquitectura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1113,6 +1233,7 @@
 					"$(PROJECT_DIR)/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = sia.arquitectura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

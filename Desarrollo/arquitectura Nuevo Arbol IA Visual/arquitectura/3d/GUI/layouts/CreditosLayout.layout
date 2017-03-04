@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="DefaultWindow" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/Image" name="fondo" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
+            <Property name="Text" value="Créditos" />
+            <Property name="Image" value="Menu/crema" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="Disabled" value="true" />
+        </Window>
+        <Window type="Generic/Label" name="titulo" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,5},{0,5},{0,295},{0,115}}" />
+            <Property name="Text" value="Créditos" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+        <Window type="OgreTray/StaticText" name="StaticText" >
+            <Property name="ID" value="3" />
+            <Property name="Area" value="{{0,-2},{0,-91},{0,254},{0,37}}" />
+            <Property name="Text" value="Skyscrpaers" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="VerticalAlignment" value="Centre" />
+            <Property name="HorzScrollPageSize" value="230" />
+            <Property name="VertScrollPageSize" value="102" />
+            <Property name="HorizontalAlignment" value="Centre" />
+            <Property name="HorzScrollDocumentSize" value="87" />
+            <Property name="VertScrollDocumentSize" value="13.6796" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" >
+                    <Property name="Visible" value="false" />
+                </AutoWindow>
+                <AutoWindow namePath="__auto_decbtn__" >
+                    <Property name="Visible" value="false" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" >
+                    <Property name="Visible" value="false" />
+                </AutoWindow>
+                <AutoWindow namePath="__auto_decbtn__" >
+                    <Property name="Visible" value="false" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="OgreTray/Button" name="volver" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,35},{0,620},{0,175},{0,670}}" />
+            <Property name="Text" value="Volver" />
+        </Window>
+    </Window>
+</GUILayout>

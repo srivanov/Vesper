@@ -20,6 +20,7 @@
 #include "trigger_system.hpp"
 #include "LevelBlackBoard.hpp"
 #include "NpcLibrary.hpp"
+#include "GUI/menuPrueba.hpp"
 
 class Game {
 public:
@@ -54,6 +55,7 @@ private:
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;
+    menuPrueba* prueba;
 };
 
 #endif /* Game_hpp */

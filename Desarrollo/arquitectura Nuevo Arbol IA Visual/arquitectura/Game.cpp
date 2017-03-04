@@ -19,6 +19,7 @@ Game::Game(){
     jugador = new player();
 	cam = new camara();
 	nivelazo = new nivel();
+    prueba = NULL;
 }
 
 Game::~Game(){
@@ -52,6 +53,8 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	LevelBlackBoard::instance();
     NpcLibrary::instancia();
 	trigger_system::_instance();
+    
+    prueba = new menuPrueba();
 }
 
 void Game::stop(){
@@ -111,6 +114,8 @@ void Game::update(){
 	
     Fps::Instance()->update();
 	mundoBox2D::Instance()->update();
+    
+    prueba->update();
 }
 
 void Game::zoom(bool z){
