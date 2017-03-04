@@ -7,8 +7,8 @@ camara::camara(){
 	this->insertComponent((char*)"render", aux);
 	aux = new transform3D();
     this->insertComponent((char*)"transform3D", aux);
-	aux = new physics();
-    this->insertComponent((char*)"physics", aux);
+//	aux = new physics();
+//    this->insertComponent((char*)"physics", aux);
 	aux = new IACamara();
     this->insertComponent((char*)"IACamara", aux);
 	
@@ -46,15 +46,18 @@ void camara::addCamara(dvector3D &p, dvector3D &l){
 
 void camara::movimientoInteligente(dvector3D &posPlayer){
     
-	incrX = ((posPlayer.x + offsetX) - renderiza->getCamPos()->x)/ (camSpeed*60.0);
-	incrY = ((posPlayer.y + offsetY) - renderiza->getCamPos()->y)/ (camSpeed*60.0);
-	incrZ = ((posPlayer.z + offsetZ) - renderiza->getCamPos()->z)/ (camSpeed*60.0);
-    
-    dvector3D aux1(renderiza->getCamPos()->x+incrX, renderiza->getCamPos()->y+incrY, renderiza->getCamPos()->z+incrZ);
-    dvector3D aux2(renderiza->getCamPos()->x - offsetX, renderiza->getCamPos()->y - offsetY, renderiza->getCamPos()->z - offsetZ);
-    
-    renderiza->setCamPos(aux1);
-    renderiza->setCamTarget(aux2);
+//	incrX = ((posPlayer.x + offsetX) - renderiza->getCamPos()->x)/ (camSpeed*60.0);
+//	incrY = ((posPlayer.y + offsetY) - renderiza->getCamPos()->y)/ (camSpeed*60.0);
+//	incrZ = ((posPlayer.z + offsetZ) - renderiza->getCamPos()->z)/ (camSpeed*60.0);
+//    
+//    dvector3D aux1(renderiza->getCamPos()->x+incrX, renderiza->getCamPos()->y+incrY, renderiza->getCamPos()->z+incrZ);
+//    dvector3D aux2(renderiza->getCamPos()->x - offsetX, renderiza->getCamPos()->y - offsetY, renderiza->getCamPos()->z - offsetZ);
+//    
+//    renderiza->setCamPos(aux1);
+//    renderiza->setCamTarget(aux2);
+	
+	setPosicion(dvector3D(posPlayer.x + offsetX, posPlayer.y + offsetY, posPlayer.z + offsetZ));
+	
 //	printf("%.2f %.2f %.2f\n", renderiza->getCamPos()[0], renderiza->getCamPos()[1], renderiza->getCamPos()[2]);
 }
 

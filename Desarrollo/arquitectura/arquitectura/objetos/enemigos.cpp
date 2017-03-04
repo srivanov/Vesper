@@ -73,7 +73,8 @@ void enemigos::update(){
 	
 	STD->run(ID);
 	this->mover(*book->getVMovement());
-	this->rotarConRaton(*getPosicion() + *book->getVMovement());
+	dvector3D hg = *getPosicion();
+	this->rotarConRaton(hg + *book->getVMovement());
 	GameObject::update();
 }
 

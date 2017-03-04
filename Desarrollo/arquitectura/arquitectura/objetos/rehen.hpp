@@ -18,7 +18,6 @@ public:
     rehen();
     ~rehen();
     void update();
-    void render();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();

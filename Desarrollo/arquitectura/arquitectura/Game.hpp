@@ -32,7 +32,7 @@ public:
 	
 	virtual ~Game();
 	void update(const long &timePerFrame);
-	void render();
+	void render(float &interpolation);
 	bool isRunning();
     player* getPlayer();
     void zoom(bool z);

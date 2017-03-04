@@ -232,13 +232,13 @@ void nivel::contactoEnd(GameObject *g){
     
 }
 
-void nivel::render(){
-//    std::vector<enemigos*>::iterator it = npcs.begin();
-//    while (it != npcs.end()) {
-//        (*it)->render();
-//        it++;
-//    }
-    jugador->render();
+void nivel::render(float &interpolation){
+    std::vector<GameObject*>::iterator it = powerups.begin();
+    while (it != powerups.end()) {
+        (*it)->render(interpolation);
+        it++;
+    }
+//    jugador->render(interpolation);
 }
 
 void nivel::cambiarArmaJugador() {

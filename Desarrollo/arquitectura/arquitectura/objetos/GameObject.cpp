@@ -59,15 +59,16 @@ dvector3D* GameObject::getPosicion(){
 }
 
 void GameObject::setPosicion(dvector3D p3D){
-//    if(p3D != NULL){
-    posicion = p3D;
+	prev_pos = posicion;
+	posicion = p3D;
+	if(first){
+		prev_pos = posicion;
+		first = false;
+	}
     transform3D* go = (transform3D*)this->findComponent("transform3D");
     if(go != NULL)
         go->setPosition(posicion);
-    class render* ren = (class render*)findComponent("render");
-    if(ren != NULL)
-        ren->setNodePosition(posicion);
-//    }
+		
 }
 
 void GameObject::setRotacion(float rot){
@@ -75,22 +76,12 @@ void GameObject::setRotacion(float rot){
 	transform3D* go = (transform3D*)this->findComponent("transform3D");
 	if(go != NULL)
 		go->rotar(rotacion.z);
-	
-	class render* ren = (class render*)findComponent("render");
-	if(ren != NULL)
-		ren->setNodeRotation(rotacion);
-	
-//	go->update(NULL, NULL, rotacion, anguloDisparo, rot);
-//	printf("%.2f %.2f\n", anguloDisparo[0], anguloDisparo[1]);
 }
 
 void GameObject::rotarConRaton(dvector3D &posRaton){
 	transform3D* go = (transform3D*)this->findComponent("transform3D");
 	if(go != NULL)
 		rotacion.z = go->rotarConRaton(posRaton);
-	class render* ren = (class render*)findComponent("render");
-	if(ren != NULL)
-		ren->setNodeRotation(rotacion);
 }
 
 dvector3D* GameObject::getRotacion(){
@@ -103,12 +94,12 @@ void GameObject::mover(dvector3D &vel){
 		go->mover(vel);
 }
 
-void GameObject::render(){
-//    if(renderizable){
-//        class render* ren = (class render*)findComponent("render");
-//		if(ren != NULL)
-//			ren->actualizarRender();
-//    }
+void GameObject::render(float &interpolation){
+	class render* ren = (class render*)findComponent("render");
+	if(ren != NULL){
+		ren->setNodeRotation(rotacion);
+		ren->DrawNode(prev_pos, posicion, interpolation);
+	}
 }
 
 void GameObject::update(){

@@ -59,9 +59,11 @@ void Game::stop(){
 	running = false;
 }
 
-void Game::render(){
+void Game::render(float &interpolation){
+	Fps::Instance()->update();
 	if(!pausa){
-		nivelazo->render();
+		nivelazo->render(interpolation);
+		cam->render(interpolation);
 	}
 	renderizador->dibujar(pausa);
 }
@@ -83,7 +85,6 @@ void Game::update(const long &timePerFrame){
 		processEvents();
 		layoutPrueba->update();
 	}
-	Fps::Instance()->update();
 }
 
 void Game::zoom(bool z){

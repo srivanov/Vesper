@@ -240,7 +240,7 @@ float physics::rotarConRaton(dvector3D &posRaton){
     getFather()->setDirDisparo(angulo_disparo);
     
     body->SetTransform(body->GetPosition(), rotacion);
-    
+	
     return rotacion;
 //	}
 	return 0.0f;

@@ -77,7 +77,7 @@ public:
 	void setDirDisparo(dvector3D &dir);
 	
 	void mover(dvector3D &vel);
-    void render();
+    virtual void render(float &interpolation);
     virtual void update();
 	
     void addNodo(char* filename);
@@ -90,9 +90,10 @@ public:
     virtual void contactoEnd(GameObject* g){};
     virtual bool const* getmuero() = 0;
     void setID(int &ID) { this->ID = ID; }
+	int getID() { return ID; }
 protected:
-    bool renderizable;
-    dvector3D posicion, rotacion, anguloDisparo;
+    bool renderizable, first = true;
+    dvector3D posicion, prev_pos, rotacion, anguloDisparo;
 	int ID;
 private:
 	//TO DO: crear el vector con componentes y no punteros

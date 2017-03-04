@@ -39,7 +39,7 @@ int main(int argc, const char * argv[]) {
 		interpolation = aux<1.0f ? aux : 1.0f;
 		
 		//TO DO: interpolacion
-		game->render();
+		game->render(interpolation);
 	}
- return 0;
+	return 0;
 }

@@ -41,7 +41,7 @@ public:
     std::vector<int>* getMapa();
 	void dibujarMapa();
 	void update();
-    void render();
+    void render(float &interpolation);
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();

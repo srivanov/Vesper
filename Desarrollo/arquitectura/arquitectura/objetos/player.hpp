@@ -13,7 +13,7 @@ public:
     player();
     ~player();
     void update();
-    void render();
+    void render(float &interpolation);
 	void atacar();
 	void cambiarArma();
 	void contacto(GameObject* g);

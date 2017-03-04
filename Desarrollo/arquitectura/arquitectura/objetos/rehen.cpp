@@ -44,10 +44,6 @@ void rehen::update(){
     GameObject::update();
 }
 
-void rehen::render(){
-    GameObject::render();
-}
-
 bool const* rehen::getmuero(){
     return &muero;
 }

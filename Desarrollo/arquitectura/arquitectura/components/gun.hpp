@@ -32,7 +32,7 @@ public:
 	void update();
     typeArma const* getType();
     void insertBala(dvector3D &pos, dvector3D &dir, float vel);
-    void render();
+    void render(float &interpolation);
 	
 private:
     typeArma tipo;

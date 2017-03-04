@@ -16,9 +16,9 @@ render::~render(){
 }
 
 void render::update(){
-	if (nodo != NULL) {
-		nodo->_setNodePosition(*getFather()->getPosicion());
-	}
+//	if (nodo != NULL) {
+//		nodo->_setNodePosition(*getFather()->getPosicion());
+//	}
 }
 
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
@@ -54,6 +54,10 @@ void render::setNodeTexture(char* filename){
 bool render::setNodePosition(dvector3D &pos){
 	if(nodo != NULL){
 		nodo->_setNodePosition(pos);
+		return true;
+	}
+	if(camara != NULL){
+		setCamPos(pos);
 		return true;
 	}
 	return false;
@@ -93,6 +97,19 @@ void render::dibujar(bool pausa){
 	
 	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
     ventana::Instance()->getDriver()->endScene();
+}
+
+//		INTERPOLATION
+void render::DrawNode(dvector3D &prev, dvector3D &next, float &interpolation){
+	if(nodo != NULL){
+		dvector3D act( (next.x - prev.x) * interpolation + prev.x, (next.y - prev.y) * interpolation + prev.y, 0 );
+		nodo->_setNodePosition(act);
+	}
+	if(camara != NULL){
+		dvector3D act( (next.x - prev.x) * interpolation + prev.x, (next.y - prev.y) * interpolation + prev.y, (next.z - prev.z) * interpolation + prev.z );
+		setCamPos(act);
+		setCamTarget(act+dvector3D(0,5,10));
+	}
 }
 
 void render::addCamera(dvector3D &p, dvector3D &l){
@@ -168,14 +185,20 @@ void render::dibujarMapa(){
 }
 
 void render::setCamPos(dvector3D &pos){
-	camara->setPosition(vector3df(pos.x, pos.y, pos.z));
+	if(camara != NULL)
+		camara->setPosition(vector3df(pos.x, pos.y, pos.z));
 }
 
 dvector3D* render::getCamPos(){
-    dvector3D getcam(camara->getPosition().X, camara->getPosition().Y, camara->getPosition().Z);
+    dvector3D getcam;
+	if(camara != NULL){
+		vector3df c = camara->getPosition();
+		getcam = dvector3D(c.X, c.Y, c.Z);
+	}
     return &getcam;
 }
 
 void render::setCamTarget(dvector3D &pos){
-	camara->setTarget(vector3df(pos.x, pos.y, pos.z));
+	if(camara != NULL)
+		camara->setTarget(vector3df(pos.x, pos.y, pos.z));
 }

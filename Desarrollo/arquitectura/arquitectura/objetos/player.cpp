@@ -35,7 +35,7 @@ player::player(){
     dvector3D pos(0,0,0);
 	
     obj_colisionado = NULL;
-	velocidad = 2;
+	velocidad = 6;
     muero = false;
     arma = (armas*)findComponent("armas");
     fisica->crearBodyDinamico(dim, pos);
@@ -52,9 +52,9 @@ void player::update(){
     arma->update();
 }
 
-void player::render(){
-    GameObject::render();
-    arma->render();
+void player::render(float &interpolation){
+    GameObject::render(interpolation);
+    arma->render(interpolation);
 }
 
 void player::atacar(){
