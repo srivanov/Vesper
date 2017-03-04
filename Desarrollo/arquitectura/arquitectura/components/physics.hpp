@@ -24,6 +24,7 @@ public:
 	float rotarConRaton(dvector3D &posRaton);
 	void rotar(float anguloRotacion);
 private:
+	mundoBox2D* mundo;
     b2Body *body;
     float rotacion;
     b2Vec2 vel;

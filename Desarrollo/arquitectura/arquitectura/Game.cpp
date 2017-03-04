@@ -72,13 +72,13 @@ bool Game::isRunning(){
 	return false;
 }
 
-void Game::update(){
+void Game::update(const long &timePerFrame){
 	if(!pausa){
 		nivelazo->update();
 		entrada->update();
 		cam->movimientoInteligente(*nivelazo->getPlayer()->getPosicion());
 		trigger_system::_instance()->update();
-		mundoBox2D::Instance()->update();
+		mundoBox2D::Instance()->update(timePerFrame);
 	}else{
 		processEvents();
 		layoutPrueba->update();

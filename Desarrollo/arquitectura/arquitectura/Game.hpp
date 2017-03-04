@@ -31,7 +31,7 @@ public:
 	void stop();
 	
 	virtual ~Game();
-	void update();
+	void update(const long &timePerFrame);
 	void render();
 	bool isRunning();
     player* getPlayer();

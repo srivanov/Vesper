@@ -5,7 +5,7 @@
 
 physics::physics(){
     body = NULL;
-	
+	mundo = mundoBox2D::Instance();
 	
 //	b2BodyDef myBodyDef;
 //	b2PolygonShape polygonShape;
@@ -21,7 +21,7 @@ physics::physics(){
 
 physics::~physics(){
 	if(body!=NULL)
-		mundoBox2D::Instance()->getWorld()->DestroyBody(body);
+		mundo->getWorld()->DestroyBody(body);
 }
 
 void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
@@ -41,7 +41,7 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
 	
     //create dynamic body
     myBodyDef.position.Set(posicion.x, posicion.y);
-    body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
+    body = mundo->getWorld()->CreateBody(&myBodyDef);
     body->CreateFixture(&myFixtureDef);
 	
 	body->SetUserData(getFather());
@@ -63,7 +63,7 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 	myFixtureDef.density = 1;
 	myBodyDef.type = b2_staticBody;
 	myBodyDef.position.Set(posicion.x, posicion.y);
-	body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
+	body = mundo->getWorld()->CreateBody(&myBodyDef);
 	polygonShape.SetAsBox(dimension.x/2.0f, dimension.y/2.0f);
 	body->CreateFixture(&myFixtureDef);
 	
@@ -97,7 +97,7 @@ void physics::crearBodyKinematico(dvector3D &dimension, dvector3D &posicion, flo
 	myFixtureDef.density = 1;
 	myBodyDef.type = b2_kinematicBody;
 	myBodyDef.position.Set(posicion.x, posicion.y);
-	body = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
+	body = mundo->getWorld()->CreateBody(&myBodyDef);
 	polygonShape.SetAsBox(dimension.x/2.0f, dimension.y/2.0f);
 	body->CreateFixture(&myFixtureDef);
 	
@@ -141,7 +141,7 @@ void physics::crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvect
 		myFixtureDef.shape = &poligono;
 		myBody.type = b2_staticBody;
 		myBody.position.Set((*itp).y - 0.5, (*itp).x - 0.5);
-		body_aux = mundoBox2D::Instance()->getWorld()->CreateBody(&myBody);
+		body_aux = mundo->getWorld()->CreateBody(&myBody);
 		body_aux->CreateFixture(&myFixtureDef);
 //		body_aux->SetTransform(body_aux->GetPosition(), 90 * DEGTORAD);
 		
