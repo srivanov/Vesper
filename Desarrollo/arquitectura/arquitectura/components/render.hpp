@@ -32,6 +32,7 @@ public:
 	void setCamPos(dvector3D &pos);
 	dvector3D* getCamPos();
 	void setCamTarget(dvector3D &pos);
+    void anyadirArma();
 	
 private:
 	nodeMesh* nodo;

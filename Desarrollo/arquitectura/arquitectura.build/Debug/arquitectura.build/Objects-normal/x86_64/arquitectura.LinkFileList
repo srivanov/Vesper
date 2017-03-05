@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/OpcionesLayout.o
 /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Fps.o
 /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bombaHumoObj.o
@@ -68,74 +67,3 @@
 /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/alarma.o
 /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/blindada.o
 /Users/nereacastellanosrodriguez/Desktop/Universidad/CUARTO - ABP/github/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MenuPrincipalLayout.o
-=======
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/OpcionesLayout.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Fps.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bombaHumoObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conAlarma.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/globoAguaObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Dvector.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/cargarMapa.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/salud.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/llaveObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/LayoutGUI.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conPuzzle.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MyEventReceiver.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/habilidadEspecial.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/mundoBox2D.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ataque.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/component.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IACamara.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/HUDLayout.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GUI.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/player.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/render.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/hambre.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/CargarPartidaLayout.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/ventana.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/IAEnemigos.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/enemigos.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/monedas.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Nodos.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/lanzaCaramelosObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/piedraObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/BlackBoards.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/LayoutInterface.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armas.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/armasArrojadizas.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puerta.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/destructiva.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/botiquin.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/estados.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/Game.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/comida.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nivel.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/nodeMesh.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/sed.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/tinyxml2.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/trigger_system.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chicleObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/PausaLayout.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bloqueada.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/physics.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/palaObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/input.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/transform3D.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/conLlave.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/gun.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/fuente.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/chirriante.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/superSockerObj.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/JSONParser.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/GameObject.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/menuPrueba.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/main.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/CreditosLayout.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/camara.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/bala.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/rehen.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/puertaInterface.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/alarma.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/blindada.o
-/Users/JuliaMartinezValera/GitHub/Vesper/Desarrollo/arquitectura/arquitectura.build/Debug/arquitectura.build/Objects-normal/x86_64/MenuPrincipalLayout.o
->>>>>>> Stashed changes

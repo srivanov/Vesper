@@ -173,6 +173,7 @@ bool nivel::cargarNivel(char* numero){
 					if((*g->getType()) == tPLAYER) {
 						g->addNodo("3d/sphere.3ds");
 						jugador = static_cast<player*>(g);
+                        jugador->addArma();
 					}else
 						g->addNodo("");
 					g->setTexture((char*)objs->tex.c_str());

@@ -4,6 +4,8 @@
 #include "../objetos/nivel.hpp"
 #include "../GUI/GUIManager.h"
 
+//TODO: Hacer que cambie de modelo al cambiar de arma con el tab
+
 render::render(){
 	nodo = NULL;
 	camara = NULL;
@@ -42,6 +44,11 @@ void render::setNode(char *filename){
 		nodo->_setNodePosition(*getFather()->getPosicion());
 //		printf("cargado!\n");
     }
+}
+
+void render::anyadirArma(){
+    if(nodo != NULL)
+        nodo->setPortatil(ventana::Instance()->getSceneManager()->addCubeSceneNode(0.5f, nodo->_getNode(), -1, vector3df(1,1,-1), vector3df(0,0,0), vector3df(1,1,1)));
 }
 
 void render::setNodeTexture(char* filename){

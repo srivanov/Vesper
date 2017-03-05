@@ -125,6 +125,12 @@ void player::contacto(GameObject *g){
     obj_colisionado = g;
 }
 
+void player::addArma(){
+    class render* go = (class render*)findComponent("render");
+    if(go != NULL)
+        go->anyadirArma();
+}
+
 void player::contactoEnd(GameObject *g){
     obj_colisionado = NULL;
 }

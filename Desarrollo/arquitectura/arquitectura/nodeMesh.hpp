@@ -15,7 +15,7 @@ using namespace scene;
 
 class nodeMesh{
 public:
-    nodeMesh(ISceneNode* mesh);
+    nodeMesh(ISceneNode* node);
     ~nodeMesh();
     ISceneNode* _getNode();
 	void _setNode(ISceneNode* node);
@@ -23,13 +23,15 @@ public:
 	void _setNodePosition(dvector3D &posicion);
 	void _setNodeRotation(dvector3D &rotacion);
 	void _setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger);
+    void setPortatil(ISceneNode* node);
 	
 	dvector3D* _getNodePosition();
 	dvector3D* _getNodeRotation();
 	
 private:
-    ISceneNode* object;
+    ISceneNode* object, *gun;
     ITexture* texture;
+    
 };
 
 #endif /* nodeMesh_hpp */

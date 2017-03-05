@@ -26,6 +26,7 @@ public:
     void accionar();
     void cuerpoacuerpo();
     unsigned int* getVel();
+    void addArma();
 	
 private:
 	armas* arma;

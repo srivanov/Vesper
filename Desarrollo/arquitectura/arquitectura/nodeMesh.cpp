@@ -4,6 +4,11 @@
 
 nodeMesh::nodeMesh(ISceneNode* node){
 	object = node;
+    gun = NULL;
+}
+
+void nodeMesh::setPortatil(ISceneNode* node){
+    gun = node;
 }
 
 nodeMesh::~nodeMesh(){
@@ -21,6 +26,8 @@ bool nodeMesh::_setMaterialTexture(ITexture* tex){
 void nodeMesh::_setNodePosition(dvector3D &posicion){
 //	if(posicion != NULL)
     object->setPosition(vector3df(posicion.x,posicion.y,posicion.z));
+//    if(gun != NULL)
+//        gun->setPosition(vector3df(posicion.x,posicion.y,posicion.z-3));
 }
 
 void nodeMesh::_setNodeRotation(dvector3D &rotacion){
