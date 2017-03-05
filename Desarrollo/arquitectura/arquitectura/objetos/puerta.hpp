@@ -29,7 +29,7 @@ public:
     ~puerta();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
-    bool const* getmuero();
+    bool const getmuero();
 	void abre();
 	void cierra();
 	bool estasAbierta();

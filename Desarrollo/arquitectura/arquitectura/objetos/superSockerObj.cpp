@@ -50,8 +50,8 @@ void superSockerObj::contacto(GameObject *g){
     }
 }
 
-bool const* superSockerObj::getmuero(){
-    return &muero;
+bool const superSockerObj::getmuero(){
+    return muero;
 }
 
 void superSockerObj::contactoEnd(GameObject *g){

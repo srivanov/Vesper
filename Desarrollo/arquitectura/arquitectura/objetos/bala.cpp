@@ -1,7 +1,7 @@
 
 #include "bala.hpp"
 
-bala::bala(dvector3D &pos, dvector3D &dir, float vel){
+bala::bala(dvector3D pos, dvector3D &dir, float vel){
 	setType(tBALA);
     component* aux = new class render();
     this->insertComponent((char*)"render", aux);
@@ -66,8 +66,8 @@ void bala::update(){
 		mover(direccion);
 }
 
-bool const* bala::getmuero(){
-	return &muero;
+bool const bala::getmuero(){
+	return muero;
 }
 
 void bala::contacto(GameObject *g){

@@ -23,7 +23,7 @@ void gun::update(){
         bala_aux = *iter;
 //        bala_aux->mover(*bala_aux->getDireccion());
         bala_aux->update();
-        if(*bala_aux->getmuero()){
+        if(bala_aux->getmuero()){
             delete bala_aux;
             bala_aux = NULL;
             iter = balas.erase(iter);
@@ -48,7 +48,7 @@ void gun::atacar(dvector3D &pos, dvector3D &dir){
 		if(temp.tTranscurrido(1.0f/cadencia))
 		{
 			temp.reset();
-            insertBala(pos, dir, 3.0f);
+            insertBala(pos, dir, 10.0f);
 			if(tipo != tMARTILLO && tipo != tPALAc) { municion--; cargador--; }
 		}
 		else

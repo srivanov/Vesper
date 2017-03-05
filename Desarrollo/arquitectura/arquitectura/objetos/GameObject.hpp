@@ -88,12 +88,12 @@ public:
 	
 	virtual void contacto(GameObject* g){};
     virtual void contactoEnd(GameObject* g){};
-    virtual bool const* getmuero() = 0;
+    virtual bool const getmuero() = 0;
     void setID(int &ID) { this->ID = ID; }
 	int getID() { return ID; }
 protected:
     bool renderizable, first = true;
-    dvector3D posicion, prev_pos, rotacion, anguloDisparo;
+    dvector3D posicion, prev_pos, rotacion, prev_rot, anguloDisparo;
 	int ID;
 private:
 	//TO DO: crear el vector con componentes y no punteros

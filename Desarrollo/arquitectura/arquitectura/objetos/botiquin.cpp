@@ -62,8 +62,8 @@ void botiquin::contacto(GameObject *g){
     }
 }
 
-bool const* botiquin::getmuero(){
-    return &muero;
+bool const botiquin::getmuero(){
+    return muero;
 }
 
 void botiquin::contactoEnd(GameObject *g){

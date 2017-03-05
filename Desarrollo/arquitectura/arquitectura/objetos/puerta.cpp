@@ -49,8 +49,8 @@ void puerta::contactoEnd(GameObject *g){
 	
 }
 
-bool const* puerta::getmuero(){
-    return &muero;
+bool const puerta::getmuero(){
+    return muero;
 }
 
 void puerta::abre(){

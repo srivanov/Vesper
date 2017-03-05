@@ -49,8 +49,8 @@ void piedraObj::contacto(GameObject *g){
     }
 }
 
-bool const* piedraObj::getmuero(){
-    return &muero;
+bool const piedraObj::getmuero(){
+    return muero;
 }
 
 void piedraObj::contactoEnd(GameObject *g){

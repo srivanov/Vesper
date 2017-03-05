@@ -59,19 +59,22 @@ void Game::stop(){
 	running = false;
 }
 
+bool Game::isRunning(){
+	if(running)
+		return renderizador->run();
+	return false;
+}
+
 void Game::render(float &interpolation){
 	Fps::Instance()->update();
 	if(!pausa){
 		nivelazo->render(interpolation);
 		cam->render(interpolation);
+	}else{
+		processEvents();
+		layoutPrueba->update();
 	}
 	renderizador->dibujar(pausa);
-}
-
-bool Game::isRunning(){
-	if(running)
-		return renderizador->run();
-	return false;
 }
 
 void Game::update(const long &timePerFrame){
@@ -81,9 +84,6 @@ void Game::update(const long &timePerFrame){
 		cam->movimientoInteligente(*nivelazo->getPlayer()->getPosicion());
 		trigger_system::_instance()->update();
 		mundoBox2D::Instance()->update(timePerFrame);
-	}else{
-		processEvents();
-		layoutPrueba->update();
 	}
 }
 

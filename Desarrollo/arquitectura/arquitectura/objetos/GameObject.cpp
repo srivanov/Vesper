@@ -65,6 +65,8 @@ void GameObject::setPosicion(dvector3D p3D){
 		prev_pos = posicion;
 		first = false;
 	}
+	if(*getType() == tBALA)
+		printf("%f - %f\n", prev_pos.x, posicion.x);
     transform3D* go = (transform3D*)this->findComponent("transform3D");
     if(go != NULL)
         go->setPosition(posicion);
@@ -72,16 +74,20 @@ void GameObject::setPosicion(dvector3D p3D){
 }
 
 void GameObject::setRotacion(float rot){
-	rotacion.z = rot;
 	transform3D* go = (transform3D*)this->findComponent("transform3D");
-	if(go != NULL)
+	if(go != NULL){
+		prev_rot.z = rotacion.z;
+		rotacion.z = rot;
 		go->rotar(rotacion.z);
+	}
 }
 
 void GameObject::rotarConRaton(dvector3D &posRaton){
 	transform3D* go = (transform3D*)this->findComponent("transform3D");
-	if(go != NULL)
+	if(go != NULL){
+		prev_rot.z = rotacion.z;
 		rotacion.z = go->rotarConRaton(posRaton);
+	}
 }
 
 dvector3D* GameObject::getRotacion(){
@@ -98,7 +104,7 @@ void GameObject::render(float &interpolation){
 	class render* ren = (class render*)findComponent("render");
 	if(ren != NULL){
 		ren->setNodeRotation(rotacion);
-		ren->DrawNode(prev_pos, posicion, interpolation);
+		ren->DrawNode(prev_pos, posicion, prev_rot, rotacion, interpolation);
 	}
 }
 

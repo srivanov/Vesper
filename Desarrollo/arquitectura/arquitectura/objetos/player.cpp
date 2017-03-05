@@ -69,8 +69,8 @@ void player::cambiarArma(){
     std::cout << *arma->getArmaActual()->getType() << std::endl;
 }
 
-bool const* player::getmuero(){
-    return &muero;
+bool const player::getmuero(){
+    return muero;
 }
 
 void player::mover(dvector3D &vel){

@@ -18,7 +18,7 @@ public:
 	void update();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
-    bool const* getmuero();
+    bool const getmuero();
 	int * getID(){return &ID;}
 	void notify(dvector3D& position, int type);
 	bool EventUsed(int type);

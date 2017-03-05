@@ -230,8 +230,11 @@ float physics::rotarConRaton(dvector3D &posRaton){
     aux.x = posRaton.x - body->GetPosition().x;
     aux.y = posRaton.y - body->GetPosition().y;
     
-    rotacion = atan2f(-aux.x, aux.y)* 180 / 3.14159265 + 90;
-    
+    rotacion = atan2f(aux.y, aux.x)* 180 / 3.14159265;
+	
+	if(rotacion<0.0f)
+		rotacion = 360.0f + rotacion;
+	
     //paso el coseno y seno de la rotacion a unitario
     float length = sqrt((aux.x*aux.x)+(aux.y*aux.y));
     angulo_disparo.x = aux.x / length;

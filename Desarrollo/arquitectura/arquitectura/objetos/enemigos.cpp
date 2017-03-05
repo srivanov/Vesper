@@ -84,8 +84,8 @@ void enemigos::contacto(GameObject *g){
     }
 }
 
-bool const* enemigos::getmuero(){
-    return &muero;
+bool const enemigos::getmuero(){
+    return muero;
 }
 
 void enemigos::contactoEnd(GameObject *g){

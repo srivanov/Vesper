@@ -209,7 +209,7 @@ void nivel::dibujarMapa(){
 void nivel::update(){
     std::vector<GameObject*>::iterator iter = powerups.begin();
     while (iter!=powerups.end() && powerups.size() > 0) {
-        if(*(*iter)->getmuero()){
+        if((*iter)->getmuero()){
             delete (*iter);
             powerups.erase(iter);
 			iter = powerups.begin();
@@ -224,8 +224,8 @@ void nivel::contacto(GameObject *g){
     
 }
 
-bool const* nivel::getmuero(){
-    return &muero;
+bool const nivel::getmuero(){
+    return muero;
 }
 
 void nivel::contactoEnd(GameObject *g){

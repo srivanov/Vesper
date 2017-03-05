@@ -18,7 +18,7 @@ public:
 	void cambiarArma();
 	void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
-    bool const* getmuero();
+    bool const getmuero();
 	void mover(dvector3D &vel);
 	void setVelocidad(unsigned int vel);
 	void activarHab();

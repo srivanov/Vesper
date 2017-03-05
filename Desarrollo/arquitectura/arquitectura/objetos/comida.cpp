@@ -66,8 +66,8 @@ void comida::contacto(GameObject *g){
     }
 }
 
-bool const* comida::getmuero(){
-    return &muero;
+bool const comida::getmuero(){
+    return muero;
 }
 
 void comida::contactoEnd(GameObject *g){

@@ -26,7 +26,7 @@ public:
 	void deleteNode();
 	void setTexto();
     void dibujar(bool pausa);
-	void DrawNode(dvector3D &prev, dvector3D &next, float &interpolation);
+	void DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_rot, dvector3D &next_rot, float &interpolation);
 	void addCamera(dvector3D &p, dvector3D &l);
 	void closeWindow();
 	void dibujarMapa();

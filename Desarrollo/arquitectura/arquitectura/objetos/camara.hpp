@@ -19,7 +19,7 @@ public:
     bool getZoom();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
-    bool const* getmuero();
+    bool const getmuero();
     void setRapido(bool r);
     bool getRapido();
     

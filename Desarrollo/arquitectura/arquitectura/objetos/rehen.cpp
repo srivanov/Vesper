@@ -44,8 +44,8 @@ void rehen::update(){
     GameObject::update();
 }
 
-bool const* rehen::getmuero(){
-    return &muero;
+bool const rehen::getmuero(){
+    return muero;
 }
 
 void rehen::contacto(GameObject *g){

@@ -50,8 +50,8 @@ void lanzaCaramelosObj::contacto(GameObject *g){
     }
 }
 
-bool const* lanzaCaramelosObj::getmuero(){
-    return &muero;
+bool const lanzaCaramelosObj::getmuero(){
+    return muero;
 }
 
 void lanzaCaramelosObj::contactoEnd(GameObject *g){

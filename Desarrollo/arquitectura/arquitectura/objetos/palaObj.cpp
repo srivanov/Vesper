@@ -52,8 +52,8 @@ void palaObj::contacto(GameObject *g){
     }
 }
 
-bool const* palaObj::getmuero(){
-    return &muero;
+bool const palaObj::getmuero(){
+    return muero;
 }
 
 void palaObj::contactoEnd(GameObject *g){

@@ -86,8 +86,8 @@ void camara::contacto(GameObject *g){
 	
 }
 
-bool const* camara::getmuero(){
-    return &muero;
+bool const camara::getmuero(){
+    return muero;
 }
 
 float* camara::getCamSpeed(){

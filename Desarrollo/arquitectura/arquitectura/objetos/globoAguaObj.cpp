@@ -50,8 +50,8 @@ void globoAguaObj::contacto(GameObject *g){
     }
 }
 
-bool const* globoAguaObj::getmuero(){
-    return &muero;
+bool const globoAguaObj::getmuero(){
+    return muero;
 }
 
 void globoAguaObj::contactoEnd(GameObject *g){

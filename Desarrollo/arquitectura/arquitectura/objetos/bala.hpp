@@ -9,13 +9,13 @@
 
 class bala : public GameObject{
 public:
-    bala(dvector3D &pos, dvector3D &dir, float vel);
+    bala(dvector3D pos, dvector3D &dir, float vel);
     ~bala();
 	dvector3D* getDireccion();
 	void update();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
-    bool const* getmuero();
+    bool const getmuero();
 private:
 	dvector3D direccion;
 	tiempo temp;

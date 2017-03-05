@@ -15,7 +15,7 @@ public:
     void update();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
-    bool const* getmuero();
+    bool const getmuero();
     void activar();
     bool estaActivado();
     void muere();

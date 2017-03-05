@@ -50,8 +50,8 @@ void chicleObj::contacto(GameObject *g){
     }
 }
 
-bool const* chicleObj::getmuero(){
-    return &muero;
+bool const chicleObj::getmuero(){
+    return muero;
 }
 
 void chicleObj::contactoEnd(GameObject *g){

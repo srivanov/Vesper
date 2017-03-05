@@ -100,13 +100,23 @@ void render::dibujar(bool pausa){
 }
 
 //		INTERPOLATION
-void render::DrawNode(dvector3D &prev, dvector3D &next, float &interpolation){
+void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_rot, dvector3D &next_rot, float &interpolation){
 	if(nodo != NULL){
-		dvector3D act( (next.x - prev.x) * interpolation + prev.x, (next.y - prev.y) * interpolation + prev.y, 0 );
+		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, 0 );
 		nodo->_setNodePosition(act);
+		
+		float r2d2 = 0.0f;
+		if(next_rot.z > 270.0f && prev_rot.z < 90.0f)
+			r2d2 = -360.0f;
+		if(next_rot.z < 90.0f && prev_rot.z > 270.0f)
+			r2d2 = 360.0f;
+		
+		act = dvector3D(0,0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
+		nodo->_setNodeRotation(act);
+		
 	}
 	if(camara != NULL){
-		dvector3D act( (next.x - prev.x) * interpolation + prev.x, (next.y - prev.y) * interpolation + prev.y, (next.z - prev.z) * interpolation + prev.z );
+		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, (next_pos.z - prev_pos.z) * interpolation + prev_pos.z);
 		setCamPos(act);
 		setCamTarget(act+dvector3D(0,5,10));
 	}

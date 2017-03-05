@@ -63,8 +63,8 @@ void fuente::contacto(GameObject *g){
     }
 }
 
-bool const* fuente::getmuero(){
-    return &muero;
+bool const fuente::getmuero(){
+    return muero;
 }
 
 void fuente::contactoEnd(GameObject *g){

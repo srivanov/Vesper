@@ -50,8 +50,8 @@ void bombaHumoObj::contacto(GameObject *g){
     }
 }
 
-bool const* bombaHumoObj::getmuero(){
-    return &muero;
+bool const bombaHumoObj::getmuero(){
+    return muero;
 }
 
 void bombaHumoObj::contactoEnd(GameObject *g){

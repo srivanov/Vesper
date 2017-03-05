@@ -78,8 +78,8 @@ void alarma::contacto(GameObject *g){
     }
 }
 
-bool const* alarma::getmuero(){
-    return &muero;
+bool const alarma::getmuero(){
+    return muero;
 }
 
 void alarma::contactoEnd(GameObject *g){
