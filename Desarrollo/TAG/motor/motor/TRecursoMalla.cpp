@@ -35,7 +35,7 @@ void TRecursoMalla::asignarMatrix(glm::mat4 *m){
 	modelMatrix = *m;
 }
 
-void TRecursoMalla::Draw(Shader &shader){
+void TRecursoMalla::Draw(Shader *shader){
 	std::vector<Mesh>::iterator it = meshes.begin();
 	while(it != meshes.end()){
 		it->Draw(shader);
@@ -129,7 +129,8 @@ std::vector<Texture*> TRecursoMalla::loadMaterialTextures(aiMaterial *mat, aiTex
 	for(GLuint i = 0; i < mat->GetTextureCount(type); i++){
 		aiString str;
 		mat->GetTexture(type, i, &str);
-		textures.push_back(pedirTextura(directorio+'/'+str.C_Str()));
+		std::string dir = directorio+'/'+str.C_Str();
+		textures.push_back(pedirTextura(dir));
 	}
 	textures.shrink_to_fit();
 	return textures;
@@ -154,12 +155,12 @@ void TRecursoMalla::imprimirDatos(){
 		std::cout << "Coordenadas de textura: False" << std::endl;
 }
 
-void TRecursoMalla::setTexture(std::string ruta){
+void TRecursoMalla::setTexture(std::string &ruta){
 	meshes.at(0).texturas.clear();
 	meshes.at(0).texturas.push_back(pedirTextura(ruta));
 }
 
-Texture* TRecursoMalla::pedirTextura(std::string ruta){
+Texture* TRecursoMalla::pedirTextura(std::string &ruta){
 	return static_cast<TRecursoTextura*>(gestor->getRecurso(ruta, tRTextura))->getTexture();
 }
 

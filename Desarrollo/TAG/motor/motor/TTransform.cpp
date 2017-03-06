@@ -28,6 +28,10 @@ void TTransform::trasponer(){
 	matriz = glm::transpose(matriz);
 }
 
+void TTransform::setPosicion(glm::vec3 pos){
+	matriz = glm::translate(glm::mat4(1.0f), pos);
+}
+
 void TTransform::trasladar(glm::vec3 pos){
 	matriz = glm::translate(matriz, pos);
 }

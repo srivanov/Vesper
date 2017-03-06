@@ -9,8 +9,9 @@
 #include "TLuz.hpp"
 #include "TNodo.hpp"
 
-TLuz::TLuz(){
+TLuz::TLuz() : ID(0){
 	pos = glm::vec3();
+	sh = ShaderManager::Instance()->getActivo();
 }
 
 TLuz::~TLuz(){

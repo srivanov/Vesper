@@ -10,6 +10,7 @@
 		E907FC5C1E09F89F00C260C5 /* libassimp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC591E09F89F00C260C5 /* libassimp.a */; };
 		E907FC5D1E09F89F00C260C5 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5A1E09F89F00C260C5 /* libGLEW.a */; };
 		E907FC5E1E09F89F00C260C5 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5B1E09F89F00C260C5 /* libglfw3.a */; };
+		E912A7D21E6DB87000ED8E74 /* Dvector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E912A7D01E6DB87000ED8E74 /* Dvector.cpp */; };
 		E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E943945A1E09A7CB0053DBE7 /* main.cpp */; };
 		E94394691E09A81C0053DBE7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94394681E09A81C0053DBE7 /* OpenGL.framework */; };
 		E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E954B0921E17F7EC00F1BEB6 /* libSOIL.a */; };
@@ -20,6 +21,10 @@
 		E98990D71E5C5AFD0001A36A /* TRecursoTextura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */; };
 		E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7801E4A53E1004D80EF /* TLuz.cpp */; };
 		E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7831E4A57F3004D80EF /* TCamara.cpp */; };
+		E9AB33001E6C76BD006D8F9D /* SkyMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */; };
+		E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */; };
+		E9AB33061E6C76F5006D8F9D /* SkyCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */; };
+		E9AB330D1E6CA194006D8F9D /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */; };
 		E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF831E1EE5E50039E88A /* textura.vs */; };
 		E9B3EF8A1E1F21E90039E88A /* libzlibstatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B3EF891E1F21E90039E88A /* libzlibstatic.a */; };
 		E9B3EF941E1F29820039E88A /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF931E1F29820039E88A /* Mesh.cpp */; };
@@ -49,6 +54,8 @@
 		E907FC591E09F89F00C260C5 /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = libs/libassimp.a; sourceTree = "<group>"; };
 		E907FC5A1E09F89F00C260C5 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = libs/libGLEW.a; sourceTree = "<group>"; };
 		E907FC5B1E09F89F00C260C5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = libs/libglfw3.a; sourceTree = "<group>"; };
+		E912A7D01E6DB87000ED8E74 /* Dvector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dvector.cpp; sourceTree = "<group>"; };
+		E912A7D11E6DB87000ED8E74 /* Dvector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dvector.hpp; sourceTree = "<group>"; };
 		E94394571E09A7CB0053DBE7 /* motor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = motor; sourceTree = BUILT_PRODUCTS_DIR; };
 		E943945A1E09A7CB0053DBE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E94394681E09A81C0053DBE7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -69,6 +76,15 @@
 		E992F7841E4A57F3004D80EF /* TCamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TCamara.hpp; sourceTree = "<group>"; };
 		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
 		E99573AF1E16F49B00487446 /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
+		E9AB32FC1E6C75BB006D8F9D /* SkyNodo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyNodo.hpp; sourceTree = "<group>"; };
+		E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyMalla.cpp; sourceTree = "<group>"; };
+		E9AB32FF1E6C76BD006D8F9D /* SkyMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyMalla.hpp; sourceTree = "<group>"; };
+		E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyLuz.cpp; sourceTree = "<group>"; };
+		E9AB33021E6C76CD006D8F9D /* SkyLuz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyLuz.hpp; sourceTree = "<group>"; };
+		E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyCamara.cpp; sourceTree = "<group>"; };
+		E9AB33051E6C76F5006D8F9D /* SkyCamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyCamara.hpp; sourceTree = "<group>"; };
+		E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
+		E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderManager.hpp; sourceTree = "<group>"; };
 		E9B3EF831E1EE5E50039E88A /* textura.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textura.vs; sourceTree = "<group>"; };
 		E9B3EF841E1EE5E50039E88A /* textura.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textura.frag; sourceTree = "<group>"; };
 		E9B3EF891E1F21E90039E88A /* libzlibstatic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlibstatic.a; path = libs/libzlibstatic.a; sourceTree = "<group>"; };
@@ -136,37 +152,19 @@
 		E94394591E09A7CB0053DBE7 /* motor */ = {
 			isa = PBXGroup;
 			children = (
-				E960F3EE1E1E6C4300A90C05 /* Camera.cpp */,
-				E960F3EF1E1E6C4300A90C05 /* Camera.hpp */,
+				E9AB330A1E6C7966006D8F9D /* Old */,
+				E9AB33071E6C78DD006D8F9D /* Gestor de recursos */,
+				E9AB33081E6C7905006D8F9D /* Interfaz */,
+				E9AB33091E6C792B006D8F9D /* Arbol */,
 				E943945A1E09A7CB0053DBE7 /* main.cpp */,
-				E9B3EF931E1F29820039E88A /* Mesh.cpp */,
-				E9B3EF8F1E1F291D0039E88A /* Mesh.hpp */,
 				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
-				E992F7831E4A57F3004D80EF /* TCamara.cpp */,
-				E992F7841E4A57F3004D80EF /* TCamara.hpp */,
-				E9EFC4001E49E9E8000E84B1 /* TEntidad.hpp */,
+				E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */,
+				E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */,
+				E9BC146A1E574C3F0059710B /* Pila.h */,
+				E912A7D01E6DB87000ED8E74 /* Dvector.cpp */,
+				E912A7D11E6DB87000ED8E74 /* Dvector.hpp */,
 				E9B47DEB1E535C75000466D7 /* TEscena.cpp */,
 				E9B47DEC1E535C75000466D7 /* TEscena.hpp */,
-				E96948C21E6873E600E27DFD /* SkyEngine.cpp */,
-				E96948C31E6873E600E27DFD /* SkyEngine.hpp */,
-				E992F7801E4A53E1004D80EF /* TLuz.cpp */,
-				E992F7811E4A53E1004D80EF /* TLuz.hpp */,
-				E9B47DEE1E53643D000466D7 /* TMalla.cpp */,
-				E9B47DEF1E53643D000466D7 /* TMalla.hpp */,
-				E9B3EF961E1F2A230039E88A /* TModelo.cpp */,
-				E9B3EF971E1F2A230039E88A /* TModelo.hpp */,
-				E9EFC4021E49EB94000E84B1 /* TNodo.cpp */,
-				E9EFC4031E49EB94000E84B1 /* TNodo.hpp */,
-				E958EC311E4A1FD700478D49 /* TTransform.cpp */,
-				E958EC321E4A1FD700478D49 /* TTransform.hpp */,
-				E9E5A76B1E54C435005A7B72 /* TGestorRecursos.cpp */,
-				E9E5A76C1E54C435005A7B72 /* TGestorRecursos.hpp */,
-				E9E5A76F1E54CF98005A7B72 /* TRecurso.hpp */,
-				E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */,
-				E97C4E5F1E5864A6000C20FB /* TRecursoMalla.hpp */,
-				E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */,
-				E98990D61E5C5AFD0001A36A /* TRecursoTextura.hpp */,
-				E9BC146A1E574C3F0059710B /* Pila.h */,
 			);
 			path = motor;
 			sourceTree = "<group>";
@@ -198,6 +196,67 @@
 				E9CC8D191E22D433005D1408 /* texLight.frag */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		E9AB33071E6C78DD006D8F9D /* Gestor de recursos */ = {
+			isa = PBXGroup;
+			children = (
+				E9B3EF931E1F29820039E88A /* Mesh.cpp */,
+				E9B3EF8F1E1F291D0039E88A /* Mesh.hpp */,
+				E9E5A76B1E54C435005A7B72 /* TGestorRecursos.cpp */,
+				E9E5A76C1E54C435005A7B72 /* TGestorRecursos.hpp */,
+				E9E5A76F1E54CF98005A7B72 /* TRecurso.hpp */,
+				E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */,
+				E97C4E5F1E5864A6000C20FB /* TRecursoMalla.hpp */,
+				E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */,
+				E98990D61E5C5AFD0001A36A /* TRecursoTextura.hpp */,
+			);
+			name = "Gestor de recursos";
+			sourceTree = "<group>";
+		};
+		E9AB33081E6C7905006D8F9D /* Interfaz */ = {
+			isa = PBXGroup;
+			children = (
+				E96948C21E6873E600E27DFD /* SkyEngine.cpp */,
+				E96948C31E6873E600E27DFD /* SkyEngine.hpp */,
+				E9AB32FC1E6C75BB006D8F9D /* SkyNodo.hpp */,
+				E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */,
+				E9AB32FF1E6C76BD006D8F9D /* SkyMalla.hpp */,
+				E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */,
+				E9AB33021E6C76CD006D8F9D /* SkyLuz.hpp */,
+				E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */,
+				E9AB33051E6C76F5006D8F9D /* SkyCamara.hpp */,
+			);
+			name = Interfaz;
+			sourceTree = "<group>";
+		};
+		E9AB33091E6C792B006D8F9D /* Arbol */ = {
+			isa = PBXGroup;
+			children = (
+				E992F7831E4A57F3004D80EF /* TCamara.cpp */,
+				E992F7841E4A57F3004D80EF /* TCamara.hpp */,
+				E9EFC4001E49E9E8000E84B1 /* TEntidad.hpp */,
+				E992F7801E4A53E1004D80EF /* TLuz.cpp */,
+				E992F7811E4A53E1004D80EF /* TLuz.hpp */,
+				E9B47DEE1E53643D000466D7 /* TMalla.cpp */,
+				E9B47DEF1E53643D000466D7 /* TMalla.hpp */,
+				E9EFC4021E49EB94000E84B1 /* TNodo.cpp */,
+				E9EFC4031E49EB94000E84B1 /* TNodo.hpp */,
+				E958EC311E4A1FD700478D49 /* TTransform.cpp */,
+				E958EC321E4A1FD700478D49 /* TTransform.hpp */,
+			);
+			name = Arbol;
+			sourceTree = "<group>";
+		};
+		E9AB330A1E6C7966006D8F9D /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				E960F3EE1E1E6C4300A90C05 /* Camera.cpp */,
+				E960F3EF1E1E6C4300A90C05 /* Camera.hpp */,
+				E9B3EF961E1F2A230039E88A /* TModelo.cpp */,
+				E9B3EF971E1F2A230039E88A /* TModelo.hpp */,
+			);
+			name = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */,
+				E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */,
 				E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */,
 				E98990D71E5C5AFD0001A36A /* TRecursoTextura.cpp in Sources */,
 				E9B3EF981E1F2A230039E88A /* TModelo.cpp in Sources */,
@@ -267,11 +327,15 @@
 				E9E5A76D1E54C435005A7B72 /* TGestorRecursos.cpp in Sources */,
 				E97C4E601E5864A6000C20FB /* TRecursoMalla.cpp in Sources */,
 				E96948C41E6873E600E27DFD /* SkyEngine.cpp in Sources */,
+				E912A7D21E6DB87000ED8E74 /* Dvector.cpp in Sources */,
 				E9B47DF01E53643D000466D7 /* TMalla.cpp in Sources */,
+				E9AB33001E6C76BD006D8F9D /* SkyMalla.cpp in Sources */,
 				E9B47DED1E535C75000466D7 /* TEscena.cpp in Sources */,
+				E9AB33061E6C76F5006D8F9D /* SkyCamara.cpp in Sources */,
 				E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */,
 				E9EFC4041E49EB94000E84B1 /* TNodo.cpp in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,
+				E9AB330D1E6CA194006D8F9D /* ShaderManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

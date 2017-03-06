@@ -18,14 +18,14 @@ class TGestorRecursos{
 public:
 	static TGestorRecursos* Instance();
 	virtual ~TGestorRecursos();
-	TRecurso* getRecurso(std::string name, typeRecurso tipo);
+	TRecurso* getRecurso(std::string &name, typeRecurso tipo);
 	
 protected:
 	TGestorRecursos();
 	
 private:
 	std::vector<TRecurso*> recursos;
-	TRecurso* buscarRecurso(std::string name, typeRecurso tipo);
+	TRecurso* buscarRecurso(std::string &name, typeRecurso tipo);
 };
 
 #endif /* TGestorRecursos_hpp */

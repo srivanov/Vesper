@@ -8,7 +8,7 @@ Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vecto
 	this->setupMesh();
 }
 
-void Mesh::Draw(Shader &shader){
+void Mesh::Draw(Shader *shader){
 	
 	GLuint diffuseNr = 1;
 	GLuint specularNr = 1;
@@ -32,7 +32,7 @@ void Mesh::Draw(Shader &shader){
 		
 		number = ss.str();
 		
-		glUniform1f(glGetUniformLocation(shader.Program, (name + number).c_str()), i);
+		glUniform1f(glGetUniformLocation(shader->Program, (name + number).c_str()), i);
 		glBindTexture(GL_TEXTURE_2D, this->texturas[i]->id);
 	}
 	

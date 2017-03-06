@@ -19,6 +19,7 @@ public:
 	void cargar(glm::mat4 &m);
 	void trasponer();
 	
+	void setPosicion(glm::vec3 pos);
 	void trasladar(glm::vec3 pos);
 	void rotar(glm::vec3 rot);
 	void escalar(glm::vec3 esc);

@@ -14,7 +14,7 @@
 #include "Pila.h"
 #include "TEntidad.hpp"
 #include "TRecursoMalla.hpp"
-#include "Shader.h"
+#include "ShaderManager.hpp"
 #include "TGestorRecursos.hpp"
 
 class TMalla : public TEntidad{
@@ -22,13 +22,14 @@ public:
 	TMalla();
 	~TMalla();
 	void cargarMalla(std::string fichero);
+	void setTextura(std::string &fichero);
+	
 	
 	void beginDraw();
 	void endDraw();
 	
-	//sucia
-	Shader* sh;
 private:
+	Shader* sh;
 	TRecursoMalla* malla;
 	Pila* pila;
 	TGestorRecursos* gestor;

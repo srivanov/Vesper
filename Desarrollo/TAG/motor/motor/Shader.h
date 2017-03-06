@@ -15,9 +15,11 @@ class Shader
 public:
 	// el ID del programa
 	GLuint Program;
+	bool activo;
+	
 	// constructor que lee y compila los shaders
 	Shader(const GLchar* vertexPath, const GLchar* fragmentPath){
-		
+		activo=false;
 	// 1- Leemos el codigo fuente
 		std::string vertexCode;
 		std::string fragmentCode;
@@ -108,7 +110,8 @@ public:
 	}
 	
 	// Usar el programa
-	void Use(){ glUseProgram(this->Program); }
+	void Use(){ glUseProgram(this->Program); activo=true;}
+	void activar(bool b) { activo=b; }
 };
 
 #endif /* Shader_h */

@@ -26,8 +26,8 @@ public:
 	TRecursoMalla();
 	~TRecursoMalla();
 	void cargarFichero(std::string &ruta);
-	void Draw(Shader &shader);
-	void setTexture(std::string ruta);
+	void Draw(Shader *shader);
+	void setTexture(std::string &ruta);
 	void imprimirDatos();
 	void asignarMatrix(glm::mat4 *m);
 private:
@@ -36,7 +36,7 @@ private:
 	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
 	std::vector<Texture*> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
 	
-	Texture* pedirTextura(std::string ruta);
+	Texture* pedirTextura(std::string &ruta);
 	
 	std::vector<Mesh> meshes;
 	std::string rFile, rTextura, directorio;

@@ -25,7 +25,7 @@ TGestorRecursos::~TGestorRecursos(){
 	recursos.clear();
 }
 
-TRecurso* TGestorRecursos::getRecurso(std::string name, typeRecurso tipo){
+TRecurso* TGestorRecursos::getRecurso(std::string &name, typeRecurso tipo){
 	TRecurso* rec = buscarRecurso(name, tipo);
 	if(rec == NULL){
 		if(tipo == tRMalla)
@@ -41,7 +41,7 @@ TRecurso* TGestorRecursos::getRecurso(std::string name, typeRecurso tipo){
 	return rec;
 }
 
-TRecurso* TGestorRecursos::buscarRecurso(std::string name, typeRecurso tipo){
+TRecurso* TGestorRecursos::buscarRecurso(std::string &name, typeRecurso tipo){
 	if(recursos.size() > 0){
 		for (std::vector<TRecurso*>::iterator it = recursos.begin();it!=recursos.end();++it){
 			if((*it)->GetNombre().compare(name) == 0)

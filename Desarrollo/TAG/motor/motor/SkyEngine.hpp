@@ -10,44 +10,30 @@
 #define SkyEngine_hpp
 
 #include "TNodo.hpp"
-#include "TMalla.hpp"
-#include "TTransform.hpp"
-#include "TCamara.hpp"
-#include "TLuz.hpp"
-
-struct dvector3D{
-	float x;
-	float y;
-	float z;
-};
+#include "SkyNodo.hpp"
+#include "SkyMalla.hpp"
+#include "SkyCamara.hpp"
+#include "SkyLuz.hpp"
+#include <map>
 
 class SkyEngine {
 public:
-	SkyEngine(){ root = new TNodo(); }
+	SkyEngine() : num_c(0), num_l(0){ root = new TNodo(); }
 	~SkyEngine();
-	TNodo* crearMalla(TNodo* padre);
-	TNodo* crearCamara(TNodo* padre);
-	TNodo* crearLuz(TNodo* padre);
+	SkyMalla* crearMalla(TNodo* padre);
+	SkyCamara* crearCamara(TNodo* padre);
+	SkyLuz* crearLuz(TNodo* padre);
 	void Draw();
+	bool setActiveCam(int i);
+	int getActiveCam() { return active_cam; }
+	
 private:
 	TNodo* root;
-	TNodo* crearRama(TNodo* padre, TEntidad* ent);
+	std::map<int, SkyCamara*> camaras;
+	std::map<int, SkyLuz*> luces;
+	int num_c, num_l, active_cam;
 };
 
-class SkyNodo {
-protected:
-	/*	0 - Trasladar
-		1 - Escalar
-	 	2 - Rotar
-	 */
-	TTransform *Trans[3];
-	TNodo *TransNodos[3];
-	virtual void builTransform();
-	virtual glm::vec3 glmConverter(const dvector3D &d) { return glm::vec3(d.x, d.y, d.z); }
-	virtual glm::vec3 glmConverter(const dvector3D *d) { return glm::vec3(d->x, d->y, d->z); }
-public:
-	virtual void rotar(dvector3D* vector) { Trans[2]->rotar(glmConverter(vector)); }
-	virtual void escalar(dvector3D* vector) { Trans[1]->escalar(glmConverter(vector)); }
-	virtual void transladar(dvector3D* vector) { Trans[0]->trasladar(glmConverter(vector)); }
-};
+
 #endif /* SkyEngine_hpp */
+

@@ -15,7 +15,7 @@
 //#include <glm/glm.hpp>
 //#include <glm/gtc/matrix_transform.hpp>
 
-#include "Shader.h"
+#include "ShaderManager.hpp"
 #include "TEntidad.hpp"
 
 class TNodo;
@@ -39,11 +39,10 @@ public:
 	void beginDraw(){}
 	void endDraw(){}
 	
-	//sucia
-	Shader* sh;
 	int w, h;
 private:
 	int ID;
+	Shader* sh;
 	bool esPerspectiva;
 	float nearV, farV;
 	std::stack<glm::mat4> trans;

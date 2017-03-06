@@ -76,7 +76,7 @@ void movimiento(TEscena* escena){
 	if (keys[GLFW_KEY_LEFT])
 		mov.x = -0.2f;
 	
-	escena->cambiar(mov);
+//	escena->cambiar(mov);
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
@@ -165,7 +165,7 @@ int main(int argc, const char * argv[]) {
 //	TModelo modelo3("../Models/nanosuit/nanosuit.obj");
 //	modelo3.imprimirDatos();
 	
-	TEscena escena(miShader);
+	TEscena escena;
 	
 	GLuint modelLoc, viewLoc, projectionLoc;
 	

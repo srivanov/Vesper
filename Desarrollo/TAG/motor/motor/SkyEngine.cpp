@@ -12,49 +12,39 @@ SkyEngine::~SkyEngine(){
 	delete root;
 }
 
-TNodo* SkyEngine::crearRama(TNodo* padre, TEntidad* ent){
-	TNodo *nR = new TNodo(), *nS = new TNodo(), *nT = new TNodo(), *nResult = new TNodo();
-	TTransform *tR = new TTransform(), *tS = new TTransform(), *tT = new TTransform();
-	
-	padre->addHijo(nR);
-	nR->addHijo(nS);
-	nS->addHijo(nT);
-	nT->addHijo(nResult);
-	
-	
-	nR->setEntidad(tR);
-	nS->setEntidad(tS);
-	nT->setEntidad(tT);
-	nResult->setEntidad(ent);
-	
-	return nResult;
+SkyMalla* SkyEngine::crearMalla(TNodo* padre){
+	return new SkyMalla(padre ? padre : root);
 }
 
-TNodo* SkyEngine::crearMalla(TNodo* padre){
-	return crearRama(padre ? padre : root, new TMalla());
+SkyCamara* SkyEngine::crearCamara(TNodo* padre){
+	SkyCamara* c = new SkyCamara(padre ? padre : root, num_c);
+	camaras.insert(std::pair<int, SkyCamara*>(num_c, c));
+	num_c++;
+	return c;
 }
 
-TNodo* SkyEngine::crearCamara(TNodo* padre){
-	return crearRama(padre ? padre : root, new TCamara());
-}
-
-TNodo* SkyEngine::crearLuz(TNodo* padre){
-	return crearRama(padre ? padre : root, new TLuz());
+SkyLuz* SkyEngine::crearLuz(TNodo* padre){
+	SkyLuz* c = new SkyLuz(padre ? padre : root, num_l);
+	luces.insert(std::pair<int, SkyLuz*>(num_l, c));
+	num_l++;
+	return c;
 }
 
 void SkyEngine::Draw(){
-	
-}
-
-void SkyNodo::builTransform(){
-	
-	for (int i=0; i<3; i++) {
-		TransNodos[i] = new TNodo;
-		Trans[i] = new TTransform;
-		TransNodos[i]->setEntidad(Trans[i]);
-		if(i==0) continue;
-		TransNodos[i]->addHijo(TransNodos[i-1]);
+	(camaras.find(active_cam))->second->Draw();
+	std::map<int, SkyLuz*>::iterator it = luces.begin();
+	while(it != luces.end()){
+		it->second->Draw();
+		++it;
 	}
+	root->Draw();
 }
 
+bool SkyEngine::setActiveCam(int i){
+	if(i<0 || i>num_c)
+		return false;
+	active_cam = i;
+	return true;
+}
 
+//TO DO: apagar luz segun el ID

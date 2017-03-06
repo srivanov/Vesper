@@ -15,7 +15,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "TEntidad.hpp"
-#include "Shader.h"
+#include "ShaderManager.hpp"
 
 class TNodo;
 
@@ -25,11 +25,18 @@ public:
 	~TLuz();
 	void setIntensidad(glm::vec4 c);
 	glm::vec4 getIntensidad();
-	Shader* sh;
+	
+	void setID(int id) { ID = id; }
+	int getID(){ return ID; }
+	
+
 	void Draw(TNodo* n);
 	void beginDraw(){}
 	void endDraw(){}
+
 private:
+	int ID;
+	Shader* sh;
 	glm::vec4 color;
 	glm::vec3 pos;
 	std::stack<glm::mat4> trans;
