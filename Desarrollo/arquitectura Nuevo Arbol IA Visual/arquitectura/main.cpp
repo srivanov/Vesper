@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     //TO DO: Hacer los Singleton sin puntero y con const (ejemplo en Game)
     Game* game = Game::Instance();
     
-    game->start(600,600,32,false,false,true,true);
+    game->start(800,600,32,false,false,true,true);
     
     while (game->isRunning()) {
         //TO DO: Update 15 veces por segundo

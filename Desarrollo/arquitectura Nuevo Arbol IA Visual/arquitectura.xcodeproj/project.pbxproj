@@ -58,19 +58,8 @@
 		D264079C1E68888A00162A9E /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407951E68888900162A9E /* libCEGUICoreWindowRendererSet_d.dylib */; };
 		D264079D1E68888A00162A9E /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407961E68888900162A9E /* libCEGUICommonDialogs-0_d.dylib */; };
 		D264079E1E68888A00162A9E /* libCEGUIExpatParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26407971E68888A00162A9E /* libCEGUIExpatParser_d.dylib */; };
-		D26407CD1E6889DE00162A9E /* animations in Resources */ = {isa = PBXBuildFile; fileRef = D26407C21E6889DE00162A9E /* animations */; };
-		D26407CE1E6889DE00162A9E /* IA_visual.project in Resources */ = {isa = PBXBuildFile; fileRef = D26407C31E6889DE00162A9E /* IA_visual.project */; };
-		D26407CF1E6889DE00162A9E /* layouts in Resources */ = {isa = PBXBuildFile; fileRef = D26407C41E6889DE00162A9E /* layouts */; };
-		D26407D01E6889DE00162A9E /* looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = D26407C51E6889DE00162A9E /* looknfeel */; };
-		D26407D11E6889DE00162A9E /* lua_scripts in Resources */ = {isa = PBXBuildFile; fileRef = D26407C61E6889DE00162A9E /* lua_scripts */; };
-		D26407D21E6889DE00162A9E /* prueba.project in Resources */ = {isa = PBXBuildFile; fileRef = D26407C71E6889DE00162A9E /* prueba.project */; };
-		D26407D31E6889DE00162A9E /* schemes in Resources */ = {isa = PBXBuildFile; fileRef = D26407C81E6889DE00162A9E /* schemes */; };
-		D26407D41E6889DE00162A9E /* xml_schemas in Resources */ = {isa = PBXBuildFile; fileRef = D26407C91E6889DE00162A9E /* xml_schemas */; };
-		D26407D51E6889DE00162A9E /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = D26407CA1E6889DE00162A9E /* fonts */; };
-		D26407D61E6889DE00162A9E /* imagesets in Resources */ = {isa = PBXBuildFile; fileRef = D26407CB1E6889DE00162A9E /* imagesets */; };
-		D26407D71E6889DE00162A9E /* Menu.project in Resources */ = {isa = PBXBuildFile; fileRef = D26407CC1E6889DE00162A9E /* Menu.project */; };
-		D26407E01E688BBB00162A9E /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26407DC1E688BBB00162A9E /* menuPrueba.cpp */; };
-		D26407E11E688BBB00162A9E /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26407DD1E688BBB00162A9E /* GUI.cpp */; };
+		D2A80D721E6DF59700728678 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = D2A80D711E6DF59700728678 /* GUI */; };
+		D2A80D741E6DF5AE00728678 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = D2A80D731E6DF5AE00728678 /* GUI */; };
 		D2AC40AC1E43367D0091076F /* EasyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2AC40AA1E43367D0091076F /* EasyMath.cpp */; };
 		E9026ED41E35299B00B44AC3 /* palaObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9026ED21E35299B00B44AC3 /* palaObj.cpp */; };
 		E9026EF41E353CDE00B44AC3 /* alarmita.3ds in Resources */ = {isa = PBXBuildFile; fileRef = E9026ED61E353CDE00B44AC3 /* alarmita.3ds */; };
@@ -261,22 +250,8 @@
 		D26407951E68888900162A9E /* libCEGUICoreWindowRendererSet_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUICoreWindowRendererSet_d.dylib; path = libs/libCEGUICoreWindowRendererSet_d.dylib; sourceTree = "<group>"; };
 		D26407961E68888900162A9E /* libCEGUICommonDialogs-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUICommonDialogs-0_d.dylib"; path = "libs/libCEGUICommonDialogs-0_d.dylib"; sourceTree = "<group>"; };
 		D26407971E68888A00162A9E /* libCEGUIExpatParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUIExpatParser_d.dylib; path = libs/libCEGUIExpatParser_d.dylib; sourceTree = "<group>"; };
-		D26407C21E6889DE00162A9E /* animations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = animations; path = GUI/animations; sourceTree = "<group>"; };
-		D26407C31E6889DE00162A9E /* IA_visual.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = IA_visual.project; path = GUI/IA_visual.project; sourceTree = "<group>"; };
-		D26407C41E6889DE00162A9E /* layouts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = layouts; path = GUI/layouts; sourceTree = "<group>"; };
-		D26407C51E6889DE00162A9E /* looknfeel */ = {isa = PBXFileReference; lastKnownFileType = folder; name = looknfeel; path = GUI/looknfeel; sourceTree = "<group>"; };
-		D26407C61E6889DE00162A9E /* lua_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lua_scripts; path = GUI/lua_scripts; sourceTree = "<group>"; };
-		D26407C71E6889DE00162A9E /* prueba.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = prueba.project; path = GUI/prueba.project; sourceTree = "<group>"; };
-		D26407C81E6889DE00162A9E /* schemes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = schemes; path = GUI/schemes; sourceTree = "<group>"; };
-		D26407C91E6889DE00162A9E /* xml_schemas */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xml_schemas; path = GUI/xml_schemas; sourceTree = "<group>"; };
-		D26407CA1E6889DE00162A9E /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = GUI/fonts; sourceTree = "<group>"; };
-		D26407CB1E6889DE00162A9E /* imagesets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imagesets; path = GUI/imagesets; sourceTree = "<group>"; };
-		D26407CC1E6889DE00162A9E /* Menu.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Menu.project; path = GUI/Menu.project; sourceTree = "<group>"; };
-		D26407DB1E688BBB00162A9E /* menuPrueba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = menuPrueba.hpp; path = GUI/menuPrueba.hpp; sourceTree = "<group>"; };
-		D26407DC1E688BBB00162A9E /* menuPrueba.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = menuPrueba.cpp; path = GUI/menuPrueba.cpp; sourceTree = "<group>"; };
-		D26407DD1E688BBB00162A9E /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUI.cpp; path = GUI/GUI.cpp; sourceTree = "<group>"; };
-		D26407DE1E688BBB00162A9E /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUI.h; path = GUI/GUI.h; sourceTree = "<group>"; };
-		D26407DF1E688BBB00162A9E /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIManager.h; path = GUI/GUIManager.h; sourceTree = "<group>"; };
+		D2A80D711E6DF59700728678 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
+		D2A80D731E6DF5AE00728678 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
 		D2AC40AA1E43367D0091076F /* EasyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EasyMath.cpp; sourceTree = "<group>"; };
 		D2AC40AB1E43367D0091076F /* EasyMath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EasyMath.hpp; sourceTree = "<group>"; };
 		E9026ED21E35299B00B44AC3 /* palaObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = palaObj.cpp; sourceTree = "<group>"; };
@@ -608,36 +583,6 @@
 			name = PathPlanning;
 			sourceTree = "<group>";
 		};
-		D26407C11E6889CC00162A9E /* GUI */ = {
-			isa = PBXGroup;
-			children = (
-				D26407C21E6889DE00162A9E /* animations */,
-				D26407C31E6889DE00162A9E /* IA_visual.project */,
-				D26407C41E6889DE00162A9E /* layouts */,
-				D26407C51E6889DE00162A9E /* looknfeel */,
-				D26407C61E6889DE00162A9E /* lua_scripts */,
-				D26407C71E6889DE00162A9E /* prueba.project */,
-				D26407C81E6889DE00162A9E /* schemes */,
-				D26407C91E6889DE00162A9E /* xml_schemas */,
-				D26407CA1E6889DE00162A9E /* fonts */,
-				D26407CB1E6889DE00162A9E /* imagesets */,
-				D26407CC1E6889DE00162A9E /* Menu.project */,
-			);
-			name = GUI;
-			sourceTree = "<group>";
-		};
-		D26407DA1E688BA400162A9E /* GUI */ = {
-			isa = PBXGroup;
-			children = (
-				D26407DB1E688BBB00162A9E /* menuPrueba.hpp */,
-				D26407DC1E688BBB00162A9E /* menuPrueba.cpp */,
-				D26407DD1E688BBB00162A9E /* GUI.cpp */,
-				D26407DE1E688BBB00162A9E /* GUI.h */,
-				D26407DF1E688BBB00162A9E /* GUIManager.h */,
-			);
-			name = GUI;
-			sourceTree = "<group>";
-		};
 		D2F319BC1E1D68D20033372E /* sistema decision */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,7 +596,7 @@
 		E9026ED51E353CDE00B44AC3 /* 3d */ = {
 			isa = PBXGroup;
 			children = (
-				D26407C11E6889CC00162A9E /* GUI */,
+				D2A80D711E6DF59700728678 /* GUI */,
 				E9026ED61E353CDE00B44AC3 /* alarmita.3ds */,
 				E9026ED71E353CDE00B44AC3 /* alarmita.blend */,
 				E9026ED81E353CDE00B44AC3 /* alarmita.jpg */,
@@ -705,7 +650,7 @@
 		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
 			isa = PBXGroup;
 			children = (
-				D26407DA1E688BA400162A9E /* GUI */,
+				D2A80D731E6DF5AE00728678 /* GUI */,
 				6396E2831E4792DF00589082 /* PathPlanning */,
 				6358288E1E50D95C0081B7F3 /* Tools */,
 				D2F319BC1E1D68D20033372E /* sistema decision */,
@@ -934,21 +879,17 @@
 				E9026F101E353CDE00B44AC3 /* texture.png in Resources */,
 				E9026F051E353CDE00B44AC3 /* muro.blend in Resources */,
 				E9026F0D1E353CDE00B44AC3 /* suelo.3ds in Resources */,
-				D26407D51E6889DE00162A9E /* fonts in Resources */,
-				D26407CD1E6889DE00162A9E /* animations in Resources */,
-				D26407D11E6889DE00162A9E /* lua_scripts in Resources */,
 				E9026F001E353CDE00B44AC3 /* fuente.3ds in Resources */,
+				D2A80D741E6DF5AE00728678 /* GUI in Resources */,
 				E9026EF71E353CDE00B44AC3 /* bala.3ds in Resources */,
-				D26407D31E6889DE00162A9E /* schemes in Resources */,
 				E9026F0C1E353CDE00B44AC3 /* sphere.blend in Resources */,
-				D26407D71E6889DE00162A9E /* Menu.project in Resources */,
-				D26407D01E6889DE00162A9E /* looknfeel in Resources */,
 				E9026F0A1E353CDE00B44AC3 /* rocas.jpg in Resources */,
 				E9026F011E353CDE00B44AC3 /* fuente.blend in Resources */,
 				E9026EF51E353CDE00B44AC3 /* alarmita.blend in Resources */,
 				E9AC3ADE1DF0AD3600A91A97 /* mapa2c.tmx in Resources */,
 				E9026F041E353CDE00B44AC3 /* muro.3ds in Resources */,
 				E9026EFC1E353CDE00B44AC3 /* colorverde.jpg in Resources */,
+				D2A80D721E6DF59700728678 /* GUI in Resources */,
 				E9026F0B1E353CDE00B44AC3 /* sphere.3ds in Resources */,
 				E9026F061E353CDE00B44AC3 /* muro.blend1 in Resources */,
 				E9026F021E353CDE00B44AC3 /* gota.jpg in Resources */,
@@ -957,16 +898,11 @@
 				E9026EFF1E353CDE00B44AC3 /* enemy.jpg in Resources */,
 				E9026F071E353CDE00B44AC3 /* pala.jpg in Resources */,
 				E9026EFB1E353CDE00B44AC3 /* cesped.jpg in Resources */,
-				D26407D61E6889DE00162A9E /* imagesets in Resources */,
 				E9026EFA1E353CDE00B44AC3 /* botiquin.jpg in Resources */,
 				E9026EFE1E353CDE00B44AC3 /* comida.blend in Resources */,
-				D26407CE1E6889DE00162A9E /* IA_visual.project in Resources */,
-				D26407CF1E6889DE00162A9E /* layouts in Resources */,
-				D26407D21E6889DE00162A9E /* prueba.project in Resources */,
 				E9AC3ADF1DF0AD3600A91A97 /* master-tileset.png in Resources */,
 				E9026EF91E353CDE00B44AC3 /* botiquin.blend in Resources */,
 				E9026F0F1E353CDE00B44AC3 /* suelo.blend1 in Resources */,
-				D26407D41E6889DE00162A9E /* xml_schemas in Resources */,
 				E9026F091E353CDE00B44AC3 /* pizza.jpg in Resources */,
 				E9AC3ADD1DF0AD3600A91A97 /* mapa2.tmx in Resources */,
 				880949E61E3CFB9A00AE0C0E /* mapa1.tmx in Resources */,
@@ -1052,7 +988,6 @@
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				E9AC3A651DF0AA4800A91A97 /* puerta.cpp in Sources */,
-				D26407E11E688BBB00162A9E /* GUI.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				63B81E2F1E26C2C5006BD3AB /* botiquin.cpp in Sources */,
 				6337FDEE1E5F48AA00126C35 /* Nodo_ACurarse.cpp in Sources */,
@@ -1086,7 +1021,6 @@
 				6337FDD01E5F271B00126C35 /* Nodo_QPedir_Ayuda.cpp in Sources */,
 				6396E2811E4792C400589082 /* GraphNode.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* pistola.cpp in Sources */,
-				D26407E01E688BBB00162A9E /* menuPrueba.cpp in Sources */,
 				63B81E351E26D288006BD3AB /* fuente.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,

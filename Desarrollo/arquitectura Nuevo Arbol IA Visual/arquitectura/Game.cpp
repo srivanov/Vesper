@@ -1,6 +1,7 @@
 
 #include "Game.hpp"
 #include <cstdlib>
+#include "GUI/GUIManager.h"
 //Game* Game::pinstance = 0;
 
 Game* Game::Instance(){
@@ -16,10 +17,10 @@ Game::Game(){
 	renderizador = new class render();
 	entrada = new input();
 	running = true;
-    jugador = new player();
 	cam = new camara();
 	nivelazo = new nivel();
-    prueba = NULL;
+    pausa = true;
+    layoutPrueba = NULL;
 }
 
 Game::~Game(){
@@ -27,8 +28,6 @@ Game::~Game(){
 	delete entrada;
 	delete cam;
 	delete nivelazo;
-	balas.clear();
-	delete jugador;
 	renderizador->closeWindow();
 	delete renderizador;
     if(bala_aux == NULL)
@@ -40,21 +39,20 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	renderizador->setTexto();
-    jugador->addNodo("3d/sphere.3ds");
-	jugador->setTexture("3d/texture.png");
-    dvector3D jpos(10,10,0);
-	jugador->setPosicion(jpos);
-	dvector3D campos(jpos.x, jpos.y - 5, jpos.z - 10);
-	cam->addCamara(campos, *jugador->getPosicion());
-	
-	if(nivelazo->cargarNivel("2"))
-		nivelazo->dibujarMapa();
-	
-	LevelBlackBoard::instance();
-    NpcLibrary::instancia();
-	trigger_system::_instance();
+    dvector3D posJ, campos(0, -5, -10);
+    if(nivelazo->cargarNivel("3")) {
+        nivelazo->dibujarMapa();
+        posJ = *nivelazo->getPlayer()->getPosicion();
+    }
+    campos.operator+(posJ);
+//    campos = dvector3D(10,0,-10);
+//    dvector3D k;
+    cam->addCamara(campos, posJ);
     
-    prueba = new menuPrueba();
+	World_BlackBoard::instance();
+	NPC_library::instance();
+	trigger_system::_instance();
+	layoutPrueba = new LayoutGUI();
 }
 
 void Game::stop(){
@@ -62,15 +60,10 @@ void Game::stop(){
 }
 
 void Game::render(){
-	jugador->render();
-	
-    iter = balas.begin();
-    while (iter != balas.end()){
-        bala_aux = *iter;
-        bala_aux->render();
-        iter++;
-    }
-    renderizador->dibujar();
+	if(!pausa){
+		nivelazo->render();
+	}
+	renderizador->dibujar(pausa);
 }
 
 bool Game::isRunning(){
@@ -79,43 +72,18 @@ bool Game::isRunning(){
 	return false;
 }
 
-player* Game::getPlayer(){
-    return jugador;
-}
-
-bala* Game::insertBala(float vel){
-    //TO DO: Hacer la gestion de las balas en la clase bala
-    bala_aux = new bala(*jugador->getPosicion(), *jugador->getDirDisparo(), vel);
-    bala_aux->addNodo("3d/bala.3ds");
-    balas.insert(balas.begin(), bala_aux);
-    return bala_aux;
-}
-
 void Game::update(){
-	nivelazo->update();
-	entrada->update();
-	jugador->update();
-	cam->movimientoInteligente(*jugador->getPosicion());
-	
-    iter = balas.begin();
-    while (iter != balas.end()){
-        bala_aux = *iter;
-        bala_aux->mover(*bala_aux->getDireccion());
-		bala_aux->update();
-		if(*bala_aux->getmuero()){
-			delete bala_aux;
-            bala_aux = NULL;
-			iter = balas.erase(iter);
-		}else
-			iter++;
-    }
-	
-    trigger_system::_instance()->update();
-	
-    Fps::Instance()->update();
-	mundoBox2D::Instance()->update();
-    
-    prueba->update();
+	if(!pausa){
+		nivelazo->update();
+		entrada->update();
+		cam->movimientoInteligente(*nivelazo->getPlayer()->getPosicion());
+		trigger_system::_instance()->update();
+		mundoBox2D::Instance()->update();
+	}else{
+		processEvents();
+		layoutPrueba->update();
+	}
+	Fps::Instance()->update();
 }
 
 void Game::zoom(bool z){
@@ -123,17 +91,35 @@ void Game::zoom(bool z){
 }
 
 void Game::atacarJugador(){
-	jugador->atacar();
+    nivelazo->atacarJugador();
 }
 
 void Game::cambiarArmaJugador(){
-	jugador->cambiarArma();
+    nivelazo->cambiarArmaJugador();
 }
 
 void Game::rotarConRaton(dvector3D posRaton){
-	jugador->rotarConRaton(posRaton);
+    nivelazo->rotarConRaton(posRaton);
 }
 
 camara* Game::getCamara(){
     return cam;
 }
+
+void Game::setPausa(bool p){
+	pausa = p;
+}
+
+player* Game::getPlayer() {
+    return nivelazo->getPlayer();
+}
+
+void Game::processEvents() {
+	MyEventReceiver* rec = MyEventReceiver::Instance();
+	layoutPrueba->posicionarRaton(rec->getMousePosition().x, rec->getMousePosition().y);
+	if(rec->getLeftClick())
+		layoutPrueba->inyectarClick();
+	else
+		layoutPrueba->inyectarClickUP();
+}
+

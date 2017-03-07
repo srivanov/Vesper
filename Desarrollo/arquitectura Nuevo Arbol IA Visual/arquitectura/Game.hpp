@@ -17,10 +17,12 @@
 #include "mundoBox2D.hpp"
 #include "objetos/bala.hpp"
 #include "objetos/nivel.hpp"
-#include "trigger_system.hpp"
-#include "LevelBlackBoard.hpp"
+#include "LevelBlackBoards.hpp"
 #include "NpcLibrary.hpp"
-#include "GUI/menuPrueba.hpp"
+#include "trigger_system.hpp"
+#include <vector>
+#include "Dvector.hpp"
+#include "GUI/LayoutGUI.hpp"
 
 class Game {
 public:
@@ -34,12 +36,12 @@ public:
 	void render();
 	bool isRunning();
     player* getPlayer();
-    bala* insertBala(float vel);
     void zoom(bool z);
 	void atacarJugador();
 	void cambiarArmaJugador();
 	void rotarConRaton(dvector3D posRaton);
     camara* getCamara();
+	void setPausa(bool p);
 	
 protected:
 	Game();
@@ -48,14 +50,15 @@ private:
 	//static Game* pinstance;
 	class render *renderizador;
 	class input* entrada;
-	bool running;
-    player* jugador;
+	bool running, pausa;
     camara* cam;
-    vector<bala*> balas;
     bala* bala_aux;
     std::vector<bala*>::iterator iter;
 	nivel* nivelazo;
-    menuPrueba* prueba;
+	
+	void processEvents();
+	
+	LayoutGUI* layoutPrueba;
 };
 
 #endif /* Game_hpp */

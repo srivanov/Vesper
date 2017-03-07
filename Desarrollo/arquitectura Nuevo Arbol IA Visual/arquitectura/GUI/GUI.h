@@ -78,7 +78,7 @@ namespace Motor{
 
 		bool debugInput = false;
         
-        //virtual tLayout getLayout() = 0;
+        virtual tLayout getLayout() = 0;
         bool mostrar();
         bool ocultar();
         void setPadre(LayoutGUI* p);
