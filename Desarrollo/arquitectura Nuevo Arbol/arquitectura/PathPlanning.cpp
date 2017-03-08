@@ -23,6 +23,25 @@ PathPlanning::~PathPlanning(){
     delete BolsaNodos;
 }
 
+std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D initialPosition,dvector3D finalPosition){
+    dvector2D Pinicial(initialPosition.x,initialPosition.y);
+    dvector2D Pfinal(finalPosition.x,finalPosition.y);
+    BolsaNodos = new NodeOpenBag(grafo->getInitialNode(Pinicial));
+    aux = Pinicial;
+    final_camino = grafo->getFinalNode(Pfinal);
+    
+    while(Pathbuilding());
+    
+    BolsaNodos->add_node(final_camino);
+    /*
+    
+    for (int i=0; i<BolsaNodos->getNodes().size(); i++) {
+        cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
+    }
+    cout << endl;
+     */
+    return BolsaNodos->getCamino();
+}
 std::vector<dvector3D> PathPlanning::obtenerCamino(dvector2D initialPosition,dvector2D finalPosition){
     BolsaNodos = new NodeOpenBag(grafo->getInitialNode(initialPosition));
     aux = initialPosition;
@@ -31,14 +50,15 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector2D initialPosition,dve
     while(Pathbuilding());
     
     BolsaNodos->add_node(final_camino);
-    
-    for (int i=0; i<BolsaNodos->getNodes().size(); i++) {
-        //cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
-    }
-    //cout << endl;
+    /*
+     
+     for (int i=0; i<BolsaNodos->getNodes().size(); i++) {
+     cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
+     }
+     cout << endl;
+     */
     return BolsaNodos->getCamino();
 }
-
 
 bool PathPlanning::Pathbuilding(){
     std::vector<conexos*> conexos = BolsaNodos->lastNode()->getConexos();

@@ -267,7 +267,6 @@
 		E9026EF01E353CDE00B44AC3 /* suelo.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = suelo.blend; sourceTree = "<group>"; };
 		E9026EF11E353CDE00B44AC3 /* suelo.blend1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = suelo.blend1; sourceTree = "<group>"; };
 		E9026EF21E353CDE00B44AC3 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
-		E92BC5A31E3DFFBF008E1F5B /* estados.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = estados.hpp; path = arquitectura/estados.hpp; sourceTree = "<group>"; };
 		E942C0571DF1EDE600CC5763 /* ventana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ventana.cpp; sourceTree = "<group>"; };
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
@@ -562,7 +561,6 @@
 			isa = PBXGroup;
 			children = (
 				6337FDA11E5E14EA00126C35 /* Behaviour_trees v2 */,
-				E92BC5A31E3DFFBF008E1F5B /* estados.hpp */,
 			);
 			name = "sistema decision";
 			path = ..;

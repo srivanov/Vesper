@@ -9,7 +9,8 @@
 #include "Nodo_QRuido.hpp"
 
 short Nodo_QRuido::run(const int &ID){
-    //cout << "RUIDO?" << endl;
+    
+    cout << "RUIDO?" << endl;
     
     if(activado){
         short answer = runHijos(ID);
@@ -18,6 +19,7 @@ short Nodo_QRuido::run(const int &ID){
     }
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->Ruido){
+        cout << "HAY RUIDO" << endl;
         activado = true;
         return RUNNING;
     }

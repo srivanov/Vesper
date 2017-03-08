@@ -40,6 +40,7 @@ class PathPlanning{
     bool Revalorar(NodeOpenBag *);
 public:
     dvector2D aux;
+    std::vector<dvector3D> obtenerCamino(dvector3D,dvector3D);
     std::vector<dvector3D> obtenerCamino(dvector2D,dvector2D);
     PathPlanning(Graph* grafo);
     PathPlanning(Graph* grafo,dvector2D,dvector2D);

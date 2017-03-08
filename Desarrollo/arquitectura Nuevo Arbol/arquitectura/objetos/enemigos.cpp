@@ -65,14 +65,15 @@ void enemigos::update(){
 	}
 	// FIN CODIGO GUARRO
     
-    book->updateBook();
+    
     if (book->Evento) {
         tree->reset();
         book->Evento = false;
     }
-    
+    book->updateBook();
     
     tree->run(m_ID);
+    
 	mover(*book->VectorMovimiento);
 	rotarConRaton(*getPosicion() + *book->VectorMovimiento);
 	GameObject::update();

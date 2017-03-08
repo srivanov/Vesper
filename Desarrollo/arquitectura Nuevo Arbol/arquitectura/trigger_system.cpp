@@ -31,7 +31,7 @@ void trigger_system::add_trigger(const Prioridades& type, int id, dvector3D * po
     IDcont++;
 }
 void trigger_system::update(){
-    update_trigger();
+    
     for(int i=0;i<TRIGGER_VECTOR.size();i++){
         for (int j=0; j<AGENTS.size(); j++) {
             if (TRIGGER_VECTOR[i]->_radio==-1) {
@@ -44,6 +44,7 @@ void trigger_system::update(){
                 AGENTS[j]->notify(TRIGGER_VECTOR[i]->_idTrigger,TRIGGER_VECTOR[i]->_type, TRIGGER_VECTOR[i]->_pos);
         }
     }
+    update_trigger();
 }
 void trigger_system::update_trigger(){
     for (int i=0; i<TRIGGER_VECTOR.size(); i++) {

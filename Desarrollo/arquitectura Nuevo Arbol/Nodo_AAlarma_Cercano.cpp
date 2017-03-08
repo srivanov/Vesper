@@ -10,6 +10,7 @@
 
 short Nodo_AAlarma_Cercano::run(const int &ID){
     //cout << "FUI A LA ALARMA" << endl;
-    NpcLibrary::instancia()->recover_book(ID)->Alarma = false;
+    NpcLibrary::instancia()->
+    recover_book(ID)->Alarma = false;
     return FUNCIONO;
 }
