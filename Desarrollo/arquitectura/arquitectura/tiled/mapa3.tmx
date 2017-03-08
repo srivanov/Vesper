@@ -10011,7 +10011,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="muros" visible="0">
+ <objectgroup name="muros">
   <object id="1" x="128" y="1056">
    <polyline points="0,0 0,128 160,128 160,0 0,0"/>
   </object>
@@ -10337,7 +10337,7 @@
   </object>
   <object id="235" name="49" type="nodo" x="800" y="224" width="32" height="32">
    <properties>
-    <property name="conecta" value="41-48-42"/>
+    <property name="conecta" value="41-48-42-63"/>
    </properties>
   </object>
   <object id="236" name="50" type="nodo" x="288" y="768" width="32" height="32">
@@ -10407,7 +10407,7 @@
   </object>
   <object id="253" name="63" type="nodo" x="512" y="224" width="32" height="32">
    <properties>
-    <property name="conecta" value="65-69"/>
+    <property name="conecta" value="65-69-49"/>
    </properties>
   </object>
   <object id="254" name="68" type="nodo" x="288" y="320" width="32" height="32">
@@ -10430,7 +10430,11 @@
     <property name="conecta" value="67-65-64"/>
    </properties>
   </object>
-  <object id="262" name="64" type="nodo" x="480" y="96" width="32" height="32"/>
+  <object id="262" name="64" type="nodo" x="480" y="96" width="32" height="32">
+   <properties>
+    <property name="conecta" value="65-66"/>
+   </properties>
+  </object>
   <object id="263" name="69" type="nodo" x="512" y="288" width="32" height="32">
    <properties>
     <property name="conecta" value="63-68"/>
