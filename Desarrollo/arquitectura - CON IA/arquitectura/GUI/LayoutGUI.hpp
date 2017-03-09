@@ -17,6 +17,7 @@
 #include "CreditosLayout.hpp"
 #include "HUDLayout.hpp"
 #include "PausaLayout.hpp"
+#include "depuracionIA.hpp"
 #include <vector>
 
 class LayoutGUI {
@@ -28,6 +29,9 @@ public:
     void posicionarRaton(float x, float y);
     void inyectarClick();
     void inyectarClickUP();
+    
+    void setActiveLayoutDebug();
+    void showDebugMenu();
     
 private:
     tLayout activeLayout;

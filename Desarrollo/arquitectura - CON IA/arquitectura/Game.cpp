@@ -83,6 +83,7 @@ void Game::update(){
 		processEvents();
 		layoutPrueba->update();
 	}
+    
 	Fps::Instance()->update();
 }
 

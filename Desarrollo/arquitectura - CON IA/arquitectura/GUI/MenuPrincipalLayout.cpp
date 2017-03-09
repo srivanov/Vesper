@@ -56,7 +56,8 @@ void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
     printf("Empieza una nueva partida");
 	Game::Instance()->setPausa(false);
     padre->setActiveLayout(tPausa);
-	
+    
+    
 }
 
 void MenuPrincipalLayout::onClickLoadScreen(const CEGUI::EventArgs &e){

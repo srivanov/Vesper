@@ -43,6 +43,11 @@ LayoutGUI::LayoutGUI(){
     aux->setPadre(this);
     vector.push_back(aux);
     
+    aux = new depuracionIA();
+    aux->ocultar();
+    aux->setPadre(this);
+    vector.push_back(aux);
+    
     iter = vector.begin();
 }
 
@@ -75,6 +80,22 @@ void LayoutGUI::setActiveLayout(tLayout nuevo){
         }
         iter++;
     }
+}
+
+void LayoutGUI::setActiveLayoutDebug(){
+    iter = vector.begin();
+    while(iter != vector.end()) {
+        if(activeLayout == tdepuracionIA){
+            (*iter)->mostrar();
+            seleccionado = (*iter);
+            break;
+        }
+        iter++;
+    }
+}
+void LayoutGUI::showDebugMenu(){
+    setActiveLayout(tdepuracionIA);
+    iter = vector.end();
 }
 
 void LayoutGUI::posicionarRaton(float x, float y){
