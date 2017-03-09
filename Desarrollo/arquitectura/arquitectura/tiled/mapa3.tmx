@@ -10342,7 +10342,7 @@
   </object>
   <object id="236" name="50" type="nodo" x="288" y="768" width="32" height="32">
    <properties>
-    <property name="conecta" value="47-53-55"/>
+    <property name="conecta" value="47-53"/>
    </properties>
   </object>
   <object id="237" name="51" type="nodo" x="1216" y="672" width="32" height="32">
@@ -10367,7 +10367,7 @@
   </object>
   <object id="242" name="55" type="nodo" x="288" y="928" width="32" height="32">
    <properties>
-    <property name="conecta" value="58-60-57-50-54"/>
+    <property name="conecta" value="58-60-57-54"/>
    </properties>
   </object>
   <object id="243" name="56" type="nodo" x="704" y="960" width="32" height="32">
