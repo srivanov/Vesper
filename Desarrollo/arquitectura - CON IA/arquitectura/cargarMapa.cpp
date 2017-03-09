@@ -22,12 +22,12 @@ cargarMapa::~cargarMapa() {
 bool cargarMapa::leerMapa(char* fichero) {
     
     XMLDocument doc;
-   
+    
     //doc.LoadFile("mapas/mapa1tiled.tmx");
     doc.LoadFile(fichero);
-	if(doc.NoChildren())
-		return false;
-	
+    if(doc.NoChildren())
+        return false;
+    
     //tamanyo mapa y de los tiles
     XMLElement* map = doc.FirstChildElement("map");
     map->QueryIntAttribute("width", &_width);
@@ -45,11 +45,11 @@ bool cargarMapa::leerMapa(char* fichero) {
         _numLayers++;
         layer = layer->NextSiblingElement("layer"); //Creamos a capa
     }
-	
+    
     //cargar los gids de diversas capas
-	
+    
     //Carga la primera capa de textura
-	layer = map->FirstChildElement("layer");
+    layer = map->FirstChildElement("layer");
     XMLElement *data = layer->FirstChildElement("data")->FirstChildElement("tile");
     int w = _width*_height, query;
     
@@ -60,71 +60,109 @@ bool cargarMapa::leerMapa(char* fichero) {
         //avanzo hasta al siguiente tag
         data = data->NextSiblingElement("tile");
     }
-	
-	//leemos los objetos que hay por el mapa
-	if(_numLayers > 1){
-		layer = layer->NextSiblingElement("layer");
-		
-		data = layer->FirstChildElement("data")->FirstChildElement("tile");
-		
-		int a = _width*_height, obj, x=0, y=0;
-		
-		for(int k=0; k < a ; k++){
-			data->QueryIntAttribute("gid", &obj);
-			if(obj != 0)
-				_obj_map.push_back(dvector3D(x,y,obj));
-			
-			if(x == _width-1){
-				x=0;
-				y++;
-			}else
-				x++;
-			//avanzo hasta al siguiente tag
-			data = data->NextSiblingElement("tile");
-		}
-	}
-	
+    
+    //leemos los objetos que hay por el mapa
+    if(_numLayers > 1){
+        layer = layer->NextSiblingElement("layer");
+        
+        data = layer->FirstChildElement("data")->FirstChildElement("tile");
+        
+        int a = _width*_height, obj, x=0, y=0;
+        
+        for(int k=0; k < a ; k++){
+            data->QueryIntAttribute("gid", &obj);
+            if(obj != 0)
+                _obj_map.push_back(dvector3D(x,y,obj));
+            
+            if(x == _width-1){
+                x=0;
+                y++;
+            }else
+                x++;
+            //avanzo hasta al siguiente tag
+            data = data->NextSiblingElement("tile");
+        }
+    }
+    
     //LEER CAPA DE OBJETOS
     XMLElement* objectGroup = map->FirstChildElement("objectgroup");
     XMLElement* object = objectGroup->FirstChildElement("object");
-	
-	for (tinyxml2::XMLElement* child = map->FirstChildElement("objectgroup"); child != NULL; child = child->NextSiblingElement("objectgroup")){
-	
-		dvector2D separador(INT_MAX, INT_MAX);
-		while (object != NULL){
-			dvector2D a(atoi(object->ToElement()->Attribute("x"))/_tileWidth, atoi(object->ToElement()->Attribute("y"))/_tileHeight);
-			_pos_objetos.push_back(a);
-			XMLElement* polylinea = object->FirstChildElement("polyline");
-			while (polylinea != NULL) {
-	//            polylinea->QueryFloatAttribute("points", valor);
-	//            std::cout << polylinea->ToElement()->Attribute("points") << std::endl;
-				
-				char *puntosLinea = strdup(polylinea->ToElement()->Attribute("points"));
-				
-				char* punto = strtok(puntosLinea, " ");
-				
-				while (punto){
-					dvector2D point;
-					sscanf(punto, "%f,%f", &point.x, &point.y);
-					
-					_objetos.push_back(point);
-					
-					punto = strtok(0, " ");
-				}
-				free(puntosLinea);
-				
-				polylinea = polylinea->NextSiblingElement();
-				_objetos.push_back(separador);
-				
-				
-			}
-			object = object->NextSiblingElement();
-			
-		}
-	}
-//	_objetos.back() = dvector2D(INT_MIN, INT_MIN);
-	return true;
+    vector<int> nums_nodos;
+    vector<string> conexiones_nodos;
+    
+    for (tinyxml2::XMLElement* child = map->FirstChildElement("objectgroup"); child != NULL; child = child->NextSiblingElement("objectgroup")){
+        
+        dvector2D separador(INT_MAX, INT_MAX);
+        int i =0;
+        string name_capa = child->Attribute("name");
+        //cout<<"NAME CAPA: " <<name_capa<<endl;
+        
+        if(object == NULL && (child != NULL)){
+            object = child->FirstChildElement();
+        }
+        
+        while (object != NULL){
+            if(name_capa == "muros"){
+                //cout<<"HAS ENTRADOOOOOO 111"<<endl;
+                dvector2D a(atoi(object->ToElement()->Attribute("x"))/_tileWidth, atoi(object->ToElement()->Attribute("y"))/_tileHeight);
+                _pos_objetos.push_back(a);
+                
+                XMLElement* polylinea = object->FirstChildElement("polyline");
+                while (polylinea != NULL) {
+                    //            polylinea->QueryFloatAttribute("points", valor);
+                    //            std::cout << polylinea->ToElement()->Attribute("points") << std::endl;
+                    
+                    char *puntosLinea = strdup(polylinea->ToElement()->Attribute("points"));
+                    
+                    char* punto = strtok(puntosLinea, " ");
+                    
+                    while (punto){
+                        dvector2D point;
+                        sscanf(punto, "%f,%f", &point.x, &point.y);
+                        
+                        _objetos.push_back(point);
+                        
+                        punto = strtok(0, " ");
+                    }
+                    free(puntosLinea);
+                    
+                    polylinea = polylinea->NextSiblingElement();
+                    _objetos.push_back(separador);
+                    
+                    
+                }
+                
+            }
+            if(name_capa == "nodos"){
+                // cout<<"HAS ENTRADOOOOOO"<<endl;
+                
+                //cout<<"ID OBJECT: "<< object->IntAttribute("id")<<endl;
+                dvector2D pos_nodo(atoi(object->ToElement()->Attribute("x"))/_tileWidth, atoi(object->ToElement()->Attribute("y"))/_tileHeight);
+                XMLElement* properties = object->FirstChildElement();
+                XMLElement* property = properties->FirstChildElement();
+                
+                int num_nodo = object->IntAttribute("name");
+                string conecta_nodos = property->Attribute("value");
+                
+                nums_nodos.push_back(num_nodo);
+                conexiones_nodos.push_back(conecta_nodos);
+                if(i == 0){
+                    //                    cout <<"Nodo: " <<nums_nodos[i]<<endl;
+                    //                    cout<<"Conecta: "<<conexiones_nodos[i]<<endl;
+                    i++;
+                }
+                
+                
+            }
+            object = object->NextSiblingElement();
+        }
+    }//for
+    
+    
+    //	_objetos.back() = dvector2D(INT_MIN, INT_MIN);
+    return true;
 }
+
 
 int cargarMapa::getWidth(){
     return _width;

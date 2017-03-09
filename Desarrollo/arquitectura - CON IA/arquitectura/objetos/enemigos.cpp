@@ -53,9 +53,9 @@ void enemigos::update(){
         //TRIGGER SYSTEM
         trigger_system::_instance()->subs(book);
         //TO DO: VIGILAR Y PATRULLAR
-        dvector3D * yi = new dvector3D(10,10,0);
-        int a = -1;
-        book->notify(a,P_VIGILAR, yi);
+//        dvector3D * yi = new dvector3D(10,10,0);
+//        int a = -1;
+//        book->notify(a,P_VIGILAR, yi);
     }
 	// CODIGO GUARRO
     k++;

@@ -10430,7 +10430,11 @@
     <property name="conecta" value="67-65-64"/>
    </properties>
   </object>
-  <object id="262" name="64" type="nodo" x="480" y="96" width="32" height="32"/>
+  <object id="262" name="64" type="nodo" x="480" y="96" width="32" height="32">
+   <properties>
+    <property name="conecta" value="66-65"/>
+   </properties>
+  </object>
   <object id="263" name="69" type="nodo" x="512" y="288" width="32" height="32">
    <properties>
     <property name="conecta" value="63-68"/>
