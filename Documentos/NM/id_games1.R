@@ -9,3 +9,9 @@ r <- GET(url=query,
 print(r)
 doc<-fromJSON(content(r,type="text"))
 print(doc)
+
+file.create("prueba.csv")
+#write.csv(r, 'miDoc.csv')
+#notas<-read.table(doc)
+write.table(doc, file = "prueba.csv")
+
