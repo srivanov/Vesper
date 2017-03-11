@@ -18,6 +18,7 @@ public:
 	~SkyCamara();
 	
 	void Draw() { m_camara->Draw(nodo); }
+//	virtual void rotar(dvector3D vector) override;
 private:
 	TCamara* m_camara;
 };

@@ -16,7 +16,7 @@ SkyLuz::SkyLuz(TNodo* padre, int ID){
 	
 	nodo->setEntidad(m_luz);
 	TransNodos[0]->addHijo(nodo);
-	TransNodos[2]->setPadre(padre);
+	padre->addHijo(TransNodos[2]);
 }
 
 SkyLuz::~SkyLuz(){

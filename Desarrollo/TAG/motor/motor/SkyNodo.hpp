@@ -16,10 +16,10 @@
 
 class SkyNodo {
 public:
-	virtual void rotar(dvector3D* vector) { Trans[2]->rotar(glmConverter(vector)); }
-	virtual void escalar(dvector3D* vector) { Trans[1]->escalar(glmConverter(vector)); }
-	virtual void transladar(dvector3D* vector) { Trans[0]->trasladar(glmConverter(vector)); }
-	virtual void setPosicion(dvector3D* vector) { Trans[0]->setPosicion(glmConverter(vector)); }
+	virtual void rotar(dvector3D vector) { Trans[0]->rotar(glmConverter(vector)); }
+	virtual void escalar(dvector3D vector) { Trans[1]->escalar(glmConverter(vector)); }
+	virtual void transladar(dvector3D vector) { Trans[2]->trasladar(glmConverter(vector)); }
+	virtual void setPosicion(dvector3D vector) { Trans[2]->setPosicion(glmConverter(vector)); }
 	virtual ~SkyNodo() { if(TransNodos[2]) delete TransNodos[2]; }
 	
 protected:

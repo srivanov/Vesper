@@ -16,10 +16,20 @@ SkyCamara::SkyCamara(TNodo* padre, int ID){
 	
 	nodo->setEntidad(m_camara);
 	TransNodos[0]->addHijo(nodo);
-	TransNodos[2]->setPadre(padre);
+	padre->addHijo(TransNodos[2]);
 }
 
 SkyCamara::~SkyCamara(){
 	
 }
 
+//void SkyCamara::rotar(dvector3D vector){
+//	
+//	int i=0;
+//	TNodo* aux = nodo;
+//	while(aux->getPadre() && i<2){
+//		aux = aux->getPadre();
+//		++i;
+//	}
+//	static_cast<TTransform*>(aux->getEntidad())->rotar(glmConverter(vector));
+//}

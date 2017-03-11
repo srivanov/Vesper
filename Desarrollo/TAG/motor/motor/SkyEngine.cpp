@@ -31,7 +31,12 @@ SkyLuz* SkyEngine::crearLuz(TNodo* padre){
 }
 
 void SkyEngine::Draw(){
-	(camaras.find(active_cam))->second->Draw();
+	std::map<int, SkyCamara*>::iterator iter = camaras.find(active_cam);
+	if(iter != camaras.end())
+		iter->second->Draw();
+	else
+		printf("SIN CAMARA\n");
+	
 	std::map<int, SkyLuz*>::iterator it = luces.begin();
 	while(it != luces.end()){
 		it->second->Draw();

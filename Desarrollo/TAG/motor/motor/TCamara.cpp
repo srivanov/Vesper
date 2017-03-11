@@ -40,11 +40,11 @@ void TCamara::setFarValue(float f){
 
 void TCamara::Draw(TNodo* n){
 	
-	
-	while(n->getPadre()){
-		n = n->getPadre();
-		if(n->getEntidad())
-			trans.push(n->getEntidad()->getMT());
+	TNodo* nod = n;
+	while(nod->getPadre()){
+		nod = nod->getPadre();
+		if(nod->getEntidad())
+			trans.push(nod->getEntidad()->getMT());
 	}
 	
 	glm::mat4 aux;

@@ -34,6 +34,11 @@ void TMalla::beginDraw(){
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
 	malla->Draw(sh);
 //	printf("BEGIN DRAW Malla\n");
+
+//	for (int i=0; i<pila->actual.length(); i++) {
+//		printf("%.1f %.1f %.1f %.1f \n",pila->actual[i].x,pila->actual[i].y,pila->actual[i].z,pila->actual[i].w);
+//	}
+//	std::cout << std::endl;
 }
 
 void TMalla::endDraw(){

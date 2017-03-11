@@ -14,11 +14,14 @@ public:
 	TEscena();
 	~TEscena();
 	void Draw();
-	void cambiar(glm::vec3 mov);
+	void mover(glm::vec3 mov);
+	void girar(glm::vec3 mov);
 //	
 //	TNodo* getActiveCamera();
 private:
 	SkyEngine motor;
+	SkyCamara* cam;
+	SkyMalla* cubo, *cubo2;
 //	TNodo *root, *uno, *dos, *tres, *cuarto, *quinto, *sexto, *septimo;
 //	TGestorRecursos* gestor;
 //	TMalla t, t2;

@@ -36,6 +36,9 @@ GLfloat deltaTime = 0.0f;
 // Time of last frame
 GLfloat lastFrame = 0.0f;
 
+//movimiento de la camara
+glm::vec3 mov_cursor;
+
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	if(action == GLFW_PRESS)
@@ -76,7 +79,7 @@ void movimiento(TEscena* escena){
 	if (keys[GLFW_KEY_LEFT])
 		mov.x = -0.2f;
 	
-//	escena->cambiar(mov);
+	escena->mover(mov);
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
@@ -94,8 +97,9 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 	GLfloat yoffset = lastY - ypos;
 	lastX = xpos;
 	lastY = ypos;
-	
+	mov_cursor = glm::vec3(yoffset, xoffset, 0);
 //	camara.ProcessMouseMovement(xoffset, yoffset);
+//	escena.girar(m);
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
@@ -286,6 +290,8 @@ int main(int argc, const char * argv[]) {
 //		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model3));
 //		modelo3.Draw(miShader);
 		
+		escena.girar(mov_cursor);
+		mov_cursor = glm::vec3();
 		escena.Draw();
 		
 //		//linkamos el VAO

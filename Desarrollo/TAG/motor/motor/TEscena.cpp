@@ -45,14 +45,20 @@ TEscena::TEscena(){
 //	trCam.trasladar(glm::vec3(0.0f, 0.0f, 5.0f));
 	ShaderManager::Instance()->cargarShader("1", "../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	ShaderManager::Instance()->setActiveShader("1");
-	SkyCamara* cam = motor.crearCamara(NULL);
-	SkyMalla* cubo = motor.crearMalla(NULL);
+	cam = motor.crearCamara(NULL);
+	motor.setActiveCam(0);
+	cubo = motor.crearMalla(NULL);
 	SkyLuz* luz = motor.crearLuz(NULL);
+	cubo2 = motor.crearMalla(NULL);
 	
-	dvector3D p(1,1,5), j(0,0,5);
-	cam->setPosicion(&p);
+	cam->setPosicion(dvector3D(1,0,3));
+	
+	cubo2->setMalla("../Models/cube.obj");
 	cubo->setMalla("../Models/cube.obj");
-	luz->setPosicion(&j);
+	
+	cubo->transladar(dvector3D(-2,1,0));
+	cubo2->transladar(dvector3D(-5,-1,0));
+	luz->setPosicion(dvector3D(2,2,2));
 	
 }
 
@@ -71,8 +77,14 @@ void TEscena::Draw(){
 	motor.Draw();
 }
 
-void TEscena::cambiar(glm::vec3 mov){
-	
+void TEscena::mover(glm::vec3 mov){
+	if(cam != NULL)
+		cam->transladar(dvector3D(mov.x,mov.y,mov.z));
+}
+
+void TEscena::girar(glm::vec3 mov){
+	if(cam != NULL)
+		cam->rotar(dvector3D(mov.x,mov.y,mov.z));
 }
 
 //TNodo* TEscena::getActiveCamera(){

@@ -18,7 +18,7 @@
 
 class SkyEngine {
 public:
-	SkyEngine() : num_c(0), num_l(0){ root = new TNodo(); }
+	SkyEngine() : num_c(0), num_l(0), active_cam(0){ root = new TNodo(); root->setEntidad(new TTransform()); }
 	~SkyEngine();
 	SkyMalla* crearMalla(TNodo* padre);
 	SkyCamara* crearCamara(TNodo* padre);
