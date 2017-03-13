@@ -47,9 +47,11 @@ void palaObj::update(){
 }
 
 void palaObj::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+			muero = true;
+		}
+	}
 }
 
 bool const* palaObj::getmuero(){

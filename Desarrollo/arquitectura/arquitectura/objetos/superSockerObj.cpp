@@ -45,9 +45,11 @@ void superSockerObj::update(){
 }
 
 void superSockerObj::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+			muero = true;
+		}
+	}
 }
 
 bool const* superSockerObj::getmuero(){

@@ -51,9 +51,11 @@ enemigos::~enemigos(){
 void enemigos::notify(dvector3D& position, int type){
 	book->notify(position, type);
 }
+
 bool enemigos::EventUsed(int type){return book->EventUsed(type);}
+
 void enemigos::update(){
-	// CODIGO GUARRO
+	// CODIGO GUARRO___________________________________
 	if(k%30==0){
 		hambre++;
 //		std::cout << hambre << std::endl;
@@ -61,7 +63,7 @@ void enemigos::update(){
 		k = 0;
 	}
 	k++;
-	// FIN CODIGO GUARRO
+	// FIN CODIGO GUARRO_______________________________
 	
 	if(!NPC_library::instance()->ExistMyBook(&ID)){
 		NPC_library::instance()->AddBook(&ID, salud, hambre, sed,estado, getPosicion());
@@ -75,12 +77,17 @@ void enemigos::update(){
 	this->mover(*book->getVMovement());
 	this->rotarConRaton(*getPosicion() + *book->getVMovement());
 	GameObject::update();
+	if(salud <= 0) muero=true;
 }
 
 void enemigos::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-//        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tBALA){
+//	        muero = true;
+			salud -= 20;
+			printf("%d\n", salud);
+		}
+	}
 }
 
 bool const* enemigos::getmuero(){

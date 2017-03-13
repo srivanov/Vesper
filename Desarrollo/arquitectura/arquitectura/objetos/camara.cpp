@@ -79,10 +79,6 @@ bool camara::getZoom(){
     return cerca;
 }
 
-void camara::contacto(GameObject *g){
-	
-}
-
 bool const* camara::getmuero(){
     return &muero;
 }
@@ -101,8 +97,4 @@ void camara::setRapido(bool r){
 
 bool camara::getRapido(){
     return rapido;
-}
-
-void camara::contactoEnd(GameObject *g){
-    
 }

@@ -44,9 +44,11 @@ void piedraObj::update(){
 }
 
 void piedraObj::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+			muero = true;
+		}
+	}
 }
 
 bool const* piedraObj::getmuero(){

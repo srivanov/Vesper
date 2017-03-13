@@ -45,9 +45,11 @@ void lanzaCaramelosObj::update(){
 }
 
 void lanzaCaramelosObj::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+			muero = true;
+		}
+	}
 }
 
 bool const* lanzaCaramelosObj::getmuero(){

@@ -17,14 +17,11 @@ class rehen : public GameObject{
 public:
     rehen();
     ~rehen();
-    void update();
-    void render();
     void contacto(GameObject* g);
     void contactoEnd(GameObject* g);
     bool const* getmuero();
     
 private:
     bool muero;
-    GameObject* obj_colisionado;
 };
 #endif /* rehen_hpp */
