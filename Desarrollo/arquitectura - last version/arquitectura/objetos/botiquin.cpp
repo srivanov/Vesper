@@ -56,9 +56,9 @@ void botiquin::update(){
 
 
 void botiquin::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-//        muero = true;
-    }
+	if(g != NULL){
+		
+	}
 }
 
 bool const* botiquin::getmuero(){

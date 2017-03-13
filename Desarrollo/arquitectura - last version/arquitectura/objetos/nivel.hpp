@@ -42,8 +42,6 @@ public:
 	void dibujarMapa();
 	void update();
     void render();
-    void contacto(GameObject* g);
-    void contactoEnd(GameObject* g);
     bool const* getmuero();
     void cambiarArmaJugador();
     void atacarJugador();

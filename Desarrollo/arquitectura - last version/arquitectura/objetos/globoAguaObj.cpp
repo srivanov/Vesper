@@ -45,9 +45,11 @@ void globoAguaObj::update(){
 }
 
 void globoAguaObj::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+			muero = true;
+		}
+	}
 }
 
 bool const* globoAguaObj::getmuero(){

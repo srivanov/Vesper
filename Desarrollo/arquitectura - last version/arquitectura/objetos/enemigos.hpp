@@ -25,7 +25,7 @@ private:
     
     Nodo_base * tree;
     bool muero;
-	
+	//TO DO: estaria bien cambiar salud a INT para un mejor ajuste en el combate jaja, que PRO suena. Soy Stoycho por si el que lo leo se caga en mi jajaja SALUDOS
 	NpcBook * book;
 };
 #endif /* enemigos_hpp */

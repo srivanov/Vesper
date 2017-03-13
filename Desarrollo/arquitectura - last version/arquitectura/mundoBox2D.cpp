@@ -44,20 +44,19 @@ void ContactListener::BeginContact(b2Contact* contact){
 	//Si los dos son bodys dinamicos el fixtureA es el que choca
 	//Si uno es estatico sera el fixtureB, el fixtureA sera el dinamico
 	GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
-    GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
-	if(g1 != NULL && g2 != NULL){
-		g1->contacto(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
-    
-//		gdsss2->setTexture("3d/rocas.jpg");
-    	g2->contacto(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
-	}
+	GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+	
+	if(g1 != NULL)
+		g1->contacto(g2);
+	if(g2 != NULL)
+		g2->contacto(g1);
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
-    GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
-    GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
-	if(g1 != NULL && g2 != NULL){
-    	g1->contactoEnd(static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData()));
-    	g2->contactoEnd(static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData()));
-	}
+	GameObject* g1 = static_cast<GameObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
+	GameObject* g2 = static_cast<GameObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+	if(g1 != NULL)
+		g1->contactoEnd(g2);
+	if(g2 != NULL)
+		g2->contactoEnd(g1);
 }

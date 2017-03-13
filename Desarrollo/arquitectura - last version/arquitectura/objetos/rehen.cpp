@@ -53,31 +53,9 @@ bool const* rehen::getmuero(){
 }
 
 void rehen::contacto(GameObject *g){
-//    if(*g->getType() == tPALA){
-//        arma->insertarArma(9);
-//    }
-//    if(*g->getType() == tMONEDAS){
-//        ((habilidadEspecial*)findComponent("habilidadEspecial"))->aumentarMoneda();
-//    }
-//    if(*g->getType() == tALARMA){
-//        
-//    }
-//    if(*g->getType() == tESCOPETA){
-//        arma->insertarArma(2);
-//    }
-//    if(*g->getType() == tLANZACARAMELOS){
-//        arma->insertarArma(3);
-//    }
-//    if(*g->getType() == tGLOBOAGUA){
-//        arma->insertarArma(5);
-//    }
-//    if(*g->getType() == tCHICLE){
-//        arma->insertarArma(6);
-//    }
-//    if(*g->getType() == tBOMBAHUMO){
-//        arma->insertarArma(7);
-//    }
-//    obj_colisionado = g;
+	if(g != NULL){
+		
+	}
 }
 
 void rehen::contactoEnd(GameObject *g){

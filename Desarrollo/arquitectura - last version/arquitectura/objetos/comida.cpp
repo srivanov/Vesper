@@ -58,9 +58,9 @@ void comida::update(){
 }
 
 void comida::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-//        muero = true;
-    }
+	if(g != NULL){
+		
+	}
 }
 
 bool const* comida::getmuero(){

@@ -40,9 +40,11 @@ void puerta::update(){
 }
 
 void puerta::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-//        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+//	        muero = true;
+		}
+	}
 }
 
 void puerta::contactoEnd(GameObject *g){

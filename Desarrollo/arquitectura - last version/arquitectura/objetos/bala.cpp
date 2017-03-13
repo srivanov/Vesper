@@ -71,9 +71,11 @@ bool const* bala::getmuero(){
 }
 
 void bala::contacto(GameObject *g){
-//    if(*g->getType() == tENEMIGOS){
-        muero = true;
-//    }
+	if(g != NULL){
+		
+	}
+	//da igual con que se choca la bala, siempre morira al chocar
+	muero = true;
 }
 
 void bala::contactoEnd(GameObject *g){

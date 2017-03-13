@@ -36,9 +36,11 @@ void monedas::update(){
 }
 
 void monedas::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){ //compruebo que choco con el player
-        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tPLAYER){
+			muero = true;
+		}
+	}
 }
 
 bool const* monedas::getmuero(){

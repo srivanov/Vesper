@@ -4,6 +4,7 @@
 
 enemigos::enemigos(){
 	
+	setType(tENEMIGOS);
 	component* aux = new class render();
 	this->insertComponent((char*)"render", aux);
 	aux = new physics();
@@ -27,7 +28,7 @@ enemigos::enemigos(){
     dvector3D pos(0,0,0);
     fisica->crearBodyDinamico(dim, pos);
 	
-	setType(tENEMIGOS);
+	
 	
     k = -1; // PROVISIONAL
     
@@ -59,7 +60,7 @@ void enemigos::update(){
 //        int a = -1;
 //        book->notify(a,P_VIGILAR, yi);
     }
-	// CODIGO GUARRO
+	// CODIGO GUARRO_______________________________
     k++;
 	if(k%30==0){
         //book->hambre++;
@@ -68,9 +69,11 @@ void enemigos::update(){
         //cout << "SED : " << book->sed << std::endl;
         k = 0;
 	}
-	// FIN CODIGO GUARRO
+	// FIN CODIGO GUARRO_______________________________
     
-    
+	if(book->salud <= 0)
+		muero = true;
+	
     if (book->Evento) {
         tree->reset();
         book->Evento = false;
@@ -88,9 +91,11 @@ void enemigos::update(){
 }
 
 void enemigos::contacto(GameObject *g){
-    if(*g->getType() == tPLAYER){
-//        muero = true;
-    }
+	if(g != NULL){
+		if(*g->getType() == tBALA){
+			book->salud -= 20;
+		}
+	}
 }
 
 bool const* enemigos::getmuero(){
