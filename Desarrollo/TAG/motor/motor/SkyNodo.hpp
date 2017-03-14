@@ -18,8 +18,17 @@ class SkyNodo {
 public:
 	virtual void rotar(dvector3D vector) { Trans[0]->rotar(glmConverter(vector)); }
 	virtual void escalar(dvector3D vector) { Trans[1]->escalar(glmConverter(vector)); }
-	virtual void transladar(dvector3D vector) { Trans[2]->trasladar(glmConverter(vector)); }
-	virtual void setPosicion(dvector3D vector) { Trans[2]->setPosicion(glmConverter(vector)); }
+	virtual void transladar(dvector3D vector) {
+		Trans[2]->trasladar(glmConverter(vector));
+		posicion += vector;
+	}
+	virtual void setPosicion(dvector3D vector) {
+		Trans[2]->setPosicion(glmConverter(vector));
+		posicion = vector;
+	}
+	
+	virtual void imprimePos(){ printf("%.1f %.1f %.1f\n", posicion.x, posicion.y, posicion.z); }
+	
 	virtual ~SkyNodo() { if(TransNodos[2]) delete TransNodos[2]; }
 	
 protected:
@@ -43,6 +52,9 @@ protected:
 	
 	virtual glm::vec3 glmConverter(const dvector3D &d) { return glm::vec3(d.x, d.y, d.z); }
 	virtual glm::vec3 glmConverter(const dvector3D *d) { return glm::vec3(d->x, d->y, d->z); }
+	
+private:
+	dvector3D posicion;
 };
 
 #endif /* SkyNodo_hpp */

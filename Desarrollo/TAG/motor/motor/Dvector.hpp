@@ -14,6 +14,9 @@ struct dvector3D {
     dvector3D& operator-(const dvector3D &p);
     dvector3D& operator*(const dvector3D &p);
     dvector3D& operator/(const dvector3D &p);
+	dvector3D& operator+=(const dvector3D &p);
+	dvector3D& operator*=(const float &p);
+	
     bool operator==(const dvector3D &p) const {return this->x == p.x && this->y == p.y && this->z == p.z;};
 	bool operator==(const int &p) const {return this->x == p && this->y == p && this->z == p;};
 	bool operator!=(const dvector3D &p) const {return this->x != p.x && this->y != p.y && this->z != p.z;};
@@ -22,7 +25,7 @@ struct dvector3D {
 	void operator++() {this->x++; this->y++; this->z++;};
 	void operator--() {this->x--; this->y--; this->z--;};
 	
-	dvector3D& operator*=(const float &p);
+	
 };
 
 struct dvector2D {

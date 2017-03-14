@@ -16,7 +16,8 @@ public:
 	void Draw();
 	void mover(glm::vec3 mov);
 	void girar(glm::vec3 mov);
-//	
+	void imprime();
+		
 //	TNodo* getActiveCamera();
 private:
 	SkyEngine motor;

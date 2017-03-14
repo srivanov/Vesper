@@ -87,6 +87,10 @@ void TEscena::girar(glm::vec3 mov){
 		cam->rotar(dvector3D(mov.x,mov.y,mov.z));
 }
 
+void TEscena::imprime(){
+	cubo->imprimePos();
+}
+
 //TNodo* TEscena::getActiveCamera(){
 //	return NULL;
 //}

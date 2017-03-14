@@ -50,6 +50,13 @@ dvector3D& dvector3D::operator/(const dvector3D &p){
     return *this;
 }
 
+dvector3D& dvector3D::operator+=(const dvector3D &p){
+	this->x+=p.x;
+	this->y+=p.y;
+	this->z+=p.z;
+	return *this;
+}
+
 dvector3D& dvector3D::operator*=(const float &p){
 	this->x*=p;
 	this->y*=p;

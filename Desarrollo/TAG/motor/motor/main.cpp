@@ -78,6 +78,8 @@ void movimiento(TEscena* escena){
 		mov.x = 0.2f;
 	if (keys[GLFW_KEY_LEFT])
 		mov.x = -0.2f;
+	if(keys[GLFW_KEY_4])
+		escena->imprime();
 	
 	escena->mover(mov);
 }
