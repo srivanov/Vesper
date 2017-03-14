@@ -12,13 +12,35 @@
 int main(int argc, const char * argv[]) {
 	//TO DO: Hacer los Singleton sin puntero y con const (ejemplo en Game)
 	Game* game = Game::Instance();
+	tiempo t;
+	const long timePerFrame = 66;
+	long timeSinceLastUpdate = 0;
+	float interpolation;
 	
 	game->start(1280,720,32,false,false,true,true);
+	t.start();
 	
 	while (game->isRunning()) {
-		//TO DO: Update 15 veces por segundo
-		game->update();
+		
+		long elapsedTime = t.getTiempo();     //Actualizamos variables de tiempo
+		t.reset();
+		if(elapsedTime > 250)
+			elapsedTime = 250;
+		timeSinceLastUpdate += elapsedTime;
+		
+		//Llevamos control en las actualizaciones por frame
+		while (timeSinceLastUpdate > timePerFrame) {	// 15 veces/segundo
+			
+//			game->update(timePerFrame);
+			game->update();
+			timeSinceLastUpdate -= timePerFrame;
+		}
+		
+		float aux = ((float)timeSinceLastUpdate / (float)timePerFrame);
+		interpolation = aux<1.0f ? aux : 1.0f;
+		
 		//TO DO: interpolacion
+//		game->render(interpolation);
 		game->render();
 	}
     return 0;

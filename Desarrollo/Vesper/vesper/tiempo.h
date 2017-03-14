@@ -6,11 +6,12 @@
 
 #include <sys/time.h>
 
-#define MILLON 1000000L
+#define MILLON	1000000L
+#define MILI	1000L
 
 struct tiempo {
 	
-	float start(){ gettimeofday(&st, NULL); return ((float)st.tv_usec/(float)MILLON); }
+	long start(){ gettimeofday(&st, NULL); return (st.tv_sec*MILLON + st.tv_usec)/MILI; }
 	
 	bool tTranscurrido(float sec) {
 		long diff = difference(), s = (long)(sec * MILLON);
@@ -19,9 +20,11 @@ struct tiempo {
 		return false;
 	}
 	
-	float getTiempo() {
-		return ((float)difference() / (float)MILLON);
+	long getTiempo() {
+		return difference()/MILI;
 	}
+	
+	long getActual() { gettimeofday(&actual, NULL); return (actual.tv_sec*MILLON + actual.tv_usec)/MILI; }
 	
 	void reset(){ start(); }
 private:
@@ -30,7 +33,7 @@ private:
 		return (fn.tv_sec * MILLON + fn.tv_usec)-(st.tv_sec * MILLON + st.tv_usec);
 	}
 	
-	struct timeval st, fn;
+	struct timeval st, fn, actual;
 };
 
 #endif /* tiempo_h */
@@ -43,33 +46,36 @@ private:
 
 #include <windows.h>
 
-#define MILLON 1000000L
+#define MILLON	1000000L
+#define MILI	1000L
 
 struct tiempo {
 	
-	float start(){
+	long start(){
 		GetSystemTime(&st);
-		return ((float)st.wSecond/(float)MILLON);
+		return (st.wSecond*MILi + st.wMiliseconds);
 	}
 	
 	bool tTranscurrido(float sec) {
 		long diff = difference();
-		if(diff >= ((long)sec * MILLON))
+		if(diff >= ((long)sec * MILI))
 			return true;
 		return false;
 	}
 	
-	float getTiempo() { return ((float)difference() / (float)MILLON); }
+	long getTiempo() { return difference(); }
+	
+	long getActual() { GetSystemTime(&actual); return (actual.tv_sec*MILI + actual.wMilliseconds); }
 	
 	void reset(){ start(); }
 private:
 	long difference(){
 		GetSystemTime(&fn);
-		return ((LONG)fn.wSecond * MILLON + (LONG)fn.wMilliseconds)-((LONG)st.wSecond * MILLON + (LONG)st.wMilliseconds);
+		return ((LONG)fn.wSecond * MILI + (LONG)fn.wMilliseconds)-((LONG)st.wSecond * MILI + (LONG)st.wMilliseconds);
 		return 0;
 	}
 	
-	SYSTEMTIME st, fn;
+	SYSTEMTIME st, fn, actual;
 };
 
 #endif /* tiempo_h */

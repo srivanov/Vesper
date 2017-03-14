@@ -9,6 +9,7 @@
 #ifndef Game_hpp
 #define Game_hpp
 
+#include <vector>
 #include <stdio.h>
 #include "components/render.hpp"
 #include "components/input.hpp"
@@ -20,9 +21,9 @@
 #include "Arquitectura IA/trigger_system.hpp"
 #include "Arquitectura IA/LevelBlackBoard.hpp"
 #include "Arquitectura IA/NpcLibrary.hpp"
-#include <vector>
 #include "Dvector.hpp"
 #include "GUI/LayoutGUI.hpp"
+#include "tiempo.h"
 
 class Game {
 public:
