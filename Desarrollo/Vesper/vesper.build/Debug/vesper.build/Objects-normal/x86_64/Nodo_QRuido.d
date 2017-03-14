@@ -1,0 +1,14 @@
+dependencies: \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Sistema\ de\ Decision/Nodos\ de\ Pregunta/Nodo_QRuido.cpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Sistema\ de\ Decision/Nodos\ de\ Pregunta/Nodo_QRuido.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Sistema\ de\ Decision/Nodos\ de\ Pregunta/../Nodo\ de\ Secuencia/Nodo_Condicional_Secuencial.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Sistema\ de\ Decision/Nodos\ de\ Pregunta/../Nodo\ de\ Secuencia/Nodo_Secuencia.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Sistema\ de\ Decision/Nodos\ de\ Pregunta/../Nodo\ de\ Secuencia/../Nodo_base.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/NpcLibrary.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/Types.h \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/../Dvector.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/../Tools/EasyMath.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/../PathFinding/PathPlanning.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/../PathFinding/Graph.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/../PathFinding/GraphNode.hpp \
+  /Users/Stoycho/GitHub/Vesper/Desarrollo/Vesper/vesper/Arquitectura\ IA/LevelBlackBoard.hpp
