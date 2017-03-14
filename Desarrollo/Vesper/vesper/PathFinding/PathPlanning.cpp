@@ -118,7 +118,7 @@ bool PathPlanning::CalcularSiguienteNodo(NodeOpenBag* bolsa){
         select_conexo = conexos[i]->ID;
     }
     
-    if (select_conexo == 0) throw no_way;
+    if (select_conexo == 0) throw 0;
     
     bolsa->peso += conexos[choosenOne]->peso;
     GraphNode * resultante = grafo->getNode(select_conexo);
