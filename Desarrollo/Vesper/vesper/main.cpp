@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
 		while (timeSinceLastUpdate > timePerFrame) {	// 15 veces/segundo
 			
 //			game->update(timePerFrame);
-			game->update();
+			
 			timeSinceLastUpdate -= timePerFrame;
 		}
 		
@@ -41,6 +41,7 @@ int main(int argc, const char * argv[]) {
 		
 		//TO DO: interpolacion
 //		game->render(interpolation);
+		game->update();
 		game->render();
 	}
     return 0;

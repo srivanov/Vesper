@@ -48,7 +48,7 @@ private:
 
 #define MILLON	1000000L
 #define MILI	1000L
-
+//TO DO: actualizar para WINDOWS
 struct tiempo {
 	
 	long start(){
