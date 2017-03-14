@@ -633,7 +633,7 @@
 		E9A346351E0416FC00E6EC25 /* gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gun.cpp; sourceTree = "<group>"; };
 		E9A346361E0416FC00E6EC25 /* gun.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gun.hpp; sourceTree = "<group>"; };
 		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
-		E9AC3A371DF0A9C100A91A97 /* arquitectura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arquitectura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9AC3A371DF0A9C100A91A97 /* vesper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vesper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E9AC3A501DF0AA4800A91A97 /* camara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camara.cpp; sourceTree = "<group>"; };
 		E9AC3A511DF0AA4800A91A97 /* camara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = camara.hpp; sourceTree = "<group>"; };
@@ -1164,7 +1164,7 @@
 		E9AC3A2E1DF0A9C100A91A97 = {
 			isa = PBXGroup;
 			children = (
-				E9AC3A391DF0A9C100A91A97 /* arquitectura */,
+				E9AC3A391DF0A9C100A91A97 /* vesper */,
 				E9AC3A381DF0A9C100A91A97 /* Products */,
 				E9AC3AB21DF0AAAD00A91A97 /* Frameworks */,
 			);
@@ -1173,12 +1173,12 @@
 		E9AC3A381DF0A9C100A91A97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9AC3A371DF0A9C100A91A97 /* arquitectura.app */,
+				E9AC3A371DF0A9C100A91A97 /* vesper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9AC3A391DF0A9C100A91A97 /* arquitectura */ = {
+		E9AC3A391DF0A9C100A91A97 /* vesper */ = {
 			isa = PBXGroup;
 			children = (
 				63C4CEFC1E70660F008295A1 /* PathFinding */,
@@ -1211,6 +1211,7 @@
 				E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */,
 				E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */,
 			);
+			name = vesper;
 			path = arquitectura;
 			sourceTree = "<group>";
 		};
@@ -1352,9 +1353,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9AC3A361DF0A9C100A91A97 /* arquitectura */ = {
+		E9AC3A361DF0A9C100A91A97 /* vesper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9AC3A481DF0A9C100A91A97 /* Build configuration list for PBXNativeTarget "arquitectura" */;
+			buildConfigurationList = E9AC3A481DF0A9C100A91A97 /* Build configuration list for PBXNativeTarget "vesper" */;
 			buildPhases = (
 				E9AC3A331DF0A9C100A91A97 /* Sources */,
 				E9AC3A341DF0A9C100A91A97 /* Frameworks */,
@@ -1365,9 +1366,9 @@
 			);
 			dependencies = (
 			);
-			name = arquitectura;
+			name = vesper;
 			productName = arquitectura;
-			productReference = E9AC3A371DF0A9C100A91A97 /* arquitectura.app */;
+			productReference = E9AC3A371DF0A9C100A91A97 /* vesper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1385,7 +1386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9AC3A321DF0A9C100A91A97 /* Build configuration list for PBXProject "arquitectura" */;
+			buildConfigurationList = E9AC3A321DF0A9C100A91A97 /* Build configuration list for PBXProject "vesper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1398,7 +1399,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9AC3A361DF0A9C100A91A97 /* arquitectura */,
+				E9AC3A361DF0A9C100A91A97 /* vesper */,
 			);
 		};
 /* End PBXProject section */
@@ -1860,7 +1861,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9AC3A321DF0A9C100A91A97 /* Build configuration list for PBXProject "arquitectura" */ = {
+		E9AC3A321DF0A9C100A91A97 /* Build configuration list for PBXProject "vesper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9AC3A461DF0A9C100A91A97 /* Debug */,
@@ -1869,7 +1870,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9AC3A481DF0A9C100A91A97 /* Build configuration list for PBXNativeTarget "arquitectura" */ = {
+		E9AC3A481DF0A9C100A91A97 /* Build configuration list for PBXNativeTarget "vesper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9AC3A491DF0A9C100A91A97 /* Debug */,

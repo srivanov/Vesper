@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-               BuildableName = "arquitectura.app"
-               BlueprintName = "arquitectura"
-               ReferencedContainer = "container:arquitectura.xcodeproj">
+               BuildableName = "vesper.app"
+               BlueprintName = "vesper"
+               ReferencedContainer = "container:vesper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-            BuildableName = "arquitectura.app"
-            BlueprintName = "arquitectura"
-            ReferencedContainer = "container:arquitectura.xcodeproj">
+            BuildableName = "vesper.app"
+            BlueprintName = "vesper"
+            ReferencedContainer = "container:vesper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-            BuildableName = "arquitectura.app"
-            BlueprintName = "arquitectura"
-            ReferencedContainer = "container:arquitectura.xcodeproj">
+            BuildableName = "vesper.app"
+            BlueprintName = "vesper"
+            ReferencedContainer = "container:vesper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-            BuildableName = "arquitectura.app"
-            BlueprintName = "arquitectura"
-            ReferencedContainer = "container:arquitectura.xcodeproj">
+            BuildableName = "vesper.app"
+            BlueprintName = "vesper"
+            ReferencedContainer = "container:vesper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
