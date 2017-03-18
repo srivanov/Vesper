@@ -1,6 +1,9 @@
 library("httr")
 library("jsonlite")
-query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=id&offset=2&limit=10"
+#query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=id&offset=2&limit=20"
+#query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/people/?fields=id&offset=2&limit=15"
+query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/people/?fields=*"
+  
 
 
 r <- GET(url=query,
