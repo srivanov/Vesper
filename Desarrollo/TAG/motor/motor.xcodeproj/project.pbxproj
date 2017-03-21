@@ -13,6 +13,7 @@
 		E912A7D21E6DB87000ED8E74 /* Dvector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E912A7D01E6DB87000ED8E74 /* Dvector.cpp */; };
 		E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E943945A1E09A7CB0053DBE7 /* main.cpp */; };
 		E94394691E09A81C0053DBE7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94394681E09A81C0053DBE7 /* OpenGL.framework */; };
+		E9488E4A1E7FEBE600C5D62A /* SkyWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9488E481E7FEBE600C5D62A /* SkyWindow.cpp */; };
 		E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E954B0921E17F7EC00F1BEB6 /* libSOIL.a */; };
 		E958EC331E4A1FD700478D49 /* TTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E958EC311E4A1FD700478D49 /* TTransform.cpp */; };
 		E960F3F01E1E6C4300A90C05 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E960F3EE1E1E6C4300A90C05 /* Camera.cpp */; };
@@ -21,6 +22,7 @@
 		E98990D71E5C5AFD0001A36A /* TRecursoTextura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */; };
 		E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7801E4A53E1004D80EF /* TLuz.cpp */; };
 		E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7831E4A57F3004D80EF /* TCamara.cpp */; };
+		E997E4571E8049E50046EC33 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E997E4551E8049E50046EC33 /* Fps.cpp */; };
 		E9AB33001E6C76BD006D8F9D /* SkyMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */; };
 		E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */; };
 		E9AB33061E6C76F5006D8F9D /* SkyCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */; };
@@ -59,6 +61,8 @@
 		E94394571E09A7CB0053DBE7 /* motor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = motor; sourceTree = BUILT_PRODUCTS_DIR; };
 		E943945A1E09A7CB0053DBE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E94394681E09A81C0053DBE7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		E9488E481E7FEBE600C5D62A /* SkyWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyWindow.cpp; sourceTree = "<group>"; };
+		E9488E491E7FEBE600C5D62A /* SkyWindow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyWindow.hpp; sourceTree = "<group>"; };
 		E954B0921E17F7EC00F1BEB6 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = libs/libSOIL.a; sourceTree = "<group>"; };
 		E958EC311E4A1FD700478D49 /* TTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TTransform.cpp; sourceTree = "<group>"; };
 		E958EC321E4A1FD700478D49 /* TTransform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TTransform.hpp; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		E992F7841E4A57F3004D80EF /* TCamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TCamara.hpp; sourceTree = "<group>"; };
 		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
 		E99573AF1E16F49B00487446 /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
+		E997E4551E8049E50046EC33 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
+		E997E4561E8049E50046EC33 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
 		E9AB32FC1E6C75BB006D8F9D /* SkyNodo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyNodo.hpp; sourceTree = "<group>"; };
 		E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyMalla.cpp; sourceTree = "<group>"; };
 		E9AB32FF1E6C76BD006D8F9D /* SkyMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyMalla.hpp; sourceTree = "<group>"; };
@@ -157,6 +163,10 @@
 				E9AB33081E6C7905006D8F9D /* Interfaz */,
 				E9AB33091E6C792B006D8F9D /* Arbol */,
 				E943945A1E09A7CB0053DBE7 /* main.cpp */,
+				E997E4551E8049E50046EC33 /* Fps.cpp */,
+				E997E4561E8049E50046EC33 /* Fps.hpp */,
+				E9488E481E7FEBE600C5D62A /* SkyWindow.cpp */,
+				E9488E491E7FEBE600C5D62A /* SkyWindow.hpp */,
 				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
 				E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */,
 				E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */,
@@ -316,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9488E4A1E7FEBE600C5D62A /* SkyWindow.cpp in Sources */,
 				E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */,
 				E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */,
 				E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */,
@@ -332,6 +343,7 @@
 				E9AB33001E6C76BD006D8F9D /* SkyMalla.cpp in Sources */,
 				E9B47DED1E535C75000466D7 /* TEscena.cpp in Sources */,
 				E9AB33061E6C76F5006D8F9D /* SkyCamara.cpp in Sources */,
+				E997E4571E8049E50046EC33 /* Fps.cpp in Sources */,
 				E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */,
 				E9EFC4041E49EB94000E84B1 /* TNodo.cpp in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,

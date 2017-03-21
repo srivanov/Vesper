@@ -12,7 +12,7 @@
 #include <assimp/scene.h>
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
-#include <SOIL/SOIL.h>
+//#include <SOIL/SOIL.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 

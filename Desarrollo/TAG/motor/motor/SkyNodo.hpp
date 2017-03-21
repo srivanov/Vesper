@@ -27,9 +27,12 @@ public:
 		posicion = vector;
 	}
 	
-	virtual void imprimePos(){ printf("%.1f %.1f %.1f\n", posicion.x, posicion.y, posicion.z); }
+	virtual dvector3D getPosicion() { return posicion; }
 	
 	virtual ~SkyNodo() { if(TransNodos[2]) delete TransNodos[2]; }
+	
+	//************METODOS DEBUG************
+	virtual void imprimePos(){ printf("%.1f %.1f %.1f\n", posicion.x, posicion.y, posicion.z); }
 	
 protected:
 	/*	

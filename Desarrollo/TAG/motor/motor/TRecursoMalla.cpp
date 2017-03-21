@@ -6,6 +6,8 @@
 //  Copyright © 2017 Stoycho Ivanov Atanasov. All rights reserved.
 //
 
+#include <iostream>
+
 #include "TRecursoMalla.hpp"
 #include "TGestorRecursos.hpp"
 #include "TRecursoTextura.hpp"

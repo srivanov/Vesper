@@ -4,11 +4,12 @@
 
 #include <stdio.h>
 #include <vector>
+#include <string>
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
-#include "Shader.h"
+class Shader;
 
 struct Vertex {
 	glm::vec3 Position;
@@ -30,10 +31,9 @@ public:
 	std::vector<Texture*> texturas;
 	
 	Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture*> texturas);
-	void Draw(Shader *shader);
+	void Draw(Shader* shader);
 	
 private:
-	
 	GLuint VAO, VBO, EBO;
 	void setupMesh();
 };

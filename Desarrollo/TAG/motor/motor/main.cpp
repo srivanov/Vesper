@@ -1,20 +1,6 @@
 
-#define GLEW_STATIC
-#include <GL/glew.h>
-#include <iostream>
-#include <math.h>
-//libreria para leer imagenes
-#include <SOIL/SOIL.h>
-#include <GLFW/glfw3.h>
-//libreria para trabajar con matrices
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-#include "Shader.h"
-//#include "camera.hpp"
-//#include "TModelo.hpp"
 #include "TEscena.hpp"
+#include "SkyWindow.hpp"
 
 //// dimensiones de la ventana
 //const GLuint WIDTH = 800, HEIGHT = 600;
@@ -30,15 +16,9 @@ bool firstMouse = true;
 //array con las teclas
 bool keys[1024];
 
-// Time between current frame and last frame
-GLfloat deltaTime = 0.0f;
-
-// Time of last frame
-GLfloat lastFrame = 0.0f;
-
 //movimiento de la camara
 glm::vec3 mov_cursor;
-
+/*
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	if(action == GLFW_PRESS)
@@ -107,27 +87,32 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
 //	camara.ProcessMouseScroll(yoffset);
 }
-
+*/
 int main(int argc, const char * argv[]) {
+	SkyWindow* window = SkyWindow::Instance();
+	dvector2D wh(800,600);
+	window->crearWindow(wh);
+		/*
+		glfwInit();
+		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	glfwInit();
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-	
-	// creamos una ventana con glfw
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "TAGengine", nullptr, nullptr);
-	if (window == nullptr){
-		std::cout << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-	
-	//seleccionamos window para que se haga la gestion sobre esta ventana
-	glfwMakeContextCurrent(window);
-	
+		// creamos una ventana con glfw
+		GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "TAGengine", nullptr, nullptr);
+		if (window == nullptr){
+			std::cout << "Failed to create GLFW window" << std::endl;
+			glfwTerminate();
+			return -1;
+		}
+		
+		
+		//seleccionamos window para que se haga la gestion sobre esta ventana
+		glfwMakeContextCurrent(window);
+		*/
+/*
 	//definimos la funcion que llamaremos cuando se pulse una tecla
 	glfwSetKeyCallback(window, key_callback);
 	
@@ -136,29 +121,31 @@ int main(int argc, const char * argv[]) {
 	
 	//definimos la funcion cuando hacemos scroll
 	glfwSetScrollCallback(window, scroll_callback);
+*/
 	
-	//ocultamos el raton en la aplicacion y capturamos su posicion
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		/*
+		//ocultamos el raton en la aplicacion y capturamos su posicion
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	
-	// activamos esto para que GLEW pueda trabajar con punteros de forma moderna, algo asi
-	glewExperimental = GL_TRUE;
-	
-	// inicializamos GLEW
-	if (glewInit() != GLEW_OK){
-		std::cout << "Failed to initialize GLEW" << std::endl;
-		return -1;
-	}
-	
-	// definimos el viewport, sera el area en el que dibujamos
-	int width, height;
-	glfwGetFramebufferSize(window, &width, &height);
-	glViewport(0, 0, width, height);
-	
-	// activamos el Z-buffer
-	glEnable(GL_DEPTH_TEST);
-	
+		// activamos esto para que GLEW pueda trabajar con punteros de forma moderna, algo asi
+		glewExperimental = GL_TRUE;
+		
+		// inicializamos GLEW
+		if (glewInit() != GLEW_OK){
+			std::cout << "Failed to initialize GLEW" << std::endl;
+			return -1;
+		}
+		
+		// definimos el viewport, sera el area en el que dibujamos
+		int width, height;
+		glfwGetFramebufferSize(window, &width, &height);
+		glViewport(0, 0, width, height);
+		
+		// activamos el Z-buffer
+		glEnable(GL_DEPTH_TEST);
+		*/
 	//creamos la clase Shader y compilamos los shaders
-	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
+//	Shader miShader("../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	
 //	TModelo modelo("../Models/microwave.obj");
 //	modelo.imprimirDatos();
@@ -176,26 +163,26 @@ int main(int argc, const char * argv[]) {
 	GLuint modelLoc, viewLoc, projectionLoc;
 	
 	// Bucle principal
-	while (!glfwWindowShouldClose(window))
+	while (window->isRunning())
 	{
-		GLfloat currentFrame = glfwGetTime();
-		deltaTime = currentFrame - lastFrame;
-		lastFrame = currentFrame;
-		
-		// comprueba los eventos de entrada (teclado, raton...)
-		glfwPollEvents();
-		
+			/*
+			// comprueba los eventos de entrada (teclado, raton...)
+			glfwPollEvents();
+			*/
+/*
 		//funcion de movimiento
 		movimiento(&escena);
-		
-		//limpia la pantalla asignando un color de fondo
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		//limpiamos el buffer de color y Z-buffer
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
+*/
+ 			/*
+			//limpia la pantalla asignando un color de fondo
+			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+			//limpiamos el buffer de color y Z-buffer
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			*/
+		window->beginDraw();
 //		//activamos el programa para renderizar
 //		glUseProgram(shaderProgram);
-		miShader.Use();
+//		miShader.Use();
 		
 //		glActiveTexture(GL_TEXTURE0);
 //		
@@ -295,7 +282,7 @@ int main(int argc, const char * argv[]) {
 		escena.girar(mov_cursor);
 		mov_cursor = glm::vec3();
 		escena.Draw();
-		
+		window->endDraw();
 //		//linkamos el VAO
 //		glBindVertexArray(VAO);
 //		
@@ -321,18 +308,21 @@ int main(int argc, const char * argv[]) {
 //		
 //		//deslinkamos el VAO por seguridad
 //		glBindVertexArray(0);
-//		
-		// intercambiamos los buffers, sino no pinta NADA
-		glfwSwapBuffers(window);
+			/*
+			// intercambiamos los buffers, sino no pinta NADA
+			glfwSwapBuffers(window);
+			*/
 	}
 	
 //	//liberamos la memoria de los buffers y array por seguridad
 //	glDeleteVertexArrays(1, &VAO);
 //	glDeleteBuffers(1, &VBO);
 //	glDeleteBuffers(1, &EBO);
-	
-	// terminamos con GLFW y borramos todos los recursos asociados a el
-	glfwTerminate();
+		/*
+		// terminamos con GLFW y borramos todos los recursos asociados a el
+		glfwTerminate();
+		*/
+	window->terminate();
 	return 0;
 }
 
