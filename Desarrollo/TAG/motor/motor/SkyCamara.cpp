@@ -34,13 +34,13 @@ void SkyCamara::setFarValue(float f){
 	m_camara->setFarValue(f);
 }
 
-static float prodEsc(dvector3D t, dvector3D p){
-	return t.x*p.x + t.y*p.y + t.z*p.z;
-}
-
-static float modulo(dvector3D p){
-	return std::sqrt((p.x*p.x)+(p.y*p.y)+(p.z*p.z));
-}
+//static float prodEsc(dvector3D t, dvector3D p){
+//	return t.x*p.x + t.y*p.y + t.z*p.z;
+//}
+//
+//static float modulo(dvector3D p){
+//	return std::sqrt((p.x*p.x)+(p.y*p.y)+(p.z*p.z));
+//}
 
 void SkyCamara::setCamTarget(dvector3D tar){
 	camTarget = tar;

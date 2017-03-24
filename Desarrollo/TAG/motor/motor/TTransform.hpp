@@ -29,6 +29,7 @@ public:
 	void beginDraw();
 	void endDraw();
 private:
+	void aplicarRotacion(const glm::mat4 &m, glm::vec3 &rot);
 	glm::mat4 matriz;
 	Pila* pila;
 };

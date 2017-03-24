@@ -32,25 +32,28 @@ void TTransform::setPosicion(glm::vec3 pos){
 	matriz = glm::translate(glm::mat4(1.0f), pos);
 }
 
-void TTransform::setRotacion(glm::vec3 rot){
-	return NULL;
-}
-
 void TTransform::trasladar(glm::vec3 pos){
 	matriz = glm::translate(matriz, pos);
 }
 
+void TTransform::setRotacion(glm::vec3 rot){
+	glm::mat4 m(1.0f);
+	aplicarRotacion(m, rot);
+}
+
 void TTransform::rotar(glm::vec3 rot){
-	//TO DO: mirar el eje Y si lo dejamos en negativo (correcto para Camara) o en positivo
-//	matriz = glm::mat4(1.0f);
+	aplicarRotacion(matriz, rot);
+}
+
+void TTransform::aplicarRotacion(const glm::mat4 &m, glm::vec3 &rot){
 	if (rot.z != 0.0f)
-		matriz = glm::rotate(matriz, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
+		matriz = glm::rotate(m, glm::radians(rot.z), glm::vec3(0.0f, 0.0f, 1.0f));
 	
 	if (rot.y != 0.0f)
-		matriz = glm::rotate(matriz, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
+		matriz = glm::rotate(m, glm::radians(rot.y), glm::vec3(0.0f, 1.0f, 0.0f));
 	
 	if (rot.x != 0.0f)
-		matriz = glm::rotate(matriz, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
+		matriz = glm::rotate(m, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
 }
 
 void TTransform::escalar(glm::vec3 esc){

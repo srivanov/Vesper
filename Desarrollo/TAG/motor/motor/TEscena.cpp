@@ -58,7 +58,7 @@ TEscena::TEscena(){
 	cubo2->setMalla("../Models/plano.obj");
 	cubo->setMalla("../Models/cube.obj");
 	
-	cubo->transladar(dvector3D(3,-2,-2));
+	cubo->transladar(dvector3D(3,0,-2));
 	cubo2->transladar(dvector3D(0,-3,0));
 	luz->setPosicion(dvector3D(2,2,2));
 	
@@ -104,6 +104,9 @@ void TEscena::update(){
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_D)){
 		cam->transladar(dvector3D(.1,0,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
+		cam->setRotacion(dvector3D(-45,0,0));
 	}
 	
 //	cam->setCamTarget(cubo->getPosicion());

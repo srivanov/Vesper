@@ -27,7 +27,13 @@ public:
 		posicion = vector;
 	}
 	
+	virtual void setRotacion(dvector3D vector) {
+		Trans[0]->setRotacion(glmConverter(vector));
+		rotacion = vector;
+	}
+	
 	virtual dvector3D getPosicion() { return posicion; }
+	virtual dvector3D getRotacion() { return rotacion; }
 	
 	virtual ~SkyNodo() { if(TransNodos[2]) delete TransNodos[2]; }
 	
@@ -42,7 +48,7 @@ protected:
 	 */
 	TTransform *Trans[3];
 	TNodo *TransNodos[3], *nodo;
-	dvector3D posicion;
+	dvector3D posicion, rotacion;
 	
 	void buildTransform(){
 		for (int i=0; i<3; i++) {
