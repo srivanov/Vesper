@@ -1,5 +1,6 @@
 
 #include "TEscena.hpp"
+#include "InputManager.h"
 
 TEscena::TEscena(){
 //	root = new TNodo();
@@ -47,19 +48,21 @@ TEscena::TEscena(){
 	ShaderManager::Instance()->setActiveShader("1");
 	cam = motor.crearCamara(NULL);
 	motor.setActiveCam(0);
-	cubo = motor.crearMalla(NULL);
+	cubo = motor.crearMalla(NULL, tMallaDinamica);
 	SkyLuz* luz = motor.crearLuz(NULL);
-	cubo2 = motor.crearMalla(NULL);
+	cubo2 = motor.crearMalla(NULL, tMallaEstatica);
 	
-	cam->setPosicion(dvector3D(1,0,3));
-	
-	cubo2->setMalla("../Models/cube.obj");
+	cam->setPosicion(dvector3D(0,2,5));
+	cam->setFarValue(100);
+//	cam->rotar(dvector3D(-40,0,0));
+	cubo2->setMalla("../Models/plano.obj");
 	cubo->setMalla("../Models/cube.obj");
 	
-	cubo->transladar(dvector3D(-2,1,0));
-	cubo2->transladar(dvector3D(-5,-1,0));
+	cubo->transladar(dvector3D(3,-2,-2));
+	cubo2->transladar(dvector3D(0,-3,0));
 	luz->setPosicion(dvector3D(2,2,2));
 	
+//	delete cubo2;
 }
 
 TEscena::~TEscena(){
@@ -71,15 +74,45 @@ TEscena::~TEscena(){
 }
 
 void TEscena::Draw(){
-//	cam.Draw(quinto);
-//	luz.Draw(septimo);
-//	root->Draw();
 	motor.Draw();
 }
 
-void TEscena::mover(glm::vec3 mov){
-	if(cam != NULL)
-		cam->transladar(dvector3D(mov.x,mov.y,mov.z));
+void TEscena::update(){
+	dvector3D mov;
+	
+	if(InputManager::Instance()->isPressed(SKY_KEY_UP)){
+		cubo->rotar(dvector3D(0,-.1,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_DOWN)){
+		cubo->rotar(dvector3D(0,.1,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_LEFT)){
+		cubo->transladar(dvector3D(-.1,0,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_RIGHT)){
+		cubo->transladar(dvector3D(.1,0,0));
+	}
+	
+	if(InputManager::Instance()->isPressed(SKY_KEY_W)){
+		cam->rotar(dvector3D(0,-.1,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_S)){
+		cam->rotar(dvector3D(0,.1,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_A)){
+		cam->transladar(dvector3D(-.1,0,0));
+	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_D)){
+		cam->transladar(dvector3D(.1,0,0));
+	}
+	
+//	cam->setCamTarget(cubo->getPosicion());
+	
+//	cam->transladar(mov);
+	
+	//para ver la posicion del raton
+//	std::cout << InputManager::Instance()->mousePos.x << " - " << InputManager::Instance()->mousePos.y << std::endl;
+	
 }
 
 void TEscena::girar(glm::vec3 mov){

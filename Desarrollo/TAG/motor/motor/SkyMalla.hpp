@@ -12,9 +12,14 @@
 #include "SkyNodo.hpp"
 #include "TMalla.hpp"
 
+enum tipoMalla{
+	tMallaDinamica = 0,
+	tMallaEstatica
+};
+
 class SkyMalla : public SkyNodo{
 public:
-	SkyMalla(TNodo* padre);
+	SkyMalla(TNodo* padre, tipoMalla t);
 	~SkyMalla();
 	
 	void setMalla(std::string fichero);

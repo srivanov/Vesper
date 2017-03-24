@@ -20,6 +20,7 @@ public:
 	void trasponer();
 	
 	void setPosicion(glm::vec3 pos);
+	void setRotacion(glm::vec3 rot);
 	void trasladar(glm::vec3 pos);
 	void rotar(glm::vec3 rot);
 	void escalar(glm::vec3 esc);

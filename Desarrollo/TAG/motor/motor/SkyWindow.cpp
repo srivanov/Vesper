@@ -7,13 +7,15 @@
 //
 
 #include "SkyWindow.hpp"
-#include "Dvector.hpp"
-const GLuint WIDTH = 800, HEIGHT = 600;
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+
 SkyWindow::SkyWindow(){
-	
+	i = InputManager::Instance();
 }
 
-int SkyWindow::crearWindow(dvector2D &wh){
+int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 	glfwInit();
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -22,17 +24,31 @@ int SkyWindow::crearWindow(dvector2D &wh){
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	
 	// creamos una ventana con glfw
-	window = glfwCreateWindow(WIDTH, HEIGHT, "TAGengine", nullptr, nullptr);
+	window = glfwCreateWindow(wh.x, wh.y, "TAGengine", nullptr, nullptr);
 	if (window == nullptr){
 		std::cout << "Failed to create GLFW window" << std::endl;
 //		glfwTerminate();
 		return 0;
 	}
 	
+	size = wh;
+	
 	//seleccionamos window para que se haga la gestion sobre esta ventana
 	glfwMakeContextCurrent(window);
 	
-	//ocultamos el raton en la aplicacion y capturamos su posicion
+	//definimos la funcion que llamaremos cuando se pulse una tecla
+	glfwSetKeyCallback(window, key_callback);
+	
+	
+	//definimos la funcion que llamaremos cuando se mueva el raton
+	glfwSetCursorPosCallback(window, mouse_callback);
+	
+	/*
+	//definimos la funcion cuando hacemos scroll
+	glfwSetScrollCallback(window, scroll_callback);
+	*/
+	
+	//ocultamos el raton en la aplicacion
 //	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	
 	// activamos esto para que GLEW pueda trabajar con punteros de forma moderna, algo asi
@@ -52,7 +68,7 @@ int SkyWindow::crearWindow(dvector2D &wh){
 	// activamos el Z-buffer
 	glEnable(GL_DEPTH_TEST);
 	
-//	glfwSwapInterval(0);
+	toggleVSync(vsync);
 	
 	return 1;
 }
@@ -75,5 +91,32 @@ void SkyWindow::endDraw(){
 	glfwSwapBuffers(window);
 }
 
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
+{
+	if(action != GLFW_RELEASE)
+		InputManager::Instance()->keys[key] = true;
+	else // GLFW_RELEASE
+		InputManager::Instance()->keys[key] = false;
+}
 
+void mouse_callback(GLFWwindow* window, double xpos, double ypos){
+	
+//	//inicialmente es TRUE
+//	if(firstMouse){
+//		lastX = xpos;
+//		lastY = ypos;
+//		firstMouse = false;
+//	}
+//	
+//	GLfloat xoffset = xpos - lastX;
+//	
+//	//le damos la vuelta ya que el eje Y empieza desde abajo
+//	GLfloat yoffset = lastY - ypos;
+//	lastX = xpos;
+//	lastY = ypos;
+//	mov_cursor = glm::vec3(yoffset, xoffset, 0);
+
+	//guardar la posicion en el inputManager
+	InputManager::Instance()->mousePos = dvector2D(xpos,ypos);
+}
 

@@ -12,8 +12,8 @@ SkyEngine::~SkyEngine(){
 	delete root;
 }
 
-SkyMalla* SkyEngine::crearMalla(TNodo* padre){
-	return new SkyMalla(padre ? padre : root);
+SkyMalla* SkyEngine::crearMalla(TNodo* padre, tipoMalla t){
+	return new SkyMalla(padre ? padre : root, t);
 }
 
 SkyCamara* SkyEngine::crearCamara(TNodo* padre){

@@ -14,7 +14,7 @@ public:
 	TEscena();
 	~TEscena();
 	void Draw();
-	void mover(glm::vec3 mov);
+	void update();
 	void girar(glm::vec3 mov);
 	void imprime();
 		
@@ -23,12 +23,6 @@ private:
 	SkyEngine motor;
 	SkyCamara* cam;
 	SkyMalla* cubo, *cubo2;
-//	TNodo *root, *uno, *dos, *tres, *cuarto, *quinto, *sexto, *septimo;
-//	TGestorRecursos* gestor;
-//	TMalla t, t2;
-//	TTransform tr, tr2, trCam, troot;
-//	TCamara cam;
-//	TLuz luz;
 };
 
 #endif /* TEscena_hpp */

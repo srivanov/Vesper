@@ -91,7 +91,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
 int main(int argc, const char * argv[]) {
 	SkyWindow* window = SkyWindow::Instance();
 	dvector2D wh(800,600);
-	window->crearWindow(wh);
+	window->crearWindow(wh,true);
 		/*
 		glfwInit();
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -112,16 +112,16 @@ int main(int argc, const char * argv[]) {
 		//seleccionamos window para que se haga la gestion sobre esta ventana
 		glfwMakeContextCurrent(window);
 		*/
-/*
-	//definimos la funcion que llamaremos cuando se pulse una tecla
-	glfwSetKeyCallback(window, key_callback);
-	
-	//definimos la funcion que llamaremos cuando se mueva el raton
-	glfwSetCursorPosCallback(window, mouse_callback);
-	
-	//definimos la funcion cuando hacemos scroll
-	glfwSetScrollCallback(window, scroll_callback);
-*/
+			/*
+				//definimos la funcion que llamaremos cuando se pulse una tecla
+				glfwSetKeyCallback(window, key_callback);
+				
+				//definimos la funcion que llamaremos cuando se mueva el raton
+				glfwSetCursorPosCallback(window, mouse_callback);
+				
+				//definimos la funcion cuando hacemos scroll
+				glfwSetScrollCallback(window, scroll_callback);
+			*/
 	
 		/*
 		//ocultamos el raton en la aplicacion y capturamos su posicion
@@ -279,9 +279,11 @@ int main(int argc, const char * argv[]) {
 //		glUniformMatrix4fv(glGetUniformLocation(miShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model3));
 //		modelo3.Draw(miShader);
 		
-		escena.girar(mov_cursor);
+//		escena.girar(mov_cursor);
 		mov_cursor = glm::vec3();
+		escena.update();
 		escena.Draw();
+		
 		window->endDraw();
 //		//linkamos el VAO
 //		glBindVertexArray(VAO);

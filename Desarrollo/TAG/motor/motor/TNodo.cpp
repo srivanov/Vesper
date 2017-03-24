@@ -14,13 +14,15 @@ TNodo::TNodo(){
 }
 
 TNodo::~TNodo(){
+	if(padre)
+		padre->remHijo(this);
 	padre = nullptr;
-//	if (entidad)
-//		delete entidad;
+	if (entidad)
+		delete entidad;
 	std::vector<TNodo*>::iterator it = hijos.begin();
 	while(it != hijos.end()){
 		delete (*it);
-		++it;
+		it = hijos.begin();
 	}
 	hijos.clear();
 }

@@ -1,6 +1,6 @@
 
 #include "Dvector.hpp"
-
+#include <cmath>
 
 dvector3D::dvector3D(const dvector3D &p) {
     this->x = p.x;
@@ -25,17 +25,11 @@ dvector3D& dvector3D::operator=(const dvector3D &p){
     }
     return *this;
 }
-dvector3D& dvector3D::operator+(const dvector3D &p){
-    this->x+=p.x;
-    this->y+=p.y;
-    this->z+=p.z;
-    return *this;
+dvector3D dvector3D::operator+(const dvector3D &p){
+	return dvector3D(this->x+p.x,this->y+p.y,this->z+p.z);
 }
-dvector3D& dvector3D::operator-(const dvector3D &p){
-    this->x-=p.x;
-    this->y-=p.y;
-    this->z-=p.z;
-    return *this;
+dvector3D dvector3D::operator-(const dvector3D &p){
+	return dvector3D(this->x-p.x,this->y-p.y,this->z-p.z);
 }
 dvector3D& dvector3D::operator*(const dvector3D &p){
     this->x*=p.x;
@@ -57,11 +51,30 @@ dvector3D& dvector3D::operator+=(const dvector3D &p){
 	return *this;
 }
 
+dvector3D& dvector3D::operator-=(const dvector3D &p){
+	this->x-=p.x;
+	this->y-=p.y;
+	this->z-=p.z;
+	return *this;
+}
+
 dvector3D& dvector3D::operator*=(const float &p){
 	this->x*=p;
 	this->y*=p;
 	this->z*=p;
 	return *this;
+}
+
+dvector3D dvector3D::pow3D(int i){
+	dvector3D res;
+	res.x = std::pow(this->x, i);
+	res.y = std::pow(this->y, i);
+	res.z = std::pow(this->z, i);
+	return res;
+}
+
+dvector3D dvector3D::operator*(int p){
+	return dvector3D(x*p,y*p,z*p);
 }
 
 dvector2D::dvector2D(const dvector2D &p) {

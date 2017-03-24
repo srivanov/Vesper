@@ -8,8 +8,9 @@
 
 #include "SkyMalla.hpp"
 
-SkyMalla::SkyMalla(TNodo* padre){
-	builTransform();
+SkyMalla::SkyMalla(TNodo* padre, tipoMalla t){
+	if(t) buildTransformStatic();
+	else buildTransform();
 	nodo = new TNodo();
 	m_malla = new TMalla();
 	

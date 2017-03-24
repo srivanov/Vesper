@@ -14,21 +14,25 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "Fps.hpp"
-
-class dvector2D;
+#include "Dvector.hpp"
+#include "InputManager.h"
 
 class SkyWindow {
 public:
 	static SkyWindow* Instance(){ static SkyWindow pinstance; return &pinstance; }
-	int crearWindow(dvector2D &wh);
+	int crearWindow(dvector2D wh = dvector2D(800,600), bool vsync = true);
 	bool isRunning() { return !glfwWindowShouldClose(window); }
 	void beginDraw();
 	void endDraw();
 	void terminate() { // terminamos con GLFW y borramos todos los recursos asociados a el
 		glfwTerminate(); }
+	void toggleVSync(bool t) { glfwSwapInterval(t); }
+	const dvector2D* getSIZE() { return &size; }
 private:
 	SkyWindow();
 	GLFWwindow* window;
+	dvector2D size;
+	InputManager* i;
 };
 
 #endif /* SkyWindow_hpp */

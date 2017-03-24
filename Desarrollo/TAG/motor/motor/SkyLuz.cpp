@@ -9,7 +9,7 @@
 #include "SkyLuz.hpp"
 
 SkyLuz::SkyLuz(TNodo* padre, int ID){
-	builTransform();
+	buildTransform();
 	nodo = new TNodo();
 	m_luz = new TLuz();
 	m_luz->setID(ID);

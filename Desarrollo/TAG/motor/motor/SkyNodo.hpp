@@ -42,8 +42,9 @@ protected:
 	 */
 	TTransform *Trans[3];
 	TNodo *TransNodos[3], *nodo;
+	dvector3D posicion;
 	
-	void builTransform(){
+	void buildTransform(){
 		for (int i=0; i<3; i++) {
 			TransNodos[i] = new TNodo;
 			Trans[i] = new TTransform;
@@ -53,11 +54,16 @@ protected:
 		}
 	}
 	
+	void buildTransformStatic(){
+		TransNodos[0] = new TNodo;
+		Trans[0] = new TTransform;
+		TransNodos[0]->setEntidad(Trans[0]);
+		TransNodos[1] = TransNodos[2] = TransNodos[0];
+		Trans[1] = Trans[2] = Trans[0];
+	}
+	
 	virtual glm::vec3 glmConverter(const dvector3D &d) { return glm::vec3(d.x, d.y, d.z); }
 	virtual glm::vec3 glmConverter(const dvector3D *d) { return glm::vec3(d->x, d->y, d->z); }
-	
-private:
-	dvector3D posicion;
 };
 
 #endif /* SkyNodo_hpp */

@@ -9,10 +9,8 @@
 #include "TCamara.hpp"
 #include "TNodo.hpp"
 
-TCamara::TCamara() : ID(0), Zoom(ZOOM){
+TCamara::TCamara() : ID(0), Zoom(ZOOM), nearV(0.1f), farV(20.0f){
 	esPerspectiva = true;
-	nearV = 0.1f;
-	farV = 20.0f;
 	sh = ShaderManager::Instance()->getActivo();
 }
 
@@ -62,7 +60,7 @@ void TCamara::Draw(TNodo* n){
 	
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "view"), 1, GL_FALSE, glm::value_ptr(matriz));
 	
-	projection = glm::perspective(glm::radians(Zoom), (GLfloat)800/(GLfloat)600, 0.1f, 1000.0f);
+	projection = glm::perspective(glm::radians(Zoom), (GLfloat)800/(GLfloat)600, nearV, farV);
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 	
 //	matriz = glm::inverse(matriz);
