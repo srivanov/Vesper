@@ -36,12 +36,16 @@ void Camera::setOffSet(dvector3D &vector){offSet = vector;}
 void Camera::EnableAutoCamera(dvector3D* position){
     if(autoCamera)
         printf("| Camera Objective Changed |");
+    else
+        printf("| AutoCamera - enabled |");
     m_objective = position;
     copy_objective = *position;
     autoCamera = true;
+    // DEBUG
     std::cout << "OBJECTIVO :" << m_objective->x << "|" << m_objective->y << "|" << m_objective->z << std::endl;
-    std::cout << "OBJECTIVO :" << render_component->getCamPos()->x << "|" << render_component->getCamPos()->y << "|" << render_component->getCamPos()->z << std::endl;
-    printf("| AutoCamera - enabled |");
+    std::cout << "POS CAMARA :" << render_component->getCamPos()->x << "|" << render_component->getCamPos()->y << "|" << render_component->getCamPos()->z << std::endl;
+    
+    
 }
 void Camera::DisableAutoCamera(){
     if(!autoCamera) {
