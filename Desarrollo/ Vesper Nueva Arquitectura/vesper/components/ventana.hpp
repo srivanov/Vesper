@@ -26,7 +26,6 @@ public:
 protected:
 	ventana();
 private:
-	static ventana* pinstance;
 	IrrlichtDevice* device;
 	IVideoDriver* driver;
 	ISceneManager* smgr;

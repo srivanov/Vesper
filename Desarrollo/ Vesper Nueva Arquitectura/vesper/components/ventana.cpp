@@ -1,12 +1,9 @@
 
 #include "ventana.hpp"
 
-ventana* ventana::pinstance = 0;
-
 ventana* ventana::Instance(){
-	if(pinstance == 0)
-		pinstance = new ventana();
-	return pinstance;
+    static ventana pinstance;
+    return &pinstance;
 }
 
 ventana::ventana(){
@@ -19,7 +16,6 @@ ventana::~ventana(){
 //	delete smgr;
 //	delete driver;
 //	delete device;
-	delete pinstance;
 }
 
 void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool rec){

@@ -10,12 +10,13 @@
 #define Camera_hpp
 
 #include "GameObject.hpp"
+#include <iostream>
 
 class Camera : public GameObject{
 private:
     void calculateAutoPosition();
     
-    dvector3D * m_objective, copy_objective;
+    dvector3D * m_objective, copy_objective, posCamara;
     dvector3D offSet , incremento;
     float m_scale;
     bool autoCamera;

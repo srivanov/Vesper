@@ -41,7 +41,8 @@ void Enemy::update(){
      Arbol->run(m_ID);
      
      mover(*book->VectorMovimiento);
-     rotarConRaton(*getPosition() + *book->VectorMovimiento);
+    dvector3D aux = *getPosition() + *book->VectorMovimiento;
+     rotarConRaton(aux);
     
     
     GameObject::update();

@@ -13,7 +13,7 @@ struct dvector3D {
     virtual ~dvector3D();
     dvector3D& operator=(const dvector3D &p);
     dvector3D& operator=(const dvector2D &p);
-    dvector3D& operator+(const dvector3D &p);
+    dvector3D operator+(const dvector3D &p);
     dvector3D& operator-(const dvector3D &p);
     dvector3D& operator*(const dvector3D &p);
     dvector3D& operator*(const float &p);

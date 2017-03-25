@@ -17,7 +17,6 @@ Game::Game(){
 	renderizador = new class render();
 	entrada = new input();
 	running = true;
-	cam = new Camera();
 	nivelazo = new Level;
     pausa = true;
     layoutPrueba = NULL;
@@ -26,7 +25,6 @@ Game::Game(){
 Game::~Game(){
 	//TO DO: revisar deletes de ncp, alarmita... (estan abajo en start)
 	delete entrada;
-	delete cam;
 	delete nivelazo;
 	renderizador->closeWindow();
 	delete renderizador;
@@ -100,10 +98,6 @@ void Game::cambiarArmaJugador(){
 
 void Game::rotarConRaton(dvector3D posRaton){
     //nivelazo->rotarConRaton(posRaton);
-}
-
-Camera* Game::getCamara(){
-    return cam;
 }
 
 void Game::setPausa(bool p){

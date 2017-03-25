@@ -18,7 +18,7 @@ void input::update(){
     
     //TO DO: reducir las llamadas para mover el objeto del jugador usando aux para guardar la ultima velocidad
     
-    Camera* cam = Game::Instance()->getCamara();
+    //Camera* cam = Game::Instance()->getCamara();
     dvector3D velocidad;
     
     if(MyEventReceiver::Instance()->IsKeyDown('W')){

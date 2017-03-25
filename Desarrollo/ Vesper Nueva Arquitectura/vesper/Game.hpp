@@ -40,7 +40,6 @@ public:
 	void atacarJugador();
 	void cambiarArmaJugador();
 	void rotarConRaton(dvector3D posRaton);
-    Camera* getCamara();
 	void setPausa(bool p);
 	
 protected:
@@ -51,7 +50,6 @@ private:
 	class render *renderizador;
 	class input* entrada;
 	bool running, pausa;
-    Camera* cam;
     Bala* bala_aux;
     std::vector<Bala*>::iterator iter;
 	Level* nivelazo;
