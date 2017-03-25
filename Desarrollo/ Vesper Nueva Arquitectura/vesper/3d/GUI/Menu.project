@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project CEGUIDefaultResolution="1280x720" CEGUIVersion="0.8" baseDirectory="." fontsPath="fonts" imagesetsPath="imagesets" layoutsPath="layouts" looknfeelsPath="looknfeel" schemesPath="schemes" version="CEED Project 1" xmlSchemasPath="xml_schemas">
+    <Items>
+        <Item name="imagesets" type="folder">
+            <Item path="imagesets/Menu.imageset" type="file" />
+            <Item path="imagesets/Menu.png" type="file" />
+            <Item path="imagesets/OgreTray.imageset" type="file" />
+            <Item path="imagesets/OgreTrayImages.png" type="file" />
+        </Item>
+        <Item name="layouts" type="folder">
+            <Item path="layouts/CargarPartida.layout" type="file" />
+            <Item path="layouts/CreditosLayout.layout" type="file" />
+            <Item path="layouts/HUD.layout" type="file" />
+            <Item path="layouts/MenuPrincipal.layout" type="file" />
+            <Item path="layouts/Opciones.layout" type="file" />
+            <Item path="layouts/Pause.layout" type="file" />
+        </Item>
+        <Item name="schemes" type="folder">
+            <Item path="schemes/Menu.scheme" type="file" />
+            <Item path="schemes/OgreTray.scheme" type="file" />
+        </Item>
+    </Items>
+</Project>

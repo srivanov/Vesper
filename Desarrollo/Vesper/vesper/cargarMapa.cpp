@@ -94,7 +94,6 @@ bool cargarMapa::leerMapa(char* fichero) {
     for (tinyxml2::XMLElement* child = map->FirstChildElement("objectgroup"); child != NULL; child = child->NextSiblingElement("objectgroup")){
         
         dvector2D separador(INT_MAX, INT_MAX);
-        int i =0;
         string name_capa = child->Attribute("name");
         //cout<<"NAME CAPA: " <<name_capa<<endl;
         
@@ -135,11 +134,7 @@ bool cargarMapa::leerMapa(char* fichero) {
                 
             }
             if(name_capa == "nodos"){
-                // cout<<"HAS ENTRADOOOOOO"<<endl;
                 
-                //cout<<"ID OBJECT: "<< object->IntAttribute("id")<<endl;
-                //TO DO : PATHPLANNING
-                //dvector3D * pos_nodo = new dvector3D(atoi(object->ToElement()->Attribute("x"))/_tileWidth, atoi(object->ToElement()->Attribute("y"))/_tileHeight,0.0f);
                 dvector3D * pos_nodo = new dvector3D( atoi(object->ToElement()->Attribute("y"))/_tileHeight,atoi(object->ToElement()->Attribute("x"))/_tileWidth,0.0f);
                 XMLElement* properties = object->FirstChildElement();
                 XMLElement* property = properties->FirstChildElement();
@@ -149,11 +144,7 @@ bool cargarMapa::leerMapa(char* fichero) {
                 
                 nums_nodos.push_back(num_nodo);
                 conexiones_nodos.push_back(conecta_nodos);
-                if(i == 0){
-                    //                    cout <<"Nodo: " <<nums_nodos[i]<<endl;
-                    //                    cout<<"Conecta: "<<conexiones_nodos[i]<<endl;
-                    i++;
-                }
+                
                 
                 
             }
