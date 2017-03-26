@@ -10,7 +10,7 @@
 
 #define NUMERO_USOS 3
 
-Botiquin::Botiquin(){}
+Botiquin::Botiquin(){addNodo("3d/muro.3ds");setTexture("3d/botiquin.jpg");}
 Botiquin::~Botiquin(){}
 
 void Botiquin::update(){

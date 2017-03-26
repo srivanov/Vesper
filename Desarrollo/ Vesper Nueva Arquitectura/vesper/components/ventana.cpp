@@ -12,10 +12,6 @@ ventana::ventana(){
 
 ventana::~ventana(){
 	printf("DELETE VENTANA\n");
-//	delete receiver;
-//	delete smgr;
-//	delete driver;
-//	delete device;
 }
 
 void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool rec){

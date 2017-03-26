@@ -9,19 +9,19 @@
 #include "ObjectFactory.hpp"
 
 void ObjectFactory::initObject(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body){
-    if(tipo!=ENEMIGOS)
-        g->inicializar(ID);
+    g->inicializar(ID);
     g->setObjectType(tipo);
     g->createPhysicsBody(body);
     g->setPosition(posicion);
-    g->addNodo("");
-    g->setTexture("3d/letraE.png");
+    
 }
 
 PhysicObject * ObjectFactory::PObject(int ID, dvector3D posicion, ObjectType tipo){
     Clean();
     g = new PlayerObjects;
     initObject(ID,posicion,tipo,STATIC_BODY);
+    PlayerObjects * gg = static_cast<PlayerObjects*>(g);
+    gg->inicializar(ID);
     
     return g;
 }
@@ -60,30 +60,3 @@ PhysicObject * ObjectFactory::WObject(int ID, dvector3D posicion, ObjectType tip
 
 ObjectFactory::ObjectFactory() : g(nullptr){}
 
-
-/*
-
-obj_mapping mapping[] = {
-    
-    {	1		,	""					,		0		},
-    {	2		,	"3d/alarmita.jpg"	,	accion2		},
-    {	3		,	"3d/moneda.jpg"		,	accion3		},
-    {	4		,	"3d/texture.png"	,	accion4		},
-    {	5		,	"3d/pala.jpg"		,	accion5		},
-    {	6		,	"3d/piedra.jpg"		,	accion6		},
-    {	7		,	"3d/naranja.jpg"	,	accion7		},
-    {	8		,	"3d/llave.jpg"		,	accion8		},
-    {	9		,	"3d/fuenten.jpg"	,	accion9		},
-    {	10		,	"3d/botiquin.jpg"	,	accion10	},
-    {	11		,	"3d/puerta.jpg"		,	accion11	},
-    {	12		,	"3d/pizza.jpg"		,	accion12	},
-    {	13		,	""					,		0		},
-    {	14		,	"3d/rehen.jpg"		,	accion21	},
-    {	15 		,	"3d/letraE.png"		,	accion15	},
-    {	16 		,	"3d/letraL.png"		,	accion16	},
-    {	17 		,	"3d/globoagua.png"	,	accion17	},
-    {	18 		,	"3d/chicle.png"		,	accion18	},
-    {	19 		,	"3d/bombahumo.png"	,	accion19	},
-    {	20 		,	""                  ,       0       },
-    {	0		,	""					,		0		}
-*/

@@ -15,7 +15,7 @@ class Puerta : public PhysicObject {
     
     
 public:
-    Puerta(){}
+    Puerta(){addNodo("3d/muro.3ds");setTexture("3d/puerta.jpg");}
     ~Puerta(){}
     void contacto(PhysicObject *g){}
     void contactoEnd(PhysicObject *g){}

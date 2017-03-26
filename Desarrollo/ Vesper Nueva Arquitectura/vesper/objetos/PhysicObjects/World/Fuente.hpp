@@ -10,9 +10,11 @@
 #define Fuente_hpp
 
 #include "../PhysicObject.hpp"
+#include "../../../Arquitectura IA/LevelBlackBoard.hpp"
 
 class Fuente : public PhysicObject {
-    
+private:
+    bool rota, NPCKnows;
 public:
     Fuente();
     ~Fuente();

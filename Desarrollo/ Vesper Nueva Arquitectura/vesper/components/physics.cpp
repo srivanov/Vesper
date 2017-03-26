@@ -134,17 +134,16 @@ void physics::crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvect
 		i=0;
 		vertices = new b2Vec2[(*j)];
 		while (i < (*j)) {
-			vertices[i].Set((*it).y/ancho, (*it).x/alto);
+			vertices[i].Set((*it).x/ancho, (*it).y/alto);
 			i++; it++;
 		}
 		b2ChainShape poligono;
 		poligono.CreateChain(vertices, (*j));
 		myFixtureDef.shape = &poligono;
 		myBody.type = b2_staticBody;
-		myBody.position.Set((*itp).y - 0.5, (*itp).x - 0.5);
+		myBody.position.Set((*itp).x - 0.5, (*itp).y - 0.5);
 		body_aux = mundoBox2D::Instance()->getWorld()->CreateBody(&myBody);
 		body_aux->CreateFixture(&myFixtureDef);
-//		body_aux->SetTransform(body_aux->GetPosition(), 90 * DEGTORAD);
 		
 		it++; itp++;
 	}

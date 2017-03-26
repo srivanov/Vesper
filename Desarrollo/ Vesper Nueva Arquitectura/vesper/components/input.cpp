@@ -71,20 +71,20 @@ void input::update(){
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('t')){
 		if(2000.0 * (clock()-intervalo) / CLOCKS_PER_SEC >= 50.0){
-			Game::Instance()->cambiarArmaJugador();
+			//Game::Instance()->cambiarArmaJugador();
 			intervalo = clock();
 		}
 	}
 	
     if(MyEventReceiver::Instance()->IsKeyDown('Q')){
-        Game::Instance()->setPausa(true);
+        //Game::Instance()->setPausa(true);
     }
 	
     if(MyEventReceiver::Instance()->IsKeyDown('O')){
-        Game::Instance()->zoom(false);
+        //Game::Instance()->zoom(false);
     }
     
     if(MyEventReceiver::Instance()->IsKeyDown('P')){
-        Game::Instance()->zoom(true);
+        //Game::Instance()->zoom(true);
     }
 }

@@ -11,21 +11,23 @@
 void Fuente::update(){
     GameObject::update();
     
-    /*
-    while(LevelBlackBoard::instance()->exist_record(ID, P_SED)){
-        if(LevelBlackBoard::instance()->getRecord(ID, P_SED)->romper){
+    
+    while(LevelBlackBoard::instance()->exist_record(m_ID, P_SED)){
+        if(LevelBlackBoard::instance()->getRecord(m_ID, P_SED)->romper){
             rota = true;
         }else if(rota) NPCKnows = true;
-        LevelBlackBoard::instance()->RemoveRecord(ID, P_SED);
+        LevelBlackBoard::instance()->RemoveRecord(m_ID, P_SED);
     }
     if (!NPCKnows)
-        LevelBlackBoard::instance()->AnswerRecord(P_SED, ID, getPosicion());
-     */
+        LevelBlackBoard::instance()->AnswerRecord(P_SED, m_ID, getPosition());
+    
 }
 
 Fuente::~Fuente(){
-    
+    LevelBlackBoard::instance()->RemoveRecord(m_ID, P_SED);
 }
 Fuente::Fuente(){
-    
+    rota = NPCKnows = false;
+    addNodo("3d/muro.3ds");
+    setTexture("3d/fuenten.jpg");
 }

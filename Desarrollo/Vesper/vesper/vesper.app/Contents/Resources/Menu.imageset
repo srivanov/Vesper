@@ -1,0 +1,11 @@
+<Imageset autoScaled="vertical" imagefile="Menu.png" name="Menu" nativeHorzRes="1280" nativeVertRes="720" version="2">
+    <Image height="262" name="fondo_principal" width="468" xPos="2" yPos="2" />
+    <Image height="52" name="crema" width="48" xPos="475" yPos="2" />
+    <Image height="48" name="boton_normal" width="265" xPos="537" yPos="2" />
+    <Image height="56" name="cuerda_01" width="11" xPos="784" yPos="0" />
+    <Image height="57" name="volver" width="54" xPos="955" yPos="0" />
+    <Image height="259" name="fondo_ajustes" width="462" xPos="4" yPos="268" />
+    <Image height="258" name="fondo_cargar" width="462" xPos="474" yPos="71" />
+    <Image height="50" name="boton_hover" width="116" xPos="821" yPos="0" />
+    <Image height="197" name="hud" width="352" xPos="495" yPos="338" />
+</Imageset>

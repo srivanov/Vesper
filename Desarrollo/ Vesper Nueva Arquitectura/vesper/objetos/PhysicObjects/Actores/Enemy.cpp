@@ -16,22 +16,30 @@ Enemy::Enemy(){
      );
      componente->setFather(this);
      
-     Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
-    
-    
+    Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
+    addNodo("3d/muro.3ds");
+    setTexture("3d/naranja.jpg");
+    t.start();
 }
 
 Enemy::~Enemy(){
-    
-     delete Arbol;
-     NpcLibrary::instancia()->remove_book(m_ID);
+    delete Arbol;
+    NpcLibrary::instancia()->remove_book(m_ID);
 }
 
 void Enemy::update(){
     
-     if(book->salud <= 0)
-         eliminar = true;
-     
+    if(t.tTranscurrido(6.f)){
+        book->sed+=2;
+        book->hambre++;
+        t.reset();
+    }
+    
+    if(book->salud <= 0){
+        eliminar = true;
+        return;
+    }
+    
      if (book->Evento) {
      Arbol->reset();
      book->Evento = false;
@@ -40,7 +48,7 @@ void Enemy::update(){
      
      Arbol->run(m_ID);
      
-     mover(*book->VectorMovimiento);
+    mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + *book->VectorMovimiento;
      rotarConRaton(aux);
     

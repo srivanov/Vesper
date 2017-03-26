@@ -20,12 +20,15 @@ class Level {
     Camera * c;
     vector<GameObject*> w;
     size_t it,end;
+    bool iniciado;
 public:
-    Level(){}
+    Level();
     ~Level();
+    bool lvlActivo() const {return iniciado;}
     bool inicializar(char *numero);
     void render();
     void update();
+    void destroy();
 };
 
 

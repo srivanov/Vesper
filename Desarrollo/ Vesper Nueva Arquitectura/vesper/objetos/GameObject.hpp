@@ -15,9 +15,7 @@
 #include "../components/IACamara.hpp"
 #include "../components/IAEnemigos.hpp"
 #include "../components/input.hpp"
-//#include "../components/martilloDeJuguete.hpp"
 #include "../components/Physics.hpp"
-//#include "../components/piedra.hpp"
 #include "../components/render.hpp"
 #include "../components/salud.hpp"
 #include "../components/sed.hpp"
@@ -49,6 +47,7 @@ enum ObjectType {
     BOTIQUIN,
     PUERTA,
     COMIDA,
+    CESPED,
     REHEN,
     ESCOPETA,
     SWEET_SHOOTER,

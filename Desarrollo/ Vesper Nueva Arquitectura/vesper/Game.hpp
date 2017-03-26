@@ -13,13 +13,9 @@
 #include <stdio.h>
 #include "components/render.hpp"
 #include "components/input.hpp"
-#include "objetos/Objects.hpp"
 #include "Level.hpp"
 #include "Fps.hpp"
 #include "mundoBox2D.hpp"
-#include "Arquitectura IA/trigger_system.hpp"
-#include "Arquitectura IA/LevelBlackBoard.hpp"
-#include "Arquitectura IA/NpcLibrary.hpp"
 #include "Dvector.hpp"
 #include "GUI/LayoutGUI.hpp"
 #include "tiempo.h"
@@ -35,23 +31,16 @@ public:
 	void update();
 	void render();
 	bool isRunning();
-    //Player* getPlayer();
-    void zoom(bool z);
-	void atacarJugador();
-	void cambiarArmaJugador();
-	void rotarConRaton(dvector3D posRaton);
-	void setPausa(bool p);
-	
+    void setPausa(bool p){
+        pausa = p;
+    }
 protected:
 	Game();
 	
 private:
-	//static Game* pinstance;
 	class render *renderizador;
 	class input* entrada;
 	bool running, pausa;
-    Bala* bala_aux;
-    std::vector<Bala*>::iterator iter;
 	Level* nivelazo;
 	
 	void processEvents();

@@ -10,10 +10,12 @@
 #define Comida_hpp
 
 #include "../PhysicObject.hpp"
+#include "../../../Arquitectura IA/LevelBlackBoard.hpp"
 
 class Comida : public PhysicObject {
     void gestorTiempo();
     bool consumido;
+    tiempo time;
 public:
     Comida();
     ~Comida();

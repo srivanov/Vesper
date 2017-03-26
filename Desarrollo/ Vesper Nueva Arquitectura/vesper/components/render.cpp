@@ -95,8 +95,7 @@ void render::dibujar(bool pausa){
 	
 	if(pausa)
 		GUIManager::i().drawAllGuis();
-	else
-		ventana::Instance()->getSceneManager()->drawAll();
+	else ventana::Instance()->getSceneManager()->drawAll();
 	
 	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
     ventana::Instance()->getDriver()->endScene();
@@ -105,7 +104,7 @@ void render::dibujar(bool pausa){
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p.x, p.y, p.z), vector3df(l.x, l.y, l.z));
     camara->setNearValue(1);
-    camara->setFarValue(200);
+    camara->setFarValue(21);
 }
 
 void render::closeWindow(){
@@ -120,7 +119,6 @@ void render::CreateGround(int alto, int ancho){
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
     nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
     
-    //nodo_suelo->setPosition(vector3df((alto/2)-0.5, (ancho/2)-0.5, 0.5));
     nodo_suelo->setPosition(vector3df((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
     nodo_suelo->setRotation(vector3df(90,180,180));
     
@@ -166,7 +164,8 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 		}
         w1 += anchoMapa;
 	}
-    */
+     */
+    
 
 }
 

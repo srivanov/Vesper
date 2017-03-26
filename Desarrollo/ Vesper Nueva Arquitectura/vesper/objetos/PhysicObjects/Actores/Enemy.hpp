@@ -22,7 +22,7 @@ protected:
 private:
     float tiempo_vida, velocidad;
     dvector3D direccion;
-    tiempo temp;
+    tiempo temp,t;
     
 public:
     Enemy();

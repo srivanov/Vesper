@@ -8,29 +8,32 @@
 
 #include "Comida.hpp"
 
+#define TIEMPO 5.f
+
 Comida::Comida(){
-    
+    addNodo("3d/muro.3ds");
+    setTexture("3d/pizza.jpg");
+    consumido = false;
 }
 Comida::~Comida(){}
 
 void Comida::gestorTiempo(){
-    /*
-    if(time(NULL)>_time){
+    
+    if(time.tTranscurrido(TIEMPO)){
         consumido = false;
     }
-     */
 }
 
 void Comida::update() {
     gestorTiempo();
-    /*
-    if (LevelBlackBoard::instance()->exist_record(ID, P_HAMBRE) && !consumido) {
-        LevelBlackBoard::instance()->RemoveRecord(ID, P_HAMBRE);
+    
+    if (LevelBlackBoard::instance()->exist_record(m_ID, P_HAMBRE) && !consumido) {
+        LevelBlackBoard::instance()->RemoveRecord(m_ID, P_HAMBRE);
         consumido = true;
-        _time = time(NULL) + TIEMPO_COMESTIBLE;
+        time.start();
         return;
     }
     if(!consumido)
-        LevelBlackBoard::instance()->AnswerRecord(P_HAMBRE, ID, getPosicion());
-     */
+        LevelBlackBoard::instance()->AnswerRecord(P_HAMBRE, m_ID, getPosition());
+    
 }

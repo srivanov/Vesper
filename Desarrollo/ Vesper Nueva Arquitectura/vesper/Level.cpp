@@ -8,6 +8,11 @@
 
 #include "Level.hpp"
 
+Level::Level(){
+    iniciado=true;
+    //actualState = states::Instance();
+}
+
 Level::~Level(){
 	printf("DELETE LEVEL\n");
     delete p;
@@ -36,12 +41,13 @@ bool Level::inicializar(char *numero){
         if(e==GRAPH_NODO_CONNECTION) ERROR+=" | NODO CONNECTION | ";
         if(e==FACTORY_ERROR) ERROR+=" | FACTORY CONSTRUCTION | ";
         cout << ERROR << " ### ERROR ### " << endl;
-        return false;
+        return iniciado;
     }
     NpcLibrary::instancia();
     LevelBlackBoard::instance();
     trigger_system::instance();
-    return true;
+    iniciado = true;
+    return iniciado;
 }
 
 bool Level::exportar_objetos(loadLevel& nivel){
@@ -56,7 +62,7 @@ bool Level::exportar_objetos(loadLevel& nivel){
 }
 
 void Level::update(){
-    trigger_system::instance()->update();
+    
     
     
     c->update();
@@ -65,7 +71,7 @@ void Level::update(){
     for (it=0; it<end; it++)
         w[it]->update();
     
-    
+    trigger_system::instance()->update();
     
 }
 

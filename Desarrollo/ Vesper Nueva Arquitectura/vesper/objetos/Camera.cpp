@@ -14,8 +14,8 @@ Camera::Camera(dvector3D speed) : m_objective(nullptr){
     offSet = dvector3D(0,-5,-10);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
-    posCamara = dvector3D(12.5,10,-20);
-    copy_objective = dvector3D(12.5,10,0);
+    posCamara = dvector3D(50,25,-20);
+    copy_objective = dvector3D(50,25,0);
     render_component->addCamera(posCamara, copy_objective);
 }
 Camera::~Camera(){}
@@ -42,6 +42,7 @@ void Camera::EnableAutoCamera(dvector3D* position){
     m_objective = position;
     copy_objective = *position;
     autoCamera = true;
+    
     // DEBUG
     /*
     std::cout << "OBJECTIVO :" << m_objective->x << "|" << m_objective->y << "|" << m_objective->z << std::endl;

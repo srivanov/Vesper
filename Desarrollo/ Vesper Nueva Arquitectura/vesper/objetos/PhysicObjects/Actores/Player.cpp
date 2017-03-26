@@ -16,7 +16,8 @@ Player::Player(){
     component * componente = new habilidadEspecial();
 	((habilidadEspecial*)componente)->setTipo(tHabINVISIBLE);
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
-    
+    addNodo("3d/sphere.3ds");
+    setTexture("3d/texture.png");
 }
 
 Player::~Player(){}

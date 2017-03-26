@@ -91,14 +91,6 @@ bool loadLevel::load(char* fichero) {
         m_numLayers++;
         layer = layer->NextSiblingElement("layer");
     }
-    /*
-    int auxL = 0;
-    for (size_t q = 0; q < w; q++) {
-        int y = (int) q / (m_width-1) ;
-        cout <<m_tilemap[q]<<"|";
-        if(auxL<y){auxL=y;cout << endl;}
-    }
-     */
     
     
     //LEER CAPA DE OBJETOS
@@ -180,7 +172,7 @@ void loadLevel::CreateWorld(){
      FASES DE CARGA DEL MAPA EN MEMORIA
      
      0 - SUELO
-     1 - OBJETOS CINEMATICOS
+     1 - CAMARA
      2 - PLAYER
      3 - PAREDES
      4 - OBJETOS
@@ -199,10 +191,10 @@ void loadLevel::CreateWorld(){
     player = new Player;
     player->setObjectType(PLAYER);
     player->createPhysicsBody(DYNAMIC_BODY);
-    player->addNodo("3d/sphere.3ds");
     
     
     // CONSTRUIR OBJETOS DE MUNDO
+    
     Muro * muro = new Muro;
     muro->construirMuros(m_tilemap,objetos, pos_objetos, m_tileWidth, m_tileHeight,m_width,m_height);
     Mundo.push_back(muro);
@@ -213,10 +205,6 @@ void loadLevel::CreateWorld(){
     
     size_t id = 1;
     
-    for(int sd=0; sd<m_obj.size(); sd++) {
-        if(m_obj.at(sd).z == VOID)
-            cout << "_______ VOID: " << m_obj.at(sd).x << "|" << m_obj.at(sd).y << "|" << m_obj.at(sd).z << endl;
-    }
     
     for (; it<end; it++) {
         
@@ -224,12 +212,12 @@ void loadLevel::CreateWorld(){
         dvector3D pos(m_obj[it].x,m_obj[it].y,0);
         GameObject * g;
         
+        
+        if(tipo==CESPED || tipo==BALA) continue;
         if(
-           tipo==PALA       ||
-           tipo==MONEDAS    ||
-           tipo==PIEDRA     ||
-           tipo==LLAVE      ||
-           (tipo>FUENTE && tipo<REHEN))
+           tipo==PALA       ||  tipo==MONEDAS    ||
+           tipo==PIEDRA     ||  tipo==LLAVE      ||
+           (tipo>REHEN && tipo<ARBUSTOS))
         {
             g = factory.PObject(it, pos, tipo);Mundo.push_back(g);
         }
