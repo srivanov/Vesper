@@ -20,7 +20,7 @@ public:
 		
 //	TNodo* getActiveCamera();
 private:
-	SkyEngine motor;
+	SkyEngine* motor;
 	SkyCamara* cam;
 	SkyMalla* cubo, *cubo2;
 };

@@ -44,13 +44,14 @@ TEscena::TEscena(){
 //	tr2.trasladar(glm::vec3(3.0f, 2.0f, 0.0f));
 //	
 //	trCam.trasladar(glm::vec3(0.0f, 0.0f, 5.0f));
+	motor = SkyEngine::Instance();
 	ShaderManager::Instance()->cargarShader("1", "../Shaders/texLight.vs", "../Shaders/texLight.frag");
 	ShaderManager::Instance()->setActiveShader("1");
-	cam = motor.crearCamara(NULL);
-	motor.setActiveCam(0);
-	cubo = motor.crearMalla(NULL, tMallaDinamica);
-	SkyLuz* luz = motor.crearLuz(NULL);
-	cubo2 = motor.crearMalla(NULL, tMallaEstatica);
+	cam = motor->crearCamara(NULL);
+	motor->setActiveCam(0);
+	cubo = motor->crearMalla(NULL, tMallaDinamica);
+	SkyLuz* luz = motor->crearLuz(NULL);
+	cubo2 = motor->crearMalla(NULL, tMallaEstatica);
 	
 	cam->setPosicion(dvector3D(0,2,5));
 	cam->setFarValue(100);
@@ -74,7 +75,7 @@ TEscena::~TEscena(){
 }
 
 void TEscena::Draw(){
-	motor.Draw();
+	motor->Draw();
 }
 
 void TEscena::update(){

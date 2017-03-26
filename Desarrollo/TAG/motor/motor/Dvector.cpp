@@ -1,6 +1,5 @@
 
 #include "Dvector.hpp"
-#include <cmath>
 
 dvector3D::dvector3D(const dvector3D &p) {
     this->x = p.x;
@@ -63,14 +62,6 @@ dvector3D& dvector3D::operator*=(const float &p){
 	this->y*=p;
 	this->z*=p;
 	return *this;
-}
-
-dvector3D dvector3D::pow3D(int i){
-	dvector3D res;
-	res.x = std::pow(this->x, i);
-	res.y = std::pow(this->y, i);
-	res.z = std::pow(this->z, i);
-	return res;
 }
 
 dvector3D dvector3D::operator*(int p){

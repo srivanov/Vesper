@@ -18,7 +18,7 @@
 
 class SkyEngine {
 public:
-	SkyEngine() : num_c(0), num_l(0), active_cam(0){ root = new TNodo(); root->setEntidad(new TTransform()); }
+	static SkyEngine* Instance() { static SkyEngine p; return &p; }
 	~SkyEngine();
 	SkyMalla* crearMalla(TNodo* padre, tipoMalla t);
 	SkyCamara* crearCamara(TNodo* padre);
@@ -28,6 +28,7 @@ public:
 	int getActiveCam() { return active_cam; }
 	
 private:
+	SkyEngine() : num_c(0), num_l(0), active_cam(0) { root = new TNodo(); root->setEntidad(new TTransform()); }
 	TNodo* root;
 	std::map<int, SkyCamara*> camaras;
 	std::map<int, SkyLuz*> luces;

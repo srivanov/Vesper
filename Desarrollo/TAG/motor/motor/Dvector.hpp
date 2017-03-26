@@ -17,7 +17,6 @@ struct dvector3D {
 	dvector3D& operator+=(const dvector3D &p);
 	dvector3D& operator-=(const dvector3D &p);
 	dvector3D& operator*=(const float &p);
-	dvector3D pow3D(int i);
 	dvector3D operator*(int p);
 	
     bool operator==(const dvector3D &p) const {return this->x == p.x && this->y == p.y && this->z == p.z;};

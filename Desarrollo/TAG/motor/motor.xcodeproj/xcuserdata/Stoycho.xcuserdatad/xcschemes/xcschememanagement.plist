@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SkyEngine.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>motor.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>E94394561E09A7CB0053DBE7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9D3DEB31E87CD0100555687</key>
 		<dict>
 			<key>primary</key>
 			<true/>

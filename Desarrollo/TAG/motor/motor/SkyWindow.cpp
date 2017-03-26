@@ -80,13 +80,13 @@ void SkyWindow::beginDraw(){
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	//limpiamos el buffer de color y Z-buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	Fps::Instance()->update();
+//	Fps::Instance()->update();
 }
 
 void SkyWindow::endDraw(){
-	char c[5];
-	sprintf(c, "%d",Fps::Instance()->get());
-	glfwSetWindowTitle(window, c);
+//	char c[5];
+//	sprintf(c, "%d",Fps::Instance()->get());
+//	glfwSetWindowTitle(window, c);
 	// intercambiamos los buffers, sino no pinta NADA
 	glfwSwapBuffers(window);
 }
