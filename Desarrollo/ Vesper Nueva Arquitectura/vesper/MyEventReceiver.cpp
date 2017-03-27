@@ -42,51 +42,51 @@ bool MyEventReceiver::OnEvent(const SEvent& event)
 }
 
 // This is used to check whether a key is being held down
-bool MyEventReceiver::IsKeyDown(uint32_t keyCode) const
+bool MyEventReceiver::IsKeyDown(EKEY_CODE keyCode) const
 {
-	EKEY_CODE key;
-	switch (keyCode) {
-		case 'W':
-			key = EKEY_CODE::KEY_KEY_W;
-			break;
-		case 'S':
-			key = EKEY_CODE::KEY_KEY_S;
-			break;
-		case 'A':
-			key = EKEY_CODE::KEY_KEY_A;
-			break;
-		case 'D':
-			key = EKEY_CODE::KEY_KEY_D;
-			break;
-		case 'E':
-			key = EKEY_CODE::KEY_KEY_E;
-			break;
-		case 'L':
-			key = EKEY_CODE::KEY_KEY_L;
-			break;
-		case 'Q':
-			key = EKEY_CODE::KEY_ESCAPE;
-			break;
-        case 'O':
-            key = EKEY_CODE::KEY_KEY_O;
-            break;
-        case 'P':
-            key = EKEY_CODE::KEY_KEY_P;
-            break;
-		case 't':
-			key = EKEY_CODE::KEY_TAB;
-			break;
-		case 's':
-			key = EKEY_CODE::KEY_SHIFT;
-			break;
-        case 'c':
-            key = EKEY_CODE::KEY_CONTROL;
-            break;
-		default:
-			return false;
-			break;
-	}
-	return KeyIsDown[key];
+//	EKEY_CODE key;
+//	switch (keyCode) {
+//		case 'W':
+//			key = EKEY_CODE::KEY_KEY_W;
+//			break;
+//		case 'S':
+//			key = EKEY_CODE::KEY_KEY_S;
+//			break;
+//		case 'A':
+//			key = EKEY_CODE::KEY_KEY_A;
+//			break;
+//		case 'D':
+//			key = EKEY_CODE::KEY_KEY_D;
+//			break;
+//		case 'E':
+//			key = EKEY_CODE::KEY_KEY_E;
+//			break;
+//		case 'L':
+//			key = EKEY_CODE::KEY_KEY_L;
+//			break;
+//		case 'Q':
+//			key = EKEY_CODE::KEY_ESCAPE;
+//			break;
+//        case 'O':
+//            key = EKEY_CODE::KEY_KEY_O;
+//            break;
+//        case 'P':
+//            key = EKEY_CODE::KEY_KEY_P;
+//            break;
+//		case 't':
+//			key = EKEY_CODE::KEY_TAB;
+//			break;
+//		case 's':
+//			key = EKEY_CODE::KEY_SHIFT;
+//			break;
+//        case 'c':
+//            key = EKEY_CODE::KEY_CONTROL;
+//            break;
+//		default:
+//			return false;
+//			break;
+//	}
+	return KeyIsDown[keyCode];
 }
 
 dvector3D MyEventReceiver::mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node)

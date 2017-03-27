@@ -14,7 +14,7 @@ class MyEventReceiver : public IEventReceiver
 public:
 	static MyEventReceiver* Instance();
 	virtual bool OnEvent(const SEvent& event);
-	virtual bool IsKeyDown(uint32_t keyCode) const;
+	virtual bool IsKeyDown(EKEY_CODE keyCode) const;
 	~MyEventReceiver();
 	dvector3D mouseTo3D(irr::scene::ISceneManager* smgr, dvector3D &node);
 	bool getLeftClick();

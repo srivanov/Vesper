@@ -23,6 +23,17 @@ Player::Player(){
 Player::~Player(){}
 
 void Player::update(){
+	dvector3D vel;
+	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP))
+		vel.y += 1;
+	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN))
+		vel.y += -1;
+	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT))
+		vel.x += -1;
+	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_RIGHT))
+		vel.x += 1;
+	mover(vel);
+	
     GameObject::update();
     arma->update();
 

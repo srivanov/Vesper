@@ -104,7 +104,7 @@ void render::dibujar(bool pausa){
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p.x, p.y, p.z), vector3df(l.x, l.y, l.z));
     camara->setNearValue(1);
-    camara->setFarValue(21);
+    camara->setFarValue(50);
 }
 
 void render::closeWindow(){
@@ -144,7 +144,8 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
         if(tilemap[it] == 1){
             int y = (int) it / (anchoMapa) ;
             int x = (int) it % (anchoMapa) ;
-            nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
+//            nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
+			nodo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1.0f, 0, -1, vector3df(0,0,0), vector3df(0,0,0), vector3df(1,1,1));
             nodo->setMaterialFlag(EMF_LIGHTING, false);
             nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
             nodo->setPosition(vector3df(x,y,0));

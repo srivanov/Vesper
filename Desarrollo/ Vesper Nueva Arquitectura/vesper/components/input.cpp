@@ -20,7 +20,7 @@ void input::update(){
     
     //Camera* cam = Game::Instance()->getCamara();
     dvector3D velocidad;
-    
+    /*
     if(MyEventReceiver::Instance()->IsKeyDown('W')){
         velocidad.y =  1;
     }
@@ -36,18 +36,18 @@ void input::update(){
 	
 	if(MyEventReceiver::Instance()->IsKeyDown('s')){
 		velocidad.x*=2; velocidad.y*=2;
-        /*
+	 
         if(!cam->getRapido()){
             cam->setRapido(true);
         }else{
             if(cam->getRapido())
                 cam->setRapido(false);
         }
-         */
+	 
 	}
     
     //TO DO: hacer boton recargar
-	/*
+	
 	if(MyEventReceiver::Instance()->IsKeyDown('c')){
 		Game::Instance()->getPlayer()->activarHab();
 	}
@@ -68,7 +68,7 @@ void input::update(){
      */
 	
 	//Game::Instance()->rotarConRaton(ventana::Instance()->posicionRaton(*Game::Instance()->getPlayer()->getPosicion()));
-	
+	/*
 	if(MyEventReceiver::Instance()->IsKeyDown('t')){
 		if(2000.0 * (clock()-intervalo) / CLOCKS_PER_SEC >= 50.0){
 			//Game::Instance()->cambiarArmaJugador();
@@ -86,5 +86,5 @@ void input::update(){
     
     if(MyEventReceiver::Instance()->IsKeyDown('P')){
         //Game::Instance()->zoom(true);
-    }
+    }*/
 }

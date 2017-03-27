@@ -14,7 +14,7 @@ Camera::Camera(dvector3D speed) : m_objective(nullptr){
     offSet = dvector3D(0,-5,-10);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
-    posCamara = dvector3D(50,25,-20);
+    posCamara = dvector3D(50,25,-40);
     copy_objective = dvector3D(50,25,0);
     render_component->addCamera(posCamara, copy_objective);
 }
@@ -76,7 +76,7 @@ void Camera::calculateAutoPosition(){
     
     dvector3D * renderPos = render_component->getCamPos();
     incremento = ((*m_objective+offSet*m_scale) - renderPos)/ (m_speed*60.0);
-    
+	
     
     //dvector3D aux1(*renderPos+incremento);
     //dvector3D aux2(*renderPos-offSet);
@@ -89,11 +89,11 @@ void Camera::calculateAutoPosition(){
 
 void Camera::update(){
     
-    if(autoCamera)
-        calculateAutoPosition();
+//    if(autoCamera)
+//        calculateAutoPosition();
+	
     
-    
-    GameObject::update();
+//    GameObject::update();
     return;
     
 }

@@ -12,6 +12,7 @@
 #include "../PhysicObject.hpp"
 #include "../../../components/armas.hpp"
 #include "../../../components/gun.hpp"
+#include <buttons.hpp>
 
 class Player : public PhysicObject {
 protected:
