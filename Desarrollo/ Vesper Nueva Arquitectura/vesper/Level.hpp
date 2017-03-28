@@ -21,6 +21,7 @@ class Level {
     vector<GameObject*> w;
     size_t it,end;
     bool iniciado;
+    void clear();
 public:
     Level();
     ~Level();

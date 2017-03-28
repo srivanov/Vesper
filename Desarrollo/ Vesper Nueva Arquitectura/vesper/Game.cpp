@@ -75,12 +75,6 @@ void Game::update(){
 
 
 
-
-/*
-Player* Game::getPlayer() {
-    return nivelazo->getPlayer();
-}
-*/
 void Game::processEvents() {
 	MyEventReceiver* rec = MyEventReceiver::Instance();
 	layoutPrueba->posicionarRaton(rec->getMousePosition().x, rec->getMousePosition().y);

@@ -13,18 +13,19 @@
 
 #include "trigger_system.hpp"
 
-triggers::triggers(const Prioridades& type, unsigned int idTrigger, int idSource, dvector3D* pos, float radio, float duration){
+triggers::triggers(const Prioridades& type, unsigned int idTrigger, int idSource, dvector3D pos, float radio, float duration){
     _type = type;
     _idTrigger = idTrigger;
     _idSource = idSource;
     _pos = pos;
     _radio = radio;
-    _duration = time(NULL)+duration;
+    _duration = duration;
+    t.start();
 }
 triggers::~triggers(){}
 trigger_system::trigger_system() {IDcont=0;}
 
-void trigger_system::add_trigger(const Prioridades& type, int id, dvector3D * pos, float radio, int duration){
+void trigger_system::add_trigger(const Prioridades& type, int id, dvector3D pos, float radio, int duration){
     triggers * _trigger = new triggers(type,IDcont,id,pos,radio,duration);
     TRIGGER_VECTOR.push_back(_trigger);
     IDcont++;
@@ -33,23 +34,27 @@ void trigger_system::update(){
     
     for(int i=0;i<TRIGGER_VECTOR.size();i++){
         for (int j=0; j<AGENTS.size(); j++) {
-            if (TRIGGER_VECTOR[i]->_radio==-1) {
-                AGENTS[j]->notify(TRIGGER_VECTOR[i]->_idTrigger, TRIGGER_VECTOR[i]->_type, TRIGGER_VECTOR[i]->_pos);
+            triggers * trg = TRIGGER_VECTOR[i];
+            NpcBook * agente = AGENTS[j];
+            if (trg->_radio==-1) {
+                agente->notify(trg->_idTrigger, trg->_type, &trg->_pos);
                 continue;
             }
-            if(EasyMath::EucCalcularDistancia(*AGENTS[j]->getPosition(), *TRIGGER_VECTOR[i]->_pos)>TRIGGER_VECTOR[i]->_radio)
+            if(EasyMath::EucCalcularDistancia(*AGENTS[j]->getPosition(), trg->_pos)>trg->_radio)
                     continue;
             else
-                AGENTS[j]->notify(TRIGGER_VECTOR[i]->_idTrigger,TRIGGER_VECTOR[i]->_type, TRIGGER_VECTOR[i]->_pos);
+                agente->notify(trg->_idTrigger,trg->_type, &trg->_pos);
         }
     }
     update_trigger();
 }
 void trigger_system::update_trigger(){
     for (int i=0; i<TRIGGER_VECTOR.size(); i++) {
-        if(TRIGGER_VECTOR[i]->_duration<time(NULL)){
+        triggers * trg = TRIGGER_VECTOR[i];
+        if( trg->t.tTranscurrido(trg->_duration) ){
             delete TRIGGER_VECTOR[i];
             TRIGGER_VECTOR.erase(TRIGGER_VECTOR.begin()+i);
+            i=-1;
         }
     }
     

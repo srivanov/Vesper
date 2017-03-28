@@ -15,16 +15,18 @@
 #define TRIGGER_SYSTEM_HPP
 
 #include "NpcLibrary.hpp"
+#include "../tiempo.h"
 
 
 struct triggers{
     Prioridades _type;
     int _idTrigger;
     int  _idSource;
-    dvector3D *_pos;
+    dvector3D _pos;
     float _radio;
-    time_t _duration;
-    triggers(const Prioridades& type, unsigned int idTrigger, int idSource, dvector3D * pos, float radio, float duration);
+    float _duration;
+    tiempo t;
+    triggers(const Prioridades& type, unsigned int idTrigger, int idSource, dvector3D pos, float radio, float duration);
     ~triggers();
 };
 
@@ -32,7 +34,7 @@ struct triggers{
 class trigger_system {
 public:
     static trigger_system * instance();
-    void add_trigger(const Prioridades& type, int id, dvector3D * pos, float radio, int duration);
+    void add_trigger(const Prioridades& type, int id, dvector3D pos, float radio, int duration);
     void update_trigger();
     void update();
     virtual ~trigger_system();

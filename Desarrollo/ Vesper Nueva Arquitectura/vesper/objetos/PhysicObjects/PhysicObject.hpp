@@ -20,7 +20,6 @@ enum BodyObject {
 class PhysicObject : public GameObject {
 protected:
     dvector3D anguloDisparo;
-    bool eliminar;
 public:
     void rotarConRaton(dvector3D &posRaton);
     void mover(dvector3D &vel);
@@ -31,7 +30,7 @@ public:
     virtual void contacto(PhysicObject*){}
     virtual void contactoEnd(PhysicObject*){}
     void createPhysicsBody(const BodyObject,dvector3D dim = dvector3D(1,1,1));
-    bool Eliminable() const {return eliminar;}
+    
     PhysicObject();
     ~PhysicObject();
 };

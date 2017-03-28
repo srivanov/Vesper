@@ -47,6 +47,7 @@ class loadLevel {
     Player* player;
     Camera* camara;
     void CreateWorld();
+    int LLAVES, puerta;
 public:
     bool load(char* fichero);
     vector<GameObject*> getMundo() {return Mundo;}

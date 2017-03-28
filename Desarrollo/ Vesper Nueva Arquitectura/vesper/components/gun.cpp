@@ -74,6 +74,7 @@ typeArma const* gun::getType(){
 void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
     //TO DO: Hacer la gestion de las balas en la clase bala
     bala_aux = new Bala(pos, dir, vel);
+    bala_aux->setObjectType(BALA);
     bala_aux->addNodo("3d/bala.3ds");
     balas.insert(balas.begin(), bala_aux);
    

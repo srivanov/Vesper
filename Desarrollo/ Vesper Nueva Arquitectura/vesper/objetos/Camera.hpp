@@ -10,7 +10,6 @@
 #define Camera_hpp
 
 #include "GameObject.hpp"
-#include <iostream>
 
 class Camera : public GameObject{
 private:

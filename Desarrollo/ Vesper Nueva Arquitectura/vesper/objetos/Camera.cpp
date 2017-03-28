@@ -14,8 +14,8 @@ Camera::Camera(dvector3D speed) : m_objective(nullptr){
     offSet = dvector3D(0,-5,-10);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
-    posCamara = dvector3D(50,25,-40);
-    copy_objective = dvector3D(50,25,0);
+    posCamara = dvector3D(0,0,0);
+    copy_objective = dvector3D(0,0,0);
     render_component->addCamera(posCamara, copy_objective);
 }
 Camera::~Camera(){}
@@ -40,15 +40,8 @@ void Camera::EnableAutoCamera(dvector3D* position){
     else
         printf("| AutoCamera - enabled |");
     m_objective = position;
-    copy_objective = *position;
     autoCamera = true;
-    
-    // DEBUG
-    /*
-    std::cout << "OBJECTIVO :" << m_objective->x << "|" << m_objective->y << "|" << m_objective->z << std::endl;
-    std::cout << "POS CAMARA :" << render_component->getCamPos()->x << "|" << render_component->getCamPos()->y << "|" << render_component->getCamPos()->z << std::endl;
-     */
-    
+    calculateAutoPosition();
     
 }
 void Camera::DisableAutoCamera(){
@@ -78,9 +71,6 @@ void Camera::calculateAutoPosition(){
     incremento = ((*m_objective+offSet*m_scale) - renderPos)/ (m_speed*60.0);
 	
     
-    //dvector3D aux1(*renderPos+incremento);
-    //dvector3D aux2(*renderPos-offSet);
-    
     dvector3D aux1(copy_objective+offSet);
     
     render_component->setCamPos(aux1);
@@ -88,12 +78,8 @@ void Camera::calculateAutoPosition(){
 }
 
 void Camera::update(){
-    
-//    if(autoCamera)
-//        calculateAutoPosition();
-	
-    
-//    GameObject::update();
-    return;
+    if(autoCamera)
+        calculateAutoPosition();
+    GameObject::update();
     
 }

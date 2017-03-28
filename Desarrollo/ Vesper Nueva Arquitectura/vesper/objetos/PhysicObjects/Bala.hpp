@@ -10,7 +10,7 @@
 #define Bala_hpp
 
 #include "PhysicObject.hpp"
-
+#include <iostream>
 
 class Bala : public PhysicObject {
     float velocidad, tiempo_vida;

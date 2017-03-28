@@ -14,13 +14,13 @@ Botiquin::Botiquin(){addNodo("3d/muro.3ds");setTexture("3d/botiquin.jpg");}
 Botiquin::~Botiquin(){}
 
 void Botiquin::update(){
-    /*
-    while (LevelBlackBoard::instance()->exist_record(ID, P_VIDA)) {
-        LevelBlackBoard::instance()->RemoveRecord(ID, P_VIDA);
+    
+    while (LevelBlackBoard::instance()->exist_record(m_ID, P_VIDA)) {
+        LevelBlackBoard::instance()->RemoveRecord(m_ID, P_VIDA);
         if (usos>0) usos--;
         else gastado = true;
     }
     if(!gastado)
-        LevelBlackBoard::instance()->AnswerRecord(P_VIDA, ID, getPosicion());
-     */
+        LevelBlackBoard::instance()->AnswerRecord(P_VIDA,m_ID, getPosition());
+    
 }

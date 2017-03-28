@@ -19,7 +19,7 @@ render::~render(){
 
 void render::update(){
 	if (nodo != NULL) {
-		nodo->_setNodePosition(*getFather()->getPosition());
+		//nodo->_setNodePosition(*getFather()->getPosition());
 	}
 }
 
@@ -104,7 +104,7 @@ void render::dibujar(bool pausa){
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p.x, p.y, p.z), vector3df(l.x, l.y, l.z));
     camara->setNearValue(1);
-    camara->setFarValue(50);
+    camara->setFarValue(20);
 }
 
 void render::closeWindow(){
@@ -152,20 +152,6 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
             //std::cout << x << "|" << y << std::endl;
         }
     }
-    
-    /*
-    for(int j = 0; j<h1; j++){
-        for(int k = w1-anchoMapa; k<w1; k++){
-			if(tilemap[k] == 1){
-				nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
-				nodo->setMaterialFlag(EMF_LIGHTING, false);
-				nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
-				nodo->setPosition(vector3df(j,k - w1 + anchoMapa,0));
-			}
-		}
-        w1 += anchoMapa;
-	}
-     */
     
 
 }

@@ -20,10 +20,13 @@ class ObjectFactory {
     void initObject(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body);
     PhysicObject * g;
     void Clean();
+    int Valor_llaves,puerta;
 public:
     ObjectFactory();
     ~ObjectFactory(){}
-    PhysicObject * PObject(int ID, dvector3D posicion,ObjectType tipo);
+    void setPuertaValue(int value){puerta=value;}
+    void setNumLlaves(int llaves){Valor_llaves=llaves;}
+    PhysicObject * PObject(dvector3D posicion,ObjectType tipo);
     PhysicObject * WObject(int ID, dvector3D posicion,ObjectType tipo);
     PhysicObject * Actores(int ID, dvector3D posicion,ObjectType tipo);
 };

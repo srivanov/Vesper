@@ -13,11 +13,12 @@
 
 class Puerta : public PhysicObject {
     
-    
+    int key;
 public:
-    Puerta(){addNodo("3d/muro.3ds");setTexture("3d/puerta.jpg");}
+    void setKey(int k){key=k;}
+    Puerta();
     ~Puerta(){}
-    void contacto(PhysicObject *g){}
+    void contacto(PhysicObject *g);
     void contactoEnd(PhysicObject *g){}
 };
 

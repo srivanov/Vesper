@@ -12,12 +12,14 @@
 #include "PhysicObject.hpp"
 
 class PlayerObjects : public PhysicObject {
+    int LLave_value;
 public:
+    int Llave() const {return LLave_value;}
     PlayerObjects();
     ~PlayerObjects();
     void contacto(PhysicObject *);
     void contactoEnd(PhysicObject *);
-    void inicializar(int& ID);
+    void inicializar(int ID);
 };
 
 #endif /* Weapon_hpp */

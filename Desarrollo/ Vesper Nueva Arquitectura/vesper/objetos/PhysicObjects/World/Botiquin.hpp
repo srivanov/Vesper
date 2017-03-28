@@ -10,6 +10,7 @@
 #define Botiquin_hpp
 
 #include "../PhysicObject.hpp"
+#include "../../../Arquitectura IA/LevelBlackBoard.hpp"
 
 class Botiquin : public PhysicObject {
     unsigned int usos;

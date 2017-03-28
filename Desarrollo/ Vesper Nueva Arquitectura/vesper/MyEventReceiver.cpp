@@ -41,6 +41,7 @@ bool MyEventReceiver::OnEvent(const SEvent& event)
 	return false;
 }
 
+
 // This is used to check whether a key is being held down
 bool MyEventReceiver::IsKeyDown(EKEY_CODE keyCode) const
 {

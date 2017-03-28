@@ -57,7 +57,18 @@ bool loadLevel::load(char* fichero) {
     if(doc.NoChildren())
         return false;
     
+    
+    
+    
+    
     XMLElement* map = doc.FirstChildElement("map");
+    
+    XMLElement* propiedades = map->FirstChildElement("properties");
+    if(propiedades){
+        XMLElement *propiedad = propiedades->FirstChildElement("property");
+        propiedad->QueryIntAttribute("PUERTA", &puerta);
+    }
+    
     map->QueryIntAttribute("width", &m_width);
     map->QueryIntAttribute("height", &m_height);
     map->QueryIntAttribute("tilewidth", &m_tileWidth);
@@ -67,6 +78,8 @@ bool loadLevel::load(char* fichero) {
     XMLElement *layer = map->FirstChildElement("layer");
     int w = m_width*m_height, query;
     m_tilemap = new int[w];
+    
+    LLAVES = 0;
     
     if(!layer) throw LOADING_LEVEL;
     while(layer){
@@ -80,7 +93,8 @@ bool loadLevel::load(char* fichero) {
             else if(query!=0) {
                 int y = (int) k / (m_width) ;
                 int x = (int) k % (m_width) ;
-                std::cout << x << "|" << y <<"|"<< query <<std::endl;
+                if(query==LLAVE) LLAVES++;
+                //std::cout << x << "|" << y <<"|"<< query <<std::endl;
                 m_obj.push_back(dvector3D(x,y,query));
                 
             }
@@ -179,7 +193,12 @@ void loadLevel::CreateWorld(){
      
      */
     
+    //FACTORY INIT
+    
+    factory.setNumLlaves(LLAVES);
+    factory.setPuertaValue(puerta);
     //SUELO
+    
     Ground * suelo = new Ground;
     suelo->inicializar(m_height, m_width);
     Mundo.push_back(suelo);
@@ -189,6 +208,7 @@ void loadLevel::CreateWorld(){
     
     
     player = new Player;
+    player->inicializar(-1, LLAVES);
     player->setObjectType(PLAYER);
     player->createPhysicsBody(DYNAMIC_BODY);
     
@@ -219,7 +239,7 @@ void loadLevel::CreateWorld(){
            tipo==PIEDRA     ||  tipo==LLAVE      ||
            (tipo>REHEN && tipo<ARBUSTOS))
         {
-            g = factory.PObject(it, pos, tipo);Mundo.push_back(g);
+            g = factory.PObject(pos, tipo);Mundo.push_back(g);
         }
         else if(tipo == ALARMA ||
                (tipo > LLAVE && tipo < REHEN))

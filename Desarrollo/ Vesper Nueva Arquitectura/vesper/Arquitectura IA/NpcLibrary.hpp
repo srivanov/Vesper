@@ -14,7 +14,7 @@
 #include "../Tools/EasyMath.hpp"
 #include "../PathFinding/PathPlanning.hpp"
 #include <vector>
-#include <time.h>
+#include "../tiempo.h"
 #include <stdlib.h>
 #include <map>
 
@@ -39,7 +39,7 @@ struct Eventos{
     Eventos(int& ,const Prioridades&, std::vector<dvector3D*>);
     ~Eventos();
     int m_ID;
-    time_t m_time;
+    tiempo m_time;
     std::vector<dvector3D*> m_posiciones;
 };
 
@@ -57,8 +57,8 @@ public:
     int m_ID;
     void resetVectorMovimiento();
     NpcBook(const int&,dvector3D*);
-    void notify(int&,const Prioridades&,dvector3D *);
-    void notify(int&,const Prioridades&,std::vector<dvector3D*>);
+    void notify(int,const Prioridades,dvector3D *);
+    void notify(int,const Prioridades,std::vector<dvector3D*>);
     dvector3D * getPosition() const {return PosicionPropia;}
     dvector3D * lastPosition() const;
     void updateBook();

@@ -12,8 +12,6 @@
 #include "../components/ataque.hpp"
 #include "../components/habilidadEspecial.hpp"
 #include "../components/hambre.hpp"
-#include "../components/IACamara.hpp"
-#include "../components/IAEnemigos.hpp"
 #include "../components/input.hpp"
 #include "../components/Physics.hpp"
 #include "../components/render.hpp"
@@ -67,6 +65,7 @@ protected:
     std::map<const ComponentType,component*> componentes;
     std::map<const ComponentType,component*>::iterator it;
     int m_ID;
+    bool eliminar;
     ObjectType m_tipo;
 public:
     void setObjectType(const ObjectType tipo){m_tipo=tipo;}
@@ -82,7 +81,7 @@ public:
     virtual void setRotation(dvector3D&);
     virtual void update();
     virtual void render();
-    
+    bool Eliminable() const {return eliminar;}
 };
 
 #endif /* GameObject_hpp */
