@@ -51,16 +51,16 @@ TEscena::TEscena(){
 	motor->setActiveCam(0);
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	SkyLuz* luz = motor->crearLuz(NULL);
-	cubo2 = motor->crearMalla(NULL, tMallaEstatica);
+	plano = motor->crearMalla(NULL, tMallaEstatica);
 	
-	cam->setPosicion(dvector3D(0,2,5));
+	cam->setPosicion(dvector3D(0,1,0));
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
-	cubo2->setMalla("../Models/plano.obj");
+	plano->setMalla("../Models/plano.obj");
 	cubo->setMalla("../Models/cube.obj");
 	
 	cubo->transladar(dvector3D(3,0,-2));
-	cubo2->transladar(dvector3D(0,-3,0));
+	plano->transladar(dvector3D(0,-2,0));
 	luz->setPosicion(dvector3D(2,2,2));
 	
 //	delete cubo2;
@@ -107,7 +107,7 @@ void TEscena::update(){
 		cam->transladar(dvector3D(.1,0,0));
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
-		cam->setRotacion(dvector3D(-45,0,0));
+		cam->setCamTarget(cubo->getPosicion());
 	}
 	
 //	cam->setCamTarget(cubo->getPosicion());

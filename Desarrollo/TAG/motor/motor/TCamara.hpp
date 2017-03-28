@@ -11,12 +11,10 @@
 
 #include <stack>
 #include <stdio.h>
-//#include <GL/glew.h>
-//#include <glm/glm.hpp>
-//#include <glm/gtc/matrix_transform.hpp>
 
 #include "ShaderManager.hpp"
 #include "TEntidad.hpp"
+#include "Dvector.hpp"
 
 class TNodo;
 
@@ -44,6 +42,7 @@ private:
 	int ID;
 	Shader* sh;
 	bool esPerspectiva;
+	const dvector2D *tam;
 	float nearV, farV;
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz, projection;

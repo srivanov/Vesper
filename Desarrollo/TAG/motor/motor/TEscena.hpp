@@ -22,7 +22,7 @@ public:
 private:
 	SkyEngine* motor;
 	SkyCamara* cam;
-	SkyMalla* cubo, *cubo2;
+	SkyMalla* cubo, *plano;
 };
 
 #endif /* TEscena_hpp */

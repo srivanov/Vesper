@@ -33,9 +33,9 @@ void TRecursoMalla::cargarFichero(std::string &ruta){
 	this->processNode(scene->mRootNode, scene);
 }
 
-void TRecursoMalla::asignarMatrix(glm::mat4 *m){
-	modelMatrix = *m;
-}
+//void TRecursoMalla::asignarMatrix(glm::mat4 *m){
+//	modelMatrix = *m;
+//}
 
 void TRecursoMalla::Draw(Shader *shader){
 	std::vector<Mesh>::iterator it = meshes.begin();
@@ -62,6 +62,7 @@ Mesh TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 	std::vector<Vertex> vertices;
 	std::vector<GLuint> indices;
 	std::vector<Texture*> texturas;
+//	printf("%s: %d\n",mesh->mName.C_Str(), mesh->mNumVertices);
 	unsigned int n=0;
 	for (GLuint i=0; i<mesh->mNumVertices; i++){
 		Vertex vertex;

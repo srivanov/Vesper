@@ -12,9 +12,6 @@
 #include <assimp/scene.h>
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
-//#include <SOIL/SOIL.h>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 
 #include "TRecurso.hpp"
 #include "Mesh.hpp"
@@ -29,7 +26,7 @@ public:
 	void Draw(Shader *shader);
 	void setTexture(std::string &ruta);
 	void imprimirDatos();
-	void asignarMatrix(glm::mat4 *m);
+//	void asignarMatrix(glm::mat4 *m);
 private:
 	
 	void processNode(aiNode* node, const aiScene* scene);
@@ -40,8 +37,8 @@ private:
 	
 	std::vector<Mesh> meshes;
 	std::string rFile, rTextura, directorio;
-	glm::mat4 modelMatrix;
-	glm::vec3 position, rotation;
+//	glm::mat4 modelMatrix;
+//	glm::vec3 position, rotation;
 	//variables para imprimir por consolar datos
 	unsigned int nVertices, nNormales, nCaras, nIndices;
 	bool bTex;
