@@ -9,12 +9,13 @@
 #ifndef Level_hpp
 #define Level_hpp
 
-
-#include "loadLevel.hpp"
 #include <string>
+#include "loadLevel.hpp"
+#include "estados.h"
+#include "state.hpp"
 
 
-class Level {
+class Level  : public state{
     bool exportar_objetos(loadLevel& nivel);
     Player * p;
     Camera * c;
@@ -22,6 +23,7 @@ class Level {
     size_t it,end;
     bool iniciado;
     void clear();
+    MyEventReceiver* input;
 public:
     Level();
     ~Level();

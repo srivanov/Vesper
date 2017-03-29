@@ -1,7 +1,6 @@
 
 #include "render.hpp"
 #include "../objetos/GameObject.hpp"
-#include "../GUI/GUIManager.h"
 #include <iostream>
 
 //TODO: Hacer que cambie de modelo al cambiar de arma con el tab
@@ -89,15 +88,20 @@ void render::setTexto(){
     texto->setOverrideColor(SColor(255,255,255,255));
 }
 
-void render::dibujar(bool pausa){
-	texto->setText(irr::core::stringw(Fps::Instance()->get()).c_str());
-	ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
+void render::beginDraw() {
+    ventana::Instance()->getDriver()->beginScene(true, true, SColor(255, 255, 255, 255));
+}
+
+void render::dibujar(){
+//	texto->setText(irr::core::stringw(Fps::Instance()->get()).c_str());
 	
-	if(pausa)
-		GUIManager::i().drawAllGuis();
-	else ventana::Instance()->getSceneManager()->drawAll();
+//    GUIManager::i().drawAllGuis();
+	ventana::Instance()->getSceneManager()->drawAll();
 	
-	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
+//	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
+}
+
+void render::endDraw() {
     ventana::Instance()->getDriver()->endScene();
 }
 

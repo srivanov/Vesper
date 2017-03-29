@@ -26,7 +26,9 @@ public:
     void CreateGround(int alto, int ancho);
 	void deleteNode();
 	void setTexto();
-    void dibujar(bool pausa);
+    void dibujar();
+    void beginDraw();
+    void endDraw();
 	void addCamera(dvector3D &p, dvector3D &l);
 	void closeWindow();
 	void dibujarMuro(int*tilemap,int anchoMapa, int altoMapa);

@@ -11,10 +11,11 @@
 #include "Game.hpp"
 
 CreditosLayout::CreditosLayout(){
-    init("3d/GUI", ventana::Instance()->getDevice());
-    
-    layout = tCreditosLayout;
-    
+
+}
+
+void CreditosLayout::init(CEGUI::RenderTarget* target){
+    GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
@@ -32,16 +33,9 @@ CreditosLayout::~CreditosLayout(){
     
 }
 
-//void CargarPartidaLayout::update() {
-//
-//}
-
-tLayout CreditosLayout::getLayout() {
-    return layout;
-}
-
 void CreditosLayout::onClickVolver(const CEGUI::EventArgs &e) {
-    padre->setActiveLayout(tMenuPrincipalLayout);
+//    padre->setActiveLayout(tMenuPrincipalLayout);
+    actualState->menu = tmMENUPRINCIPAL;
 }
 
 

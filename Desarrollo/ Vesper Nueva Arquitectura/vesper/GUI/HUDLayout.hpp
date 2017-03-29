@@ -13,16 +13,15 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
-class HUDLayout : public Motor::GUI {
+class HUDLayout : public GUI {
 public:
     HUDLayout();
     ~HUDLayout();
     //    void update() override;
-    tLayout getLayout() override;
-    void onClickVolver(const CEGUI::EventArgs &e);
+    void init(CEGUI::RenderTarget* target);
     
 private:
-   CEGUI::PushButton *button_volver;
+   
 };
 
 #endif /* HUDLayout_hpp */

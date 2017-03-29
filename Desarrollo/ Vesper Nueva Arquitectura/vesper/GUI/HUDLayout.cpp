@@ -10,19 +10,18 @@
 #include "../components/ventana.hpp"
 #include "Game.hpp"
 
-HUDLayout::HUDLayout(){
-    init("3d/GUI", ventana::Instance()->getDevice());
+HUDLayout::HUDLayout() {
     
-    layout = tHUD;
-    
+}
+
+void HUDLayout::init(CEGUI::RenderTarget* target){
+    GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
     loadLayout("HUD.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
     
-    button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
-    button_volver->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&HUDLayout::onClickVolver, this));
 }
 
 HUDLayout::~HUDLayout(){
@@ -33,11 +32,3 @@ HUDLayout::~HUDLayout(){
 //
 //}
 
-tLayout HUDLayout::getLayout() {
-    return layout;
-}
-
-
-void HUDLayout::onClickVolver(const CEGUI::EventArgs &e) {
-    padre->setActiveLayout(tMenuPrincipalLayout);
-}

@@ -13,12 +13,13 @@
 #include <stdio.h>
 #include "components/render.hpp"
 #include "components/input.hpp"
-#include "Level.hpp"
+//#include "Level.hpp"
 #include "Fps.hpp"
-#include "mundoBox2D.hpp"
 #include "Dvector.hpp"
-#include "GUI/LayoutGUI.hpp"
+//#include "GUI/LayoutGUI.hpp"
 #include "tiempo.h"
+
+#include "estados/stateMachine.hpp"
 
 class Game {
 public:
@@ -41,11 +42,11 @@ private:
 	class render *renderizador;
 	class input* entrada;
 	bool running, pausa;
-	Level* nivelazo;
+//	Level* nivelazo;
 	
 	void processEvents();
 	
-	LayoutGUI* layoutPrueba;
+    stateMachine maquina;
 };
 
 #endif /* Game_hpp */

@@ -1,38 +1,41 @@
 
 #include "GUI.h"
-#include "GUIManager.h"
+#include "../Dvector.hpp"
 
-void Motor::GUI::init(const std::string& resourcesPath, irr::IrrlichtDevice *device){
-	GUIManager::i().init(resourcesPath, device);
+void GUI::init(CEGUI::RenderTarget* target){
 	CEGUI::Logger::getSingleton().setLoggingLevel(CEGUI::Informative);
-	m_context = &CEGUI::System::getSingleton().createGUIContext(GUIManager::i().getIrrlichtRenderer()->getDefaultRenderTarget());
+	m_context = &CEGUI::System::getSingleton().createGUIContext(*target);
 	m_root = CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "root");
 	m_context->setRootWindow(m_root);
-
-	GUIManager::i().addGui(this);
 }
 
-Motor::GUI::~GUI(){
+GUI::~GUI(){
     
 }
 
-void Motor::GUI::update(){
-    GUIManager::i().updateAllGuis();
+void GUI::update(){
+    injectMousePosition(eventManager->getMousePosition());
+    if(eventManager->getLeftClick()) {
+        injectLeftMouseButton();
+    } else {
+        injectLeftMouseButtonUp();
+    }
 }
 
-void Motor::GUI::destroy() {
+void GUI::render(){
+    m_context->draw();
+}
+
+void GUI::destroy() {
 	CEGUI::System::getSingleton().destroyGUIContext(*m_context);
 }
 
-void Motor::GUI::draw() {
-	
-	GUIManager::i().getIrrlichtRenderer()->beginRendering();
-	m_context->draw();
-	GUIManager::i().getIrrlichtRenderer()->endRendering();
+void GUI::draw() {
+//	m_context->draw();
 	//glDisable(GL_SCISSOR_TEST);
 }
 
-/*void Motor::GUI::update() {
+/*void GUI::update() {
 	unsigned int elapsed;
 	Time time;
 	if (m_lastTime == 0) {
@@ -46,29 +49,29 @@ void Motor::GUI::draw() {
 	m_context->injectTimePulse(elapsed);
 }*/
 
-void Motor::GUI::loadScheme(const std::string& schemeFile){
+void GUI::loadScheme(const std::string& schemeFile){
 	CEGUI::SchemeManager::getSingleton().createFromFile(schemeFile);
 }
 
-void Motor::GUI::setFont(const std::string& fontFile) {
+void GUI::setFont(const std::string& fontFile) {
 	CEGUI::FontManager::getSingleton().createFromFile(fontFile + ".font");
 	m_context->setDefaultFont(fontFile);
 }
 
-CEGUI::Window* Motor::GUI::createWidget(const std::string& type, const vec4f& destRectPerc, const vec4f& destRectPix, const std::string& name) {
+CEGUI::Window* GUI::createWidget(const std::string& type, const vec4f& destRectPerc, const vec4f& destRectPix, const std::string& name) {
 	CEGUI::Window *newWindow = CEGUI::WindowManager::getSingleton().createWindow(type, name);
 	m_root->addChild(newWindow);
 	setWidgetDestRect(newWindow, destRectPerc, destRectPix);
 	return newWindow;
 }
 
-CEGUI::Window * Motor::GUI::loadLayout(const std::string & layout) {
+CEGUI::Window * GUI::loadLayout(const std::string & layout) {
     CEGUI::Window *newWindow = CEGUI::WindowManager::getSingleton().loadLayoutFromFile(layout);
 	m_root->addChild(newWindow);
 	return newWindow;
 }
 
-void Motor::GUI::showMouseCursor(bool show) {
+void GUI::showMouseCursor(bool show) {
 	if (show) {
 		m_context->getMouseCursor().show();
 	} else {
@@ -77,11 +80,11 @@ void Motor::GUI::showMouseCursor(bool show) {
 
 }
 
-void Motor::GUI::setMouseCursor(const std::string & mouse) {
+void GUI::setMouseCursor(const std::string & mouse) {
 	m_context->getMouseCursor().setDefaultImage(mouse);
 }
 
-CEGUI::Key::Scan Motor::GUI::irrlichtToCeguiKey(irr::EKEY_CODE key) {
+CEGUI::Key::Scan GUI::irrlichtToCeguiKey(irr::EKEY_CODE key) {
 	using namespace irr;
 	using namespace CEGUI;
 	switch (key) {
@@ -151,37 +154,22 @@ CEGUI::Key::Scan Motor::GUI::irrlichtToCeguiKey(irr::EKEY_CODE key) {
     return Key::Unknown;
 }
 
-void Motor::GUI::injectKeyDown(irr::EKEY_CODE key) {
+void GUI::injectKeyDown(irr::EKEY_CODE key) {
 	m_context->injectKeyDown(irrlichtToCeguiKey(key));
 }
 
-void Motor::GUI::injectKeyUp(irr::EKEY_CODE key) {
+void GUI::injectKeyUp(irr::EKEY_CODE key) {
 	m_context->injectKeyUp(irrlichtToCeguiKey(key));
 }
 
-void Motor::GUI::injectMousePosition(float x, float y) {
-	m_context->injectMousePosition(x, y);
+void GUI::injectMousePosition(const dvector2D *pos) {
+	m_context->injectMousePosition(pos->x, pos->y);
 }
 
-void Motor::GUI::setWidgetDestRect(CEGUI::Window* widget, const vec4f& destRectPerc, const vec4f& destRectPix) {
+void GUI::setWidgetDestRect(CEGUI::Window* widget, const vec4f& destRectPerc, const vec4f& destRectPix) {
 	widget->setPosition(CEGUI::UVector2(CEGUI::UDim(destRectPerc.x, destRectPix.x), CEGUI::UDim(destRectPerc.y, destRectPix.y)));
 	widget->setSize(CEGUI::USize(CEGUI::UDim(destRectPerc.z, destRectPix.w), CEGUI::UDim(destRectPerc.z, destRectPix.w)));
 }
 
-bool Motor::GUI::mostrar() {
-    GUIManager::i().addGui(this);
-    
-//    printf("Se ha mostrado el layout \n");
-    return true;
-}
 
-bool Motor::GUI::ocultar() {
-    GUIManager::i().removeGui(this);
-//    printf("Se ha ocultado el layout \n");
-    return true;
-}
-
-void Motor::GUI::setPadre(LayoutGUI* p){
-    padre = p;
-}
 

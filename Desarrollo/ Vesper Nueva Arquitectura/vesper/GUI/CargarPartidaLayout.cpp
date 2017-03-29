@@ -10,11 +10,12 @@
 #include "../components/ventana.hpp"
 #include "Game.hpp"
 
-CargarPartidaLayout::CargarPartidaLayout(){
-    init("3d/GUI", ventana::Instance()->getDevice());
+CargarPartidaLayout::CargarPartidaLayout() {
     
-    layout = tCargarPartidaLayout;
-    
+}
+
+void CargarPartidaLayout::init(CEGUI::RenderTarget* target){
+    GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
@@ -45,10 +46,6 @@ CargarPartidaLayout::~CargarPartidaLayout(){
 //    
 //}
 
-tLayout CargarPartidaLayout::getLayout() {
-    return layout;
-}
-
 void CargarPartidaLayout::onClickPartida1(const CEGUI::EventArgs &e) {
     printf("Pulsado boton partida 1");
 }
@@ -62,7 +59,8 @@ void CargarPartidaLayout::onClickPartida3(const CEGUI::EventArgs &e) {
 }
 
 void CargarPartidaLayout::onClickVolver(const CEGUI::EventArgs &e) {
-    padre->setActiveLayout(tMenuPrincipalLayout);
+//    padre->setActiveLayout(tMenuPrincipalLayout);
+    actualState->menu = tmMENUPRINCIPAL;
 }
 
 

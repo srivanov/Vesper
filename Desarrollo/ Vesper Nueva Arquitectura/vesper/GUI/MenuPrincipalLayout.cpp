@@ -7,19 +7,14 @@
 //
 
 #include "MenuPrincipalLayout.hpp"
-#include "../components/ventana.hpp"
-#include "../Game.hpp"
+
 
 MenuPrincipalLayout::MenuPrincipalLayout() {
     // El codigo que habia aqui esta ahora en inicializar()
-    inicializar();
 }
 
-void MenuPrincipalLayout::inicializar() {
-    init("3d/GUI", ventana::Instance()->getDevice());
-    
-    layout = tMenuPrincipalLayout;
-    
+void MenuPrincipalLayout::init(CEGUI::RenderTarget* target) {
+    GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
@@ -47,46 +42,41 @@ void MenuPrincipalLayout::inicializar() {
     static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(1))->moveToBack();
 }
 
-tLayout MenuPrincipalLayout::getLayout() {
-    return layout;
-}
-
 void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
     // TO DO: que lleve a empezar nueva partida
     printf("Empieza una nueva partida");
-	Game::Instance()->setPausa(false);
-    padre->setActiveLayout(tPausa);
-	
+//	Game::Instance()->setPausa(false);
+//    padre->setActiveLayout(tPausa);
+    actualState->nextState = PLAYING;
 }
 
 void MenuPrincipalLayout::onClickLoadScreen(const CEGUI::EventArgs &e){
     //TO DO: que lleve a la pantalla de cargar partida
 //    layout = tCargarPartidaLayout; // Estado 1 = CargarPartida
-    padre->setActiveLayout(tCargarPartidaLayout);
+//    padre->setActiveLayout(tCargarPartidaLayout);
     printf("Voy a la pantalla cargar partida");
+    actualState->menu = tmCARGAR_PARTIDA;
 }
 
 void MenuPrincipalLayout::onClickOptions(const CEGUI::EventArgs &e){
     //TO DO: que lleve a la pantalla de opciones
 //    layout = tOpcionesLayout;
-    padre->setActiveLayout(tOpcionesLayout);
+//    padre->setActiveLayout(tOpcionesLayout);
     printf("Lleva al menú opciones");
+    actualState->menu = tmOPCIONES;
 }
 
 void MenuPrincipalLayout::onClickCredits(const CEGUI::EventArgs &e){
     //TO DO: pantalla de creditos
 //    layout = tCreditosLayout;
-    padre->setActiveLayout(tCreditosLayout);
+//    padre->setActiveLayout(tCreditosLayout);
     printf("Lleva a la pantalla de creditos");
+    actualState->menu = tmCREDITOS;
 }
 
 void MenuPrincipalLayout::onClickStopGame(const CEGUI::EventArgs &e){
     //TO DO: salir del juego
     printf("Salgo del juego");
-    Game::Instance()->stop();
-}
-
-void MenuPrincipalLayout::onClickPausa(const CEGUI::EventArgs &e) {
-    padre->setActiveLayout(tPausa);
+    actualState->nextState = STOP;
 }
 

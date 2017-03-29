@@ -9,8 +9,9 @@
 #include "Level.hpp"
 
 Level::Level(){
-    iniciado=true;
-    //actualState = states::Instance();
+    iniciado=false;
+    actualState = states::Instance();
+    input = MyEventReceiver::Instance();
 }
 
 Level::~Level(){
@@ -60,7 +61,7 @@ bool Level::exportar_objetos(loadLevel& nivel){
     end = w.size();
     return true;
 }
-
+//TO DO: mirar por si se puede optimizar
 void Level::clear(){
     for (it=0; it<w.size(); it++)
         if(w[it]->Eliminable()){
@@ -74,6 +75,11 @@ void Level::clear(){
 void Level::update(){
     clear();
     
+    if(input->IsKeyDown(SKY_KEY_ESCAPE)){
+        actualState->nextState = MENU;
+        actualState->menu = tmPAUSE;
+    }
+    //TO DO: poner el resto para elegir personajes
     
     c->update();
     p->update();
@@ -83,7 +89,7 @@ void Level::update(){
         
     
     trigger_system::instance()->update();
-    
+    mundoBox2D::Instance()->update();
 }
 
 void Level::render(){
@@ -93,3 +99,11 @@ void Level::render(){
     for (it=0; it<end; it++)
         w[it]->render();
 }
+
+void Level::destroy(){
+    //TO DO: eliminar los datos del nivel actual (jugador, objetos...)
+    printf("DESTROY LEVEL\n");
+    iniciado = false;
+}
+
+

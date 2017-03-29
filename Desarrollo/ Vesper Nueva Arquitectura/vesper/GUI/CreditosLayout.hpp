@@ -13,19 +13,16 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
-class CreditosLayout : public Motor::GUI {
+class CreditosLayout : public GUI {
 public:
     CreditosLayout();
     ~CreditosLayout();
     //    void update() override;
-    tLayout getLayout() override;
+    void init(CEGUI::RenderTarget* target);
     void onClickVolver(const CEGUI::EventArgs &e);
     
 private:
     CEGUI::DefaultWindow *label_creditos;
-    CEGUI::PushButton *button_partida1;
-    CEGUI::PushButton *button_partida2;
-    CEGUI::PushButton *button_partida3;
     CEGUI::PushButton *button_volver;
 };
 

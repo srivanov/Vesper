@@ -1,8 +1,6 @@
 
 #include "Game.hpp"
 #include <cstdlib>
-#include "GUI/GUIManager.h"
-//Game* Game::pinstance = 0;
 
 Game* Game::Instance(){
 	static Game pinstance;
@@ -17,16 +15,16 @@ Game::Game(){
 	renderizador = new class render();
 	entrada = new input();
 	running = true;
-	nivelazo = new Level;
+//	nivelazo = new Level;
     pausa = true;
-    layoutPrueba = NULL;
+//    layoutPrueba = NULL;
 }
 
 Game::~Game(){
 	printf("DELETE GAME\n");
 	//TO DO: revisar deletes de ncp, alarmita... (estan abajo en start)
 	delete entrada;
-	delete nivelazo;
+//	delete nivelazo;
 	renderizador->closeWindow();
 	delete renderizador;
     
@@ -36,12 +34,14 @@ void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen,
 	
 	renderizador->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
     
-    if(!nivelazo->inicializar("3")) {
-        exit(0);
-    }
+    maquina.Init();
+    
+//    if(!nivelazo->inicializar("3")) {
+//        exit(0);
+//    }
     
     
-	layoutPrueba = new LayoutGUI();
+//	layoutPrueba = new LayoutGUI();
 }
 
 void Game::stop(){
@@ -49,10 +49,13 @@ void Game::stop(){
 }
 
 void Game::render(){
-	if(!pausa){
-		nivelazo->render();
-	}
-	renderizador->dibujar(pausa);
+//	if(!pausa){
+//		nivelazo->render();
+//	}
+    renderizador->beginDraw();
+    maquina.render();
+	renderizador->dibujar();
+    renderizador->endDraw();
 }
 
 bool Game::isRunning(){
@@ -63,24 +66,24 @@ bool Game::isRunning(){
 
 void Game::update(){
 	if(!pausa){
-		nivelazo->update();
+//		nivelazo->update();
 		entrada->update();
-		mundoBox2D::Instance()->update();
 	}else{
-		processEvents();
-		layoutPrueba->update();
+//		processEvents();
+//		layoutPrueba->update();
 	}
-	Fps::Instance()->update();
+    running = maquina.update();
+    Fps::Instance()->update();
 }
 
 
 
 void Game::processEvents() {
-	MyEventReceiver* rec = MyEventReceiver::Instance();
-	layoutPrueba->posicionarRaton(rec->getMousePosition().x, rec->getMousePosition().y);
-	if(rec->getLeftClick())
-		layoutPrueba->inyectarClick();
-	else
-		layoutPrueba->inyectarClickUP();
+//	MyEventReceiver* rec = MyEventReceiver::Instance();
+//	layoutPrueba->posicionarRaton(rec->getMousePosition().x, rec->getMousePosition().y);
+//	if(rec->getLeftClick())
+//		layoutPrueba->inyectarClick();
+//	else
+//		layoutPrueba->inyectarClickUP();
 }
 
