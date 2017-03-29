@@ -20,6 +20,7 @@ class Player : public PhysicObject {
 private:
     std::map<const Keys,int> keyFunction;
 protected:
+    void asignarLLave(int value);
     unsigned int velocidad;
     GameObject* obj_colisionado;
     armas * arma;

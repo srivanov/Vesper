@@ -81,7 +81,7 @@ void Player::render(){
 
 void Player::atacar(){
     
-    if(*(arma->getArmaActual()->getType()) == tPALAc)
+    if(*(arma->getArmaActual()->getType()) == tPALA)
         cuerpoacuerpo();
     else
         arma->shoot();
@@ -124,7 +124,14 @@ bool Player::habActiva(){
     return hab->puedoUsar();
 }
 
-
+void Player::asignarLLave(int value){
+    for (size_t a=0; a<numLlaves; a++) {
+        if(llaves[a]==-1) {
+            llaves[a]=value;
+            break;
+        }
+    }
+}
 
 void Player::contacto(PhysicObject * g){
     if(g != NULL){
@@ -138,43 +145,24 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == ALARMA){
             
         }
-        if(g->getObjectType() == ESCOPETA){
-            arma->insertarArma(2);
-        }
-        if(g->getObjectType() == SWEET_SHOOTER){
-            arma->insertarArma(3);
-        }
-        if(g->getObjectType() == GLOBO_AGUA){
-            arma->insertarArma(5);
-        }
-        if(g->getObjectType() == BUMMER_BOOM){
-            arma->insertarArma(6);
-        }
-        if(g->getObjectType() == BOMBA_HUMO){
-            arma->insertarArma(7);
-        }
-        if(g->getObjectType() == LLAVE){
-            for (size_t a=0; a<numLlaves; a++) {
-                if(llaves[a]==-1) {
-                    llaves[a]=static_cast<PlayerObjects*>(g)->Llave();
-                    break;
-                }
-            }
+        if(g->getObjectType() == PIEDRA ||
+           (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS))
+            arma->insertarArma((int)g->getObjectType());
+        
+        if(g->getObjectType() == LLAVE)
+            asignarLLave(static_cast<PlayerObjects*>(g)->Llave());
             
-        }
+        
         if(g->getObjectType() == PUERTA){
         	tipoPuerta d = static_cast<Puerta*>(g)->getPuerta();
-            if(d == pdestructiva){
-                vida -= 10;
-            	cout << vida << endl;
-            }
+            if(d == pdestructiva) vida -= 10;
+            
         }
     }
     obj_colisionado = g;
 }
 
 void Player::addArma(){
-    
     
     class render* go = static_cast<class render*>(componentes.find(RENDER)->second);
     if(go != NULL)

@@ -2,15 +2,35 @@
 #include "gun.hpp"
 #include "../Game.hpp"
 
-gun::gun(unsigned int pMunicion, float pAlcance, float pTiempo_recarga, unsigned int caden, unsigned int carga, typeArma t){
-	cadencia = caden;
-	alcance = pAlcance;
-	municion = pMunicion;
-	tiempo_vida = alcance/3.0f;
-	tiempo_recarga = pTiempo_recarga;
+
+cualidades valores[] = {
+//      TIPO             MUNI     ALC   RECARGA CADE CARGA
+    { tMARTILLO         , 10    , 0.2f , 4.0f , 2 , 6 },
+    { tPISTOLA          , 8     , 2.0f , 2.0f , 1 , 6 },
+    { tESCOPETA         , 8     , 0.2f , 4.0f , 1 , 2 },
+    { tLANZACARAMELOS   , 30    , 3.0f , 4.0f , 5 , 6 },
+    { tGLOBOAGUA        , 3     , 2.5f , 4.0f , 1 , 6 },
+    { tCHICLE           , 3     , 2.5f , 4.0f , 1 , 6 },
+    { tBOMBAHUMO        , 3     , 2.5f , 4.0f , 5 , 6 },
+    { tPIEDRA           , 3     , 2.5f , 4.0f , 5 , 6 },
+    { tPALA             , 10    , 0.2f , 4.0f , 1 , 6 },
+    { tArmaNO_TYPE      , 0     , 0    , 0    , 0 , 0 }
+};
+
+
+
+gun::gun(const typeArma t){
+    size_t it = 0;
+    while(valores[it].tipo!=tArmaNO_TYPE){
+        if(valores[it].tipo==t) {
+            cualidad = valores[it];
+            break;
+        }
+        it++;
+    }
+    
+	tiempo_vida = cualidad.alcance/3.0f;
 	temp.start();
-	cargador = carga;
-    tipo = t;
 }
 
 gun::~gun(){
@@ -43,19 +63,19 @@ void gun::render(){
 }
 
 void gun::atacar(dvector3D &pos, dvector3D &dir){
-	if(municion > 0)
+	if(cualidad.municion > 0)
 	{
-		if(temp.tTranscurrido(1.0f/cadencia))
+		if(temp.tTranscurrido(1.0f/cualidad.cadencia))
 		{
 			temp.reset();
             insertBala(pos, dir, 3.0f);
-			if(tipo != tMARTILLO && tipo != tPALAc) { municion--; cargador--; }
+			if(cualidad.tipo != tMARTILLO && cualidad.tipo != tPALA) {
+                cualidad.municion--;
+                cualidad.cargador--;
+            }
 		}
-		else
-		{
-			if(temp.tTranscurrido(tiempo_recarga))
-				cargador = 6;
-		}
+		else if(temp.tTranscurrido(cualidad.recarga))
+				cualidad.cargador = 6;
 	}
 }
 
@@ -64,18 +84,46 @@ unsigned int gun::getMunicion(){
 }
 
 void gun::setMunicion(unsigned int n){
-	municion = n;
+	cualidad.municion = n;
 }
 
 typeArma const* gun::getType(){
-    return &tipo;
+    return &cualidad.tipo;
 }
 
 void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
     //TO DO: Hacer la gestion de las balas en la clase bala
-    bala_aux = new Bala(pos, dir, vel);
+    bala_aux = new Bala(pos, dir, vel,tiempo_vida);
     bala_aux->setObjectType(BALA);
-    bala_aux->addNodo("3d/bala.3ds");
+    switch(cualidad.tipo){
+            // TIPOS DE MALLA Y TEXTURA
+        case tPISTOLA:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        case tESCOPETA:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        case tLANZACARAMELOS:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        case tPIEDRA:
+            bala_aux->addNodo("3d/piedra.obj");
+            break;
+        case tMARTILLO:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        case tPALA:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        case tBOMBAHUMO:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        case tGLOBOAGUA:
+            bala_aux->addNodo("3d/bala.3ds");
+            break;
+        default:return;
+    }
+    
     balas.insert(balas.begin(), bala_aux);
    
 }

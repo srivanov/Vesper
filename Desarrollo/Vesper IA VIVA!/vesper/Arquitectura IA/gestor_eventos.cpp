@@ -25,6 +25,18 @@ eventos::~eventos(){}
  
  */
 
+
+eventos_values Evalores[] = {
+//     TIPO      RADIO  CADUCIDAD(seg)
+    { P_ALARMA  , 40.f   , 2.0f},
+    { P_ALERTA  , -1.f   , 20.f},
+    { P_AVISO   , 40.f   , 5.0f},
+    { P_AYUDA   , 40.f   , 2.0f},
+    { P_RUIDO   , 20.f   , 0.5f},
+    { P_VOID    , 0.f    , 0.5f}
+};
+
+
 gestor_eventos::gestor_eventos(){id_counts=0;}
 gestor_eventos::~gestor_eventos(){
     end = World_events.size();
@@ -46,8 +58,16 @@ void gestor_eventos::addEvento(int id,const Prioridades t,dvector3D pos){
     evento->m_posicion = pos;
     evento->m_ID_CREADOR = id;
     //DEBUG VALUES
-    evento->radio = 20.f;
-    evento->m_caducidad = 1.f;
+    
+    it = 0;
+    while(Evalores[it].m_tipo!=P_VOID){
+        if(Evalores[it].m_tipo==t){
+            evento->radio = Evalores[it].radio;
+            evento->m_caducidad = Evalores[it].caducidad;
+            break;
+        }
+        it++;
+    }
     World_events.push_back(evento);
 }
 

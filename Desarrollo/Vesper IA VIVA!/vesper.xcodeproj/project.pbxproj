@@ -234,7 +234,6 @@
 		E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A711DF0AA5000A91A97 /* chirriante.cpp */; };
 		E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A731DF0AA5000A91A97 /* component.cpp */; };
 		E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */; };
-		E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A771DF0AA5000A91A97 /* conLlave.cpp */; };
 		E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */; };
 		E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */; };
 		E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7D1DF0AA5000A91A97 /* habilidadEspecial.cpp */; };
@@ -572,8 +571,6 @@
 		E9AC3A741DF0AA5000A91A97 /* component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
 		E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conAlarma.cpp; sourceTree = "<group>"; };
 		E9AC3A761DF0AA5000A91A97 /* conAlarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conAlarma.hpp; sourceTree = "<group>"; };
-		E9AC3A771DF0AA5000A91A97 /* conLlave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conLlave.cpp; sourceTree = "<group>"; };
-		E9AC3A781DF0AA5000A91A97 /* conLlave.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conLlave.hpp; sourceTree = "<group>"; };
 		E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conPuzzle.cpp; sourceTree = "<group>"; };
 		E9AC3A7A1DF0AA5000A91A97 /* conPuzzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conPuzzle.hpp; sourceTree = "<group>"; };
 		E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = destructiva.cpp; sourceTree = "<group>"; };
@@ -1174,8 +1171,6 @@
 				E9AC3A741DF0AA5000A91A97 /* component.hpp */,
 				E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */,
 				E9AC3A761DF0AA5000A91A97 /* conAlarma.hpp */,
-				E9AC3A771DF0AA5000A91A97 /* conLlave.cpp */,
-				E9AC3A781DF0AA5000A91A97 /* conLlave.hpp */,
 				E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */,
 				E9AC3A7A1DF0AA5000A91A97 /* conPuzzle.hpp */,
 				E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */,
@@ -1516,7 +1511,6 @@
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
 				63C4CEC51E70620E008295A1 /* Nodo_APatrullar.cpp in Sources */,
 				63C4CEED1E706249008295A1 /* Nodo_QHidratarse.cpp in Sources */,
-				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
 				63D124181E84030800D1B380 /* Comida.cpp in Sources */,
 				63C4CEC21E70620E008295A1 /* Nodo_AHablar.cpp in Sources */,
 				63C4CEF11E706249008295A1 /* Nodo_QRuido.cpp in Sources */,

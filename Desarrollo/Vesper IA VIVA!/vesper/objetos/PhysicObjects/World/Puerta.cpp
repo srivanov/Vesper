@@ -21,6 +21,7 @@ void Puerta::inicializar(int id, const tipoPuerta p){
 
 void Puerta::activarAlarma(){
     gestor_eventos::instance()->addEvento(m_ID, P_ALERTA, getPosition());
+    gestor_eventos::instance()->addEvento(m_ID, P_ALARMA, getPosition());
     cout << "alarma activada" << endl;
 }
 
@@ -28,16 +29,7 @@ void Puerta::contacto(PhysicObject *g){
     if(g && g->getObjectType()==PLAYER){
         if(static_cast<Player*>(g)->getActiveKey()==key){
             eliminar = true;
-            switch (pu) {
-                case palarma:
-                    activarAlarma();
-                case pdestructiva:
-                    
-                    break;
-                    
-                default:
-                    break;
-            }
+            if(pu==palarma) activarAlarma();
         }
     }
 }

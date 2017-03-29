@@ -12,6 +12,13 @@
 #include "NpcLibrary.hpp"
 #include "Types.h"
 
+
+struct eventos_values {
+    Prioridades m_tipo;
+    float radio;
+    float caducidad;
+};
+
 struct eventos {
     eventos();
     ~eventos();

@@ -8,7 +8,7 @@
 #include "../../Arquitectura IA/gestor_eventos.hpp"
 #include "Bala.hpp"
 
-Bala::Bala(dvector3D &pos, dvector3D &dir, float vel){
+Bala::Bala(dvector3D &pos, dvector3D &dir, float vel, float tVida){
     velocidad = vel;
     
     
@@ -28,7 +28,7 @@ Bala::Bala(dvector3D &pos, dvector3D &dir, float vel){
     //direccion.z = 0;
     
     temp.start();
-    tiempo_vida = 1.0f;
+    tiempo_vida = tVida;
     
     gestor_eventos::instance()->addEvento(m_ID, P_RUIDO, *getPosition());
     

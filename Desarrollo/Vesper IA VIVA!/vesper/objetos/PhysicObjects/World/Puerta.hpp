@@ -30,7 +30,7 @@ public:
     void inicializar(int id, const tipoPuerta p);
     void contacto(PhysicObject *g);
     void contactoEnd(PhysicObject *g){}
-    tipoPuerta getPuerta() const{return pu;}
+    const tipoPuerta getPuerta() {return pu;}
     
 private:
     tipoPuerta pu;
