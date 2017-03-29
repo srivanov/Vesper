@@ -62,6 +62,10 @@ Mesh TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 	std::vector<Vertex> vertices;
 	std::vector<GLuint> indices;
 	std::vector<Texture*> texturas;
+	
+//	Vertex vertices[mesh->mNumVertices];
+//	GLuint indices[mesh->]
+	
 //	printf("%s: %d\n",mesh->mName.C_Str(), mesh->mNumVertices);
 	unsigned int n=0;
 	for (GLuint i=0; i<mesh->mNumVertices; i++){

@@ -11,6 +11,9 @@ Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vecto
 
 void Mesh::Draw(Shader* shader){
 	
+	//TO DO: provisional
+	glUniform1f(glGetUniformLocation(shader->Program, "shininess"), 1.0f);
+	
 	GLuint diffuseNr = 1;
 	GLuint specularNr = 1;
 	
