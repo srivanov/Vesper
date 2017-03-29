@@ -50,7 +50,7 @@ TEscena::TEscena(){
 	cam = motor->crearCamara(NULL);
 	motor->setActiveCam(0);
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
-	SkyLuz* luz = motor->crearLuz(NULL);
+	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
 	
 	cam->setPosicion(dvector3D(0,1,0));
@@ -82,17 +82,40 @@ void TEscena::update(){
 	dvector3D mov;
 	
 	if(InputManager::Instance()->isPressed(SKY_KEY_UP)){
-		cubo->rotar(dvector3D(0,-.1,0));
+		//cubo->rotar(dvector3D(0,-.1,0));
+        float amb = luz->_getAmbient();
+        amb++;
+        luz->_setAmbient(amb);
+        
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_DOWN)){
 		cubo->rotar(dvector3D(0,.1,0));
+        float amb = luz->_getAmbient();
+        amb--;
+        luz->_setAmbient(amb);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_LEFT)){
-		cubo->transladar(dvector3D(-.1,0,0));
+		//cubo->transladar(dvector3D(-.1,0,0));
+        float dif = luz->_getDiffuse();
+        dif--;
+        luz->_setDiffuse(dif);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_RIGHT)){
-		cubo->transladar(dvector3D(.1,0,0));
+		//cubo->transladar(dvector3D(.1,0,0));
+        float dif = luz->_getDiffuse();
+        dif++;
+        luz->_setDiffuse(dif);
 	}
+    if(InputManager::Instance()->isPressed(SKY_KEY_M)){
+        float spec = luz->_getSpecular();
+        spec++;
+        luz->_setSpecular(spec);
+    }
+    if(InputManager::Instance()->isPressed(SKY_KEY_N)){
+        float spec = luz->_getSpecular();
+        spec--;
+        luz->_setSpecular(spec);
+    }
 	
 	if(InputManager::Instance()->isPressed(SKY_KEY_W)){
 		cam->rotar(dvector3D(0,-.1,0));

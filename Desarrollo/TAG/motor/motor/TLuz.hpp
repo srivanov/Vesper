@@ -26,9 +26,20 @@ public:
 	void setIntensidad(glm::vec4 c);
 	glm::vec4 getIntensidad();
 	
+    
 	void setID(int id) { ID = id; }
 	int getID(){ return ID; }
+    
+    void setAmbient (float lamb){lambient = lamb;}
+    float getAmbient(){return lambient;}
+    
+    void setDiffuse(float ldif){ldiffuse = ldif;}
+    float getDiffuse(){return ldiffuse;}
+    
+    void setSpecular(float spec){lspecular = spec;}
+    float getSpecular(){return lspecular;}
 	
+    
 
 	void Draw(TNodo* n);
 	void beginDraw(){}
@@ -41,6 +52,7 @@ private:
 	glm::vec3 pos;
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz;
+    float lambient, ldiffuse, lspecular;
 };
 
 #endif /* TLuz_hpp */

@@ -23,6 +23,7 @@ private:
 	SkyEngine* motor;
 	SkyCamara* cam;
 	SkyMalla* cubo, *plano;
+    SkyLuz* luz;
 };
 
 #endif /* TEscena_hpp */

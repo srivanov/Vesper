@@ -18,6 +18,16 @@ public:
 	~SkyLuz();
 	
 	void Draw() { m_luz->Draw(nodo);}
+    
+    void _setAmbient(float lamb){ m_luz->setAmbient(lamb);}
+    float _getAmbient(){return m_luz->getAmbient();}
+    
+    void _setDiffuse(float ldif){m_luz->setDiffuse(ldif);}
+    float _getDiffuse(){return m_luz->getDiffuse();}
+    
+    void _setSpecular(float lspec){ m_luz->setSpecular(lspec);}
+    float _getSpecular(){return m_luz->getSpecular();}
+    
 private:
 	TLuz *m_luz;
 };
