@@ -55,7 +55,9 @@ PhysicObject * ObjectFactory::WObject(int ID, dvector3D posicion, ObjectType tip
     else if(tipo==BOTIQUIN) g = new Botiquin;
     else if(tipo==PUERTA) {
         g = new Puerta;
-        static_cast<Puerta*>(g)->setKey(puerta);
+        Puerta * gg = static_cast<Puerta*>(g);
+        gg->inicializar(ID, psimple);
+        gg->setKey(puerta);
     }
     else{
         return nullptr;

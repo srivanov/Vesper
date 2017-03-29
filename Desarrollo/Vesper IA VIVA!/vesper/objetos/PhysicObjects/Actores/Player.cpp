@@ -9,6 +9,7 @@
 #include "Player.hpp"
 #include "../PlayerObjects.hpp"
 #include <iostream>
+#include "../World/Puerta.hpp"
 
 #define VELOCIDADN 2.f
 
@@ -26,6 +27,8 @@ Player::Player(){
     componente->setFather(this);
     addNodo("3d/sphere.3ds");
     setTexture("3d/texture.png");
+    
+    vida = 100;
 }
 
 Player::~Player(){
@@ -34,6 +37,12 @@ Player::~Player(){
 }
 
 void Player::update(){
+    
+    if(vida <= 0){
+        eliminar = true;
+        return;
+    }
+    
 	dvector3D vel;
     /*
     Keys aux;
@@ -152,6 +161,13 @@ void Player::contacto(PhysicObject * g){
                 }
             }
             
+        }
+        if(g->getObjectType() == PUERTA){
+        	tipoPuerta d = static_cast<Puerta*>(g)->getPuerta();
+            if(d == pdestructiva){
+                vida -= 10;
+            	cout << vida << endl;
+            }
         }
     }
     obj_colisionado = g;

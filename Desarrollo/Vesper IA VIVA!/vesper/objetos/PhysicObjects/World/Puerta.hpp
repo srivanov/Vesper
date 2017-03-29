@@ -10,6 +10,15 @@
 #define Puerta_hpp
 
 #include "../PhysicObject.hpp"
+#include "../../../Arquitectura IA/gestor_eventos.hpp"
+
+//crear enum para el tipo de la puerta
+enum tipoPuerta{
+    psimple = 0,
+    palarma,
+    pdestructiva,
+    pbloqueada
+};
 
 class Puerta : public PhysicObject {
     
@@ -18,8 +27,14 @@ public:
     void setKey(int k){key=k;}
     Puerta();
     ~Puerta(){}
+    void inicializar(int id, const tipoPuerta p);
     void contacto(PhysicObject *g);
     void contactoEnd(PhysicObject *g){}
+    tipoPuerta getPuerta() const{return pu;}
+    
+private:
+    tipoPuerta pu;
+    void activarAlarma();
 };
 
 #endif /* Puerta_hpp */

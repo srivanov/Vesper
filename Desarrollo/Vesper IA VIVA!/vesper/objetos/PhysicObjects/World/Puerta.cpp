@@ -14,9 +14,30 @@ Puerta::Puerta(){
     setTexture("3d/puerta.jpg");
 }
 
+void Puerta::inicializar(int id, const tipoPuerta p){
+    pu = p;
+    m_ID = id;
+}
+
+void Puerta::activarAlarma(){
+    gestor_eventos::instance()->addEvento(m_ID, P_ALERTA, getPosition());
+    cout << "alarma activada" << endl;
+}
+
 void Puerta::contacto(PhysicObject *g){
     if(g && g->getObjectType()==PLAYER){
-        if(static_cast<Player*>(g)->getActiveKey()==key)
+        if(static_cast<Player*>(g)->getActiveKey()==key){
             eliminar = true;
+            switch (pu) {
+                case palarma:
+                    activarAlarma();
+                case pdestructiva:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
     }
 }

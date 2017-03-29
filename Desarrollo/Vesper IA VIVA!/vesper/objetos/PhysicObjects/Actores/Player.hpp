@@ -27,6 +27,7 @@ protected:
     int * llaves;
     size_t numLlaves,activa;
     void changeActiveKey();
+    int vida;
 public:
     void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}
@@ -43,6 +44,7 @@ public:
     void cambiarArma();
     void cuerpoacuerpo();
     void addArma();
+    
     Player();
     ~Player();
 };
