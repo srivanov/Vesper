@@ -26,8 +26,8 @@ void MenuPrincipalLayout::inicializar() {
     loadLayout("MenuPrincipal.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
     
-    label_titulo = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(8));
-    label_titulo->setText("VESPER");
+//    label_titulo = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(8));
+//    label_titulo->setText("VESPER");
     
     button_nueva = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(3));
     button_nueva->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickStartGame, this));

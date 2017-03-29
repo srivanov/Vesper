@@ -1,11 +1,14 @@
-<Imageset autoScaled="vertical" imagefile="Menu.png" name="Menu" nativeHorzRes="1280" nativeVertRes="720" version="2">
-    <Image height="262" name="fondo_principal" width="468" xPos="2" yPos="2" />
-    <Image height="52" name="crema" width="48" xPos="475" yPos="2" />
-    <Image height="48" name="boton_normal" width="265" xPos="537" yPos="2" />
-    <Image height="56" name="cuerda_01" width="11" xPos="784" yPos="0" />
-    <Image height="57" name="volver" width="54" xPos="955" yPos="0" />
-    <Image height="259" name="fondo_ajustes" width="462" xPos="4" yPos="268" />
-    <Image height="258" name="fondo_cargar" width="462" xPos="474" yPos="71" />
-    <Image height="50" name="boton_hover" width="116" xPos="821" yPos="0" />
-    <Image height="197" name="hud" width="352" xPos="495" yPos="338" />
+<Imageset autoScaled="vertical" imagefile="Menu2.png" name="Menu" nativeHorzRes="1280" nativeVertRes="720" version="2">
+    <Image height="424" name="fondo_principal" width="662" xPos="2" yPos="2" />
+    <Image height="88" name="crema" width="68" xPos="675" yPos="0" />
+    <Image height="48" name="boton_normal" width="265" xPos="807" yPos="0" />
+    <Image height="45" name="volver" width="112" xPos="1093" yPos="0" />
+    <Image height="371" name="fondo_ajustes" width="658" xPos="4" yPos="428" />
+    <Image height="368" name="fondo_cargar" width="660" xPos="6" yPos="803" />
+    <Image height="389" name="hud" width="724" xPos="667" yPos="90" />
+    <Image height="106" name="titulo" width="492" xPos="673" yPos="1067" />
+    <Image height="366" name="fondo_colores" width="660" xPos="1" yPos="1181" />
+    <Image height="230" name="carga1" width="328" xPos="669" yPos="567" />
+    <Image height="256" name="carga2" width="328" xPos="1069" yPos="581" />
+    <Image height="242" name="carga3" width="320" xPos="671" yPos="817" />
 </Imageset>

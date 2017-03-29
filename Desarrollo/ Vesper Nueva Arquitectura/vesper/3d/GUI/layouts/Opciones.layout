@@ -87,7 +87,7 @@
             <Window type="AlfiskoSkin/HorizontalSlider" name="HorizontalSlider" >
                 <Property name="ID" value="14" />
                 <Property name="Area" value="{{0,35},{0,220},{0,291},{0,252}}" />
-                <Property name="CurrentValue" value="100" />
+                <Property name="CurrentValue" value="1" />
                 <Property name="MaximumValue" value="100" />
                 <Property name="ClickStepSize" value="1" />
             </Window>
@@ -106,7 +106,7 @@
         </Window>
         <Window type="OgreTray/Button" name="guardar" >
             <Property name="ID" value="17" />
-            <Property name="Area" value="{{0,630},{0,430},{0,726},{0,462}}" />
+            <Property name="Area" value="{{0,352},{0,476},{0,448},{0,508}}" />
             <Property name="Text" value="GUARDAR" />
         </Window>
     </Window>

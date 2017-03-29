@@ -6,7 +6,7 @@
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Window type="Generic/Image" name="contenedor" >
             <Property name="ID" value="2" />
-            <Property name="Area" value="{{-0.00234375,-33},{0.06875,3},{0.142969,95},{0.320139,131}}" />
+            <Property name="Area" value="{{-0.00234375,15},{0.06875,0},{0.142969,143},{0.320139,128}}" />
             <Property name="Image" value="OgreTrayImages/TrayM" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="VerticalAlignment" value="Centre" />
@@ -37,18 +37,18 @@
                 <Property name="Text" value="Cargar partida" />
             </Window>
         </Window>
-        <Window type="OgreTray/Label" name="titulo" >
-            <Property name="ID" value="8" />
-            <Property name="Area" value="{{0,0},{0.0347222,0},{0.376563,128},{0.233333,32}}" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="HorizontalAlignment" value="Centre" />
-        </Window>
         <Window type="Generic/Image" name="Image" >
             <Property name="ID" value="1" />
             <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
             <Property name="Image" value="Menu/fondo_principal" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="Image2" >
+            <Property name="Area" value="{{0,1},{0,40},{0,543},{0,168}}" />
+            <Property name="Image" value="Menu/titulo" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
         </Window>
     </Window>
 </GUILayout>
