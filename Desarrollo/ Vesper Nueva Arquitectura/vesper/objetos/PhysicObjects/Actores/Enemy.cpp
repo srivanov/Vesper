@@ -40,17 +40,13 @@ void Enemy::update(){
         return;
     }
     
-     if (book->Evento) {
-     Arbol->reset();
-     book->Evento = false;
-     }
-     book->updateBook();
-     
-     Arbol->run(m_ID);
-     
+    if (book->Evento) {Arbol->reset();book->Evento = false;}
+    book->updateBook();
+    Arbol->run(m_ID);
+    
     mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + *book->VectorMovimiento;
-     rotarConRaton(aux);
+    rotarConRaton(aux);
     
     
     GameObject::update();
@@ -58,20 +54,13 @@ void Enemy::update(){
 
 void Enemy::inicializar(int& ID){
     m_ID = ID;
-    
     book = NpcLibrary::instancia()->add_book(m_ID, getPosition());
-     //TRIGGER SYSTEM
     trigger_system::instance()->subs(book);
-     
-    
-    
 }
 
 void Enemy::contacto(PhysicObject *g){
     if(g && g->getObjectType()==BALA){
-        
          //Bala * bullet = static_cast<Bala*>(g);
          book->salud-=20;
-         
     }
 }

@@ -16,13 +16,16 @@ void ObjectFactory::initObject(int ID, dvector3D posicion,ObjectType tipo,const 
     
 }
 
-PhysicObject * ObjectFactory::PObject(int ID, dvector3D posicion, ObjectType tipo){
+PhysicObject * ObjectFactory::PObject( dvector3D posicion, ObjectType tipo){
     Clean();
     g = new PlayerObjects;
-    initObject(ID,posicion,tipo,STATIC_BODY);
+    initObject(0,posicion,tipo,STATIC_BODY);
     PlayerObjects * gg = static_cast<PlayerObjects*>(g);
-    gg->inicializar(ID);
-    
+    if(tipo==LLAVE){
+        gg->inicializar(Valor_llaves);
+        Valor_llaves--;
+    }else
+        gg->inicializar(0);
     return g;
 }
 
@@ -50,7 +53,10 @@ PhysicObject * ObjectFactory::WObject(int ID, dvector3D posicion, ObjectType tip
     else if(tipo==ALARMA) g = new Alarm;
     else if(tipo==COMIDA) g = new Comida;
     else if(tipo==BOTIQUIN) g = new Botiquin;
-    else if(tipo==PUERTA) g = new Puerta;
+    else if(tipo==PUERTA) {
+        g = new Puerta;
+        static_cast<Puerta*>(g)->setKey(puerta);
+    }
     else{
         return nullptr;
     }
@@ -58,5 +64,5 @@ PhysicObject * ObjectFactory::WObject(int ID, dvector3D posicion, ObjectType tip
     return g;
 }
 
-ObjectFactory::ObjectFactory() : g(nullptr){}
+ObjectFactory::ObjectFactory() : g(nullptr){Valor_llaves=puerta=0;}
 

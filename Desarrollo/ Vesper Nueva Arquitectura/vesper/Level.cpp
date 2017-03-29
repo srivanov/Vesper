@@ -61,8 +61,18 @@ bool Level::exportar_objetos(loadLevel& nivel){
     return true;
 }
 
+void Level::clear(){
+    for (it=0; it<w.size(); it++)
+        if(w[it]->Eliminable()){
+            delete w[it];
+            w.erase(w.begin()+it);
+            it=0;
+        }
+    end = w.size();
+}
+
 void Level::update(){
-    
+    clear();
     
     
     c->update();
@@ -70,6 +80,7 @@ void Level::update(){
     
     for (it=0; it<end; it++)
         w[it]->update();
+        
     
     trigger_system::instance()->update();
     

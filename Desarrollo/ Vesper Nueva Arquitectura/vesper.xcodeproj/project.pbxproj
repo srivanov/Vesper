@@ -65,6 +65,7 @@
 		63D124331E84235600D1B380 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124311E84235600D1B380 /* Ground.cpp */; };
 		63D124381E857AA500D1B380 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124341E857AA500D1B380 /* Level.cpp */; };
 		63D124391E857AA500D1B380 /* loadLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124361E857AA500D1B380 /* loadLevel.cpp */; };
+		63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */; };
 		886F06351E5DF21600465532 /* example.anims in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A31E5DF21600465532 /* example.anims */; };
 		886F06361E5DF21600465532 /* GameMenu.anims in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A41E5DF21600465532 /* GameMenu.anims */; };
 		886F06371E5DF21600465532 /* Batang-18.font in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A61E5DF21600465532 /* Batang-18.font */; };
@@ -239,8 +240,6 @@
 		E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */; };
 		E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7D1DF0AA5000A91A97 /* habilidadEspecial.cpp */; };
 		E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7F1DF0AA5000A91A97 /* hambre.cpp */; };
-		E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A811DF0AA5000A91A97 /* IACamara.cpp */; };
-		E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A831DF0AA5000A91A97 /* IAEnemigos.cpp */; };
 		E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A851DF0AA5000A91A97 /* input.cpp */; };
 		E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */; };
 		E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8F1DF0AA5000A91A97 /* render.cpp */; };
@@ -379,6 +378,8 @@
 		63D124351E857AA500D1B380 /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level.hpp; sourceTree = "<group>"; };
 		63D124361E857AA500D1B380 /* loadLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = loadLevel.cpp; sourceTree = "<group>"; };
 		63D124371E857AA500D1B380 /* loadLevel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = loadLevel.hpp; sourceTree = "<group>"; };
+		63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gestor_eventos.cpp; path = "Arquitectura IA/gestor_eventos.cpp"; sourceTree = "<group>"; };
+		63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gestor_eventos.hpp; path = "Arquitectura IA/gestor_eventos.hpp"; sourceTree = "<group>"; };
 		886F05A31E5DF21600465532 /* example.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.anims; sourceTree = "<group>"; };
 		886F05A41E5DF21600465532 /* GameMenu.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.anims; sourceTree = "<group>"; };
 		886F05A61E5DF21600465532 /* Batang-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Batang-18.font"; sourceTree = "<group>"; };
@@ -584,10 +585,6 @@
 		E9AC3A7E1DF0AA5000A91A97 /* habilidadEspecial.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = habilidadEspecial.hpp; sourceTree = "<group>"; };
 		E9AC3A7F1DF0AA5000A91A97 /* hambre.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hambre.cpp; sourceTree = "<group>"; };
 		E9AC3A801DF0AA5000A91A97 /* hambre.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hambre.hpp; sourceTree = "<group>"; };
-		E9AC3A811DF0AA5000A91A97 /* IACamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IACamara.cpp; sourceTree = "<group>"; };
-		E9AC3A821DF0AA5000A91A97 /* IACamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IACamara.hpp; sourceTree = "<group>"; };
-		E9AC3A831DF0AA5000A91A97 /* IAEnemigos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAEnemigos.cpp; sourceTree = "<group>"; };
-		E9AC3A841DF0AA5000A91A97 /* IAEnemigos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IAEnemigos.hpp; sourceTree = "<group>"; };
 		E9AC3A851DF0AA5000A91A97 /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
 		E9AC3A861DF0AA5000A91A97 /* input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = input.hpp; sourceTree = "<group>"; };
 		E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = physics.cpp; sourceTree = "<group>"; };
@@ -661,6 +658,8 @@
 				63C4CE8B1E706132008295A1 /* NpcLibrary.cpp */,
 				63C4CE8C1E706132008295A1 /* NpcLibrary.hpp */,
 				63C4CE8F1E706132008295A1 /* Types.h */,
+				63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */,
+				63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */,
 			);
 			name = "Arquitectura IA";
 			sourceTree = "<group>";
@@ -1190,10 +1189,6 @@
 				E9AC3A7E1DF0AA5000A91A97 /* habilidadEspecial.hpp */,
 				E9AC3A7F1DF0AA5000A91A97 /* hambre.cpp */,
 				E9AC3A801DF0AA5000A91A97 /* hambre.hpp */,
-				E9AC3A811DF0AA5000A91A97 /* IACamara.cpp */,
-				E9AC3A821DF0AA5000A91A97 /* IACamara.hpp */,
-				E9AC3A831DF0AA5000A91A97 /* IAEnemigos.cpp */,
-				E9AC3A841DF0AA5000A91A97 /* IAEnemigos.hpp */,
 				E9AC3A851DF0AA5000A91A97 /* input.cpp */,
 				E9AC3A861DF0AA5000A91A97 /* input.hpp */,
 				E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */,
@@ -1473,7 +1468,6 @@
 				E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */,
 				E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */,
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
-				E9AC3AA41DF0AA5000A91A97 /* IACamara.cpp in Sources */,
 				63D124301E84155800D1B380 /* Tanqui.cpp in Sources */,
 				63C4CEC81E70620E008295A1 /* Nodo_Mover.cpp in Sources */,
 				63C4CEC71E70620E008295A1 /* Nodo_AVigilar.cpp in Sources */,
@@ -1495,7 +1489,6 @@
 				E9898FAF1E5B757A0001A36A /* CargarPartidaLayout.cpp in Sources */,
 				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				63C4CEE81E706249008295A1 /* Nodo_QAyudar.cpp in Sources */,
-				E9AC3AA51DF0AA5000A91A97 /* IAEnemigos.cpp in Sources */,
 				63C4CEC61E70620E008295A1 /* Nodo_ARuido.cpp in Sources */,
 				E9898FB41E5B757A0001A36A /* LayoutInterface.cpp in Sources */,
 				63D124331E84235600D1B380 /* Ground.cpp in Sources */,
@@ -1550,6 +1543,7 @@
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,
 				63D124061E84019E00D1B380 /* Bala.cpp in Sources */,
+				63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */,
 				E9898FB51E5B757A0001A36A /* MenuPrincipalLayout.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

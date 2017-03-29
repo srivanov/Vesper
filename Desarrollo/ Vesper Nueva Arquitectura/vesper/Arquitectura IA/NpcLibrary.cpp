@@ -13,6 +13,7 @@
  NPC_LIBRARY
  */
 
+#define CADUCIDAD 4.0f
 
 
 NpcLibrary * NpcLibrary::instancia(){
@@ -62,7 +63,7 @@ NpcBook * NpcLibrary::recover_book(const int &ID){
 Eventos::Eventos(int& ID, const Prioridades& tipo, dvector3D * posicion){
     m_ID = ID;
     m_posiciones.push_back(posicion);
-    m_time = time(NULL) + 3;
+    m_time.start();
 }
 Eventos::Eventos(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posiciones){
     m_ID = ID;
@@ -89,7 +90,7 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion){
 
 NpcBook::~NpcBook(){}
 
-void NpcBook::notify(int& ID,const Prioridades& tipo, dvector3D * posicion){
+void NpcBook::notify(int ID,const Prioridades tipo, dvector3D * posicion){
     Evento = true;
     it = pila.find(tipo);
     if(it!=pila.end()) remove_EventsByType(it->first);
@@ -100,7 +101,7 @@ void NpcBook::notify(int& ID,const Prioridades& tipo, dvector3D * posicion){
         valueObjective(tipo);
 }
 
-void NpcBook::notify(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posiciones){
+void NpcBook::notify(int ID,const Prioridades tipo, std::vector<dvector3D*> posiciones){
     Evento = true;
     it = pila.find(tipo);
     if(it!=pila.end()) remove_EventsByType(it->first);
@@ -179,7 +180,7 @@ void NpcBook::resetVectorMovimiento(){
 void NpcBook::updateBook(){
     it = pila.begin();
     while(it!=pila.end()){
-        if(it->second->m_time<=time(NULL)
+        if(it->second->m_time.tTranscurrido(CADUCIDAD)
            && it->first!=P_PATRULLAR
            && it->first!=P_VIGILAR){
             delete it->second;

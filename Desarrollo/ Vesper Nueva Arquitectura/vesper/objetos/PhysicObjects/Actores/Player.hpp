@@ -14,17 +14,24 @@
 #include "../../../components/gun.hpp"
 #include <buttons.hpp>
 
+
+
 class Player : public PhysicObject {
+private:
+    std::map<const Keys,int> keyFunction;
 protected:
-    //armas* arma;
     unsigned int velocidad;
     GameObject* obj_colisionado;
     armas * arma;
     dvector3D anguloDisparo;
+    int * llaves;
+    size_t numLlaves,activa;
+    void changeActiveKey();
 public:
+    void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}
     void setVelocidad(unsigned int vel);
-    
+    int getActiveKey(){return llaves[activa];}
     void activarHab();
     void accionar();
     bool habActiva();

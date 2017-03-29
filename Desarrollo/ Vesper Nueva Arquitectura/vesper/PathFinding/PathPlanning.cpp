@@ -81,18 +81,19 @@ std::vector<dvector3D*> PathPlanning::obtenerCamino(dvector3D *initialPosition,d
             // AÑADO TODOS LOS NODOS DE LA BOLSA AL CAMINO
             camino = BolsaNodos->getCamino();
         
+        
+            //DEBUG MOSTRAR CAMINO
         /*
-            DEBUG MOSTRAR CAMINO
             for (int i=0; i<BolsaNodos->getNodes().size(); i++) {
                 cout << BolsaNodos->getNodes()[i]->getID() << "-" ;
             }
             cout << endl;
-         */
+        */
         
         
     }
     
-    
+    // MASTER
     
     // AÑADIR POSICION FINAL
     camino.push_back(finalPosition);
