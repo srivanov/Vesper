@@ -21,7 +21,7 @@ public:
     dvector3D& getDireccion() {return direccion;}
     void contacto(PhysicObject* g);
     void contactoEnd(PhysicObject* g){}
-    Bala(dvector3D &pos, dvector3D &dir, float vel);
+    Bala(dvector3D &pos, dvector3D &dir, float vel, float tVida);
     ~Bala();
 };
 

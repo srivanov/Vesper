@@ -134,9 +134,12 @@ bool loadLevel::load(char* fichero) {
                     
                     dvector3D * pos_nodo = new dvector3D(a.x,a.y,0.0f);
                     XMLElement* properties = object->FirstChildElement();
-                    if(!properties) throw READING_GRAPH_DATA;
+                    if(!properties)
+                        throw READING_GRAPH_DATA;
+                    
                     XMLElement* property = properties->FirstChildElement();
-                    if(!property) throw READING_GRAPH_DATA;
+                    if(!property)
+                        throw READING_GRAPH_DATA;
                     
                     int num_nodo = object->IntAttribute("name");
                     std::string conecta_nodos = property->Attribute("value");

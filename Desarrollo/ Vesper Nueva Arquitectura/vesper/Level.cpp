@@ -9,7 +9,7 @@
 #include "Level.hpp"
 
 Level::Level(){
-    iniciado=true;
+    iniciado=false;
     //actualState = states::Instance();
 }
 
@@ -45,7 +45,7 @@ bool Level::inicializar(char *numero){
     }
     NpcLibrary::instancia();
     LevelBlackBoard::instance();
-    trigger_system::instance();
+    gestor_eventos::instance();
     iniciado = true;
     return iniciado;
 }
@@ -82,7 +82,7 @@ void Level::update(){
         w[it]->update();
         
     
-    trigger_system::instance()->update();
+    gestor_eventos::instance()->update();
     
 }
 

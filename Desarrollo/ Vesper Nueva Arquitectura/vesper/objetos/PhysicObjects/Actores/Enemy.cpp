@@ -25,6 +25,7 @@ Enemy::Enemy(){
 Enemy::~Enemy(){
     delete Arbol;
     NpcLibrary::instancia()->remove_book(m_ID);
+    gestor_eventos::instance()->eliminarme(m_ID);
 }
 
 void Enemy::update(){
@@ -55,7 +56,7 @@ void Enemy::update(){
 void Enemy::inicializar(int& ID){
     m_ID = ID;
     book = NpcLibrary::instancia()->add_book(m_ID, getPosition());
-    trigger_system::instance()->subs(book);
+    gestor_eventos::instance()->subscribirse(book);
 }
 
 void Enemy::contacto(PhysicObject *g){

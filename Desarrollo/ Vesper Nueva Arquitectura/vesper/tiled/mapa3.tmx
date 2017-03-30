@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="277">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="309">
  <properties>
   <property name="PUERTA" type="int" value="1"/>
  </properties>
@@ -10014,7 +10014,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="muros" visible="0">
+ <objectgroup name="muros">
   <object id="1" x="128" y="1056">
    <polyline points="0,0 0,128 160,128 160,0 0,0"/>
   </object>
@@ -10240,12 +10240,12 @@
   </object>
   <object id="206" name="29" type="nodo" x="2560" y="768" width="32" height="32">
    <properties>
-    <property name="conecta" value="28-36"/>
+    <property name="conecta" value="28-36-74-80"/>
    </properties>
   </object>
   <object id="207" name="30" type="nodo" x="2272" y="544" width="32" height="32">
    <properties>
-    <property name="conecta" value="39-28-36-31"/>
+    <property name="conecta" value="39-28-81-31"/>
    </properties>
   </object>
   <object id="208" name="31" type="nodo" x="2272" y="416" width="32" height="32">
@@ -10470,7 +10470,7 @@
   </object>
   <object id="269" name="74" type="nodo" x="2560" y="960" width="32" height="32">
    <properties>
-    <property name="conecta" value="27-74"/>
+    <property name="conecta" value="27-29-80-36"/>
    </properties>
   </object>
   <object id="270" name="75" type="nodo" x="2816" y="256" width="32" height="32">
@@ -10491,6 +10491,36 @@
   <object id="276" name="79" type="nodo" x="321.333" y="1006.67" width="32" height="32">
    <properties>
     <property name="conecta" value="58-55-57-60-77"/>
+   </properties>
+  </object>
+  <object id="300" name="80" type="nodo" x="2880" y="800" width="32" height="32">
+   <properties>
+    <property name="conecta" value="36-29-74"/>
+   </properties>
+  </object>
+  <object id="301" name="81" type="nodo" x="2656" y="544" width="32" height="32">
+   <properties>
+    <property name="conecta" value="30-29-36-80-74"/>
+   </properties>
+  </object>
+  <object id="303" name="82" type="nodo" x="608" y="1376" width="32" height="32">
+   <properties>
+    <property name="conecta" value="78-62-60-77"/>
+   </properties>
+  </object>
+  <object id="306" name="83" type="nodo" x="832" y="1472" width="32" height="32">
+   <properties>
+    <property name="conecta" value="82-78-16-15-62-77"/>
+   </properties>
+  </object>
+  <object id="307" name="84" type="nodo" x="1536" y="224" width="32" height="32">
+   <properties>
+    <property name="conecta" value="43-40-38-85-39"/>
+   </properties>
+  </object>
+  <object id="308" name="85" type="nodo" x="1792" y="256" width="32" height="32">
+   <properties>
+    <property name="conecta" value="38-39-43-84-40"/>
    </properties>
   </object>
  </objectgroup>

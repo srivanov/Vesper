@@ -25,6 +25,18 @@ eventos::~eventos(){}
  
  */
 
+
+eventos_values Evalores[] = {
+//     TIPO      RADIO  CADUCIDAD(seg)
+    { P_ALARMA  , 40.f   , 2.0f},
+    { P_ALERTA  , -1.f   , 20.f},
+    { P_AVISO   , 40.f   , 5.0f},
+    { P_AYUDA   , 40.f   , 2.0f},
+    { P_RUIDO   , 20.f   , 0.5f},
+    { P_VOID    , 0.f    , 0.5f}
+};
+
+
 gestor_eventos::gestor_eventos(){id_counts=0;}
 gestor_eventos::~gestor_eventos(){
     end = World_events.size();
@@ -44,6 +56,18 @@ void gestor_eventos::addEvento(int id,const Prioridades t,dvector3D pos){
     evento->m_ID = id_counts;
     evento->m_tipo = t;
     evento->m_posicion = pos;
+    evento->m_ID_CREADOR = id;
+    //DEBUG VALUES
+    
+    it = 0;
+    while(Evalores[it].m_tipo!=P_VOID){
+        if(Evalores[it].m_tipo==t){
+            evento->radio = Evalores[it].radio;
+            evento->m_caducidad = Evalores[it].caducidad;
+            break;
+        }
+        it++;
+    }
     World_events.push_back(evento);
 }
 
@@ -67,7 +91,7 @@ void gestor_eventos::comprobar(){
             NpcBook * sub = Suscritos[it_s];
             
             // SI ES EL CREADOR
-            if(ev->m_ID_CREADOR == sub->m_ID) continue;
+            if(ev->m_ID_CREADOR == sub->m_ID || sub->TengoEsteEvento(ev->m_tipo, ev->m_ID)) continue;
             
             // SI ES EVENTO DE MAPA
             if(ev->radio==MAPA){
@@ -75,7 +99,7 @@ void gestor_eventos::comprobar(){
                 continue;
             }
             
-            float distancia = EasyMath::EucCalcularDistancia(ev->m_posicion, sub->getPosition());
+            float distancia = EasyMath::EucCalcularDistancia(ev->m_posicion, *sub->getPosition());
             
             // SI ESTA A LA DISTANCIA
             if(distancia<ev->radio)
@@ -86,6 +110,28 @@ void gestor_eventos::comprobar(){
     
 }
 
+void gestor_eventos::eliminarme(int ID){
+    end = Suscritos.size();
+    for (it=0; it<end; it++)
+        if(Suscritos[it]->m_ID==ID){
+            Suscritos.erase(Suscritos.begin()+it);
+            return;
+        }
+    
+}
+
+bool gestor_eventos::existeEvento(const Prioridades tipo, const int ID){
+    end = World_events.size();
+    for (it = 0; it<end; it++)
+        if(
+            World_events[it]->m_tipo == tipo
+        &&  World_events[it]->m_ID_CREADOR == ID
+           )
+            return true;
+    
+    return false;
+}
+
 void gestor_eventos::limpiar(){
     end = World_events.size();
     for (int i=0; i<end; i++) {
@@ -93,7 +139,8 @@ void gestor_eventos::limpiar(){
         if(evento->m_t.tTranscurrido(evento->m_caducidad)){
             delete evento;
             World_events.erase(World_events.begin()+i);
-            i--<0  ? i=0 : i-- ;
+            end = World_events.size();
+            i--;
         }
     }
 }

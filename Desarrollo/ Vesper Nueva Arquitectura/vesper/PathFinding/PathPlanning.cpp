@@ -53,7 +53,7 @@ bool PathPlanning::NeedCalculo(dvector3D *initialPosition,dvector3D * finalPosit
     if(DistanciaPrimerNodo>DistanciaObjetivo) return false;
     return true;
 }
-std::vector<dvector3D*> PathPlanning::obtenerCamino(dvector3D *initialPosition,dvector3D * finalPosition){
+std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dvector3D * finalPosition){
     
     // INICIALIZAR BOLSA DE NODOS
     inicializarBolsaNodos();
@@ -67,7 +67,7 @@ std::vector<dvector3D*> PathPlanning::obtenerCamino(dvector3D *initialPosition,d
     final_camino = m_grafo->getFinalNode(finalPosition);
     
     // CREA VARIABLE QUE CONTENDRA EL CAMINO
-    std::vector<dvector3D*> camino;
+    std::vector<dvector3D> camino;
     
     //VALORA SI ES NECESARIO USAR PATHFINDING
     if(NeedCalculo(initialPosition,finalPosition)){
@@ -193,10 +193,10 @@ void NodeOpenBag::PassDescartes(NodeOpenBag * bolsaAux){
     this->setDescartes(bolsaAux->getDescartes());
 }
 
-std::vector<dvector3D*> NodeOpenBag::getCamino(){
-    std::vector<dvector3D*> posCamino;
+std::vector<dvector3D> NodeOpenBag::getCamino(){
+    std::vector<dvector3D> posCamino;
     for (int i=0; i<camino.size(); i++) {
-        posCamino.push_back(camino[i]->getPosition());
+        posCamino.push_back(*camino[i]->getPosition());
     }
     return posCamino;
 }

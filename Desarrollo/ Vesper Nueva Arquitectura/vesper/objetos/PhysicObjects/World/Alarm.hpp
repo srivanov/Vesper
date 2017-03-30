@@ -11,7 +11,7 @@
 
 #include "../PhysicObject.hpp"
 #include "../../../Arquitectura IA/LevelBlackBoard.hpp"
-#include "../../../Arquitectura IA/trigger_system.hpp"
+#include "../../../Arquitectura IA/gestor_eventos.hpp"
 
 class Alarm : public PhysicObject {
     void gestorTiempo();

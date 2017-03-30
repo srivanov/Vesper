@@ -5,26 +5,36 @@
 #include <stdio.h>
 #include <string>
 #include "../tiempo.h"
+#include "../objetos/GameObject.hpp"
 #include "Dvector.hpp"
 #include <vector>
 #include "bala.hpp"
 
 enum typeArma{
-    tArmaNO_TYPE = -1,
+    tArmaNO_TYPE = VOID,
     tPISTOLA,
-    tESCOPETAc,
-    tLANZACARAMELOSc,
-    tPIEDRAc,
-    tGLOBOAGUAc,
-    tCHICLEc,
-    tBOMBAHUMOc,
+    tESCOPETA = ESCOPETA,
+    tLANZACARAMELOS = SWEET_SHOOTER,
+    tPIEDRA = PIEDRA,
+    tGLOBOAGUA = GLOBO_AGUA,
+    tCHICLE = BUMMER_BOOM,
+    tBOMBAHUMO = BOMBA_HUMO,
     tMARTILLO,
-    tPALAc
+    tPALA = PALA
+};
+
+struct cualidades {
+    typeArma tipo;
+    unsigned int municion ;
+    float alcance ;
+    float recarga ;
+    unsigned int cadencia ;
+    unsigned int cargador ;
 };
 
 class gun {
 public:
-	gun(unsigned int pMunicion, float pAlcance, float pTiempo_recarga, unsigned int caden, unsigned int carga, typeArma t);
+	gun(const typeArma t);
     ~gun();
 	void atacar(dvector3D &pos, dvector3D &dir);
 	unsigned int getMunicion();
@@ -33,17 +43,15 @@ public:
     typeArma const* getType();
     void insertBala(dvector3D &pos, dvector3D &dir, float vel);
     void render();
-	
+    
 private:
-    typeArma tipo;
-	unsigned int cadencia, municion, cargador;
-	float tiempo_recarga, tiempo_vida, alcance;
+	float tiempo_vida;
+    cualidades cualidad;
 	tiempo temp;
     std::vector<Bala*> balas;
     Bala* bala_aux;
     std::vector<Bala*>::iterator iter;
     
-    const char* jotas[10] = {"tArmaNO_TYPE","tPISTOLA","tESCOPETAc","tLANZACARAMELOS","tPIEDRAc","tGLOBOAGUA","tCHICLE","tBOMBAHUMO","tMARTILLO","tPALAc"};
 };
 
 #endif /* gun_hpp */

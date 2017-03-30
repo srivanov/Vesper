@@ -26,7 +26,7 @@ class NodeOpenBag{
     void setDescartes(std::vector<GraphNode*> discards);
 public:
     float peso;
-    std::vector<dvector3D*> getCamino();
+    std::vector<dvector3D> getCamino();
     void add_node(GraphNode*);
     void disable_node(int ID);
     std::vector<GraphNode*> getNodes() const{return camino;}
@@ -59,7 +59,7 @@ public:
     void init(Graph *);
     static PathPlanning * instance();
     dvector3D * aux;
-    std::vector<dvector3D*> obtenerCamino(dvector3D *,dvector3D *);
+    std::vector<dvector3D> obtenerCamino(dvector3D *,dvector3D *);
     PathPlanning();
     ~PathPlanning();
 };
