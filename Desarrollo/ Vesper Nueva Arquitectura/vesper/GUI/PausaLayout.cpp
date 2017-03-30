@@ -45,6 +45,7 @@ void PausaLayout::onClickContinuar(const CEGUI::EventArgs &e) {
     printf("Pulsado boton continuar\n");
     // TO DO: Hacer una funcion en Game para poder continuar el juego o tener un bool que cambie en función de si esta pausado o no y modificar el bool aqui tambien
 	//Game::Instance()->setPausa(false);
+	actualState->nextState = PLAYING;
 }
 
 void PausaLayout::onClickGuardar(const CEGUI::EventArgs &e) {
@@ -60,4 +61,6 @@ void PausaLayout::onClickMenuPrincipal(const CEGUI::EventArgs &e) {
 void PausaLayout::onClickSalir(const CEGUI::EventArgs &e) {
     printf("Pulsado boton salir\n");
 //    Game::Instance()->stop();
+	actualState->menu = tmMENUPRINCIPAL;
+	actualState->destruir = true;
 }

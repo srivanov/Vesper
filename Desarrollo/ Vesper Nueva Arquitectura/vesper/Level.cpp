@@ -16,13 +16,8 @@ Level::Level(){
 
 Level::~Level(){
 	printf("DELETE LEVEL\n");
-    delete p;
-    delete c;
-    
-    while(w.size()>0){
-        delete w[0];
-        w.erase(w.begin());
-    }
+	if(iniciado)
+		destroy();
 }
 
 bool Level::inicializar(char *numero){
@@ -73,6 +68,8 @@ void Level::clear(){
 }
 
 void Level::update(){
+	if(!iniciado)
+		inicializar("3");
     clear();
     
     if(input->IsKeyDown(SKY_KEY_ESCAPE)){
@@ -103,7 +100,14 @@ void Level::render(){
 void Level::destroy(){
     //TO DO: eliminar los datos del nivel actual (jugador, objetos...)
     printf("DESTROY LEVEL\n");
-    iniciado = false;
+	delete p;
+	delete c;
+	
+	while(w.size()>0){
+		delete w[0];
+		w.erase(w.begin());
+	}
+	iniciado = false;
 }
 
 

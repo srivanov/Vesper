@@ -54,7 +54,8 @@ void Game::render(){
 //	}
     renderizador->beginDraw();
     maquina.render();
-	renderizador->dibujar();
+	if(*maquina.actualState->getState() == PLAYING)
+		renderizador->dibujar();
     renderizador->endDraw();
 }
 
