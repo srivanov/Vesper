@@ -10,11 +10,12 @@
 #include "../components/ventana.hpp"
 #include "Game.hpp"
 
-PausaLayout::PausaLayout(){
-    init("3d/GUI", ventana::Instance()->getDevice());
+PausaLayout::PausaLayout() {
     
-    layout = tPausa;
-    
+}
+
+void PausaLayout::init(CEGUI::RenderTarget* target){
+    GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
@@ -40,14 +41,11 @@ PausaLayout::~PausaLayout() {
     
 }
 
-tLayout PausaLayout::getLayout() {
-    return layout;
-}
-
 void PausaLayout::onClickContinuar(const CEGUI::EventArgs &e) {
     printf("Pulsado boton continuar\n");
     // TO DO: Hacer una funcion en Game para poder continuar el juego o tener un bool que cambie en función de si esta pausado o no y modificar el bool aqui tambien
 	//Game::Instance()->setPausa(false);
+	actualState->nextState = PLAYING;
 }
 
 void PausaLayout::onClickGuardar(const CEGUI::EventArgs &e) {
@@ -57,10 +55,12 @@ void PausaLayout::onClickGuardar(const CEGUI::EventArgs &e) {
 
 void PausaLayout::onClickMenuPrincipal(const CEGUI::EventArgs &e) {
     printf("Pulsado boton menu principal\n");
-    padre->setActiveLayout(tMenuPrincipalLayout);
+//    padre->setActiveLayout(tMenuPrincipalLayout);
 }
 
 void PausaLayout::onClickSalir(const CEGUI::EventArgs &e) {
     printf("Pulsado boton salir\n");
-    Game::Instance()->stop();
+//    Game::Instance()->stop();
+	actualState->menu = tmMENUPRINCIPAL;
+	actualState->destruir = true;
 }

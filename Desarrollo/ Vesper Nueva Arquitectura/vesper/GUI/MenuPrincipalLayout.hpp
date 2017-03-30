@@ -13,22 +13,19 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
-class MenuPrincipalLayout : public Motor::GUI {
+class MenuPrincipalLayout : public GUI {
 public:
     MenuPrincipalLayout();
-    ~MenuPrincipalLayout();
+    ~MenuPrincipalLayout(){}
 //    void update() override;
-    tLayout getLayout() override;
-    void inicializar();
+    
+    void init(CEGUI::RenderTarget* target);
     
     void onClickStartGame(const CEGUI::EventArgs &e);
     void onClickLoadScreen(const CEGUI::EventArgs &e);
     void onClickOptions(const CEGUI::EventArgs &e);
     void onClickCredits(const CEGUI::EventArgs &e);
     void onClickStopGame(const CEGUI::EventArgs &e);
-    
-    // TO DO: provisisonal
-    void onClickPausa(const CEGUI::EventArgs &e);
 
 private:
     CEGUI::DefaultWindow *label_titulo;

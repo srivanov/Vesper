@@ -10,18 +10,14 @@
 
 Level::Level(){
     iniciado=false;
-    //actualState = states::Instance();
+    actualState = states::Instance();
+    input = MyEventReceiver::Instance();
 }
 
 Level::~Level(){
 	printf("DELETE LEVEL\n");
-    delete p;
-    delete c;
-    
-    while(w.size()>0){
-        delete w[0];
-        w.erase(w.begin());
-    }
+	if(iniciado)
+		destroy();
 }
 
 bool Level::inicializar(char *numero){
@@ -60,7 +56,7 @@ bool Level::exportar_objetos(loadLevel& nivel){
     end = w.size();
     return true;
 }
-
+//TO DO: mirar por si se puede optimizar
 void Level::clear(){
     for (it=0; it<w.size(); it++)
         if(w[it]->Eliminable()){
@@ -72,8 +68,15 @@ void Level::clear(){
 }
 
 void Level::update(){
+	if(!iniciado)
+		inicializar("3");
     clear();
     
+    if(input->IsKeyDown(SKY_KEY_ESCAPE)){
+        actualState->nextState = MENU;
+        actualState->menu = tmPAUSE;
+    }
+    //TO DO: poner el resto para elegir personajes
     
     c->update();
     p->update();
@@ -81,9 +84,8 @@ void Level::update(){
     for (it=0; it<end; it++)
         w[it]->update();
         
-    
+    mundoBox2D::Instance()->update();
     gestor_eventos::instance()->update();
-    
 }
 
 void Level::render(){
@@ -93,3 +95,18 @@ void Level::render(){
     for (it=0; it<end; it++)
         w[it]->render();
 }
+
+void Level::destroy(){
+    //TO DO: eliminar los datos del nivel actual (jugador, objetos...)
+    printf("DESTROY LEVEL\n");
+	delete p;
+	delete c;
+	
+	while(w.size()>0){
+		delete w[0];
+		w.erase(w.begin());
+	}
+	iniciado = false;
+}
+
+
