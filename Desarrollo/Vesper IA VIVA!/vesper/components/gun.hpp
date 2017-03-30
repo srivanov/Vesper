@@ -30,8 +30,6 @@ struct cualidades {
     float recarga ;
     unsigned int cadencia ;
     unsigned int cargador ;
-    
-    
 };
 
 class gun {

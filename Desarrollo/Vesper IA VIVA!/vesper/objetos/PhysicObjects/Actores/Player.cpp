@@ -64,6 +64,8 @@ void Player::update(){
        cambiarArma();
     if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_E))
         changeActiveKey();
+    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_M))
+        vel*=2;
 	mover(vel);
     
     

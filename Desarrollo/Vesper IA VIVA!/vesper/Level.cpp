@@ -9,7 +9,7 @@
 #include "Level.hpp"
 
 Level::Level(){
-    iniciado=true;
+    iniciado=false;
     //actualState = states::Instance();
 }
 

@@ -107,7 +107,7 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
             bala_aux->addNodo("3d/bala.3ds");
             break;
         case tPIEDRA:
-            bala_aux->addNodo("3d/piedra.obj");
+            bala_aux->addNodo("3d/bala.3ds");
             break;
         case tMARTILLO:
             bala_aux->addNodo("3d/bala.3ds");
