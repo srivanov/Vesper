@@ -13,12 +13,12 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
-class OpcionesLayout : public Motor::GUI {
+class OpcionesLayout : public GUI {
 public:
     OpcionesLayout();
     ~OpcionesLayout();
 //    void update() override;
-    tLayout getLayout() override;
+    void init(CEGUI::RenderTarget* target);
     void onClickControles(const CEGUI::EventArgs &e);
     void onClickSonido(const CEGUI::EventArgs &e);
     void onClickPantalla(const CEGUI::EventArgs &e);

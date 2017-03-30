@@ -13,11 +13,12 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
-class PausaLayout : public Motor::GUI {
+class PausaLayout : public GUI {
 public:
     PausaLayout();
     ~PausaLayout();
-    tLayout getLayout() override;
+    void init(CEGUI::RenderTarget* target);
+    
     void onClickContinuar(const CEGUI::EventArgs &e);
     void onClickGuardar(const CEGUI::EventArgs &e);
     void onClickMenuPrincipal(const CEGUI::EventArgs &e);

@@ -12,11 +12,12 @@
 #include "../JSONParser.hpp"
 #include <map>
 
-OpcionesLayout::OpcionesLayout(){
-    init("3d/GUI", ventana::Instance()->getDevice());
+OpcionesLayout::OpcionesLayout() {
     
-    layout = tOpcionesLayout;
-    
+}
+
+void OpcionesLayout::init(CEGUI::RenderTarget* target){
+    GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
@@ -75,10 +76,6 @@ OpcionesLayout::~OpcionesLayout(){
 //
 //}
 
-tLayout OpcionesLayout::getLayout() {
-    return layout;
-}
-
 void OpcionesLayout::onClickControles(const CEGUI::EventArgs &e) {
     printf("Pulsado boton controles");
     contenedor_pantalla->hide();
@@ -101,7 +98,7 @@ void OpcionesLayout::onClickPantalla(const CEGUI::EventArgs &e) {
 }
 
 void OpcionesLayout::onClickVolver(const CEGUI::EventArgs &e) {
-    padre->setActiveLayout(tMenuPrincipalLayout);
+    actualState->menu = tmMENUPRINCIPAL;
 }
 
 void OpcionesLayout::onClickResol1(const CEGUI::EventArgs &e){
