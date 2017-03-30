@@ -28,8 +28,8 @@ armas::armas(){
 //	aux = new martilloDeJuguete(10, 0.2f, 4.0f);
 //	interface.push_back(aux);
     
-    interface.push_back(new gun(10, 0.2f, 4.0f, 2, 6, tMARTILLO));
-    interface.push_back(new gun(8, 2.0f, 2.0f, 1, 6, tPISTOLA));
+    interface.push_back(new gun(tMARTILLO));
+    interface.push_back(new gun(tPISTOLA));
 	
 	seleccionada = interface.begin();
     
@@ -78,42 +78,20 @@ void armas::changeGun(){
 
 void armas::insertarArma(int a){
     gun* aux = *seleccionada;
-    if(a < 1 || a > 9){
-    	
-    }else if(a == 1){
-    	printf("pistola de agua");
-    }else if(a == 2){
-        interface.push_back(new gun(10, 0.2f, 4.0f, 1, 2, tESCOPETAc));
-        printf("escopeta");
-    }else if(a == 3){
-        interface.push_back(new gun(30, 3.0f, 4.0f, 5, 6, tLANZACARAMELOSc));
-        printf("lanzacaramelos");
-    }else if(a == 4){
-        interface.push_back(new gun(5, 5.0f, 4.0f, 2, 6, tPIEDRAc));
-        printf("piedra");
-    }else if(a == 5){
-        interface.push_back(new gun(3, 2.5f, 4.0f, 1, 6, tGLOBOAGUAc));
-        printf("globoagua");
-    }else if(a == 6){
-        interface.push_back(new gun(3, 2.5f, 4.0f, 1, 6, tCHICLEc));
-        printf("chicle");
-    }else if(a == 7){
-        interface.push_back(new gun(3, 2.5f, 4.0f, 1, 6, tBOMBAHUMOc));
-        printf("bombahumo");
-    }else if(a == 8){
-        printf("martillo");
-    }else if(a == 9){
-        interface.push_back(new gun(10, 0.2f, 4.0f, 1, 6, tPALAc));
-        printf("pala");
-    }
+    
+    interface.push_back(new gun((typeArma)a));
+    
     bool busca = true;
+    
     seleccionada = interface.begin();
+    
     while(seleccionada != interface.end() && busca){
         if((*seleccionada) == aux)
             busca = false;
         else
         	++seleccionada;
     }
+    
 }
 
 void armas::eliminarArma(std::vector<gun *>::iterator iter){

@@ -45,7 +45,6 @@
 		63C4CF031E706623008295A1 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEFD1E706623008295A1 /* Graph.cpp */; };
 		63C4CF041E706623008295A1 /* GraphNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEFF1E706623008295A1 /* GraphNode.cpp */; };
 		63C4CF051E706623008295A1 /* PathPlanning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CF011E706623008295A1 /* PathPlanning.cpp */; };
-		63C4CF141E706ABB008295A1 /* trigger_system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CF121E706ABB008295A1 /* trigger_system.cpp */; };
 		63D123FA1E84006700D1B380 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D123F01E84006700D1B380 /* Camera.cpp */; };
 		63D124061E84019E00D1B380 /* Bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124001E84019E00D1B380 /* Bala.cpp */; };
 		63D124071E84019E00D1B380 /* PhysicObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124021E84019E00D1B380 /* PhysicObject.cpp */; };
@@ -234,7 +233,6 @@
 		E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A711DF0AA5000A91A97 /* chirriante.cpp */; };
 		E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A731DF0AA5000A91A97 /* component.cpp */; };
 		E9AC3A9E1DF0AA5000A91A97 /* conAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */; };
-		E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A771DF0AA5000A91A97 /* conLlave.cpp */; };
 		E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */; };
 		E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */; };
 		E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7D1DF0AA5000A91A97 /* habilidadEspecial.cpp */; };
@@ -336,8 +334,6 @@
 		63C4CF001E706623008295A1 /* GraphNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GraphNode.hpp; path = PathFinding/GraphNode.hpp; sourceTree = "<group>"; };
 		63C4CF011E706623008295A1 /* PathPlanning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathPlanning.cpp; path = PathFinding/PathPlanning.cpp; sourceTree = "<group>"; };
 		63C4CF021E706623008295A1 /* PathPlanning.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PathPlanning.hpp; path = PathFinding/PathPlanning.hpp; sourceTree = "<group>"; };
-		63C4CF121E706ABB008295A1 /* trigger_system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = trigger_system.cpp; path = "Arquitectura IA/trigger_system.cpp"; sourceTree = "<group>"; };
-		63C4CF131E706ABB008295A1 /* trigger_system.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = trigger_system.hpp; path = "Arquitectura IA/trigger_system.hpp"; sourceTree = "<group>"; };
 		63D123F01E84006700D1B380 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		63D123F11E84006700D1B380 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		63D123F91E84006700D1B380 /* Objects.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Objects.hpp; sourceTree = "<group>"; };
@@ -574,8 +570,6 @@
 		E9AC3A741DF0AA5000A91A97 /* component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
 		E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conAlarma.cpp; sourceTree = "<group>"; };
 		E9AC3A761DF0AA5000A91A97 /* conAlarma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conAlarma.hpp; sourceTree = "<group>"; };
-		E9AC3A771DF0AA5000A91A97 /* conLlave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conLlave.cpp; sourceTree = "<group>"; };
-		E9AC3A781DF0AA5000A91A97 /* conLlave.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conLlave.hpp; sourceTree = "<group>"; };
 		E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conPuzzle.cpp; sourceTree = "<group>"; };
 		E9AC3A7A1DF0AA5000A91A97 /* conPuzzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conPuzzle.hpp; sourceTree = "<group>"; };
 		E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = destructiva.cpp; sourceTree = "<group>"; };
@@ -650,8 +644,6 @@
 		63C4CE931E706138008295A1 /* Arquitectura IA */ = {
 			isa = PBXGroup;
 			children = (
-				63C4CF121E706ABB008295A1 /* trigger_system.cpp */,
-				63C4CF131E706ABB008295A1 /* trigger_system.hpp */,
 				63C4CE891E706132008295A1 /* LevelBlackBoard.cpp */,
 				63C4CE8A1E706132008295A1 /* LevelBlackBoard.hpp */,
 				63C4CE8B1E706132008295A1 /* NpcLibrary.cpp */,
@@ -1186,8 +1178,6 @@
 				E9AC3A741DF0AA5000A91A97 /* component.hpp */,
 				E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */,
 				E9AC3A761DF0AA5000A91A97 /* conAlarma.hpp */,
-				E9AC3A771DF0AA5000A91A97 /* conLlave.cpp */,
-				E9AC3A781DF0AA5000A91A97 /* conLlave.hpp */,
 				E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */,
 				E9AC3A7A1DF0AA5000A91A97 /* conPuzzle.hpp */,
 				E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */,
@@ -1461,7 +1451,6 @@
 				E9FA20591E1C2501003F9CA0 /* Dvector.cpp in Sources */,
 				63D1241B1E84030800D1B380 /* Puerta.cpp in Sources */,
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
-				63C4CF141E706ABB008295A1 /* trigger_system.cpp in Sources */,
 				63C4CEA61E7061F8008295A1 /* Nodo_Secuencia.cpp in Sources */,
 				63C4CEE91E706249008295A1 /* Nodo_QCombatir.cpp in Sources */,
 				63D123FA1E84006700D1B380 /* Camera.cpp in Sources */,
@@ -1529,7 +1518,6 @@
 				E9AC3AA61DF0AA5000A91A97 /* input.cpp in Sources */,
 				63C4CEC51E70620E008295A1 /* Nodo_APatrullar.cpp in Sources */,
 				63C4CEED1E706249008295A1 /* Nodo_QHidratarse.cpp in Sources */,
-				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
 				63D124181E84030800D1B380 /* Comida.cpp in Sources */,
 				63C4CEC21E70620E008295A1 /* Nodo_AHablar.cpp in Sources */,
 				63C4CEF11E706249008295A1 /* Nodo_QRuido.cpp in Sources */,

@@ -12,7 +12,7 @@
 #include "../PhysicObject.hpp"
 #include <vector>
 #include "../../../Arquitectura IA/LevelBlackBoard.hpp"
-#include "../../../Arquitectura IA/trigger_system.hpp"
+#include "../../../Arquitectura IA/gestor_eventos.hpp"
 #include "../../../Sistema de Decision/Behaviour_tree2.hpp"
 
 class Enemy : public PhysicObject {

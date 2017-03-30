@@ -22,7 +22,7 @@ GameObject::GameObject(){
     
 }
 
-void GameObject::inicializar(int ID){
+void GameObject::inicializar(int ID){ //que reciba tb el tipo de la puerta
     m_ID = ID;
 }
 

@@ -45,12 +45,13 @@ struct Eventos{
 
 class NpcBook{
     dvector3D * PosicionPropia;
-    std::vector<dvector3D*> PosicionesDestino;
+    std::vector<dvector3D> PosicionesDestino;
     std::map<Prioridades,Eventos*> pila;
     std::map<Prioridades,Eventos*>::iterator it;
     void valueObjective(const Prioridades&);
     void changeObjective();
 public:
+    bool TengoEsteEvento(const Prioridades p,int ID);
     int getMoral();
     void remove_EventsByType(const Prioridades&);
     bool Enemigo , Aviso , Ruido, Alarma , Evento , Alerta ;
@@ -60,7 +61,7 @@ public:
     void notify(int,const Prioridades,dvector3D *);
     void notify(int,const Prioridades,std::vector<dvector3D*>);
     dvector3D * getPosition() const {return PosicionPropia;}
-    dvector3D * lastPosition() const;
+    dvector3D lastPosition() const;
     void updateBook();
     bool updateObjetivo();
     bool ExistEventByType(const Prioridades&);

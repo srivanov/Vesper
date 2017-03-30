@@ -18,8 +18,9 @@ short Nodo_Mover::run(const int &id){
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     
     book->resetVectorMovimiento();
+    dvector3D pos = book->lastPosition();
     
-    if(book->lastPosition()){
+    if(pos.x!=-1){
         if(aux==-1)
             return updatePosition(id);
         else
@@ -42,8 +43,8 @@ short Nodo_Mover::updatePosition(const int &id){
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     
     
-    dvector3D posPropia = *book->getPosition();
-    dvector3D posObjetivo = *book->lastPosition();
+    dvector3D posPropia = book->getPosition();
+    dvector3D posObjetivo = book->lastPosition();
     aux = EasyMath::EucCalcularDistancia(posPropia,posObjetivo);
     xABS = posObjetivo.x-posPropia.x;
     yABS = posObjetivo.y-posPropia.y;

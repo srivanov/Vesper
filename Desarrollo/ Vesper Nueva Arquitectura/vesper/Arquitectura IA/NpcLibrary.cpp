@@ -90,10 +90,20 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion){
 
 NpcBook::~NpcBook(){}
 
+bool NpcBook::TengoEsteEvento(const Prioridades p, int ID){
+    it = pila.find(p);
+    if(it!=pila.end() && it->second->m_ID==ID)
+        return true;
+    return false;
+}
+
 void NpcBook::notify(int ID,const Prioridades tipo, dvector3D * posicion){
-    Evento = true;
+    
     it = pila.find(tipo);
     if(it!=pila.end()) remove_EventsByType(it->first);
+    Evento = true;
+    
+    
     
     pila.insert(std::pair<Prioridades, Eventos*>(tipo,new Eventos(ID,tipo,posicion)));
     
@@ -167,8 +177,8 @@ bool NpcBook::updateObjetivo(){
     return true;
 }
 
-dvector3D * NpcBook::lastPosition() const{
-    if(PosicionesDestino.empty()) return nullptr;
+dvector3D NpcBook::lastPosition() const{
+    if(PosicionesDestino.empty()) return dvector3D(-1,-1,-1);
     return PosicionesDestino[0];
 }
 

@@ -9,6 +9,7 @@
 #define TIEMPOALARMA 5.0f
 #define RADIOALARMA -1
 
+#include "gestor_eventos.hpp"
 #include "Alarm.hpp"
 
 void Alarm::gestorTiempo(){
@@ -50,9 +51,10 @@ void Alarm::activar(){
     activado = true;
     
     _time.start();
+    gestor_eventos * gestor = gestor_eventos::instance();
     setTexture("3d/rojo.png");
-    if(trigger_system::instance()->ExistTrigger(P_ALARMA, m_ID))
-        trigger_system::instance()->add_trigger(P_ALARMA, m_ID,getPosition(), RADIOALARMA, TIEMPOALARMA);
+    if(!gestor->existeEvento(P_ALARMA, m_ID))
+        gestor->addEvento(m_ID, P_ALARMA, *getPosition());
     
 }
 

@@ -9,6 +9,7 @@
 #include "Player.hpp"
 #include "../PlayerObjects.hpp"
 #include <iostream>
+#include "../World/Puerta.hpp"
 
 #define VELOCIDADN 2.f
 
@@ -26,6 +27,8 @@ Player::Player(){
     componente->setFather(this);
     addNodo("3d/sphere.3ds");
     setTexture("3d/texture.png");
+    
+    vida = 100;
 }
 
 Player::~Player(){
@@ -34,6 +37,12 @@ Player::~Player(){
 }
 
 void Player::update(){
+    
+    if(vida <= 0){
+        eliminar = true;
+        return;
+    }
+    
 	dvector3D vel;
     /*
     Keys aux;
@@ -55,6 +64,8 @@ void Player::update(){
        cambiarArma();
     if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_E))
         changeActiveKey();
+    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_M))
+        vel*=2;
 	mover(vel);
     
     
@@ -72,7 +83,7 @@ void Player::render(){
 
 void Player::atacar(){
     
-    if(*(arma->getArmaActual()->getType()) == tPALAc)
+    if(*(arma->getArmaActual()->getType()) == tPALA)
         cuerpoacuerpo();
     else
         arma->shoot();
@@ -115,7 +126,14 @@ bool Player::habActiva(){
     return hab->puedoUsar();
 }
 
-
+void Player::asignarLLave(int value){
+    for (size_t a=0; a<numLlaves; a++) {
+        if(llaves[a]==-1) {
+            llaves[a]=value;
+            break;
+        }
+    }
+}
 
 void Player::contacto(PhysicObject * g){
     if(g != NULL){
@@ -129,28 +147,17 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == ALARMA){
             
         }
-        if(g->getObjectType() == ESCOPETA){
-            arma->insertarArma(2);
-        }
-        if(g->getObjectType() == SWEET_SHOOTER){
-            arma->insertarArma(3);
-        }
-        if(g->getObjectType() == GLOBO_AGUA){
-            arma->insertarArma(5);
-        }
-        if(g->getObjectType() == BUMMER_BOOM){
-            arma->insertarArma(6);
-        }
-        if(g->getObjectType() == BOMBA_HUMO){
-            arma->insertarArma(7);
-        }
-        if(g->getObjectType() == LLAVE){
-            for (size_t a=0; a<numLlaves; a++) {
-                if(llaves[a]==-1) {
-                    llaves[a]=static_cast<PlayerObjects*>(g)->Llave();
-                    break;
-                }
-            }
+        if(g->getObjectType() == PIEDRA ||
+           (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS))
+            arma->insertarArma((int)g->getObjectType());
+        
+        if(g->getObjectType() == LLAVE)
+            asignarLLave(static_cast<PlayerObjects*>(g)->Llave());
+            
+        
+        if(g->getObjectType() == PUERTA){
+        	tipoPuerta d = static_cast<Puerta*>(g)->getPuerta();
+            if(d == pdestructiva) vida -= 10;
             
         }
     }
@@ -158,7 +165,6 @@ void Player::contacto(PhysicObject * g){
 }
 
 void Player::addArma(){
-    
     
     class render* go = static_cast<class render*>(componentes.find(RENDER)->second);
     if(go != NULL)

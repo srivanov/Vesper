@@ -41,7 +41,7 @@ bool Level::inicializar(char *numero){
     }
     NpcLibrary::instancia();
     LevelBlackBoard::instance();
-    trigger_system::instance();
+    gestor_eventos::instance();
     iniciado = true;
     return iniciado;
 }
@@ -84,9 +84,8 @@ void Level::update(){
     for (it=0; it<end; it++)
         w[it]->update();
         
-    
-    trigger_system::instance()->update();
     mundoBox2D::Instance()->update();
+    gestor_eventos::instance()->update();
 }
 
 void Level::render(){

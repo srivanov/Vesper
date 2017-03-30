@@ -12,6 +12,13 @@
 #include "NpcLibrary.hpp"
 #include "Types.h"
 
+
+struct eventos_values {
+    Prioridades m_tipo;
+    float radio;
+    float caducidad;
+};
+
 struct eventos {
     eventos();
     ~eventos();
@@ -33,6 +40,8 @@ class gestor_eventos {
     size_t it,end;
 public:
     ~gestor_eventos();
+    void eliminarme(int ID);
+    bool existeEvento(const Prioridades,const int);
     static gestor_eventos * instance();
     void addEvento(int id,const Prioridades t,dvector3D pos);
     void subscribirse(NpcBook * libro);
