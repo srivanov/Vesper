@@ -57,7 +57,12 @@ TEscena::TEscena(){
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
 	plano->setMalla("../Models/plano.obj");
-	cubo->setMalla("../Models/cube.obj");
+	cubo->setMalla("../Models/nanosuit/nanosuit.obj");
+	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+	mallas.back()->setMalla("../Models/cube.obj");
+	
+	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+	mallas.back()->setMalla("../Models/cube.obj");
 	
 	cubo->transladar(dvector3D(3,0,-2));
 	plano->transladar(dvector3D(0,-2,0));

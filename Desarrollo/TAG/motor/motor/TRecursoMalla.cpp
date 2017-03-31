@@ -18,6 +18,11 @@ TRecursoMalla::TRecursoMalla(){
 
 TRecursoMalla::~TRecursoMalla(){
 	gestor = nullptr;
+	std::vector<Mesh*>::iterator it = meshes.begin();
+	while (it != meshes.end()) {
+		delete *it;
+		++it;
+	}
 	meshes.clear();
 }
 
@@ -38,9 +43,9 @@ void TRecursoMalla::cargarFichero(std::string &ruta){
 //}
 
 void TRecursoMalla::Draw(Shader *shader){
-	std::vector<Mesh>::iterator it = meshes.begin();
+	std::vector<Mesh*>::iterator it = meshes.begin();
 	while(it != meshes.end()){
-		it->Draw(shader);
+		(*it)->Draw(shader);
 		it++;
 	}
 }
@@ -50,24 +55,31 @@ void TRecursoMalla::processNode(aiNode *node, const aiScene *scene){
 	for (GLuint i=0; i<node->mNumMeshes; i++) {
 		//cojo de la escena entera los meshes del nodo
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-		this->meshes.push_back(this->processMesh(mesh, scene));
+		meshes.push_back(processMesh(mesh, scene));
 	}
 	for (GLuint i=0; i<node->mNumChildren; i++) {
 		this->processNode(node->mChildren[i], scene);
 	}
 }
 
-Mesh TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
+Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 	
-	std::vector<Vertex> vertices;
-	std::vector<GLuint> indices;
-	std::vector<Texture*> texturas;
+//	std::vector<Vertex> vertices;
+//	std::vector<GLuint> indices;
+//	std::vector<Texture*> texturas;
 	
-//	Vertex vertices[mesh->mNumVertices];
-//	GLuint indices[mesh->]
+	aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+	GLint numVertices = mesh->mNumVertices,
+		numIndices = mesh->mNumFaces * mesh->mFaces->mNumIndices,
+		numTexturas = material->GetTextureCount(aiTextureType_DIFFUSE)+material->GetTextureCount(aiTextureType_SPECULAR)+material->GetTextureCount(aiTextureType_NORMALS);
+	
+	Vertex *vertices2 = new Vertex[numVertices];
+	GLuint *indices2 = new GLuint[numIndices];
+	Texture **texturas2 = new Texture*[numTexturas];
 	
 //	printf("%s: %d\n",mesh->mName.C_Str(), mesh->mNumVertices);
-	unsigned int n=0;
+	
+	
 	for (GLuint i=0; i<mesh->mNumVertices; i++){
 		Vertex vertex;
 		
@@ -83,7 +95,6 @@ Mesh TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 			vector.y = mesh->mNormals[i].y;
 			vector.z = mesh->mNormals[i].z;
 			vertex.Normal = vector;
-			n++;
 		}
 		
 		if(mesh->mTextureCoords[0]){
@@ -97,50 +108,53 @@ Mesh TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 		else
 			vertex.TexCoords = glm::vec2(0.0f, 0.0f);
 		
-		vertices.push_back(vertex);
+//		vertices.push_back(vertex);
+		vertices2[i] = vertex;
 	}
 	
-	this->nVertices+=mesh->mNumVertices;
-	this->nNormales+=n;
-	this->nCaras+=mesh->mNumFaces;
-	
-	n=0;
 	for(GLuint i = 0; i < mesh->mNumFaces; i++){
 		aiFace face = mesh->mFaces[i];
-		for (GLuint j=0; j<face.mNumIndices; j++)
-			indices.push_back(face.mIndices[j]);
-		n+=face.mNumIndices;
+		for (GLuint j=0; j<face.mNumIndices; j++){
+//			indices.push_back(face.mIndices[j]);
+			indices2[i*face.mNumIndices+j] = face.mIndices[j];
+		}
 	}
-	this->nIndices+=n;
+	
+//	for (int r = 0; r < numIndices; ++r) {
+//		printf("%d ", indices2[r]);
+//	}
+	
 	//	if(mesh->mMaterialIndex >= 0){
 	
-	aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
 	
+	int llenado = 0;
 	// 1. Diffuse maps
-	std::vector<Texture*> diffuseMaps = this->loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
-	texturas.insert(texturas.end(), diffuseMaps.begin(), diffuseMaps.end());
+	loadMaterialTextures(texturas2, material, aiTextureType_DIFFUSE, "texture_diffuse", llenado);
+//	texturas.insert(texturas.end(), diffuseMaps.begin(), diffuseMaps.end());
 	
 	// 2. Specular maps
-	std::vector<Texture*> specularMaps = this->loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
-	texturas.insert(texturas.end(), specularMaps.begin(), specularMaps.end());
+	loadMaterialTextures(texturas2, material, aiTextureType_SPECULAR, "texture_specular", llenado);
+//	texturas.insert(texturas.end(), specularMaps.begin(), specularMaps.end());
 	
 	//3. Normal maps
-	std::vector<Texture*> normalMaps = this->loadMaterialTextures(material, aiTextureType_NORMALS, "texture_normal");
-	texturas.insert(texturas.end(), normalMaps.begin(), normalMaps.end());
+	loadMaterialTextures(texturas2, material, aiTextureType_NORMALS, "texture_normal", llenado);
+//	texturas.insert(texturas.end(), normalMaps.begin(), normalMaps.end());
 	//	}
-	return Mesh(vertices, indices, texturas);
+	return new Mesh(vertices2, indices2, texturas2, numVertices, numIndices, numTexturas);
 }
 
-std::vector<Texture*> TRecursoMalla::loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName){
-	std::vector<Texture*> textures;
+void TRecursoMalla::loadMaterialTextures(Texture **tex, aiMaterial *mat, aiTextureType type, std::string typeName, int &index){
+//	std::vector<Texture*> textures;
 	for(GLuint i = 0; i < mat->GetTextureCount(type); i++){
 		aiString str;
 		mat->GetTexture(type, i, &str);
 		std::string dir = directorio+'/'+str.C_Str();
-		textures.push_back(pedirTextura(dir));
+//		textures.push_back(pedirTextura(dir));
+		tex[index] = pedirTextura(dir);
+		index++;
 	}
-	textures.shrink_to_fit();
-	return textures;
+//	textures.shrink_to_fit();
+//	return textures;
 }
 
 void TRecursoMalla::imprimirDatos(){
@@ -163,8 +177,9 @@ void TRecursoMalla::imprimirDatos(){
 }
 
 void TRecursoMalla::setTexture(std::string &ruta){
-	meshes.at(0).texturas.clear();
-	meshes.at(0).texturas.push_back(pedirTextura(ruta));
+//	meshes.at(0).texturas.clear();
+//	meshes.at(0).texturas.push_back(pedirTextura(ruta));
+	meshes.at(0)->texturas[0] = pedirTextura(ruta);
 }
 
 Texture* TRecursoMalla::pedirTextura(std::string &ruta){

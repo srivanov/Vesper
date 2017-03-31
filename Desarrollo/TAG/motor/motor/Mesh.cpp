@@ -2,11 +2,21 @@
 #include "Mesh.hpp"
 #include "Shader.h"
 
-Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture*> texturas){
-	this->vertices = vertices;
-	this->indices = indices;
-	this->texturas = texturas;
-	this->setupMesh();
+Mesh::Mesh(Vertex *verts, GLuint *inds, Texture **texs, GLint numV, GLint numI, GLint numT){
+	vertices = verts;
+	indices = inds;
+	texturas = texs;
+	numVertices = numV;
+	numIndices = numI;
+	numTexturas = numT;
+	setupMesh();
+}
+
+Mesh::~Mesh(){
+	delete[] vertices;
+	delete [] indices;
+//	delete[] *texturas;
+	delete texturas;
 }
 
 void Mesh::Draw(Shader* shader){
@@ -17,7 +27,7 @@ void Mesh::Draw(Shader* shader){
 	GLuint diffuseNr = 1;
 	GLuint specularNr = 1;
 	
-	for(GLuint i = 0; i < this->texturas.size(); i++){
+	for(GLuint i = 0; i < numTexturas; i++){
 		
 		// activamos la textura antes de linkarla
 		glActiveTexture(GL_TEXTURE0 + i);
@@ -44,11 +54,11 @@ void Mesh::Draw(Shader* shader){
 	
 	// dibujamos el mesh
 	glBindVertexArray(this->VAO);
-	glDrawElements(GL_TRIANGLES, (GLint)this->indices.size(), GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 	
 	// liberamos la memoria de las texturas
-	for (GLuint i = 0; i < this->texturas.size(); i++){
+	for (GLuint i = 0; i < numTexturas; i++){
 		glActiveTexture(GL_TEXTURE0 + i);
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
@@ -68,13 +78,13 @@ void Mesh::setupMesh(){
 	glBindBuffer(GL_ARRAY_BUFFER, this->VBO);
 	
 	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
-	glBufferData(GL_ARRAY_BUFFER, this->vertices.size() * sizeof(Vertex), &this->vertices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(Vertex), &this->vertices[0], GL_STATIC_DRAW);
 	
 	//linkamos el array de elementos al EBO
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->EBO);
 	
 	//copiamos los indices en el array de elementos
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, this->indices.size() * sizeof(GLuint), &this->indices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(GLuint), &this->indices[0], GL_STATIC_DRAW);
 	
 	glEnableVertexAttribArray(0);
 	

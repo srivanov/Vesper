@@ -30,12 +30,12 @@ public:
 private:
 	
 	void processNode(aiNode* node, const aiScene* scene);
-	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
-	std::vector<Texture*> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
+	Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
+	void loadMaterialTextures(Texture **tex, aiMaterial* mat, aiTextureType type, std::string typeName, int &index);
 	
 	Texture* pedirTextura(std::string &ruta);
 	
-	std::vector<Mesh> meshes;
+	std::vector<Mesh*> meshes;
 	std::string rFile, rTextura, directorio;
 //	glm::mat4 modelMatrix;
 //	glm::vec3 position, rotation;

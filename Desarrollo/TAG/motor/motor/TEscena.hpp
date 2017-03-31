@@ -22,7 +22,8 @@ public:
 private:
 	SkyEngine* motor;
 	SkyCamara* cam;
-	SkyMalla* cubo, *plano;
+	std::vector<SkyMalla*> mallas;
+	SkyMalla *cubo, *plano;
     SkyLuz* luz;
 };
 

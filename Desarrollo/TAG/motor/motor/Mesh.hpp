@@ -26,11 +26,14 @@ struct Texture {
 class Mesh{
 public:
 	
-	std::vector<Vertex> vertices;
-	std::vector<GLuint> indices;
-	std::vector<Texture*> texturas;
+	Vertex *vertices;
+	GLuint *indices;
+	Texture **texturas;
 	
-	Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture*> texturas);
+	GLint numVertices, numIndices, numTexturas;
+	
+	Mesh(Vertex *vertices, GLuint *indices, Texture **texturas, GLint numV, GLint numI, GLint numT);
+	~Mesh();
 	void Draw(Shader* shader);
 	
 private:

@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motor/SkyCamara.cpp"
-            timestampString = "511982716.807278"
+            filePath = "motor/TRecursoTextura.cpp"
+            timestampString = "512649766.274062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "SkyCamara::rotateToTarget(dvector3D tar)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "TRecursoTextura::cargarFichero(std::string &amp;name)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,29 +25,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motor/SkyCamara.cpp"
-            timestampString = "512066958.509797"
+            filePath = "motor/TRecursoTextura.cpp"
+            timestampString = "512650022.036656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "SkyCamara::rotateToTarget(dvector3D tar)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "TRecursoTextura::tex2OpenGL(unsigned char* image, int &amp;tex_width, int &amp;tex_height)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "motor/TEscena.cpp"
-            timestampString = "512429967.535474"
+            timestampString = "512650331.622208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "TEscena::update()"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "TEscena::TEscena()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "motor/SkyWindow.cpp"
+            timestampString = "512650395.758613"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "SkyWindow::beginDraw()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
