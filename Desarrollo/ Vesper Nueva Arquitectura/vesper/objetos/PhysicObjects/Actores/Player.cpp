@@ -50,23 +50,23 @@ void Player::update(){
         
     }
      */
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP))
-		vel.y += VELOCIDADN;
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN))
-		vel.y += -VELOCIDADN;
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT))
-		vel.x += -VELOCIDADN;
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_RIGHT))
-		vel.x += VELOCIDADN;
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_N))
-        atacar();
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_TAB))
-       cambiarArma();
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_E))
-        changeActiveKey();
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_M))
-        vel*=2;
-	mover(vel);
+//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP))
+//		vel.y += VELOCIDADN;
+//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN))
+//		vel.y += -VELOCIDADN;
+//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT))
+//		vel.x += -VELOCIDADN;
+//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_RIGHT))
+//		vel.x += VELOCIDADN;
+//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_N))
+//        atacar();
+//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_TAB))
+//       cambiarArma();
+//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_E))
+//        changeActiveKey();
+//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_M))
+//        vel*=2;
+//	mover(vel);
     
     
     m_rot = ventana::Instance()->posicionRaton(m_pos);

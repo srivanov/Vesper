@@ -15,7 +15,7 @@ Camera::Camera(dvector3D speed) : m_objective(nullptr){
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
     posCamara = dvector3D(0,0,0);
-    copy_objective = dvector3D(0,0,0);
+    copy_objective = dvector3D(0,0,5);
     render_component->addCamera(posCamara, copy_objective);
 }
 Camera::~Camera(){}

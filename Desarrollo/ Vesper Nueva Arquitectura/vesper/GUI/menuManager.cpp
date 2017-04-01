@@ -49,8 +49,11 @@ void menuManager::render(){
 
 void menuManager::InitRenderer(){
     if (m_IrrlichtRenderer == nullptr) {
-        m_IrrlichtRenderer = &CEGUI::IrrlichtRenderer::bootstrapSystem(*ventana::Instance()->getDevice());
-        
+//        m_IrrlichtRenderer = &CEGUI::IrrlichtRenderer::bootstrapSystem(*ventana::Instance()->getDevice());
+		const dvector2D *v = ventana::Instance()->getSize();
+		CEGUI::Sizef tam(v->x,v->y);
+		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::bootstrapSystem(tam);
+		
         const std::string resourcesPath("3d/GUI");
         
         CEGUI::DefaultResourceProvider* resourceProvider = static_cast<CEGUI::DefaultResourceProvider*>(CEGUI::System::getSingleton().getResourceProvider());

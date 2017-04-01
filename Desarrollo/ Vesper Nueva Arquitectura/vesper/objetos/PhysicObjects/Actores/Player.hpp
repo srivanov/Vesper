@@ -12,13 +12,13 @@
 #include "../PhysicObject.hpp"
 #include "../../../components/armas.hpp"
 #include "../../../components/gun.hpp"
-#include <buttons.hpp>
+#include <SkyEngine/InputManager.h>
 
 
 
 class Player : public PhysicObject {
 private:
-    std::map<const Keys,int> keyFunction;
+//    std::map<const Keys,int> keyFunction;
 protected:
     void asignarLLave(int value);
     unsigned int velocidad;

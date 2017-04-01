@@ -5,7 +5,7 @@
 
 #include "CEGUI/CEGUI.h"
 #include "CEGUI/RendererModules/OpenGL/GL3Renderer.h"
-#include "CEGUI/RendererModules/Irrlicht/Renderer.h"
+//#include "CEGUI/RendererModules/Irrlicht/Renderer.h"
 
 #include "../estados/estados.h"
 #include "../MyEventReceiver.hpp"

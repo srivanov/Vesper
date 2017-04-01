@@ -6,7 +6,10 @@
 #include "component.hpp"
 #include "ventana.hpp"
 #include <vector>
-#include "../nodeMesh.hpp"
+//#include "../nodeMesh.hpp"
+#include <SkyEngine/SkyEngine.hpp>
+//#include <SkyEngine/SkyMalla.hpp>
+//#include <SkyEngine/SkyCamara.hpp>
 #include "../Fps.hpp"
 #include "../Dvector.hpp"
 
@@ -38,11 +41,16 @@ public:
     void anyadirArma();
 	
 private:
-    std::vector<nodeMesh*> all_nodos;
-	nodeMesh* nodo;
-	ICameraSceneNode* camara;
-    ISceneNode* nodo_suelo;
-	irr::gui::IGUIStaticText* texto;
+	SkyEngine* engine;
+//    std::vector<nodeMesh*> all_nodos;
+	std::vector<SkyMalla*> all_nodos;
+	ventana* vent;
+//	nodeMesh* nodo;
+	SkyMalla *nodo, *nodo_suelo;
+//	ICameraSceneNode* camara;
+	SkyCamara* camara;
+//    ISceneNode* nodo_suelo;
+//	irr::gui::IGUIStaticText* texto;
 };
 
 #endif /* render_hpp */

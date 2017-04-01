@@ -14,6 +14,7 @@
 #include "estados.h"
 #include "state.hpp"
 #include "HUDLayout.hpp"
+#include <SkyEngine/InputManager.h>
 
 
 class Level  : public state{
@@ -24,7 +25,7 @@ class Level  : public state{
     size_t it,end;
     bool iniciado;
     void clear();
-    MyEventReceiver* input;
+    InputManager* input;
 public:
     Level();
     ~Level();

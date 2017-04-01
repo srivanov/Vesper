@@ -11,7 +11,7 @@
 Level::Level(){
     iniciado=false;
     actualState = states::Instance();
-    input = MyEventReceiver::Instance();
+    input = InputManager::Instance();
 }
 
 Level::~Level(){
@@ -73,7 +73,7 @@ void Level::update(){
 		inicializar("3");
     clear();
     
-    if(input->IsKeyDown(SKY_KEY_ESCAPE)){
+    if(input->isPressed(SKY_KEY_ESCAPE)){
         actualState->nextState = MENU;
         actualState->menu = tmPAUSE;
     }
