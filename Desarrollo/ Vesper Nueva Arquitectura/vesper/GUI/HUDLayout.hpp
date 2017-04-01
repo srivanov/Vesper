@@ -17,8 +17,8 @@ class HUDLayout : public GUI {
 public:
     HUDLayout();
     ~HUDLayout();
+	void init();
     //    void update() override;
-    void init(CEGUI::RenderTarget* target);
     
 private:
    

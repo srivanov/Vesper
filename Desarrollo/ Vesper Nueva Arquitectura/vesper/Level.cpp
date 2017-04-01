@@ -42,6 +42,7 @@ bool Level::inicializar(char *numero){
     NpcLibrary::instancia();
     LevelBlackBoard::instance();
     gestor_eventos::instance();
+	hud.init();
     iniciado = true;
     return iniciado;
 }
@@ -94,6 +95,7 @@ void Level::render(){
     
     for (it=0; it<end; it++)
         w[it]->render();
+	hud.render();
 }
 
 void Level::destroy(){

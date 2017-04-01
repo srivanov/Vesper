@@ -69,6 +69,7 @@ void menuManager::InitRenderer(){
         CEGUI::WindowManager::setDefaultResourceGroup("layouts");
         CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
         m_target = &m_IrrlichtRenderer->getDefaultRenderTarget();
+		states::Instance()->renderTarget = m_target;
     }
 }
 

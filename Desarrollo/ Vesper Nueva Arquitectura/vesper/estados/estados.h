@@ -32,6 +32,7 @@ public:
 	estados nextState;
 	tipoMenu menu;
 	bool destruir;
+	void* renderTarget;
 private:
 	states() { estado = MENU; destruir = false; }
 	estados estado;

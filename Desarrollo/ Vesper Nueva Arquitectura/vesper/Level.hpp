@@ -13,6 +13,7 @@
 #include "loadLevel.hpp"
 #include "estados.h"
 #include "state.hpp"
+#include "HUDLayout.hpp"
 
 
 class Level  : public state{
@@ -32,6 +33,7 @@ public:
     void render();
     void update();
     void destroy();
+	HUDLayout hud;
 };
 
 

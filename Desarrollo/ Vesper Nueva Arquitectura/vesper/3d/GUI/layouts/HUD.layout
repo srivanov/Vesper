@@ -11,10 +11,5 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
-        <Window type="OgreTray/Button" name="Button" >
-            <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,316},{0,450},{0,412},{0,482}}" />
-            <Property name="Text" value="Volver" />
-        </Window>
     </Window>
 </GUILayout>
