@@ -36,7 +36,7 @@ TRecurso* TGestorRecursos::getRecurso(std::string &name, typeRecurso tipo){
 		rec->cargarFichero(name);
 		rec->SetNombre(name);
 		recursos.push_back(rec);
-		printf("RECURSOS: %d\n", (int)recursos.size());
+		printf("RECURSO: %s\n", name.c_str());
 	}
 	return rec;
 }
