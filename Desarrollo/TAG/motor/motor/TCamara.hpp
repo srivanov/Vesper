@@ -9,7 +9,6 @@
 #ifndef TCamara_hpp
 #define TCamara_hpp
 
-#include <stack>
 #include <stdio.h>
 
 #include "ShaderManager.hpp"
@@ -41,12 +40,15 @@ public:
 private:
 	int ID;
 	Shader* sh;
+	Pila *pila;
 	bool esPerspectiva;
 	const dvector2D *tam;
 	float nearV, farV;
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz, projection;
 	GLfloat Zoom;
+	
+	void calcularProyection() { projection = glm::perspective(glm::radians(Zoom), (GLfloat)tam->x/(GLfloat)tam->y, nearV, farV); }
 };
 
 #endif /* TCamara_hpp */

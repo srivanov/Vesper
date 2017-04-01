@@ -11,7 +11,6 @@
 
 #include <string>
 
-#include "Pila.h"
 #include "TEntidad.hpp"
 #include "TRecursoMalla.hpp"
 #include "ShaderManager.hpp"

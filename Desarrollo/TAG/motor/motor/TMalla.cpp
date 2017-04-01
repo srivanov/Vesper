@@ -31,7 +31,11 @@ void TMalla::setTextura(std::string &fichero){
 }
 
 void TMalla::beginDraw(){
+	
+	pila->calculaMVP();
+	
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
+	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
 	malla->Draw(sh);
 //	printf("BEGIN DRAW Malla\n");
 

@@ -14,6 +14,8 @@ TCamara::TCamara() : ID(0), Zoom(ZOOM), nearV(0.1f), farV(20.0f){
 	esPerspectiva = true;
 	sh = ShaderManager::Instance()->getActivo();
 	tam = SkyWindow::Instance()->getSIZE();
+	calcularProyection();
+	pila = Pila::Instance();
 }
 
 TCamara::~TCamara(){
@@ -32,10 +34,12 @@ void TCamara::setParalela(){
 
 void TCamara::setNearValue(float n){
 	nearV = n;
+	calcularProyection();
 }
 
 void TCamara::setFarValue(float f){
 	farV = f;
+	calcularProyection();
 }
 
 void TCamara::Draw(TNodo* n){
@@ -60,11 +64,12 @@ void TCamara::Draw(TNodo* n){
 //	glm::vec3 pos = glm::column(matriz, 3);
 //	matriz = glm::lookAt(pos, pos + glm::vec3(0,0,-1), glm::vec3(0,1,0));
 	
-	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "view"), 1, GL_FALSE, glm::value_ptr(matriz));
+	pila->mView = matriz;
+	pila->mProjection = projection;
 	
-	projection = glm::perspective(glm::radians(Zoom), (GLfloat)tam->x/(GLfloat)tam->y, nearV, farV);
-	
-	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+//	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "view"), 1, GL_FALSE, glm::value_ptr(matriz));
+//	
+//	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 	
 //	matriz = glm::inverse(matriz);
 //	for (int i=0; i<matriz.length(); i++) {

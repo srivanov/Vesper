@@ -1437,6 +1437,7 @@
 				E9D3DEB61E87CD0100555687 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

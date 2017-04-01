@@ -78,13 +78,13 @@ void Mesh::setupMesh(){
 	glBindBuffer(GL_ARRAY_BUFFER, this->VBO);
 	
 	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
-	glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(Vertex), &this->vertices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(Vertex), &vertices[0], GL_STATIC_DRAW);
 	
 	//linkamos el array de elementos al EBO
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->EBO);
 	
 	//copiamos los indices en el array de elementos
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(GLuint), &this->indices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(GLuint), &indices[0], GL_STATIC_DRAW);
 	
 	glEnableVertexAttribArray(0);
 	

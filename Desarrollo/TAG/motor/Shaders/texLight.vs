@@ -10,15 +10,17 @@ out vec3 FragPos;
 out vec3 Normal;
 
 uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
+//uniform mat4 view;
+//uniform mat4 projection;
+uniform mat4 MVP;
 
 void main()
 {
-	gl_Position = projection * view * model * vec4(position, 1.0);
+	gl_Position = MVP * vec4(position, 1.0);
 	
 	//asignamos las coordenadas de las texturas dando la vuelta al eje Y
 	TexCoord = vec2(texCoord.x, 1.0f - texCoord.y);
+//	Normal = normalize(transpose(inverse(mat3(model))) * normal);
 	Normal = normal;
 	//posicion en coordenadas del mundo del fragment
 	FragPos = vec3(model * vec4(position, 1.0f));

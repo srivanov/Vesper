@@ -35,12 +35,13 @@ private:
 	
 	Texture* pedirTextura(std::string &ruta);
 	
-	std::vector<Mesh*> meshes;
+//	std::vector<Mesh*> meshes;
+	Mesh* meshes[10];
 	std::string rFile, rTextura, directorio;
 //	glm::mat4 modelMatrix;
 //	glm::vec3 position, rotation;
 	//variables para imprimir por consolar datos
-	unsigned int nVertices, nNormales, nCaras, nIndices;
+	unsigned int nVertices, nNormales, nCaras, nIndices, numMeshes;
 	bool bTex;
 	TGestorRecursos* gestor;
 };

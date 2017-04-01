@@ -14,16 +14,18 @@
 
 TRecursoMalla::TRecursoMalla(){
 	gestor = TGestorRecursos::Instance();
+	numMeshes = 0;
 }
 
 TRecursoMalla::~TRecursoMalla(){
 	gestor = nullptr;
-	std::vector<Mesh*>::iterator it = meshes.begin();
-	while (it != meshes.end()) {
-		delete *it;
-		++it;
-	}
-	meshes.clear();
+//	std::vector<Mesh*>::iterator it = meshes.begin();
+//	while (it != meshes.end()) {
+//		delete *it;
+//		++it;
+//	}
+//	meshes.clear();
+	
 }
 
 void TRecursoMalla::cargarFichero(std::string &ruta){
@@ -43,10 +45,13 @@ void TRecursoMalla::cargarFichero(std::string &ruta){
 //}
 
 void TRecursoMalla::Draw(Shader *shader){
-	std::vector<Mesh*>::iterator it = meshes.begin();
-	while(it != meshes.end()){
-		(*it)->Draw(shader);
-		it++;
+//	std::vector<Mesh*>::iterator it = meshes.begin();
+//	while(it != meshes.end()){
+//		(*it)->Draw(shader);
+//		it++;
+//	}
+	for (int i=0; i<numMeshes; ++i) {
+		meshes[i]->Draw(shader);
 	}
 }
 
@@ -55,7 +60,9 @@ void TRecursoMalla::processNode(aiNode *node, const aiScene *scene){
 	for (GLuint i=0; i<node->mNumMeshes; i++) {
 		//cojo de la escena entera los meshes del nodo
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-		meshes.push_back(processMesh(mesh, scene));
+//		meshes.push_back(processMesh(mesh, scene));
+		meshes[numMeshes] = processMesh(mesh, scene);
+		numMeshes++;
 	}
 	for (GLuint i=0; i<node->mNumChildren; i++) {
 		this->processNode(node->mChildren[i], scene);
@@ -84,29 +91,42 @@ Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 		Vertex vertex;
 		
 		// procesamos las coordenadas de los vertices, normales y texturas
-		glm::vec3 vector;
-		vector.x = mesh->mVertices[i].x;
-		vector.y = mesh->mVertices[i].y;
-		vector.z = mesh->mVertices[i].z;
-		vertex.Position = vector;
+//		glm::vec3 vector;
+//		vector.x = mesh->mVertices[i].x;
+//		vector.y = mesh->mVertices[i].y;
+//		vector.z = mesh->mVertices[i].z;
+//		vertex.Position = vector;
+		
+		vertex.Position[0] = mesh->mVertices[i].x;
+		vertex.Position[1] = mesh->mVertices[i].y;
+		vertex.Position[2] = mesh->mVertices[i].z;
 		
 		if(mesh->mNormals != NULL){
-			vector.x = mesh->mNormals[i].x;
-			vector.y = mesh->mNormals[i].y;
-			vector.z = mesh->mNormals[i].z;
-			vertex.Normal = vector;
+//			vector.x = mesh->mNormals[i].x;
+//			vector.y = mesh->mNormals[i].y;
+//			vector.z = mesh->mNormals[i].z;
+//			vertex.Normal = vector;
+			
+			vertex.Normal[0] = mesh->mNormals[i].x;
+			vertex.Normal[1] = mesh->mNormals[i].y;
+			vertex.Normal[2] = mesh->mNormals[i].z;
 		}
 		
 		if(mesh->mTextureCoords[0]){
-			glm::vec2 vec;
-			vec.x = mesh->mTextureCoords[0][i].x;
-			vec.y = mesh->mTextureCoords[0][i].y;
-			vertex.TexCoords = vec;
+//			glm::vec2 vec;
+//			vec.x = mesh->mTextureCoords[0][i].x;
+//			vec.y = mesh->mTextureCoords[0][i].y;
+//			vertex.TexCoords = vec;
+			
+			vertex.TexCoords[0] = mesh->mTextureCoords[0][i].x;
+			vertex.TexCoords[1] = mesh->mTextureCoords[0][i].y;
+			
 			if(!bTex)
 				bTex=true;
 		}
 		else
-			vertex.TexCoords = glm::vec2(0.0f, 0.0f);
+			vertex.TexCoords[0] = vertex.TexCoords[1] = 0.0f;
+//			vertex.TexCoords = glm::vec2(0.0f, 0.0f);
 		
 //		vertices.push_back(vertex);
 		vertices2[i] = vertex;
@@ -119,10 +139,6 @@ Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 			indices2[i*face.mNumIndices+j] = face.mIndices[j];
 		}
 	}
-	
-//	for (int r = 0; r < numIndices; ++r) {
-//		printf("%d ", indices2[r]);
-//	}
 	
 	//	if(mesh->mMaterialIndex >= 0){
 	
@@ -179,7 +195,8 @@ void TRecursoMalla::imprimirDatos(){
 void TRecursoMalla::setTexture(std::string &ruta){
 //	meshes.at(0).texturas.clear();
 //	meshes.at(0).texturas.push_back(pedirTextura(ruta));
-	meshes.at(0)->texturas[0] = pedirTextura(ruta);
+//	meshes.at(0)->texturas[0] = pedirTextura(ruta);
+	meshes[0]->texturas[0] = pedirTextura(ruta);
 }
 
 Texture* TRecursoMalla::pedirTextura(std::string &ruta){

@@ -34,7 +34,11 @@ public:
 		return &pila.top();
 	}
 	
-	glm::mat4 actual;
+	void calculaMVP(){
+		MVP = mProjection * mView * actual;
+	}
+	
+	glm::mat4 actual, mView, mProjection, MVP;
 protected:
 	Pila(){}
 private:
