@@ -52,12 +52,13 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	
-	cam->setPosicion(dvector3D(0,1,0));
+	dvector3D n(0,1,0);
+	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
 	plano->setMalla("../Models/plano.obj");
-	cubo->setMalla("../Models/microwave.obj");
+	cubo->setMalla("../Models/cubo.3ds");
+	cubo->setTextura("../Models/tex.png");
 	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 	mallas.back()->setMalla("../Models/microwave.obj");
 	
@@ -369,10 +370,12 @@ TEscena::TEscena(){
 	
 	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 	mallas.back()->setMalla("../Models/microwave.obj");
-	
-	cubo->transladar(dvector3D(3,0,-2));
-	plano->transladar(dvector3D(0,-2,0));
-	luz->setPosicion(dvector3D(2,2,2));
+	n = dvector3D(3,0,-2);
+	cubo->transladar(n);
+	n = dvector3D(0,-2,0);
+	plano->transladar(n);
+	n = dvector3D(2,2,2);
+	luz->setPosicion(n);
 	
 //	delete cubo2;
 }
@@ -400,7 +403,8 @@ void TEscena::update(){
         
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_DOWN)){
-		cubo->rotar(dvector3D(0,.1,0));
+		dvector3D n(0,.1,0);
+		cubo->rotar(n);
         float amb = luz->_getAmbient();
         amb--;
         luz->_setAmbient(amb);
@@ -427,21 +431,24 @@ void TEscena::update(){
         spec--;
         luz->_setSpecular(spec);
     }
-	
+	dvector3D m(0,0,-.1);
 	if(InputManager::Instance()->isPressed(SKY_KEY_W)){
-		cam->rotar(dvector3D(0,-.1,0));
+		cam->transladar(m);
 	}
+	m = dvector3D(0,0,.1);
 	if(InputManager::Instance()->isPressed(SKY_KEY_S)){
-		cam->rotar(dvector3D(0,.1,0));
+		cam->transladar(m);
 	}
+	m = dvector3D(-.1,0,0);
 	if(InputManager::Instance()->isPressed(SKY_KEY_A)){
-		cam->transladar(dvector3D(-.1,0,0));
+		cam->transladar(m);
 	}
+	m = dvector3D(.1,0,0);
 	if(InputManager::Instance()->isPressed(SKY_KEY_D)){
-		cam->transladar(dvector3D(.1,0,0));
+		cam->transladar(m);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
-		cam->setCamTarget(cubo->getPosicion());
+		cam->setCamTarget(*cubo->getPosicion());
 	}
 	
 //	cam->setCamTarget(cubo->getPosicion());
@@ -450,12 +457,6 @@ void TEscena::update(){
 	
 	//para ver la posicion del raton
 //	std::cout << InputManager::Instance()->mousePos.x << " - " << InputManager::Instance()->mousePos.y << std::endl;
-	
-}
-
-void TEscena::girar(glm::vec3 mov){
-	if(cam != NULL)
-		cam->rotar(dvector3D(mov.x,mov.y,mov.z));
 }
 
 void TEscena::imprime(){

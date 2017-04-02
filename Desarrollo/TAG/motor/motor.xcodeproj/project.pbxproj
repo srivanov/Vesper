@@ -81,6 +81,7 @@
 		E9F59EED1E09B6910048E771 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EEC1E09B6910048E771 /* Cocoa.framework */; };
 		E9F59EF51E09B9880048E771 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF41E09B9880048E771 /* CoreVideo.framework */; };
 		E9F59EF61E09B9A70048E771 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59EF01E09B6B40048E771 /* IOKit.framework */; };
+		E9F8BF3D1E91197B00A758D5 /* glmConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E9F8BF3C1E9115FA00A758D5 /* glmConverter.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,7 +111,7 @@
 		E9488E481E7FEBE600C5D62A /* SkyWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyWindow.cpp; sourceTree = "<group>"; };
 		E9488E491E7FEBE600C5D62A /* SkyWindow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyWindow.hpp; sourceTree = "<group>"; };
 		E954B0921E17F7EC00F1BEB6 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = libs/libSOIL.a; sourceTree = "<group>"; };
-		E958EC311E4A1FD700478D49 /* TTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TTransform.cpp; sourceTree = "<group>"; };
+		E958EC311E4A1FD700478D49 /* TTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = TTransform.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E958EC321E4A1FD700478D49 /* TTransform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TTransform.hpp; sourceTree = "<group>"; };
 		E960F3EE1E1E6C4300A90C05 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		E960F3EF1E1E6C4300A90C05 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
@@ -132,7 +133,7 @@
 		E9AB32FF1E6C76BD006D8F9D /* SkyMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyMalla.hpp; sourceTree = "<group>"; };
 		E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyLuz.cpp; sourceTree = "<group>"; };
 		E9AB33021E6C76CD006D8F9D /* SkyLuz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyLuz.hpp; sourceTree = "<group>"; };
-		E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyCamara.cpp; sourceTree = "<group>"; };
+		E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = SkyCamara.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E9AB33051E6C76F5006D8F9D /* SkyCamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyCamara.hpp; sourceTree = "<group>"; };
 		E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
 		E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderManager.hpp; sourceTree = "<group>"; };
@@ -480,12 +481,13 @@
 		E9E5A76B1E54C435005A7B72 /* TGestorRecursos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TGestorRecursos.cpp; sourceTree = "<group>"; };
 		E9E5A76C1E54C435005A7B72 /* TGestorRecursos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TGestorRecursos.hpp; sourceTree = "<group>"; };
 		E9E5A76F1E54CF98005A7B72 /* TRecurso.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TRecurso.hpp; sourceTree = "<group>"; };
-		E9EFC4001E49E9E8000E84B1 /* TEntidad.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TEntidad.hpp; sourceTree = "<group>"; };
+		E9EFC4001E49E9E8000E84B1 /* TEntidad.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; lineEnding = 0; path = TEntidad.hpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E9EFC4021E49EB94000E84B1 /* TNodo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TNodo.cpp; sourceTree = "<group>"; };
 		E9EFC4031E49EB94000E84B1 /* TNodo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TNodo.hpp; sourceTree = "<group>"; };
 		E9F59EEC1E09B6910048E771 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9F59EF01E09B6B40048E771 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E9F59EF41E09B9880048E771 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		E9F8BF3C1E9115FA00A758D5 /* glmConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = glmConverter.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +575,7 @@
 				E9488E491E7FEBE600C5D62A /* SkyWindow.hpp */,
 				E91313421E8146950038F99D /* InputManager.h */,
 				E91313431E814E700038F99D /* SkyKeysDef.h */,
+				E9F8BF3C1E9115FA00A758D5 /* glmConverter.h */,
 				E912A7D01E6DB87000ED8E74 /* Dvector.cpp */,
 				E912A7D11E6DB87000ED8E74 /* Dvector.hpp */,
 				E9B47DEB1E535C75000466D7 /* TEscena.cpp */,
@@ -1119,6 +1122,7 @@
 				E9D3DEBA1E87CF3B00555687 /* TCamara.hpp in Headers */,
 				E9D3DEC11E87CF3B00555687 /* TNodo.hpp in Headers */,
 				E9D3DEBF1E87CF3B00555687 /* TMalla.hpp in Headers */,
+				E9F8BF3D1E91197B00A758D5 /* glmConverter.h in Headers */,
 				E9D3DEC71E87CFC800555687 /* TGestorRecursos.hpp in Headers */,
 				E9D3DED61E87D05700555687 /* SkyLuz.hpp in Headers */,
 				E9D3DEDA1E87D06800555687 /* SkyWindow.hpp in Headers */,

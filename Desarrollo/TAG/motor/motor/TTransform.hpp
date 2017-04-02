@@ -19,11 +19,11 @@ public:
 	void cargar(glm::mat4 &m);
 	void trasponer();
 	
-	void setPosicion(glm::vec3 pos);
-	void setRotacion(glm::vec3 rot);
-	void trasladar(glm::vec3 pos);
-	void rotar(glm::vec3 rot);
-	void escalar(glm::vec3 esc);
+	void setPosicion(dvector3D &pos);
+	void setRotacion(dvector3D &rot);
+	void trasladar(dvector3D &pos);
+	void rotar(dvector3D &rot);
+	void escalar(dvector3D &esc);
 	
 	glm::mat4 getMT() { return matriz; }
 	void beginDraw();

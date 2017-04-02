@@ -50,9 +50,9 @@ void TLuz::Draw(TNodo* n){
 	glUniform3f(glGetUniformLocation(sh->Program, "light.position"), pos.x, pos.y, pos.z);
 	
 	//propiedades de la luz
-	glUniform3f(glGetUniformLocation(sh->Program, "light.ambient"),   lambient, lambient, lambient);
-	glUniform3f(glGetUniformLocation(sh->Program, "light.diffuse"),   ldiffuse, ldiffuse, ldiffuse);
-	glUniform3f(glGetUniformLocation(sh->Program, "light.specular"),  lspecular, lspecular, lspecular);
+	glUniform3f(glGetUniformLocation(sh->Program, "light.ambient"), lambient, lambient, lambient);
+	glUniform3f(glGetUniformLocation(sh->Program, "light.diffuse"), ldiffuse, ldiffuse, ldiffuse);
+	glUniform3f(glGetUniformLocation(sh->Program, "light.specular"), lspecular, lspecular, lspecular);
 	glUniform1f(glGetUniformLocation(sh->Program, "light.constant"),  1.0f);
 	glUniform1f(glGetUniformLocation(sh->Program, "light.linear"),    0.09);
 	glUniform1f(glGetUniformLocation(sh->Program, "light.quadratic"), 0.032);

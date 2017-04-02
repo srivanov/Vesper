@@ -22,11 +22,11 @@ TMalla::~TMalla(){
 	gestor = nullptr;
 }
 
-void TMalla::cargarMalla(std::string fichero){
+void TMalla::cargarMalla(char* fichero){
 	malla = static_cast<TRecursoMalla*>(gestor->getRecurso(fichero, tRMalla));
 }
 
-void TMalla::setTextura(std::string &fichero){
+void TMalla::setTextura(char* fichero){
 	malla->setTexture(fichero);
 }
 

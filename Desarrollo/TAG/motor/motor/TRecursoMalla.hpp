@@ -24,7 +24,7 @@ public:
 	~TRecursoMalla();
 	void cargarFichero(std::string &ruta);
 	void Draw(Shader *shader);
-	void setTexture(std::string &ruta);
+	void setTexture(char* ruta);
 	void imprimirDatos();
 //	void asignarMatrix(glm::mat4 *m);
 private:
@@ -33,7 +33,7 @@ private:
 	Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
 	void loadMaterialTextures(Texture **tex, aiMaterial* mat, aiTextureType type, std::string typeName, int &index);
 	
-	Texture* pedirTextura(std::string &ruta);
+	Texture* pedirTextura(char* ruta);
 	
 //	std::vector<Mesh*> meshes;
 	Mesh* meshes[10];

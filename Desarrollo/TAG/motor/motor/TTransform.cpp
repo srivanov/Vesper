@@ -28,21 +28,25 @@ void TTransform::trasponer(){
 	matriz = glm::transpose(matriz);
 }
 
-void TTransform::setPosicion(glm::vec3 pos){
-	matriz = glm::translate(glm::mat4(1.0f), pos);
+void TTransform::setPosicion(dvector3D &pos){
+	glm::vec3 p = glmConv::v3d2glm(pos);
+	matriz = glm::translate(glm::mat4(1.0f), p);
 }
 
-void TTransform::trasladar(glm::vec3 pos){
-	matriz = glm::translate(matriz, pos);
+void TTransform::trasladar(dvector3D &pos){
+	glm::vec3 p = glmConv::v3d2glm(pos);
+	matriz = glm::translate(matriz, p);
 }
 
-void TTransform::setRotacion(glm::vec3 rot){
+void TTransform::setRotacion(dvector3D &rot){
 	glm::mat4 m(1.0f);
-	aplicarRotacion(m, rot);
+	glm::vec3 r = glmConv::v3d2glm(rot);
+	aplicarRotacion(m, r);
 }
 
-void TTransform::rotar(glm::vec3 rot){
-	aplicarRotacion(matriz, rot);
+void TTransform::rotar(dvector3D &rot){
+	glm::vec3 r = glmConv::v3d2glm(rot);
+	aplicarRotacion(matriz, r);
 }
 
 void TTransform::aplicarRotacion(const glm::mat4 &m, glm::vec3 &rot){
@@ -56,8 +60,9 @@ void TTransform::aplicarRotacion(const glm::mat4 &m, glm::vec3 &rot){
 		matriz = glm::rotate(m, glm::radians(rot.x), glm::vec3(1.0f, 0.0f, 0.0f));
 }
 
-void TTransform::escalar(glm::vec3 esc){
-	matriz = glm::scale(matriz, esc);
+void TTransform::escalar(dvector3D &esc){
+	glm::vec3 e = glmConv::v3d2glm(esc);
+	matriz = glm::scale(matriz, e);
 }
 
 void TTransform::beginDraw(){

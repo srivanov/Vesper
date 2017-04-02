@@ -20,8 +20,8 @@ class TMalla : public TEntidad{
 public:
 	TMalla();
 	~TMalla();
-	void cargarMalla(std::string fichero);
-	void setTextura(std::string &fichero);
+	void cargarMalla(char* fichero);
+	void setTextura(char* fichero);
 	
 	
 	void beginDraw();

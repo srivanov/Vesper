@@ -25,7 +25,7 @@ TGestorRecursos::~TGestorRecursos(){
 	recursos.clear();
 }
 
-TRecurso* TGestorRecursos::getRecurso(std::string &name, typeRecurso tipo){
+TRecurso* TGestorRecursos::getRecurso(std::string name, typeRecurso tipo){
 	TRecurso* rec = buscarRecurso(name, tipo);
 	if(rec == NULL){
 		if(tipo == tRMalla)

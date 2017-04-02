@@ -22,8 +22,8 @@ public:
 	SkyMalla(TNodo* padre, tipoMalla t);
 	~SkyMalla();
 	
-	void setMalla(std::string fichero);
-	void setTextura(std::string &fichero);
+	void setMalla(char* fichero);
+	void setTextura(char* fichero);
 	
 private:
 	TMalla* m_malla;

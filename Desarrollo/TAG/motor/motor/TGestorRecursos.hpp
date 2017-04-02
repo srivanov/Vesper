@@ -18,7 +18,7 @@ class TGestorRecursos{
 public:
 	static TGestorRecursos* Instance();
 	virtual ~TGestorRecursos();
-	TRecurso* getRecurso(std::string &name, typeRecurso tipo);
+	TRecurso* getRecurso(std::string name, typeRecurso tipo);
 	
 protected:
 	TGestorRecursos();

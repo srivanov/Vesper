@@ -18,7 +18,7 @@ SkyCamara::SkyCamara(TNodo* padre, int ID){
 	TransNodos[0]->addHijo(nodo);
 	padre->addHijo(TransNodos[2]);
 	
-	glm::mat4 m = glm::lookAt(glmConverter(posicion), glmConverter(posicion+front), glm::vec3(0,1,0));
+	glm::mat4 m = glm::lookAt(glmConv::v3d2glm(posicion), glmConv::v3d2glm(posicion+front), glm::vec3(0,1,0));
 	Trans[0]->cargar(m);
 }
 
@@ -42,12 +42,12 @@ void SkyCamara::setFarValue(float f){
 //	return std::sqrt((p.x*p.x)+(p.y*p.y)+(p.z*p.z));
 //}
 
-void SkyCamara::setCamTarget(dvector3D tar){
+void SkyCamara::setCamTarget(dvector3D &tar){
 	camTarget = tar;
 	rotateToTarget(camTarget);
 }
 
-void SkyCamara::rotateToTarget(dvector3D tar){
+void SkyCamara::rotateToTarget(dvector3D &tar){
 //	dvector3D TC = tar-posicion;
 //	dvector3D a = front-posicion;
 //	
@@ -73,7 +73,7 @@ void SkyCamara::rotateToTarget(dvector3D tar){
 //	dvector3D rfinal(0,resX,0);
 //	rotar(rfinal);
 	
-	glm::mat4 m = glm::lookAt(glmConverter(posicion), glmConverter(tar), glm::vec3(0,1,0));
+	glm::mat4 m = glm::lookAt(glmConv::v3d2glm(posicion), glmConv::v3d2glm(tar), glm::vec3(0,1,0));
 	m = glm::inverse(m);
 	m[3] = glm::vec4(0,0,0,1);
 	Trans[0]->cargar(m);

@@ -166,7 +166,7 @@ void TRecursoMalla::loadMaterialTextures(Texture **tex, aiMaterial *mat, aiTextu
 		mat->GetTexture(type, i, &str);
 		std::string dir = directorio+'/'+str.C_Str();
 //		textures.push_back(pedirTextura(dir));
-		tex[index] = pedirTextura(dir);
+		tex[index] = pedirTextura((char*)dir.c_str());
 		index++;
 	}
 //	textures.shrink_to_fit();
@@ -192,14 +192,14 @@ void TRecursoMalla::imprimirDatos(){
 		std::cout << "Coordenadas de textura: False" << std::endl;
 }
 
-void TRecursoMalla::setTexture(std::string &ruta){
+void TRecursoMalla::setTexture(char* ruta){
 //	meshes.at(0).texturas.clear();
 //	meshes.at(0).texturas.push_back(pedirTextura(ruta));
 //	meshes.at(0)->texturas[0] = pedirTextura(ruta);
 	meshes[0]->texturas[0] = pedirTextura(ruta);
 }
 
-Texture* TRecursoMalla::pedirTextura(std::string &ruta){
+Texture* TRecursoMalla::pedirTextura(char* ruta){
 	return static_cast<TRecursoTextura*>(gestor->getRecurso(ruta, tRTextura))->getTexture();
 }
 

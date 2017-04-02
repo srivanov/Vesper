@@ -23,10 +23,10 @@ SkyMalla::~SkyMalla(){
 	
 }
 
-void SkyMalla::setMalla(std::string fichero){
+void SkyMalla::setMalla(char* fichero){
 	m_malla->cargarMalla(fichero);
 }
 
-void SkyMalla::setTextura(std::string &fichero){
+void SkyMalla::setTextura(char* fichero){
 	m_malla->setTextura(fichero);
 }
