@@ -66,6 +66,16 @@
 		63D124381E857AA500D1B380 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124341E857AA500D1B380 /* Level.cpp */; };
 		63D124391E857AA500D1B380 /* loadLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124361E857AA500D1B380 /* loadLevel.cpp */; };
 		63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */; };
+		8803D8621E911B5B00A528A6 /* CreditosLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D84C1E911B5B00A528A6 /* CreditosLayout.cpp */; };
+		8803D8631E911B5B00A528A6 /* ElegirPersonaje.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D84E1E911B5B00A528A6 /* ElegirPersonaje.cpp */; };
+		8803D8641E911B5B00A528A6 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D8501E911B5B00A528A6 /* GUI.cpp */; };
+		8803D8651E911B5B00A528A6 /* HUDLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D8531E911B5B00A528A6 /* HUDLayout.cpp */; };
+		8803D8661E911B5B00A528A6 /* LayoutGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D8551E911B5B00A528A6 /* LayoutGUI.cpp */; };
+		8803D8671E911B5B00A528A6 /* LayoutInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D8571E911B5B00A528A6 /* LayoutInterface.cpp */; };
+		8803D8681E911B5B00A528A6 /* MenuPrincipalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D8591E911B5B00A528A6 /* MenuPrincipalLayout.cpp */; };
+		8803D8691E911B5B00A528A6 /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D85B1E911B5B00A528A6 /* menuPrueba.cpp */; };
+		8803D86A1E911B5B00A528A6 /* OpcionesLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D85D1E911B5B00A528A6 /* OpcionesLayout.cpp */; };
+		8803D86B1E911B5B00A528A6 /* PausaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8803D85F1E911B5B00A528A6 /* PausaLayout.cpp */; };
 		886F06351E5DF21600465532 /* example.anims in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A31E5DF21600465532 /* example.anims */; };
 		886F06361E5DF21600465532 /* GameMenu.anims in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A41E5DF21600465532 /* GameMenu.anims */; };
 		886F06371E5DF21600465532 /* Batang-18.font in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A61E5DF21600465532 /* Batang-18.font */; };
@@ -211,16 +221,6 @@
 		C1A0AF011E434BD8009699FD /* libCEGUISILLYImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEFA1E434BD8009699FD /* libCEGUISILLYImageCodec_d.dylib */; };
 		E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
 		E98661271DF99ED30028AC64 /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
-		E9898FAF1E5B757A0001A36A /* CargarPartidaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */; };
-		E9898FB01E5B757A0001A36A /* CreditosLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */; };
-		E9898FB11E5B757A0001A36A /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9E1E5B757A0001A36A /* GUI.cpp */; };
-		E9898FB21E5B757A0001A36A /* HUDLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA11E5B757A0001A36A /* HUDLayout.cpp */; };
-		E9898FB31E5B757A0001A36A /* LayoutGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA31E5B757A0001A36A /* LayoutGUI.cpp */; };
-		E9898FB41E5B757A0001A36A /* LayoutInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA51E5B757A0001A36A /* LayoutInterface.cpp */; };
-		E9898FB51E5B757A0001A36A /* MenuPrincipalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */; };
-		E9898FB61E5B757A0001A36A /* menuPrueba.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA91E5B757A0001A36A /* menuPrueba.cpp */; };
-		E9898FB71E5B757A0001A36A /* OpcionesLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */; };
-		E9898FB81E5B757A0001A36A /* PausaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */; };
 		E98990D41E5B759F0001A36A /* JSONParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D21E5B759F0001A36A /* JSONParser.cpp */; };
 		E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */; };
 		E9A346371E0416FC00E6EC25 /* gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346351E0416FC00E6EC25 /* gun.cpp */; };
@@ -380,6 +380,27 @@
 		63D124371E857AA500D1B380 /* loadLevel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = loadLevel.hpp; sourceTree = "<group>"; };
 		63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gestor_eventos.cpp; path = "Arquitectura IA/gestor_eventos.cpp"; sourceTree = "<group>"; };
 		63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gestor_eventos.hpp; path = "Arquitectura IA/gestor_eventos.hpp"; sourceTree = "<group>"; };
+		8803D84C1E911B5B00A528A6 /* CreditosLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditosLayout.cpp; sourceTree = "<group>"; };
+		8803D84D1E911B5B00A528A6 /* CreditosLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CreditosLayout.hpp; sourceTree = "<group>"; };
+		8803D84E1E911B5B00A528A6 /* ElegirPersonaje.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElegirPersonaje.cpp; sourceTree = "<group>"; };
+		8803D84F1E911B5B00A528A6 /* ElegirPersonaje.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ElegirPersonaje.hpp; sourceTree = "<group>"; };
+		8803D8501E911B5B00A528A6 /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
+		8803D8511E911B5B00A528A6 /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
+		8803D8521E911B5B00A528A6 /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIManager.h; sourceTree = "<group>"; };
+		8803D8531E911B5B00A528A6 /* HUDLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUDLayout.cpp; sourceTree = "<group>"; };
+		8803D8541E911B5B00A528A6 /* HUDLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HUDLayout.hpp; sourceTree = "<group>"; };
+		8803D8551E911B5B00A528A6 /* LayoutGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutGUI.cpp; sourceTree = "<group>"; };
+		8803D8561E911B5B00A528A6 /* LayoutGUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutGUI.hpp; sourceTree = "<group>"; };
+		8803D8571E911B5B00A528A6 /* LayoutInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutInterface.cpp; sourceTree = "<group>"; };
+		8803D8581E911B5B00A528A6 /* LayoutInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutInterface.hpp; sourceTree = "<group>"; };
+		8803D8591E911B5B00A528A6 /* MenuPrincipalLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuPrincipalLayout.cpp; sourceTree = "<group>"; };
+		8803D85A1E911B5B00A528A6 /* MenuPrincipalLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MenuPrincipalLayout.hpp; sourceTree = "<group>"; };
+		8803D85B1E911B5B00A528A6 /* menuPrueba.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menuPrueba.cpp; sourceTree = "<group>"; };
+		8803D85C1E911B5B00A528A6 /* menuPrueba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = menuPrueba.hpp; sourceTree = "<group>"; };
+		8803D85D1E911B5B00A528A6 /* OpcionesLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpcionesLayout.cpp; sourceTree = "<group>"; };
+		8803D85E1E911B5B00A528A6 /* OpcionesLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OpcionesLayout.hpp; sourceTree = "<group>"; };
+		8803D85F1E911B5B00A528A6 /* PausaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PausaLayout.cpp; sourceTree = "<group>"; };
+		8803D8601E911B5B00A528A6 /* PausaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PausaLayout.hpp; sourceTree = "<group>"; };
 		886F05A31E5DF21600465532 /* example.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.anims; sourceTree = "<group>"; };
 		886F05A41E5DF21600465532 /* GameMenu.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.anims; sourceTree = "<group>"; };
 		886F05A61E5DF21600465532 /* Batang-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Batang-18.font"; sourceTree = "<group>"; };
@@ -527,27 +548,6 @@
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
 		E98661261DF99ED30028AC64 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
-		E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CargarPartidaLayout.cpp; sourceTree = "<group>"; };
-		E9898F9B1E5B757A0001A36A /* CargarPartidaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CargarPartidaLayout.hpp; sourceTree = "<group>"; };
-		E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditosLayout.cpp; sourceTree = "<group>"; };
-		E9898F9D1E5B757A0001A36A /* CreditosLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CreditosLayout.hpp; sourceTree = "<group>"; };
-		E9898F9E1E5B757A0001A36A /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI.cpp; sourceTree = "<group>"; };
-		E9898F9F1E5B757A0001A36A /* GUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI.h; sourceTree = "<group>"; };
-		E9898FA01E5B757A0001A36A /* GUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIManager.h; sourceTree = "<group>"; };
-		E9898FA11E5B757A0001A36A /* HUDLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUDLayout.cpp; sourceTree = "<group>"; };
-		E9898FA21E5B757A0001A36A /* HUDLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HUDLayout.hpp; sourceTree = "<group>"; };
-		E9898FA31E5B757A0001A36A /* LayoutGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutGUI.cpp; sourceTree = "<group>"; };
-		E9898FA41E5B757A0001A36A /* LayoutGUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutGUI.hpp; sourceTree = "<group>"; };
-		E9898FA51E5B757A0001A36A /* LayoutInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutInterface.cpp; sourceTree = "<group>"; };
-		E9898FA61E5B757A0001A36A /* LayoutInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LayoutInterface.hpp; sourceTree = "<group>"; };
-		E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuPrincipalLayout.cpp; sourceTree = "<group>"; };
-		E9898FA81E5B757A0001A36A /* MenuPrincipalLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MenuPrincipalLayout.hpp; sourceTree = "<group>"; };
-		E9898FA91E5B757A0001A36A /* menuPrueba.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menuPrueba.cpp; sourceTree = "<group>"; };
-		E9898FAA1E5B757A0001A36A /* menuPrueba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = menuPrueba.hpp; sourceTree = "<group>"; };
-		E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpcionesLayout.cpp; sourceTree = "<group>"; };
-		E9898FAC1E5B757A0001A36A /* OpcionesLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OpcionesLayout.hpp; sourceTree = "<group>"; };
-		E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PausaLayout.cpp; sourceTree = "<group>"; };
-		E9898FAE1E5B757A0001A36A /* PausaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PausaLayout.hpp; sourceTree = "<group>"; };
 		E98990D21E5B759F0001A36A /* JSONParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONParser.cpp; sourceTree = "<group>"; };
 		E98990D31E5B759F0001A36A /* JSONParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONParser.hpp; sourceTree = "<group>"; };
 		E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = puertaInterface.cpp; sourceTree = "<group>"; };
@@ -840,6 +840,34 @@
 			name = Enemigos;
 			sourceTree = "<group>";
 		};
+		8803D8491E911B5B00A528A6 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				8803D84C1E911B5B00A528A6 /* CreditosLayout.cpp */,
+				8803D84D1E911B5B00A528A6 /* CreditosLayout.hpp */,
+				8803D84E1E911B5B00A528A6 /* ElegirPersonaje.cpp */,
+				8803D84F1E911B5B00A528A6 /* ElegirPersonaje.hpp */,
+				8803D8501E911B5B00A528A6 /* GUI.cpp */,
+				8803D8511E911B5B00A528A6 /* GUI.h */,
+				8803D8521E911B5B00A528A6 /* GUIManager.h */,
+				8803D8531E911B5B00A528A6 /* HUDLayout.cpp */,
+				8803D8541E911B5B00A528A6 /* HUDLayout.hpp */,
+				8803D8551E911B5B00A528A6 /* LayoutGUI.cpp */,
+				8803D8561E911B5B00A528A6 /* LayoutGUI.hpp */,
+				8803D8571E911B5B00A528A6 /* LayoutInterface.cpp */,
+				8803D8581E911B5B00A528A6 /* LayoutInterface.hpp */,
+				8803D8591E911B5B00A528A6 /* MenuPrincipalLayout.cpp */,
+				8803D85A1E911B5B00A528A6 /* MenuPrincipalLayout.hpp */,
+				8803D85B1E911B5B00A528A6 /* menuPrueba.cpp */,
+				8803D85C1E911B5B00A528A6 /* menuPrueba.hpp */,
+				8803D85D1E911B5B00A528A6 /* OpcionesLayout.cpp */,
+				8803D85E1E911B5B00A528A6 /* OpcionesLayout.hpp */,
+				8803D85F1E911B5B00A528A6 /* PausaLayout.cpp */,
+				8803D8601E911B5B00A528A6 /* PausaLayout.hpp */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
 		886F05A11E5DF21600465532 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1055,34 +1083,6 @@
 			path = 3d;
 			sourceTree = "<group>";
 		};
-		E9898F991E5B757A0001A36A /* GUI */ = {
-			isa = PBXGroup;
-			children = (
-				E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */,
-				E9898F9B1E5B757A0001A36A /* CargarPartidaLayout.hpp */,
-				E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */,
-				E9898F9D1E5B757A0001A36A /* CreditosLayout.hpp */,
-				E9898F9E1E5B757A0001A36A /* GUI.cpp */,
-				E9898F9F1E5B757A0001A36A /* GUI.h */,
-				E9898FA01E5B757A0001A36A /* GUIManager.h */,
-				E9898FA11E5B757A0001A36A /* HUDLayout.cpp */,
-				E9898FA21E5B757A0001A36A /* HUDLayout.hpp */,
-				E9898FA31E5B757A0001A36A /* LayoutGUI.cpp */,
-				E9898FA41E5B757A0001A36A /* LayoutGUI.hpp */,
-				E9898FA51E5B757A0001A36A /* LayoutInterface.cpp */,
-				E9898FA61E5B757A0001A36A /* LayoutInterface.hpp */,
-				E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */,
-				E9898FA81E5B757A0001A36A /* MenuPrincipalLayout.hpp */,
-				E9898FA91E5B757A0001A36A /* menuPrueba.cpp */,
-				E9898FAA1E5B757A0001A36A /* menuPrueba.hpp */,
-				E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */,
-				E9898FAC1E5B757A0001A36A /* OpcionesLayout.hpp */,
-				E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */,
-				E9898FAE1E5B757A0001A36A /* PausaLayout.hpp */,
-			);
-			path = GUI;
-			sourceTree = "<group>";
-		};
 		E9AC3A2E1DF0A9C100A91A97 = {
 			isa = PBXGroup;
 			children = (
@@ -1103,6 +1103,7 @@
 		E9AC3A391DF0A9C100A91A97 /* vesper */ = {
 			isa = PBXGroup;
 			children = (
+				8803D8491E911B5B00A528A6 /* GUI */,
 				E9026ED51E353CDE00B44AC3 /* 3d */,
 				63C4CE931E706138008295A1 /* Arquitectura IA */,
 				E9AC3A661DF0AA5000A91A97 /* components */,
@@ -1112,7 +1113,6 @@
 				E98661241DF98D140028AC64 /* Fps.hpp */,
 				E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */,
 				E9AC3AB01DF0AA5900A91A97 /* Game.hpp */,
-				E9898F991E5B757A0001A36A /* GUI */,
 				E98990D21E5B759F0001A36A /* JSONParser.cpp */,
 				E98990D31E5B759F0001A36A /* JSONParser.hpp */,
 				63D124341E857AA500D1B380 /* Level.cpp */,
@@ -1445,7 +1445,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9898FB71E5B757A0001A36A /* OpcionesLayout.cpp in Sources */,
 				63C4CE871E7060F1008295A1 /* EasyMath.cpp in Sources */,
 				63D1242F1E84155800D1B380 /* LanzaPinchos.cpp in Sources */,
 				E98661271DF99ED30028AC64 /* Fps.cpp in Sources */,
@@ -1456,8 +1455,8 @@
 				E9AC3AAC1DF0AA5000A91A97 /* salud.cpp in Sources */,
 				63C4CF141E706ABB008295A1 /* trigger_system.cpp in Sources */,
 				63C4CEA61E7061F8008295A1 /* Nodo_Secuencia.cpp in Sources */,
-				E9898FB31E5B757A0001A36A /* LayoutGUI.cpp in Sources */,
 				63C4CEE91E706249008295A1 /* Nodo_QCombatir.cpp in Sources */,
+				8803D8681E911B5B00A528A6 /* MenuPrincipalLayout.cpp in Sources */,
 				63D123FA1E84006700D1B380 /* Camera.cpp in Sources */,
 				63D124391E857AA500D1B380 /* loadLevel.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
@@ -1465,38 +1464,39 @@
 				63C4CEE71E706249008295A1 /* Nodo_QAvisado.cpp in Sources */,
 				E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */,
 				63C4CEF91E70625E008295A1 /* Nodo_RAlarma_Cercana.cpp in Sources */,
+				8803D8621E911B5B00A528A6 /* CreditosLayout.cpp in Sources */,
 				E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */,
 				E9AC3A991DF0AA5000A91A97 /* ataque.cpp in Sources */,
 				E9AC3A9D1DF0AA5000A91A97 /* component.cpp in Sources */,
+				8803D8651E911B5B00A528A6 /* HUDLayout.cpp in Sources */,
 				63D124301E84155800D1B380 /* Tanqui.cpp in Sources */,
 				63C4CEC81E70620E008295A1 /* Nodo_Mover.cpp in Sources */,
 				63C4CEC71E70620E008295A1 /* Nodo_AVigilar.cpp in Sources */,
 				63D124071E84019E00D1B380 /* PhysicObject.cpp in Sources */,
 				63C4CEEE1E706249008295A1 /* Nodo_Qhuir.cpp in Sources */,
 				63D124251E84050C00D1B380 /* Rehen.cpp in Sources */,
-				E9898FB21E5B757A0001A36A /* HUDLayout.cpp in Sources */,
-				E9898FB11E5B757A0001A36A /* GUI.cpp in Sources */,
 				63C4CF041E706623008295A1 /* GraphNode.cpp in Sources */,
 				63C4CF051E706623008295A1 /* PathPlanning.cpp in Sources */,
 				63D124161E84030800D1B380 /* Alarm.cpp in Sources */,
 				63C4CE901E706132008295A1 /* LevelBlackBoard.cpp in Sources */,
+				8803D8661E911B5B00A528A6 /* LayoutGUI.cpp in Sources */,
+				8803D8671E911B5B00A528A6 /* LayoutInterface.cpp in Sources */,
 				63C4CEEC1E706249008295A1 /* Nodo_QHablar.cpp in Sources */,
 				E9AC3AAB1DF0AA5000A91A97 /* render.cpp in Sources */,
 				E9AC3AA31DF0AA5000A91A97 /* hambre.cpp in Sources */,
 				63C4CE981E706167008295A1 /* Behaviour_tree2.cpp in Sources */,
 				63D124241E84050C00D1B380 /* Player.cpp in Sources */,
 				63C4CF031E706623008295A1 /* Graph.cpp in Sources */,
-				E9898FAF1E5B757A0001A36A /* CargarPartidaLayout.cpp in Sources */,
 				E942C0591DF1EDE600CC5763 /* ventana.cpp in Sources */,
 				63C4CEE81E706249008295A1 /* Nodo_QAyudar.cpp in Sources */,
 				63C4CEC61E70620E008295A1 /* Nodo_ARuido.cpp in Sources */,
-				E9898FB41E5B757A0001A36A /* LayoutInterface.cpp in Sources */,
 				63D124331E84235600D1B380 /* Ground.cpp in Sources */,
 				63C4CEE61E706249008295A1 /* Nodo_QAlimentarse.cpp in Sources */,
 				63D124081E84019E00D1B380 /* PlayerObjects.cpp in Sources */,
 				E9AC3A981DF0AA5000A91A97 /* armas.cpp in Sources */,
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				63C4CEC11E70620E008295A1 /* Nodo_ACurarse.cpp in Sources */,
+				8803D8641E911B5B00A528A6 /* GUI.cpp in Sources */,
 				63C4CEEB1E706249008295A1 /* Nodo_QEnemigo_QAlarma.cpp in Sources */,
 				63D124171E84030800D1B380 /* Botiquin.cpp in Sources */,
 				63C4CEA71E7061F8008295A1 /* Nodo_SecuenciaPlus.cpp in Sources */,
@@ -1511,11 +1511,12 @@
 				63D1241A1E84030800D1B380 /* Muro.cpp in Sources */,
 				63C4CEC01E70620E008295A1 /* Nodo_AAyudar.cpp in Sources */,
 				E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */,
+				8803D8691E911B5B00A528A6 /* menuPrueba.cpp in Sources */,
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,
+				8803D86B1E911B5B00A528A6 /* PausaLayout.cpp in Sources */,
 				63C4CEBE1E70620E008295A1 /* Nodo_AAlarma_Cercano.cpp in Sources */,
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				63D124191E84030800D1B380 /* Fuente.cpp in Sources */,
-				E9898FB81E5B757A0001A36A /* PausaLayout.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				63D124291E840F1500D1B380 /* ObjectFactory.cpp in Sources */,
@@ -1525,6 +1526,7 @@
 				E9AC3A9F1DF0AA5000A91A97 /* conLlave.cpp in Sources */,
 				63D124181E84030800D1B380 /* Comida.cpp in Sources */,
 				63C4CEC21E70620E008295A1 /* Nodo_AHablar.cpp in Sources */,
+				8803D86A1E911B5B00A528A6 /* OpcionesLayout.cpp in Sources */,
 				63C4CEF11E706249008295A1 /* Nodo_QRuido.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* gun.cpp in Sources */,
 				63C4CEF01E706249008295A1 /* Nodo_QPedir_Ayuda.cpp in Sources */,
@@ -1533,18 +1535,16 @@
 				63D124381E857AA500D1B380 /* Level.cpp in Sources */,
 				E98990D41E5B759F0001A36A /* JSONParser.cpp in Sources */,
 				63D124231E84050C00D1B380 /* Enemy.cpp in Sources */,
+				8803D8631E911B5B00A528A6 /* ElegirPersonaje.cpp in Sources */,
 				E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */,
 				63C4CEA51E7061F8008295A1 /* Nodo_Condicional_Secuencial.cpp in Sources */,
-				E9898FB61E5B757A0001A36A /* menuPrueba.cpp in Sources */,
 				E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */,
-				E9898FB01E5B757A0001A36A /* CreditosLayout.cpp in Sources */,
 				63C4CEC41E70620E008295A1 /* Nodo_AHuir.cpp in Sources */,
 				63C4CE911E706132008295A1 /* NpcLibrary.cpp in Sources */,
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,
 				63D124061E84019E00D1B380 /* Bala.cpp in Sources */,
 				63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */,
-				E9898FB51E5B757A0001A36A /* MenuPrincipalLayout.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

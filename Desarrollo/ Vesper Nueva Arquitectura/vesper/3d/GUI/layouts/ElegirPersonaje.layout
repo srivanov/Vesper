@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="DefaultWindow" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/Image" name="Fondo" >
+            <Property name="ID" value="1" />
+            <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
+            <Property name="Image" value="Menu/fondo_colores" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Label" name="Titulo" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,0},{0,-288},{0,340},{0,-203}}" />
+            <Property name="Text" value="Elegir Personaje" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="VerticalAlignment" value="Centre" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+        <Window type="OgreTray/Button" name="Button_volver" >
+            <Property name="ID" value="3" />
+            <Property name="Area" value="{{0,35},{0,635},{0,160},{0,677}}" />
+        </Window>
+        <Window type="OgreTray/Button" name="Button_jugar" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,1095},{0,630},{0,1221},{0,676}}" />
+        </Window>
+        <Window type="Generic/Image" name="personaje1" >
+            <Property name="Area" value="{{0,480},{0,160},{0,810},{0,600}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="personaje2" >
+            <Property name="Area" value="{{0,105},{0,185},{0,380},{0,565}}" />
+            <Property name="Image" value="Menu/silueta3" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="personaje3" >
+            <Property name="Area" value="{{0,925},{0,185},{0,1200},{0,565}}" />
+            <Property name="Image" value="Menu/silueta4" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="imagen_volver" >
+            <Property name="Area" value="{{0,36},{0,642},{0,159},{0,670}}" />
+            <Property name="Image" value="Menu/boton_volver" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="imagen_jugar" >
+            <Property name="Area" value="{{0,1099},{0,638},{0,1222},{0,666}}" />
+            <Property name="Image" value="Menu/boton_jugar" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

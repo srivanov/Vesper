@@ -62,6 +62,7 @@ OpcionesLayout::OpcionesLayout(){
     
     button_guardar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(17));
     button_guardar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickGuardar, this));
+    button_guardar->hide();
     
     // TO DO: Hacer un metodo que ponga los controles segun los datos que ponga en el archivo JSON
     setControles();
@@ -80,24 +81,24 @@ tLayout OpcionesLayout::getLayout() {
 }
 
 void OpcionesLayout::onClickControles(const CEGUI::EventArgs &e) {
-    printf("Pulsado boton controles");
     contenedor_pantalla->hide();
     contenedor_sonido->hide();
     contenedor_controles->show();
+    button_guardar->hide();
 }
 
 void OpcionesLayout::onClickSonido(const CEGUI::EventArgs &e) {
-    printf("Pulsado boton sonido");
     contenedor_pantalla->hide();
     contenedor_sonido->show();
     contenedor_controles->hide();
+    button_guardar->show();
 }
 
 void OpcionesLayout::onClickPantalla(const CEGUI::EventArgs &e) {
-    printf("Pulsado boton pantalla");
     contenedor_pantalla->show();
     contenedor_sonido->hide();
     contenedor_controles->hide();
+    button_guardar->show();
 }
 
 void OpcionesLayout::onClickVolver(const CEGUI::EventArgs &e) {

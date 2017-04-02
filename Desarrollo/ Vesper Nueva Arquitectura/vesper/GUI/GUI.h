@@ -16,7 +16,8 @@ enum tLayout {
     tOpcionesLayout,
     tCreditosLayout,
     tHUD,
-    tPausa
+    tPausa,
+    tElegirPersonaje
 };
 
 struct vec4f{

@@ -12,11 +12,11 @@
 #include <stdio.h>
 #include "GUI.h"
 #include "MenuPrincipalLayout.hpp"
-#include "CargarPartidaLayout.hpp"
 #include "OpcionesLayout.hpp"
 #include "CreditosLayout.hpp"
 #include "HUDLayout.hpp"
 #include "PausaLayout.hpp"
+#include "ElegirPersonaje.hpp"
 #include <vector>
 
 class LayoutGUI {

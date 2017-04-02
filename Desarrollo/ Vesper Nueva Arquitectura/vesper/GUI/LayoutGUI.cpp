@@ -18,11 +18,6 @@ LayoutGUI::LayoutGUI(){
     seleccionado = aux;
     vector.push_back(aux);
     
-    aux = new CargarPartidaLayout();
-    aux->ocultar();
-    aux->setPadre(this);
-    vector.push_back(aux);
-    
     aux = new OpcionesLayout();
     aux->ocultar();
     aux->setPadre(this);
@@ -39,6 +34,11 @@ LayoutGUI::LayoutGUI(){
     vector.push_back(aux);
     
     aux = new PausaLayout();
+    aux->ocultar();
+    aux->setPadre(this);
+    vector.push_back(aux);
+    
+    aux = new ElegirPersonaje();
     aux->ocultar();
     aux->setPadre(this);
     vector.push_back(aux);

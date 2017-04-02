@@ -32,8 +32,8 @@ void MenuPrincipalLayout::inicializar() {
     button_nueva = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(3));
     button_nueva->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickStartGame, this));
     
-    button_cargar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(4));
-    button_cargar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickLoadScreen, this));
+	button_cargarpartida = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(4));
+    button_cargarpartida->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickLoadScreen, this));
     
     button_opciones = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(5));
     button_opciones->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickOptions, this));
@@ -43,6 +43,7 @@ void MenuPrincipalLayout::inicializar() {
     
     button_salir = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(7));
     button_salir->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&MenuPrincipalLayout::onClickStopGame, this));
+
     
     static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(1))->moveToBack();
 }
@@ -54,16 +55,14 @@ tLayout MenuPrincipalLayout::getLayout() {
 void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
     // TO DO: que lleve a empezar nueva partida
     printf("Empieza una nueva partida");
-	Game::Instance()->setPausa(false);
-    padre->setActiveLayout(tPausa);
+//	Game::Instance()->setPausa(false);
+//    padre->setActiveLayout(tPausa);
+    padre->setActiveLayout(tElegirPersonaje);
 	
 }
 
 void MenuPrincipalLayout::onClickLoadScreen(const CEGUI::EventArgs &e){
-    //TO DO: que lleve a la pantalla de cargar partida
-//    layout = tCargarPartidaLayout; // Estado 1 = CargarPartida
-    padre->setActiveLayout(tCargarPartidaLayout);
-    printf("Voy a la pantalla cargar partida");
+    padre->setActiveLayout(tElegirPersonaje);
 }
 
 void MenuPrincipalLayout::onClickOptions(const CEGUI::EventArgs &e){
@@ -88,5 +87,10 @@ void MenuPrincipalLayout::onClickStopGame(const CEGUI::EventArgs &e){
 
 void MenuPrincipalLayout::onClickPausa(const CEGUI::EventArgs &e) {
     padre->setActiveLayout(tPausa);
+}
+
+void MenuPrincipalLayout::onClickElegirPersonaje(const CEGUI::EventArgs &e) {
+    printf("estoy en elegir personaje");
+    padre->setActiveLayout(tElegirPersonaje);
 }
 
