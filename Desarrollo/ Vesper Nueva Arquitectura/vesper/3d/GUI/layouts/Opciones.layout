@@ -7,75 +7,87 @@
         <Window type="Generic/Image" name="background" >
             <Property name="ID" value="1" />
             <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
-            <Property name="Image" value="Menu/fondo_ajustes" />
+            <Property name="Image" value="Menu/fondo2" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
         <Window type="Generic/Image" name="contenedor" >
             <Property name="ID" value="2" />
             <Property name="Area" value="{{0,-90},{0,50},{0,210},{0,400}}" />
-            <Property name="Image" value="Menu/crema" />
+            <Property name="Image" value="OgreTrayImages/TrayM" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="VerticalAlignment" value="Centre" />
             <Property name="HorizontalAlignment" value="Right" />
             <Window type="OgreTray/Button" name="button_sonido" >
                 <Property name="ID" value="4" />
-                <Property name="Area" value="{{0,15},{0,140},{0,285},{0,175}}" />
-                <Property name="Text" value="Sonido" />
+                <Property name="Area" value="{{0,15},{0,140},{0,285},{0,190}}" />
             </Window>
             <Window type="OgreTray/Button" name="button_pantalla" >
                 <Property name="ID" value="5" />
-                <Property name="Area" value="{{0,15},{0,205},{0,285},{0,240}}" />
-                <Property name="Text" value="Pantalla" />
+                <Property name="Area" value="{{0,15},{0,230},{0,285},{0,280}}" />
             </Window>
             <Window type="OgreTray/Button" name="button_controles" >
                 <Property name="ID" value="3" />
-                <Property name="Area" value="{{0,1},{0,76},{0,269},{0,110}}" />
-                <Property name="Text" value="Controles" />
+                <Property name="Area" value="{{0,-1},{0,55},{0,267},{0,104}}" />
                 <Property name="HorizontalAlignment" value="Centre" />
+            </Window>
+            <Window type="Generic/Image" name="imagen_controles" >
+                <Property name="Area" value="{{0,50},{0,65},{0,245},{0,95}}" />
+                <Property name="Image" value="Menu/boton_controles" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="imagen_sonido" >
+                <Property name="Area" value="{{0,0},{0,150},{0,170},{0,175}}" />
+                <Property name="Image" value="Menu/boton_sonido" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+                <Property name="HorizontalAlignment" value="Centre" />
+            </Window>
+            <Window type="Generic/Image" name="imagen_pantalla" >
+                <Property name="Area" value="{{0,60},{0,240},{0,245},{0,270}}" />
+                <Property name="Image" value="Menu/boton_pantalla" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
             </Window>
         </Window>
         <Window type="OgreTray/Button" name="button_volver" >
             <Property name="ID" value="6" />
-            <Property name="Area" value="{{0,50},{0,635},{0,146},{0,667}}" />
-            <Property name="Text" value="Volver" />
+            <Property name="Area" value="{{0,31},{0,627},{0,155},{0,667}}" />
         </Window>
         <Window type="OgreTray/Label" name="label_ajustes" >
             <Property name="ID" value="7" />
-            <Property name="Area" value="{{0,125},{0,55},{0,655},{0,150}}" />
+            <Property name="Area" value="{{0,400},{0,45},{0,930},{0,140}}" />
             <Property name="Text" value="AJUSTES" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="Generic/Image" name="contenedor_pantalla" >
             <Property name="ID" value="8" />
-            <Property name="Area" value="{{0,170},{0,208},{0,488},{0,514}}" />
-            <Property name="Image" value="Menu/crema" />
+            <Property name="Area" value="{{0,170},{0,208},{0,492},{0,580}}" />
+            <Property name="Image" value="OgreTrayImages/TrayM" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Window type="OgreTray/Button" name="Button" >
                 <Property name="ID" value="9" />
-                <Property name="Area" value="{{0,65},{0,65},{0,220},{0,97}}" />
+                <Property name="Area" value="{{0,80},{0,60},{0,235},{0,97}}" />
                 <Property name="Text" value="Resolución 800x600" />
             </Window>
             <Window type="OgreTray/Button" name="Button2" >
                 <Property name="ID" value="10" />
-                <Property name="Area" value="{{0,70},{0,215},{0,220},{0,252}}" />
+                <Property name="Area" value="{{0,80},{0,215},{0,235},{0,252}}" />
                 <Property name="Text" value="Resolución 1280x1024" />
             </Window>
             <Window type="OgreTray/Button" name="Button3" >
                 <Property name="ID" value="16" />
-                <Property name="Area" value="{{0,65},{0,140},{0,215},{0,177}}" />
+                <Property name="Area" value="{{0,80},{0,140},{0,235},{0,177}}" />
                 <Property name="Text" value="Resolución 1280x720" />
             </Window>
         </Window>
         <Window type="Generic/Image" name="contenedor_sonido" >
             <Property name="ID" value="11" />
-            <Property name="Area" value="{{0,170},{0,208},{0,488},{0,514}}" />
-            <Property name="Image" value="Menu/crema" />
+            <Property name="Area" value="{{0,170},{0,208},{0,490},{0,580}}" />
+            <Property name="Image" value="OgreTrayImages/TrayM" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Window type="Generic/Label" name="Label" >
                 <Property name="ID" value="12" />
                 <Property name="Area" value="{{0,86},{0,64},{0,214},{0,96}}" />
-                <Property name="Text" value="Sonido" />
+                <Property name="Text" value="Audio" />
                 <Property name="MaxSize" value="{{1,0},{1,0}}" />
             </Window>
             <Window type="Generic/Label" name="Label2" >
@@ -87,27 +99,36 @@
             <Window type="AlfiskoSkin/HorizontalSlider" name="HorizontalSlider" >
                 <Property name="ID" value="14" />
                 <Property name="Area" value="{{0,35},{0,220},{0,291},{0,252}}" />
-                <Property name="CurrentValue" value="100" />
+                <Property name="CurrentValue" value="1" />
                 <Property name="MaximumValue" value="100" />
                 <Property name="ClickStepSize" value="1" />
             </Window>
             <Window type="OgreTray/Checkbox" name="Checkbox" >
                 <Property name="ID" value="18" />
                 <Property name="Area" value="{{0,85},{0,100},{0,213},{0,132}}" />
-                <Property name="Text" value="Sonido" />
+                <Property name="Text" value="Encendido" />
                 <Property name="Selected" value="true" />
             </Window>
         </Window>
         <Window type="Generic/Image" name="contenedor_controles" >
             <Property name="ID" value="15" />
-            <Property name="Area" value="{{0,170},{0,208},{0,488},{0,514}}" />
-            <Property name="Image" value="Menu/crema" />
+            <Property name="Area" value="{{0,170},{0,208},{0,490},{0,580}}" />
+            <Property name="Image" value="OgreTrayImages/TrayM" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="OgreTray/Button" name="guardar" >
             <Property name="ID" value="17" />
-            <Property name="Area" value="{{0,630},{0,430},{0,726},{0,462}}" />
-            <Property name="Text" value="GUARDAR" />
+            <Property name="Area" value="{{0,270},{0,495},{0,396},{0,537}}" />
+        </Window>
+        <Window type="Generic/Image" name="imagen_volver" >
+            <Property name="Area" value="{{0,30},{0,632},{0,153},{0,660}}" />
+            <Property name="Image" value="Menu/boton_volver" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="imagen_guardar" >
+            <Property name="Area" value="{{0,289},{0,503},{0,380},{0,529}}" />
+            <Property name="Image" value="Menu/boton_guardar" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
     </Window>
 </GUILayout>
