@@ -41,7 +41,6 @@ void gun::update(){
     iter = balas.begin();
     while (iter != balas.end()){
         bala_aux = *iter;
-//        bala_aux->mover(*bala_aux->getDireccion());
         bala_aux->update();
         if(bala_aux->Eliminable()){
             delete bala_aux;
@@ -87,9 +86,7 @@ void gun::setMunicion(unsigned int n){
 	cualidad.municion = n;
 }
 
-typeArma const* gun::getType(){
-    return &cualidad.tipo;
-}
+typeArma const* gun::getType(){return &cualidad.tipo;}
 
 void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
     //TO DO: Hacer la gestion de las balas en la clase bala

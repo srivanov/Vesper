@@ -29,15 +29,12 @@ public:
     std::vector<dvector3D> getCamino();
     void add_node(GraphNode*);
     void disable_node(int ID);
-    std::vector<GraphNode*> getNodes() const{return camino;}
-    void rebuild(NodeOpenBag*);
-    std::vector<GraphNode*> getDescartes() const {return descartes;}
+    std::vector<GraphNode*> getNodes(){return camino;}
     GraphNode * lastNode();
     bool HasNode(int& ID);
     void clean();
     NodeOpenBag();
     ~NodeOpenBag();
-    void PassDescartes(NodeOpenBag *);
 };
 
 
