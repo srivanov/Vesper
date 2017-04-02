@@ -30,16 +30,13 @@ public:
 	void setID(int id) { ID = id; }
 	int getID(){ return ID; }
     
-    void setAmbient (float lamb){lambient = lamb;}
-    float getAmbient(){return lambient;}
-    
-    void setDiffuse(float ldif){ldiffuse = ldif;}
-    float getDiffuse(){return ldiffuse;}
-    
-    void setSpecular(float spec){lspecular = spec;}
-    float getSpecular(){return lspecular;}
+    void setAmbient (float lamb) {lambient = lamb;}
+	void setSpecular(float spec) {lspecular = spec;}
+	void setDiffuse(float ldif) {ldiffuse = ldif;}
 	
-    
+	float getAmbient(){return lambient;}
+    float getDiffuse(){return ldiffuse;}
+	float getSpecular(){return lspecular;}
 
 	void Draw(TNodo* n);
 	void beginDraw(){}

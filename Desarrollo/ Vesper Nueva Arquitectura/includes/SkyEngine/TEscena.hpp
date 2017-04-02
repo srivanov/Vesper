@@ -15,7 +15,6 @@ public:
 	~TEscena();
 	void Draw();
 	void update();
-	void girar(glm::vec3 mov);
 	void imprime();
 		
 //	TNodo* getActiveCamera();

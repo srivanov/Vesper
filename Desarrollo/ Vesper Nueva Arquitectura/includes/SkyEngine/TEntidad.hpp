@@ -14,6 +14,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Pila.h"
+#include "glmConverter.h"
 
 class TEntidad{
 public:
@@ -22,6 +23,7 @@ public:
 	virtual void beginDraw()=0;
 	virtual void endDraw()=0;
 	virtual glm::mat4 getMT(){return glm::mat4();};
+	
 };
 
 #endif /* TEntidad_hpp */

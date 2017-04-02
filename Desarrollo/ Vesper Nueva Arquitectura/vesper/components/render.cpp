@@ -62,8 +62,7 @@ void render::setNodeTexture(char* filename){
 	if(nodo != NULL){
 //		nodo->_setMaterialFlag(EMF_LIGHTING, false);
 //		nodo->_setMaterialTexture(ventana::Instance()->getDriver()->getTexture(filename));
-		std::string s = filename;
-		nodo->setTextura(s);
+		nodo->setTextura(filename);
 	}
 }
 
@@ -129,7 +128,8 @@ void render::addCamera(dvector3D &p, dvector3D &l){
 	SkyLuz* luz = engine->crearLuz(NULL);
 	luz->_setAmbient(60);
 	luz->_setDiffuse(10);
-	luz->setPosicion(dvector3D(25,25,5));
+	dvector3D c(25,25,5);
+	luz->setPosicion(c);
 }
 
 void render::closeWindow(){
@@ -147,10 +147,11 @@ void render::CreateGround(int alto, int ancho){
 //	nodo_suelo->setTextura(s);
 //    nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
 //    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
-	
-    nodo_suelo->setPosicion(dvector3D((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
+	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5);
+    nodo_suelo->setPosicion(m);
 //    nodo_suelo->setRotacion(dvector3D(90,0,90));
-	nodo_suelo->escalar(dvector3D(ancho,alto/2.f, 0.1));
+	m = dvector3D(ancho,alto/2.f, 0.1);
+	nodo_suelo->escalar(m);
 	
 }
 
@@ -163,7 +164,7 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 
 //	ISceneNode* nodo;
 	SkyMalla* node;
-	std::string s = "3d/rocas.jpg";
+	char* s = "3d/rocas.jpg";
     
 
     int h1 = altoMapa;
@@ -181,7 +182,8 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 			nodo->setTextura(s);
 //            nodo->setMaterialFlag(EMF_LIGHTING, false);
 //            nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
-            nodo->setPosicion(dvector3D(x,y,0));
+			dvector3D m(x,y,0);
+			nodo->setPosicion(m);
             //std::cout << x << "|" << y << std::endl;
         }
     }
@@ -195,7 +197,7 @@ void render::setCamPos(dvector3D &pos){
 }
 
 dvector3D* render::getCamPos(){
-	dvector3D getcam(camara->getPosicion());
+	dvector3D getcam(*camara->getPosicion());
 	
 	return &getcam;
 //    return &getcam;
