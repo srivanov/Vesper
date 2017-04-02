@@ -34,7 +34,7 @@ public:
 	bool destruir;
 	void* renderTarget;
 private:
-	states() { estado = PLAYING; destruir = false; nextState=PLAYING;}
+	states() { estado = MENU; destruir = false; /*nextState=PLAYING;*/}
 	estados estado;
 };
 

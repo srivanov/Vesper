@@ -8,7 +8,7 @@
 //#include "CEGUI/RendererModules/Irrlicht/Renderer.h"
 
 #include "../estados/estados.h"
-#include "../MyEventReceiver.hpp"
+#include <SkyEngine/InputManager.h>
 
 struct vec4f{
 	float x, y, z, w;
@@ -16,7 +16,7 @@ struct vec4f{
 
 class GUI {
 public:
-    GUI(){ eventManager = MyEventReceiver::Instance(); actualState = states::Instance(); }
+    GUI(){ eventManager = InputManager::Instance(); actualState = states::Instance(); }
     virtual void init(CEGUI::RenderTarget* target);
     void destroy();
     void draw();
@@ -35,12 +35,12 @@ public:
     void showMouseCursor(bool show);
     void setMouseCursor(const std::string& mouse);
     
-    CEGUI::Key::Scan irrlichtToCeguiKey(irr::EKEY_CODE key);
-    
-    void injectKeyDown(irr::EKEY_CODE key);
-    
-    void injectKeyUp(irr::EKEY_CODE key);
-    
+//    CEGUI::Key::Scan irrlichtToCeguiKey(irr::EKEY_CODE key);
+//    
+//    void injectKeyDown(irr::EKEY_CODE key);
+//    
+//    void injectKeyUp(irr::EKEY_CODE key);
+	
     void injectMousePosition(const dvector2D *pos);
     
     void injectLeftMouseButton() {
@@ -71,7 +71,7 @@ public:
 protected:
     bool activo;
     states* actualState;
-    MyEventReceiver* eventManager;
+    InputManager* eventManager;
 private:
     CEGUI::OpenGL3Renderer* m_renderer;
     //CEGUI::IrrlichtRenderer* m_rendererIrrlicht;

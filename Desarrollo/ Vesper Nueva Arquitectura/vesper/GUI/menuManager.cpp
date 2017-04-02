@@ -39,12 +39,19 @@ void menuManager::update(){
 	seleccionado = menus.at(actualState->menu);
 	
 	seleccionado->update();
+	if(InputManager::Instance()->isPressed(SKY_KEY_0))
+		actualState->nextState = PLAYING;
 }
 
 void menuManager::render(){
-//    m_IrrlichtRenderer->beginRendering();
-//	seleccionado->render();
-//    m_IrrlichtRenderer->endRendering();
+	glDisable(GL_DEPTH_TEST);
+    m_IrrlichtRenderer->beginRendering();
+	seleccionado->render();
+    m_IrrlichtRenderer->endRendering();
+	glDisable(GL_SCISSOR_TEST);
+	//glDepthFunc(GL_NEVER);
+ 
+	glEnable(GL_DEPTH_TEST);
 }
 
 void menuManager::InitRenderer(){
@@ -74,6 +81,7 @@ void menuManager::InitRenderer(){
         CEGUI::WidgetLookManager::setDefaultResourceGroup("looknfeels");
         CEGUI::WindowManager::setDefaultResourceGroup("layouts");
         CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
+		
         m_target = &m_IrrlichtRenderer->getDefaultRenderTarget();
 		states::Instance()->renderTarget = m_target;
     }

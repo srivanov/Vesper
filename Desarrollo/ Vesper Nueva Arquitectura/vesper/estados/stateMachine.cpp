@@ -14,7 +14,7 @@ stateMachine::stateMachine(){
 }
 
 void stateMachine::Init() {
-//    menusManager.Init();
+    menusManager.Init();
     if(!nivelazo.inicializar("3"))
 		exit(0);
 }
