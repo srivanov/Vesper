@@ -24,13 +24,17 @@ public:
 		posicion += vector;
 	}
 	virtual void setPosicion(dvector3D &vector) {
-		Trans[2]->setPosicion(vector);
-		posicion = vector;
+		if(posicion != vector){
+			Trans[2]->setPosicion(vector);
+			posicion = vector;
+		}
 	}
 	
 	virtual void setRotacion(dvector3D &vector) {
-		Trans[0]->setRotacion(vector);
-		rotacion = vector;
+		if(rotacion != vector){
+			Trans[0]->setRotacion(vector);
+			rotacion = vector;
+		}
 	}
 	
 	virtual dvector3D* getPosicion() { return &posicion; }
