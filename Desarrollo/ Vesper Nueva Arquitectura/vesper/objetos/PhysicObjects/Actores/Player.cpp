@@ -25,10 +25,11 @@ Player::Player(){
 	((habilidadEspecial*)componente)->setTipo(tHabINVISIBLE);
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
     componente->setFather(this);
-    addNodo("3d/sphere.3ds");
-    setTexture("3d/texture.png");
-    
+    addNodo("3d/sphere.obj");
+//    setTexture("3d/bombahumo.png");
+	
     vida = 100;
+	input = InputManager::Instance();
 }
 
 Player::~Player(){
@@ -50,24 +51,25 @@ void Player::update(){
         
     }
      */
-//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP))
-//		vel.y += VELOCIDADN;
-//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN))
-//		vel.y += -VELOCIDADN;
-//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT))
-//		vel.x += -VELOCIDADN;
-//	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_RIGHT))
-//		vel.x += VELOCIDADN;
-//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_N))
-//        atacar();
-//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_TAB))
-//       cambiarArma();
-//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_E))
-//        changeActiveKey();
-//    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_M))
-//        vel*=2;
-//	mover(vel);
-    
+	
+	if(input->isPressed(SKY_KEY_UP))
+		vel.y += VELOCIDADN;
+	if(input->isPressed(SKY_KEY_DOWN))
+		vel.y += -VELOCIDADN;
+	if(input->isPressed(SKY_KEY_LEFT))
+		vel.x += VELOCIDADN;
+	if(input->isPressed(SKY_KEY_RIGHT))
+		vel.x += -VELOCIDADN;
+    if(input->isPressed(SKY_KEY_N))
+        atacar();
+    if(input->isPressed(SKY_KEY_TAB))
+       cambiarArma();
+    if(input->isPressed(SKY_KEY_E))
+        changeActiveKey();
+    if(input->isPressed(SKY_KEY_M))
+        vel*=2;
+	mover(vel);
+	
     
     m_rot = ventana::Instance()->posicionRaton(m_pos);
     rotarConRaton(m_rot);

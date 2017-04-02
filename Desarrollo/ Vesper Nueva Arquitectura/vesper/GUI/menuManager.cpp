@@ -42,9 +42,9 @@ void menuManager::update(){
 }
 
 void menuManager::render(){
-    m_IrrlichtRenderer->beginRendering();
-	seleccionado->render();
-    m_IrrlichtRenderer->endRendering();
+//    m_IrrlichtRenderer->beginRendering();
+//	seleccionado->render();
+//    m_IrrlichtRenderer->endRendering();
 }
 
 void menuManager::InitRenderer(){
@@ -52,10 +52,13 @@ void menuManager::InitRenderer(){
 //        m_IrrlichtRenderer = &CEGUI::IrrlichtRenderer::bootstrapSystem(*ventana::Instance()->getDevice());
 		const dvector2D *v = ventana::Instance()->getSize();
 		CEGUI::Sizef tam(v->x,v->y);
-		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::bootstrapSystem(tam);
+//		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::bootstrapSystem(tam);
+//		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::create();
+//		
+//		CEGUI::System::create(*m_IrrlichtRenderer);
+		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::bootstrapSystem();
+		const std::string resourcesPath("3d/GUI");
 		
-        const std::string resourcesPath("3d/GUI");
-        
         CEGUI::DefaultResourceProvider* resourceProvider = static_cast<CEGUI::DefaultResourceProvider*>(CEGUI::System::getSingleton().getResourceProvider());
         
         resourceProvider->setResourceGroupDirectory("imagesets", resourcesPath + "/imagesets/");

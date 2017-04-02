@@ -19,6 +19,7 @@
 class Player : public PhysicObject {
 private:
 //    std::map<const Keys,int> keyFunction;
+	InputManager* input;
 protected:
     void asignarLLave(int value);
     unsigned int velocidad;

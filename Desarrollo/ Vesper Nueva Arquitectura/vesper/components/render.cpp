@@ -125,7 +125,11 @@ void render::addCamera(dvector3D &p, dvector3D &l){
 	camara->setPosicion(p);
 	camara->setCamTarget(l);
     camara->setNearValue(1);
-    camara->setFarValue(20);
+    camara->setFarValue(200);
+	SkyLuz* luz = engine->crearLuz(NULL);
+	luz->_setAmbient(60);
+	luz->_setDiffuse(10);
+	luz->setPosicion(dvector3D(25,25,5));
 }
 
 void render::closeWindow(){
@@ -138,16 +142,16 @@ void render::CreateGround(int alto, int ancho){
 //    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(alto,ancho));
 //    nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
 	nodo_suelo = engine->crearMalla(NULL, tMallaEstatica);
-	nodo_suelo->setMalla("3d/muro.3ds");
+	nodo_suelo->setMalla("3d/cube.obj");
 	std::string s = "3d/colorverde.jpg";
-	nodo_suelo->setTextura(s);
+//	nodo_suelo->setTextura(s);
 //    nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
 //    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
 	
     nodo_suelo->setPosicion(dvector3D((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
-    nodo_suelo->setRotacion(dvector3D(90,180,180));
-	nodo_suelo->escalar(dvector3D(ancho,0.1,alto));
-    
+//    nodo_suelo->setRotacion(dvector3D(90,0,90));
+	nodo_suelo->escalar(dvector3D(ancho,alto/2.f, 0.1));
+	
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
