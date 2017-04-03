@@ -250,6 +250,7 @@
 		E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */; };
 		E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */; };
 		E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */; };
+		E9EBC5A11E92C79A0037E94B /* ElegirPersonaje.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9EBC59F1E92C79A0037E94B /* ElegirPersonaje.cpp */; };
 		E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
 		E9F0BE871DFAC61400F6ED67 /* libIrrlicht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */; };
 		E9FA20591E1C2501003F9CA0 /* Dvector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20571E1C2501003F9CA0 /* Dvector.cpp */; };
@@ -602,6 +603,8 @@
 		E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeMesh.cpp; sourceTree = "<group>"; };
 		E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nodeMesh.hpp; sourceTree = "<group>"; };
 		E9DDC57E1E6837D10060B006 /* tiempo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tiempo.h; sourceTree = "<group>"; };
+		E9EBC59F1E92C79A0037E94B /* ElegirPersonaje.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElegirPersonaje.cpp; sourceTree = "<group>"; };
+		E9EBC5A01E92C79A0037E94B /* ElegirPersonaje.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ElegirPersonaje.hpp; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9F0BE851DFAC61400F6ED67 /* libIrrlicht.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIrrlicht.a; path = libs/libIrrlicht.a; sourceTree = "<group>"; };
 		E9FA20571E1C2501003F9CA0 /* Dvector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dvector.cpp; sourceTree = "<group>"; };
@@ -1071,6 +1074,8 @@
 				E9898F9D1E5B757A0001A36A /* CreditosLayout.hpp */,
 				E9898FA11E5B757A0001A36A /* HUDLayout.cpp */,
 				E9898FA21E5B757A0001A36A /* HUDLayout.hpp */,
+				E9EBC59F1E92C79A0037E94B /* ElegirPersonaje.cpp */,
+				E9EBC5A01E92C79A0037E94B /* ElegirPersonaje.hpp */,
 				E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */,
 				E9898FA81E5B757A0001A36A /* MenuPrincipalLayout.hpp */,
 				E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */,
@@ -1467,6 +1472,7 @@
 				63C4CEC81E70620E008295A1 /* Nodo_Mover.cpp in Sources */,
 				63C4CEC71E70620E008295A1 /* Nodo_AVigilar.cpp in Sources */,
 				63D124071E84019E00D1B380 /* PhysicObject.cpp in Sources */,
+				E9EBC5A11E92C79A0037E94B /* ElegirPersonaje.cpp in Sources */,
 				63C4CEEE1E706249008295A1 /* Nodo_Qhuir.cpp in Sources */,
 				63D124251E84050C00D1B380 /* Rehen.cpp in Sources */,
 				E9898FB21E5B757A0001A36A /* HUDLayout.cpp in Sources */,

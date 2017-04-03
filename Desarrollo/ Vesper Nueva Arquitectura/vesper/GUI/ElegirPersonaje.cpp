@@ -7,21 +7,19 @@
 //
 
 #include "ElegirPersonaje.hpp"
-#include "../components/ventana.hpp"
-#include "Game.hpp"
 
 ElegirPersonaje::ElegirPersonaje(){
-    init("3d/GUI", ventana::Instance()->getDevice());
-    
-    layout = tElegirPersonaje;
-    
+	
+}
+
+void ElegirPersonaje::init(CEGUI::RenderTarget* target){
+	GUI::init(target);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");
     loadLayout("ElegirPersonaje.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
-    
-    
+	
     label_elegirpersonaje = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
     
     button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(3));
@@ -31,19 +29,10 @@ ElegirPersonaje::ElegirPersonaje(){
     button_jugar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&ElegirPersonaje::onClickJugar, this));
 }
 
-ElegirPersonaje::~ElegirPersonaje(){
-    
-}
-
-tLayout ElegirPersonaje::getLayout(){
-    return layout;
-}
-
 void ElegirPersonaje::onClickVolver(const CEGUI::EventArgs &e){
-    padre->setActiveLayout(tMenuPrincipalLayout);
+    actualState->menu = tmMENUPRINCIPAL;
 }
 
 void ElegirPersonaje::onClickJugar(const CEGUI::EventArgs &e){
-    Game::Instance()->setPausa(false);
-    padre->setActiveLayout(tPausa);
+	actualState->nextState = PLAYING;
 }

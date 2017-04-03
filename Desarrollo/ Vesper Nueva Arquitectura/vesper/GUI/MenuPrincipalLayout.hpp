@@ -28,12 +28,12 @@ public:
     void onClickStopGame(const CEGUI::EventArgs &e);
 
 private:
-    CEGUI::DefaultWindow *label_titulo;
-    CEGUI::PushButton *button_nueva;
-    CEGUI::PushButton *button_cargar;
-    CEGUI::PushButton *button_opciones;
-    CEGUI::PushButton *button_creditos;
-    CEGUI::PushButton *button_salir;
+	CEGUI::DefaultWindow *label_titulo;
+	CEGUI::PushButton *button_nueva;
+	CEGUI::PushButton *button_cargarpartida;
+	CEGUI::PushButton *button_opciones;
+	CEGUI::PushButton *button_creditos;
+	CEGUI::PushButton *button_salir;
 
 };
 

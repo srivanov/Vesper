@@ -16,7 +16,7 @@
 class OpcionesLayout : public GUI {
 public:
     OpcionesLayout();
-    ~OpcionesLayout();
+	~OpcionesLayout(){}
 //    void update() override;
     void init(CEGUI::RenderTarget* target);
     void onClickControles(const CEGUI::EventArgs &e);

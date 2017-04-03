@@ -7,19 +7,16 @@
 //
 
 #include "menuManager.hpp"
-//#include "elegirLayout.h"
 #include "listaMenus.h"
 #include "../components/ventana.hpp"
 
 menuManager::menuManager(){
 	menus.insert(std::pair<tipoMenu,GUI*>(tmMENUPRINCIPAL, new MenuPrincipalLayout()));
-    // El layout CARGAR PARTIDA en realidad no deberia existir
-    menus.insert(std::pair<tipoMenu, GUI*>(tmCARGAR_PARTIDA, new CargarPartidaLayout()));
     menus.insert(std::pair<tipoMenu, GUI*>(tmOPCIONES, new OpcionesLayout()));
     menus.insert(std::pair<tipoMenu, GUI*>(tmCREDITOS, new CreditosLayout()));
 	menus.insert(std::pair<tipoMenu,GUI*>(tmPAUSE, new PausaLayout()));
-//	menus.insert(std::pair<tipoMenu,GUI*>(tmELEGIR_PERSONAJE, new elegirLayout()));
-    
+	menus.insert(std::pair<tipoMenu,GUI*>(tmELEGIR_PERSONAJE, new ElegirPersonaje()));
+	
 	seleccionado = menus.at(tmMENUPRINCIPAL);
 	actualState = states::Instance();
 }
@@ -42,9 +39,9 @@ void menuManager::update(){
 }
 
 void menuManager::render(){
-    m_IrrlichtRenderer->beginRendering();
+	seleccionado->beginRender();
 	seleccionado->render();
-    m_IrrlichtRenderer->endRendering();
+	seleccionado->endRender();
 }
 
 void menuManager::InitRenderer(){
@@ -69,6 +66,8 @@ void menuManager::InitRenderer(){
         CEGUI::WindowManager::setDefaultResourceGroup("layouts");
         CEGUI::ScriptModule::setDefaultResourceGroup("lua_scripts");
         m_target = &m_IrrlichtRenderer->getDefaultRenderTarget();
+		states::Instance()->renderTarget = m_target;
+		states::Instance()->renderer = m_IrrlichtRenderer;
     }
 }
 

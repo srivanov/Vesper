@@ -11,9 +11,9 @@
 
 #include "PausaLayout.hpp"
 #include "MenuPrincipalLayout.hpp"
-#include "CargarPartidaLayout.hpp"
 #include "CreditosLayout.hpp"
 #include "OpcionesLayout.hpp"
+#include "ElegirPersonaje.hpp"
 
 
 #endif /* listaMenus_h */

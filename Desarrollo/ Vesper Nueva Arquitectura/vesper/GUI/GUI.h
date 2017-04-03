@@ -24,6 +24,9 @@ public:
     
     virtual void update();
     virtual void render();
+	
+	void beginRender() { m_rendererIrrlicht->beginRendering(); }
+	void endRender() { m_rendererIrrlicht->endRendering(); }
     
     void loadScheme(const std::string& schemeFile);
     void setFont(const std::string& fontFile);
@@ -72,9 +75,10 @@ protected:
     bool activo;
     states* actualState;
     MyEventReceiver* eventManager;
+	CEGUI::OpenGL3Renderer* m_renderer;
+	CEGUI::IrrlichtRenderer* m_rendererIrrlicht;
 private:
-    CEGUI::OpenGL3Renderer* m_renderer;
-    //CEGUI::IrrlichtRenderer* m_rendererIrrlicht;
+	
     CEGUI::GUIContext* m_context = nullptr;
     
     CEGUI::Window* m_root = nullptr;

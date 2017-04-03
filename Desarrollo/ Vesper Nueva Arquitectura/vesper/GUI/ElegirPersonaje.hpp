@@ -13,11 +13,13 @@
 #include "GUI.h"
 #include "../MyEventReceiver.hpp"
 
-class ElegirPersonaje : public Motor::GUI{
+class ElegirPersonaje : public GUI{
 public:
     ElegirPersonaje();
-    ~ElegirPersonaje();
-    tLayout getLayout() override;
+	~ElegirPersonaje(){}
+	
+	void init(CEGUI::RenderTarget* target);
+	
     void onClickVolver(const CEGUI::EventArgs &e);
     void onClickJugar(const CEGUI::EventArgs &e);
 private:

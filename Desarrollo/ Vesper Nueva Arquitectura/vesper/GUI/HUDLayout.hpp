@@ -18,7 +18,7 @@ public:
     HUDLayout();
     ~HUDLayout();
     //    void update() override;
-    void init(CEGUI::RenderTarget* target);
+    void init();
     
 private:
    

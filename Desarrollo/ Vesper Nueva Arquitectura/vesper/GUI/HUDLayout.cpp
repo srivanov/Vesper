@@ -7,15 +7,13 @@
 //
 
 #include "HUDLayout.hpp"
-#include "../components/ventana.hpp"
-#include "Game.hpp"
 
 HUDLayout::HUDLayout() {
     
 }
 
-void HUDLayout::init(CEGUI::RenderTarget* target){
-    GUI::init(target);
+void HUDLayout::init(){
+	GUI::init((CEGUI::RenderTarget*)states::Instance()->renderTarget);
     loadScheme("Generic.scheme");
     loadScheme("OgreTray.scheme");
     loadScheme("Menu.scheme");

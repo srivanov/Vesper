@@ -23,14 +23,10 @@ void CreditosLayout::init(CEGUI::RenderTarget* target){
     setMouseCursor("OgreTrayImages/MouseArrow");
     
     
-    label_creditos = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
-    
-    button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(4));
-    button_volver->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&CreditosLayout::onClickVolver, this));
-}
-
-CreditosLayout::~CreditosLayout(){
-    
+	label_creditos = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
+	
+	button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(4));
+	button_volver->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&CreditosLayout::onClickVolver, this));
 }
 
 void CreditosLayout::onClickVolver(const CEGUI::EventArgs &e) {

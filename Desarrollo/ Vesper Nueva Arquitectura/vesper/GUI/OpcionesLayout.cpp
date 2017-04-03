@@ -68,19 +68,12 @@ void OpcionesLayout::init(CEGUI::RenderTarget* target){
     setControles();
 }
 
-OpcionesLayout::~OpcionesLayout(){
-    
-}
-
-//void OpcionesLayout::update() {
-//
-//}
-
 void OpcionesLayout::onClickControles(const CEGUI::EventArgs &e) {
     printf("Pulsado boton controles");
     contenedor_pantalla->hide();
     contenedor_sonido->hide();
     contenedor_controles->show();
+	button_guardar->hide();
 }
 
 void OpcionesLayout::onClickSonido(const CEGUI::EventArgs &e) {
@@ -95,6 +88,7 @@ void OpcionesLayout::onClickPantalla(const CEGUI::EventArgs &e) {
     contenedor_pantalla->show();
     contenedor_sonido->hide();
     contenedor_controles->hide();
+	button_guardar->show();
 }
 
 void OpcionesLayout::onClickVolver(const CEGUI::EventArgs &e) {
@@ -129,11 +123,6 @@ void OpcionesLayout::onClickGuardar(const CEGUI::EventArgs &e) {
 void OpcionesLayout::setControles() {
 	
 	std::map<std::string, std::string> valores = JSONParser::leer(controlesFile);
-//	pruebas del parser
-//	std::cout << JSONParser::toBool(std::string("true")) << std::endl;
-//	std::cout << JSONParser::toBool(std::string("false")) << std::endl;
-//	std::cout << JSONParser::toInt(std::string("64")) << std::endl;
-//	std::cout << JSONParser::toInt(std::string("true")) << std::endl;
 	
 	bool sonido_pred = true;
 	int volumen_pred = 100;

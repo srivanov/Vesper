@@ -29,6 +29,15 @@ Player::Player(){
     setTexture("3d/texture.png");
     
     vida = 100;
+	hud.init();
+}
+
+void Player::inicializar(int ID, int numL){
+	numLlaves = numL;
+	llaves = new int[numLlaves];
+	m_ID = ID; activa = 0;
+	for(size_t a=0;a<numLlaves;a++)
+		llaves[a]=-1;
 }
 
 Player::~Player(){
@@ -79,6 +88,9 @@ void Player::update(){
 void Player::render(){
     PhysicObject::render();
     arma->render();
+	hud.beginRender();
+	hud.render();
+	hud.endRender();
 }
 
 void Player::atacar(){
@@ -92,15 +104,6 @@ void Player::atacar(){
 void Player::cambiarArma(){
     arma->changeGun();
     std::cout << *arma->getArmaActual()->getType() << std::endl;
-}
-
-void Player::inicializar(int ID, int numL){
-    numLlaves = numL;
-    llaves = new int[numLlaves];
-    m_ID = ID; activa = 0;
-    for(size_t a=0;a<numLlaves;a++)
-        llaves[a]=-1;
-    
 }
 
 void Player::changeActiveKey(){

@@ -18,7 +18,6 @@ enum estados{
 enum tipoMenu {
 	tmMENUPRINCIPAL = 0,
 	tmELEGIR_PERSONAJE,
-    tmCARGAR_PARTIDA,
 	tmOPCIONES,
 	tmCREDITOS,
 	tmPAUSE
@@ -32,6 +31,7 @@ public:
 	estados nextState;
 	tipoMenu menu;
 	bool destruir;
+	void* renderTarget, *renderer;
 private:
 	states() { estado = MENU; destruir = false; }
 	estados estado;

@@ -7,6 +7,7 @@ void GUI::init(CEGUI::RenderTarget* target){
 	m_context = &CEGUI::System::getSingleton().createGUIContext(*target);
 	m_root = CEGUI::WindowManager::getSingleton().createWindow("DefaultWindow", "root");
 	m_context->setRootWindow(m_root);
+	m_rendererIrrlicht = (CEGUI::IrrlichtRenderer*)states::Instance()->renderer;
 }
 
 GUI::~GUI(){
