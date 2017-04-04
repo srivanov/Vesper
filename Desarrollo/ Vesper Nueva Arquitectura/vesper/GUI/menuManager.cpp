@@ -63,7 +63,7 @@ void menuManager::InitRenderer(){
 //		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::create();
 //		
 //		CEGUI::System::create(*m_IrrlichtRenderer);
-		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::bootstrapSystem();
+		m_IrrlichtRenderer = &CEGUI::OpenGL3Renderer::bootstrapSystem(tam);
 		const std::string resourcesPath("3d/GUI");
 		
         CEGUI::DefaultResourceProvider* resourceProvider = static_cast<CEGUI::DefaultResourceProvider*>(CEGUI::System::getSingleton().getResourceProvider());
