@@ -74,6 +74,8 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 }
 
 void SkyWindow::beginDraw(){
+	if(window != glfwGetCurrentContext())
+		glfwMakeContextCurrent(window);
 	// comprueba los eventos de entrada (teclado, raton...)
 	glfwPollEvents();
 	//limpia la pantalla asignando un color de fondo

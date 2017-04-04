@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "motor/SkyWindow.cpp"
-            timestampString = "512672183.509816"
+            timestampString = "512990567.690495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "SkyWindow::beginDraw()"
             landmarkType = "7">
          </BreakpointContent>

@@ -37,8 +37,8 @@ public:
 		}
 	}
 	
-	virtual dvector3D* getPosicion() { return &posicion; }
-	virtual dvector3D* getRotacion() { return &rotacion; }
+	virtual dvector3D getPosicion() { return posicion; }
+	virtual dvector3D getRotacion() { return rotacion; }
 	
 	virtual ~SkyNodo() { if(TransNodos[2]) delete TransNodos[2]; }
 	

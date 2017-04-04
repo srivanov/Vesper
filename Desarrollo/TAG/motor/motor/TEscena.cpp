@@ -448,7 +448,7 @@ void TEscena::update(){
 		cam->transladar(m);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
-		cam->setCamTarget(*cubo->getPosicion());
+//		cam->setCamTarget(cubo->getPosicion());
 	}
 	
 //	cam->setCamTarget(cubo->getPosicion());
