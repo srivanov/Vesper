@@ -197,7 +197,7 @@ void render::setCamPos(dvector3D &pos){
 }
 
 dvector3D* render::getCamPos(){
-	dvector3D getcam(*camara->getPosicion());
+	dvector3D getcam(camara->getPosicion());
 	
 	return &getcam;
 //    return &getcam;

@@ -9,6 +9,7 @@
 
 #include "../estados/estados.h"
 #include <SkyEngine/InputManager.h>
+#include "../Dvector.hpp"
 
 struct vec4f{
 	float x, y, z, w;

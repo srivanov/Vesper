@@ -13,8 +13,6 @@
 #include "SkyKeysDef.h"
 #include "Dvector.hpp"
 
-//class dvector2D;
-
 class InputManager {
 public:
 	static InputManager* Instance() { static InputManager inst; return &inst; }
