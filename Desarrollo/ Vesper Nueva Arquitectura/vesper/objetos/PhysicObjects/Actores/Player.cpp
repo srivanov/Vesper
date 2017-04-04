@@ -52,6 +52,8 @@ void Player::update(){
         return;
     }
     
+    hud.getVida(vida);
+    
 	dvector3D vel;
     /*
     Keys aux;
@@ -59,12 +61,18 @@ void Player::update(){
         
     }
      */
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP))
+    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP)){
 		vel.y += VELOCIDADN;
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN))
+//    	moneda1->show();
+    }
+    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN)){
 		vel.y += -VELOCIDADN;
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT))
+//    	moneda2->show();
+	}
+    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT)){
 		vel.x += -VELOCIDADN;
+//    	moneda3->show();
+    }
 	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_RIGHT))
 		vel.x += VELOCIDADN;
     if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_N))

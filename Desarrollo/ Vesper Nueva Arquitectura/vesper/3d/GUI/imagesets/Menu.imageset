@@ -1,7 +1,7 @@
 <Imageset autoScaled="vertical" imagefile="Menu2.png" name="Menu" nativeHorzRes="1280" nativeVertRes="720" version="2">
     <Image height="424" name="fondo_principal" width="662" xPos="2" yPos="2" />
     <Image height="88" name="crema" width="68" xPos="675" yPos="0" />
-    <Image height="48" name="boton_normal" width="265" xPos="807" yPos="0" />
+    <Image height="62" name="boton_normal" width="219" xPos="803" yPos="0" />
     <Image height="45" name="volver" width="112" xPos="1093" yPos="0" />
     <Image height="371" name="fondo_ajustes" width="658" xPos="4" yPos="428" />
     <Image height="368" name="fondo_cargar" width="660" xPos="6" yPos="803" />
@@ -30,7 +30,7 @@
     <Image height="50" name="boton_cargarpartida" width="524" xPos="701" yPos="1463" />
     <Image height="54" name="boton_jugar" width="208" xPos="1111" yPos="1262" />
     <Image height="50" name="boton_volver" width="232" xPos="1133" yPos="1395" />
-    <Image height="376" name="hud_fondo" width="658" xPos="2149" yPos="65" />
+    <Image height="384" name="hud_fondo" width="680" xPos="2147" yPos="29" />
     <Image height="24" name="moneda0" width="82" xPos="2161" yPos="491" />
     <Image height="24" name="moneda1" width="82" xPos="2163" yPos="521" />
     <Image height="24" name="moneda2" width="82" xPos="2163" yPos="549" />
@@ -43,4 +43,6 @@
     <Image height="95" name="pistola1" width="131" xPos="2138" yPos="675" />
     <Image height="97" name="pistola2" width="130" xPos="2139" yPos="782" />
     <Image height="105" name="pistola3" width="140" xPos="2137" yPos="895" />
+    <Image height="68" name="titulo_ajustes" width="268" xPos="2153" yPos="1029" />
+    <Image height="68" name="boton_hover" width="228" xPos="795" yPos="425" />
 </Imageset>

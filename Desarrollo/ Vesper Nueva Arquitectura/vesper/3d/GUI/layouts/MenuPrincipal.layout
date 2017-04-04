@@ -11,62 +11,40 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="VerticalAlignment" value="Centre" />
             <Property name="HorizontalAlignment" value="Centre" />
-            <Window type="OgreTray/Button" name="button_opciones" >
-                <Property name="ID" value="5" />
-                <Property name="Area" value="{{0.101947,19},{0.520609,-35},{0.528698,124},{0.497956,18}}" />
-            </Window>
-            <Window type="OgreTray/Button" name="button_creditos" >
-                <Property name="ID" value="6" />
-                <Property name="Area" value="{{0.101947,19},{0.663979,-23},{0.528698,125},{0.641326,30}}" />
-            </Window>
-            <Window type="OgreTray/Button" name="button_nueva" >
+            <Window type="Generic/ImageButton" name="nuevapartida" >
                 <Property name="ID" value="3" />
-                <Property name="Area" value="{{0,59},{0,28},{0,331},{0,73}}" />
-            </Window>
-            <Window type="Generic/Image" name="imagen_nuevapartida" >
-                <Property name="ID" value="10" />
                 <Property name="Area" value="{{0,82},{0,38},{0,317},{0,64}}" />
-                <Property name="Image" value="Menu/boton_nuevapartida" />
-                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+                <Property name="HoverImage" value="Menu/boton_nuevapartida" />
+                <Property name="NormalImage" value="Menu/boton_nuevapartida" />
+                <Property name="PushedImage" value="Menu/boton_nuevapartida" />
             </Window>
-            <Window type="Generic/Image" name="imagen_ajustes" >
-                <Property name="ID" value="8" />
-                <Property name="Area" value="{{0,127},{0,163},{0,262},{0,193}}" />
-                <Property name="Image" value="Menu/boton_ajustes" />
-                <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            </Window>
-            <Window type="Generic/Image" name="imagen_creditos" >
-                <Property name="ID" value="12" />
-                <Property name="Area" value="{{0,127},{0,228},{0,262},{0,258}}" />
-                <Property name="Image" value="Menu/boton_creditos" />
-                <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            </Window>
-            <Window type="OgreTray/Button" name="button_salir" >
-                <Property name="ID" value="7" />
-                <Property name="Area" value="{{0,59},{0,288},{0,329},{0,333}}" />
-            </Window>
-            <Window type="Generic/Image" name="imagen_salir" >
-                <Property name="ID" value="11" />
-                <Property name="Area" value="{{0,142},{0,293},{0,242},{0,323}}" />
-                <Property name="Image" value="Menu/boton_salir" />
-                <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            </Window>
-            <Window type="OgreTray/Button" name="button_cargar" >
+            <Window type="Generic/ImageButton" name="cargarpartida" >
                 <Property name="ID" value="4" />
-                <Property name="Area" value="{{0,59},{0,88},{0,331},{0,133}}" />
-            </Window>
-            <Window type="Generic/Image" name="imagen_cargarpartida" >
-                <Property name="ID" value="13" />
                 <Property name="Area" value="{{0,83},{0,97},{0,318},{0,123}}" />
-                <Property name="Image" value="Menu/boton_cargarpartida" />
-                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+                <Property name="HoverImage" value="Menu/boton_cargarpartida" />
+                <Property name="NormalImage" value="Menu/boton_cargarpartida" />
+                <Property name="PushedImage" value="Menu/boton_cargarpartida" />
             </Window>
-            <Window type="Generic/ImageButton" name="ImageButton" >
-                <Property name="ID" value="14" />
-                <Property name="Area" value="{{0,142},{0,335},{0,238},{0,367}}" />
-                <Property name="HoverImage" value="Menu/boton_sonido" />
-                <Property name="NormalImage" value="Menu/boton_sonido" />
-                <Property name="PushedImage" value="Menu/boton_sonido" />
+            <Window type="Generic/ImageButton" name="ajustes" >
+                <Property name="ID" value="5" />
+                <Property name="Area" value="{{0,127},{0,163},{0,262},{0,193}}" />
+                <Property name="HoverImage" value="Menu/boton_ajustes" />
+                <Property name="NormalImage" value="Menu/boton_ajustes" />
+                <Property name="PushedImage" value="Menu/boton_ajustes" />
+            </Window>
+            <Window type="Generic/ImageButton" name="creditos" >
+                <Property name="ID" value="6" />
+                <Property name="Area" value="{{0,127},{0,228},{0,262},{0,258}}" />
+                <Property name="HoverImage" value="Menu/boton_creditos" />
+                <Property name="NormalImage" value="Menu/boton_creditos" />
+                <Property name="PushedImage" value="Menu/boton_creditos" />
+            </Window>
+            <Window type="Generic/ImageButton" name="salir" >
+                <Property name="ID" value="7" />
+                <Property name="Area" value="{{0,142},{0,293},{0,242},{0,323}}" />
+                <Property name="HoverImage" value="Menu/boton_salir" />
+                <Property name="NormalImage" value="Menu/boton_salir" />
+                <Property name="PushedImage" value="Menu/boton_salir" />
             </Window>
         </Window>
         <Window type="Generic/Image" name="Image" >

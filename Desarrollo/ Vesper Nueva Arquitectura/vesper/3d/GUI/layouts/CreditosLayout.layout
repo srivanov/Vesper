@@ -12,17 +12,6 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
-        <Window type="Generic/Label" name="titulo" >
-            <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,15},{0,15},{0,305},{0,125}}" />
-            <Property name="Text" value="Créditos" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="HorizontalAlignment" value="Centre" />
-        </Window>
-        <Window type="OgreTray/Button" name="volver" >
-            <Property name="ID" value="4" />
-            <Property name="Area" value="{{0,35},{0,620},{0,175},{0,670}}" />
-        </Window>
         <Window type="Generic/Image" name="contenedor" >
             <Property name="ID" value="3" />
             <Property name="Area" value="{{0,470},{0,200},{0,840},{0,610}}" />
@@ -34,10 +23,12 @@
                 <Property name="MaxSize" value="{{1,0},{1,0}}" />
             </Window>
         </Window>
-        <Window type="Generic/Image" name="imagen_volver" >
-            <Property name="Area" value="{{0,42},{0,629},{0,165},{0,657}}" />
-            <Property name="Image" value="Menu/boton_volver" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/ImageButton" name="volver" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
+            <Property name="HoverImage" value="Menu/boton_volver" />
+            <Property name="NormalImage" value="Menu/boton_volver" />
+            <Property name="PushedImage" value="Menu/boton_volver" />
         </Window>
     </Window>
 </GUILayout>

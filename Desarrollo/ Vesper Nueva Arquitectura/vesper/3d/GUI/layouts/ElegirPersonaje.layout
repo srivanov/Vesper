@@ -18,14 +18,6 @@
             <Property name="VerticalAlignment" value="Centre" />
             <Property name="HorizontalAlignment" value="Centre" />
         </Window>
-        <Window type="OgreTray/Button" name="Button_volver" >
-            <Property name="ID" value="3" />
-            <Property name="Area" value="{{0,35},{0,635},{0,160},{0,677}}" />
-        </Window>
-        <Window type="OgreTray/Button" name="Button_jugar" >
-            <Property name="ID" value="4" />
-            <Property name="Area" value="{{0,1095},{0,630},{0,1221},{0,676}}" />
-        </Window>
         <Window type="Generic/Image" name="personaje1" >
             <Property name="Area" value="{{0,480},{0,160},{0,810},{0,600}}" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
@@ -40,15 +32,19 @@
             <Property name="Image" value="Menu/silueta4" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
-        <Window type="Generic/Image" name="imagen_volver" >
-            <Property name="Area" value="{{0,36},{0,642},{0,159},{0,670}}" />
-            <Property name="Image" value="Menu/boton_volver" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/ImageButton" name="volver" >
+            <Property name="ID" value="3" />
+            <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
+            <Property name="HoverImage" value="Menu/boton_volver" />
+            <Property name="NormalImage" value="Menu/boton_volver" />
+            <Property name="PushedImage" value="Menu/boton_volver" />
         </Window>
-        <Window type="Generic/Image" name="imagen_jugar" >
-            <Property name="Area" value="{{0,1099},{0,638},{0,1222},{0,666}}" />
-            <Property name="Image" value="Menu/boton_jugar" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/ImageButton" name="jugar" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,1140},{0,665},{0,1232},{0,686}}" />
+            <Property name="HoverImage" value="Menu/boton_jugar" />
+            <Property name="NormalImage" value="Menu/boton_jugar" />
+            <Property name="PushedImage" value="Menu/boton_jugar" />
         </Window>
     </Window>
 </GUILayout>

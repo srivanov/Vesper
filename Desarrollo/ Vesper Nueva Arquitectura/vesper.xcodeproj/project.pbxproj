@@ -65,6 +65,38 @@
 		63D124381E857AA500D1B380 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124341E857AA500D1B380 /* Level.cpp */; };
 		63D124391E857AA500D1B380 /* loadLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124361E857AA500D1B380 /* loadLevel.cpp */; };
 		63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */; };
+		885620511E9449970005BC15 /* AlfiskoSkin.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 885620311E9449970005BC15 /* AlfiskoSkin.imageset */; };
+		885620521E9449970005BC15 /* AlfiskoSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620321E9449970005BC15 /* AlfiskoSkin.png */; };
+		885620531E9449970005BC15 /* AlfiskoSkin.png.OLD in Resources */ = {isa = PBXBuildFile; fileRef = 885620331E9449970005BC15 /* AlfiskoSkin.png.OLD */; };
+		885620541E9449970005BC15 /* Aliasing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 885620341E9449970005BC15 /* Aliasing.jpg */; };
+		885620551E9449970005BC15 /* BackgroundSampleBrowser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 885620351E9449970005BC15 /* BackgroundSampleBrowser.jpg */; };
+		885620561E9449970005BC15 /* DriveIcons.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 885620361E9449970005BC15 /* DriveIcons.imageset */; };
+		885620571E9449970005BC15 /* DriveIcons.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620371E9449970005BC15 /* DriveIcons.png */; };
+		885620581E9449970005BC15 /* FairChar.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 885620381E9449970005BC15 /* FairChar.imageset */; };
+		885620591E9449970005BC15 /* FairChar.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620391E9449970005BC15 /* FairChar.png */; };
+		8856205A1E9449970005BC15 /* GameMenu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8856203A1E9449970005BC15 /* GameMenu.imageset */; };
+		8856205B1E9449970005BC15 /* GameMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856203B1E9449970005BC15 /* GameMenu.png */; };
+		8856205C1E9449970005BC15 /* GWEN.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8856203C1E9449970005BC15 /* GWEN.imageset */; };
+		8856205D1E9449970005BC15 /* GWENDefaultSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856203D1E9449970005BC15 /* GWENDefaultSkin.png */; };
+		8856205E1E9449970005BC15 /* HUDDemo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8856203E1E9449970005BC15 /* HUDDemo.imageset */; };
+		8856205F1E9449970005BC15 /* HUDDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856203F1E9449970005BC15 /* HUDDemo.png */; };
+		885620601E9449970005BC15 /* HUDDemoGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620401E9449970005BC15 /* HUDDemoGameOver.png */; };
+		885620611E9449970005BC15 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620411E9449970005BC15 /* logo.png */; };
+		885620621E9449970005BC15 /* Menu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 885620421E9449970005BC15 /* Menu.imageset */; };
+		885620631E9449970005BC15 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620431E9449970005BC15 /* Menu.png */; };
+		885620641E9449970005BC15 /* Menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620441E9449970005BC15 /* Menu2.png */; };
+		885620651E9449970005BC15 /* OgreTray.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 885620451E9449970005BC15 /* OgreTray.imageset */; };
+		885620661E9449970005BC15 /* OgreTrayImages.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620461E9449970005BC15 /* OgreTrayImages.png */; };
+		885620671E9449970005BC15 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 885620471E9449970005BC15 /* ReadMe.txt */; };
+		885620681E9449970005BC15 /* SampleBrowser.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 885620481E9449970005BC15 /* SampleBrowser.imageset */; };
+		885620691E9449970005BC15 /* SampleBrowser.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620491E9449970005BC15 /* SampleBrowser.png */; };
+		8856206A1E9449970005BC15 /* SpaceBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8856204A1E9449970005BC15 /* SpaceBackground.jpg */; };
+		8856206B1E9449970005BC15 /* TaharezLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8856204B1E9449970005BC15 /* TaharezLook.imageset */; };
+		8856206C1E9449970005BC15 /* TaharezLook.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856204C1E9449970005BC15 /* TaharezLook.png */; };
+		8856206D1E9449970005BC15 /* Vanilla.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8856204D1E9449970005BC15 /* Vanilla.imageset */; };
+		8856206E1E9449970005BC15 /* vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856204E1E9449970005BC15 /* vanilla.png */; };
+		8856206F1E9449970005BC15 /* WindowsLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 8856204F1E9449970005BC15 /* WindowsLook.imageset */; };
+		885620701E9449970005BC15 /* WindowsLook.png in Resources */ = {isa = PBXBuildFile; fileRef = 885620501E9449970005BC15 /* WindowsLook.png */; };
 		886F06351E5DF21600465532 /* example.anims in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A31E5DF21600465532 /* example.anims */; };
 		886F06361E5DF21600465532 /* GameMenu.anims in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A41E5DF21600465532 /* GameMenu.anims */; };
 		886F06371E5DF21600465532 /* Batang-18.font in Resources */ = {isa = PBXBuildFile; fileRef = 886F05A61E5DF21600465532 /* Batang-18.font */; };
@@ -170,38 +202,6 @@
 		886F06BA1E5DF21700465532 /* GUIScheme.xsd in Resources */ = {isa = PBXBuildFile; fileRef = 886F062F1E5DF21600465532 /* GUIScheme.xsd */; };
 		886F06BB1E5DF21700465532 /* Imageset.xsd in Resources */ = {isa = PBXBuildFile; fileRef = 886F06301E5DF21600465532 /* Imageset.xsd */; };
 		886F06BC1E5DF21700465532 /* Samples.xsd in Resources */ = {isa = PBXBuildFile; fileRef = 886F06311E5DF21600465532 /* Samples.xsd */; };
-		88E04DE91E93F138004FBC66 /* AlfiskoSkin.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DC91E93F138004FBC66 /* AlfiskoSkin.imageset */; };
-		88E04DEA1E93F138004FBC66 /* AlfiskoSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DCA1E93F138004FBC66 /* AlfiskoSkin.png */; };
-		88E04DEB1E93F138004FBC66 /* AlfiskoSkin.png.OLD in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DCB1E93F138004FBC66 /* AlfiskoSkin.png.OLD */; };
-		88E04DEC1E93F138004FBC66 /* Aliasing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DCC1E93F138004FBC66 /* Aliasing.jpg */; };
-		88E04DED1E93F138004FBC66 /* BackgroundSampleBrowser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DCD1E93F138004FBC66 /* BackgroundSampleBrowser.jpg */; };
-		88E04DEE1E93F138004FBC66 /* DriveIcons.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DCE1E93F138004FBC66 /* DriveIcons.imageset */; };
-		88E04DEF1E93F138004FBC66 /* DriveIcons.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DCF1E93F138004FBC66 /* DriveIcons.png */; };
-		88E04DF01E93F138004FBC66 /* FairChar.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD01E93F138004FBC66 /* FairChar.imageset */; };
-		88E04DF11E93F138004FBC66 /* FairChar.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD11E93F138004FBC66 /* FairChar.png */; };
-		88E04DF21E93F138004FBC66 /* GameMenu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD21E93F138004FBC66 /* GameMenu.imageset */; };
-		88E04DF31E93F138004FBC66 /* GameMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD31E93F138004FBC66 /* GameMenu.png */; };
-		88E04DF41E93F138004FBC66 /* GWEN.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD41E93F138004FBC66 /* GWEN.imageset */; };
-		88E04DF51E93F138004FBC66 /* GWENDefaultSkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD51E93F138004FBC66 /* GWENDefaultSkin.png */; };
-		88E04DF61E93F138004FBC66 /* HUDDemo.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD61E93F138004FBC66 /* HUDDemo.imageset */; };
-		88E04DF71E93F138004FBC66 /* HUDDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD71E93F138004FBC66 /* HUDDemo.png */; };
-		88E04DF81E93F138004FBC66 /* HUDDemoGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD81E93F138004FBC66 /* HUDDemoGameOver.png */; };
-		88E04DF91E93F138004FBC66 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DD91E93F138004FBC66 /* logo.png */; };
-		88E04DFA1E93F138004FBC66 /* Menu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DDA1E93F138004FBC66 /* Menu.imageset */; };
-		88E04DFB1E93F138004FBC66 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DDB1E93F138004FBC66 /* Menu.png */; };
-		88E04DFC1E93F138004FBC66 /* Menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DDC1E93F138004FBC66 /* Menu2.png */; };
-		88E04DFD1E93F138004FBC66 /* OgreTray.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DDD1E93F138004FBC66 /* OgreTray.imageset */; };
-		88E04DFE1E93F138004FBC66 /* OgreTrayImages.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DDE1E93F138004FBC66 /* OgreTrayImages.png */; };
-		88E04DFF1E93F138004FBC66 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DDF1E93F138004FBC66 /* ReadMe.txt */; };
-		88E04E001E93F138004FBC66 /* SampleBrowser.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE01E93F138004FBC66 /* SampleBrowser.imageset */; };
-		88E04E011E93F138004FBC66 /* SampleBrowser.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE11E93F138004FBC66 /* SampleBrowser.png */; };
-		88E04E021E93F138004FBC66 /* SpaceBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE21E93F138004FBC66 /* SpaceBackground.jpg */; };
-		88E04E031E93F138004FBC66 /* TaharezLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE31E93F138004FBC66 /* TaharezLook.imageset */; };
-		88E04E041E93F138004FBC66 /* TaharezLook.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE41E93F138004FBC66 /* TaharezLook.png */; };
-		88E04E051E93F138004FBC66 /* Vanilla.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE51E93F138004FBC66 /* Vanilla.imageset */; };
-		88E04E061E93F138004FBC66 /* vanilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE61E93F138004FBC66 /* vanilla.png */; };
-		88E04E071E93F138004FBC66 /* WindowsLook.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE71E93F138004FBC66 /* WindowsLook.imageset */; };
-		88E04E081E93F138004FBC66 /* WindowsLook.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E04DE81E93F138004FBC66 /* WindowsLook.png */; };
 		C1A0AEFB1E434BD8009699FD /* libCEGUIBase-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEF41E434BD8009699FD /* libCEGUIBase-0_d.dylib */; };
 		C1A0AEFC1E434BD8009699FD /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEF51E434BD8009699FD /* libCEGUICommonDialogs-0_d.dylib */; };
 		C1A0AEFD1E434BD8009699FD /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEF61E434BD8009699FD /* libCEGUICoreWindowRendererSet_d.dylib */; };
@@ -375,6 +375,38 @@
 		63D124371E857AA500D1B380 /* loadLevel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = loadLevel.hpp; sourceTree = "<group>"; };
 		63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gestor_eventos.cpp; path = "Arquitectura IA/gestor_eventos.cpp"; sourceTree = "<group>"; };
 		63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gestor_eventos.hpp; path = "Arquitectura IA/gestor_eventos.hpp"; sourceTree = "<group>"; };
+		885620311E9449970005BC15 /* AlfiskoSkin.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlfiskoSkin.imageset; sourceTree = "<group>"; };
+		885620321E9449970005BC15 /* AlfiskoSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlfiskoSkin.png; sourceTree = "<group>"; };
+		885620331E9449970005BC15 /* AlfiskoSkin.png.OLD */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlfiskoSkin.png.OLD; sourceTree = "<group>"; };
+		885620341E9449970005BC15 /* Aliasing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aliasing.jpg; sourceTree = "<group>"; };
+		885620351E9449970005BC15 /* BackgroundSampleBrowser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackgroundSampleBrowser.jpg; sourceTree = "<group>"; };
+		885620361E9449970005BC15 /* DriveIcons.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DriveIcons.imageset; sourceTree = "<group>"; };
+		885620371E9449970005BC15 /* DriveIcons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DriveIcons.png; sourceTree = "<group>"; };
+		885620381E9449970005BC15 /* FairChar.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FairChar.imageset; sourceTree = "<group>"; };
+		885620391E9449970005BC15 /* FairChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairChar.png; sourceTree = "<group>"; };
+		8856203A1E9449970005BC15 /* GameMenu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.imageset; sourceTree = "<group>"; };
+		8856203B1E9449970005BC15 /* GameMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameMenu.png; sourceTree = "<group>"; };
+		8856203C1E9449970005BC15 /* GWEN.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.imageset; sourceTree = "<group>"; };
+		8856203D1E9449970005BC15 /* GWENDefaultSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GWENDefaultSkin.png; sourceTree = "<group>"; };
+		8856203E1E9449970005BC15 /* HUDDemo.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HUDDemo.imageset; sourceTree = "<group>"; };
+		8856203F1E9449970005BC15 /* HUDDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemo.png; sourceTree = "<group>"; };
+		885620401E9449970005BC15 /* HUDDemoGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemoGameOver.png; sourceTree = "<group>"; };
+		885620411E9449970005BC15 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		885620421E9449970005BC15 /* Menu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Menu.imageset; sourceTree = "<group>"; };
+		885620431E9449970005BC15 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		885620441E9449970005BC15 /* Menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu2.png; sourceTree = "<group>"; };
+		885620451E9449970005BC15 /* OgreTray.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OgreTray.imageset; sourceTree = "<group>"; };
+		885620461E9449970005BC15 /* OgreTrayImages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OgreTrayImages.png; sourceTree = "<group>"; };
+		885620471E9449970005BC15 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		885620481E9449970005BC15 /* SampleBrowser.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleBrowser.imageset; sourceTree = "<group>"; };
+		885620491E9449970005BC15 /* SampleBrowser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleBrowser.png; sourceTree = "<group>"; };
+		8856204A1E9449970005BC15 /* SpaceBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpaceBackground.jpg; sourceTree = "<group>"; };
+		8856204B1E9449970005BC15 /* TaharezLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaharezLook.imageset; sourceTree = "<group>"; };
+		8856204C1E9449970005BC15 /* TaharezLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TaharezLook.png; sourceTree = "<group>"; };
+		8856204D1E9449970005BC15 /* Vanilla.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vanilla.imageset; sourceTree = "<group>"; };
+		8856204E1E9449970005BC15 /* vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanilla.png; sourceTree = "<group>"; };
+		8856204F1E9449970005BC15 /* WindowsLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.imageset; sourceTree = "<group>"; };
+		885620501E9449970005BC15 /* WindowsLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WindowsLook.png; sourceTree = "<group>"; };
 		886F05A31E5DF21600465532 /* example.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = example.anims; sourceTree = "<group>"; };
 		886F05A41E5DF21600465532 /* GameMenu.anims */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.anims; sourceTree = "<group>"; };
 		886F05A61E5DF21600465532 /* Batang-18.font */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Batang-18.font"; sourceTree = "<group>"; };
@@ -480,38 +512,6 @@
 		886F062F1E5DF21600465532 /* GUIScheme.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUIScheme.xsd; sourceTree = "<group>"; };
 		886F06301E5DF21600465532 /* Imageset.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Imageset.xsd; sourceTree = "<group>"; };
 		886F06311E5DF21600465532 /* Samples.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Samples.xsd; sourceTree = "<group>"; };
-		88E04DC91E93F138004FBC66 /* AlfiskoSkin.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AlfiskoSkin.imageset; sourceTree = "<group>"; };
-		88E04DCA1E93F138004FBC66 /* AlfiskoSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlfiskoSkin.png; sourceTree = "<group>"; };
-		88E04DCB1E93F138004FBC66 /* AlfiskoSkin.png.OLD */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlfiskoSkin.png.OLD; sourceTree = "<group>"; };
-		88E04DCC1E93F138004FBC66 /* Aliasing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aliasing.jpg; sourceTree = "<group>"; };
-		88E04DCD1E93F138004FBC66 /* BackgroundSampleBrowser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackgroundSampleBrowser.jpg; sourceTree = "<group>"; };
-		88E04DCE1E93F138004FBC66 /* DriveIcons.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DriveIcons.imageset; sourceTree = "<group>"; };
-		88E04DCF1E93F138004FBC66 /* DriveIcons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DriveIcons.png; sourceTree = "<group>"; };
-		88E04DD01E93F138004FBC66 /* FairChar.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FairChar.imageset; sourceTree = "<group>"; };
-		88E04DD11E93F138004FBC66 /* FairChar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FairChar.png; sourceTree = "<group>"; };
-		88E04DD21E93F138004FBC66 /* GameMenu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GameMenu.imageset; sourceTree = "<group>"; };
-		88E04DD31E93F138004FBC66 /* GameMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameMenu.png; sourceTree = "<group>"; };
-		88E04DD41E93F138004FBC66 /* GWEN.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GWEN.imageset; sourceTree = "<group>"; };
-		88E04DD51E93F138004FBC66 /* GWENDefaultSkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GWENDefaultSkin.png; sourceTree = "<group>"; };
-		88E04DD61E93F138004FBC66 /* HUDDemo.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HUDDemo.imageset; sourceTree = "<group>"; };
-		88E04DD71E93F138004FBC66 /* HUDDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemo.png; sourceTree = "<group>"; };
-		88E04DD81E93F138004FBC66 /* HUDDemoGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUDDemoGameOver.png; sourceTree = "<group>"; };
-		88E04DD91E93F138004FBC66 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		88E04DDA1E93F138004FBC66 /* Menu.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Menu.imageset; sourceTree = "<group>"; };
-		88E04DDB1E93F138004FBC66 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
-		88E04DDC1E93F138004FBC66 /* Menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu2.png; sourceTree = "<group>"; };
-		88E04DDD1E93F138004FBC66 /* OgreTray.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OgreTray.imageset; sourceTree = "<group>"; };
-		88E04DDE1E93F138004FBC66 /* OgreTrayImages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OgreTrayImages.png; sourceTree = "<group>"; };
-		88E04DDF1E93F138004FBC66 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		88E04DE01E93F138004FBC66 /* SampleBrowser.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleBrowser.imageset; sourceTree = "<group>"; };
-		88E04DE11E93F138004FBC66 /* SampleBrowser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleBrowser.png; sourceTree = "<group>"; };
-		88E04DE21E93F138004FBC66 /* SpaceBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpaceBackground.jpg; sourceTree = "<group>"; };
-		88E04DE31E93F138004FBC66 /* TaharezLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TaharezLook.imageset; sourceTree = "<group>"; };
-		88E04DE41E93F138004FBC66 /* TaharezLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TaharezLook.png; sourceTree = "<group>"; };
-		88E04DE51E93F138004FBC66 /* Vanilla.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vanilla.imageset; sourceTree = "<group>"; };
-		88E04DE61E93F138004FBC66 /* vanilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanilla.png; sourceTree = "<group>"; };
-		88E04DE71E93F138004FBC66 /* WindowsLook.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WindowsLook.imageset; sourceTree = "<group>"; };
-		88E04DE81E93F138004FBC66 /* WindowsLook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WindowsLook.png; sourceTree = "<group>"; };
 		C1338FA81E8C2AF900BE6F6F /* listaMenus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = listaMenus.h; sourceTree = "<group>"; };
 		C1A0AEF41E434BD8009699FD /* libCEGUIBase-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIBase-0_d.dylib"; path = "libs/libCEGUIBase-0_d.dylib"; sourceTree = "<group>"; };
 		C1A0AEF51E434BD8009699FD /* libCEGUICommonDialogs-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUICommonDialogs-0_d.dylib"; path = "libs/libCEGUICommonDialogs-0_d.dylib"; sourceTree = "<group>"; };
@@ -831,10 +831,49 @@
 			name = Enemigos;
 			sourceTree = "<group>";
 		};
+		885620301E9449970005BC15 /* imagesets */ = {
+			isa = PBXGroup;
+			children = (
+				885620311E9449970005BC15 /* AlfiskoSkin.imageset */,
+				885620321E9449970005BC15 /* AlfiskoSkin.png */,
+				885620331E9449970005BC15 /* AlfiskoSkin.png.OLD */,
+				885620341E9449970005BC15 /* Aliasing.jpg */,
+				885620351E9449970005BC15 /* BackgroundSampleBrowser.jpg */,
+				885620361E9449970005BC15 /* DriveIcons.imageset */,
+				885620371E9449970005BC15 /* DriveIcons.png */,
+				885620381E9449970005BC15 /* FairChar.imageset */,
+				885620391E9449970005BC15 /* FairChar.png */,
+				8856203A1E9449970005BC15 /* GameMenu.imageset */,
+				8856203B1E9449970005BC15 /* GameMenu.png */,
+				8856203C1E9449970005BC15 /* GWEN.imageset */,
+				8856203D1E9449970005BC15 /* GWENDefaultSkin.png */,
+				8856203E1E9449970005BC15 /* HUDDemo.imageset */,
+				8856203F1E9449970005BC15 /* HUDDemo.png */,
+				885620401E9449970005BC15 /* HUDDemoGameOver.png */,
+				885620411E9449970005BC15 /* logo.png */,
+				885620421E9449970005BC15 /* Menu.imageset */,
+				885620431E9449970005BC15 /* Menu.png */,
+				885620441E9449970005BC15 /* Menu2.png */,
+				885620451E9449970005BC15 /* OgreTray.imageset */,
+				885620461E9449970005BC15 /* OgreTrayImages.png */,
+				885620471E9449970005BC15 /* ReadMe.txt */,
+				885620481E9449970005BC15 /* SampleBrowser.imageset */,
+				885620491E9449970005BC15 /* SampleBrowser.png */,
+				8856204A1E9449970005BC15 /* SpaceBackground.jpg */,
+				8856204B1E9449970005BC15 /* TaharezLook.imageset */,
+				8856204C1E9449970005BC15 /* TaharezLook.png */,
+				8856204D1E9449970005BC15 /* Vanilla.imageset */,
+				8856204E1E9449970005BC15 /* vanilla.png */,
+				8856204F1E9449970005BC15 /* WindowsLook.imageset */,
+				885620501E9449970005BC15 /* WindowsLook.png */,
+			);
+			path = imagesets;
+			sourceTree = "<group>";
+		};
 		886F05A11E5DF21600465532 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				88E04DC81E93F138004FBC66 /* imagesets */,
+				885620301E9449970005BC15 /* imagesets */,
 				886F05A21E5DF21600465532 /* animations */,
 				886F05A51E5DF21600465532 /* fonts */,
 				886F05ED1E5DF21600465532 /* layouts */,
@@ -998,45 +1037,6 @@
 				886F06311E5DF21600465532 /* Samples.xsd */,
 			);
 			path = xml_schemas;
-			sourceTree = "<group>";
-		};
-		88E04DC81E93F138004FBC66 /* imagesets */ = {
-			isa = PBXGroup;
-			children = (
-				88E04DC91E93F138004FBC66 /* AlfiskoSkin.imageset */,
-				88E04DCA1E93F138004FBC66 /* AlfiskoSkin.png */,
-				88E04DCB1E93F138004FBC66 /* AlfiskoSkin.png.OLD */,
-				88E04DCC1E93F138004FBC66 /* Aliasing.jpg */,
-				88E04DCD1E93F138004FBC66 /* BackgroundSampleBrowser.jpg */,
-				88E04DCE1E93F138004FBC66 /* DriveIcons.imageset */,
-				88E04DCF1E93F138004FBC66 /* DriveIcons.png */,
-				88E04DD01E93F138004FBC66 /* FairChar.imageset */,
-				88E04DD11E93F138004FBC66 /* FairChar.png */,
-				88E04DD21E93F138004FBC66 /* GameMenu.imageset */,
-				88E04DD31E93F138004FBC66 /* GameMenu.png */,
-				88E04DD41E93F138004FBC66 /* GWEN.imageset */,
-				88E04DD51E93F138004FBC66 /* GWENDefaultSkin.png */,
-				88E04DD61E93F138004FBC66 /* HUDDemo.imageset */,
-				88E04DD71E93F138004FBC66 /* HUDDemo.png */,
-				88E04DD81E93F138004FBC66 /* HUDDemoGameOver.png */,
-				88E04DD91E93F138004FBC66 /* logo.png */,
-				88E04DDA1E93F138004FBC66 /* Menu.imageset */,
-				88E04DDB1E93F138004FBC66 /* Menu.png */,
-				88E04DDC1E93F138004FBC66 /* Menu2.png */,
-				88E04DDD1E93F138004FBC66 /* OgreTray.imageset */,
-				88E04DDE1E93F138004FBC66 /* OgreTrayImages.png */,
-				88E04DDF1E93F138004FBC66 /* ReadMe.txt */,
-				88E04DE01E93F138004FBC66 /* SampleBrowser.imageset */,
-				88E04DE11E93F138004FBC66 /* SampleBrowser.png */,
-				88E04DE21E93F138004FBC66 /* SpaceBackground.jpg */,
-				88E04DE31E93F138004FBC66 /* TaharezLook.imageset */,
-				88E04DE41E93F138004FBC66 /* TaharezLook.png */,
-				88E04DE51E93F138004FBC66 /* Vanilla.imageset */,
-				88E04DE61E93F138004FBC66 /* vanilla.png */,
-				88E04DE71E93F138004FBC66 /* WindowsLook.imageset */,
-				88E04DE81E93F138004FBC66 /* WindowsLook.png */,
-			);
-			path = imagesets;
 			sourceTree = "<group>";
 		};
 		C1DF66BA1E8BC48000542BB8 /* State Machine */ = {
@@ -1281,25 +1281,25 @@
 			files = (
 				886F06811E5DF21700465532 /* Demo8.layout in Resources */,
 				886F06B61E5DF21700465532 /* CEGUIConfig.xsd in Resources */,
-				88E04DF91E93F138004FBC66 /* logo.png in Resources */,
-				88E04DEC1E93F138004FBC66 /* Aliasing.jpg in Resources */,
-				88E04DEE1E93F138004FBC66 /* DriveIcons.imageset in Resources */,
+				885620611E9449970005BC15 /* logo.png in Resources */,
+				885620541E9449970005BC15 /* Aliasing.jpg in Resources */,
+				885620561E9449970005BC15 /* DriveIcons.imageset in Resources */,
 				886F06801E5DF21600465532 /* CreditosLayout.layout in Resources */,
 				886F06871E5DF21700465532 /* HUDDemoGameOver.layout in Resources */,
-				88E04E001E93F138004FBC66 /* SampleBrowser.imageset in Resources */,
-				88E04DFA1E93F138004FBC66 /* Menu.imageset in Resources */,
+				885620681E9449970005BC15 /* SampleBrowser.imageset in Resources */,
+				885620621E9449970005BC15 /* Menu.imageset in Resources */,
 				886F06531E5DF21600465532 /* LicenseApache.txt in Resources */,
 				886F063B1E5DF21600465532 /* DejaVuSans-12-NoScale.font in Resources */,
 				886F06441E5DF21600465532 /* GreatVibes-16.font in Resources */,
 				886F06B91E5DF21700465532 /* GUILayout.xsd in Resources */,
 				886F06A71E5DF21700465532 /* Menu.project in Resources */,
-				88E04DF51E93F138004FBC66 /* GWENDefaultSkin.png in Resources */,
-				88E04DEB1E93F138004FBC66 /* AlfiskoSkin.png.OLD in Resources */,
+				8856205D1E9449970005BC15 /* GWENDefaultSkin.png in Resources */,
+				885620531E9449970005BC15 /* AlfiskoSkin.png.OLD in Resources */,
 				886F06AE1E5DF21700465532 /* Menu.scheme in Resources */,
 				886F06A21E5DF21700465532 /* TaharezLook.looknfeel in Resources */,
 				886F06B01E5DF21700465532 /* SampleBrowser.scheme in Resources */,
 				886F06BA1E5DF21700465532 /* GUIScheme.xsd in Resources */,
-				88E04E011E93F138004FBC66 /* SampleBrowser.png in Resources */,
+				885620691E9449970005BC15 /* SampleBrowser.png in Resources */,
 				886F06911E5DF21700465532 /* TabPage.layout in Resources */,
 				886F06951E5DF21700465532 /* TextDemo.layout in Resources */,
 				886F069E1E5DF21700465532 /* HUDDemo.looknfeel in Resources */,
@@ -1308,14 +1308,14 @@
 				886F06B11E5DF21700465532 /* TaharezLook.scheme in Resources */,
 				886F068A1E5DF21700465532 /* Opciones.layout in Resources */,
 				886F06971E5DF21700465532 /* VanillaConsole.layout in Resources */,
-				88E04DF21E93F138004FBC66 /* GameMenu.imageset in Resources */,
+				8856205A1E9449970005BC15 /* GameMenu.imageset in Resources */,
 				886F064D1E5DF21600465532 /* Jura-DemiBold.ttf in Resources */,
 				886F06941E5DF21700465532 /* TaharezLookOverview.layout in Resources */,
 				886F06A81E5DF21700465532 /* prueba.project in Resources */,
 				886F06891E5DF21700465532 /* MenuPrincipal.layout in Resources */,
 				886F064A1E5DF21600465532 /* Jura-10.font in Resources */,
 				886F067E1E5DF21600465532 /* CargarPartida.layout in Resources */,
-				88E04DF41E93F138004FBC66 /* GWEN.imageset in Resources */,
+				8856205C1E9449970005BC15 /* GWEN.imageset in Resources */,
 				886F06B21E5DF21700465532 /* VanillaCommonDialogs.scheme in Resources */,
 				886F06991E5DF21700465532 /* VanillaWindows.layout in Resources */,
 				886F06451E5DF21600465532 /* GreatVibes-22.font in Resources */,
@@ -1324,7 +1324,7 @@
 				886F06561E5DF21600465532 /* LicenseMIT.txt in Resources */,
 				886F06381E5DF21600465532 /* batang.ttf in Resources */,
 				886F064B1E5DF21600465532 /* Jura-13.font in Resources */,
-				88E04E031E93F138004FBC66 /* TaharezLook.imageset in Resources */,
+				8856206B1E9449970005BC15 /* TaharezLook.imageset in Resources */,
 				886F068F1E5DF21700465532 /* SimpleDebug.layout in Resources */,
 				886F06491E5DF21600465532 /* Junicode.ttf in Resources */,
 				886F06AF1E5DF21700465532 /* OgreTray.scheme in Resources */,
@@ -1336,43 +1336,43 @@
 				886F06511E5DF21600465532 /* Klingon-pIqaD-HaSta.ttf in Resources */,
 				886F06B81E5DF21700465532 /* Font.xsd in Resources */,
 				886F06981E5DF21700465532 /* VanillaLookOverview.layout in Resources */,
-				88E04E041E93F138004FBC66 /* TaharezLook.png in Resources */,
+				8856206C1E9449970005BC15 /* TaharezLook.png in Resources */,
 				886F06821E5DF21700465532 /* DragDropDemo.layout in Resources */,
 				886F06B41E5DF21700465532 /* WindowsLook.scheme in Resources */,
-				88E04DED1E93F138004FBC66 /* BackgroundSampleBrowser.jpg in Resources */,
+				885620551E9449970005BC15 /* BackgroundSampleBrowser.jpg in Resources */,
 				886F06481E5DF21600465532 /* Junicode-13.font in Resources */,
 				886F065C1E5DF21600465532 /* RichStyle.ttf in Resources */,
 				886F065B1E5DF21600465532 /* OpenSans.ttf in Resources */,
 				886F06581E5DF21600465532 /* LicenseUbuntuFont.txt in Resources */,
 				886F06831E5DF21700465532 /* EffectsDemo.layout in Resources */,
-				88E04E051E93F138004FBC66 /* Vanilla.imageset in Resources */,
+				8856206D1E9449970005BC15 /* Vanilla.imageset in Resources */,
 				886F06521E5DF21600465532 /* Legal.txt in Resources */,
 				886F068D1E5DF21700465532 /* SampleBrowser.layout in Resources */,
 				886F063D1E5DF21600465532 /* DejaVuSans-14-NoScale.font in Resources */,
 				886F068B1E5DF21700465532 /* Pause.layout in Resources */,
 				886F064C1E5DF21600465532 /* Jura-18.font in Resources */,
-				88E04DFD1E93F138004FBC66 /* OgreTray.imageset in Resources */,
-				88E04E071E93F138004FBC66 /* WindowsLook.imageset in Resources */,
+				885620651E9449970005BC15 /* OgreTray.imageset in Resources */,
+				8856206F1E9449970005BC15 /* WindowsLook.imageset in Resources */,
 				886F06901E5DF21700465532 /* TabControlDemo.layout in Resources */,
 				886F06391E5DF21600465532 /* DejaVuSans-10-NoScale.font in Resources */,
-				88E04DFF1E93F138004FBC66 /* ReadMe.txt in Resources */,
+				885620671E9449970005BC15 /* ReadMe.txt in Resources */,
 				886F06A61E5DF21700465532 /* demo8.lua in Resources */,
 				886F067D1E5DF21600465532 /* application_templates.layout in Resources */,
 				886F069D1E5DF21700465532 /* GWEN.looknfeel in Resources */,
 				886F06AB1E5DF21700465532 /* Generic.scheme in Resources */,
 				886F06371E5DF21600465532 /* Batang-18.font in Resources */,
-				88E04DFE1E93F138004FBC66 /* OgreTrayImages.png in Resources */,
-				88E04DF31E93F138004FBC66 /* GameMenu.png in Resources */,
-				88E04E021E93F138004FBC66 /* SpaceBackground.jpg in Resources */,
+				885620661E9449970005BC15 /* OgreTrayImages.png in Resources */,
+				8856205B1E9449970005BC15 /* GameMenu.png in Resources */,
+				8856206A1E9449970005BC15 /* SpaceBackground.jpg in Resources */,
 				886F06421E5DF21600465532 /* FetteClassicUNZFraktur.ttf in Resources */,
 				886F06AD1E5DF21700465532 /* HUDDemo.scheme in Resources */,
 				886F069B1E5DF21700465532 /* GameMenu.looknfeel in Resources */,
 				886F069A1E5DF21700465532 /* AlfiskoSkin.looknfeel in Resources */,
 				886F063C1E5DF21600465532 /* DejaVuSans-12.font in Resources */,
 				886F065D1E5DF21600465532 /* Tnua-Libre.ttf in Resources */,
-				88E04DE91E93F138004FBC66 /* AlfiskoSkin.imageset in Resources */,
-				88E04DF01E93F138004FBC66 /* FairChar.imageset in Resources */,
-				88E04E061E93F138004FBC66 /* vanilla.png in Resources */,
+				885620511E9449970005BC15 /* AlfiskoSkin.imageset in Resources */,
+				885620581E9449970005BC15 /* FairChar.imageset in Resources */,
+				8856206E1E9449970005BC15 /* vanilla.png in Resources */,
 				886F063E1E5DF21600465532 /* DejaVuSans-14.font in Resources */,
 				886F06BB1E5DF21700465532 /* Imageset.xsd in Resources */,
 				886F06B71E5DF21700465532 /* Falagard.xsd in Resources */,
@@ -1380,34 +1380,34 @@
 				886F067F1E5DF21600465532 /* Console.wnd in Resources */,
 				886F06471E5DF21600465532 /* IMFePIrm29P.ttf in Resources */,
 				886F06551E5DF21600465532 /* LicenseGPL.txt in Resources */,
-				88E04DF61E93F138004FBC66 /* HUDDemo.imageset in Resources */,
+				8856205E1E9449970005BC15 /* HUDDemo.imageset in Resources */,
 				886F06501E5DF21600465532 /* Jura-Regular.ttf in Resources */,
-				88E04DFB1E93F138004FBC66 /* Menu.png in Resources */,
-				88E04DEA1E93F138004FBC66 /* AlfiskoSkin.png in Resources */,
+				885620631E9449970005BC15 /* Menu.png in Resources */,
+				885620521E9449970005BC15 /* AlfiskoSkin.png in Resources */,
 				886F06861E5DF21700465532 /* HUD.layout in Resources */,
 				886F065A1E5DF21600465532 /* OpenSans-8.font in Resources */,
-				88E04DF81E93F138004FBC66 /* HUDDemoGameOver.png in Resources */,
+				885620601E9449970005BC15 /* HUDDemoGameOver.png in Resources */,
 				886F06961E5DF21700465532 /* TreeDemoTaharez.layout in Resources */,
 				886F06AA1E5DF21700465532 /* GameMenu.scheme in Resources */,
-				88E04E081E93F138004FBC66 /* WindowsLook.png in Resources */,
+				885620701E9449970005BC15 /* WindowsLook.png in Resources */,
 				886F06541E5DF21600465532 /* LicenseDejaVu.txt in Resources */,
 				886F068C1E5DF21700465532 /* prueba.layout in Resources */,
-				88E04DFC1E93F138004FBC66 /* Menu2.png in Resources */,
+				885620641E9449970005BC15 /* Menu2.png in Resources */,
 				886F06B51E5DF21700465532 /* Animation.xsd in Resources */,
 				886F06461E5DF21600465532 /* GreatVibes-Regular.ttf in Resources */,
 				886F06921E5DF21700465532 /* TabPage1.layout in Resources */,
-				88E04DF71E93F138004FBC66 /* HUDDemo.png in Resources */,
+				8856205F1E9449970005BC15 /* HUDDemo.png in Resources */,
 				886F064F1E5DF21600465532 /* Jura-Medium.ttf in Resources */,
 				886F06A31E5DF21700465532 /* Vanilla.looknfeel in Resources */,
 				886F06A91E5DF21700465532 /* AlfiskoSkin.scheme in Resources */,
 				886F068E1E5DF21700465532 /* SampleBrowserLoadScreen.layout in Resources */,
-				88E04DF11E93F138004FBC66 /* FairChar.png in Resources */,
+				885620591E9449970005BC15 /* FairChar.png in Resources */,
 				886F06351E5DF21600465532 /* example.anims in Resources */,
 				886F06571E5DF21600465532 /* LicenseSIL.txt in Resources */,
 				886F06A51E5DF21700465532 /* WindowsLook.looknfeel in Resources */,
 				886F06881E5DF21700465532 /* HUDDemoIngame.layout in Resources */,
 				886F069C1E5DF21700465532 /* Generic.looknfeel in Resources */,
-				88E04DEF1E93F138004FBC66 /* DriveIcons.png in Resources */,
+				885620571E9449970005BC15 /* DriveIcons.png in Resources */,
 				886F06851E5DF21700465532 /* GameMenu.layout in Resources */,
 				886F069F1E5DF21700465532 /* InventoryComponents.looknfeel in Resources */,
 				886F063F1E5DF21600465532 /* DejaVuSans.ttf in Resources */,

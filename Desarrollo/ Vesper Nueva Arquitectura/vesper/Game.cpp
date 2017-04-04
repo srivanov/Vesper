@@ -53,9 +53,9 @@ void Game::render(){
 //		nivelazo->render();
 //	}
     renderizador->beginDraw();
-    maquina.render();
 	if(*maquina.actualState->getState() == PLAYING)
 		renderizador->dibujar();
+    maquina.render();
     renderizador->endDraw();
 }
 

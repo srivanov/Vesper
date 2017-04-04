@@ -25,7 +25,7 @@ void OpcionesLayout::init(CEGUI::RenderTarget* target){
     loadLayout("Opciones.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
     
-    label_ajustes = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(7));
+//    label_ajustes = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(7));
     
     button_controles = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(3));
     button_controles->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickControles, this));
@@ -64,6 +64,8 @@ void OpcionesLayout::init(CEGUI::RenderTarget* target){
     button_guardar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(17));
     button_guardar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickGuardar, this));
     
+    button_guardar->hide();
+    
     // TO DO: Hacer un metodo que ponga los controles segun los datos que ponga en el archivo JSON
     setControles();
 }
@@ -81,6 +83,7 @@ void OpcionesLayout::onClickSonido(const CEGUI::EventArgs &e) {
     contenedor_pantalla->hide();
     contenedor_sonido->show();
     contenedor_controles->hide();
+    button_guardar->show();
 }
 
 void OpcionesLayout::onClickPantalla(const CEGUI::EventArgs &e) {

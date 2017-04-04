@@ -10,6 +10,7 @@
         <Item name="layouts" type="folder">
             <Item path="layouts/CargarPartida.layout" type="file" />
             <Item path="layouts/CreditosLayout.layout" type="file" />
+            <Item path="layouts/ElegirPersonaje.layout" type="file" />
             <Item path="layouts/HUD.layout" type="file" />
             <Item path="layouts/MenuPrincipal.layout" type="file" />
             <Item path="layouts/Opciones.layout" type="file" />
