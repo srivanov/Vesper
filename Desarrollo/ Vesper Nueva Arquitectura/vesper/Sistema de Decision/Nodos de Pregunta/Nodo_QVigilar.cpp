@@ -10,11 +10,8 @@
 
 short Nodo_QVigilar::run(const int &ID){
     //cout << "VIGILAR?" << endl;
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->ExistEventByType(P_VIGILAR)){
         activado = true;

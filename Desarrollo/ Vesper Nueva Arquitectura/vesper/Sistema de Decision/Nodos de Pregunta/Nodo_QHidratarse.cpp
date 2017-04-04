@@ -10,11 +10,8 @@
 
 short Nodo_QHidratarse::run(const int &ID){
     //cout << "BEBER?" << endl;
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->ExistEventByType(P_SED)){

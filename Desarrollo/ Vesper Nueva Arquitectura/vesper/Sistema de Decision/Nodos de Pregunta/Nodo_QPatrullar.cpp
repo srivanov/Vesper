@@ -10,6 +10,9 @@
 
 short Nodo_QPatrullar::run(const int &ID){
     //cout << "PATRULLAR?" << endl;
+    if(activado)
+        return runHijos(ID);
+    
     if(NpcLibrary::instancia()->recover_book(ID)->ExistEventByType(P_PATRULLAR))
         return runHijos(ID);
     return FALLO;

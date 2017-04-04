@@ -13,6 +13,7 @@
 
 class Nodo_Condicional_Secuencial : public Nodo_Secuencia{
 protected:
+    
     short runHijos(const int&);
     bool activado;
 public:

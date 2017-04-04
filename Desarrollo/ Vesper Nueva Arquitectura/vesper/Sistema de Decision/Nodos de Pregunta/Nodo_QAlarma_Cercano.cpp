@@ -10,11 +10,8 @@
 
 short Nodo_QAlarma_Cercano::run(const int &ID){
     //cout << "ALARMA CERCANA?" << endl;
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     if(NpcLibrary::instancia()->recover_book(ID)->Alarma){
         activado = true;
         return RUNNING;

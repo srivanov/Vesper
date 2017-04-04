@@ -44,12 +44,11 @@ void PathPlanning::construirbolsa(){
 }
 
 bool PathPlanning::NeedCalculo(dvector3D *initialPosition,dvector3D * finalPosition){
-    /*
+    
     dvector3D pos = *BolsaNodos->lastNode()->getPosition();
     float DistanciaPrimerNodo = EasyMath::EucCalcularDistancia(pos, *initialPosition);
     float DistanciaObjetivo = EasyMath::EucCalcularDistancia(*initialPosition, *finalPosition);
     if(DistanciaPrimerNodo>DistanciaObjetivo) return false;
-     */
     return true;
 }
 std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dvector3D * finalPosition){
@@ -70,8 +69,16 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
     
     //VALORA SI ES NECESARIO USAR PATHFINDING
     if(NeedCalculo(initialPosition,finalPosition)){
-    
+        try {
             while(Pathbuilding());
+        } catch (N_Errores e) {
+            std::string ERROR = " ### ERROR ### ";
+            if(e==no_way)   ERROR+= " NO ENCONTRO CAMINO";
+            if(e==fail)     ERROR+= " FALLO AL CALCULAR";
+            cout << ERROR << " ### ERROR ### " << endl;
+            
+        }
+        
         
             // AÑADE NODO FINAL
             BolsaNodos->add_node(final_camino);
@@ -101,6 +108,8 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
 
 bool PathPlanning::CalcularSiguienteNodo(NodeOpenBag* bolsa){
     
+    if(bolsa->getNodes().empty())
+        throw fail;
     std::vector<conexos*> conexos = bolsa->lastNode()->getConexos();
     
     
@@ -120,7 +129,7 @@ bool PathPlanning::CalcularSiguienteNodo(NodeOpenBag* bolsa){
     
     if (select_conexo == 0){
         bolsa->disable_node(bolsa->lastNode()->getID());
-        throw no_way;
+        return true;
     }
     
     
@@ -155,14 +164,9 @@ bool PathPlanning::EvaluarCamino(){
 
 bool PathPlanning::Pathbuilding(){
     
-    try {
-        if(!CalcularSiguienteNodo(BolsaNodos)) return false;
-        EvaluarCamino();
+    if(!CalcularSiguienteNodo(BolsaNodos)) return false;
+    EvaluarCamino();
         
-    } catch (N_Errores e) {
-        if(e==no_way){cout << "Recalculo" << endl;}
-            
-    }
     return true;
 }
 
