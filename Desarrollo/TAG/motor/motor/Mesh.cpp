@@ -19,7 +19,7 @@ Mesh::~Mesh(){
 	delete texturas;
 }
 
-void Mesh::Draw(Shader* shader){
+void Mesh::Draw(Shader* shader, Texture* textura){
 	
 	//TO DO: provisional
 	glUniform1f(glGetUniformLocation(shader->Program, "shininess"), 1.0f);
@@ -27,29 +27,37 @@ void Mesh::Draw(Shader* shader){
 	GLuint diffuseNr = 1;
 	GLuint specularNr = 1;
 	
-	for(GLuint i = 0; i < numTexturas; i++){
+	if(textura != nullptr){
+		glActiveTexture(GL_TEXTURE0);
+		glUniform1f(glGetUniformLocation(shader->Program, "texture_diffuse1"), 0);
+		glBindTexture(GL_TEXTURE_2D, textura->id);
+	}else{
 		
-		// activamos la textura antes de linkarla
-		glActiveTexture(GL_TEXTURE0 + i);
+		for(GLuint i = 0; i < numTexturas; i++){
 		
-		// recogemos el numero de la textura
-		std::stringstream ss;
-		std::string number;
-		std::string name = this->texturas[i]->type;
+			// activamos la textura antes de linkarla
+			glActiveTexture(GL_TEXTURE0 + i);
+			glActiveTexture(GL_TEXTURE0);
 		
-		if(name == "texture_diffuse")
-			// cambiamos de GLuint a stream
-			ss << diffuseNr++;
-		else if(name == "texture_specular")
-			// cambiamos de GLuint a stream
-			ss << specularNr++;
-		
-		number = ss.str();
-		
-		glUniform1f(glGetUniformLocation(shader->Program, (name + number).c_str()), i);
-		glBindTexture(GL_TEXTURE_2D, this->texturas[i]->id);
+			// recogemos el numero de la textura
+			std::stringstream ss;
+			std::string number;
+			std::string name = texturas[i]->type;
+			
+			if(name == "texture_diffuse")
+				// cambiamos de GLuint a stream
+				ss << diffuseNr++;
+			else if(name == "texture_specular")
+				// cambiamos de GLuint a stream
+				ss << specularNr++;
+			
+			number = ss.str();
+			
+			glUniform1f(glGetUniformLocation(shader->Program, (name + number).c_str()), i);
+			glBindTexture(GL_TEXTURE_2D, texturas[i]->id);
+		}
 	}
-	
+
 	glActiveTexture(GL_TEXTURE0);
 	
 	// dibujamos el mesh

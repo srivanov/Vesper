@@ -30,6 +30,7 @@ public:
 private:
 	Shader* sh;
 	TRecursoMalla* malla;
+	TRecursoTextura* textura;
 	Pila* pila;
 	TGestorRecursos* gestor;
 };

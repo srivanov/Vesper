@@ -12,6 +12,7 @@ TMalla::TMalla(){
 	pila = Pila::Instance();
 	gestor = TGestorRecursos::Instance();
 	malla = NULL;
+	textura = nullptr;
 	sh = ShaderManager::Instance()->getActivo();
 }
 
@@ -27,7 +28,8 @@ void TMalla::cargarMalla(char* fichero){
 }
 
 void TMalla::setTextura(char* fichero){
-	malla->setTexture(fichero);
+//	malla->setTexture(fichero);
+	textura = static_cast<TRecursoTextura*>(gestor->getRecurso(fichero, tRTextura));
 }
 
 void TMalla::beginDraw(){
@@ -36,7 +38,10 @@ void TMalla::beginDraw(){
 	
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
-	malla->Draw(sh);
+	if(textura)
+		malla->Draw(sh, textura->getTexture());
+	else
+		malla->Draw(sh, nullptr);
 //	printf("BEGIN DRAW Malla\n");
 
 //	for (int i=0; i<pila->actual.length(); i++) {

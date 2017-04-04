@@ -44,14 +44,14 @@ void TRecursoMalla::cargarFichero(std::string &ruta){
 //	modelMatrix = *m;
 //}
 
-void TRecursoMalla::Draw(Shader *shader){
+void TRecursoMalla::Draw(Shader *shader, Texture* textura){
 //	std::vector<Mesh*>::iterator it = meshes.begin();
 //	while(it != meshes.end()){
 //		(*it)->Draw(shader);
 //		it++;
 //	}
 	for (int i=0; i<numMeshes; ++i) {
-		meshes[i]->Draw(shader);
+		meshes[i]->Draw(shader, textura);
 	}
 }
 
