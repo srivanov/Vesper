@@ -38,7 +38,7 @@ private:
 		estado = MENU;
 		destruir = false;
 		//nextState=MENU;
-		//nextState=PLAYING;
+		nextState=PLAYING;
 	}
 	estados estado;
 };

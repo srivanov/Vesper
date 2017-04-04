@@ -26,7 +26,7 @@ Player::Player(){
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
     componente->setFather(this);
     addNodo("3d/sphere.obj");
-//    setTexture("3d/bombahumo.png");
+    setTexture("3d/texture.png");
 	
     vida = 100;
 	input = InputManager::Instance();

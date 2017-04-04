@@ -11,8 +11,8 @@
 #define TIEMPO 5.f
 
 Comida::Comida(){
-    addNodo("3d/muro.3ds");
-    setTexture("3d/pizza.jpg");
+    addNodo("3d/muro.obj");
+    setTexture("3d/pizza.png");
     consumido = false;
 }
 Comida::~Comida(){}

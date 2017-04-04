@@ -126,9 +126,9 @@ void render::addCamera(dvector3D &p, dvector3D &l){
     camara->setNearValue(1);
     camara->setFarValue(200);
 	SkyLuz* luz = engine->crearLuz(NULL);
-	luz->_setAmbient(60);
-	luz->_setDiffuse(10);
-	dvector3D c(25,25,5);
+	luz->_setAmbient(0.5);
+	luz->_setDiffuse(20);
+	dvector3D c(25,25,-25);
 	luz->setPosicion(c);
 }
 
@@ -143,20 +143,20 @@ void render::CreateGround(int alto, int ancho){
 //    nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
 	nodo_suelo = engine->crearMalla(NULL, tMallaEstatica);
 	nodo_suelo->setMalla("3d/cube.obj");
-	std::string s = "3d/colorverde.jpg";
-//	nodo_suelo->setTextura(s);
+//	std::string s = "3d/colorverde.png";
+	nodo_suelo->setTextura("3d/colorverde.png");
 //    nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
-//    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
+//    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.png"));
 	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5);
     nodo_suelo->setPosicion(m);
 //    nodo_suelo->setRotacion(dvector3D(90,0,90));
-	m = dvector3D(ancho,alto/2.f, 0.1);
+	m = dvector3D(ancho,alto/4.f, 0.1);
 	nodo_suelo->escalar(m);
 	
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
-//	IMesh* muro  = ventana::Instance()->getSceneManager()->getMesh("3d/muro.3ds");
+//	IMesh* muro  = ventana::Instance()->getSceneManager()->getMesh("3d/muro.obj");
 //	
 //	if(!muro){
 //		printf("muro no cargado\n");
@@ -164,7 +164,7 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 
 //	ISceneNode* nodo;
 	SkyMalla* node;
-	char* s = "3d/rocas.jpg";
+	char* s = "3d/rocas.png";
     
 
     int h1 = altoMapa;
@@ -178,10 +178,10 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
             int x = (int) it % (anchoMapa);
 //			nodo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1.0f, 0, -1, vector3df(0,0,0), vector3df(0,0,0), vector3df(1,1,1));
 			nodo = engine->crearMalla(NULL, tMallaEstatica);
-			nodo->setMalla("3d/muro.3ds");
+			nodo->setMalla("3d/muro.obj");
 			nodo->setTextura(s);
 //            nodo->setMaterialFlag(EMF_LIGHTING, false);
-//            nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
+//            nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.png"));
 			dvector3D m(x,y,0);
 			nodo->setPosicion(m);
             //std::cout << x << "|" << y << std::endl;
