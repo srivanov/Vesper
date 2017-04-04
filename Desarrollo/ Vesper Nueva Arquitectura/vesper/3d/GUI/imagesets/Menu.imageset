@@ -30,4 +30,17 @@
     <Image height="50" name="boton_cargarpartida" width="524" xPos="701" yPos="1463" />
     <Image height="54" name="boton_jugar" width="208" xPos="1111" yPos="1262" />
     <Image height="50" name="boton_volver" width="232" xPos="1133" yPos="1395" />
+    <Image height="376" name="hud_fondo" width="658" xPos="2149" yPos="65" />
+    <Image height="24" name="moneda0" width="82" xPos="2161" yPos="491" />
+    <Image height="24" name="moneda1" width="82" xPos="2163" yPos="521" />
+    <Image height="24" name="moneda2" width="82" xPos="2163" yPos="549" />
+    <Image height="24" name="moneda3" width="82" xPos="2165" yPos="579" />
+    <Image height="20" name="vida1" width="126" xPos="2360" yPos="493" />
+    <Image height="20" name="vida2" width="126" xPos="2359" yPos="516" />
+    <Image height="20" name="vida3" width="126" xPos="2359" yPos="541" />
+    <Image height="20" name="vida4" width="126" xPos="2358" yPos="565" />
+    <Image height="20" name="vida5" width="126" xPos="2358" yPos="589" />
+    <Image height="95" name="pistola1" width="131" xPos="2138" yPos="675" />
+    <Image height="97" name="pistola2" width="130" xPos="2139" yPos="782" />
+    <Image height="105" name="pistola3" width="140" xPos="2137" yPos="895" />
 </Imageset>

@@ -3,7 +3,7 @@
     <Items>
         <Item name="imagesets" type="folder">
             <Item path="imagesets/Menu.imageset" type="file" />
-            <Item path="imagesets/Menu.png" type="file" />
+            <Item path="imagesets/Menu2.png" type="file" />
             <Item path="imagesets/OgreTray.imageset" type="file" />
             <Item path="imagesets/OgreTrayImages.png" type="file" />
         </Item>
