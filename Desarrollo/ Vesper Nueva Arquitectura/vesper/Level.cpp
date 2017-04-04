@@ -74,8 +74,11 @@ void Level::update(){
     clear();
     
     if(input->isPressed(SKY_KEY_ESCAPE)){
-        actualState->nextState = MENU;
-        actualState->menu = tmPAUSE;
+//        actualState->nextState = MENU;
+//        actualState->menu = tmPAUSE;
+		
+		//PROVISIONAL
+		actualState->nextState = STOP;
     }
     //TO DO: poner el resto para elegir personajes
     
