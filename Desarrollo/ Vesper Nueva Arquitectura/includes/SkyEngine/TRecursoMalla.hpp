@@ -23,7 +23,7 @@ public:
 	TRecursoMalla();
 	~TRecursoMalla();
 	void cargarFichero(std::string &ruta);
-	void Draw(Shader *shader);
+	void Draw(Shader *shader, Texture* textura);
 	void setTexture(char* ruta);
 	void imprimirDatos();
 //	void asignarMatrix(glm::mat4 *m);
