@@ -46,13 +46,6 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="HorizontalAlignment" value="Centre" />
         </Window>
-        <Window type="Generic/ImageButton" name="guardar" >
-            <Property name="ID" value="17" />
-            <Property name="Area" value="{{0,273},{0,495},{0,365},{0,516}}" />
-            <Property name="HoverImage" value="Menu/boton_guardar" />
-            <Property name="NormalImage" value="Menu/boton_guardar" />
-            <Property name="PushedImage" value="Menu/boton_guardar" />
-        </Window>
         <Window type="Generic/ImageButton" name="volver" >
             <Property name="ID" value="6" />
             <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
@@ -124,6 +117,14 @@
                 <Property name="Text" value="Encendido" />
                 <Property name="Selected" value="true" />
             </Window>
+        </Window>
+        <Window type="Generic/ImageButton" name="guardar" >
+            <Property name="ID" value="17" />
+            <Property name="Area" value="{{0,273},{0,495},{0,365},{0,516}}" />
+            <Property name="HoverImage" value="Menu/boton_guardar" />
+            <Property name="AlwaysOnTop" value="true" />
+            <Property name="NormalImage" value="Menu/boton_guardar" />
+            <Property name="PushedImage" value="Menu/boton_guardar" />
         </Window>
     </Window>
 </GUILayout>
