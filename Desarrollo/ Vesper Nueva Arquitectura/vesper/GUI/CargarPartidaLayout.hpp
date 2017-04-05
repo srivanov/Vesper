@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "GUI.h"
-#include "../MyEventReceiver.hpp"
 
 class CargarPartidaLayout : public GUI {
 public:

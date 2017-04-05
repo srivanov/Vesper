@@ -7,8 +7,6 @@
 //
 
 #include "HUDLayout.hpp"
-#include "../components/ventana.hpp"
-#include "Game.hpp"
 
 HUDLayout::HUDLayout() {
     

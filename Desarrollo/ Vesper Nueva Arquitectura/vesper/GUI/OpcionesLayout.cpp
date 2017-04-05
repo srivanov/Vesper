@@ -7,8 +7,6 @@
 //
 
 #include "OpcionesLayout.hpp"
-#include "../components/ventana.hpp"
-#include "../Game.hpp"
 #include "../JSONParser.hpp"
 #include <map>
 

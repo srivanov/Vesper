@@ -7,7 +7,6 @@
 //
 
 #include "menuManager.hpp"
-//#include "elegirLayout.h"
 #include "listaMenus.h"
 #include "../components/ventana.hpp"
 

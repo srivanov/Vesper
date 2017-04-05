@@ -5,8 +5,8 @@
 #include "../Game.hpp"
 
 input::input(){
-	r = MyEventReceiver::Instance();
-    intervalo = clock();
+//	r = MyEventReceiver::Instance();
+//    intervalo = clock();
     cadenciaDisparo = 5.0;
 }
 

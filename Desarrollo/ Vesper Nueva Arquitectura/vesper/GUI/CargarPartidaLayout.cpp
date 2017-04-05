@@ -7,8 +7,6 @@
 //
 
 #include "CargarPartidaLayout.hpp"
-#include "../components/ventana.hpp"
-#include "Game.hpp"
 
 CargarPartidaLayout::CargarPartidaLayout() {
     

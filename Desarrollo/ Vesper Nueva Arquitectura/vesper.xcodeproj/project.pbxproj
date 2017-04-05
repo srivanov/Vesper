@@ -88,7 +88,6 @@
 		E98990D41E5B759F0001A36A /* JSONParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D21E5B759F0001A36A /* JSONParser.cpp */; };
 		E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */; };
 		E9A346371E0416FC00E6EC25 /* gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346351E0416FC00E6EC25 /* gun.cpp */; };
-		E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */; };
 		E9AC3A4C1DF0AA3C00A91A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
 		E9AC3A621DF0AA4800A91A97 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A561DF0AA4800A91A97 /* GameObject.cpp */; };
 		E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A671DF0AA5000A91A97 /* armasArrojadizas.cpp */; };
@@ -114,7 +113,7 @@
 		E9AC3ABA1DF0AABF00A91A97 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */; };
 		E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */; };
 		E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */; };
-		E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */; };
+		E9B6F7411E94F39D001E0658 /* textureMap.xml in Resources */ = {isa = PBXBuildFile; fileRef = E9B6F7401E94F39D001E0658 /* textureMap.xml */; };
 		E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
 		E9FFF3FF1E8FEC15001C9D16 /* libSkyEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFF3FE1E8FEC15001C9D16 /* libSkyEngine.a */; };
 		E9FFF4011E8FEC29001C9D16 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFF4001E8FEC29001C9D16 /* CoreVideo.framework */; };
@@ -280,7 +279,6 @@
 		E993C5BE1E3CB80B00EEA664 /* puertaInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puertaInterface.hpp; sourceTree = "<group>"; };
 		E9A346351E0416FC00E6EC25 /* gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gun.cpp; sourceTree = "<group>"; };
 		E9A346361E0416FC00E6EC25 /* gun.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gun.hpp; sourceTree = "<group>"; };
-		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
 		E9AC3A371DF0A9C100A91A97 /* vesper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vesper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E9AC3A561DF0AA4800A91A97 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
@@ -326,11 +324,9 @@
 		E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
 		E9AC3AC41DF0AD2A00A91A97 /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml2.h; sourceTree = "<group>"; };
-		E9AC3AE01DF0AD7100A91A97 /* MyEventReceiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyEventReceiver.hpp; sourceTree = "<group>"; };
 		E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mundoBox2D.cpp; sourceTree = "<group>"; };
 		E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mundoBox2D.hpp; sourceTree = "<group>"; };
-		E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeMesh.cpp; sourceTree = "<group>"; };
-		E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nodeMesh.hpp; sourceTree = "<group>"; };
+		E9B6F7401E94F39D001E0658 /* textureMap.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = textureMap.xml; path = objetos/textureMap.xml; sourceTree = "<group>"; };
 		E9DDC57E1E6837D10060B006 /* tiempo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tiempo.h; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9FA20581E1C2501003F9CA0 /* Dvector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dvector.hpp; sourceTree = "<group>"; };
@@ -618,6 +614,7 @@
 		E9AC3A391DF0A9C100A91A97 /* vesper */ = {
 			isa = PBXGroup;
 			children = (
+				E9B6F7401E94F39D001E0658 /* textureMap.xml */,
 				C1DF66BA1E8BC48000542BB8 /* State Machine */,
 				63C4CE931E706138008295A1 /* Arquitectura IA */,
 				E9AC3A661DF0AA5000A91A97 /* components */,
@@ -636,10 +633,6 @@
 				E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */,
 				E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */,
 				E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */,
-				E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */,
-				E9AC3AE01DF0AD7100A91A97 /* MyEventReceiver.hpp */,
-				E9AC3AE31DF0AD7100A91A97 /* nodeMesh.cpp */,
-				E9AC3AE41DF0AD7100A91A97 /* nodeMesh.hpp */,
 				E9AC3A4D1DF0AA4800A91A97 /* objetos */,
 				63C4CEFC1E70660F008295A1 /* PathFinding */,
 				63C4CE941E706155008295A1 /* Sistema de Decision */,
@@ -796,6 +789,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B6F7411E94F39D001E0658 /* textureMap.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,7 +830,6 @@
 				63D123FA1E84006700D1B380 /* Camera.cpp in Sources */,
 				63D124391E857AA500D1B380 /* loadLevel.cpp in Sources */,
 				E9AC3AA01DF0AA5000A91A97 /* conPuzzle.cpp in Sources */,
-				E9A8F0091DF48E3C00F8C8CE /* MyEventReceiver.cpp in Sources */,
 				63C4CEE71E706249008295A1 /* Nodo_QAvisado.cpp in Sources */,
 				E9AC3AA21DF0AA5000A91A97 /* habilidadEspecial.cpp in Sources */,
 				63C4CEF91E70625E008295A1 /* Nodo_RAlarma_Cercana.cpp in Sources */,
@@ -886,7 +879,6 @@
 				63C4CEE51E706249008295A1 /* Nodo_QAlarma_Cercano.cpp in Sources */,
 				63D1241A1E84030800D1B380 /* Muro.cpp in Sources */,
 				63C4CEC01E70620E008295A1 /* Nodo_AAyudar.cpp in Sources */,
-				E9AC3AE81DF0AD7100A91A97 /* nodeMesh.cpp in Sources */,
 				E9AC3AAD1DF0AA5000A91A97 /* sed.cpp in Sources */,
 				63C4CEBE1E70620E008295A1 /* Nodo_AAlarma_Cercano.cpp in Sources */,
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,

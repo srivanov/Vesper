@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "component.hpp"
-#include "../MyEventReceiver.hpp"
+
 #include <time.h>
 #include "../Dvector.hpp"
 
@@ -16,7 +16,7 @@ public:
 	void update();
 	
 private:
-	MyEventReceiver *r;
+//	MyEventReceiver *r;
     time_t intervalo;
     float cadenciaDisparo;
 };
