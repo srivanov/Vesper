@@ -51,27 +51,24 @@ private:
 //TO DO: actualizar para WINDOWS
 struct tiempo {
 	
-	long start(){
-		GetSystemTime(&st);
-		return (st.wSecond*MILi + st.wMiliseconds);
-	}
+	long start(){ GetSystemTime(&st); return (st.wSecond*MILI + st.wMilliseconds); }
 	
 	bool tTranscurrido(float sec) {
 		long diff = difference();
-		if(diff >= ((long)sec * MILI))
+		if(diff >= ((long)sec * MILLON))
 			return true;
 		return false;
 	}
 	
-	long getTiempo() { return difference(); }
+	long getTiempo() { return difference()/MILI; }
 	
-	long getActual() { GetSystemTime(&actual); return (actual.tv_sec*MILI + actual.wMilliseconds); }
+	long getActual() { GetSystemTime(&actual); return (actual.wSecond*MILI + actual.wMilliseconds); }
 	
 	void reset(){ start(); }
 private:
 	long difference(){
 		GetSystemTime(&fn);
-		return ((LONG)fn.wSecond * MILI + (LONG)fn.wMilliseconds)-((LONG)st.wSecond * MILI + (LONG)st.wMilliseconds);
+		return ((LONG)fn.wSecond * MILLON + (LONG)fn.wMilliseconds)-((LONG)st.wSecond * MILLON + (LONG)st.wMilliseconds);
 		return 0;
 	}
 	
