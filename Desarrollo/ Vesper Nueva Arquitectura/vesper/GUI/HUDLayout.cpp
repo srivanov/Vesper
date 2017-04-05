@@ -22,16 +22,16 @@ void HUDLayout::init(){
     
 
     moneda0 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
-    moneda0->hide();
+//    moneda0->hide();
     
     moneda1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(3));
-    moneda1->show();
+//    moneda1->show();
     
     moneda2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(4));
-    moneda2->hide();
+//    moneda2->hide();
     
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
-    moneda3->hide();
+//    moneda3->hide();
     
     vida1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(6));
 //    vida1->hide();
@@ -59,7 +59,7 @@ void HUDLayout::init(){
     
 }
 
-int HUDLayout::getVida(int v){
+void HUDLayout::getVida(int v){
     if(v > 80){
         vida1->show();
         vida2->hide();
@@ -91,11 +91,9 @@ int HUDLayout::getVida(int v){
         vida4->hide();
         vida5->show();
     }
-    
-    return v;
 }
 
-int HUDLayout::getMonedas(int v){
+void HUDLayout::getMonedas(int v){
     if(v == 1){
         moneda0->hide();
         moneda1->show();
@@ -117,7 +115,6 @@ int HUDLayout::getMonedas(int v){
     	moneda2->hide();
     	moneda3->show();
     }
-return v;
 }
 
 HUDLayout::~HUDLayout(){

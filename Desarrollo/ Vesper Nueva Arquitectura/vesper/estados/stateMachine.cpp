@@ -15,6 +15,8 @@ stateMachine::stateMachine(){
 
 void stateMachine::Init() {
     menusManager.Init();
+    //TODO: inicializar segun el nivel y el personaje seleccionado
+    //INICIALIZAR CUANDO LE DE A JUGAR
     if(!nivelazo.inicializar("3"))
 		exit(0);
 }

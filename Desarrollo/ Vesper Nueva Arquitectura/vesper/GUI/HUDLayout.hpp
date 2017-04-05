@@ -19,8 +19,8 @@ public:
     ~HUDLayout();
     //    void update() override;
     void init();
-    int getVida(int v);
-    int getMonedas(int v);
+    void getVida(int v);
+    void getMonedas(int v);
     
 private:
     CEGUI::DefaultWindow *moneda0;

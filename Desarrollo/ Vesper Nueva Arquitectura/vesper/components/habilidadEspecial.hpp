@@ -24,6 +24,7 @@ public:
 	void setTipo(tipoHab t);
 	bool const* estaActivada();
 	bool puedoUsar();
+    int getActual(){return actual;}
 private:
     const unsigned int numMonedas;
     unsigned int actual, numUsos, duracion;

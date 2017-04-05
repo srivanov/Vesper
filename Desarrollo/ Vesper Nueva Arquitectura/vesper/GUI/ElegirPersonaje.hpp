@@ -19,9 +19,9 @@ public:
 	~ElegirPersonaje(){}
 	
 	void init(CEGUI::RenderTarget* target);
-	
     void onClickVolver(const CEGUI::EventArgs &e);
     void onClickJugar(const CEGUI::EventArgs &e);
+    
 private:
     CEGUI::DefaultWindow *label_elegirpersonaje;
     CEGUI::PushButton *button_volver;

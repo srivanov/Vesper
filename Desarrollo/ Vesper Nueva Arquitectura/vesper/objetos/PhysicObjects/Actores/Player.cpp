@@ -154,6 +154,7 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();
+            hud.getMonedas(h->getActual());
         }
         if(g->getObjectType() == ALARMA){
             
