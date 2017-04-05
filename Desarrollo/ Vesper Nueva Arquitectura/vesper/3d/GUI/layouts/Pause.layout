@@ -11,16 +11,13 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
-        <Window type="Generic/Label" name="Pausa" >
-            <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,275},{0,100},{0,945},{0,225}}" />
-            <Property name="Text" value="PAUSA" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
         <Window type="Generic/ImageButton" name="continuar" >
             <Property name="ID" value="3" />
-            <Property name="Area" value="{{0,525},{0,360},{0,701},{0,391}}" />
+            <Property name="Area" value="{{0,525},{0,360},{0,702},{0,388}}" />
             <Property name="Text" value="Continuar" />
+            <Property name="HoverImage" value="Menu/boton_continuar" />
+            <Property name="NormalImage" value="Menu/boton_continuar" />
+            <Property name="PushedImage" value="Menu/boton_continuar" />
         </Window>
         <Window type="Generic/ImageButton" name="salir" >
             <Property name="ID" value="6" />
@@ -28,6 +25,13 @@
             <Property name="HoverImage" value="Menu/boton_salir" />
             <Property name="NormalImage" value="Menu/boton_salir" />
             <Property name="PushedImage" value="Menu/boton_salir" />
+        </Window>
+        <Window type="Generic/Image" name="titulo" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,-35},{0,46},{0,339},{0,128}}" />
+            <Property name="Image" value="Menu/titulo_pausa" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
         </Window>
     </Window>
 </GUILayout>

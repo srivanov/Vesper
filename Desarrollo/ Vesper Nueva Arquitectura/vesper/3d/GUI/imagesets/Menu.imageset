@@ -7,16 +7,12 @@
     <Image height="368" name="fondo_cargar" width="660" xPos="6" yPos="803" />
     <Image height="106" name="titulo" width="380" xPos="1013" yPos="883" />
     <Image height="371" name="fondo_colores" width="598" xPos="5" yPos="1179" />
-    <Image height="230" name="carga1" width="328" xPos="669" yPos="567" />
-    <Image height="256" name="carga2" width="328" xPos="1069" yPos="581" />
-    <Image height="242" name="carga3" width="320" xPos="671" yPos="817" />
     <Image height="400" name="fondo1" width="712" xPos="1413" yPos="60" />
     <Image height="354" name="fondo2" width="708" xPos="1417" yPos="464" />
-    <Image height="371" name="fondo3" width="677" xPos="1425" yPos="824" />
     <Image height="353" name="fondo4" width="709" xPos="1417" yPos="1198" />
     <Image height="214" name="silueta1" width="168" xPos="673" yPos="95" />
     <Image height="196" name="silueta2" width="104" xPos="847" yPos="121" />
-    <Image height="296" name="silueta3" width="174" xPos="957" yPos="75" />
+    <Image height="277" name="silueta3" width="174" xPos="957" yPos="75" />
     <Image height="301" name="silueta4" width="192" xPos="1137" yPos="74" />
     <Image height="50" name="boton_nuevapartida" width="457" xPos="699" yPos="1074" />
     <Image height="52" name="boton_ajustes" width="236" xPos="699" yPos="1133" />
@@ -43,6 +39,14 @@
     <Image height="95" name="pistola1" width="131" xPos="2138" yPos="675" />
     <Image height="97" name="pistola2" width="130" xPos="2139" yPos="782" />
     <Image height="105" name="pistola3" width="140" xPos="2137" yPos="895" />
-    <Image height="68" name="titulo_ajustes" width="268" xPos="2153" yPos="1029" />
-    <Image height="68" name="boton_hover" width="228" xPos="795" yPos="425" />
+    <Image height="68" name="titulo_ajustes" width="312" xPos="2153" yPos="1029" />
+    <Image height="68" name="boton_hover" width="228" xPos="1177" yPos="405" />
+    <Image height="60" name="titulo_selecciona" width="892" xPos="1413" yPos="1121" />
+    <Image height="50" name="titulo_pausa" width="236" xPos="2473" yPos="1035" />
+    <Image height="78" name="titulo_creditos" width="376" xPos="2349" yPos="1107" />
+    <Image height="50" name="boton_continuar" width="364" xPos="2141" yPos="1277" />
+    <Image height="50" name="800" width="296" xPos="2135" yPos="1201" />
+    <Image height="50" name="1280" width="362" xPos="2461" yPos="1205" />
+    <Image height="284" name="silueta1sel" width="206" xPos="721" yPos="317" />
+    <Image height="286" name="silueta2sel" width="212" xPos="933" yPos="355" />
 </Imageset>

@@ -30,5 +30,11 @@
             <Property name="NormalImage" value="Menu/boton_volver" />
             <Property name="PushedImage" value="Menu/boton_volver" />
         </Window>
+        <Window type="Generic/Image" name="titulo" >
+            <Property name="Area" value="{{0,0},{0,24},{0,434},{0,126}}" />
+            <Property name="Image" value="Menu/titulo_creditos" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
     </Window>
 </GUILayout>

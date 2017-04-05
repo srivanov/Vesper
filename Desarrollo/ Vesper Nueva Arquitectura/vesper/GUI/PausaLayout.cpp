@@ -27,12 +27,6 @@ void PausaLayout::init(CEGUI::RenderTarget* target){
     button_continuar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(3));
     button_continuar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickContinuar, this));
     
-    button_guardar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(4));
-    button_guardar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickGuardar, this));
-    
-    button_menuprincipal = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
-    button_menuprincipal->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickMenuPrincipal, this));
-    
     button_salir = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(6));
     button_salir->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickSalir, this));
 }

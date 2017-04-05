@@ -42,9 +42,6 @@ void OpcionesLayout::init(CEGUI::RenderTarget* target){
     button_resol1 = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(8)->getChild(9));
     button_resol1->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickResol1, this));
     
-    button_resol2 = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(8)->getChild(10));
-    button_resol2->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickResol2, this));
-    
     button_resol3 = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(8)->getChild(16));
     button_resol3->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickResol3, this));
     
@@ -100,10 +97,6 @@ void OpcionesLayout::onClickVolver(const CEGUI::EventArgs &e) {
 
 void OpcionesLayout::onClickResol1(const CEGUI::EventArgs &e){
     printf("pulsado resol1");
-}
-
-void OpcionesLayout::onClickResol2(const CEGUI::EventArgs &e){
-    printf("pulsado resol2");
 }
 
 void OpcionesLayout::onClickResol3(const CEGUI::EventArgs &e){

@@ -27,8 +27,6 @@ public:
 private:
     CEGUI::DefaultWindow *label_pausa;
     CEGUI::PushButton *button_continuar;
-    CEGUI::PushButton *button_guardar;
-    CEGUI::PushButton *button_menuprincipal;
     CEGUI::PushButton *button_salir;
     
 };

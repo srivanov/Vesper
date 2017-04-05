@@ -19,8 +19,6 @@ void ElegirPersonaje::init(CEGUI::RenderTarget* target){
     loadScheme("Menu.scheme");
     loadLayout("ElegirPersonaje.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
-	
-    label_elegirpersonaje = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
     
     button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(3));
     button_volver->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&ElegirPersonaje::onClickVolver, this));

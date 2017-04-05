@@ -24,7 +24,6 @@ public:
     void onClickPantalla(const CEGUI::EventArgs &e);
     void onClickVolver(const CEGUI::EventArgs &e);
     void onClickResol1(const CEGUI::EventArgs &e);
-    void onClickResol2(const CEGUI::EventArgs &e);
     void onClickResol3(const CEGUI::EventArgs &e);
     void onClickGuardar(const CEGUI::EventArgs &e);
     void setControles();
@@ -36,7 +35,6 @@ private:
     CEGUI::PushButton *button_pantalla;
     CEGUI::PushButton *button_volver;
     CEGUI::PushButton *button_resol1;
-    CEGUI::PushButton *button_resol2;
     CEGUI::PushButton *button_resol3;
     CEGUI::PushButton *button_guardar;
     CEGUI::ToggleButton *check_sonido;

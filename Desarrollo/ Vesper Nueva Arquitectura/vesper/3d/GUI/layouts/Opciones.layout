@@ -77,18 +77,19 @@
             <Property name="HorizontalAlignment" value="Right" />
             <Window type="Generic/ImageButton" name="resol3" >
                 <Property name="ID" value="16" />
-                <Property name="Area" value="{{0,80},{0,212},{0,235},{0,249}}" />
+                <Property name="Area" value="{{0,80},{0,165},{0,230},{0,188}}" />
                 <Property name="Text" value="resol3" />
+                <Property name="HoverImage" value="Menu/800" />
+                <Property name="NormalImage" value="Menu/800" />
+                <Property name="PushedImage" value="Menu/800" />
             </Window>
             <Window type="Generic/ImageButton" name="resol1" >
                 <Property name="ID" value="9" />
-                <Property name="Area" value="{{0,80},{0,60},{0,235},{0,95}}" />
+                <Property name="Area" value="{{0,80},{0,84},{0,230},{0,107}}" />
                 <Property name="Text" value="Resol1" />
-            </Window>
-            <Window type="Generic/ImageButton" name="resol2" >
-                <Property name="ID" value="10" />
-                <Property name="Area" value="{{0,80},{0,140},{0,315},{0,317}}" />
-                <Property name="Text" value="resol3" />
+                <Property name="HoverImage" value="Menu/1280" />
+                <Property name="NormalImage" value="Menu/1280" />
+                <Property name="PushedImage" value="Menu/1280" />
             </Window>
         </Window>
         <Window type="Generic/Image" name="contenedor_sonido" >

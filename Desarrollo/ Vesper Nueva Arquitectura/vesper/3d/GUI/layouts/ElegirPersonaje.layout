@@ -10,28 +10,6 @@
             <Property name="Image" value="Menu/fondo_colores" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
-        <Window type="Generic/Label" name="Titulo" >
-            <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,0},{0,-288},{0,340},{0,-203}}" />
-            <Property name="Text" value="Elegir Personaje" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="VerticalAlignment" value="Centre" />
-            <Property name="HorizontalAlignment" value="Centre" />
-        </Window>
-        <Window type="Generic/Image" name="personaje1" >
-            <Property name="Area" value="{{0,480},{0,160},{0,810},{0,600}}" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
-        <Window type="Generic/Image" name="personaje2" >
-            <Property name="Area" value="{{0,105},{0,185},{0,380},{0,565}}" />
-            <Property name="Image" value="Menu/silueta3" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
-        <Window type="Generic/Image" name="personaje3" >
-            <Property name="Area" value="{{0,925},{0,185},{0,1200},{0,565}}" />
-            <Property name="Image" value="Menu/silueta4" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
         <Window type="Generic/ImageButton" name="volver" >
             <Property name="ID" value="3" />
             <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
@@ -45,6 +23,30 @@
             <Property name="HoverImage" value="Menu/boton_jugar" />
             <Property name="NormalImage" value="Menu/boton_jugar" />
             <Property name="PushedImage" value="Menu/boton_jugar" />
+        </Window>
+        <Window type="Generic/Image" name="titulo" >
+            <Property name="Area" value="{{0,13},{0,32},{0,689},{0,96}}" />
+            <Property name="Image" value="Menu/titulo_selecciona" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+        <Window type="Generic/ImageButton" name="personaje1" >
+            <Property name="Area" value="{{0,106},{0,184},{0,380},{0,564}}" />
+            <Property name="HoverImage" value="Menu/silueta3" />
+            <Property name="NormalImage" value="Menu/silueta3" />
+            <Property name="PushedImage" value="Menu/silueta2sel" />
+        </Window>
+        <Window type="Generic/ImageButton" name="personaje2" >
+            <Property name="Area" value="{{0,926},{0,184},{0,1200},{0,564}}" />
+            <Property name="HoverImage" value="Menu/silueta4" />
+            <Property name="NormalImage" value="Menu/silueta4" />
+            <Property name="PushedImage" value="Menu/silueta1sel" />
+        </Window>
+        <Window type="Generic/ImageButton" name="personaje3" >
+            <Property name="Area" value="{{0,515},{0,180},{0,789},{0,560}}" />
+            <Property name="HoverImage" value="Menu/silueta4" />
+            <Property name="NormalImage" value="Menu/silueta4" />
+            <Property name="PushedImage" value="Menu/silueta1sel" />
         </Window>
     </Window>
 </GUILayout>
