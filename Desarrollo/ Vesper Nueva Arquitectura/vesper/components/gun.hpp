@@ -11,7 +11,7 @@
 #include "bala.hpp"
 
 enum typeArma{
-    tArmaNO_TYPE = VOID,
+    tArmaNO_TYPE = tVOID,
     tPISTOLA,
     tESCOPETA = ESCOPETA,
     tLANZACARAMELOS = SWEET_SHOOTER,

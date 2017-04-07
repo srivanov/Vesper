@@ -9,14 +9,11 @@
 #include "Enemy.hpp"
 
 Enemy::Enemy(){
-    
-     component * componente = new ataque();
-     componentes.insert(
-     std::pair<const ComponentType,component*>(ATAQUE,componente)
-     );
-     componente->setFather(this);
-     
-    Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
+	component * componente = new ataque();
+	componentes.insert(std::pair<const ComponentType,component*>(ATAQUE,componente));
+	componente->setFather(this);
+	
+	Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
     addNodo("3d/muro.3ds");
     setTexture("3d/naranja.jpg");
     t.start();
@@ -60,8 +57,14 @@ void Enemy::inicializar(int& ID){
 }
 
 void Enemy::contacto(PhysicObject *g){
-    if(g && g->getObjectType()==BALA){
-         //Bala * bullet = static_cast<Bala*>(g);
-         book->salud-=20;
-    }
+	if(g){
+		if(g && g->getObjectType()==BALA){
+			 //Bala * bullet = static_cast<Bala*>(g);
+			 book->salud-=20;
+		}
+		if(g->getObjectType() == PLAYER)
+			printf("ENEMIGO CONTACTO\n");
+	}
 }
+
+

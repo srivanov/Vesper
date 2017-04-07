@@ -27,7 +27,7 @@ Game::~Game(){
 //	delete nivelazo;
 	renderizador->closeWindow();
 	delete renderizador;
-    
+    printf("_GAME DELETED_\n");
 }
 
 void Game::start(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){

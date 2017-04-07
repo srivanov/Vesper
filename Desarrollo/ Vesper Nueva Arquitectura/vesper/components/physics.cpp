@@ -5,18 +5,6 @@
 
 physics::physics(){
     body = NULL;
-	
-	
-//	b2BodyDef myBodyDef;
-//	b2PolygonShape polygonShape;
-//	b2FixtureDef myFixtureDef;
-//	myFixtureDef.shape = &polygonShape;
-//	myFixtureDef.density = 1;
-//	myBodyDef.type = b2_staticBody;
-//	myBodyDef.position.Set(0, 0);
-//	b2Body* staticBody = mundoBox2D::Instance()->getWorld()->CreateBody(&myBodyDef);
-//	polygonShape.SetAsBox( 20, 1, b2Vec2(0, 0), 0);//ground
-//	staticBody->CreateFixture(&myFixtureDef);
 }
 
 physics::~physics(){
@@ -73,21 +61,6 @@ void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float
 	this->rotacion = rotacion;
 	vel.x = 0;
 	vel.y = 0;
-	
-//	b2PolygonShape polygonShape2;
-//	//add semicircle radar sensor to tower
-//	float radius = 3;
-//	b2Vec2 vertices[3];
-//	vertices[0].Set(0,0);
-//	for (int i = 0; i < 2; i++) {
-//		float angle = i / 2.0 * 90 * DEGTORAD;
-//		vertices[i+1].Set( radius * cosf(angle), radius * sinf(angle) );
-//	}
-//	polygonShape2.Set(vertices, 3);
-//	myFixtureDef.shape = &polygonShape2;
-//	myFixtureDef.isSensor = true;
-//	myFixtureDef.density = 0.0f;
-//	body->CreateFixture(&myFixtureDef);
 }
 
 void physics::crearBodyKinematico(dvector3D &dimension, dvector3D &posicion, float rotacion){
@@ -146,73 +119,46 @@ void physics::crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvect
 		body_aux->CreateFixture(&myFixtureDef);
 		
 		it++; itp++;
+		delete [] vertices;
+	}
+}
+
+void physics::attachSensor(float radio){
+	if (body) {
+		//	b2PolygonShape polygonShape2;
+		//	//add semicircle radar sensor to tower
+		//	float radius = 3;
+		//	b2Vec2 vertices[3];
+		//	vertices[0].Set(0,0);
+		//	for (int i = 0; i < 2; i++) {
+		//		float angle = i / 2.0 * 90 * DEGTORAD;
+		//		vertices[i+1].Set( radius * cosf(angle), radius * sinf(angle) );
+		//	}
+		//	polygonShape2.Set(vertices, 3);
+		//	myFixtureDef.shape = &polygonShape2;
+		//	myFixtureDef.isSensor = true;
+		//	myFixtureDef.density = 0.0f;
+		//	body->CreateFixture(&myFixtureDef);
+		b2CircleShape circle;
+		circle.m_radius = radio;
+		b2FixtureDef mf;
+		mf.shape = &circle;
+		mf.isSensor = true;
+		mf.density = 0.f;
+//		mf.friction = 0.f;
+		body->CreateFixture(&mf);
 	}
 }
 
 void physics::update(){
-	//TO DO: COMPROBAR QUE EL BODY NO SEA ESTATICO
 	//inside Step()
     if(body){
         if(body->GetType() != b2_staticBody){
             body->SetLinearVelocity( vel );
         }
-//	getFather()->setPosicion(new float[3]{body->GetPosition().x, body->GetPosition().y, 0});
         dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
-    
         getFather()->setPosition(aux);
     }
-	
-//	posicion[0] = body->GetPosition().x;
-//	posicion[1] = body->GetPosition().y;
-	
-//	if(mousePosition != NULL){
-//        angulo[0] = (float)mousePosition[0] - body->GetPosition().x;
-//        angulo[1] = (float)mousePosition[1] - body->GetPosition().y;
-//		
-//        anguloFinal[2] = atan2f(-angulo[0], angulo[1])* 180 / 3.14159265 + 90;
-//		
-//		//paso el coseno y seno de la rotacion a unitario
-//		float length = sqrt((angulo[0]*angulo[0])+(angulo[1]*angulo[1]));
-//		angulo[0] = angulo[0] / length;
-//		angulo[1] = angulo[1] / length;
-//		
-////		printf("%.2f %.2f\n", angulo[0], angulo[1]);
-//        body->SetTransform(body->GetPosition(), anguloFinal[2]);
-//	}
-//	b2Vec2* verts;
-//	for( b2Fixture *fix = body->GetFixtureList(); fix; fix = fix->GetNext() ){
-//		if( fix->GetType() == b2_staticBody ){
-//			b2PolygonShape *poly = (b2PolygonShape*)fix->GetShape();
-//			
-//			int count = poly->GetVertexCount();
-//			verts = (b2Vec2*) poly->m_vertices;
-//			
-//			for( int i = 0; i < count; i++ ){
-//				verts[i] = body->GetWorldPoint( verts[i] );
-//			}
-//			//verts now contains world co-ords of all the verts
-//		}
-//	}
-//	//set up vertex array
-//	GLfloat glverts[16]; //allow for polygons up to 8 vertices
-//	glVertexPointer(2, GL_FLOAT, 0, glverts); //tell OpenGL where to find vertices
-//	glEnableClientState(GL_VERTEX_ARRAY); //use vertices in subsequent calls to glDrawArrays
-//	
-//	//fill in vertex positions as directed by Box2D
-//	for (int i = 0; i < verts->Length(); i++) {
-//		glverts[i*2]   = verts[i].x;
-//		glverts[i*2+1] = verts[i].y;
-//	}
-//	
-//	//draw solid area
-//	glColor4f( 249, 51, 255, 1);
-//	glDrawArrays(GL_TRIANGLE_FAN, 0, verts->Length());
-//	
-//	//draw lines
-//	glLineWidth(3); //fat lines
-//	glColor4f( 1, 0, 1, 1 ); //purple
-//	glDrawArrays(GL_LINE_LOOP, 0, verts->Length());
-	
 }
 
 void physics::setPosition(dvector3D &pos){

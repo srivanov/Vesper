@@ -8,12 +8,21 @@
 
 #include "ObjectFactory.hpp"
 
+void ObjectFactory::initEnemy(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body){
+	g = new Enemy;
+	Enemy * e = static_cast<Enemy*>(g);
+	e->setObjectType(tipo);
+	e->setPosition(posicion);
+	e->createPhysicsBody(DYNAMIC_BODY);
+	e->attachSensor(6.0f);
+	e->inicializar(ID);
+}
+
 void ObjectFactory::initObject(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body){
-    g->inicializar(ID);
     g->setObjectType(tipo);
-    g->createPhysicsBody(body);
-    g->setPosition(posicion);
-    
+	g->setPosition(posicion);
+	g->createPhysicsBody(body);
+    g->inicializar(ID);
 }
 
 PhysicObject * ObjectFactory::PObject( dvector3D posicion, ObjectType tipo){
@@ -35,12 +44,10 @@ PhysicObject * ObjectFactory::Actores(int ID, dvector3D posicion, ObjectType tip
     Clean();
     if(tipo==REHEN)
         g = new Rehen;
-    else if(tipo==ENEMIGOS){
-        g = new Enemy;
-        Enemy * e = static_cast<Enemy*>(g);
-        e->inicializar(ID);
-    }
-    else{
+	else if(tipo==ENEMIGOS){
+		initEnemy(ID, posicion, tipo, DYNAMIC_BODY);
+		return g;
+	}else{
         return nullptr;
     }
     initObject(ID,posicion,tipo,DYNAMIC_BODY);

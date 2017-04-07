@@ -32,7 +32,7 @@ enum ComponentType{
 };
 
 enum ObjectType {
-    VOID = 0,
+    tVOID = 0,
     MURO,
     ALARMA,
     MONEDAS,

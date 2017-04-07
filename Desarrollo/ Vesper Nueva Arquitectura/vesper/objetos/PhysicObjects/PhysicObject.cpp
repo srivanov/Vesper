@@ -9,15 +9,13 @@
 #include "PhysicObject.hpp"
 
 PhysicObject::PhysicObject(){
-    eliminar = false;
-    
-     
-     component * componente = new physics();
-     componentes.insert(
-     std::pair<const ComponentType,component*>(PHYSICS,componente)
-     );
-     componente->setFather(this);
-    
+	eliminar = false;
+	
+	component * componente = new physics();
+	componentes.insert(
+	std::pair<const ComponentType,component*>(PHYSICS,componente));
+	componente->setFather(this);
+	
 }
 
 PhysicObject::~PhysicObject(){
@@ -32,17 +30,13 @@ PhysicObject::~PhysicObject(){
 
 void PhysicObject::setPosition(dvector3D &pos){
     m_pos = pos;
-    
-     
-     physics* go = static_cast<physics*>(componentes.find(PHYSICS)->second);
-     if(go != NULL)
-         go->setPosition(pos);
-     class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
-     if(ren != NULL)
-        ren->setNodePosition(pos);
-     
-     
-    
+	
+	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
+	if(go != NULL)
+		go->setPosition(pos);
+	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
+	if(ren != NULL)
+		ren->setNodePosition(pos);
 }
 
 void PhysicObject::setDirDisparo(dvector3D &dir){
@@ -50,32 +44,27 @@ void PhysicObject::setDirDisparo(dvector3D &dir){
 }
 
 void PhysicObject::rotarConRaton(dvector3D &posRaton){
-    
-    
-    physics* go = static_cast<physics*>(componentes.find(PHYSICS)->second);
+    physics* go = static_cast<physics*>(componentes.at(PHYSICS));
     if(go != NULL)
         m_rot.z = go->rotarConRaton(posRaton);
     class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
     if(ren != NULL)
         ren->setNodeRotation(m_rot);
-     
-    
 }
-
 
 void PhysicObject::setRotation(dvector3D &rot){
     m_rot = rot;
-     physics* go = static_cast<physics*>(componentes.find(PHYSICS)->second);
-     if(go != NULL)
-        go->rotar(m_rot.z);
-     class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
-     if(ren != NULL)
-        ren->setNodeRotation(m_rot);
-     
+	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
+	if(go != NULL)
+		go->rotar(m_rot.z);
+	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
+	if(ren != NULL)
+		ren->setNodeRotation(m_rot);
+	
 }
 
 void PhysicObject::createPhysicsBody(const BodyObject body, dvector3D dim){
-    physics* fisica = static_cast<physics*>(componentes.find(PHYSICS)->second);
+    physics* fisica = static_cast<physics*>(componentes.at(PHYSICS));
     if(body==DYNAMIC_BODY)
         fisica->crearBodyDinamico(dim, m_pos);
     else
@@ -83,8 +72,7 @@ void PhysicObject::createPhysicsBody(const BodyObject body, dvector3D dim){
 }
 
 void PhysicObject::mover(dvector3D &vel){
-    
-    physics* go = static_cast<physics*>(componentes.find(PHYSICS)->second);
+    physics* go = static_cast<physics*>(componentes.at(PHYSICS));
     if(go != NULL)
         go->setVelocity(vel);
 }

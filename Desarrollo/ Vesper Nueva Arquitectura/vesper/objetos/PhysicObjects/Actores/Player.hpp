@@ -18,7 +18,7 @@
 
 class Player : public PhysicObject {
 private:
-    std::map<const Keys,int> keyFunction;
+//    std::map<const Keys,int> keyFunction;
 protected:
     void asignarLLave(int value);
     unsigned int velocidad;
@@ -39,7 +39,7 @@ public:
     void accionar();
     bool habActiva();
     void contacto(PhysicObject*);
-    void contactoEnd(PhysicObject*){}
+	void contactoEnd(PhysicObject*){ obj_colisionado = nullptr; }
     void update();
     void render();
     void atacar();

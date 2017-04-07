@@ -37,17 +37,20 @@ void mundoBox2D::update(){
 	world->Step(timeStep, velocityIterations, positionIterations);
 }
 
-//TO DO: implementar instansceof
-
 void ContactListener::BeginContact(b2Contact* contact){
 	//Si los dos son bodys dinamicos el fixtureA es el que choca
 	//Si uno es estatico sera el fixtureB, el fixtureA sera el dinamico
 	PhysicObject* g1 = static_cast<PhysicObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
 	PhysicObject* g2 = static_cast<PhysicObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
 	
-	if(g1 != NULL)
+//	if(contact->GetFixtureA()->IsSensor())
+//		
+//	if(contact->GetFixtureB()->IsSensor())
+	
+		
+	if(g1)
 		g1->contacto(g2);
-	if(g2 != NULL)
+	if(g2)
 		g2->contacto(g1);
 }
 
