@@ -12,9 +12,7 @@
 
 
 
-PathPlanning::PathPlanning(){
-    //this->grafo = new Graph(grafo);
-}
+PathPlanning::PathPlanning(){}
 
 PathPlanning::~PathPlanning(){
     if(m_grafo)
@@ -47,8 +45,8 @@ void PathPlanning::construirbolsa(){
 
 bool PathPlanning::NeedCalculo(dvector3D *initialPosition,dvector3D * finalPosition){
     
-    dvector3D prueba = *BolsaNodos->lastNode()->getPosition();
-    float DistanciaPrimerNodo = EasyMath::EucCalcularDistancia(*BolsaNodos->lastNode()->getPosition(), *initialPosition);
+    dvector3D pos = *BolsaNodos->lastNode()->getPosition();
+    float DistanciaPrimerNodo = EasyMath::EucCalcularDistancia(pos, *initialPosition);
     float DistanciaObjetivo = EasyMath::EucCalcularDistancia(*initialPosition, *finalPosition);
     if(DistanciaPrimerNodo>DistanciaObjetivo) return false;
     return true;
@@ -71,8 +69,16 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
     
     //VALORA SI ES NECESARIO USAR PATHFINDING
     if(NeedCalculo(initialPosition,finalPosition)){
-    
+        try {
             while(Pathbuilding());
+        } catch (N_Errores e) {
+            std::string ERROR = " ### ERROR ### ";
+            if(e==no_way)   ERROR+= " NO ENCONTRO CAMINO";
+            if(e==fail)     ERROR+= " FALLO AL CALCULAR";
+            cout << ERROR << " ### ERROR ### " << endl;
+            
+        }
+        
         
             // AÑADE NODO FINAL
             BolsaNodos->add_node(final_camino);
@@ -93,8 +99,6 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
         
     }
     
-    // MASTER
-    
     // AÑADIR POSICION FINAL
     camino.push_back(finalPosition);
     return camino;
@@ -102,6 +106,8 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
 
 bool PathPlanning::CalcularSiguienteNodo(NodeOpenBag* bolsa){
     
+    if(bolsa->getNodes().empty())
+        throw fail;
     std::vector<conexos*> conexos = bolsa->lastNode()->getConexos();
     
     
@@ -119,7 +125,11 @@ bool PathPlanning::CalcularSiguienteNodo(NodeOpenBag* bolsa){
         select_conexo = conexos[i]->ID;
     }
     
-    if (select_conexo == 0) throw 0;
+    if (select_conexo == 0){
+        bolsa->disable_node(bolsa->lastNode()->getID());
+        return true;
+    }
+    
     
     bolsa->peso += conexos[choosenOne]->peso;
     GraphNode * resultante = m_grafo->getNode(select_conexo);
@@ -133,6 +143,7 @@ bool PathPlanning::CalcularSiguienteNodo(NodeOpenBag* bolsa){
 }
 
 bool PathPlanning::EvaluarCamino(){
+    /*
     NodeOpenBag BolsaNodosAux;
     
     BolsaNodosAux.add_node(m_grafo->getInitialNode(aux));
@@ -143,12 +154,7 @@ bool PathPlanning::EvaluarCamino(){
     final_camino = BolsaNodos->lastNode();
     while (CalcularSiguienteNodo(&BolsaNodosAux));
     final_camino = AUX;
-    
-    
-    //if(BolsaNodosAux.peso<BolsaNodos->peso)
-        //BolsaNodos->rebuild(&BolsaNodosAux);
-    
-    
+    */
     
     return true;
     
@@ -156,14 +162,9 @@ bool PathPlanning::EvaluarCamino(){
 
 bool PathPlanning::Pathbuilding(){
     
-    try {
-        if(!CalcularSiguienteNodo(BolsaNodos)) return false;
-        EvaluarCamino();
+    if(!CalcularSiguienteNodo(BolsaNodos)) return false;
+    EvaluarCamino();
         
-    } catch (int e) {
-        if(e==no_way)
-            return false;
-    }
     return true;
 }
 
@@ -189,9 +190,6 @@ NodeOpenBag::~NodeOpenBag(){
     camino.clear();
 }
 
-void NodeOpenBag::PassDescartes(NodeOpenBag * bolsaAux){
-    this->setDescartes(bolsaAux->getDescartes());
-}
 
 std::vector<dvector3D> NodeOpenBag::getCamino(){
     std::vector<dvector3D> posCamino;
@@ -222,34 +220,7 @@ void NodeOpenBag::disable_node(int ID){
         }
     }
 }
-void NodeOpenBag::rebuild(NodeOpenBag * AUX){
-    
-    camino.swap(descartes);
-    AUX->getNodes().swap(camino);
-    
-    size_t Tdescartes = descartes.size();
-    size_t Tcamino = camino.size();
-    
-    vector<int> recoverNodos;
-    
-    for (size_t i = 0 ; i < Tdescartes ; i++) {
-        int IDdescarte = descartes[i]->getID();
-        for (size_t j = 0 ; j < Tcamino ; j++) {
-            if(camino[j]->getID()==IDdescarte)
-                recoverNodos.push_back(IDdescarte);
-        }
-    }
-    
-    for (int i = 0; i < descartes.size(); i++) {
-        if(recoverNodos.empty()) return;
-        if(descartes[i]->getID()==recoverNodos[0]){
-            descartes.erase(descartes.begin()+i);
-            i--;
-        }
-    }
-    
-    
-}
 void NodeOpenBag::setDescartes(std::vector<GraphNode *> discards){
     descartes=discards;
 }
+

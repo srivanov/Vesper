@@ -13,11 +13,8 @@ short Nodo_QAlimentarse::run(const int &ID){
     
     
     // BUSCA SI EXISTE PETICION SI NO LA CREA
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);

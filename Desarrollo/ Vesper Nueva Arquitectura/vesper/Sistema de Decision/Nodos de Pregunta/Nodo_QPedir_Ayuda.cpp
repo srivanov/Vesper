@@ -11,7 +11,8 @@
 short Nodo_QPedir_Ayuda::run(const int &ID){
     //cout << "PEDIR AYUDA?" << endl;
     //TO DO: POR DEFINIR FUNCION
-    return FALLO;
+    if(activado)
+        return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->getMoral()<NEEDHELP){
         activado = true;

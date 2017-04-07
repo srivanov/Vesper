@@ -10,11 +10,8 @@
 
 short Nodo_QCombatir::run(const int &ID){
     //cout << "LUCHAR?" << endl;
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->getMoral()<NEEDHELP && book->Enemigo){
         activado = true;

@@ -10,11 +10,8 @@
 
 short Nodo_QAvisado::run(const int &ID){
     //cout << "AVISADO?" << endl;
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     if(NpcLibrary::instancia()->recover_book(ID)->Aviso){
         activado = true;
         return RUNNING;

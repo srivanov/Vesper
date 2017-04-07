@@ -21,6 +21,7 @@ short Nodo_Condicional_Secuencial::runHijos(const int& ID){
     }
     
     hijo = 0;
+    activado=false;
     return FUNCIONO;
 }
 

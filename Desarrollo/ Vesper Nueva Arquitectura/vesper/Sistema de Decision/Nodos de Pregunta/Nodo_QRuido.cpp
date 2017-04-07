@@ -12,11 +12,8 @@ short Nodo_QRuido::run(const int &ID){
     
     //cout << "RUIDO?" << endl;
     
-    if(activado){
-        short answer = runHijos(ID);
-        if(answer==FUNCIONO) activado = false;
-        return answer;
-    }
+    if(activado)
+        return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->Ruido){
         //cout << "HAY RUIDO" << endl;
