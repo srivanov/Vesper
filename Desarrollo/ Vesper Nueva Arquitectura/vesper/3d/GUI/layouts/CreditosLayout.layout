@@ -2,55 +2,39 @@
 
 <GUILayout version="4" >
     <Window type="DefaultWindow" name="DefaultWindow" >
-        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="Area" value="{{0,0},{0,0},{1,6},{1,0}}" />
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Window type="Generic/Image" name="fondo" >
             <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
+            <Property name="Area" value="{{0,0},{0,1},{0,1288},{0,725}}" />
             <Property name="Text" value="Créditos" />
-            <Property name="Image" value="Menu/crema" />
+            <Property name="Image" value="Menu/fondo4" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
-        <Window type="Generic/Label" name="titulo" >
-            <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,5},{0,5},{0,295},{0,115}}" />
-            <Property name="Text" value="Créditos" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="HorizontalAlignment" value="Centre" />
-        </Window>
-        <Window type="OgreTray/StaticText" name="StaticText" >
+        <Window type="Generic/Image" name="contenedor" >
             <Property name="ID" value="3" />
-            <Property name="Area" value="{{0,-2},{0,-91},{0,254},{0,37}}" />
-            <Property name="Text" value="Skyscrpaers" />
+            <Property name="Area" value="{{0,470},{0,200},{0,840},{0,610}}" />
+            <Property name="Image" value="OgreTrayImages/TrayM" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="VerticalAlignment" value="Centre" />
-            <Property name="HorzScrollPageSize" value="230" />
-            <Property name="VertScrollPageSize" value="102" />
-            <Property name="HorizontalAlignment" value="Centre" />
-            <Property name="HorzScrollDocumentSize" value="87" />
-            <Property name="VertScrollDocumentSize" value="13.6796" />
-            <AutoWindow namePath="__auto_hscrollbar__" >
-                <AutoWindow namePath="__auto_incbtn__" >
-                    <Property name="Visible" value="false" />
-                </AutoWindow>
-                <AutoWindow namePath="__auto_decbtn__" >
-                    <Property name="Visible" value="false" />
-                </AutoWindow>
-            </AutoWindow>
-            <AutoWindow namePath="__auto_vscrollbar__" >
-                <AutoWindow namePath="__auto_incbtn__" >
-                    <Property name="Visible" value="false" />
-                </AutoWindow>
-                <AutoWindow namePath="__auto_decbtn__" >
-                    <Property name="Visible" value="false" />
-                </AutoWindow>
-            </AutoWindow>
+            <Window type="Generic/Label" name="Label" >
+                <Property name="Area" value="{{0,20},{0,20},{0,350},{0,260}}" />
+                <Property name="Text" value="SKYSCRAPERS" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
         </Window>
-        <Window type="OgreTray/Button" name="volver" >
+        <Window type="Generic/ImageButton" name="volver" >
             <Property name="ID" value="4" />
-            <Property name="Area" value="{{0,35},{0,620},{0,175},{0,670}}" />
-            <Property name="Text" value="Volver" />
+            <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
+            <Property name="HoverImage" value="Menu/boton_volver" />
+            <Property name="NormalImage" value="Menu/boton_volver" />
+            <Property name="PushedImage" value="Menu/boton_volver" />
+        </Window>
+        <Window type="Generic/Image" name="titulo" >
+            <Property name="Area" value="{{0,0},{0,24},{0,434},{0,126}}" />
+            <Property name="Image" value="Menu/titulo_creditos" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
         </Window>
     </Window>
 </GUILayout>

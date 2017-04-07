@@ -3,13 +3,14 @@
     <Items>
         <Item name="imagesets" type="folder">
             <Item path="imagesets/Menu.imageset" type="file" />
-            <Item path="imagesets/Menu.png" type="file" />
+            <Item path="imagesets/Menu2.png" type="file" />
             <Item path="imagesets/OgreTray.imageset" type="file" />
             <Item path="imagesets/OgreTrayImages.png" type="file" />
         </Item>
         <Item name="layouts" type="folder">
             <Item path="layouts/CargarPartida.layout" type="file" />
             <Item path="layouts/CreditosLayout.layout" type="file" />
+            <Item path="layouts/ElegirPersonaje.layout" type="file" />
             <Item path="layouts/HUD.layout" type="file" />
             <Item path="layouts/MenuPrincipal.layout" type="file" />
             <Item path="layouts/Opciones.layout" type="file" />

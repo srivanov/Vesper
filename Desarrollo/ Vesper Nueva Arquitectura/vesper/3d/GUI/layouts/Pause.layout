@@ -11,31 +11,27 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
-        <Window type="Generic/Label" name="Pausa" >
-            <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,275},{0,100},{0,945},{0,225}}" />
-            <Property name="Text" value="PAUSA" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
-        <Window type="OgreTray/Button" name="continuar" >
+        <Window type="Generic/ImageButton" name="continuar" >
             <Property name="ID" value="3" />
-            <Property name="Area" value="{{0,485},{0,275},{0,735},{0,310}}" />
-            <Property name="Text" value="CONTINUAR" />
+            <Property name="Area" value="{{0,525},{0,360},{0,702},{0,388}}" />
+            <Property name="Text" value="Continuar" />
+            <Property name="HoverImage" value="Menu/boton_continuar" />
+            <Property name="NormalImage" value="Menu/boton_continuar" />
+            <Property name="PushedImage" value="Menu/boton_continuar" />
         </Window>
-        <Window type="OgreTray/Button" name="guardar" >
-            <Property name="ID" value="4" />
-            <Property name="Area" value="{{0,485},{0,340},{0,735},{0,375}}" />
-            <Property name="Text" value="GUARDAR" />
-        </Window>
-        <Window type="OgreTray/Button" name="menuPrincipal" >
-            <Property name="ID" value="5" />
-            <Property name="Area" value="{{0,485},{0,400},{0,735},{0,435}}" />
-            <Property name="Text" value="MENÚ PRINCIPAL" />
-        </Window>
-        <Window type="OgreTray/Button" name="salir" >
+        <Window type="Generic/ImageButton" name="salir" >
             <Property name="ID" value="6" />
-            <Property name="Area" value="{{0,485},{0,455},{0,735},{0,490}}" />
-            <Property name="Text" value="SALIR" />
+            <Property name="Area" value="{{0,560},{0,440},{0,670},{0,465}}" />
+            <Property name="HoverImage" value="Menu/boton_salir" />
+            <Property name="NormalImage" value="Menu/boton_salir" />
+            <Property name="PushedImage" value="Menu/boton_salir" />
+        </Window>
+        <Window type="Generic/Image" name="titulo" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,-35},{0,46},{0,339},{0,128}}" />
+            <Property name="Image" value="Menu/titulo_pausa" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
         </Window>
     </Window>
 </GUILayout>
