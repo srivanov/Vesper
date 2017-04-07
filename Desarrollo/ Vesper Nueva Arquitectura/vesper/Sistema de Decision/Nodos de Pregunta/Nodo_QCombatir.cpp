@@ -13,7 +13,7 @@ short Nodo_QCombatir::run(const int &ID){
     if(activado)
         return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
-    if(book->getMoral()<NEEDHELP && book->Enemigo){
+    if(book->getMoral()>NEEDHELP && book->Enemigo){
         activado = true;
         return RUNNING;
     }

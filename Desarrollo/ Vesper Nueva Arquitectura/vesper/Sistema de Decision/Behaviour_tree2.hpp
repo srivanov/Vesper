@@ -43,7 +43,7 @@
 #include "Nodos de Accion/Nodo_AAlimentarse.hpp"
 #include "Nodos de Accion/Nodo_AHablar.hpp"
 #include "Nodos de Accion/Nodo_APatrullar.hpp"
-
+#include "Nodos de Accion/Nodo_AAtacar.hpp"
 
 #include "Nodos de Accion/Nodo_Mover.hpp"
 
@@ -83,6 +83,7 @@ class Behaviour_tree2 {
     
     Nodo_base * ConstruirRamaAccion();
     Nodo_base * ConstruirSubRamaHuir();
+    Nodo_base * ConstruirSubRamaCombate();
     
     Nodo_base * ConstruirRamaAyudar();
     

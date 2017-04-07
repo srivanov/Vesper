@@ -42,6 +42,11 @@ void Enemy::update(){
     book->updateBook();
     Arbol->run(m_ID);
     
+    if(book->ATACAR){
+        static_cast<ataque*>(componentes.find(ATAQUE)->second)->atacarDistancia();
+        book->ATACAR = false;
+    }
+    
     mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + *book->VectorMovimiento;
     rotarConRaton(aux);
@@ -62,8 +67,11 @@ void Enemy::contacto(PhysicObject *g){
 			 //Bala * bullet = static_cast<Bala*>(g);
 			 book->salud-=20;
 		}
-		if(g->getObjectType() == PLAYER)
-			printf("ENEMIGO CONTACTO\n");
+        if(g->getObjectType() == PLAYER){
+            printf("PLAYER");
+            book->notify(m_ID, P_ENEMIGO, g->getPosition());
+        }
+			
 	}
 }
 
