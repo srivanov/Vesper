@@ -20,17 +20,19 @@ public:
 	void crearObjetosEstaticos(std::vector<dvector2D> &v, std::vector<dvector2D> &p, int ancho, int alto);
 	void attachSensor(float radio);
 	void update();
+	void atarCuerda(b2Body* atado);
 	
 	void setPosition(dvector3D &pos);
 	void setVelocity(dvector3D &veloc);
 	float rotarConRaton(dvector3D &posRaton);
 	void rotar(float anguloRotacion);
 private:
-    b2Body *body;
+    b2Body *body, *ata;
 	
     float rotacion;
     b2Vec2 vel;
     dvector3D angulo_disparo;
-	
+	bool atar;
+	void atarP();
 };
 #endif /* physics_hpp */

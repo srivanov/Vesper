@@ -11,6 +11,7 @@ physics::~physics(){
 	if(body!=NULL)
 		mundoBox2D::Instance()->getWorld()->DestroyBody(body);
     body = NULL;
+	atar = false;
 }
 
 void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
@@ -20,7 +21,7 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
     
     //shape definition
 	b2CircleShape circleShape;
-	circleShape.m_radius = dimension.x/2.0f;
+	circleShape.m_radius = (dimension.x - 0.05f)/2.0f;
 //    polygonShape.SetAsBox(dimension[0], dimension[1]); //a 2x2 rectangle
 	
     //fixture definition
@@ -159,6 +160,21 @@ void physics::update(){
         dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
         getFather()->setPosition(aux);
     }
+	if(atar){atarP(); atar = false;}
+}
+
+void physics::atarCuerda(b2Body *atado){
+	atar = true;
+	ata = atado;
+}
+
+void physics::atarP(){
+	b2DistanceJointDef jointdef;
+	jointdef.bodyA = body;
+	jointdef.bodyB = ata;
+	jointdef.collideConnected = true;
+	jointdef.length = 3.f;
+	mundoBox2D::Instance()->getWorld()->CreateJoint(&jointdef);
 }
 
 void physics::setPosition(dvector3D &pos){

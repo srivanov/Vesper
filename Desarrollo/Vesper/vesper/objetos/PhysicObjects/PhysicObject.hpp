@@ -31,6 +31,7 @@ public:
     virtual void contactoEnd(PhysicObject*){}
     void createPhysicsBody(const BodyObject,dvector3D dim = dvector3D(1,1,1));
 	void attachSensor(float radio) { static_cast<physics*>(componentes.at(PHYSICS))->attachSensor(radio); }
+	void atarCuerda(b2Body* atado){ static_cast<physics*>(componentes.at(PHYSICS))->atarCuerda(atado); }
     PhysicObject();
     ~PhysicObject();
 };

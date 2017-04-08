@@ -43,9 +43,13 @@ void ContactListener::BeginContact(b2Contact* contact){
 	PhysicObject* g1 = static_cast<PhysicObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
 	PhysicObject* g2 = static_cast<PhysicObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
 	
-//	if(contact->GetFixtureA()->IsSensor())
-//		
-//	if(contact->GetFixtureB()->IsSensor())
+	if(g1 && g2){
+		if(g1->getObjectType()==REHEN && g2->getObjectType()==PLAYER)
+			g1->atarCuerda(contact->GetFixtureB()->GetBody());
+		else if(g1->getObjectType()==PLAYER && g2->getObjectType()==REHEN)
+			g2->atarCuerda(contact->GetFixtureA()->GetBody());
+		else{}
+	}
 	
 		
 	if(g1)
