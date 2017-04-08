@@ -32,9 +32,14 @@ private:
     CEGUI::DefaultWindow *vida3;
     CEGUI::DefaultWindow *vida4;
     CEGUI::DefaultWindow *vida5;
-    CEGUI::DefaultWindow *pistola1;
-    CEGUI::DefaultWindow *pistola2;
-    CEGUI::DefaultWindow *pistola3;
+    CEGUI::DefaultWindow *pistola;
+    CEGUI::DefaultWindow *supersocker;
+    CEGUI::DefaultWindow *lanzacaramelos;
+    CEGUI::DefaultWindow *bombahumo;
+    CEGUI::DefaultWindow *chicle;
+    CEGUI::DefaultWindow *globo;
+    CEGUI::DefaultWindow *martillo;
+    CEGUI::DefaultWindow *piedra;
 };
 
 #endif /* HUDLayout_hpp */

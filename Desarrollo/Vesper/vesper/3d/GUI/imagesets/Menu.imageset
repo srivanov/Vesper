@@ -36,9 +36,6 @@
     <Image height="20" name="vida3" width="126" xPos="2359" yPos="541" />
     <Image height="20" name="vida4" width="126" xPos="2358" yPos="565" />
     <Image height="20" name="vida5" width="126" xPos="2358" yPos="589" />
-    <Image height="95" name="pistola1" width="131" xPos="2138" yPos="675" />
-    <Image height="97" name="pistola2" width="130" xPos="2139" yPos="782" />
-    <Image height="105" name="pistola3" width="140" xPos="2137" yPos="895" />
     <Image height="68" name="titulo_ajustes" width="312" xPos="2153" yPos="1029" />
     <Image height="68" name="boton_hover" width="228" xPos="1177" yPos="405" />
     <Image height="60" name="titulo_selecciona" width="892" xPos="1413" yPos="1121" />
@@ -49,4 +46,12 @@
     <Image height="50" name="1280" width="362" xPos="2461" yPos="1205" />
     <Image height="284" name="silueta1sel" width="206" xPos="721" yPos="317" />
     <Image height="286" name="silueta2sel" width="212" xPos="933" yPos="355" />
+    <Image height="56" name="arma_bomba" width="51" xPos="2136" yPos="613" />
+    <Image height="58" name="arma_chicle" width="46" xPos="2188" yPos="612" />
+    <Image height="58" name="arma_supersocker" width="71" xPos="2241" yPos="613" />
+    <Image height="63" name="arma_globo" width="53" xPos="2315" yPos="611" />
+    <Image height="59" name="arma_lanzacaramelos" width="76" xPos="2380" yPos="616" />
+    <Image height="67" name="arma_martillo" width="65" xPos="2467" yPos="611" />
+    <Image height="66" name="arma_piedra" width="70" xPos="2539" yPos="607" />
+    <Image height="66" name="arma_pistola" width="70" xPos="2614" yPos="609" />
 </Imageset>
