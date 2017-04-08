@@ -151,6 +151,8 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == PALA){
             arma->insertarArma(9);
         }
+        if(g->getObjectType() == ENEMIGOS)
+            vida-=5;
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();

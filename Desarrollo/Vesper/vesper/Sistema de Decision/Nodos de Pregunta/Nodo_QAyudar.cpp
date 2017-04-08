@@ -10,8 +10,10 @@
 
 short Nodo_QAyudar::run(const int &ID){
     //cout << "AYUDAR?" << endl;
-    if(activado)
+    if(activado){
+       
         return runHijos(ID);
+    }
     if(NpcLibrary::instancia()->recover_book(ID)->Aviso){
         activado = true;
         return RUNNING;

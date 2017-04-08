@@ -26,7 +26,7 @@ public:
     Alarm();
     ~Alarm();
     void update();
-    virtual void contacto(PhysicObject*){}
+    virtual void contacto(PhysicObject*);
     virtual void contactoEnd(PhysicObject*){}
 };
 

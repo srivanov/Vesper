@@ -71,7 +71,6 @@ void Enemy::contacto(PhysicObject *g){
             printf("PLAYER");
             book->notify(m_ID, P_ENEMIGO, g->getPosition());
         }
-			
 	}
 }
 

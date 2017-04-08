@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631499E61E993A3400651E20 /* Nodo_APedir_Ayuda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631499E41E993A3400651E20 /* Nodo_APedir_Ayuda.cpp */; };
+		631499E91E99427000651E20 /* Nodo_APedir_Ayuda2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */; };
 		63844FE01E98136800835938 /* Nodo_AAtacar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63844FDE1E98136800835938 /* Nodo_AAtacar.cpp */; };
 		63C4CE871E7060F1008295A1 /* EasyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE851E7060F1008295A1 /* EasyMath.cpp */; };
 		63C4CE901E706132008295A1 /* LevelBlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE891E706132008295A1 /* LevelBlackBoard.cpp */; };
@@ -120,6 +122,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631499E41E993A3400651E20 /* Nodo_APedir_Ayuda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodo_APedir_Ayuda.cpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda.cpp"; sourceTree = "<group>"; };
+		631499E51E993A3400651E20 /* Nodo_APedir_Ayuda.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_APedir_Ayuda.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda.hpp"; sourceTree = "<group>"; };
+		631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodo_APedir_Ayuda2.cpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda2.cpp"; sourceTree = "<group>"; };
+		631499E81E99427000651E20 /* Nodo_APedir_Ayuda2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_APedir_Ayuda2.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda2.hpp"; sourceTree = "<group>"; };
 		63844FDE1E98136800835938 /* Nodo_AAtacar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodo_AAtacar.cpp; path = "Sistema de Decision/Nodos de Accion/Nodo_AAtacar.cpp"; sourceTree = "<group>"; };
 		63844FDF1E98136800835938 /* Nodo_AAtacar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_AAtacar.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_AAtacar.hpp"; sourceTree = "<group>"; };
 		63C4CE851E7060F1008295A1 /* EasyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EasyMath.cpp; path = Tools/EasyMath.cpp; sourceTree = "<group>"; };
@@ -438,6 +444,10 @@
 				63C4CEBD1E70620E008295A1 /* Nodo_Mover.hpp */,
 				63844FDE1E98136800835938 /* Nodo_AAtacar.cpp */,
 				63844FDF1E98136800835938 /* Nodo_AAtacar.hpp */,
+				631499E41E993A3400651E20 /* Nodo_APedir_Ayuda.cpp */,
+				631499E51E993A3400651E20 /* Nodo_APedir_Ayuda.hpp */,
+				631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */,
+				631499E81E99427000651E20 /* Nodo_APedir_Ayuda2.hpp */,
 			);
 			name = "Nodos de Accion";
 			sourceTree = "<group>";
@@ -871,6 +881,7 @@
 				E9AC3A971DF0AA5000A91A97 /* armasArrojadizas.cpp in Sources */,
 				63C4CEC11E70620E008295A1 /* Nodo_ACurarse.cpp in Sources */,
 				63C4CEEB1E706249008295A1 /* Nodo_QEnemigo_QAlarma.cpp in Sources */,
+				631499E61E993A3400651E20 /* Nodo_APedir_Ayuda.cpp in Sources */,
 				63D124171E84030800D1B380 /* Botiquin.cpp in Sources */,
 				63C4CEA71E7061F8008295A1 /* Nodo_SecuenciaPlus.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
@@ -913,6 +924,7 @@
 				63C4CEC41E70620E008295A1 /* Nodo_AHuir.cpp in Sources */,
 				63C4CE911E706132008295A1 /* NpcLibrary.cpp in Sources */,
 				E993C5BF1E3CB80B00EEA664 /* puertaInterface.cpp in Sources */,
+				631499E91E99427000651E20 /* Nodo_APedir_Ayuda2.cpp in Sources */,
 				E9AC3A9A1DF0AA5000A91A97 /* blindada.cpp in Sources */,
 				63D124061E84019E00D1B380 /* Bala.cpp in Sources */,
 				63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */,

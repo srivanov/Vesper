@@ -16,7 +16,7 @@
  
  */
 
-eventos::eventos(){m_t.start();}
+eventos::eventos(){m_t.start();revisado=false;}
 eventos::~eventos(){}
 
 /*
@@ -30,7 +30,7 @@ eventos_values Evalores[] = {
 //     TIPO      RADIO  CADUCIDAD(seg)
     { P_ALARMA  , 40.f   , 2.0f},
     { P_ALERTA  , -1.f   , 20.f},
-    { P_AVISO   , 40.f   , 5.0f},
+    { P_AVISO   , 20.f   , 5.0f},
     { P_AYUDA   , 40.f   , 2.0f},
     { P_RUIDO   , 20.f   , 0.5f},
     { P_VOID    , 0.f    , 0.5f}
@@ -102,8 +102,10 @@ void gestor_eventos::comprobar(){
             float distancia = EasyMath::EucCalcularDistancia(ev->m_posicion, *sub->getPosition());
             
             // SI ESTA A LA DISTANCIA
-            if(distancia<ev->radio)
+            if(distancia<ev->radio){
+                ev->revisado = true;
                 sub->notify(ev->m_ID, ev->m_tipo, &ev->m_posicion);
+            }
             
         }
     }
@@ -118,6 +120,13 @@ void gestor_eventos::eliminarme(int ID){
             return;
         }
     
+}
+
+bool gestor_eventos::revisadoEvento(const Prioridades tipo, const int ID){
+    if(existeEvento(tipo, ID)){
+        return World_events[it]->revisado;
+    }
+    return false;
 }
 
 bool gestor_eventos::existeEvento(const Prioridades tipo, const int ID){

@@ -28,6 +28,7 @@ struct eventos {
     dvector3D m_posicion;
     float m_caducidad, radio;
     tiempo m_t;
+    bool revisado;
 };
 
 class gestor_eventos {
@@ -42,6 +43,7 @@ public:
     ~gestor_eventos();
     void eliminarme(int ID);
     bool existeEvento(const Prioridades,const int);
+    bool revisadoEvento(const Prioridades,const int);
     static gestor_eventos * instance();
     void addEvento(int id,const Prioridades t,dvector3D pos);
     void subscribirse(NpcBook * libro);

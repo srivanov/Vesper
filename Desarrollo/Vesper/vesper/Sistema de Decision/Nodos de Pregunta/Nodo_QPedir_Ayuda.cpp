@@ -11,10 +11,16 @@
 short Nodo_QPedir_Ayuda::run(const int &ID){
     //cout << "PEDIR AYUDA?" << endl;
     //TO DO: POR DEFINIR FUNCION
-    if(activado)
-        return runHijos(ID);
+    if(activado && !CONGELADO){
+         //cout << "NECESITO AYUDA" << endl;
+        short answer = runHijos(ID);
+        if(!activado)
+            CONGELADO=true;
+        return answer;
+    }
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
-    if(book->getMoral()<NEEDHELP){
+    if(book->getMoral()<NEEDHELP && !CONGELADO){
+        //cout << "MORAL: " << book->getMoral() << endl;
         activado = true;
         return RUNNING;
     }

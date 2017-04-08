@@ -9,7 +9,7 @@
 #define TIEMPOALARMA 5.0f
 #define RADIOALARMA -1
 
-#include "gestor_eventos.hpp"
+#include "../Actores/Enemy.hpp"
 #include "Alarm.hpp"
 
 void Alarm::gestorTiempo(){
@@ -53,11 +53,20 @@ void Alarm::activar(){
     _time.start();
     gestor_eventos * gestor = gestor_eventos::instance();
     setTexture("3d/rojo.png");
-    if(!gestor->existeEvento(P_ALARMA, m_ID))
+    if(!gestor->existeEvento(P_ALARMA, m_ID)){
         gestor->addEvento(m_ID, P_ALARMA, *getPosition());
+        gestor->addEvento(m_ID, P_ALERTA, *getPosition());
+    }
     
 }
 
 bool Alarm::estaActivado(){
     return activado;
+}
+
+void Alarm::contacto(PhysicObject *g){
+    if(g->getObjectType() == ENEMIGOS){
+        if(static_cast<Enemy*>(g)->activarAlarma())
+            activar();
+    }
 }

@@ -44,6 +44,9 @@
 #include "Nodos de Accion/Nodo_AHablar.hpp"
 #include "Nodos de Accion/Nodo_APatrullar.hpp"
 #include "Nodos de Accion/Nodo_AAtacar.hpp"
+#include "Nodos de Accion/Nodo_APedir_Ayuda.hpp"
+#include "Nodos de Accion/Nodo_APedir_Ayuda2.hpp"
+
 
 #include "Nodos de Accion/Nodo_Mover.hpp"
 
@@ -72,6 +75,7 @@ enum RamasArbol{
  
  Pedir_Ayuda
  Combate
+ 
  */
 
 
@@ -83,6 +87,7 @@ class Behaviour_tree2 {
     
     Nodo_base * ConstruirRamaAccion();
     Nodo_base * ConstruirSubRamaHuir();
+    Nodo_base * ConstruirSubRamaPedirAyuda();
     Nodo_base * ConstruirSubRamaCombate();
     
     Nodo_base * ConstruirRamaAyudar();

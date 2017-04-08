@@ -12,9 +12,10 @@
 #include "../Nodo de Secuencia/Nodo_Condicional_Secuencial.hpp"
 
 class Nodo_QPedir_Ayuda : public Nodo_Condicional_Secuencial{
+    bool CONGELADO;
 public:
     short run(const int&);
-    Nodo_QPedir_Ayuda(){}
+    Nodo_QPedir_Ayuda(){CONGELADO=false;}
     ~Nodo_QPedir_Ayuda(){}
 };
 

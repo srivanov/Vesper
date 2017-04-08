@@ -21,10 +21,8 @@ Nodo_base * Behaviour_tree2::ConstruirRamaAccion(){
     Nodo_SecuenciaPlus * NodoSelector = new Nodo_SecuenciaPlus;
     
     Nodo_base * Accion1 = ConstruirSubRamaHuir();
-    Nodo_QPedir_Ayuda * Accion2 = new Nodo_QPedir_Ayuda;
+    Nodo_base * Accion2 = ConstruirSubRamaPedirAyuda();
     Nodo_base * Accion3 = ConstruirSubRamaCombate();
-    
-    
     
     NodoSuperior->addHijo(NodoSelector);
     
@@ -39,11 +37,26 @@ Nodo_base * Behaviour_tree2::ConstruirRamaAccion(){
 Nodo_base * Behaviour_tree2::ConstruirSubRamaCombate(){
     Nodo_QCombatir * NodoSuperior = new Nodo_QCombatir;
     
-    Nodo_AAtacar * Accion1 = new Nodo_AAtacar;
+    //Nodo_AAtacar * Accion1 = new Nodo_AAtacar;
+    Nodo_Mover * Accion1 = new Nodo_Mover;
+
     
     NodoSuperior->addHijo(Accion1);
     
     return NodoSuperior;
+}
+
+Nodo_base * Behaviour_tree2::ConstruirSubRamaPedirAyuda(){
+    Nodo_QPedir_Ayuda * NodoSuperior = new Nodo_QPedir_Ayuda;
+    
+    Nodo_APedir_Ayuda * Accion1 = new Nodo_APedir_Ayuda;
+    Nodo_APedir_Ayuda2 * Accion2 = new Nodo_APedir_Ayuda2;
+    
+    NodoSuperior->addHijo(Accion1);
+    NodoSuperior->addHijo(Accion2);
+    
+    return NodoSuperior;
+    
 }
 
 Nodo_base * Behaviour_tree2::ConstruirSubRamaHuir(){

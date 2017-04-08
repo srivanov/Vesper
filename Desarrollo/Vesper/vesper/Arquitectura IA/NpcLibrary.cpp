@@ -85,7 +85,7 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion){
     PosicionPropia = posicion;
     VectorMovimiento = new dvector3D(0,0,0);
     Enemigo = Aviso = Ruido = Alarma = Evento = Alerta = false;
-    ATACAR = false;
+    ATACAR = ACTalarma = false;
     pila.clear();
 }
 
@@ -136,7 +136,7 @@ void NpcBook::valueObjective(const Prioridades &tipo){
             Alerta = true;
             break;
         case P_ALARMA:
-            if(Enemigo) return;
+            if(Enemigo && getMoral()>40) return;
             Alarma = true;
             changeObjective();
         case P_AVISO:

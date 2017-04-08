@@ -27,6 +27,7 @@ private:
 public:
     Enemy();
     ~Enemy();
+    bool activarAlarma() {return book->ACTalarma;}
     dvector3D* getDireccion();
     void update();
     void inicializar(int& ID);
