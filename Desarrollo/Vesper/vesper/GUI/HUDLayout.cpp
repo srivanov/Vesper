@@ -33,21 +33,6 @@ void HUDLayout::init(){
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
 //    moneda3->hide();
     
-    vida1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(6));
-//    vida1->hide();
-    
-    vida2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(7));
-//    vida2->show();
-    
-    vida3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(8));
-//    vida3->hide();
-    
-    vida4 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(9));
-//    vida4->hide();
-    
-    vida5 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(10));
-//    vida5->hide();
-    
     pistola = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11));
     pistola->show();
     
@@ -72,40 +57,13 @@ void HUDLayout::init(){
     piedra = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(18));
     piedra->hide();
     
+    vida = static_cast<CEGUI::ProgressBar*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
+    vida->setProgress(0.5);
 }
 
 void HUDLayout::getVida(int v){
-    if(v > 80){
-        vida1->show();
-        vida2->hide();
-        vida3->hide();
-        vida4->hide();
-        vida5->hide();
-    }else if(v > 50 && v < 80){
-        vida1->hide();
-        vida2->show();
-        vida3->hide();
-        vida4->hide();
-        vida5->hide();
-    }else if(v < 50 && v > 30){
-        vida1->hide();
-        vida2->hide();
-        vida3->show();
-        vida4->hide();
-        vida5->hide();
-    }else if(v < 30 && v > 10){
-        vida1->hide();
-        vida2->hide();
-        vida3->hide();
-        vida4->show();
-        vida5->hide();
-    }else{
-        vida1->hide();
-        vida2->hide();
-        vida3->hide();
-        vida4->hide();
-        vida5->show();
-    }
+    float normal_life = (float)v * 0.01; // Paso la vida a un numero entre 0 y 1 para la progress bar
+    vida->setProgress(normal_life);
 }
 
 void HUDLayout::getMonedas(int v){

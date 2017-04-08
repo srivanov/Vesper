@@ -27,11 +27,6 @@ private:
    	CEGUI::DefaultWindow *moneda1;
     CEGUI::DefaultWindow *moneda2;
     CEGUI::DefaultWindow *moneda3;
-    CEGUI::DefaultWindow *vida1;
-    CEGUI::DefaultWindow *vida2;
-    CEGUI::DefaultWindow *vida3;
-    CEGUI::DefaultWindow *vida4;
-    CEGUI::DefaultWindow *vida5;
     CEGUI::DefaultWindow *pistola;
     CEGUI::DefaultWindow *supersocker;
     CEGUI::DefaultWindow *lanzacaramelos;
@@ -40,6 +35,7 @@ private:
     CEGUI::DefaultWindow *globo;
     CEGUI::DefaultWindow *martillo;
     CEGUI::DefaultWindow *piedra;
+    CEGUI::ProgressBar *vida;
 };
 
 #endif /* HUDLayout_hpp */
