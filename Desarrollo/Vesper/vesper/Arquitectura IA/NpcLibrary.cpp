@@ -75,7 +75,7 @@ Eventos::~Eventos(){}
  NPC_BOOK
  */
 
-NpcBook::NpcBook(const int& ID,dvector3D* posicion){
+NpcBook::NpcBook(const int& ID,dvector3D* posicion) : posPlayer(nullptr){
     m_ID = ID;
     salud = 100;
     estado = 0;
@@ -104,7 +104,8 @@ void NpcBook::notify(int ID,const Prioridades tipo, dvector3D * posicion){
     if(it!=pila.end()) remove_EventsByType(it->first);
     Evento = true;
     
-    
+    if(tipo==P_ENEMIGO)
+        posPlayer = posicion;
     
     pila.insert(std::pair<Prioridades, Eventos*>(tipo,new Eventos(ID,tipo,posicion)));
     

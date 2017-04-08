@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Arquitectura IA/NpcLibrary.cpp"
-            timestampString = "513283669.148808"
+            timestampString = "513368032.169467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "NpcBook::changeObjective()"
             landmarkType = "7">
          </BreakpointContent>
@@ -384,6 +384,38 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "Nodo_QPedir_Ayuda::run(const int &amp;ID)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Sistema de Decision/Nodos de Accion/Nodo_AAtacar.cpp"
+            timestampString = "513368071.974014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "Nodo_AAtacar::run(const int &amp;ID)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Sistema de Decision/Nodos de Accion/Nodo_AAtacar.cpp"
+            timestampString = "513368296.041585"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "Nodo_AAtacar::run(const int &amp;ID)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

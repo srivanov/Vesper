@@ -8,9 +8,46 @@
 
 #include "Nodo_AAtacar.hpp"
 
+#define VELOCIDAD 2
+
 short Nodo_AAtacar::run(const int &ID){
+    NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     
-    NpcLibrary::instancia()->recover_book(ID)->ATACAR = true;
+    updatePosition(ID);
+    
+    book->resetVectorMovimiento();
+    
+    if(aux<12.0f){
+        
+        return updateVMovement(ID);
+        
+    }else{
+        book->Enemigo = false;
+        book->remove_EventsByType(P_ENEMIGO);
+    }
+    
     return FUNCIONO;
     
 }
+
+
+short Nodo_AAtacar::updateVMovement(const int &id){
+    dvector3D * _movement = NpcLibrary::instancia()->recover_book(id)->VectorMovimiento;
+    
+    _movement->x = xABS*((VELOCIDAD*100/aux)/100);
+    _movement->y = yABS*((VELOCIDAD*100/aux)/100);
+    _movement->z = 0;
+   
+    return RUNNING;
+}
+void Nodo_AAtacar::updatePosition(const int &id){
+    NpcBook * book = NpcLibrary::instancia()->recover_book(id);
+    
+    
+    dvector3D posPropia = *book->getPosition();
+    dvector3D posObjetivo = *book->posPlayer;
+    aux = EasyMath::EucCalcularDistancia(posPropia,posObjetivo);
+    xABS = posObjetivo.x-posPropia.x;
+    yABS = posObjetivo.y-posPropia.y;
+}
+

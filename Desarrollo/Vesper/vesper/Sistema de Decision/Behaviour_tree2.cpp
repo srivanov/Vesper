@@ -37,8 +37,8 @@ Nodo_base * Behaviour_tree2::ConstruirRamaAccion(){
 Nodo_base * Behaviour_tree2::ConstruirSubRamaCombate(){
     Nodo_QCombatir * NodoSuperior = new Nodo_QCombatir;
     
-    //Nodo_AAtacar * Accion1 = new Nodo_AAtacar;
-    Nodo_Mover * Accion1 = new Nodo_Mover;
+    Nodo_AAtacar * Accion1 = new Nodo_AAtacar;
+    //Nodo_Mover * Accion1 = new Nodo_Mover;
 
     
     NodoSuperior->addHijo(Accion1);

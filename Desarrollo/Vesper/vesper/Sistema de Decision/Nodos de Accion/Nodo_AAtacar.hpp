@@ -12,7 +12,9 @@
 #include "../Nodo_base.hpp"
 
 class Nodo_AAtacar : public Nodo_base {
-    
+    short updateVMovement(const int&);
+    void updatePosition(const int&);
+    float xABS, yABS , aux;
 public:
     short run(const int &);
     Nodo_AAtacar(){}

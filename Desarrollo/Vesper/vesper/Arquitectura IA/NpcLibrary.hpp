@@ -51,6 +51,7 @@ class NpcBook{
     void valueObjective(const Prioridades&);
     void changeObjective();
 public:
+    dvector3D * posPlayer;
     bool TengoEsteEvento(const Prioridades p,int ID);
     int getMoral();
     void remove_EventsByType(const Prioridades&);
