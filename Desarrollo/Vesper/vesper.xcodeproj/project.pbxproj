@@ -281,6 +281,7 @@
 		E98990D31E5B759F0001A36A /* JSONParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JSONParser.hpp; sourceTree = "<group>"; };
 		E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = puertaInterface.cpp; sourceTree = "<group>"; };
 		E993C5BE1E3CB80B00EEA664 /* puertaInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = puertaInterface.hpp; sourceTree = "<group>"; };
+		E99E1CDC1E9933FE00E3D5AB /* Salida.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Salida.hpp; path = PhysicObjects/Salida.hpp; sourceTree = "<group>"; };
 		E9A346351E0416FC00E6EC25 /* gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gun.cpp; sourceTree = "<group>"; };
 		E9A346361E0416FC00E6EC25 /* gun.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gun.hpp; sourceTree = "<group>"; };
 		E9A8F0081DF48E3C00F8C8CE /* MyEventReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyEventReceiver.cpp; sourceTree = "<group>"; };
@@ -520,6 +521,7 @@
 				63D124091E8402F200D1B380 /* World */,
 				63D124001E84019E00D1B380 /* Bala.cpp */,
 				63D124011E84019E00D1B380 /* Bala.hpp */,
+				E99E1CDC1E9933FE00E3D5AB /* Salida.hpp */,
 				63D124021E84019E00D1B380 /* PhysicObject.cpp */,
 				63D124031E84019E00D1B380 /* PhysicObject.hpp */,
 				63D124041E84019E00D1B380 /* PlayerObjects.cpp */,
@@ -1028,6 +1030,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(PROJECT_NAME)";
+				GCC_ENABLE_CPP_RTTI = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/includes/irrlicht",
 					"$(PROJECT_DIR)/includes",
@@ -1050,6 +1053,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/includes/irrlicht",
 					"$(PROJECT_DIR)/includes",

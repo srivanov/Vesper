@@ -30,6 +30,7 @@ public:
     PhysicObject * PObject(dvector3D posicion,ObjectType tipo);
     PhysicObject * WObject(int ID, dvector3D posicion,ObjectType tipo);
     PhysicObject * Actores(int ID, dvector3D posicion,ObjectType tipo);
+	PhysicObject * Escape(int ID, dvector3D posicion,ObjectType tipo);
 };
 
 #endif /* ObjectFactory_hpp */

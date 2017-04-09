@@ -25,7 +25,6 @@ PhysicObject::~PhysicObject(){
         it->second = NULL;
         //componentes.erase(it);
     }
-    
 }
 
 void PhysicObject::setPosition(dvector3D &pos){

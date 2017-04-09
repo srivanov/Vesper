@@ -5,9 +5,13 @@
 #include <stdio.h>
 #include <Box2D/Box2D.h>
 
+class PhysicObject;
+
 class ContactListener : public b2ContactListener{
 	void BeginContact(b2Contact* contact);
 	void EndContact(b2Contact* contact);
+	void contacta(PhysicObject* p1, PhysicObject* p2);
+	void atarlos(PhysicObject* p1, b2Body* bod);
 };
 
 class mundoBox2D{

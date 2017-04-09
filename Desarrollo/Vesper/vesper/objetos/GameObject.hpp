@@ -53,6 +53,7 @@ enum ObjectType {
     BUMMER_BOOM,
     BOMBA_HUMO,
     ARBUSTOS,
+	SALIDA,
     BALA
 };
 

@@ -3,7 +3,6 @@
 #include "objetos/PhysicObjects/PhysicObject.hpp"
 
 
-
 //para crear y devolver la instancia del Juego
 mundoBox2D* mundoBox2D::Instance(){
     
@@ -40,22 +39,45 @@ void mundoBox2D::update(){
 void ContactListener::BeginContact(b2Contact* contact){
 	//Si los dos son bodys dinamicos el fixtureA es el que choca
 	//Si uno es estatico sera el fixtureB, el fixtureA sera el dinamico
-	PhysicObject* g1 = static_cast<PhysicObject*>(contact->GetFixtureA()->GetBody()->GetUserData());
-	PhysicObject* g2 = static_cast<PhysicObject*>(contact->GetFixtureB()->GetBody()->GetUserData());
+	b2Fixture *fixA = contact->GetFixtureA(), *fixB = contact->GetFixtureB();
 	
-	if(g1 && g2){
-		if(g1->getObjectType()==REHEN && g2->getObjectType()==PLAYER)
-			g1->atarCuerda(contact->GetFixtureB()->GetBody());
-		else if(g1->getObjectType()==PLAYER && g2->getObjectType()==REHEN)
-			g2->atarCuerda(contact->GetFixtureA()->GetBody());
-		else{}
+	PhysicObject* g1 = static_cast<PhysicObject*>(fixA->GetBody()->GetUserData());
+	PhysicObject* g2 = static_cast<PhysicObject*>(fixB->GetBody()->GetUserData());
+	
+	if(g1){
+		if(g2 && g1->getObjectType()==REHEN && g2->getObjectType()==PLAYER)
+			atarlos(g1, fixB->GetBody());
+		else{
+			if(g1->getObjectType()!=BALA || !fixB->IsSensor())
+				contacta(g1, g2);
+		}
+	}
+	if(g2){
+		if(g1 && g2->getObjectType()==REHEN && g1->getObjectType()==PLAYER)
+			atarlos(g2, fixA->GetBody());
+		else{
+			if(g2->getObjectType()!=BALA || !fixA->IsSensor())
+				contacta(g2, g1);
+		}
 	}
 	
-		
-	if(g1)
-		g1->contacto(g2);
-	if(g2)
-		g2->contacto(g1);
+	
+	
+//	if(g1 && g2){
+//		if(g1->getObjectType()==REHEN && g2->getObjectType()==PLAYER)
+//			g1->atarCuerda(contact->GetFixtureB()->GetBody());
+//		else if(g1->getObjectType()==PLAYER && g2->getObjectType()==REHEN)
+//			g2->atarCuerda(contact->GetFixtureA()->GetBody());
+//		else{}
+//	}
+//	if((g1 && g1->getObjectType()==BALA) || (g2 && g2->getObjectType()==BALA)){
+//		if(!contact->GetFixtureA()->IsSensor() && !contact->GetFixtureB()->IsSensor()){
+//			if(g1)
+//				g1->contacto(g2);
+//			if(g2)
+//				g2->contacto(g1);
+//		}
+//	}
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
@@ -66,3 +88,13 @@ void ContactListener::EndContact(b2Contact* contact) {
 	if(g2 != NULL)
 		g2->contactoEnd(g1);
 }
+
+void ContactListener::contacta(PhysicObject* p1, PhysicObject* p2){
+	p1->contacto(p2);
+}
+
+void ContactListener::atarlos(PhysicObject* p1, b2Body* bod){
+	p1->atarCuerda(bod);
+}
+
+

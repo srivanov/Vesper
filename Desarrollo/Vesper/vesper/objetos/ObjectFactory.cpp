@@ -54,6 +54,17 @@ PhysicObject * ObjectFactory::Actores(int ID, dvector3D posicion, ObjectType tip
     return g;
 }
 
+PhysicObject * ObjectFactory::Escape(int ID, dvector3D posicion, ObjectType tipo){
+	Clean();
+	if(tipo==SALIDA)
+		g = new Salida;
+	else{
+		return nullptr;
+	}
+	initObject(ID,posicion,tipo,STATIC_BODY);
+	return g;
+}
+
 PhysicObject * ObjectFactory::WObject(int ID, dvector3D posicion, ObjectType tipo){
     Clean();
     if(tipo==FUENTE) g = new Fuente;

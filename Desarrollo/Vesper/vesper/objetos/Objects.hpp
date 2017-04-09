@@ -33,5 +33,6 @@
 #include "PhysicObjects/World/Comida.hpp"
 #include "PhysicObjects/World/Botiquin.hpp"
 #include "PhysicObjects/World/Puerta.hpp"
+#include "PhysicObjects/Salida.hpp"
 
 #endif /* Arquitecture_hpp */

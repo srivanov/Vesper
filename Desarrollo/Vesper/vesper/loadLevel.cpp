@@ -259,6 +259,9 @@ void loadLevel::CreateWorld(){
             camara->EnableAutoCamera(player->getPosition());
             continue;
         }
+		else if(tipo==SALIDA){
+			g = factory.Escape(it, pos, tipo);Mundo.push_back(g);
+		}
         if(!g) throw FACTORY_ERROR;
     }
    
