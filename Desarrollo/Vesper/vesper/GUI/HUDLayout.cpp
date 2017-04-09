@@ -33,29 +33,26 @@ void HUDLayout::init(){
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
 //    moneda3->hide();
     
-    pistola = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11));
-    pistola->show();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPISTOLA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11))));
     
-    supersocker = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12));
-    supersocker->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tESCOPETA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12))));
     
-    lanzacaramelos = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(13));
-    lanzacaramelos->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tLANZACARAMELOS, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(13))));
     
-    bombahumo = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(14));
-    bombahumo->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tBOMBAHUMO, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(14))));
     
-    chicle = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(15));
-    chicle->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tCHICLE, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(15))));
     
-    globo = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(16));
-    globo->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tGLOBOAGUA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(16))));
     
-    martillo = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(17));
-    martillo->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tMARTILLO, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(17))));
     
-    piedra = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(18));
-    piedra->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPIEDRA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(18))));
+    
+    ocultarArmas();
+    actual = armas.begin()->second;
+    actual->show();
+
     
     vida = static_cast<CEGUI::ProgressBar*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
     vida->setProgress(0.5);
@@ -83,10 +80,26 @@ void HUDLayout::getMonedas(int v){
         moneda2->hide();
         moneda3->show();
     }else{
-        moneda0->hide();
+        moneda0->show();
     	moneda1->hide();
     	moneda2->hide();
-    	moneda3->show();
+    	moneda3->hide();
+    }
+}
+
+void HUDLayout::ocultarArmas(){
+    for(auto it = armas.begin(); it !=armas.end(); ++it){
+        it->second->hide();
+    }
+}
+
+void HUDLayout::mostrarArma(typeArma tipo){
+    auto it = armas.find(tipo);
+    
+    if(it != armas.end()){
+        actual->hide();
+        actual = it->second;
+        actual->show();
     }
 }
 

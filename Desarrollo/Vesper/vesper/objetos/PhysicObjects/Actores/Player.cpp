@@ -103,7 +103,7 @@ void Player::render(){
 
 void Player::atacar(){
     
-    if(*(arma->getArmaActual()->getType()) == tPALA)
+    if(arma->getArmaActual() == tPALA)
         cuerpoacuerpo();
     else
         arma->shoot();
@@ -111,7 +111,8 @@ void Player::atacar(){
 
 void Player::cambiarArma(){
     arma->changeGun();
-    std::cout << *arma->getArmaActual()->getType() << std::endl;
+    hud.mostrarArma(arma->getArmaActual());
+    std::cout << arma->getArmaActual() << std::endl;
 }
 
 void Player::changeActiveKey(){

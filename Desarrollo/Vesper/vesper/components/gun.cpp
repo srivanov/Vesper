@@ -87,10 +87,6 @@ void gun::setMunicion(unsigned int n){
 	cualidad.municion = n;
 }
 
-typeArma const* gun::getType(){
-    return &cualidad.tipo;
-}
-
 void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
     //TO DO: Hacer la gestion de las balas en la clase bala
     bala_aux = new Bala(pos, dir, vel,tiempo_vida);

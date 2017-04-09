@@ -6,8 +6,8 @@
 //  Copyright © 2017 Gaspar Rodriguez Valero. All rights reserved.
 //
 
-#ifndef Arquitecture_hpp
-#define Arquitecture_hpp
+#ifndef Objects_hpp
+#define Objects_hpp
 
 // CINEMATICOS
 
@@ -34,4 +34,4 @@
 #include "PhysicObjects/World/Botiquin.hpp"
 #include "PhysicObjects/World/Puerta.hpp"
 
-#endif /* Arquitecture_hpp */
+#endif /* Objects_hpp */

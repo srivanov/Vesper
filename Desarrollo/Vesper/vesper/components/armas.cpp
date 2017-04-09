@@ -28,9 +28,9 @@ armas::armas(){
 //	aux = new martilloDeJuguete(10, 0.2f, 4.0f);
 //	interfaz.push_back(aux);
     
-    interfaz.push_back(new gun(tMARTILLO));
     interfaz.push_back(new gun(tPISTOLA));
-	
+    interfaz.push_back(new gun(tMARTILLO));
+    
 	seleccionada = interfaz.begin();
     
 }
@@ -98,8 +98,8 @@ void armas::eliminarArma(std::vector<gun *>::iterator iter){
     interfaz.erase(iter);
 }
 
-gun* armas::getArmaActual(){
-    return *seleccionada;
+typeArma armas::getArmaActual(){
+    return (*seleccionada)->getType();
 }
 
 

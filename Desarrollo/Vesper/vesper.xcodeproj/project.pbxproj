@@ -515,6 +515,7 @@
 		886F062F1E5DF21600465532 /* GUIScheme.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GUIScheme.xsd; sourceTree = "<group>"; };
 		886F06301E5DF21600465532 /* Imageset.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Imageset.xsd; sourceTree = "<group>"; };
 		886F06311E5DF21600465532 /* Samples.xsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Samples.xsd; sourceTree = "<group>"; };
+		88FF30B21E9A4B40005BD228 /* typeArma.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = typeArma.hpp; sourceTree = "<group>"; };
 		C1338FA81E8C2AF900BE6F6F /* listaMenus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = listaMenus.h; sourceTree = "<group>"; };
 		C1A0AEF41E434BD8009699FD /* libCEGUIBase-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIBase-0_d.dylib"; path = "libs/libCEGUIBase-0_d.dylib"; sourceTree = "<group>"; };
 		C1A0AEF51E434BD8009699FD /* libCEGUICommonDialogs-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUICommonDialogs-0_d.dylib"; path = "libs/libCEGUICommonDialogs-0_d.dylib"; sourceTree = "<group>"; };
@@ -1201,6 +1202,7 @@
 				E9AC3A921DF0AA5000A91A97 /* salud.hpp */,
 				E9AC3A931DF0AA5000A91A97 /* sed.cpp */,
 				E9AC3A941DF0AA5000A91A97 /* sed.hpp */,
+				88FF30B21E9A4B40005BD228 /* typeArma.hpp */,
 			);
 			path = components;
 			sourceTree = "<group>";
