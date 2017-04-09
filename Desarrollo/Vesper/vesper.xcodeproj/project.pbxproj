@@ -263,6 +263,7 @@
 		C1DF66C11E8BCAB200542BB8 /* menuManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = menuManager.hpp; sourceTree = "<group>"; };
 		E942C0571DF1EDE600CC5763 /* ventana.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ventana.cpp; sourceTree = "<group>"; };
 		E942C0581DF1EDE600CC5763 /* ventana.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ventana.hpp; sourceTree = "<group>"; };
+		E97F1C0B1E9A6AD9000C3B33 /* typeArma.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = typeArma.hpp; sourceTree = "<group>"; };
 		E98661241DF98D140028AC64 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
 		E98661261DF99ED30028AC64 /* Fps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fps.cpp; sourceTree = "<group>"; };
 		E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditosLayout.cpp; sourceTree = "<group>"; };
@@ -690,6 +691,7 @@
 				E9AC3A6A1DF0AA5000A91A97 /* armas.hpp */,
 				E9A346351E0416FC00E6EC25 /* gun.cpp */,
 				E9A346361E0416FC00E6EC25 /* gun.hpp */,
+				E97F1C0B1E9A6AD9000C3B33 /* typeArma.hpp */,
 				E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */,
 				E9AC3A6C1DF0AA5000A91A97 /* ataque.hpp */,
 				E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */,

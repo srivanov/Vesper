@@ -13,6 +13,9 @@
 
 #define VELOCIDADN 2.f
 
+
+
+
 Player::Player(){
     
     arma = new armas;
@@ -24,10 +27,11 @@ Player::Player(){
     componente->setFather(this);
     addNodo("3d/sphere.3ds");
     setTexture("3d/texture.png");
-    
+	
+	input = MyEventReceiver::Instance();
     vida = 100;
 	hud.init();
-	estado = states::Instance();
+	t.start();
 }
 
 void Player::inicializar(int ID, int numL){
@@ -59,31 +63,33 @@ void Player::update(){
         
     }
      */
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_UP)){
+	
+    if(input->IsKeyDown(SKY_KEY_UP))
 		vel.y += VELOCIDADN;
-//    	moneda1->show();
-    }
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_DOWN)){
+    if(input->IsKeyDown(SKY_KEY_DOWN))
 		vel.y += -VELOCIDADN;
-//    	moneda2->show();
-	}
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_LEFT)){
+    if(input->IsKeyDown(SKY_KEY_LEFT))
 		vel.x += -VELOCIDADN;
-//    	moneda3->show();
-    }
-	if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_RIGHT))
+	if(input->IsKeyDown(SKY_KEY_RIGHT))
 		vel.x += VELOCIDADN;
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_N))
+	
+	if(input->IsKeyDown(SKY_MOUSE_BUTTON_1))
         atacar();
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_TAB))
-       cambiarArma();
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_E))
-        changeActiveKey();
-    if(MyEventReceiver::Instance()->IsKeyDown(SKY_KEY_M))
+	if(t.tTranscurrido(2.0f)){
+		if(input->IsKeyDown(SKY_KEY_TAB)){
+		   	cambiarArma();
+			t.reset();
+		}
+		if(input->IsKeyDown(SKY_KEY_E)){
+			changeActiveKey();
+			t.reset();
+		}
+	}
+    if(input->IsKeyDown(SKY_KEY_M))
         vel*=2;
+	
 	mover(vel);
-    
-    
+	
     m_rot = ventana::Instance()->posicionRaton(m_pos);
     rotarConRaton(m_rot);
     GameObject::update();
@@ -101,7 +107,7 @@ void Player::render(){
 
 void Player::atacar(){
     
-    if(*(arma->getArmaActual()->getType()) == tPALA)
+    if(arma->getArmaActual() == tPALA)
         cuerpoacuerpo();
     else
         arma->shoot();
@@ -109,7 +115,8 @@ void Player::atacar(){
 
 void Player::cambiarArma(){
     arma->changeGun();
-    std::cout << *arma->getArmaActual()->getType() << std::endl;
+    hud.mostrarArma(arma->getArmaActual());
+    std::cout << arma->getArmaActual() << std::endl;
 }
 
 void Player::changeActiveKey(){
@@ -149,15 +156,6 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == PALA){
             arma->insertarArma(9);
         }
-		if(g->getObjectType() == ENEMIGOS){
-            vida-=5;
-			if(vida <= 0){
-				estado->nextState = MENU;
-				estado->menu = tmMENUPRINCIPAL;
-				estado->destruir = true;
-			}
-				
-		}
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();

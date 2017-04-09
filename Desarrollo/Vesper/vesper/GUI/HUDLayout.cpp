@@ -33,64 +33,34 @@ void HUDLayout::init(){
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
 //    moneda3->hide();
     
-    vida1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(6));
-//    vida1->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPISTOLA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11))));
     
-    vida2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(7));
-//    vida2->show();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tESCOPETA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12))));
     
-    vida3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(8));
-//    vida3->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tLANZACARAMELOS, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(13))));
     
-    vida4 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(9));
-//    vida4->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tBOMBAHUMO, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(14))));
     
-    vida5 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(10));
-//    vida5->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tCHICLE, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(15))));
     
-    pistola1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11));
-    pistola1->show();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tGLOBOAGUA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(16))));
     
-    pistola2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12));
-    pistola2->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tMARTILLO, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(17))));
     
-    pistola3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(13));
-    pistola3->hide();
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPIEDRA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(18))));
     
+    ocultarArmas();
+    actual = armas.begin()->second;
+    actual->show();
+
+    
+    vida = static_cast<CEGUI::ProgressBar*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
+    vida->setProgress(0.5);
 }
 
 void HUDLayout::getVida(int v){
-    if(v > 80){
-        vida1->show();
-        vida2->hide();
-        vida3->hide();
-        vida4->hide();
-        vida5->hide();
-    }else if(v > 50 && v < 80){
-        vida1->hide();
-        vida2->show();
-        vida3->hide();
-        vida4->hide();
-        vida5->hide();
-    }else if(v < 50 && v > 30){
-        vida1->hide();
-        vida2->hide();
-        vida3->show();
-        vida4->hide();
-        vida5->hide();
-    }else if(v < 30 && v > 10){
-        vida1->hide();
-        vida2->hide();
-        vida3->hide();
-        vida4->show();
-        vida5->hide();
-    }else{
-        vida1->hide();
-        vida2->hide();
-        vida3->hide();
-        vida4->hide();
-        vida5->show();
-    }
+    float normal_life = (float)v * 0.01; // Paso la vida a un numero entre 0 y 1 para la progress bar
+    vida->setProgress(normal_life);
 }
 
 void HUDLayout::getMonedas(int v){
@@ -110,10 +80,26 @@ void HUDLayout::getMonedas(int v){
         moneda2->hide();
         moneda3->show();
     }else{
-        moneda0->hide();
+        moneda0->show();
     	moneda1->hide();
     	moneda2->hide();
-    	moneda3->show();
+    	moneda3->hide();
+    }
+}
+
+void HUDLayout::ocultarArmas(){
+    for(auto it = armas.begin(); it !=armas.end(); ++it){
+        it->second->hide();
+    }
+}
+
+void HUDLayout::mostrarArma(typeArma tipo){
+    auto it = armas.find(tipo);
+    
+    if(it != armas.end()){
+        actual->hide();
+        actual = it->second;
+        actual->show();
     }
 }
 

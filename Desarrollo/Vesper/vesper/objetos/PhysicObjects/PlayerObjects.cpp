@@ -25,9 +25,9 @@ void PlayerObjects::inicializar(int ID){
     switch (m_tipo) {
         case PALA:          setTexture("3d/pala.jpg");break;
         case MONEDAS:       setTexture("3d/moneda.jpg");break;
-        case PIEDRA:        setTexture("3d/piedra.jpg");break;
-        case ESCOPETA:      setTexture("3d/letraE.png");break;
-        case SWEET_SHOOTER: setTexture("3d/letraL.png");break;
+        case PIEDRA:        setTexture("3d/piedra.png");break;
+        case ESCOPETA:      setTexture("3d/supersocker.png");break;
+        case SWEET_SHOOTER: setTexture("3d/lanzacaramelos.png");break;
         case GLOBO_AGUA:    setTexture("3d/globoagua.png");break;
         case BUMMER_BOOM:   setTexture("3d/chicle.png");break;
         case BOMBA_HUMO:    setTexture("3d/bombahumo.png");break;

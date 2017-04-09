@@ -9,19 +9,7 @@
 #include "Dvector.hpp"
 #include <vector>
 #include "bala.hpp"
-
-enum typeArma{
-    tArmaNO_TYPE = tVOID,
-    tPISTOLA,
-    tESCOPETA = ESCOPETA,
-    tLANZACARAMELOS = SWEET_SHOOTER,
-    tPIEDRA = PIEDRA,
-    tGLOBOAGUA = GLOBO_AGUA,
-    tCHICLE = BUMMER_BOOM,
-    tBOMBAHUMO = BOMBA_HUMO,
-    tMARTILLO,
-    tPALA = PALA
-};
+#include "typeArma.hpp"
 
 struct cualidades {
     typeArma tipo;
@@ -40,7 +28,7 @@ public:
 	unsigned int getMunicion();
 	void setMunicion(unsigned int n);
 	void update();
-    typeArma const* getType();
+    typeArma getType(){return cualidad.tipo;}
     void insertBala(dvector3D &pos, dvector3D &dir, float vel);
     void render();
     

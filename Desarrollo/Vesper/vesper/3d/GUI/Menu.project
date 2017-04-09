@@ -2,6 +2,7 @@
 <Project CEGUIDefaultResolution="1280x720" CEGUIVersion="0.8" baseDirectory="." fontsPath="fonts" imagesetsPath="imagesets" layoutsPath="layouts" looknfeelsPath="looknfeel" schemesPath="schemes" version="CEED Project 1" xmlSchemasPath="xml_schemas">
     <Items>
         <Item name="imagesets" type="folder">
+            <Item path="imagesets/AlfiskoSkin.imageset" type="file" />
             <Item path="imagesets/Menu.imageset" type="file" />
             <Item path="imagesets/Menu2.png" type="file" />
             <Item path="imagesets/OgreTray.imageset" type="file" />

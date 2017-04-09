@@ -30,6 +30,8 @@ protected:
     int vida;
 	HUDLayout hud;
 	states* estado;
+	tiempo t;
+	MyEventReceiver* input;
 public:
     void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}
