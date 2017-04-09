@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="150" height="100" tilewidth="32" tileheight="32" nextobjectid="71">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="150" height="100" tilewidth="32" tileheight="32" nextobjectid="302">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="tileset.png" width="256" height="256"/>
  </tileset>
@@ -16957,7 +16957,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="11"/>
+   <tile gid="22"/>
+   <tile gid="21"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -17106,8 +17107,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="11"/>
+   <tile gid="22"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -30012,215 +30012,750 @@
   </data>
  </layer>
  <objectgroup name="muros">
-  <object id="1" x="0" y="2496">
-   <polyline points="0,0 384,0 384,192 320,192 320,64 0,64 0,0"/>
+  <object id="228" x="4800" y="2624">
+   <polyline points="0,0 -640,0 -640,96 -448,96 -448,224 -224,224 -224,96 -64,96 -64,512 -672,512 -672,384 -768,384 -768,512 -1152,512 -1152,224 -1024,224 -1024,160 -1152,160 -1152,-416 -1216,-416 -1216,576 0,576 0,0"/>
   </object>
-  <object id="2" x="64" y="2688">
-   <polyline points="0,0 64,0 64,288 0,288 0,0"/>
+  <object id="229" x="3808" y="2208" width="256" height="288"/>
+  <object id="230" x="3360" y="3168" width="224" height="32"/>
+  <object id="231" x="3232" y="2944" width="128" height="256"/>
+  <object id="232" x="3072" y="3168" width="160" height="32"/>
+  <object id="233" x="3072" y="3200">
+   <polyline points="0,0 0,-256 -192,-256 -192,-192 -32,-192 -32,0 0,0"/>
   </object>
-  <object id="3" x="224" y="2784">
-   <polyline points="0,0 0,64 320,64 320,0 0,0"/>
+  <object id="234" x="2752" y="3040">
+   <polyline points="0,0 0,-448 -224,-448 -224,-352 -96,-352 -96,0 0,0"/>
   </object>
-  <object id="4" x="320" y="2944">
-   <polyline points="0,0 0,256 64,256 64,0 0,0"/>
+  <object id="235" x="2656" y="2112" width="128" height="128"/>
+  <object id="236" x="4768" y="1472" width="32" height="1152"/>
+  <object id="237" x="4320" y="1408" width="480" height="64"/>
+  <object id="238" x="4768" y="1312" width="32" height="96"/>
+  <object id="239" x="3840" y="1376" width="192" height="96"/>
+  <object id="240" x="4800" y="1152">
+   <polyline points="0,0 -1120,0 -1120,448 -1184,448 -1184,512 -384,512 -384,448 -1088,448 -1088,160 -1024,160 -1024,96 -1088,96 -1088,32 -672,32 -672,96 -736,96 -736,160 0,160 0,0"/>
   </object>
-  <object id="5" x="672" y="2944">
-   <polyline points="0,0 0,128 320,128 320,0 0,0"/>
+  <object id="241" x="4768" y="896" width="32" height="256"/>
+  <object id="242" x="4800" y="448">
+   <polyline points="0,0 0,448 -832,448 -832,96 -768,96 -768,384 -128,384 -128,320 -64,320 -64,0 0,0"/>
   </object>
-  <object id="6" x="1056" y="2592">
-   <polyline points="0,0 0,224 192,224 192,0 0,0"/>
+  <object id="243" x="4128" y="128" width="96" height="448"/>
+  <object id="244" x="4800" y="384">
+   <polyline points="0,0 -64,0 -64,-320 -800,-320 -800,-384 0,-384 0,0"/>
   </object>
-  <object id="7" x="640" y="2368">
-   <polyline points="0,0 0,224 256,224 256,0 0,0"/>
-  </object>
-  <object id="8" x="64" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="9" x="192" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="10" x="320" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="11" x="448" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="12" x="576" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="13" x="704" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="14" x="832" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="15" x="960" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="16" x="1088" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="17" x="1216" y="2176">
-   <polyline points="0,0 0,64 64,64 64,0 0,0"/>
-  </object>
-  <object id="18" x="0" y="2016">
-   <polyline points="0,0 1472,0 1472,384 1440,384 1440,32 0,32 0,0"/>
-  </object>
-  <object id="19" x="1472" y="2464">
-   <polyline points="0,0 -32,0 -32,736 0,736 0,0"/>
-  </object>
-  <object id="20" x="128" y="1248">
-   <polyline points="0,0 64,0 64,192 288,192 288,256 0,256 0,32"/>
-  </object>
-  <object id="21" x="608" y="1440">
-   <polyline points="0,0 0,64 288,64 288,-192 224,-192 224,0 0,0"/>
-  </object>
-  <object id="22" x="608" y="864">
-   <polyline points="0,0 0,64 224,64 224,256 288,256 288,0 0,0"/>
-  </object>
-  <object id="23" x="128" y="864">
-   <polyline points="0,0 288,0 288,64 64,64 64,256 0,256 0,0"/>
-  </object>
-  <object id="24" x="384" y="1056">
-   <polyline points="0,0 0,256 256,256 256,0 0,0"/>
-  </object>
-  <object id="25" x="96" y="128">
-   <polyline points="0,0 64,0 64,320 352,320 352,384 0,384 0,0"/>
-  </object>
-  <object id="26" x="320" y="192">
-   <polyline points="0,0 0,128 64,128 64,64 320,64 320,320 384,320 384,0 0,0"/>
-  </object>
-  <object id="27" x="1056" y="288">
-   <polyline points="0,0 512,0 512,-160 544,-160 544,288 480,288 480,32 32,32 32,1472 1024,1472 1024,704 256,704 256,512 320,512 320,640 1024,640 1024,-128 608,-128 608,-160 1056,-160 1056,1504 0,1504 0,0"/>
-  </object>
-  <object id="28" x="1216" y="1312">
-   <polyline points="0,0 96,0 96,288 0,288 0,0"/>
-  </object>
-  <object id="29" x="1600" y="1152">
-   <polyline points="0,0 0,128 288,128 288,0 0,0"/>
-  </object>
-  <object id="30" x="2592" y="128">
+  <object id="245" x="2592" y="128">
    <polyline points="0,0 0,64 864,64 864,864 -192,864 -192,544 -256,544 -256,928 928,928 928,0 0,0"/>
   </object>
-  <object id="31" x="2592" y="320">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="246" x="2592" y="320" width="96" height="96"/>
+  <object id="247" x="2784" y="320" width="96" height="96"/>
+  <object id="248" x="2976" y="320" width="96" height="96"/>
+  <object id="249" x="3168" y="320" width="96" height="96"/>
+  <object id="250" x="2592" y="544" width="96" height="96"/>
+  <object id="251" x="2784" y="544" width="96" height="96"/>
+  <object id="252" x="2976" y="544" width="96" height="96"/>
+  <object id="253" x="3168" y="544" width="96" height="96"/>
+  <object id="254" x="2592" y="768" width="96" height="96"/>
+  <object id="255" x="2784" y="768" width="96" height="96"/>
+  <object id="256" x="2976" y="768" width="96" height="96"/>
+  <object id="257" x="3168" y="768" width="96" height="96"/>
+  <object id="258" x="3008" y="1184" width="128" height="96"/>
+  <object id="259" x="3168" y="1600" width="128" height="128"/>
+  <object id="260" x="2592" y="1824" width="352" height="96"/>
+  <object id="261" x="2816" y="1184">
+   <polyline points="0,0 -384,0 -384,512 -288,512 -288,96 0,96 0,0"/>
   </object>
-  <object id="32" x="2784" y="320">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="262" x="1920" y="2048" width="448" height="192"/>
+  <object id="263" x="2304" y="2912">
+   <polyline points="0,0 0,128 -320,128 -320,-320 -224,-320 -224,-96 -128,-96 -128,0 0,0"/>
   </object>
-  <object id="33" x="2976" y="320">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="264" x="1472" y="3168" width="1568" height="32"/>
+  <object id="265" x="384" y="3168" width="1056" height="32"/>
+  <object id="266" x="320" y="2944" width="64" height="256"/>
+  <object id="267" x="672" y="2944" width="320" height="128"/>
+  <object id="268" x="64" y="2688" width="64" height="288"/>
+  <object id="269" x="224" y="2784" width="320" height="64"/>
+  <object id="271" x="640" y="2368" width="256" height="224"/>
+  <object id="272" x="1056" y="2592" width="192" height="224"/>
+  <object id="274" x="64" y="2176" width="64" height="64"/>
+  <object id="276" x="192" y="2176" width="64" height="64"/>
+  <object id="277" x="320" y="2176" width="64" height="64"/>
+  <object id="278" x="448" y="2176" width="64" height="64"/>
+  <object id="279" x="576" y="2176" width="64" height="64"/>
+  <object id="280" x="704" y="2176" width="64" height="64"/>
+  <object id="281" x="832" y="2176" width="64" height="64"/>
+  <object id="283" x="960" y="2176" width="64" height="64"/>
+  <object id="284" x="1088" y="2176" width="64" height="64"/>
+  <object id="285" x="1216" y="2176" width="64" height="64"/>
+  <object id="286" x="1440" y="2464" width="32" height="736"/>
+  <object id="287" x="0" y="2560">
+   <polyline points="0,0 32,0 32,608 320,608 320,640 0,640 0,0"/>
   </object>
-  <object id="34" x="3168" y="320">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="288" x="0" y="2496">
+   <polyline points="0,0 384,0 384,192 320,192 320,64 0,64 0,0"/>
   </object>
-  <object id="35" x="2592" y="544">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="289" x="0" y="2048">
+   <polyline points="0,0 1440,0 1440,352 1472,352 1472,-32 0,-32 0,0"/>
   </object>
-  <object id="36" x="2784" y="544">
-   <polyline points="0,0 0,96 64,96 96,96 96,0 0,0"/>
+  <object id="290" x="0" y="2048" width="32" height="448"/>
+  <object id="291" x="384" y="1056" width="256" height="256"/>
+  <object id="292" x="1216" y="1312" width="96" height="288"/>
+  <object id="293" x="1600" y="1152" width="288" height="128"/>
+  <object id="294" x="128" y="1248">
+   <polyline points="0,0 64,0 64,192 288,192 288,256 0,256 0,0"/>
   </object>
-  <object id="37" x="2976" y="544">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="295" x="128" y="864">
+   <polyline points="0,0 0,256 64,256 64,64 288,64 288,0 0,0"/>
   </object>
-  <object id="38" x="3168" y="544">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="296" x="608" y="864">
+   <polyline points="0,0 0,64 224,64 224,256 288,256 288,0 0,0"/>
   </object>
-  <object id="39" x="2592" y="768">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="297" x="832" y="1248">
+   <polyline points="0,0 64,0 64,256 -224,256 -224,192 0,192 0,0"/>
   </object>
-  <object id="40" x="2784" y="768">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="298" x="96" y="128">
+   <polyline points="0,0 64,0 64,320 352,320 352,384 0,384 0,0"/>
   </object>
-  <object id="41" x="2976" y="768">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="299" x="320" y="192">
+   <polyline points="0,0 0,128 64,128 64,64 320,64 320,320 384,320 384,0 0,0"/>
   </object>
-  <object id="42" x="3168" y="768">
-   <polyline points="0,0 0,96 96,96 96,0 0,0"/>
+  <object id="300" x="1600" y="128">
+   <polyline points="0,0 0,448 -64,448 -64,192 -512,192 -512,1632 480,1632 480,864 -288,864 -288,672 -224,672 -224,800 480,800 480,32 64,32 64,0 512,0 512,1664 -544,1664 -544,160 -32,160 -32,0 0,0"/>
   </object>
-  <object id="43" x="2432" y="1184">
-   <polyline points="0,0 0,512 96,512 96,96 384,96 384,0 0,0"/>
+  <object id="301" x="32" y="2016">
+   <polyline points="0,0 -32,0 -32,-2016 3968,-2016 3968,-1984 0,-1984 0,0"/>
   </object>
-  <object id="44" x="3008" y="1184">
-   <polyline points="0,0 0,96 128,96 128,0 0,0"/>
-  </object>
-  <object id="45" x="3168" y="1600">
-   <polyline points="0,0 0,128 128,128 128,0 0,0"/>
-  </object>
-  <object id="46" x="2592" y="1824">
-   <polyline points="0,0 0,96 352,96 352,0 0,0"/>
-  </object>
-  <object id="47" x="1920" y="2048">
-   <polyline points="0,0 0,192 448,192 448,0 0,0"/>
-  </object>
-  <object id="48" x="2656" y="2112">
-   <polyline points="0,0 0,128 128,128 128,0 0,0"/>
-  </object>
-  <object id="49" x="1984" y="2592">
-   <polyline points="0,0 96,0 96,224 192,224 192,320 320,320 320,448 0,448 0,0"/>
-  </object>
-  <object id="50" x="2528" y="2592">
-   <polyline points="0,0 0,96 128,96 128,448 224,448 224,0 0,0"/>
-  </object>
-  <object id="51" x="2880" y="2944">
-   <polyline points="0,0 0,64 160,64 160,256 192,256 192,0 0,0"/>
-  </object>
-  <object id="52" x="3232" y="2944">
-   <polyline points="0,0 0,256 128,256 128,0 0,0"/>
-  </object>
-  <object id="53" x="3584" y="2208">
-   <polyline points="0,0 64,0 64,576 192,576 192,640 64,640 64,928 448,928 448,800 544,800 544,928 1152,928 1152,512 992,512 992,640 768,640 768,512 576,512 576,416 1216,416 1216,992 0,992 0,0"/>
-  </object>
-  <object id="54" x="3808" y="2208">
-   <polyline points="0,0 0,288 256,288 256,0 0,0"/>
-  </object>
-  <object id="55" x="3680" y="1600">
-   <polyline points="0,0 -64,0 -64,64 736,64 736,0 32,0 32,-256 32,-288 96,-288 96,-352 32,-352 32,-416 448,-416 448,-352 384,-352 384,-288 1120,-288 1120,-448 0,-448 0,0"/>
-  </object>
-  <object id="56" x="3840" y="1376">
-   <polyline points="0,0 0,96 192,96 192,0 0,0"/>
-  </object>
-  <object id="57" x="4320" y="1408">
-   <polyline points="0,0 0,64 480,64 480,0 0,0"/>
-  </object>
-  <object id="58" x="4000" y="0">
-   <polyline points="0,0 0,64 736,64 736,384 800,384 800,0 0,0"/>
-  </object>
-  <object id="59" x="3968" y="544">
-   <polyline points="0,0 64,0 64,288 704,288 704,224 768,224 768,-96 832,-96 832,352 0,352 0,0"/>
-  </object>
-  <object id="60" x="4128" y="128">
-   <polyline points="0,0 0,448 96,448 96,0 0,0"/>
-  </object>
-  <object id="61" x="4000" y="0">
-   <polyline points="0,0 0,32 -3968,32 -3968,2016 -4000,2016 -4000,0 -4,-4"/>
-  </object>
+ </objectgroup>
+ <objectgroup name="nodos">
   <object id="62" x="0" y="2048">
    <polyline points="0,0 32,0 32,448 0,448 0,0"/>
   </object>
-  <object id="63" x="0" y="2560">
-   <polyline points="0,0 32,0 32,608 320,608 320,640 0,640 0,0"/>
+  <object id="71" name="1" type="nodo" x="256" y="2880" width="32" height="32">
+   <properties>
+    <property name="conecta" value="2"/>
+   </properties>
   </object>
-  <object id="64" x="384" y="3200">
-   <polyline points="0,0 1056,0 1056,-32 0,-32 0,0"/>
+  <object id="73" name="2" type="nodo" x="32" y="3104" width="32" height="32">
+   <properties>
+    <property name="conecta" value="1"/>
+   </properties>
   </object>
-  <object id="65" x="1472" y="3200">
-   <polyline points="0,0 1568,0 1568,-32 0,-32 0,0"/>
+  <object id="74" name="3" type="nodo" x="32" y="2624" width="32" height="32">
+   <properties>
+    <property name="conecta" value="2"/>
+   </properties>
   </object>
-  <object id="66" x="3072" y="3200">
-   <polyline points="0,0 160,0 160,-32 0,-32 0,0"/>
+  <object id="75" name="4" type="nodo" x="160" y="2624" width="32" height="32">
+   <properties>
+    <property name="conecta" value="3"/>
+   </properties>
   </object>
-  <object id="67" x="3360" y="3200">
-   <polyline points="0,0 224,0 224,-32 0,-32 0,0"/>
+  <object id="76" name="5" type="nodo" x="160" y="2880" width="32" height="32">
+   <properties>
+    <property name="conecta" value="4-1"/>
+   </properties>
   </object>
-  <object id="68" x="4768" y="2624">
-   <polyline points="0,0 32,0 32,-1152 0,-1152 0,0"/>
+  <object id="78" name="6" type="nodo" x="320" y="2752" width="32" height="32">
+   <properties>
+    <property name="conecta" value="4"/>
+   </properties>
   </object>
-  <object id="69" x="4768" y="1408">
-   <polyline points="0,0 32,0 32,-96 0,-96 0,0"/>
+  <object id="79" name="7" type="nodo" x="512" y="2656" width="32" height="32">
+   <properties>
+    <property name="conecta" value="6"/>
+   </properties>
   </object>
-  <object id="70" x="4768" y="1152">
-   <polyline points="0,0 32,0 32,-256 0,-256 0,0"/>
+  <object id="80" name="8" type="nodo" x="608" y="2880" width="32" height="32">
+   <properties>
+    <property name="conecta" value="1-9"/>
+   </properties>
+  </object>
+  <object id="81" name="9" type="nodo" x="608" y="3104" width="32" height="32">
+   <properties>
+    <property name="conecta" value="8"/>
+   </properties>
+  </object>
+  <object id="83" name="10" type="nodo" x="1024" y="3104" width="32" height="32">
+   <properties>
+    <property name="conecta" value="9"/>
+   </properties>
+  </object>
+  <object id="84" name="11" type="nodo" x="1024" y="2880" width="32" height="32">
+   <properties>
+    <property name="conecta" value="10-8"/>
+   </properties>
+  </object>
+  <object id="85" name="12" type="nodo" x="1312" y="2880" width="32" height="32">
+   <properties>
+    <property name="conecta" value="11-10"/>
+   </properties>
+  </object>
+  <object id="86" name="13" type="nodo" x="1248" y="2496" width="32" height="32">
+   <properties>
+    <property name="conecta" value="12"/>
+   </properties>
+  </object>
+  <object id="87" name="14" type="nodo" x="960" y="2560" width="32" height="32">
+   <properties>
+    <property name="conecta" value="13-11"/>
+   </properties>
+  </object>
+  <object id="88" name="15" type="nodo" x="832" y="2656" width="32" height="32">
+   <properties>
+    <property name="conecta" value="14-11-7-8"/>
+   </properties>
+  </object>
+  <object id="89" name="16" type="nodo" x="512" y="2304" width="32" height="32">
+   <properties>
+    <property name="conecta" value="7-28"/>
+   </properties>
+  </object>
+  <object id="90" name="17" type="nodo" x="928" y="2304" width="32" height="32">
+   <properties>
+    <property name="conecta" value="16-14-13-32"/>
+   </properties>
+  </object>
+  <object id="91" name="18" type="nodo" x="928" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="17-19"/>
+   </properties>
+  </object>
+  <object id="92" name="19" type="nodo" x="1024" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="18-34-20"/>
+   </properties>
+  </object>
+  <object id="93" name="20" type="nodo" x="1024" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="17-19"/>
+   </properties>
+  </object>
+  <object id="94" name="21" type="nodo" x="32" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="22"/>
+   </properties>
+  </object>
+  <object id="95" name="22" type="nodo" x="32" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="21-23"/>
+   </properties>
+  </object>
+  <object id="96" name="23" type="nodo" x="128" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="22-24-26"/>
+   </properties>
+  </object>
+  <object id="97" name="24" type="nodo" x="128" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="21-23"/>
+   </properties>
+  </object>
+  <object id="98" name="25" type="nodo" x="256" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="24"/>
+   </properties>
+  </object>
+  <object id="99" name="26" type="nodo" x="288" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="25-27"/>
+   </properties>
+  </object>
+  <object id="100" name="27" type="nodo" x="384" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="26-29"/>
+   </properties>
+  </object>
+  <object id="101" name="28" type="nodo" x="384" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="27-16-25"/>
+   </properties>
+  </object>
+  <object id="102" name="29" type="nodo" x="544" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="16-30"/>
+   </properties>
+  </object>
+  <object id="103" name="30" type="nodo" x="672" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="29-33"/>
+   </properties>
+  </object>
+  <object id="104" name="31" type="nodo" x="640" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="16-30"/>
+   </properties>
+  </object>
+  <object id="105" name="32" type="nodo" x="768" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="31"/>
+   </properties>
+  </object>
+  <object id="106" name="33" type="nodo" x="800" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="32-30-18"/>
+   </properties>
+  </object>
+  <object id="107" name="34" type="nodo" x="1184" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="19-36-35"/>
+   </properties>
+  </object>
+  <object id="108" name="35" type="nodo" x="1152" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="20-34"/>
+   </properties>
+  </object>
+  <object id="109" name="36" type="nodo" x="1312" y="2112" width="32" height="32">
+   <properties>
+    <property name="conecta" value="34-37"/>
+   </properties>
+  </object>
+  <object id="110" name="37" type="nodo" x="1312" y="2272" width="32" height="32">
+   <properties>
+    <property name="conecta" value="36-35-13"/>
+   </properties>
+  </object>
+  <object id="111" name="38" type="nodo" x="2816" y="3104" width="32" height="32">
+   <properties>
+    <property name="conecta" value="39"/>
+   </properties>
+  </object>
+  <object id="112" name="39" type="nodo" x="2464" y="3104" width="32" height="32">
+   <properties>
+    <property name="conecta" value="38-40"/>
+   </properties>
+  </object>
+  <object id="115" name="41" type="nodo" x="2048" y="2400" width="32" height="32">
+   <properties>
+    <property name="conecta" value="39-40"/>
+   </properties>
+  </object>
+  <object id="118" name="40" type="nodo" x="1568" y="3072" width="32" height="32">
+   <properties>
+    <property name="conecta" value="41-39"/>
+   </properties>
+  </object>
+  <object id="120" name="42" type="nodo" x="1632" y="2144" width="32" height="32">
+   <properties>
+    <property name="conecta" value="41-40"/>
+   </properties>
+  </object>
+  <object id="121" name="43" type="nodo" x="2144" y="1856" width="32" height="32">
+   <properties>
+    <property name="conecta" value="42"/>
+   </properties>
+  </object>
+  <object id="122" name="44" type="nodo" x="1440" y="1856" width="32" height="32">
+   <properties>
+    <property name="conecta" value="42-43"/>
+   </properties>
+  </object>
+  <object id="123" name="45" type="nodo" x="992" y="1824" width="32" height="32">
+   <properties>
+    <property name="conecta" value="44"/>
+   </properties>
+  </object>
+  <object id="124" name="46" type="nodo" x="480" y="1568" width="32" height="32">
+   <properties>
+    <property name="conecta" value="45"/>
+   </properties>
+  </object>
+  <object id="125" name="47" type="nodo" x="480" y="1376" width="32" height="32">
+   <properties>
+    <property name="conecta" value="46"/>
+   </properties>
+  </object>
+  <object id="127" name="48" type="nodo" x="736" y="1312" width="32" height="32">
+   <properties>
+    <property name="conecta" value="47"/>
+   </properties>
+  </object>
+  <object id="128" name="49" type="nodo" x="768" y="1184" width="32" height="32">
+   <properties>
+    <property name="conecta" value="48"/>
+   </properties>
+  </object>
+  <object id="129" name="50" type="nodo" x="928" y="1184" width="32" height="32">
+   <properties>
+    <property name="conecta" value="49-45"/>
+   </properties>
+  </object>
+  <object id="130" name="51" type="nodo" x="640" y="960" width="32" height="32">
+   <properties>
+    <property name="conecta" value="49"/>
+   </properties>
+  </object>
+  <object id="131" name="52" type="nodo" x="480" y="960" width="32" height="32">
+   <properties>
+    <property name="conecta" value="51"/>
+   </properties>
+  </object>
+  <object id="132" name="53" type="nodo" x="480" y="768" width="32" height="32">
+   <properties>
+    <property name="conecta" value="52"/>
+   </properties>
+  </object>
+  <object id="133" name="54" type="nodo" x="256" y="1024" width="32" height="32">
+   <properties>
+    <property name="conecta" value="52"/>
+   </properties>
+  </object>
+  <object id="134" name="55" type="nodo" x="224" y="1184" width="32" height="32">
+   <properties>
+    <property name="conecta" value="54"/>
+   </properties>
+  </object>
+  <object id="135" name="56" type="nodo" x="64" y="1184" width="32" height="32">
+   <properties>
+    <property name="conecta" value="55"/>
+   </properties>
+  </object>
+  <object id="136" name="57" type="nodo" x="64" y="1568" width="32" height="32">
+   <properties>
+    <property name="conecta" value="56-46-45"/>
+   </properties>
+  </object>
+  <object id="141" name="58" type="nodo" x="64" y="672" width="32" height="32">
+   <properties>
+    <property name="conecta" value="56-53"/>
+   </properties>
+  </object>
+  <object id="142" name="59" type="nodo" x="512" y="512" width="32" height="32">
+   <properties>
+    <property name="conecta" value="58-53"/>
+   </properties>
+  </object>
+  <object id="143" name="60" type="nodo" x="512" y="384" width="32" height="32">
+   <properties>
+    <property name="conecta" value="59"/>
+   </properties>
+  </object>
+  <object id="145" name="61" type="nodo" x="256" y="384" width="32" height="32">
+   <properties>
+    <property name="conecta" value="60"/>
+   </properties>
+  </object>
+  <object id="146" name="62" type="nodo" x="256" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="61"/>
+   </properties>
+  </object>
+  <object id="147" name="63" type="nodo" x="64" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="58-62"/>
+   </properties>
+  </object>
+  <object id="148" name="64" type="nodo" x="736" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="62"/>
+   </properties>
+  </object>
+  <object id="150" name="65" type="nodo" x="768" y="576" width="32" height="32">
+   <properties>
+    <property name="conecta" value="59-53-64"/>
+   </properties>
+  </object>
+  <object id="152" name="66" type="nodo" x="960" y="160" width="32" height="32">
+   <properties>
+    <property name="conecta" value="64-65-50-45"/>
+   </properties>
+  </object>
+  <object id="153" name="67" type="nodo" x="1472" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="66"/>
+   </properties>
+  </object>
+  <object id="155" name="68" type="nodo" x="2240" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="67"/>
+   </properties>
+  </object>
+  <object id="156" name="69" type="nodo" x="2432" y="256" width="32" height="32">
+   <properties>
+    <property name="conecta" value="68"/>
+   </properties>
+  </object>
+  <object id="157" name="70" type="nodo" x="2720" y="256" width="32" height="32">
+   <properties>
+    <property name="conecta" value="69"/>
+   </properties>
+  </object>
+  <object id="158" name="71" type="nodo" x="2912" y="256" width="32" height="32">
+   <properties>
+    <property name="conecta" value="70"/>
+   </properties>
+  </object>
+  <object id="159" name="72" type="nodo" x="3104" y="256" width="32" height="32">
+   <properties>
+    <property name="conecta" value="71"/>
+   </properties>
+  </object>
+  <object id="161" name="73" type="nodo" x="3296" y="256" width="32" height="32">
+   <properties>
+    <property name="conecta" value="72"/>
+   </properties>
+  </object>
+  <object id="163" name="74" type="nodo" x="3296" y="448" width="32" height="32">
+   <properties>
+    <property name="conecta" value="73"/>
+   </properties>
+  </object>
+  <object id="164" name="75" type="nodo" x="3104" y="448" width="32" height="32">
+   <properties>
+    <property name="conecta" value="74-72"/>
+   </properties>
+  </object>
+  <object id="166" name="76" type="nodo" x="2912" y="448" width="32" height="32">
+   <properties>
+    <property name="conecta" value="75-71"/>
+   </properties>
+  </object>
+  <object id="167" name="77" type="nodo" x="2720" y="448" width="32" height="32">
+   <properties>
+    <property name="conecta" value="76-70"/>
+   </properties>
+  </object>
+  <object id="168" name="78" type="nodo" x="2528" y="480" width="32" height="32">
+   <properties>
+    <property name="conecta" value="77-69"/>
+   </properties>
+  </object>
+  <object id="169" name="79" type="nodo" x="2528" y="672" width="32" height="32">
+   <properties>
+    <property name="conecta" value="78"/>
+   </properties>
+  </object>
+  <object id="170" name="80" type="nodo" x="2720" y="672" width="32" height="32">
+   <properties>
+    <property name="conecta" value="79-77"/>
+   </properties>
+  </object>
+  <object id="171" name="81" type="nodo" x="2912" y="672" width="32" height="32">
+   <properties>
+    <property name="conecta" value="76-80"/>
+   </properties>
+  </object>
+  <object id="172" name="82" type="nodo" x="3104" y="672" width="32" height="32">
+   <properties>
+    <property name="conecta" value="81-75"/>
+   </properties>
+  </object>
+  <object id="173" name="83" type="nodo" x="3296" y="672" width="32" height="32">
+   <properties>
+    <property name="conecta" value="82-74"/>
+   </properties>
+  </object>
+  <object id="174" name="84" type="nodo" x="3296" y="896" width="32" height="32">
+   <properties>
+    <property name="conecta" value="83"/>
+   </properties>
+  </object>
+  <object id="175" name="85" type="nodo" x="3104" y="896" width="32" height="32">
+   <properties>
+    <property name="conecta" value="84-82"/>
+   </properties>
+  </object>
+  <object id="176" name="86" type="nodo" x="2912" y="896" width="32" height="32">
+   <properties>
+    <property name="conecta" value="85-81"/>
+   </properties>
+  </object>
+  <object id="177" name="87" type="nodo" x="2720" y="896" width="32" height="32">
+   <properties>
+    <property name="conecta" value="86-80"/>
+   </properties>
+  </object>
+  <object id="178" name="88" type="nodo" x="2528" y="896" width="32" height="32">
+   <properties>
+    <property name="conecta" value="87-79"/>
+   </properties>
+  </object>
+  <object id="179" name="89" type="nodo" x="2240" y="512" width="32" height="32">
+   <properties>
+    <property name="conecta" value="78-69-68"/>
+   </properties>
+  </object>
+  <object id="180" name="90" type="nodo" x="2208" y="1120" width="32" height="32">
+   <properties>
+    <property name="conecta" value="89"/>
+   </properties>
+  </object>
+  <object id="181" name="91" type="nodo" x="2880" y="1120" width="32" height="32">
+   <properties>
+    <property name="conecta" value="90"/>
+   </properties>
+  </object>
+  <object id="182" name="92" type="nodo" x="3552" y="1120" width="32" height="32">
+   <properties>
+    <property name="conecta" value="91"/>
+   </properties>
+  </object>
+  <object id="184" name="93" type="nodo" x="2976" y="1536" width="32" height="32">
+   <properties>
+    <property name="conecta" value="92-91"/>
+   </properties>
+  </object>
+  <object id="185" name="94" type="nodo" x="3680" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="92-68"/>
+   </properties>
+  </object>
+  <object id="187" name="95" type="nodo" x="3936" y="64" width="32" height="32">
+   <properties>
+    <property name="conecta" value="94"/>
+   </properties>
+  </object>
+  <object id="188" name="96" type="nodo" x="4448" y="96" width="32" height="32">
+   <properties>
+    <property name="conecta" value="95"/>
+   </properties>
+  </object>
+  <object id="190" name="97" type="nodo" x="4224" y="768" width="32" height="32">
+   <properties>
+    <property name="conecta" value="96"/>
+   </properties>
+  </object>
+  <object id="191" name="98" type="nodo" x="4064" y="576" width="32" height="32">
+   <properties>
+    <property name="conecta" value="97-95"/>
+   </properties>
+  </object>
+  <object id="192" name="99" type="nodo" x="3968" y="416" width="32" height="32">
+   <properties>
+    <property name="conecta" value="98-95"/>
+   </properties>
+  </object>
+  <object id="193" name="100" type="nodo" x="3840" y="640" width="32" height="32">
+   <properties>
+    <property name="conecta" value="99-94-95"/>
+   </properties>
+  </object>
+  <object id="194" name="101" type="nodo" x="3424" y="1504" width="32" height="32">
+   <properties>
+    <property name="conecta" value="92-93"/>
+   </properties>
+  </object>
+  <object id="196" name="102" type="nodo" x="3552" y="1792" width="32" height="32">
+   <properties>
+    <property name="conecta" value="101"/>
+   </properties>
+  </object>
+  <object id="197" name="103" type="nodo" x="4608" y="1728" width="32" height="32">
+   <properties>
+    <property name="conecta" value="102"/>
+   </properties>
+  </object>
+  <object id="198" name="104" type="nodo" x="4608" y="1536" width="32" height="32">
+   <properties>
+    <property name="conecta" value="103"/>
+   </properties>
+  </object>
+  <object id="199" name="105" type="nodo" x="4160" y="1536" width="32" height="32">
+   <properties>
+    <property name="conecta" value="104"/>
+   </properties>
+  </object>
+  <object id="200" name="106" type="nodo" x="4160" y="1344" width="32" height="32">
+   <properties>
+    <property name="conecta" value="105"/>
+   </properties>
+  </object>
+  <object id="201" name="107" type="nodo" x="3904" y="1312" width="32" height="32">
+   <properties>
+    <property name="conecta" value="106"/>
+   </properties>
+  </object>
+  <object id="202" name="108" type="nodo" x="3904" y="1184" width="32" height="32">
+   <properties>
+    <property name="conecta" value="107"/>
+   </properties>
+  </object>
+  <object id="204" name="108" type="nodo" x="3744" y="1344" width="32" height="32">
+   <properties>
+    <property name="conecta" value="107"/>
+   </properties>
+  </object>
+  <object id="205" name="109" type="nodo" x="3744" y="1536" width="32" height="32">
+   <properties>
+    <property name="conecta" value="108-105"/>
+   </properties>
+  </object>
+  <object id="206" name="110" type="nodo" x="2816" y="1760" width="32" height="32">
+   <properties>
+    <property name="conecta" value="93-102"/>
+   </properties>
+  </object>
+  <object id="207" name="111" type="nodo" x="3200" y="1824" width="32" height="32">
+   <properties>
+    <property name="conecta" value="110-102"/>
+   </properties>
+  </object>
+  <object id="208" name="112" type="nodo" x="2976" y="2016" width="32" height="32">
+   <properties>
+    <property name="conecta" value="111-102"/>
+   </properties>
+  </object>
+  <object id="209" name="113" type="nodo" x="2464" y="1984" width="32" height="32">
+   <properties>
+    <property name="conecta" value="112-43"/>
+   </properties>
+  </object>
+  <object id="210" name="114" type="nodo" x="2592" y="2304" width="32" height="32">
+   <properties>
+    <property name="conecta" value="113-41"/>
+   </properties>
+  </object>
+  <object id="211" name="115" type="nodo" x="2848" y="2304" width="32" height="32">
+   <properties>
+    <property name="conecta" value="114-112-38"/>
+   </properties>
+  </object>
+  <object id="212" name="116" type="nodo" x="3136" y="2688" width="32" height="32">
+   <properties>
+    <property name="conecta" value="115"/>
+   </properties>
+  </object>
+  <object id="214" name="117" type="nodo" x="3456" y="2688" width="32" height="32">
+   <properties>
+    <property name="conecta" value="116"/>
+   </properties>
+  </object>
+  <object id="215" name="118" type="nodo" x="3712" y="2080" width="32" height="32">
+   <properties>
+    <property name="conecta" value="112-115"/>
+   </properties>
+  </object>
+  <object id="216" name="119" type="nodo" x="3744" y="2560" width="32" height="32">
+   <properties>
+    <property name="conecta" value="118"/>
+   </properties>
+  </object>
+  <object id="217" name="120" type="nodo" x="3936" y="2720" width="32" height="32">
+   <properties>
+    <property name="conecta" value="119"/>
+   </properties>
+  </object>
+  <object id="218" name="121" type="nodo" x="4160" y="2528" width="32" height="32">
+   <properties>
+    <property name="conecta" value="120-119"/>
+   </properties>
+  </object>
+  <object id="219" name="122" type="nodo" x="4224" y="2144" width="32" height="32">
+   <properties>
+    <property name="conecta" value="118-103-102"/>
+   </properties>
+  </object>
+  <object id="221" name="123" type="nodo" x="3776" y="3040" width="32" height="32">
+   <properties>
+    <property name="conecta" value="120"/>
+   </properties>
+  </object>
+  <object id="223" name="124" type="nodo" x="4320" y="3008" width="32" height="32">
+   <properties>
+    <property name="conecta" value="120"/>
+   </properties>
+  </object>
+  <object id="224" name="125" type="nodo" x="4640" y="2880" width="32" height="32">
+   <properties>
+    <property name="conecta" value="124"/>
+   </properties>
   </object>
  </objectgroup>
 </map>
