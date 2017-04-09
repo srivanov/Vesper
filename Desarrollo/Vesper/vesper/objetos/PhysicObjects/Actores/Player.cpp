@@ -13,9 +13,6 @@
 
 #define VELOCIDADN 2.f
 
-
-
-
 Player::Player(){
     
     arma = new armas;
@@ -30,6 +27,7 @@ Player::Player(){
     
     vida = 100;
 	hud.init();
+	estado = states::Instance();
 }
 
 void Player::inicializar(int ID, int numL){
@@ -151,8 +149,15 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == PALA){
             arma->insertarArma(9);
         }
-        if(g->getObjectType() == ENEMIGOS)
+		if(g->getObjectType() == ENEMIGOS){
             vida-=5;
+			if(vida <= 0){
+				estado->nextState = MENU;
+				estado->menu = tmMENUPRINCIPAL;
+				estado->destruir = true;
+			}
+				
+		}
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();

@@ -174,7 +174,7 @@ void physics::atarP(){
 	jointdef.bodyB = ata;
 	jointdef.collideConnected = true;
 	jointdef.length = 3.f;
-	//mundoBox2D::Instance()->getWorld()->CreateJoint(&jointdef);
+	mundoBox2D::Instance()->getWorld()->CreateJoint(&jointdef);
 }
 
 void physics::setPosition(dvector3D &pos){

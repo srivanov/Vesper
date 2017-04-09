@@ -12,9 +12,8 @@
 #include "../PhysicObject.hpp"
 #include "../../../components/armas.hpp"
 #include "../../../components/gun.hpp"
-#include <buttons.hpp>
 #include "../../../GUI/HUDLayout.hpp"
-
+#include <buttons.hpp>
 
 class Player : public PhysicObject {
 private:
@@ -30,6 +29,7 @@ protected:
     void changeActiveKey();
     int vida;
 	HUDLayout hud;
+	states* estado;
 public:
     void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}

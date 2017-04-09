@@ -12,6 +12,7 @@ class ContactListener : public b2ContactListener{
 	void EndContact(b2Contact* contact);
 	void contacta(PhysicObject* p1, PhysicObject* p2);
 	void atarlos(PhysicObject* p1, b2Body* bod);
+	void esSensor(PhysicObject* g1s, PhysicObject* g2);
 };
 
 class mundoBox2D{
