@@ -43,6 +43,7 @@ private:
 	ICameraSceneNode* camara;
     ISceneNode* nodo_suelo;
 	irr::gui::IGUIStaticText* texto;
+	ISceneNode* creaNodo(char* malla, char* textura);
 };
 
 #endif /* render_hpp */

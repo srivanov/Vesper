@@ -12,6 +12,7 @@
 Puerta::Puerta(){
     addNodo("3d/door.obj");
     setTexture("3d/Door_Diffuse.png");
+	key = 1;
 }
 
 void Puerta::inicializar(int id, const tipoPuerta p){

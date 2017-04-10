@@ -146,19 +146,34 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
     size_t size = altoMapa*anchoMapa,it;
     
     for(it=0;it<size;it++){
-        if(tilemap[it] == 1){
+        if(tilemap[it] == 1 || tilemap[it] == 20){
             int y = (int) it / (anchoMapa) ;
             int x = (int) it % (anchoMapa) ;
-//            nodo = ventana::Instance()->getSceneManager()->addMeshSceneNode(muro);
-			nodo = ventana::Instance()->getSceneManager()->addCubeSceneNode(1.0f, 0, -1, vector3df(0,0,0), vector3df(0,0,0), vector3df(1,1,1));
-            nodo->setMaterialFlag(EMF_LIGHTING, false);
-            nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.jpg"));
-            nodo->setPosition(vector3df(x,y,0));
+			
+			if(tilemap[it] == 1)
+				nodo = creaNodo("", "3d/rocas.jpg");
+			else
+				nodo = creaNodo("3d/arbusto.obj", "3d/Arbusto_Diffuse.png");
+			
+			nodo->setMaterialFlag(EMF_LIGHTING, false);
+			nodo->setPosition(vector3df(x,y,0));
             //std::cout << x << "|" << y << std::endl;
         }
     }
-    
+}
 
+ISceneNode* render::creaNodo(char* malla, char* textura){
+	ventana *ventanita = ventana::Instance();
+	ISceneNode* nodo;
+	if(malla == "")
+		nodo = ventanita->getSceneManager()->addCubeSceneNode(1.0f, 0, -1, vector3df(0,0,0), vector3df(0,0,0), vector3df(1,1,1));
+	else{
+		IMesh* mesh = ventanita->getSceneManager()->getMesh(malla);
+		nodo = ventanita->getSceneManager()->addMeshSceneNode(mesh);
+	}
+	
+	nodo->setMaterialTexture(0, ventanita->getDriver()->getTexture(textura));
+	return nodo;
 }
 
 void render::setCamPos(dvector3D &pos){
