@@ -53,8 +53,9 @@ void ContactListener::BeginContact(b2Contact* contact){
 		if ((isType(g1, REHEN)	||	isType(g2, REHEN))	&&
 			(isType(g1, PLAYER)	||	isType(g2, PLAYER))	)
 			atarlos(g1, fixB->GetBody());
-		else
-			if(g1 && g2){ contacta(g1, g2); contacta(g2, g1); }
+		else{
+			contacta(g1, g2); contacta(g2, g1);
+		}
 	}
 	
 	
@@ -85,7 +86,8 @@ void ContactListener::EndContact(b2Contact* contact) {
 }
 
 void ContactListener::contacta(PhysicObject* p1, PhysicObject* p2){
-	p1->contacto(p2);
+	if(p1)
+		p1->contacto(p2);
 }
 
 void ContactListener::atarlos(PhysicObject* p1, b2Body* bod){

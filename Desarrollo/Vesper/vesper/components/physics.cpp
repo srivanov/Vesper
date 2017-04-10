@@ -5,13 +5,13 @@
 
 physics::physics(){
     body = NULL;
+	atar = false;
 }
 
 physics::~physics(){
 	if(body!=NULL)
 		mundoBox2D::Instance()->getWorld()->DestroyBody(body);
     body = NULL;
-	atar = false;
 }
 
 void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){

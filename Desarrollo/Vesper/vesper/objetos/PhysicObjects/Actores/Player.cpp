@@ -32,6 +32,7 @@ Player::Player(){
     vida = 100;
 	hud.init();
 	t.start();
+	estado = states::Instance();
 }
 
 void Player::inicializar(int ID, int numL){
@@ -50,10 +51,11 @@ Player::~Player(){
 void Player::update(){
     
     if(vida <= 0){
-        eliminar = true;
-        return;
+		estado->nextState = MENU;
+		estado->menu = tmMENUPRINCIPAL;
+		estado->destruir = true;
     }
-    
+	
     hud.getVida(vida);
     
 	dvector3D vel;
@@ -73,7 +75,7 @@ void Player::update(){
 	if(input->IsKeyDown(SKY_KEY_RIGHT))
 		vel.x += VELOCIDADN;
 	
-	if(input->IsKeyDown(SKY_MOUSE_BUTTON_1))
+	if(input->IsKeyDown(SKY_KEY_N))
         atacar();
 	if(t.tTranscurrido(2.0f)){
 		if(input->IsKeyDown(SKY_KEY_TAB)){
@@ -156,6 +158,9 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == PALA){
             arma->insertarArma(9);
         }
+		if(g->getObjectType() == ENEMIGOS)
+			vida-=5;
+		
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();
