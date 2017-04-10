@@ -25,8 +25,8 @@ Player::Player(){
 	((habilidadEspecial*)componente)->setTipo(tHabINVISIBLE);
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
     componente->setFather(this);
-    addNodo("3d/sphere.3ds");
-    setTexture("3d/texture.png");
+    addNodo("3d/player.obj");
+    setTexture("3d/naranja.jpg");
 	
 	input = MyEventReceiver::Instance();
     vida = 100;

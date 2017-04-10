@@ -28,6 +28,6 @@ Fuente::~Fuente(){
 }
 Fuente::Fuente(){
     rota = NPCKnows = false;
-    addNodo("3d/muro.3ds");
-    setTexture("3d/fuenten.jpg");
+    addNodo("3d/fuente.obj");
+    setTexture("3d/Fuente_Diffuse.png");
 }

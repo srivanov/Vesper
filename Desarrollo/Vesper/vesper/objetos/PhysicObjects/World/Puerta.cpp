@@ -10,8 +10,8 @@
 #include "Player.hpp"
 
 Puerta::Puerta(){
-    addNodo("3d/muro.3ds");
-    setTexture("3d/puerta.jpg");
+    addNodo("3d/door.obj");
+    setTexture("3d/Door_Diffuse.png");
 }
 
 void Puerta::inicializar(int id, const tipoPuerta p){

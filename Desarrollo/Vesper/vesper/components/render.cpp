@@ -67,7 +67,8 @@ bool render::setNodePosition(dvector3D &pos){
 
 bool render::setNodeRotation(dvector3D &rot){
 	if(nodo != NULL){
-		nodo->_setNodeRotation(rot);
+        dvector3D r(0,0,rot.z);
+        nodo->_setNodeRotation(r);
 		return true;
 	}
 	return false;
