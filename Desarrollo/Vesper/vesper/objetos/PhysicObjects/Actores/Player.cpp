@@ -87,7 +87,7 @@ void Player::update(){
 			t.reset();
 		}
 	}
-    if(input->IsKeyDown(SKY_KEY_M))
+    if(input->IsKeyDown(SKY_KEY_SPACE))
         vel*=2;
 	
 	mover(vel);
