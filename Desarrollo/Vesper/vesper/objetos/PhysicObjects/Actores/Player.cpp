@@ -66,13 +66,13 @@ void Player::update(){
     }
      */
 	
-    if(input->IsKeyDown(SKY_KEY_UP))
+    if(input->IsKeyDown(SKY_KEY_W))
 		vel.y += VELOCIDADN;
-    if(input->IsKeyDown(SKY_KEY_DOWN))
+    if(input->IsKeyDown(SKY_KEY_S))
 		vel.y += -VELOCIDADN;
-    if(input->IsKeyDown(SKY_KEY_LEFT))
+    if(input->IsKeyDown(SKY_KEY_A))
 		vel.x += -VELOCIDADN;
-	if(input->IsKeyDown(SKY_KEY_RIGHT))
+	if(input->IsKeyDown(SKY_KEY_D))
 		vel.x += VELOCIDADN;
 	
 	if(input->getLeftClick())

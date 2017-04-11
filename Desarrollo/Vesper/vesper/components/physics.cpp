@@ -1,7 +1,6 @@
 
 #include "physics.hpp"
 #include "../objetos/PhysicObjects/PhysicObject.hpp"
-#include <OpenGL/gl.h>
 
 physics::physics(){
     body = NULL;
