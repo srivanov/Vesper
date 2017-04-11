@@ -94,7 +94,13 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion) : posPlayer(nullptr){
     pila.clear();
 }
 
-NpcBook::~NpcBook(){}
+NpcBook::~NpcBook(){
+    it = pila.begin();
+    while (it!=pila.end()) {
+        delete it->second;
+        it++;
+    }
+}
 
 bool NpcBook::TengoEsteEvento(const Prioridades p, int ID){
     it = pila.find(p);
