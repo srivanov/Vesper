@@ -59,6 +59,7 @@ void Enemy::inicializar(int& ID){
     m_ID = ID;
     book = NpcLibrary::instancia()->add_book(m_ID, getPosition());
     gestor_eventos::instance()->subscribirse(book);
+    book->notify(m_ID, P_VIGILAR, getPosition());
 }
 
 void Enemy::contacto(PhysicObject *g){
@@ -68,8 +69,8 @@ void Enemy::contacto(PhysicObject *g){
 			 book->salud-=20;
 		}
         if(g->getObjectType() == PLAYER){
-            printf("PLAYER");
-            book->notify(m_ID, P_ENEMIGO, g->getPosition());
+            if(!book->ExistEventByType(P_ENEMIGO))
+                book->notify(m_ID, P_ENEMIGO, g->getPosition());
         }
 	}
 }

@@ -23,6 +23,7 @@ short Nodo_AAtacar::run(const int &ID){
         
     }else{
         book->Enemigo = false;
+        book->Evento = true;
         book->remove_EventsByType(P_ENEMIGO);
     }
     

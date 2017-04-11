@@ -69,7 +69,12 @@ Eventos::Eventos(int& ID,const Prioridades& tipo, std::vector<dvector3D*> posici
     m_ID = ID;
     m_posiciones = posiciones;
 }
-Eventos::~Eventos(){}
+Eventos::~Eventos(){
+    size_t it;
+    for (it=0; it<m_posiciones.size(); it++) {
+        delete m_posiciones[it];
+    }
+}
 
 /*
  NPC_BOOK
@@ -104,10 +109,12 @@ void NpcBook::notify(int ID,const Prioridades tipo, dvector3D * posicion){
     if(it!=pila.end()) remove_EventsByType(it->first);
     Evento = true;
     
+    dvector3D * pos = new dvector3D(posicion);
+    
     if(tipo==P_ENEMIGO)
         posPlayer = posicion;
     
-    pila.insert(std::pair<Prioridades, Eventos*>(tipo,new Eventos(ID,tipo,posicion)));
+    pila.insert(std::pair<Prioridades, Eventos*>(tipo,new Eventos(ID,tipo,pos)));
     
     if(tipo<P_VIDA)
         valueObjective(tipo);
@@ -194,7 +201,9 @@ void NpcBook::updateBook(){
     while(it!=pila.end()){
         if(it->second->m_time.tTranscurrido(CADUCIDAD)
            && it->first!=P_PATRULLAR
-           && it->first!=P_VIGILAR){
+           && it->first!=P_VIGILAR
+           && it->first!=P_ENEMIGO
+           ){
             delete it->second;
             pila.erase(it);
             it = pila.begin();

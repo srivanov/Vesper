@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Arquitectura IA/NpcLibrary.cpp"
-            timestampString = "513283669.148808"
+            timestampString = "513592719.782454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "NpcBook::notify(int ID,const Prioridades tipo, dvector3D * posicion)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Arquitectura IA/NpcLibrary.cpp"
-            timestampString = "513368032.169467"
+            timestampString = "513592248.055475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "NpcBook::changeObjective()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Enemy.cpp"
-            timestampString = "513283669.148808"
+            timestampString = "513590849.775733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "Enemy::contacto(PhysicObject *g)"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,6 +416,38 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "Nodo_AAtacar::run(const int &amp;ID)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Sistema de Decision/Nodos de Pregunta/Nodo_QVigilar.cpp"
+            timestampString = "513590951.618485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "Nodo_QVigilar::run(const int &amp;ID)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Arquitectura IA/NpcLibrary.cpp"
+            timestampString = "513592248.055475"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "NpcBook::updateBook()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
