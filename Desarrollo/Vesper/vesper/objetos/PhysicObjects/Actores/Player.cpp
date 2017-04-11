@@ -75,7 +75,7 @@ void Player::update(){
 	if(input->IsKeyDown(SKY_KEY_RIGHT))
 		vel.x += VELOCIDADN;
 	
-	if(input->IsKeyDown(SKY_KEY_N))
+	if(input->getLeftClick())
         atacar();
 	if(t.tTranscurrido(2.0f)){
 		if(input->IsKeyDown(SKY_KEY_TAB)){
