@@ -6,26 +6,26 @@
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Window type="Generic/Image" name="moneda0" >
             <Property name="ID" value="2" />
-            <Property name="Area" value="{{0,62},{0,80},{0,192},{0,112}}" />
+            <Property name="Area" value="{{0,63},{0,77},{0,193},{0,109}}" />
             <Property name="Image" value="Menu/moneda0" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="AlwaysOnTop" value="true" />
         </Window>
         <Window type="Generic/Image" name="moneda1" >
             <Property name="ID" value="3" />
-            <Property name="Area" value="{{0,64},{0,83},{0,194},{0,114}}" />
+            <Property name="Area" value="{{0,65},{0,77},{0,195},{0,109}}" />
             <Property name="Image" value="Menu/moneda1" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="Generic/Image" name="moneda2" >
             <Property name="ID" value="4" />
-            <Property name="Area" value="{{0,64},{0,81},{0,194},{0,112}}" />
+            <Property name="Area" value="{{0,63},{0,77},{0,193},{0,108}}" />
             <Property name="Image" value="Menu/moneda2" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="Generic/Image" name="moneda3" >
             <Property name="ID" value="5" />
-            <Property name="Area" value="{{0,64},{0,81},{0,194},{0,112}}" />
+            <Property name="Area" value="{{0,65},{0,77},{0,195},{0,108}}" />
             <Property name="Image" value="Menu/moneda3" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>

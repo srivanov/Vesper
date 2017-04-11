@@ -21,21 +21,21 @@
             <Window type="Generic/ImageButton" name="controles" >
                 <Property name="ID" value="3" />
                 <Property name="Area" value="{{0,50},{0,65},{0,245},{0,95}}" />
-                <Property name="HoverImage" value="Menu/boton_controles" />
+                <Property name="HoverImage" value="Menu/h_controles" />
                 <Property name="NormalImage" value="Menu/boton_controles" />
                 <Property name="PushedImage" value="Menu/boton_controles" />
             </Window>
             <Window type="Generic/ImageButton" name="pantalla" >
                 <Property name="ID" value="5" />
                 <Property name="Area" value="{{0,60},{0,240},{0,245},{0,270}}" />
-                <Property name="HoverImage" value="Menu/boton_pantalla" />
+                <Property name="HoverImage" value="Menu/h_pantalla" />
                 <Property name="NormalImage" value="Menu/boton_pantalla" />
                 <Property name="PushedImage" value="Menu/boton_pantalla" />
             </Window>
             <Window type="Generic/ImageButton" name="sonido" >
                 <Property name="ID" value="4" />
                 <Property name="Area" value="{{0,90},{0,150},{0,210},{0,175}}" />
-                <Property name="HoverImage" value="Menu/boton_audio" />
+                <Property name="HoverImage" value="Menu/h_audio" />
                 <Property name="NormalImage" value="Menu/boton_audio" />
                 <Property name="PushedImage" value="Menu/boton_audio" />
             </Window>
@@ -49,7 +49,7 @@
         <Window type="Generic/ImageButton" name="volver" >
             <Property name="ID" value="6" />
             <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
-            <Property name="HoverImage" value="Menu/boton_volver" />
+            <Property name="HoverImage" value="Menu/h_volver" />
             <Property name="NormalImage" value="Menu/boton_volver" />
             <Property name="PushedImage" value="Menu/boton_volver" />
         </Window>
@@ -72,7 +72,7 @@
                 <Property name="ID" value="16" />
                 <Property name="Area" value="{{0,80},{0,165},{0,230},{0,188}}" />
                 <Property name="Text" value="resol3" />
-                <Property name="HoverImage" value="Menu/800" />
+                <Property name="HoverImage" value="Menu/h_800" />
                 <Property name="NormalImage" value="Menu/800" />
                 <Property name="PushedImage" value="Menu/800" />
             </Window>
@@ -80,7 +80,7 @@
                 <Property name="ID" value="9" />
                 <Property name="Area" value="{{0,80},{0,84},{0,230},{0,107}}" />
                 <Property name="Text" value="Resol1" />
-                <Property name="HoverImage" value="Menu/1280" />
+                <Property name="HoverImage" value="Menu/h_1280" />
                 <Property name="NormalImage" value="Menu/1280" />
                 <Property name="PushedImage" value="Menu/1280" />
             </Window>
@@ -121,7 +121,7 @@
         <Window type="Generic/ImageButton" name="guardar" >
             <Property name="ID" value="17" />
             <Property name="Area" value="{{0,273},{0,495},{0,365},{0,516}}" />
-            <Property name="HoverImage" value="Menu/boton_guardar" />
+            <Property name="HoverImage" value="Menu/h_guardar" />
             <Property name="AlwaysOnTop" value="true" />
             <Property name="NormalImage" value="Menu/boton_guardar" />
             <Property name="PushedImage" value="Menu/boton_guardar" />

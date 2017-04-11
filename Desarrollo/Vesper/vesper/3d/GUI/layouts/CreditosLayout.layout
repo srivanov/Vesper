@@ -26,7 +26,7 @@
         <Window type="Generic/ImageButton" name="volver" >
             <Property name="ID" value="4" />
             <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
-            <Property name="HoverImage" value="Menu/boton_volver" />
+            <Property name="HoverImage" value="Menu/h_volver" />
             <Property name="NormalImage" value="Menu/boton_volver" />
             <Property name="PushedImage" value="Menu/boton_volver" />
         </Window>

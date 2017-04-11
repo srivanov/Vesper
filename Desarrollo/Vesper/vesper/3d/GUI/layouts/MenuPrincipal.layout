@@ -14,35 +14,35 @@
             <Window type="Generic/ImageButton" name="nuevapartida" >
                 <Property name="ID" value="3" />
                 <Property name="Area" value="{{0,82},{0,38},{0,317},{0,64}}" />
-                <Property name="HoverImage" value="Menu/boton_nuevapartida" />
+                <Property name="HoverImage" value="Menu/h_nuevapartida" />
                 <Property name="NormalImage" value="Menu/boton_nuevapartida" />
                 <Property name="PushedImage" value="Menu/boton_nuevapartida" />
             </Window>
             <Window type="Generic/ImageButton" name="cargarpartida" >
                 <Property name="ID" value="4" />
                 <Property name="Area" value="{{0,83},{0,97},{0,318},{0,123}}" />
-                <Property name="HoverImage" value="Menu/boton_cargarpartida" />
+                <Property name="HoverImage" value="Menu/h_cargarpartida" />
                 <Property name="NormalImage" value="Menu/boton_cargarpartida" />
                 <Property name="PushedImage" value="Menu/boton_cargarpartida" />
             </Window>
             <Window type="Generic/ImageButton" name="ajustes" >
                 <Property name="ID" value="5" />
                 <Property name="Area" value="{{0,127},{0,163},{0,262},{0,193}}" />
-                <Property name="HoverImage" value="Menu/boton_ajustes" />
+                <Property name="HoverImage" value="Menu/h_ajustes" />
                 <Property name="NormalImage" value="Menu/boton_ajustes" />
                 <Property name="PushedImage" value="Menu/boton_ajustes" />
             </Window>
             <Window type="Generic/ImageButton" name="creditos" >
                 <Property name="ID" value="6" />
                 <Property name="Area" value="{{0,127},{0,228},{0,262},{0,258}}" />
-                <Property name="HoverImage" value="Menu/boton_creditos" />
+                <Property name="HoverImage" value="Menu/h_creditos" />
                 <Property name="NormalImage" value="Menu/boton_creditos" />
                 <Property name="PushedImage" value="Menu/boton_creditos" />
             </Window>
             <Window type="Generic/ImageButton" name="salir" >
                 <Property name="ID" value="7" />
                 <Property name="Area" value="{{0,142},{0,293},{0,242},{0,323}}" />
-                <Property name="HoverImage" value="Menu/boton_salir" />
+                <Property name="HoverImage" value="Menu/h_salir" />
                 <Property name="NormalImage" value="Menu/boton_salir" />
                 <Property name="PushedImage" value="Menu/boton_salir" />
             </Window>

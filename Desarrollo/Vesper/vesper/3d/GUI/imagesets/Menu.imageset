@@ -54,4 +54,19 @@
     <Image height="67" name="arma_martillo" width="65" xPos="2467" yPos="611" />
     <Image height="66" name="arma_piedra" width="70" xPos="2539" yPos="607" />
     <Image height="66" name="arma_pistola" width="70" xPos="2614" yPos="609" />
+    <Image height="50" name="h_nuevapartida" width="466" xPos="695" yPos="1009" />
+    <Image height="54" name="h_ajustes" width="240" xPos="699" yPos="949" />
+    <Image height="50" name="h_creditos" width="262" xPos="699" yPos="895" />
+    <Image height="50" name="h_salir" width="174" xPos="698" yPos="843" />
+    <Image height="50" name="h_controles" width="329" xPos="685" yPos="788" />
+    <Image height="50" name="h_sonido" width="267" xPos="1029" yPos="726" />
+    <Image height="50" name="h_guardar" width="308" xPos="1032" yPos="786" />
+    <Image height="50" name="h_cargarpartida" width="523" xPos="1000" yPos="835" />
+    <Image height="50" name="h_continuar" width="372" xPos="1210" yPos="1006" />
+    <Image height="50" name="h_800" width="297" xPos="1440" yPos="911" />
+    <Image height="50" name="h_audio" width="203" xPos="1611" yPos="997" />
+    <Image height="50" name="h_1280" width="375" xPos="1786" yPos="904" />
+    <Image height="60" name="h_jugar" width="218" xPos="1853" yPos="1004" />
+    <Image height="50" name="h_volver" width="227" xPos="2231" yPos="816" />
+    <Image height="50" name="h_pantalla" width="315" xPos="2244" yPos="907" />
 </Imageset>

@@ -7,7 +7,7 @@
         <Window type="Generic/Image" name="background" >
             <Property name="ID" value="1" />
             <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
-            <Property name="Image" value="OgreTrayImages/Shade" />
+            <Property name="Image" value="Menu/fondo_colores" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>
@@ -15,14 +15,14 @@
             <Property name="ID" value="3" />
             <Property name="Area" value="{{0,525},{0,360},{0,702},{0,388}}" />
             <Property name="Text" value="Continuar" />
-            <Property name="HoverImage" value="Menu/boton_continuar" />
+            <Property name="HoverImage" value="Menu/h_continuar" />
             <Property name="NormalImage" value="Menu/boton_continuar" />
             <Property name="PushedImage" value="Menu/boton_continuar" />
         </Window>
         <Window type="Generic/ImageButton" name="salir" >
             <Property name="ID" value="6" />
             <Property name="Area" value="{{0,560},{0,440},{0,670},{0,465}}" />
-            <Property name="HoverImage" value="Menu/boton_salir" />
+            <Property name="HoverImage" value="Menu/h_salir" />
             <Property name="NormalImage" value="Menu/boton_salir" />
             <Property name="PushedImage" value="Menu/boton_salir" />
         </Window>

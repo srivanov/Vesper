@@ -80,10 +80,10 @@ void HUDLayout::getMonedas(int v){
         moneda2->hide();
         moneda3->show();
     }else{
-        moneda0->show();
+        moneda0->hide();
     	moneda1->hide();
     	moneda2->hide();
-    	moneda3->hide();
+    	moneda3->show();
     }
 }
 
