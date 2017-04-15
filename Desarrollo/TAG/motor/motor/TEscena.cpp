@@ -2,7 +2,7 @@
 #include "TEscena.hpp"
 #include "InputManager.h"
 
-TEscena::TEscena(){
+bool TEscena::inicializar(){
 //	root = new TNodo();
 //	uno = new TNodo();
 //	dos = new TNodo();
@@ -379,7 +379,7 @@ TEscena::TEscena(){
 	plano->transladar(n);
 	n = dvector3D(2,2,2);
 	luz->setPosicion(n);
-	
+	return true;
 //	delete cubo2;
 }
 

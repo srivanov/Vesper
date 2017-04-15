@@ -11,7 +11,8 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 
 class TEscena {
 public:
-	TEscena();
+	TEscena(){}
+	bool inicializar();
 	~TEscena();
 	void Draw();
 	void update();

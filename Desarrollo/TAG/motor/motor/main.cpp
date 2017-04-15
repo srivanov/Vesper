@@ -1,5 +1,5 @@
 
-#include "TEscena.hpp"
+#include "stateMachine.hpp"
 #include "SkyWindow.hpp"
 
 //// dimensiones de la ventana
@@ -158,8 +158,10 @@ int main(int argc, const char * argv[]) {
 //	TModelo modelo3("../Models/nanosuit/nanosuit.obj");
 //	modelo3.imprimirDatos();
 	
-	TEscena escena;
+//	TEscena escena;
 	
+	stateMachine machine;
+	machine.Init();
 	GLuint modelLoc, viewLoc, projectionLoc;
 	
 	// Bucle principal
@@ -173,6 +175,7 @@ int main(int argc, const char * argv[]) {
 		//funcion de movimiento
 		movimiento(&escena);
 */
+//		machine.update();
  			/*
 			//limpia la pantalla asignando un color de fondo
 			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -280,10 +283,8 @@ int main(int argc, const char * argv[]) {
 //		modelo3.Draw(miShader);
 		
 //		escena.girar(mov_cursor);
-		mov_cursor = glm::vec3();
-		escena.update();
-		escena.Draw();
 		
+		machine.render();
 		window->endDraw();
 //		//linkamos el VAO
 //		glBindVertexArray(VAO);
