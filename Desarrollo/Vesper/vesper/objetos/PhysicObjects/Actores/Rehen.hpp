@@ -10,14 +10,17 @@
 #define Rehen_hpp
 
 #include "PhysicObject.hpp"
+#include "../../../Arquitectura IA/RehenIA.hpp"
 
 class Rehen : public PhysicObject {
-    
+    RehenIA * m_brain;
 public:
-    Rehen(){addNodo("3d/muro.3ds");setTexture("3d/rehen.jpg");}
-    ~Rehen(){}
-    void contacto(PhysicObject *){}
-    void contactoEnd(PhysicObject*){}
+    void asustado();
+    void update();
+    Rehen();
+    ~Rehen();
+    void contacto(PhysicObject *);
+    void contactoEnd(PhysicObject*);
 };
 
 #endif /* Rehen_hpp */

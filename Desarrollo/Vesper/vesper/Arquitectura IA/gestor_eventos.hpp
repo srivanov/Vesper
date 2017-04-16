@@ -12,6 +12,7 @@
 #include "NpcLibrary.hpp"
 #include "Types.h"
 
+class Rehen;
 
 struct eventos_values {
     Prioridades m_tipo;
@@ -38,6 +39,7 @@ class gestor_eventos {
     int id_counts;
     std::vector<eventos*> World_events;
     std::vector<NpcBook*> Suscritos;
+    Rehen * rehen;
     size_t it,end;
 public:
     ~gestor_eventos();
@@ -47,6 +49,7 @@ public:
     static gestor_eventos * instance();
     void addEvento(int id,const Prioridades t,dvector3D pos);
     void subscribirse(NpcBook * libro);
+    void subscribirse(Rehen*);
     void update();
 };
 

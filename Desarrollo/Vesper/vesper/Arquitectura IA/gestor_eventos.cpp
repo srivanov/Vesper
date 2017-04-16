@@ -7,6 +7,7 @@
 //
 
 #include "gestor_eventos.hpp"
+#include "../objetos/PhysicObjects/Actores/Rehen.hpp"
 
 #define MAPA -1
 
@@ -37,7 +38,7 @@ eventos_values Evalores[] = {
 };
 
 
-gestor_eventos::gestor_eventos(){id_counts=0;}
+gestor_eventos::gestor_eventos() : rehen(nullptr){id_counts=0;}
 gestor_eventos::~gestor_eventos(){
     end = World_events.size();
     for (it=0;it<end;it++)
@@ -75,6 +76,9 @@ void gestor_eventos::subscribirse(NpcBook *libro){
     if(!libro) return;
     Suscritos.push_back(libro);
 }
+void gestor_eventos::subscribirse(Rehen * r){
+    rehen = r;
+}
 
 void gestor_eventos::update(){
     limpiar();
@@ -99,7 +103,16 @@ void gestor_eventos::comprobar(){
                 continue;
             }
             
-            float distancia = EasyMath::EucCalcularDistancia(ev->m_posicion, *sub->getPosition());
+            float distancia;
+            
+            if(rehen && ev->m_tipo==P_RUIDO){
+                distancia = EasyMath::EucCalcularDistancia(ev->m_posicion, *rehen->getPosition());
+                if(distancia<ev->radio)
+                    rehen->asustado();
+                
+            }
+            
+            distancia = EasyMath::EucCalcularDistancia(ev->m_posicion, *sub->getPosition());
             
             // SI ESTA A LA DISTANCIA
             if(distancia<ev->radio){

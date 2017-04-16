@@ -67,6 +67,7 @@
 		63D124331E84235600D1B380 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124311E84235600D1B380 /* Ground.cpp */; };
 		63D124381E857AA500D1B380 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124341E857AA500D1B380 /* Level.cpp */; };
 		63D124391E857AA500D1B380 /* loadLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124361E857AA500D1B380 /* loadLevel.cpp */; };
+		63E8B9161EA12E8B008DA4E3 /* RehenIA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63E8B9141EA12E8B008DA4E3 /* RehenIA.cpp */; };
 		63EA17AE1E8A8B0E00B17381 /* gestor_eventos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */; };
 		C1A0AEFB1E434BD8009699FD /* libCEGUIBase-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEF41E434BD8009699FD /* libCEGUIBase-0_d.dylib */; };
 		C1A0AEFC1E434BD8009699FD /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0AEF51E434BD8009699FD /* libCEGUICommonDialogs-0_d.dylib */; };
@@ -245,6 +246,8 @@
 		63D124351E857AA500D1B380 /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level.hpp; sourceTree = "<group>"; };
 		63D124361E857AA500D1B380 /* loadLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = loadLevel.cpp; sourceTree = "<group>"; };
 		63D124371E857AA500D1B380 /* loadLevel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = loadLevel.hpp; sourceTree = "<group>"; };
+		63E8B9141EA12E8B008DA4E3 /* RehenIA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RehenIA.cpp; path = "vesper/Arquitectura IA/RehenIA.cpp"; sourceTree = SOURCE_ROOT; };
+		63E8B9151EA12E8B008DA4E3 /* RehenIA.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RehenIA.hpp; path = "vesper/Arquitectura IA/RehenIA.hpp"; sourceTree = SOURCE_ROOT; };
 		63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gestor_eventos.cpp; path = "Arquitectura IA/gestor_eventos.cpp"; sourceTree = "<group>"; };
 		63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gestor_eventos.hpp; path = "Arquitectura IA/gestor_eventos.hpp"; sourceTree = "<group>"; };
 		C1338FA81E8C2AF900BE6F6F /* listaMenus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = listaMenus.h; sourceTree = "<group>"; };
@@ -386,6 +389,8 @@
 				63C4CE8B1E706132008295A1 /* NpcLibrary.cpp */,
 				63C4CE8C1E706132008295A1 /* NpcLibrary.hpp */,
 				63C4CE8F1E706132008295A1 /* Types.h */,
+				63E8B9141EA12E8B008DA4E3 /* RehenIA.cpp */,
+				63E8B9151EA12E8B008DA4E3 /* RehenIA.hpp */,
 				63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */,
 				63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */,
 			);
@@ -890,6 +895,7 @@
 				63C4CEA71E7061F8008295A1 /* Nodo_SecuenciaPlus.cpp in Sources */,
 				E9AC3AA11DF0AA5000A91A97 /* destructiva.cpp in Sources */,
 				63C4CEEA1E706249008295A1 /* Nodo_QCurarse.cpp in Sources */,
+				63E8B9161EA12E8B008DA4E3 /* RehenIA.cpp in Sources */,
 				63C4CEEF1E706249008295A1 /* Nodo_QPatrullar.cpp in Sources */,
 				E9AC3AB11DF0AA5900A91A97 /* Game.cpp in Sources */,
 				63C4CEBF1E70620E008295A1 /* Nodo_AAlimentarse.cpp in Sources */,
