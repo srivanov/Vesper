@@ -37,7 +37,7 @@ public:
     RehenIA(dvector3D * pos);
     ~RehenIA();
     void changeState(R_states);
-    void inicializar(dvector3D *);
+    void inicializar(dvector3D *, dvector3D);
     void update();
     dvector3D Vmover(){return movimiento;}
 };

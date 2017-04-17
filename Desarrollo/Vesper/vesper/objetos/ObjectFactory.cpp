@@ -25,6 +25,16 @@ void ObjectFactory::initObject(int ID, dvector3D posicion,ObjectType tipo,const 
     g->inicializar(ID);
 }
 
+void ObjectFactory::initRehen(int ID, dvector3D posicion, ObjectType tipo, const BodyObject body){
+    g = new Rehen;
+    Rehen * e = static_cast<Rehen*>(g);
+    e->setObjectType(tipo);
+    e->setPosition(posicion);
+    e->createPhysicsBody(DYNAMIC_BODY);
+    e->attachSensor(3.0f);
+    e->inicializar(ID);
+}
+
 PhysicObject * ObjectFactory::PObject( dvector3D posicion, ObjectType tipo){
     Clean();
     g = new PlayerObjects;
@@ -43,14 +53,12 @@ void ObjectFactory::Clean(){if (g) g = nullptr;}
 PhysicObject * ObjectFactory::Actores(int ID, dvector3D posicion, ObjectType tipo){
     Clean();
     if(tipo==REHEN)
-        g = new Rehen;
-	else if(tipo==ENEMIGOS){
+        initRehen(ID, posicion, tipo, DYNAMIC_BODY);
+	else if(tipo==ENEMIGOS)
 		initEnemy(ID, posicion, tipo, DYNAMIC_BODY);
-		return g;
-	}else{
+	else
         return nullptr;
-    }
-    initObject(ID,posicion,tipo,DYNAMIC_BODY);
+    
     return g;
 }
 

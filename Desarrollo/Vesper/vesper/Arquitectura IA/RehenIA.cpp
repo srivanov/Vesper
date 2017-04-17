@@ -11,19 +11,21 @@
 
 RehenIA::RehenIA(dvector3D * pos) : player(nullptr){
     actual = HIBERNANDO;
-    posInicial = *pos;
     posActual = pos;
     change = false;
 }
+
+
 void RehenIA::changeState(R_states sta){
     actual = sta;
     change = true;
 }
 RehenIA::~RehenIA(){}
 
-void RehenIA::inicializar(dvector3D * pos){
+void RehenIA::inicializar(dvector3D * pos, dvector3D pos2){
     player = pos;
     change = true;
+    posInicial = pos2;
 }
 
 bool RehenIA::inicializado(){

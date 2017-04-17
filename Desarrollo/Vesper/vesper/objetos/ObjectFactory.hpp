@@ -19,6 +19,7 @@ using namespace tinyxml2;
 class ObjectFactory {
     void initObject(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body);
 	void initEnemy(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body);
+    void initRehen(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body);
     PhysicObject * g;
     void Clean();
     int Valor_llaves,puerta;

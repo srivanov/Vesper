@@ -20,8 +20,9 @@ Rehen::~Rehen(){delete m_brain;}
 
 void Rehen::contacto(PhysicObject * g){
     if (g && g->getObjectType()==PLAYER) {
-        if(!m_brain->inicializado())
-            m_brain->inicializar(g->getPosition());
+        if(!m_brain->inicializado()){
+            m_brain->inicializar(g->getPosition(),*getPosition());
+        }
         
         m_brain->changeState(SIGUIENDO);
     }

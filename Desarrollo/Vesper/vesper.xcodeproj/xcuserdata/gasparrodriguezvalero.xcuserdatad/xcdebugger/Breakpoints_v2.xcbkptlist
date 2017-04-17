@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Rehen.cpp"
-            timestampString = "514053845.23441"
+            timestampString = "514111338.375154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "Rehen::update()"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Arquitectura IA/RehenIA.cpp"
-            timestampString = "514053868.612161"
+            timestampString = "514111338.375154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "RehenIA::update()"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Rehen.cpp"
-            timestampString = "514053921.095094"
+            timestampString = "514111338.375154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -522,12 +522,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Arquitectura IA/RehenIA.cpp"
-            timestampString = "514054788.406388"
+            timestampString = "514111338.375154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "RehenIA::calcularCamino()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Arquitectura IA/RehenIA.cpp"
+            timestampString = "514110721.956244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "RehenIA::RehenIA(dvector3D * pos)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
