@@ -10,6 +10,7 @@ class Bala;
 
 class ataque : public component {
     tiempo t;
+    Bala * attack;
 public:
     void atacarDistancia();
     ataque();

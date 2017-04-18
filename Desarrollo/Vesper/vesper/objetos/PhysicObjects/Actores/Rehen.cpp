@@ -31,8 +31,9 @@ void Rehen::contacto(PhysicObject * g){
 void Rehen::update(){
     m_brain->update();
     dvector3D mov = m_brain->Vmover();
+    dvector3D rot = *getPosition() + mov;
     mover(mov);
-    
+    rotarConRaton(rot);
     PhysicObject::update();
     
 }
