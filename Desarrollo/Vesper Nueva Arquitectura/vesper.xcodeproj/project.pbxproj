@@ -114,10 +114,131 @@
 		E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */; };
 		E9AC3AE71DF0AD7100A91A97 /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */; };
 		E9B6F7411E94F39D001E0658 /* textureMap.xml in Resources */ = {isa = PBXBuildFile; fileRef = E9B6F7401E94F39D001E0658 /* textureMap.xml */; };
+		E9C8B5EB1EA794B800A33ACD /* stateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1DF66BD1E8BC4FB00542BB8 /* stateMachine.cpp */; };
+		E9C8B5EC1EA794B800A33ACD /* LevelBlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE891E706132008295A1 /* LevelBlackBoard.cpp */; };
+		E9C8B5ED1EA794B800A33ACD /* NpcLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE8B1E706132008295A1 /* NpcLibrary.cpp */; };
+		E9C8B5EE1EA794B800A33ACD /* gestor_eventos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */; };
+		E9C8B5EF1EA794B800A33ACD /* ventana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E942C0571DF1EDE600CC5763 /* ventana.cpp */; };
+		E9C8B5F01EA794B800A33ACD /* armasArrojadizas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A671DF0AA5000A91A97 /* armasArrojadizas.cpp */; };
+		E9C8B5F11EA794B800A33ACD /* armas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A691DF0AA5000A91A97 /* armas.cpp */; };
+		E9C8B5F21EA794B800A33ACD /* gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9A346351E0416FC00E6EC25 /* gun.cpp */; };
+		E9C8B5F31EA794B800A33ACD /* ataque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A6B1DF0AA5000A91A97 /* ataque.cpp */; };
+		E9C8B5F41EA794B800A33ACD /* puertaInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E993C5BD1E3CB80B00EEA664 /* puertaInterface.cpp */; };
+		E9C8B5F51EA794B800A33ACD /* blindada.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A6D1DF0AA5000A91A97 /* blindada.cpp */; };
+		E9C8B5F61EA794B800A33ACD /* bloqueada.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A6F1DF0AA5000A91A97 /* bloqueada.cpp */; };
+		E9C8B5F71EA794B800A33ACD /* chirriante.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A711DF0AA5000A91A97 /* chirriante.cpp */; };
+		E9C8B5F81EA794B800A33ACD /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A731DF0AA5000A91A97 /* component.cpp */; };
+		E9C8B5F91EA794B800A33ACD /* conAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A751DF0AA5000A91A97 /* conAlarma.cpp */; };
+		E9C8B5FA1EA794B800A33ACD /* conPuzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A791DF0AA5000A91A97 /* conPuzzle.cpp */; };
+		E9C8B5FB1EA794B800A33ACD /* destructiva.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7B1DF0AA5000A91A97 /* destructiva.cpp */; };
+		E9C8B5FC1EA794B800A33ACD /* habilidadEspecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7D1DF0AA5000A91A97 /* habilidadEspecial.cpp */; };
+		E9C8B5FD1EA794B800A33ACD /* hambre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A7F1DF0AA5000A91A97 /* hambre.cpp */; };
+		E9C8B5FE1EA794B800A33ACD /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A851DF0AA5000A91A97 /* input.cpp */; };
+		E9C8B5FF1EA794B800A33ACD /* physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8B1DF0AA5000A91A97 /* physics.cpp */; };
+		E9C8B6001EA794B800A33ACD /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A8F1DF0AA5000A91A97 /* render.cpp */; };
+		E9C8B6011EA794B800A33ACD /* salud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A911DF0AA5000A91A97 /* salud.cpp */; };
+		E9C8B6021EA794B800A33ACD /* sed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A931DF0AA5000A91A97 /* sed.cpp */; };
+		E9C8B6031EA794B800A33ACD /* Fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98661261DF99ED30028AC64 /* Fps.cpp */; };
+		E9C8B6041EA794B800A33ACD /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AAF1DF0AA5900A91A97 /* Game.cpp */; };
+		E9C8B6051EA794B800A33ACD /* menuManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1DF66C01E8BCAB200542BB8 /* menuManager.cpp */; };
+		E9C8B6061EA794B800A33ACD /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9E1E5B757A0001A36A /* GUI.cpp */; };
+		E9C8B6071EA794B800A33ACD /* CargarPartidaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9A1E5B757A0001A36A /* CargarPartidaLayout.cpp */; };
+		E9C8B6081EA794B800A33ACD /* CreditosLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898F9C1E5B757A0001A36A /* CreditosLayout.cpp */; };
+		E9C8B6091EA794B800A33ACD /* HUDLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA11E5B757A0001A36A /* HUDLayout.cpp */; };
+		E9C8B60A1EA794B800A33ACD /* MenuPrincipalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FA71E5B757A0001A36A /* MenuPrincipalLayout.cpp */; };
+		E9C8B60B1EA794B800A33ACD /* OpcionesLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FAB1E5B757A0001A36A /* OpcionesLayout.cpp */; };
+		E9C8B60C1EA794B800A33ACD /* PausaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9898FAD1E5B757A0001A36A /* PausaLayout.cpp */; };
+		E9C8B60D1EA794B800A33ACD /* JSONParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D21E5B759F0001A36A /* JSONParser.cpp */; };
+		E9C8B60E1EA794B800A33ACD /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124341E857AA500D1B380 /* Level.cpp */; };
+		E9C8B60F1EA794B800A33ACD /* loadLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124361E857AA500D1B380 /* loadLevel.cpp */; };
+		E9C8B6101EA794B800A33ACD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A4B1DF0AA3C00A91A97 /* main.cpp */; };
+		E9C8B6111EA794B800A33ACD /* mundoBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */; };
+		E9C8B6121EA794B800A33ACD /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124271E840F1500D1B380 /* ObjectFactory.cpp */; };
+		E9C8B6131EA794B800A33ACD /* LanzaPinchos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1242B1E84155800D1B380 /* LanzaPinchos.cpp */; };
+		E9C8B6141EA794B800A33ACD /* Tanqui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1242D1E84155800D1B380 /* Tanqui.cpp */; };
+		E9C8B6151EA794B800A33ACD /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1241D1E84050C00D1B380 /* Enemy.cpp */; };
+		E9C8B6161EA794B800A33ACD /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1241F1E84050C00D1B380 /* Player.cpp */; };
+		E9C8B6171EA794B800A33ACD /* Rehen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124211E84050C00D1B380 /* Rehen.cpp */; };
+		E9C8B6181EA794B800A33ACD /* Alarm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1240A1E84030800D1B380 /* Alarm.cpp */; };
+		E9C8B6191EA794B800A33ACD /* Botiquin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1240C1E84030800D1B380 /* Botiquin.cpp */; };
+		E9C8B61A1EA794B800A33ACD /* Comida.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D1240E1E84030800D1B380 /* Comida.cpp */; };
+		E9C8B61B1EA794B800A33ACD /* Fuente.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124101E84030800D1B380 /* Fuente.cpp */; };
+		E9C8B61C1EA794B800A33ACD /* Muro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124121E84030800D1B380 /* Muro.cpp */; };
+		E9C8B61D1EA794B800A33ACD /* Puerta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124141E84030800D1B380 /* Puerta.cpp */; };
+		E9C8B61E1EA794B800A33ACD /* Bala.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124001E84019E00D1B380 /* Bala.cpp */; };
+		E9C8B61F1EA794B800A33ACD /* PhysicObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124021E84019E00D1B380 /* PhysicObject.cpp */; };
+		E9C8B6201EA794B800A33ACD /* PlayerObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124041E84019E00D1B380 /* PlayerObjects.cpp */; };
+		E9C8B6211EA794B800A33ACD /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D123F01E84006700D1B380 /* Camera.cpp */; };
+		E9C8B6221EA794B800A33ACD /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3A561DF0AA4800A91A97 /* GameObject.cpp */; };
+		E9C8B6231EA794B800A33ACD /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D124311E84235600D1B380 /* Ground.cpp */; };
+		E9C8B6241EA794B800A33ACD /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEFD1E706623008295A1 /* Graph.cpp */; };
+		E9C8B6251EA794B800A33ACD /* GraphNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEFF1E706623008295A1 /* GraphNode.cpp */; };
+		E9C8B6261EA794B800A33ACD /* PathPlanning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CF011E706623008295A1 /* PathPlanning.cpp */; };
+		E9C8B6271EA794B800A33ACD /* Nodo_RAlarma_Cercana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEF31E70625E008295A1 /* Nodo_RAlarma_Cercana.cpp */; };
+		E9C8B6281EA794B800A33ACD /* Nodo_RAvisado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEF51E70625E008295A1 /* Nodo_RAvisado.cpp */; };
+		E9C8B6291EA794B800A33ACD /* Nodo_RRuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEF71E70625E008295A1 /* Nodo_RRuido.cpp */; };
+		E9C8B62A1EA794B800A33ACD /* Nodo_QAlarma_Cercano.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEC91E706249008295A1 /* Nodo_QAlarma_Cercano.cpp */; };
+		E9C8B62B1EA794B800A33ACD /* Nodo_QAlimentarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CECB1E706249008295A1 /* Nodo_QAlimentarse.cpp */; };
+		E9C8B62C1EA794B800A33ACD /* Nodo_QAvisado.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CECD1E706249008295A1 /* Nodo_QAvisado.cpp */; };
+		E9C8B62D1EA794B800A33ACD /* Nodo_QAyudar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CECF1E706249008295A1 /* Nodo_QAyudar.cpp */; };
+		E9C8B62E1EA794B800A33ACD /* Nodo_QCombatir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CED11E706249008295A1 /* Nodo_QCombatir.cpp */; };
+		E9C8B62F1EA794B800A33ACD /* Nodo_QCurarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CED31E706249008295A1 /* Nodo_QCurarse.cpp */; };
+		E9C8B6301EA794B800A33ACD /* Nodo_QEnemigo_QAlarma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CED51E706249008295A1 /* Nodo_QEnemigo_QAlarma.cpp */; };
+		E9C8B6311EA794B800A33ACD /* Nodo_QHablar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CED71E706249008295A1 /* Nodo_QHablar.cpp */; };
+		E9C8B6321EA794B800A33ACD /* Nodo_QHidratarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CED91E706249008295A1 /* Nodo_QHidratarse.cpp */; };
+		E9C8B6331EA794B800A33ACD /* Nodo_Qhuir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEDB1E706249008295A1 /* Nodo_Qhuir.cpp */; };
+		E9C8B6341EA794B800A33ACD /* Nodo_QPatrullar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEDD1E706249008295A1 /* Nodo_QPatrullar.cpp */; };
+		E9C8B6351EA794B800A33ACD /* Nodo_QPedir_Ayuda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEDF1E706249008295A1 /* Nodo_QPedir_Ayuda.cpp */; };
+		E9C8B6361EA794B800A33ACD /* Nodo_QRuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEE11E706249008295A1 /* Nodo_QRuido.cpp */; };
+		E9C8B6371EA794B800A33ACD /* Nodo_QVigilar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEE31E706249008295A1 /* Nodo_QVigilar.cpp */; };
+		E9C8B6381EA794B800A33ACD /* Nodo_AAlarma_Cercano.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEA81E70620E008295A1 /* Nodo_AAlarma_Cercano.cpp */; };
+		E9C8B6391EA794B800A33ACD /* Nodo_AAlimentarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEAA1E70620E008295A1 /* Nodo_AAlimentarse.cpp */; };
+		E9C8B63A1EA794B800A33ACD /* Nodo_AAyudar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEAC1E70620E008295A1 /* Nodo_AAyudar.cpp */; };
+		E9C8B63B1EA794B800A33ACD /* Nodo_ACurarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEAE1E70620E008295A1 /* Nodo_ACurarse.cpp */; };
+		E9C8B63C1EA794B800A33ACD /* Nodo_AHablar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEB01E70620E008295A1 /* Nodo_AHablar.cpp */; };
+		E9C8B63D1EA794B800A33ACD /* Nodo_AHidratarse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEB21E70620E008295A1 /* Nodo_AHidratarse.cpp */; };
+		E9C8B63E1EA794B800A33ACD /* Nodo_AHuir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEB41E70620E008295A1 /* Nodo_AHuir.cpp */; };
+		E9C8B63F1EA794B800A33ACD /* Nodo_APatrullar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEB61E70620E008295A1 /* Nodo_APatrullar.cpp */; };
+		E9C8B6401EA794B800A33ACD /* Nodo_ARuido.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEB81E70620E008295A1 /* Nodo_ARuido.cpp */; };
+		E9C8B6411EA794B800A33ACD /* Nodo_AVigilar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEBA1E70620E008295A1 /* Nodo_AVigilar.cpp */; };
+		E9C8B6421EA794B800A33ACD /* Nodo_Mover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEBC1E70620E008295A1 /* Nodo_Mover.cpp */; };
+		E9C8B6431EA794B800A33ACD /* Nodo_Condicional_Secuencial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE9F1E7061F8008295A1 /* Nodo_Condicional_Secuencial.cpp */; };
+		E9C8B6441EA794B800A33ACD /* Nodo_Secuencia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEA11E7061F8008295A1 /* Nodo_Secuencia.cpp */; };
+		E9C8B6451EA794B800A33ACD /* Nodo_SecuenciaPlus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CEA31E7061F8008295A1 /* Nodo_SecuenciaPlus.cpp */; };
+		E9C8B6461EA794B800A33ACD /* Behaviour_tree2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE951E706167008295A1 /* Behaviour_tree2.cpp */; };
+		E9C8B6471EA794B800A33ACD /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AC3AC31DF0AD2A00A91A97 /* tinyxml2.cpp */; };
+		E9C8B6481EA794B800A33ACD /* EasyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE851E7060F1008295A1 /* EasyMath.cpp */; };
+		E9C8B6491EA7953C00A33ACD /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
+		E9C8B64A1EA7953C00A33ACD /* libCEGUIBase-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B0791E90120A00323ECD /* libCEGUIBase-0_d.dylib */; };
+		E9C8B64B1EA7953C00A33ACD /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B07A1E90120A00323ECD /* libCEGUICommonDialogs-0_d.dylib */; };
+		E9C8B64C1EA7953C00A33ACD /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B07B1E90120A00323ECD /* libCEGUICoreWindowRendererSet_d.dylib */; };
+		E9C8B64D1EA7953C00A33ACD /* libCEGUIExpatParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B07C1E90120A00323ECD /* libCEGUIExpatParser_d.dylib */; };
+		E9C8B64E1EA7953C00A33ACD /* libCEGUIFreeImageImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B07D1E90120A00323ECD /* libCEGUIFreeImageImageCodec_d.dylib */; };
+		E9C8B64F1EA7953C00A33ACD /* libCEGUIIrrlichtRenderer-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B07E1E90120A00323ECD /* libCEGUIIrrlichtRenderer-0_d.dylib */; };
+		E9C8B6501EA7953C00A33ACD /* libCEGUILibXMLParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B07F1E90120A00323ECD /* libCEGUILibXMLParser_d.dylib */; };
+		E9C8B6511EA7953C00A33ACD /* libCEGUIOpenGLRenderer-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B0801E90120A00323ECD /* libCEGUIOpenGLRenderer-0_d.dylib */; };
+		E9C8B6521EA7953C00A33ACD /* libCEGUISILLYImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E963B0811E90120A00323ECD /* libCEGUISILLYImageCodec_d.dylib */; };
+		E9C8B6531EA7953C00A33ACD /* libSkyEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFF3FE1E8FEC15001C9D16 /* libSkyEngine.a */; };
+		E9C8B6541EA7954300A33ACD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC3AB51DF0AAB300A91A97 /* OpenGL.framework */; };
+		E9C8B6551EA7954C00A33ACD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFF4001E8FEC29001C9D16 /* CoreVideo.framework */; };
+		E9C8B6561EA7955900A33ACD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC3AB91DF0AABF00A91A97 /* IOKit.framework */; };
+		E9C8B6571EA7959A00A33ACD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC3AB31DF0AAAD00A91A97 /* Cocoa.framework */; };
 		E9F0BE861DFAC61400F6ED67 /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F0BE841DFAC61400F6ED67 /* libBox2D.a */; };
 		E9FFF3FF1E8FEC15001C9D16 /* libSkyEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFF3FE1E8FEC15001C9D16 /* libSkyEngine.a */; };
 		E9FFF4011E8FEC29001C9D16 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FFF4001E8FEC29001C9D16 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E9C8B5C71EA7917D00A33ACD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		63C4CE851E7060F1008295A1 /* EasyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EasyMath.cpp; path = Tools/EasyMath.cpp; sourceTree = "<group>"; };
@@ -327,6 +448,7 @@
 		E9AC3AE11DF0AD7100A91A97 /* mundoBox2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mundoBox2D.cpp; sourceTree = "<group>"; };
 		E9AC3AE21DF0AD7100A91A97 /* mundoBox2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mundoBox2D.hpp; sourceTree = "<group>"; };
 		E9B6F7401E94F39D001E0658 /* textureMap.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = textureMap.xml; path = objetos/textureMap.xml; sourceTree = "<group>"; };
+		E9C8B5C91EA7917D00A33ACD /* console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = console; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DDC57E1E6837D10060B006 /* tiempo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tiempo.h; sourceTree = "<group>"; };
 		E9F0BE841DFAC61400F6ED67 /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBox2D.a; path = libs/libBox2D.a; sourceTree = "<group>"; };
 		E9FA20581E1C2501003F9CA0 /* Dvector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dvector.hpp; sourceTree = "<group>"; };
@@ -354,6 +476,28 @@
 				E9AC3ABA1DF0AABF00A91A97 /* IOKit.framework in Frameworks */,
 				E9AC3AB61DF0AAB300A91A97 /* OpenGL.framework in Frameworks */,
 				E9AC3AB41DF0AAAD00A91A97 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C8B5C61EA7917D00A33ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C8B6571EA7959A00A33ACD /* Cocoa.framework in Frameworks */,
+				E9C8B6561EA7955900A33ACD /* IOKit.framework in Frameworks */,
+				E9C8B6551EA7954C00A33ACD /* CoreVideo.framework in Frameworks */,
+				E9C8B6541EA7954300A33ACD /* OpenGL.framework in Frameworks */,
+				E9C8B6491EA7953C00A33ACD /* libBox2D.a in Frameworks */,
+				E9C8B64A1EA7953C00A33ACD /* libCEGUIBase-0_d.dylib in Frameworks */,
+				E9C8B64B1EA7953C00A33ACD /* libCEGUICommonDialogs-0_d.dylib in Frameworks */,
+				E9C8B64C1EA7953C00A33ACD /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */,
+				E9C8B64D1EA7953C00A33ACD /* libCEGUIExpatParser_d.dylib in Frameworks */,
+				E9C8B64E1EA7953C00A33ACD /* libCEGUIFreeImageImageCodec_d.dylib in Frameworks */,
+				E9C8B64F1EA7953C00A33ACD /* libCEGUIIrrlichtRenderer-0_d.dylib in Frameworks */,
+				E9C8B6501EA7953C00A33ACD /* libCEGUILibXMLParser_d.dylib in Frameworks */,
+				E9C8B6511EA7953C00A33ACD /* libCEGUIOpenGLRenderer-0_d.dylib in Frameworks */,
+				E9C8B6521EA7953C00A33ACD /* libCEGUISILLYImageCodec_d.dylib in Frameworks */,
+				E9C8B6531EA7953C00A33ACD /* libSkyEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AC3A371DF0A9C100A91A97 /* vesper.app */,
+				E9C8B5C91EA7917D00A33ACD /* console */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -751,6 +896,23 @@
 			productReference = E9AC3A371DF0A9C100A91A97 /* vesper.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E9C8B5C81EA7917D00A33ACD /* console */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9C8B5CD1EA7917D00A33ACD /* Build configuration list for PBXNativeTarget "console" */;
+			buildPhases = (
+				E9C8B5C51EA7917D00A33ACD /* Sources */,
+				E9C8B5C61EA7917D00A33ACD /* Frameworks */,
+				E9C8B5C71EA7917D00A33ACD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = console;
+			productName = console;
+			productReference = E9C8B5C91EA7917D00A33ACD /* console */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -761,6 +923,10 @@
 				ORGANIZATIONNAME = "Stoycho Ivanov Atanasov";
 				TargetAttributes = {
 					E9AC3A361DF0A9C100A91A97 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					E9C8B5C81EA7917D00A33ACD = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -780,6 +946,7 @@
 			projectRoot = "";
 			targets = (
 				E9AC3A361DF0A9C100A91A97 /* vesper */,
+				E9C8B5C81EA7917D00A33ACD /* console */,
 			);
 		};
 /* End PBXProject section */
@@ -914,6 +1081,107 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9C8B5C51EA7917D00A33ACD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C8B5EB1EA794B800A33ACD /* stateMachine.cpp in Sources */,
+				E9C8B5EC1EA794B800A33ACD /* LevelBlackBoard.cpp in Sources */,
+				E9C8B5ED1EA794B800A33ACD /* NpcLibrary.cpp in Sources */,
+				E9C8B5EE1EA794B800A33ACD /* gestor_eventos.cpp in Sources */,
+				E9C8B5EF1EA794B800A33ACD /* ventana.cpp in Sources */,
+				E9C8B5F01EA794B800A33ACD /* armasArrojadizas.cpp in Sources */,
+				E9C8B5F11EA794B800A33ACD /* armas.cpp in Sources */,
+				E9C8B5F21EA794B800A33ACD /* gun.cpp in Sources */,
+				E9C8B5F31EA794B800A33ACD /* ataque.cpp in Sources */,
+				E9C8B5F41EA794B800A33ACD /* puertaInterface.cpp in Sources */,
+				E9C8B5F51EA794B800A33ACD /* blindada.cpp in Sources */,
+				E9C8B5F61EA794B800A33ACD /* bloqueada.cpp in Sources */,
+				E9C8B5F71EA794B800A33ACD /* chirriante.cpp in Sources */,
+				E9C8B5F81EA794B800A33ACD /* component.cpp in Sources */,
+				E9C8B5F91EA794B800A33ACD /* conAlarma.cpp in Sources */,
+				E9C8B5FA1EA794B800A33ACD /* conPuzzle.cpp in Sources */,
+				E9C8B5FB1EA794B800A33ACD /* destructiva.cpp in Sources */,
+				E9C8B5FC1EA794B800A33ACD /* habilidadEspecial.cpp in Sources */,
+				E9C8B5FD1EA794B800A33ACD /* hambre.cpp in Sources */,
+				E9C8B5FE1EA794B800A33ACD /* input.cpp in Sources */,
+				E9C8B5FF1EA794B800A33ACD /* physics.cpp in Sources */,
+				E9C8B6001EA794B800A33ACD /* render.cpp in Sources */,
+				E9C8B6011EA794B800A33ACD /* salud.cpp in Sources */,
+				E9C8B6021EA794B800A33ACD /* sed.cpp in Sources */,
+				E9C8B6031EA794B800A33ACD /* Fps.cpp in Sources */,
+				E9C8B6041EA794B800A33ACD /* Game.cpp in Sources */,
+				E9C8B6051EA794B800A33ACD /* menuManager.cpp in Sources */,
+				E9C8B6061EA794B800A33ACD /* GUI.cpp in Sources */,
+				E9C8B6071EA794B800A33ACD /* CargarPartidaLayout.cpp in Sources */,
+				E9C8B6081EA794B800A33ACD /* CreditosLayout.cpp in Sources */,
+				E9C8B6091EA794B800A33ACD /* HUDLayout.cpp in Sources */,
+				E9C8B60A1EA794B800A33ACD /* MenuPrincipalLayout.cpp in Sources */,
+				E9C8B60B1EA794B800A33ACD /* OpcionesLayout.cpp in Sources */,
+				E9C8B60C1EA794B800A33ACD /* PausaLayout.cpp in Sources */,
+				E9C8B60D1EA794B800A33ACD /* JSONParser.cpp in Sources */,
+				E9C8B60E1EA794B800A33ACD /* Level.cpp in Sources */,
+				E9C8B60F1EA794B800A33ACD /* loadLevel.cpp in Sources */,
+				E9C8B6101EA794B800A33ACD /* main.cpp in Sources */,
+				E9C8B6111EA794B800A33ACD /* mundoBox2D.cpp in Sources */,
+				E9C8B6121EA794B800A33ACD /* ObjectFactory.cpp in Sources */,
+				E9C8B6131EA794B800A33ACD /* LanzaPinchos.cpp in Sources */,
+				E9C8B6141EA794B800A33ACD /* Tanqui.cpp in Sources */,
+				E9C8B6151EA794B800A33ACD /* Enemy.cpp in Sources */,
+				E9C8B6161EA794B800A33ACD /* Player.cpp in Sources */,
+				E9C8B6171EA794B800A33ACD /* Rehen.cpp in Sources */,
+				E9C8B6181EA794B800A33ACD /* Alarm.cpp in Sources */,
+				E9C8B6191EA794B800A33ACD /* Botiquin.cpp in Sources */,
+				E9C8B61A1EA794B800A33ACD /* Comida.cpp in Sources */,
+				E9C8B61B1EA794B800A33ACD /* Fuente.cpp in Sources */,
+				E9C8B61C1EA794B800A33ACD /* Muro.cpp in Sources */,
+				E9C8B61D1EA794B800A33ACD /* Puerta.cpp in Sources */,
+				E9C8B61E1EA794B800A33ACD /* Bala.cpp in Sources */,
+				E9C8B61F1EA794B800A33ACD /* PhysicObject.cpp in Sources */,
+				E9C8B6201EA794B800A33ACD /* PlayerObjects.cpp in Sources */,
+				E9C8B6211EA794B800A33ACD /* Camera.cpp in Sources */,
+				E9C8B6221EA794B800A33ACD /* GameObject.cpp in Sources */,
+				E9C8B6231EA794B800A33ACD /* Ground.cpp in Sources */,
+				E9C8B6241EA794B800A33ACD /* Graph.cpp in Sources */,
+				E9C8B6251EA794B800A33ACD /* GraphNode.cpp in Sources */,
+				E9C8B6261EA794B800A33ACD /* PathPlanning.cpp in Sources */,
+				E9C8B6271EA794B800A33ACD /* Nodo_RAlarma_Cercana.cpp in Sources */,
+				E9C8B6281EA794B800A33ACD /* Nodo_RAvisado.cpp in Sources */,
+				E9C8B6291EA794B800A33ACD /* Nodo_RRuido.cpp in Sources */,
+				E9C8B62A1EA794B800A33ACD /* Nodo_QAlarma_Cercano.cpp in Sources */,
+				E9C8B62B1EA794B800A33ACD /* Nodo_QAlimentarse.cpp in Sources */,
+				E9C8B62C1EA794B800A33ACD /* Nodo_QAvisado.cpp in Sources */,
+				E9C8B62D1EA794B800A33ACD /* Nodo_QAyudar.cpp in Sources */,
+				E9C8B62E1EA794B800A33ACD /* Nodo_QCombatir.cpp in Sources */,
+				E9C8B62F1EA794B800A33ACD /* Nodo_QCurarse.cpp in Sources */,
+				E9C8B6301EA794B800A33ACD /* Nodo_QEnemigo_QAlarma.cpp in Sources */,
+				E9C8B6311EA794B800A33ACD /* Nodo_QHablar.cpp in Sources */,
+				E9C8B6321EA794B800A33ACD /* Nodo_QHidratarse.cpp in Sources */,
+				E9C8B6331EA794B800A33ACD /* Nodo_Qhuir.cpp in Sources */,
+				E9C8B6341EA794B800A33ACD /* Nodo_QPatrullar.cpp in Sources */,
+				E9C8B6351EA794B800A33ACD /* Nodo_QPedir_Ayuda.cpp in Sources */,
+				E9C8B6361EA794B800A33ACD /* Nodo_QRuido.cpp in Sources */,
+				E9C8B6371EA794B800A33ACD /* Nodo_QVigilar.cpp in Sources */,
+				E9C8B6381EA794B800A33ACD /* Nodo_AAlarma_Cercano.cpp in Sources */,
+				E9C8B6391EA794B800A33ACD /* Nodo_AAlimentarse.cpp in Sources */,
+				E9C8B63A1EA794B800A33ACD /* Nodo_AAyudar.cpp in Sources */,
+				E9C8B63B1EA794B800A33ACD /* Nodo_ACurarse.cpp in Sources */,
+				E9C8B63C1EA794B800A33ACD /* Nodo_AHablar.cpp in Sources */,
+				E9C8B63D1EA794B800A33ACD /* Nodo_AHidratarse.cpp in Sources */,
+				E9C8B63E1EA794B800A33ACD /* Nodo_AHuir.cpp in Sources */,
+				E9C8B63F1EA794B800A33ACD /* Nodo_APatrullar.cpp in Sources */,
+				E9C8B6401EA794B800A33ACD /* Nodo_ARuido.cpp in Sources */,
+				E9C8B6411EA794B800A33ACD /* Nodo_AVigilar.cpp in Sources */,
+				E9C8B6421EA794B800A33ACD /* Nodo_Mover.cpp in Sources */,
+				E9C8B6431EA794B800A33ACD /* Nodo_Condicional_Secuencial.cpp in Sources */,
+				E9C8B6441EA794B800A33ACD /* Nodo_Secuencia.cpp in Sources */,
+				E9C8B6451EA794B800A33ACD /* Nodo_SecuenciaPlus.cpp in Sources */,
+				E9C8B6461EA794B800A33ACD /* Behaviour_tree2.cpp in Sources */,
+				E9C8B6471EA794B800A33ACD /* tinyxml2.cpp in Sources */,
+				E9C8B6481EA794B800A33ACD /* EasyMath.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -1009,7 +1277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(PROJECT_NAME)";
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_NAME)";
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/includes/irrlicht",
 					"$(PROJECT_DIR)/includes",
@@ -1049,6 +1317,27 @@
 			};
 			name = Release;
 		};
+		E9C8B5CE1EA7917D00A33ACD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_NAME)";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/includes";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E9C8B5CF1EA7917D00A33ACD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/includes";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1069,6 +1358,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E9C8B5CD1EA7917D00A33ACD /* Build configuration list for PBXNativeTarget "console" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C8B5CE1EA7917D00A33ACD /* Debug */,
+				E9C8B5CF1EA7917D00A33ACD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
