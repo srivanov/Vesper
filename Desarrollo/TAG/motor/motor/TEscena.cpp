@@ -52,327 +52,30 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,1,0);
+	dvector3D n(0,1,0), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
+	cubo->setMalla("../Models/zombi.fbx");
 	plano->setMalla("../Models/plano.obj");
-	cubo->setMalla("../Models/cubo.3ds");
-	cubo->setTextura("../Models/tex.png");
-	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-	mallas.back()->setMalla("../Models/microwave.obj");
-
-	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-	mallas.back()->setMalla("../Models/microwave.obj");
-	mallas.back()->setTextura("../Models/zil.png");
-	n = dvector3D(3,0,-2);
-	mallas.back()->setPosicion(n);
+	cubo->escalar(s);
+	
+//	cubo->setTextura("../Models/tex.png");
+//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+//	mallas.back()->setMalla("../Models/microwave.obj");
+//
+//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+//	mallas.back()->setMalla("../Models/microwave.obj");
+//	mallas.back()->setTextura("../Models/zil.png");
+//	n = dvector3D(3,0,-2);
+//	mallas.back()->setPosicion(n);
 	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
 //	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//	
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
+
 	n = dvector3D(3,0,-2);
 	cubo->transladar(n);
 	n = dvector3D(0,-2,0);
@@ -453,8 +156,8 @@ void TEscena::update(){
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
 //		cam->setCamTarget(cubo->getPosicion());
 	}
-	
-//	cam->setCamTarget(cubo->getPosicion());
+//	mov = dvector3D(InputManager::Instance()->mousePos.x-400, 300-InputManager::Instance()->mousePos.y, 0);
+//	cam->setCamTarget(mov);
 	
 //	cam->transladar(mov);
 	
