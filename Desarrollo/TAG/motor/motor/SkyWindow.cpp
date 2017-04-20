@@ -7,14 +7,12 @@
 //
 
 #include "SkyWindow.hpp"
-#include "ShaderManager.hpp"
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 
 SkyWindow::SkyWindow(){
 	i = InputManager::Instance();
-	shMan = ShaderManager::Instance();
 }
 
 int SkyWindow::crearWindow(dvector2D wh, bool vsync){
@@ -85,7 +83,6 @@ void SkyWindow::beginDraw(){
 	//limpiamos el buffer de color y Z-buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //	Fps::Instance()->update();
-	shMan->Usar();
 }
 
 void SkyWindow::endDraw(){

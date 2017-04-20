@@ -394,6 +394,7 @@ TEscena::~TEscena(){
 }
 
 void TEscena::Draw(){
+	ShaderManager::Instance()->Usar();
 	motor->Draw();
 }
 
