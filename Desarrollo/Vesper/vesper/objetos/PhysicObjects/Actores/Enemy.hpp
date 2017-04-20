@@ -15,6 +15,8 @@
 #include "../../../Arquitectura IA/gestor_eventos.hpp"
 #include "../../../Sistema de Decision/Behaviour_tree2.hpp"
 
+class Bala;
+
 class Enemy : public PhysicObject {
 protected:
      NpcBook * book;
@@ -23,7 +25,6 @@ private:
     float tiempo_vida, velocidad;
     dvector3D direccion;
     tiempo temp,t;
-    
 public:
     Enemy();
     ~Enemy();

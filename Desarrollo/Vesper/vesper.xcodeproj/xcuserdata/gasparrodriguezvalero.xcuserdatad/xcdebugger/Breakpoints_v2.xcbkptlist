@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Enemy.cpp"
-            timestampString = "513590849.775733"
+            timestampString = "514319311.047536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "Enemy::contacto(PhysicObject *g)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Sistema de Decision/Nodos de Accion/Nodo_AAtacar.cpp"
-            timestampString = "513368071.974014"
+            timestampString = "514319311.047536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "Nodo_AAtacar::run(const int &amp;ID)"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/Sistema de Decision/Nodos de Accion/Nodo_AAtacar.cpp"
-            timestampString = "513368296.041585"
+            timestampString = "514319311.047536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "Nodo_AAtacar::run(const int &amp;ID)"
             landmarkType = "7">
          </BreakpointContent>

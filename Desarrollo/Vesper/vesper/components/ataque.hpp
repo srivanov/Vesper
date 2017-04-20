@@ -16,6 +16,7 @@ public:
     ataque();
     ~ataque();
 	void update() override;
+    void render();
 	
 };
 #endif /* ataque_hpp */

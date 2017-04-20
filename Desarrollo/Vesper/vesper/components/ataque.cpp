@@ -10,12 +10,15 @@ ataque::~ataque(){
 }
 
 void ataque::update(){
-    if(attack->Eliminable()){
-        delete attack;
-        attack = nullptr;
+    
+    if(attack){
+        if(attack->Eliminable()){
+            delete attack;
+            attack = nullptr;
+        }
+        else
+            attack->update();
     }
-    if(attack)
-        attack->update();
 }
 
 void ataque::atacarDistancia(){
@@ -25,4 +28,9 @@ void ataque::atacarDistancia(){
         t.reset();
         printf("ATACO");
     }
+}
+
+void ataque::render(){
+    if(attack)
+        attack->render();
 }

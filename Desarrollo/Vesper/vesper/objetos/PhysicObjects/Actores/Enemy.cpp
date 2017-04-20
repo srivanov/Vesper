@@ -42,6 +42,7 @@ void Enemy::update(){
     book->updateBook();
     Arbol->run(m_ID);
     
+    
     if(book->ATACAR){
         static_cast<ataque*>(componentes.find(ATAQUE)->second)->atacarDistancia();
         book->ATACAR = false;
@@ -50,6 +51,7 @@ void Enemy::update(){
     mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + *book->VectorMovimiento;
     rotarConRaton(aux);
+    
     
     
     GameObject::update();
