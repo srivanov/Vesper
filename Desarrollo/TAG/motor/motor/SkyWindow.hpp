@@ -17,6 +17,8 @@
 #include "Dvector.hpp"
 #include "InputManager.h"
 
+class ShaderManager;
+
 class SkyWindow {
 public:
 	static SkyWindow* Instance(){ static SkyWindow pinstance; return &pinstance; }
@@ -33,6 +35,7 @@ private:
 	GLFWwindow* window;
 	dvector2D size;
 	InputManager* i;
+	ShaderManager* shMan;
 };
 
 #endif /* SkyWindow_hpp */

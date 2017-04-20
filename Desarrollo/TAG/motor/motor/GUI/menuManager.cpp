@@ -21,6 +21,7 @@ menuManager::menuManager(){
     
 	seleccionado = menus.at(tmMENUPRINCIPAL);
 	actualState = states::Instance();
+	m_IrrlichtRenderer = nullptr;
 }
 
 menuManager::~menuManager(){
@@ -38,8 +39,6 @@ void menuManager::update(){
 	seleccionado = menus.at(actualState->menu);
 	
 	seleccionado->update();
-	if(InputManager::Instance()->isPressed(SKY_KEY_0))
-		actualState->nextState = PLAYING;
 }
 
 void menuManager::render(){
@@ -47,7 +46,7 @@ void menuManager::render(){
     m_IrrlichtRenderer->beginRendering();
 	seleccionado->render();
     m_IrrlichtRenderer->endRendering();
-	glDisable(GL_SCISSOR_TEST);
+//	glDisable(GL_SCISSOR_TEST);
 	//glDepthFunc(GL_NEVER);
  
 	glEnable(GL_DEPTH_TEST);

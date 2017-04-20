@@ -59,6 +59,7 @@ bool TEscena::inicializar(){
 	plano->setMalla("../Models/plano.obj");
 	cubo->setMalla("../Models/cubo.3ds");
 	cubo->setTextura("../Models/tex.png");
+	
 	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 	mallas.back()->setMalla("../Models/microwave.obj");
 
@@ -67,6 +68,7 @@ bool TEscena::inicializar(){
 	mallas.back()->setTextura("../Models/zil.png");
 	n = dvector3D(3,0,-2);
 	mallas.back()->setPosicion(n);
+	
 	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
@@ -451,7 +453,7 @@ void TEscena::update(){
 		cam->transladar(m);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
-//		cam->setCamTarget(cubo->getPosicion());
+		states::Instance()->nextState = MENU;
 	}
 	
 //	cam->setCamTarget(cubo->getPosicion());
@@ -463,7 +465,7 @@ void TEscena::update(){
 }
 
 void TEscena::imprime(){
-	cubo->imprimePos();
+	cam->imprimePos();
 }
 
 //TNodo* TEscena::getActiveCamera(){

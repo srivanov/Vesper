@@ -5,6 +5,7 @@
 #include "TNodo.hpp"
 #include "SkyEngine.hpp"
 #include "ShaderManager.hpp"
+#include "estados.h"
 
 // dimensiones de la ventana
 const GLuint WIDTH = 800, HEIGHT = 600;

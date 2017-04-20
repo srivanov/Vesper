@@ -37,8 +37,8 @@ bool stateMachine::update(){
 }
 
 void stateMachine::render(){
-	if(*actualState->getState() == PLAYING)
+	if(*actualState->getState() == PLAYING){
 		nivelazo.Draw();
-	else if(*actualState->getState() == MENU)
+	}else if(*actualState->getState() == MENU)
 		menusManager.render();
 }

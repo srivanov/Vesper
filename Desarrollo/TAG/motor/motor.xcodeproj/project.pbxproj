@@ -19,15 +19,6 @@
 		E92B04CC1EA23BFC0046AB3B /* MenuPrincipalLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92B04C01EA23BFC0046AB3B /* MenuPrincipalLayout.cpp */; };
 		E92B04CD1EA23BFC0046AB3B /* OpcionesLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92B04C21EA23BFC0046AB3B /* OpcionesLayout.cpp */; };
 		E92B04CE1EA23BFC0046AB3B /* PausaLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92B04C41EA23BFC0046AB3B /* PausaLayout.cpp */; };
-		E92B04E11EA23C150046AB3B /* libCEGUIBase-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04CF1EA23C150046AB3B /* libCEGUIBase-0_d.dylib */; };
-		E92B04E21EA23C150046AB3B /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D01EA23C150046AB3B /* libCEGUICommonDialogs-0_d.dylib */; };
-		E92B04E31EA23C150046AB3B /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D11EA23C150046AB3B /* libCEGUICoreWindowRendererSet_d.dylib */; };
-		E92B04E41EA23C150046AB3B /* libCEGUIExpatParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D21EA23C150046AB3B /* libCEGUIExpatParser_d.dylib */; };
-		E92B04E51EA23C150046AB3B /* libCEGUIFreeImageImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D31EA23C150046AB3B /* libCEGUIFreeImageImageCodec_d.dylib */; };
-		E92B04E61EA23C150046AB3B /* libCEGUIIrrlichtRenderer-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D41EA23C150046AB3B /* libCEGUIIrrlichtRenderer-0_d.dylib */; };
-		E92B04E71EA23C150046AB3B /* libCEGUILibXMLParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D51EA23C150046AB3B /* libCEGUILibXMLParser_d.dylib */; };
-		E92B04E81EA23C150046AB3B /* libCEGUIOpenGLRenderer-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D61EA23C150046AB3B /* libCEGUIOpenGLRenderer-0_d.dylib */; };
-		E92B04E91EA23C150046AB3B /* libCEGUISILLYImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E92B04D71EA23C150046AB3B /* libCEGUISILLYImageCodec_d.dylib */; };
 		E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E943945A1E09A7CB0053DBE7 /* main.cpp */; };
 		E94394691E09A81C0053DBE7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94394681E09A81C0053DBE7 /* OpenGL.framework */; };
 		E9488E4A1E7FEBE600C5D62A /* SkyWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9488E481E7FEBE600C5D62A /* SkyWindow.cpp */; };
@@ -35,6 +26,13 @@
 		E958EC331E4A1FD700478D49 /* TTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E958EC311E4A1FD700478D49 /* TTransform.cpp */; };
 		E960F3F01E1E6C4300A90C05 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E960F3EE1E1E6C4300A90C05 /* Camera.cpp */; };
 		E96948C41E6873E600E27DFD /* SkyEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E96948C21E6873E600E27DFD /* SkyEngine.cpp */; };
+		E96E50581EA90B33002BE20F /* libCEGUIBase-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50501EA90B33002BE20F /* libCEGUIBase-0_d.dylib */; };
+		E96E50591EA90B33002BE20F /* libCEGUICommonDialogs-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50511EA90B33002BE20F /* libCEGUICommonDialogs-0_d.dylib */; };
+		E96E505A1EA90B33002BE20F /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50521EA90B33002BE20F /* libCEGUICoreWindowRendererSet_d.dylib */; };
+		E96E505B1EA90B33002BE20F /* libCEGUIExpatParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50531EA90B33002BE20F /* libCEGUIExpatParser_d.dylib */; };
+		E96E505D1EA90B33002BE20F /* libCEGUILibXMLParser_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50551EA90B33002BE20F /* libCEGUILibXMLParser_d.dylib */; };
+		E96E505F1EA90B33002BE20F /* libCEGUISILLYImageCodec_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50571EA90B33002BE20F /* libCEGUISILLYImageCodec_d.dylib */; };
+		E96E50601EA90BA5002BE20F /* libCEGUIOpenGLRenderer-0_d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E50561EA90B33002BE20F /* libCEGUIOpenGLRenderer-0_d.dylib */; };
 		E97C4E601E5864A6000C20FB /* TRecursoMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */; };
 		E98990D71E5C5AFD0001A36A /* TRecursoTextura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */; };
 		E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E992F7801E4A53E1004D80EF /* TLuz.cpp */; };
@@ -42,7 +40,6 @@
 		E9AB33001E6C76BD006D8F9D /* SkyMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */; };
 		E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */; };
 		E9AB33061E6C76F5006D8F9D /* SkyCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */; };
-		E9AB330D1E6CA194006D8F9D /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */; };
 		E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF831E1EE5E50039E88A /* textura.vs */; };
 		E9B3EF8A1E1F21E90039E88A /* libzlibstatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B3EF891E1F21E90039E88A /* libzlibstatic.a */; };
 		E9B3EF941E1F29820039E88A /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF931E1F29820039E88A /* Mesh.cpp */; };
@@ -71,7 +68,6 @@
 		E9D3DECB1E87CFC800555687 /* TRecursoTextura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */; };
 		E9D3DECC1E87CFC800555687 /* TRecursoTextura.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E98990D61E5C5AFD0001A36A /* TRecursoTextura.hpp */; };
 		E9D3DECD1E87D04800555687 /* Shader.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B8EB6A1E16CE93003811A4 /* Shader.h */; };
-		E9D3DECE1E87D04800555687 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */; };
 		E9D3DECF1E87D04800555687 /* ShaderManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */; };
 		E9D3DED01E87D05700555687 /* SkyEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E96948C21E6873E600E27DFD /* SkyEngine.cpp */; };
 		E9D3DED11E87D05700555687 /* SkyEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E96948C31E6873E600E27DFD /* SkyEngine.hpp */; };
@@ -141,15 +137,6 @@
 		E92B04C31EA23BFC0046AB3B /* OpcionesLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OpcionesLayout.hpp; sourceTree = "<group>"; };
 		E92B04C41EA23BFC0046AB3B /* PausaLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PausaLayout.cpp; sourceTree = "<group>"; };
 		E92B04C51EA23BFC0046AB3B /* PausaLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PausaLayout.hpp; sourceTree = "<group>"; };
-		E92B04CF1EA23C150046AB3B /* libCEGUIBase-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIBase-0_d.dylib"; path = "Frameworks/libCEGUIBase-0_d.dylib"; sourceTree = "<group>"; };
-		E92B04D01EA23C150046AB3B /* libCEGUICommonDialogs-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUICommonDialogs-0_d.dylib"; path = "Frameworks/libCEGUICommonDialogs-0_d.dylib"; sourceTree = "<group>"; };
-		E92B04D11EA23C150046AB3B /* libCEGUICoreWindowRendererSet_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUICoreWindowRendererSet_d.dylib; path = Frameworks/libCEGUICoreWindowRendererSet_d.dylib; sourceTree = "<group>"; };
-		E92B04D21EA23C150046AB3B /* libCEGUIExpatParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUIExpatParser_d.dylib; path = Frameworks/libCEGUIExpatParser_d.dylib; sourceTree = "<group>"; };
-		E92B04D31EA23C150046AB3B /* libCEGUIFreeImageImageCodec_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUIFreeImageImageCodec_d.dylib; path = Frameworks/libCEGUIFreeImageImageCodec_d.dylib; sourceTree = "<group>"; };
-		E92B04D41EA23C150046AB3B /* libCEGUIIrrlichtRenderer-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIIrrlichtRenderer-0_d.dylib"; path = "Frameworks/libCEGUIIrrlichtRenderer-0_d.dylib"; sourceTree = "<group>"; };
-		E92B04D51EA23C150046AB3B /* libCEGUILibXMLParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUILibXMLParser_d.dylib; path = Frameworks/libCEGUILibXMLParser_d.dylib; sourceTree = "<group>"; };
-		E92B04D61EA23C150046AB3B /* libCEGUIOpenGLRenderer-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIOpenGLRenderer-0_d.dylib"; path = "Frameworks/libCEGUIOpenGLRenderer-0_d.dylib"; sourceTree = "<group>"; };
-		E92B04D71EA23C150046AB3B /* libCEGUISILLYImageCodec_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUISILLYImageCodec_d.dylib; path = Frameworks/libCEGUISILLYImageCodec_d.dylib; sourceTree = "<group>"; };
 		E92B04D81EA23C150046AB3B /* libexpat_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libexpat_d.dylib; path = Frameworks/libexpat_d.dylib; sourceTree = "<group>"; };
 		E92B04D91EA23C150046AB3B /* libfreetype_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype_d.dylib; path = Frameworks/libfreetype_d.dylib; sourceTree = "<group>"; };
 		E92B04DA1EA23C150046AB3B /* libglew_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglew_d.dylib; path = Frameworks/libglew_d.dylib; sourceTree = "<group>"; };
@@ -171,6 +158,13 @@
 		E960F3EF1E1E6C4300A90C05 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		E96948C21E6873E600E27DFD /* SkyEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyEngine.cpp; sourceTree = "<group>"; };
 		E96948C31E6873E600E27DFD /* SkyEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyEngine.hpp; sourceTree = "<group>"; };
+		E96E50501EA90B33002BE20F /* libCEGUIBase-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIBase-0_d.dylib"; path = "libs/libCEGUIBase-0_d.dylib"; sourceTree = "<group>"; };
+		E96E50511EA90B33002BE20F /* libCEGUICommonDialogs-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUICommonDialogs-0_d.dylib"; path = "libs/libCEGUICommonDialogs-0_d.dylib"; sourceTree = "<group>"; };
+		E96E50521EA90B33002BE20F /* libCEGUICoreWindowRendererSet_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUICoreWindowRendererSet_d.dylib; path = libs/libCEGUICoreWindowRendererSet_d.dylib; sourceTree = "<group>"; };
+		E96E50531EA90B33002BE20F /* libCEGUIExpatParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUIExpatParser_d.dylib; path = libs/libCEGUIExpatParser_d.dylib; sourceTree = "<group>"; };
+		E96E50551EA90B33002BE20F /* libCEGUILibXMLParser_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUILibXMLParser_d.dylib; path = libs/libCEGUILibXMLParser_d.dylib; sourceTree = "<group>"; };
+		E96E50561EA90B33002BE20F /* libCEGUIOpenGLRenderer-0_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libCEGUIOpenGLRenderer-0_d.dylib"; path = "libs/libCEGUIOpenGLRenderer-0_d.dylib"; sourceTree = "<group>"; };
+		E96E50571EA90B33002BE20F /* libCEGUISILLYImageCodec_d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCEGUISILLYImageCodec_d.dylib; path = libs/libCEGUISILLYImageCodec_d.dylib; sourceTree = "<group>"; };
 		E97C4E5E1E5864A6000C20FB /* TRecursoMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TRecursoMalla.cpp; sourceTree = "<group>"; };
 		E97C4E5F1E5864A6000C20FB /* TRecursoMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TRecursoMalla.hpp; sourceTree = "<group>"; };
 		E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TRecursoTextura.cpp; sourceTree = "<group>"; };
@@ -189,7 +183,6 @@
 		E9AB33021E6C76CD006D8F9D /* SkyLuz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyLuz.hpp; sourceTree = "<group>"; };
 		E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = SkyCamara.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E9AB33051E6C76F5006D8F9D /* SkyCamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyCamara.hpp; sourceTree = "<group>"; };
-		E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
 		E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderManager.hpp; sourceTree = "<group>"; };
 		E9B3EF831E1EE5E50039E88A /* textura.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textura.vs; sourceTree = "<group>"; };
 		E9B3EF841E1EE5E50039E88A /* textura.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textura.frag; sourceTree = "<group>"; };
@@ -549,15 +542,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92B04E11EA23C150046AB3B /* libCEGUIBase-0_d.dylib in Frameworks */,
-				E92B04E21EA23C150046AB3B /* libCEGUICommonDialogs-0_d.dylib in Frameworks */,
-				E92B04E31EA23C150046AB3B /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */,
-				E92B04E41EA23C150046AB3B /* libCEGUIExpatParser_d.dylib in Frameworks */,
-				E92B04E51EA23C150046AB3B /* libCEGUIFreeImageImageCodec_d.dylib in Frameworks */,
-				E92B04E61EA23C150046AB3B /* libCEGUIIrrlichtRenderer-0_d.dylib in Frameworks */,
-				E92B04E71EA23C150046AB3B /* libCEGUILibXMLParser_d.dylib in Frameworks */,
-				E92B04E81EA23C150046AB3B /* libCEGUIOpenGLRenderer-0_d.dylib in Frameworks */,
-				E92B04E91EA23C150046AB3B /* libCEGUISILLYImageCodec_d.dylib in Frameworks */,
+				E96E50601EA90BA5002BE20F /* libCEGUIOpenGLRenderer-0_d.dylib in Frameworks */,
+				E96E50581EA90B33002BE20F /* libCEGUIBase-0_d.dylib in Frameworks */,
+				E96E50591EA90B33002BE20F /* libCEGUICommonDialogs-0_d.dylib in Frameworks */,
+				E96E505A1EA90B33002BE20F /* libCEGUICoreWindowRendererSet_d.dylib in Frameworks */,
+				E96E505B1EA90B33002BE20F /* libCEGUIExpatParser_d.dylib in Frameworks */,
+				E96E505D1EA90B33002BE20F /* libCEGUILibXMLParser_d.dylib in Frameworks */,
+				E96E505F1EA90B33002BE20F /* libCEGUISILLYImageCodec_d.dylib in Frameworks */,
 				E9B3EF8A1E1F21E90039E88A /* libzlibstatic.a in Frameworks */,
 				E954B0961E18013300F1BEB6 /* libSOIL.a in Frameworks */,
 				E907FC5C1E09F89F00C260C5 /* libassimp.a in Frameworks */,
@@ -598,7 +589,6 @@
 			isa = PBXGroup;
 			children = (
 				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
-				E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */,
 				E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */,
 			);
 			name = ShaderManager;
@@ -686,15 +676,13 @@
 		E94394611E09A7EF0053DBE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E92B04CF1EA23C150046AB3B /* libCEGUIBase-0_d.dylib */,
-				E92B04D01EA23C150046AB3B /* libCEGUICommonDialogs-0_d.dylib */,
-				E92B04D11EA23C150046AB3B /* libCEGUICoreWindowRendererSet_d.dylib */,
-				E92B04D21EA23C150046AB3B /* libCEGUIExpatParser_d.dylib */,
-				E92B04D31EA23C150046AB3B /* libCEGUIFreeImageImageCodec_d.dylib */,
-				E92B04D41EA23C150046AB3B /* libCEGUIIrrlichtRenderer-0_d.dylib */,
-				E92B04D51EA23C150046AB3B /* libCEGUILibXMLParser_d.dylib */,
-				E92B04D61EA23C150046AB3B /* libCEGUIOpenGLRenderer-0_d.dylib */,
-				E92B04D71EA23C150046AB3B /* libCEGUISILLYImageCodec_d.dylib */,
+				E96E50501EA90B33002BE20F /* libCEGUIBase-0_d.dylib */,
+				E96E50511EA90B33002BE20F /* libCEGUICommonDialogs-0_d.dylib */,
+				E96E50521EA90B33002BE20F /* libCEGUICoreWindowRendererSet_d.dylib */,
+				E96E50531EA90B33002BE20F /* libCEGUIExpatParser_d.dylib */,
+				E96E50551EA90B33002BE20F /* libCEGUILibXMLParser_d.dylib */,
+				E96E50561EA90B33002BE20F /* libCEGUIOpenGLRenderer-0_d.dylib */,
+				E96E50571EA90B33002BE20F /* libCEGUISILLYImageCodec_d.dylib */,
 				E92B04D81EA23C150046AB3B /* libexpat_d.dylib */,
 				E92B04D91EA23C150046AB3B /* libfreetype_d.dylib */,
 				E92B04DA1EA23C150046AB3B /* libglew_d.dylib */,
@@ -1369,7 +1357,6 @@
 				E9EFC4041E49EB94000E84B1 /* TNodo.cpp in Sources */,
 				E92B04C91EA23BFC0046AB3B /* GUI.cpp in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,
-				E9AB330D1E6CA194006D8F9D /* ShaderManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1377,7 +1364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D3DECE1E87D04800555687 /* ShaderManager.cpp in Sources */,
 				E9D3DEC91E87CFC800555687 /* TRecursoMalla.cpp in Sources */,
 				E9D3DEC41E87CFC800555687 /* Mesh.cpp in Sources */,
 				E9D3DED31E87D05700555687 /* SkyMalla.cpp in Sources */,
