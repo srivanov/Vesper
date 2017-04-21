@@ -108,8 +108,8 @@ void render::endDraw() {
 
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = ventana::Instance()->getSceneManager()->addCameraSceneNode(0, vector3df(p.x, p.y, p.z), vector3df(l.x, l.y, l.z));
-    camara->setNearValue(1);
-    camara->setFarValue(20);
+    camara->setNearValue(.1);
+    camara->setFarValue(200);
 }
 
 void render::closeWindow(){
@@ -119,14 +119,14 @@ void render::closeWindow(){
 void render::CreateGround(int alto, int ancho){
     
     
-    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(ancho,alto));
+    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(alto,ancho));
     nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
     nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
     
-    nodo_suelo->setPosition(vector3df((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
-    nodo_suelo->setRotation(vector3df(90,180,180));
-    
+    nodo_suelo->setPosition(vector3df((alto/2.f)-0.5, 0, (ancho/2.f)-0.5));
+//    nodo_suelo->setRotation(vector3df(90,180,180));
+	
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
@@ -156,7 +156,7 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 				nodo = creaNodo("3d/arbusto.obj", "3d/Arbusto_Diffuse.png");
 			
 			nodo->setMaterialFlag(EMF_LIGHTING, false);
-			nodo->setPosition(vector3df(x,y,0));
+			nodo->setPosition(vector3df(x,0,y));
             //std::cout << x << "|" << y << std::endl;
         }
     }
@@ -177,7 +177,7 @@ ISceneNode* render::creaNodo(char* malla, char* textura){
 }
 
 void render::setCamPos(dvector3D &pos){
-	camara->setPosition(vector3df(pos.x, pos.y, pos.z));
+	camara->setPosition(vector3df(pos.x, pos.z, pos.y));
 }
 
 dvector3D* render::getCamPos(){
@@ -186,5 +186,5 @@ dvector3D* render::getCamPos(){
 }
 
 void render::setCamTarget(dvector3D &pos){
-	camara->setTarget(vector3df(pos.x, pos.y, pos.z));
+	camara->setTarget(vector3df(pos.x, pos.z, pos.y));
 }

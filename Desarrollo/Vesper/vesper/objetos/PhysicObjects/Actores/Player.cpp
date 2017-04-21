@@ -96,7 +96,7 @@ void Player::update(){
     rotarConRaton(m_rot);
     GameObject::update();
     arma->update();
-
+	printf("%.1f, %.1f, %.1f\n",m_pos.x, m_pos.y, m_pos.z);
 }
 
 void Player::render(){

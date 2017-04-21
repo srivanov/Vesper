@@ -25,7 +25,7 @@ bool nodeMesh::_setMaterialTexture(ITexture* tex){
 
 void nodeMesh::_setNodePosition(dvector3D &posicion){
 //	if(posicion != NULL)
-    object->setPosition(vector3df(posicion.x,posicion.y,posicion.z));
+    object->setPosition(vector3df(posicion.x,posicion.z,posicion.y));
 //    if(gun != NULL)
 //        gun->setPosition(vector3df(posicion.x,posicion.y,posicion.z-3));
 }
