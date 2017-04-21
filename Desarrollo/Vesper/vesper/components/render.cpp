@@ -119,7 +119,7 @@ void render::closeWindow(){
 void render::CreateGround(int alto, int ancho){
     
     
-    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(alto,ancho));
+    IMesh* suelo = ventana::Instance()->getSceneManager()->getGeometryCreator()->createPlaneMesh(core::dimension2df(ancho,alto));
     nodo_suelo = ventana::Instance()->getSceneManager()->addMeshSceneNode(suelo);
     nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
     nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.jpg"));
