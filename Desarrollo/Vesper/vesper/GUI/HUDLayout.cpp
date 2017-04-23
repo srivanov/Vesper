@@ -33,6 +33,12 @@ void HUDLayout::init(){
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
 //    moneda3->hide();
     
+    llave1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
+    
+    llave2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(20));
+    
+    llave3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(21));
+    
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPISTOLA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11))));
     
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tESCOPETA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12))));
@@ -84,6 +90,26 @@ void HUDLayout::getMonedas(int v){
     	moneda1->hide();
     	moneda2->hide();
     	moneda3->show();
+    }
+}
+
+void HUDLayout::getllaves(int v){
+    if(v == 1){
+        llave1->show();
+        llave2->hide();
+        llave3->hide();
+    }else if(v == 2){
+        llave1->show();
+        llave2->show();
+        llave3->hide();
+    }else if(v == 3){
+        llave1->show();
+        llave2->show();
+        llave3->show();
+    }else{
+        llave1->hide();
+        llave2->hide();
+        llave3->hide();
     }
 }
 

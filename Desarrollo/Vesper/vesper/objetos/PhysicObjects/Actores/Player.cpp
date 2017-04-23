@@ -57,6 +57,7 @@ void Player::update(){
     }
 	
     hud.getVida(vida);
+//    hud.getllaves(*llaves);
     
 	dvector3D vel;
     /*

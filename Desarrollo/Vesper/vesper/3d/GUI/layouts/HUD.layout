@@ -99,5 +99,23 @@
             <Property name="Image" value="Menu/hud_fondo" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
+        <Window type="Generic/Image" name="llave1" >
+            <Property name="ID" value="19" />
+            <Property name="Area" value="{{0,76},{0,131},{0,104},{0,174}}" />
+            <Property name="Image" value="Menu/h_llave" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="llave2" >
+            <Property name="ID" value="20" />
+            <Property name="Area" value="{{0,100},{0,131},{0,128},{0,174}}" />
+            <Property name="Image" value="Menu/h_llave" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="llave3" >
+            <Property name="ID" value="21" />
+            <Property name="Area" value="{{0,125},{0,131},{0,153},{0,174}}" />
+            <Property name="Image" value="Menu/h_llave" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
     </Window>
 </GUILayout>

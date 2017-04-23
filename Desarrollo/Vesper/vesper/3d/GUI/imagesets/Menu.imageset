@@ -69,4 +69,5 @@
     <Image height="60" name="h_jugar" width="218" xPos="1853" yPos="1004" />
     <Image height="50" name="h_volver" width="227" xPos="2231" yPos="816" />
     <Image height="50" name="h_pantalla" width="315" xPos="2244" yPos="907" />
+    <Image height="106" name="h_llave" width="50" xPos="2151" yPos="683" />
 </Imageset>
