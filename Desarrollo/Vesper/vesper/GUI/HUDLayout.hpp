@@ -31,9 +31,9 @@ private:
    	CEGUI::DefaultWindow *moneda1;
     CEGUI::DefaultWindow *moneda2;
     CEGUI::DefaultWindow *moneda3;
-    CEGUI::DefaultWindow *llave1;
-    CEGUI::DefaultWindow *llave2;
-    CEGUI::DefaultWindow *llave3;
+//    CEGUI::DefaultWindow *llave1;
+//    CEGUI::DefaultWindow *llave2;
+//    CEGUI::DefaultWindow *llave3;
     CEGUI::ProgressBar *vida;
     CEGUI::DefaultWindow* actual;
     
