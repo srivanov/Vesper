@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 875d8789acc5e4a8197b750e83b2e637
+timeCreated: 1493226062
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: botiquin:Cylinder002_polySurface10
+    100004: botiquin:Cylinder002_polySurface11
+    100006: botiquin:Cylinder002_polySurface12
+    100008: botiquin:Cylinder002_polySurface13
+    100010: botiquin:Cylinder002_polySurface14
+    100012: botiquin:Cylinder002_polySurface15
+    100014: botiquin:Cylinder002_polySurface2
+    100016: botiquin:Cylinder002_polySurface3
+    100018: botiquin:Cylinder002_polySurface4
+    100020: botiquin:Cylinder002_polySurface5
+    100022: botiquin:Cylinder002_polySurface6
+    100024: botiquin:Cylinder002_polySurface7
+    100026: botiquin:Cylinder002_polySurface8
+    100028: botiquin:Cylinder002_polySurface9
+    100030: polySurface1_botiquin:Cylinder002
+    400000: //RootNode
+    400002: botiquin:Cylinder002_polySurface10
+    400004: botiquin:Cylinder002_polySurface11
+    400006: botiquin:Cylinder002_polySurface12
+    400008: botiquin:Cylinder002_polySurface13
+    400010: botiquin:Cylinder002_polySurface14
+    400012: botiquin:Cylinder002_polySurface15
+    400014: botiquin:Cylinder002_polySurface2
+    400016: botiquin:Cylinder002_polySurface3
+    400018: botiquin:Cylinder002_polySurface4
+    400020: botiquin:Cylinder002_polySurface5
+    400022: botiquin:Cylinder002_polySurface6
+    400024: botiquin:Cylinder002_polySurface7
+    400026: botiquin:Cylinder002_polySurface8
+    400028: botiquin:Cylinder002_polySurface9
+    400030: polySurface1_botiquin:Cylinder002
+    2300000: botiquin:Cylinder002_polySurface10
+    2300002: botiquin:Cylinder002_polySurface11
+    2300004: botiquin:Cylinder002_polySurface12
+    2300006: botiquin:Cylinder002_polySurface13
+    2300008: botiquin:Cylinder002_polySurface14
+    2300010: botiquin:Cylinder002_polySurface15
+    2300012: botiquin:Cylinder002_polySurface2
+    2300014: botiquin:Cylinder002_polySurface3
+    2300016: botiquin:Cylinder002_polySurface4
+    2300018: botiquin:Cylinder002_polySurface5
+    2300020: botiquin:Cylinder002_polySurface6
+    2300022: botiquin:Cylinder002_polySurface7
+    2300024: botiquin:Cylinder002_polySurface8
+    2300026: botiquin:Cylinder002_polySurface9
+    2300028: polySurface1_botiquin:Cylinder002
+    3300000: botiquin:Cylinder002_polySurface10
+    3300002: botiquin:Cylinder002_polySurface11
+    3300004: botiquin:Cylinder002_polySurface12
+    3300006: botiquin:Cylinder002_polySurface13
+    3300008: botiquin:Cylinder002_polySurface14
+    3300010: botiquin:Cylinder002_polySurface15
+    3300012: botiquin:Cylinder002_polySurface2
+    3300014: botiquin:Cylinder002_polySurface3
+    3300016: botiquin:Cylinder002_polySurface4
+    3300018: botiquin:Cylinder002_polySurface5
+    3300020: botiquin:Cylinder002_polySurface6
+    3300022: botiquin:Cylinder002_polySurface7
+    3300024: botiquin:Cylinder002_polySurface8
+    3300026: botiquin:Cylinder002_polySurface9
+    3300028: polySurface1_botiquin:Cylinder002
+    4300000: botiquin:Cylinder002_polySurface10
+    4300002: botiquin:Cylinder002_polySurface11
+    4300004: botiquin:Cylinder002_polySurface12
+    4300006: botiquin:Cylinder002_polySurface13
+    4300008: botiquin:Cylinder002_polySurface14
+    4300010: botiquin:Cylinder002_polySurface15
+    4300012: botiquin:Cylinder002_polySurface2
+    4300014: botiquin:Cylinder002_polySurface3
+    4300016: botiquin:Cylinder002_polySurface4
+    4300018: botiquin:Cylinder002_polySurface5
+    4300020: botiquin:Cylinder002_polySurface6
+    4300022: botiquin:Cylinder002_polySurface7
+    4300024: botiquin:Cylinder002_polySurface8
+    4300026: botiquin:Cylinder002_polySurface9
+    4300028: polySurface1_botiquin:Cylinder002
+    6400000: botiquin:Cylinder002_polySurface10
+    6400002: botiquin:Cylinder002_polySurface11
+    6400004: botiquin:Cylinder002_polySurface12
+    6400006: botiquin:Cylinder002_polySurface13
+    6400008: botiquin:Cylinder002_polySurface14
+    6400010: botiquin:Cylinder002_polySurface15
+    6400012: botiquin:Cylinder002_polySurface2
+    6400014: botiquin:Cylinder002_polySurface3
+    6400016: botiquin:Cylinder002_polySurface4
+    6400018: botiquin:Cylinder002_polySurface5
+    6400020: botiquin:Cylinder002_polySurface6
+    6400022: botiquin:Cylinder002_polySurface7
+    6400024: botiquin:Cylinder002_polySurface8
+    6400026: botiquin:Cylinder002_polySurface9
+    6400028: polySurface1_botiquin:Cylinder002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
