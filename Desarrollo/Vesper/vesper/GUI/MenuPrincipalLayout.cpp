@@ -43,6 +43,7 @@ void MenuPrincipalLayout::init(CEGUI::RenderTarget* target) {
 void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
     printf("Empieza una nueva partida");
 	actualState->menu = tmELEGIR_PERSONAJE;
+	actualState->empezar();
 }
 
 void MenuPrincipalLayout::onClickLoadScreen(const CEGUI::EventArgs &e){

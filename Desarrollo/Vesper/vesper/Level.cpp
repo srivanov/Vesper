@@ -20,9 +20,10 @@ Level::~Level(){
 		destroy();
 }
 
-bool Level::inicializar(char *numero){
+bool Level::inicializar(){
     loadLevel nivel;
-    
+	char numero[3];
+    sprintf(numero, "%d", actualState->nivel);
     try {
         if(!nivel.load(numero)) throw LOADING_LEVEL;
         if(!exportar_objetos(nivel)) throw EXPORTING_DATA;
@@ -68,8 +69,9 @@ void Level::clear(){
 }
 
 void Level::update(){
-	if(!iniciado)
-		inicializar("3");
+	if(!iniciado){
+		inicializar();
+	}
     clear();
     
     if(input->IsKeyDown(SKY_KEY_ESCAPE)){

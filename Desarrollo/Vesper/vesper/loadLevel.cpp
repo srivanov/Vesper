@@ -66,7 +66,8 @@ bool loadLevel::load(char* fichero) {
     XMLElement* propiedades = map->FirstChildElement("properties");
     if(propiedades){
         XMLElement *propiedad = propiedades->FirstChildElement("property");
-        propiedad->QueryIntAttribute("PUERTA", &puerta);
+//        propiedad->QueryIntAttribute("PUERTA", &puerta);
+		propiedad->QueryIntAttribute("value", &puerta);
     }
     
     map->QueryIntAttribute("width", &m_width);

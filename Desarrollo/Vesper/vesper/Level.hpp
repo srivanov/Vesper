@@ -28,7 +28,7 @@ public:
     Level();
     ~Level();
     bool lvlActivo() const {return iniciado;}
-    bool inicializar(char *numero);
+    bool inicializar();
     void render();
     void update();
     void destroy();

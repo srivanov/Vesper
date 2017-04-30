@@ -24,7 +24,7 @@ class Puerta : public PhysicObject {
     
     int key;
 public:
-    void setKey(int k){key=k;}
+	void setKey(int k){key=k;}
     Puerta();
     ~Puerta(){}
     void inicializar(int id, const tipoPuerta p);

@@ -28,12 +28,21 @@ public:
 	static states* Instance() { static states pinstance; return &pinstance; }
 	void update() { estado = nextState; }
 	const estados* getState() { return &estado; }
+	void empezar(){ nivel=3; }
+	
 	estados nextState;
 	tipoMenu menu;
 	bool destruir;
+	int nivel;
 	void* renderTarget, *renderer;
 private:
-	states() { estado = MENU; destruir = false; }
+	states() {
+		estado = MENU;
+		destruir = false;
+		nextState = MENU;
+//		nextState = PLAYING;
+		nivel = 3;
+	}
 	estados estado;
 };
 
