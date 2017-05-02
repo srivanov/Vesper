@@ -16,11 +16,13 @@ private:
     void calculateAutoPosition();
     
     dvector3D * m_objective, copy_objective, posCamara;
-    dvector3D offSet , incremento;
+    dvector3D offSet; //incremento;
     float m_scale;
     bool autoCamera;
     dvector3D m_speed;
     class render * render_component;
+    float map_width, map_height;
+    
 public:
     void resetScale(){m_scale=1;}
     void setScale(float& scale);
@@ -33,7 +35,9 @@ public:
     void setOffSet(float x,float y, float z);
     void setCameraSpeed(dvector3D&);
     void setOffSet(dvector3D&);
+    void setCoordsMap(float x, float y);
     void update();
+    
 };
 
 #endif /* Camera_hpp */
