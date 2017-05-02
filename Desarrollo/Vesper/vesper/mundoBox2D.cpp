@@ -28,6 +28,16 @@ mundoBox2D:: ~mundoBox2D() {
 }
 
 //TO DO: implementar metodo para limpiar el mundo fisico (se puede usar world->getBodyList())
+void mundoBox2D::cleanWorld(){
+	b2Joint* joint = world->GetJointList();
+	b2Body* body =  world->GetBodyList(), *next;
+	while (body) {
+		next = body->GetNext();
+		world->DestroyBody(body);
+		body = next;
+	}
+}
+
 
 b2World* mundoBox2D::getWorld(){
     return world;

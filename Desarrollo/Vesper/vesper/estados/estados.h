@@ -28,7 +28,7 @@ public:
 	static states* Instance() { static states pinstance; return &pinstance; }
 	void update() { estado = nextState; }
 	const estados* getState() { return &estado; }
-	void empezar(){ nivel=3; }
+	void empezar(){ nivel=1; }
 	
 	estados nextState;
 	tipoMenu menu;

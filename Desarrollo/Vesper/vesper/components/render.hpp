@@ -38,7 +38,7 @@ public:
     void anyadirArma();
 	
 private:
-    std::vector<nodeMesh*> all_nodos;
+    std::vector<ISceneNode*> all_nodos;
 	nodeMesh* nodo;
 	ICameraSceneNode* camara;
     ISceneNode* nodo_suelo;

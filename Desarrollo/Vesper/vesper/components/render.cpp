@@ -14,6 +14,12 @@ render::render(){
 render::~render(){
 	delete nodo;
 	nodo = NULL;
+	std::vector<ISceneNode*>::iterator it = all_nodos.begin();
+	while(it != all_nodos.end()){
+		(*it)->remove();
+		++it;
+	}
+	all_nodos.clear();
 }
 
 void render::update(){
@@ -157,6 +163,7 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 			
 			nodo->setMaterialFlag(EMF_LIGHTING, false);
 			nodo->setPosition(vector3df(x,y,0));
+			all_nodos.push_back(nodo);
             //std::cout << x << "|" << y << std::endl;
         }
     }

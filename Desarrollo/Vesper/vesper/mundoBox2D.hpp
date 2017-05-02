@@ -21,6 +21,7 @@ public:
 	static mundoBox2D* Instance();
 	~mundoBox2D();
 	void update();
+	void cleanWorld();
 
 protected:
 	mundoBox2D();

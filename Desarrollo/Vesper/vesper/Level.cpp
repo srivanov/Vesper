@@ -108,6 +108,7 @@ void Level::destroy(){
 		delete w[0];
 		w.erase(w.begin());
 	}
+	mundoBox2D::Instance()->cleanWorld();
 	iniciado = false;
 }
 
