@@ -19,6 +19,7 @@ menuManager::menuManager(){
 	
 	seleccionado = menus.at(tmMENUPRINCIPAL);
 	actualState = states::Instance();
+	m_IrrlichtRenderer = nullptr;
 }
 
 menuManager::~menuManager(){
