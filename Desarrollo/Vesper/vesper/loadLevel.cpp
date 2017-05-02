@@ -208,6 +208,7 @@ void loadLevel::CreateWorld(){
     
     //INICIALIZAR CAMARA Y PLAYER (AUTOCAMRA ACTIVADO)
     camara = new Camera;
+    camara->setCoordsMap(m_width, m_height);
     
     
     player = new Player;
