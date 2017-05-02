@@ -24,7 +24,6 @@
 		E9AB33001E6C76BD006D8F9D /* SkyMalla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */; };
 		E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33011E6C76CD006D8F9D /* SkyLuz.cpp */; };
 		E9AB33061E6C76F5006D8F9D /* SkyCamara.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */; };
-		E9AB330D1E6CA194006D8F9D /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */; };
 		E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF831E1EE5E50039E88A /* textura.vs */; };
 		E9B3EF8A1E1F21E90039E88A /* libzlibstatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B3EF891E1F21E90039E88A /* libzlibstatic.a */; };
 		E9B3EF941E1F29820039E88A /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EF931E1F29820039E88A /* Mesh.cpp */; };
@@ -53,7 +52,6 @@
 		E9D3DECB1E87CFC800555687 /* TRecursoTextura.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98990D51E5C5AFD0001A36A /* TRecursoTextura.cpp */; };
 		E9D3DECC1E87CFC800555687 /* TRecursoTextura.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E98990D61E5C5AFD0001A36A /* TRecursoTextura.hpp */; };
 		E9D3DECD1E87D04800555687 /* Shader.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B8EB6A1E16CE93003811A4 /* Shader.h */; };
-		E9D3DECE1E87D04800555687 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */; };
 		E9D3DECF1E87D04800555687 /* ShaderManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */; };
 		E9D3DED01E87D05700555687 /* SkyEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E96948C21E6873E600E27DFD /* SkyEngine.cpp */; };
 		E9D3DED11E87D05700555687 /* SkyEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E96948C31E6873E600E27DFD /* SkyEngine.hpp */; };
@@ -132,7 +130,6 @@
 		E9AB33021E6C76CD006D8F9D /* SkyLuz.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyLuz.hpp; sourceTree = "<group>"; };
 		E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = SkyCamara.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		E9AB33051E6C76F5006D8F9D /* SkyCamara.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyCamara.hpp; sourceTree = "<group>"; };
-		E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
 		E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderManager.hpp; sourceTree = "<group>"; };
 		E9B3EF831E1EE5E50039E88A /* textura.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textura.vs; sourceTree = "<group>"; };
 		E9B3EF841E1EE5E50039E88A /* textura.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textura.frag; sourceTree = "<group>"; };
@@ -532,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				E9B8EB6A1E16CE93003811A4 /* Shader.h */,
-				E9AB330B1E6CA194006D8F9D /* ShaderManager.cpp */,
 				E9AB330C1E6CA194006D8F9D /* ShaderManager.hpp */,
 			);
 			name = ShaderManager;
@@ -1239,7 +1235,6 @@
 				E992F7851E4A57F3004D80EF /* TCamara.cpp in Sources */,
 				E9EFC4041E49EB94000E84B1 /* TNodo.cpp in Sources */,
 				E943945B1E09A7CB0053DBE7 /* main.cpp in Sources */,
-				E9AB330D1E6CA194006D8F9D /* ShaderManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,7 +1242,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D3DECE1E87D04800555687 /* ShaderManager.cpp in Sources */,
 				E9D3DEC91E87CFC800555687 /* TRecursoMalla.cpp in Sources */,
 				E9D3DEC41E87CFC800555687 /* Mesh.cpp in Sources */,
 				E9D3DED31E87D05700555687 /* SkyMalla.cpp in Sources */,
