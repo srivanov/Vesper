@@ -56,5 +56,6 @@ void PausaLayout::onClickSalir(const CEGUI::EventArgs &e) {
     printf("Pulsado boton salir\n");
 //    Game::Instance()->stop();
 	actualState->menu = tmMENUPRINCIPAL;
+    actualState->guardarPartida();
 	actualState->destruir = true;
 }

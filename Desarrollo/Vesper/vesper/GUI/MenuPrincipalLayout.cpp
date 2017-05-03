@@ -49,6 +49,7 @@ void MenuPrincipalLayout::onClickStartGame(const CEGUI::EventArgs &e) {
 void MenuPrincipalLayout::onClickLoadScreen(const CEGUI::EventArgs &e){
     printf("Voy a la pantalla cargar partida");
     actualState->menu = tmELEGIR_PERSONAJE;
+    actualState->cargarPartida();
 }
 
 void MenuPrincipalLayout::onClickOptions(const CEGUI::EventArgs &e){

@@ -21,10 +21,11 @@ public:
 		if(g){
 			if(g->getObjectType()==REHEN){
 				estado->nextState = MENU;
-				estado->menu = tmELEGIR_PERSONAJE;
+                estado->menu = tmELEGIR_PERSONAJE;
 				estado->destruir = true;
 				if(estado->nivel < 5)
 					estado->nivel += 1;
+                estado->guardarPartida();
 			}
 		}
 	}

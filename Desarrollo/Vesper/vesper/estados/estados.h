@@ -9,6 +9,8 @@
 #ifndef estados_h
 #define estados_h
 
+#include "../JSONParser.hpp"
+
 enum estados{
 	MENU = 0,
 	PLAYING,
@@ -29,6 +31,22 @@ public:
 	void update() { estado = nextState; }
 	const estados* getState() { return &estado; }
 	void empezar(){ nivel=1; }
+    
+    void guardarPartida() {
+        std::map<char *, char *> valores;
+        
+        char buf_nivel[2];
+        sprintf(buf_nivel,"%d", nivel);
+        
+        valores.insert(std::pair<char *, char *>("nivel", buf_nivel));
+        
+        JSONParser::guardar(filename, valores);
+    }
+    void cargarPartida() {
+        std::map<std::string, std::string> valores = JSONParser::leer(filename);
+        
+        nivel = JSONParser::toInt(valores.at("nivel"));
+    }
 	
 	estados nextState;
 	tipoMenu menu;
@@ -45,6 +63,8 @@ private:
 		nivel = 3;
 	}
 	estados estado;
+    
+    const char *filename = "datos_partida.json";
 };
 
 #endif /* estados_h */
