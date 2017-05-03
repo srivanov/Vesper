@@ -93,9 +93,9 @@ void Camera::calculateAutoPosition(){
    // }
     
     //printf("MAPwdth: %.1f, MAPheight: %.1f", map_width, map_height);
-    printf("\n Pos_cam: %.1f, %.1f", aux1.x, aux1.y );
-    printf("\n Targ_cam: %.1f, YYYY: %.1f", copy_objective.x, copy_objective.y );
-    printf("\n offsetXYZ: %.1f,%.1f,%.1f", offSet.x,offSet.y,offSet.z);
+//    printf("\n Pos_cam: %.1f, %.1f", aux1.x, aux1.y );
+//    printf("\n Targ_cam: %.1f, YYYY: %.1f", copy_objective.x, copy_objective.y );
+//    printf("\n offsetXYZ: %.1f,%.1f,%.1f", offSet.x,offSet.y,offSet.z);
 
     render_component->setCamTarget(copy_objective);/////////
 }

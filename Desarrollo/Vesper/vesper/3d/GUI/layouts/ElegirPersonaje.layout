@@ -13,15 +13,8 @@
             <Property name="AlwaysOnTop" value="true" />
             <Property name="ZOrderingEnabled" value="false" />
         </Window>
-        <Window type="Generic/ImageButton" name="jugar" >
-            <Property name="ID" value="4" />
-            <Property name="Area" value="{{0,1140},{0,665},{0,1232},{0,686}}" />
-            <Property name="HoverImage" value="Menu/h_jugar" />
-            <Property name="AlwaysOnTop" value="true" />
-            <Property name="NormalImage" value="Menu/boton_jugar" />
-            <Property name="PushedImage" value="Menu/boton_jugar" />
-        </Window>
         <Window type="Generic/ImageButton" name="personaje1" >
+            <Property name="ID" value="5" />
             <Property name="Area" value="{{0,516},{0,180},{0,790},{0,560}}" />
             <Property name="HoverImage" value="Menu/silueta3" />
             <Property name="AlwaysOnTop" value="true" />
@@ -29,6 +22,7 @@
             <Property name="PushedImage" value="Menu/silueta2sel" />
         </Window>
         <Window type="Generic/ImageButton" name="personaje2" >
+            <Property name="ID" value="6" />
             <Property name="Area" value="{{0,926},{0,184},{0,1200},{0,564}}" />
             <Property name="HoverImage" value="Menu/silueta4" />
             <Property name="AlwaysOnTop" value="true" />
@@ -36,6 +30,7 @@
             <Property name="PushedImage" value="Menu/silueta1sel" />
         </Window>
         <Window type="Generic/ImageButton" name="personaje3" >
+            <Property name="ID" value="7" />
             <Property name="Area" value="{{0,103},{0,180},{0,377},{0,560}}" />
             <Property name="HoverImage" value="Menu/silueta4" />
             <Property name="AlwaysOnTop" value="true" />
@@ -43,6 +38,7 @@
             <Property name="PushedImage" value="Menu/silueta1sel" />
         </Window>
         <Window type="Generic/Image" name="titulo" >
+            <Property name="ID" value="2" />
             <Property name="Area" value="{{0,16},{0,32},{0,698},{0,86}}" />
             <Property name="Alpha" value="0.9" />
             <Property name="Image" value="Menu/titulo_selecciona" />
@@ -57,6 +53,14 @@
             <Property name="AlwaysOnTop" value="true" />
             <Property name="NormalImage" value="Menu/boton_volver" />
             <Property name="PushedImage" value="Menu/boton_volver" />
+        </Window>
+        <Window type="Generic/ImageButton" name="jugar" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,1140},{0,665},{0,1232},{0,686}}" />
+            <Property name="HoverImage" value="Menu/h_jugar" />
+            <Property name="AlwaysOnTop" value="true" />
+            <Property name="NormalImage" value="Menu/boton_jugar" />
+            <Property name="PushedImage" value="Menu/boton_jugar" />
         </Window>
     </Window>
 </GUILayout>

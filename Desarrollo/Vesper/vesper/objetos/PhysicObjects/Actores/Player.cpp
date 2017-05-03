@@ -25,14 +25,26 @@ Player::Player(){
 	((habilidadEspecial*)componente)->setTipo(tHabINVISIBLE);
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
     componente->setFather(this);
-    addNodo("3d/player.obj");
+    
+    char buffer[2], ruta[50] = "";
+    estado = states::Instance();
+    if(estado->character > 0 && estado->character <= 3) {
+        sprintf(buffer, "%d", estado->character);
+        
+        strcat(ruta, "3d/player");
+        strcat(ruta, buffer);
+        strcat(ruta, ".obj");
+    } else {
+        strcat(ruta, "3d/player1.obj");
+    }
+    addNodo(ruta);
+    
     setTexture("3d/naranja.jpg");
 	
 	input = MyEventReceiver::Instance();
     vida = 100;
 	hud.init();
 	t.start();
-	estado = states::Instance();
 }
 
 void Player::inicializar(int ID, int numL){
