@@ -24,13 +24,15 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if (enemyhealth.currentHealth > 1 && playerhealth.currentHealth > 1)
+        if (enemyhealth.currentHealth < 0 && playerhealth.currentHealth < 0)
         {
-            nav.SetDestination(player.position);
+			nav.enabled = false;
         }
-        else
-        {
-            nav.enabled = false;
+        else {
+			Vector3 distancia = me.position - player.position;
+			if(distancia.magnitude < 30){
+				nav.SetDestination (player.position);
+			}
         }
 	}
 }
