@@ -23,6 +23,8 @@ public:
     void getVida(int v);
     void getMonedas(int v);
     void getllaves(int v);
+    void getMunicion(unsigned int municion);
+    void getCarga(unsigned int carga);
     void ocultarArmas();
     void mostrarArma(typeArma tipo);
     
@@ -36,6 +38,8 @@ private:
 //    CEGUI::DefaultWindow *llave3;
     CEGUI::ProgressBar *vida;
     CEGUI::DefaultWindow* actual;
+    CEGUI::DefaultWindow* label;
+    std::string carga_muni, aux;
     
     std::map<typeArma,CEGUI::DefaultWindow*> armas;
     

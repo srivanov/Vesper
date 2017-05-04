@@ -30,6 +30,7 @@ gun::gun(const typeArma t){
     }
     
 	tiempo_vida = cualidad.alcance/3.0f;
+    carga_max = cualidad.cargador;
 	temp.start();
 }
 
@@ -63,24 +64,35 @@ void gun::render(){
 }
 
 void gun::atacar(dvector3D &pos, dvector3D &dir){
-	if(cualidad.municion > 0)
+	if(cualidad.municion > 0 || cualidad.cargador > 0)
 	{
-		if(temp.tTranscurrido(1.0f/cualidad.cadencia))
+		if(cualidad.cargador>0 && temp.tTranscurrido(1.0f/cualidad.cadencia))
 		{
 			temp.reset();
             insertBala(pos, dir, 3.0f);
 			if(cualidad.tipo != tMARTILLO && cualidad.tipo != tPALA) {
-                cualidad.municion--;
+//                cualidad.municion--;
                 cualidad.cargador--;
             }
 		}
-		else if(temp.tTranscurrido(cualidad.recarga))
-				cualidad.cargador = 6;
+        else if(temp.tTranscurrido(cualidad.recarga)){
+            if(cualidad.municion >= carga_max){
+                cualidad.cargador = carga_max;
+                cualidad.municion -= carga_max;
+            }else{
+                cualidad.cargador = cualidad.municion;
+                cualidad.municion = 0;
+            }
+        }
 	}
 }
 
 unsigned int gun::getMunicion(){
-	return 1;
+	return cualidad.municion;
+}
+
+unsigned int gun::getCarga(){
+    return cualidad.cargador;
 }
 
 void gun::setMunicion(unsigned int n){

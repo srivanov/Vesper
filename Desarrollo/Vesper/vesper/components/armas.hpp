@@ -19,7 +19,9 @@ public:
     void insertarArma(int a);
     void eliminarArma(std::vector<gun*>::iterator iter);
     typeArma getArmaActual();
-	
+    unsigned int getMunicion() { return (*seleccionada)->getMunicion(); }
+    unsigned int getCarga() { return (*seleccionada)->getCarga(); }
+    
 private:
 //	armaInterface* aux;
 	std::vector<gun*>::iterator seleccionada, aux;

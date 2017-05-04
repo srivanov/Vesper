@@ -39,6 +39,8 @@ void HUDLayout::init(){
 //    
 //    llave3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(21));
     
+    label = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(22));
+    
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPISTOLA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11))));
     
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tESCOPETA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12))));
@@ -67,6 +69,19 @@ void HUDLayout::init(){
 void HUDLayout::getVida(int v){
     float normal_life = (float)v * 0.01; // Paso la vida a un numero entre 0 y 1 para la progress bar
     vida->setProgress(normal_life);
+}
+
+void HUDLayout::getMunicion(unsigned int municion) {
+    //    label->setText("HOLA");
+    //    printf("%d", municion);
+    //    aux = carga_muni;
+    carga_muni = aux + " / " + std::to_string(municion);
+    label->setText(static_cast<CEGUI::String>(carga_muni));
+}
+
+void HUDLayout::getCarga(unsigned int carga){
+    carga_muni = aux = std::to_string(carga);
+    label->setText(static_cast<CEGUI::String>(carga_muni));
 }
 
 void HUDLayout::getMonedas(int v){

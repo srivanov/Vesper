@@ -53,6 +53,10 @@ void Player::inicializar(int ID, int numL){
 	m_ID = ID; activa = 0;
 	for(size_t a=0;a<numLlaves;a++)
 		llaves[a]=-1;
+    
+    hud.getVida(vida);
+    hud.getCarga(arma->getCarga());
+    hud.getMunicion(arma->getMunicion());
 }
 
 Player::~Player(){
@@ -88,8 +92,11 @@ void Player::update(){
 	if(input->IsKeyDown(SKY_KEY_D))
 		vel.x += VELOCIDADN;
 	
-	if(input->getLeftClick())
+    if(input->getLeftClick()){
         atacar();
+    	hud.getCarga(arma->getCarga());
+    	hud.getMunicion(arma->getMunicion());
+    }
 	if(t.tTranscurrido(2.0f)){
 		if(input->IsKeyDown(SKY_KEY_TAB)){
 		   	cambiarArma();
@@ -131,6 +138,8 @@ void Player::atacar(){
 void Player::cambiarArma(){
     arma->changeGun();
     hud.mostrarArma(arma->getArmaActual());
+    hud.getCarga(arma->getCarga());
+    hud.getMunicion(arma->getMunicion());
     std::cout << arma->getArmaActual() << std::endl;
 }
 

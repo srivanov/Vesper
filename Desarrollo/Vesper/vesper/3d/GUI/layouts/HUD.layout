@@ -117,5 +117,10 @@
             <Property name="Image" value="Menu/h_llave" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
+        <Window type="Generic/Label" name="Label" >
+            <Property name="ID" value="22" />
+            <Property name="Area" value="{{0,15},{0,667},{0,143},{0,699}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
     </Window>
 </GUILayout>

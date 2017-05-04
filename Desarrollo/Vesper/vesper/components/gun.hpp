@@ -26,6 +26,7 @@ public:
     ~gun();
 	void atacar(dvector3D &pos, dvector3D &dir);
 	unsigned int getMunicion();
+    unsigned int getCarga();
 	void setMunicion(unsigned int n);
 	void update();
     typeArma getType(){return cualidad.tipo;}
@@ -36,6 +37,7 @@ private:
 	float tiempo_vida;
     cualidades cualidad;
 	tiempo temp;
+    unsigned int carga_max;
     std::vector<Bala*> balas;
     Bala* bala_aux;
     std::vector<Bala*>::iterator iter;
