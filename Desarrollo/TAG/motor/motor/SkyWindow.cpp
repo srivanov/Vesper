@@ -82,7 +82,6 @@ void SkyWindow::beginDraw(){
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	//limpiamos el buffer de color y Z-buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//	Fps::Instance()->update();
 }
 
 void SkyWindow::endDraw(){

@@ -17,6 +17,7 @@
 #include "Mesh.hpp"
 
 class TGestorRecursos;
+class dvector3D;
 
 class TRecursoMalla : public TRecurso{
 public:
@@ -32,15 +33,14 @@ private:
 	void processNode(aiNode* node, const aiScene* scene);
 	Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
 	void loadMaterialTextures(Texture **tex, aiMaterial* mat, aiTextureType type, std::string typeName, int &index);
-	
+	void takeMin(glm::vec3 *d, float *p);
+	void takeMax(glm::vec3 *d, float *p);
 	Texture* pedirTextura(char* ruta);
 	
-//	std::vector<Mesh*> meshes;
+	/*______VARIABLES_______*/
 	Mesh* meshes[10];
 	std::string rFile, rTextura, directorio;
-//	glm::mat4 modelMatrix;
-//	glm::vec3 position, rotation;
-	//variables para imprimir por consolar datos
+	//variables para imprimir por consola datos
 	unsigned int nVertices, nNormales, nCaras, nIndices, numMeshes;
 	bool bTex;
 	TGestorRecursos* gestor;

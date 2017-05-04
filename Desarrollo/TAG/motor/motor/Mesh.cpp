@@ -15,8 +15,12 @@ Mesh::Mesh(Vertex *verts, GLuint *inds, Texture **texs, GLint numV, GLint numI, 
 Mesh::~Mesh(){
 	delete[] vertices;
 	delete [] indices;
-//	delete[] *texturas;
-	delete texturas;
+	delete[] texturas;
+}
+
+void Mesh::asignarBB(glm::vec3 *min, glm::vec3 *max){
+	BB.x = min->x; BB.y = min->y; BB.z = min->z;
+	BB.r = max->x; BB.s = max->y; BB.t = max->z;
 }
 
 void Mesh::Draw(Shader* shader, Texture* textura){
