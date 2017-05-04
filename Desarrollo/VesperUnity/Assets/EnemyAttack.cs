@@ -30,7 +30,7 @@ public class EnemyAttack : MonoBehaviour {
         }
 	}
     void OnTriggerEnter(Collider other)
-    {
+	{
         if(other.gameObject == player)
         {
             PlayerInRange = true;
