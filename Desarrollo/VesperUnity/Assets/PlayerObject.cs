@@ -17,6 +17,9 @@ public class PlayerObject : MonoBehaviour {
 	void Update () {
 		
 	}
+	public bool Llave(){
+		return llave;
+	}
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.CompareTag("Objectos"))

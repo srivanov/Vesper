@@ -53,6 +53,7 @@
      <Compile Include="Assets\PlayerHealth.cs" />
      <Compile Include="Assets\PlayerObject.cs" />
      <Compile Include="Assets\Puerta.cs" />
+     <Compile Include="Assets\Rehen.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     EnemyHealth enemyhealth;
     PlayerHealth playerhealth;
     NavMeshAgent nav;
+	public float distVision = 30;
 
     // Use this for initialization
     void Start () {
@@ -30,7 +31,7 @@ public class Enemy : MonoBehaviour {
         }
         else {
 			Vector3 distancia = me.position - player.position;
-			if(distancia.magnitude < 30){
+			if(distancia.magnitude < distVision){
 				nav.SetDestination (player.position);
 			}
         }
