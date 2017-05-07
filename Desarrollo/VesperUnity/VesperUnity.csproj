@@ -87,12 +87,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnemyAttack.cs" />
-    <Compile Include="Assets\EnemyHealth.cs" />
-    <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\EjecutarGame.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\GunController.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\PlayerObject.cs" />
+    <Compile Include="Assets\Scripts\Puerta.cs" />
+    <Compile Include="Assets\Scripts\Rehen.cs" />
+    <Compile Include="Assets\Scripts\TypeObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
