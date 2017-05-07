@@ -46,27 +46,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-     <Compile Include="Assets\EjecutarGame.cs" />
-     <Compile Include="Assets\EnemyAttack.cs" />
-     <Compile Include="Assets\EnemyHealth.cs" />
-     <Compile Include="Assets\MenuController.cs" />
-     <Compile Include="Assets\PlayerHealth.cs" />
-     <Compile Include="Assets\PlayerObject.cs" />
-     <Compile Include="Assets\Puerta.cs" />
-     <Compile Include="Assets\Rehen.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\EjecutarGame.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
-=======
-     <Compile Include="Assets\EnemyAttack.cs" />
-     <Compile Include="Assets\EnemyHealth.cs" />
-     <Compile Include="Assets\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\GunController.cs" />
->>>>>>> Stashed changes
+     <Compile Include="Assets\Scripts\MenuController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\TypeObject.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\PlayerObject.cs" />
+     <Compile Include="Assets\Scripts\Puerta.cs" />
+     <Compile Include="Assets\Scripts\Rehen.cs" />
+     <Compile Include="Assets\Scripts\TypeObject.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
