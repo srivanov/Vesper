@@ -16,6 +16,7 @@ class Fuente : public PhysicObject {
 private:
     bool rota, NPCKnows;
 public:
+    void romper(){eliminar=true;}
     Fuente();
     ~Fuente();
     void update();

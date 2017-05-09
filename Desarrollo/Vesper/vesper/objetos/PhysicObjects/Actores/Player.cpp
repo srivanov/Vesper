@@ -10,13 +10,15 @@
 #include "../PlayerObjects.hpp"
 #include <iostream>
 #include "../World/Puerta.hpp"
+#include "../World/Alarm.hpp"
+#include "../World/Fuente.hpp"
 
 #define VELOCIDADN 2.f
 
 
 
 
-Player::Player(){
+Player::Player() : obj_colisionado(nullptr){
     
     arma = new armas;
     componentes.insert(std::pair<ComponentType, component*>(ARMAS,arma));
@@ -44,7 +46,7 @@ Player::Player(){
 	input = MyEventReceiver::Instance();
     vida = 100;
 	hud.init();
-	t.start();
+    t.start();t2.start();
 }
 
 void Player::inicializar(int ID, int numL){
@@ -83,6 +85,16 @@ void Player::update(){
     }
      */
 	
+    if(obj_colisionado!=nullptr){
+        float dist = EasyMath::EucCalcularDistancia(*obj_colisionado->getPosition(), *getPosition());
+        if(dist>2.f)
+            obj_colisionado = nullptr;
+        else{
+            if(obj_colisionado->getObjectType()==ENEMIGOS && t2.tTranscurrido(0.5)){
+                vida-=5;t2.reset();
+            }
+        }
+    }
     if(input->IsKeyDown(SKY_KEY_W))
 		vel.y += VELOCIDADN;
     if(input->IsKeyDown(SKY_KEY_S))
@@ -97,15 +109,21 @@ void Player::update(){
     	hud.getCarga(arma->getCarga());
     	hud.getMunicion(arma->getMunicion());
     }
-	if(t.tTranscurrido(2.0f)){
+    if(arma->getArmaActual()==tPALA)
+        printf("PALA \n");
+	if(t.tTranscurrido(0.5f)){
 		if(input->IsKeyDown(SKY_KEY_TAB)){
 		   	cambiarArma();
 			t.reset();
 		}
-		if(input->IsKeyDown(SKY_KEY_E)){
+		if(input->IsKeyDown(SKY_KEY_Q)){
 			changeActiveKey();
 			t.reset();
 		}
+        if(input->IsKeyDown(SKY_KEY_E)){
+            accionar();
+            t.reset();
+        }
 	}
     if(input->IsKeyDown(SKY_KEY_SPACE))
         vel*=2;
@@ -176,20 +194,17 @@ void Player::asignarLLave(int value){
 }
 
 void Player::contacto(PhysicObject * g){
-    if(g != NULL){
+    if(g != nullptr){
         if(g->getObjectType() == PALA){
             arma->insertarArma(9);
         }
-		if(g->getObjectType() == ENEMIGOS)
-			vida-=5;
+		//if(g->getObjectType() == ENEMIGOS)
+			
 		
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();
             hud.getMonedas(h->getActual());
-        }
-        if(g->getObjectType() == ALARMA){
-            
         }
         if(g->getObjectType() == PIEDRA ||
            (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS))
@@ -199,11 +214,6 @@ void Player::contacto(PhysicObject * g){
             asignarLLave(static_cast<PlayerObjects*>(g)->Llave());
             
         
-        if(g->getObjectType() == PUERTA){
-        	tipoPuerta d = static_cast<Puerta*>(g)->getPuerta();
-            if(d == pdestructiva) vida -= 10;
-            
-        }
     }
     obj_colisionado = g;
 }
@@ -218,20 +228,25 @@ void Player::addArma(){
 
 
 void Player::accionar(){
-    /*
-    if(obj_colisionado != NULL){
-        if(*obj_colisionado->getObjectType() == ALARMA){
-            if(!(static_cast<alarma*>(obj_colisionado)->estaActivado())){
-                static_cast<alarma*>(obj_colisionado)->activar();
-            }
-        }else if(*obj_colisionado->getObjectType() == PUERTA){
-            if(!(static_cast<puerta*>(obj_colisionado))->estasAbierta()){
-                static_cast<puerta*>(obj_colisionado)->abre();
-            }else
-                static_cast<puerta*>(obj_colisionado)->cierra();
+    
+    if(obj_colisionado != nullptr){
+        if(obj_colisionado->getObjectType() == ALARMA && arma->getArmaActual() == tPALA){
+            static_cast<Alarm*>(obj_colisionado)->romper();
         }
+        else if(obj_colisionado->getObjectType() == FUENTE && arma->getArmaActual() == tPALA){
+            static_cast<Fuente*>(obj_colisionado)->romper();
+        }
+        else if(obj_colisionado->getObjectType() == PUERTA){
+            Puerta * puerta = static_cast<Puerta*>(obj_colisionado);
+            if(puerta->abrir(llaves[activa])){
+                if(puerta->getPuerta() == pdestructiva) vida -= 10;
+            }
+            
+        }
+        return;
     }
-     */
+    printf("NO HAY OBJECTOS DE INTERACT \n");
+    
 }
 
 void Player::cuerpoacuerpo(){

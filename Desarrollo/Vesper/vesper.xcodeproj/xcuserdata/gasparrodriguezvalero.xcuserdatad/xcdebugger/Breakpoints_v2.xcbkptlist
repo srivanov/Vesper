@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Player.cpp"
-            timestampString = "512498756.771804"
+            timestampString = "516034916.649616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "Player::update()"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "Player::~Player()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -544,6 +544,22 @@
             startingLineNumber = "14"
             endingLineNumber = "14"
             landmarkName = "RehenIA::RehenIA(dvector3D * pos)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/objetos/PhysicObjects/Actores/Player.cpp"
+            timestampString = "516034916.649616"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "Player::update()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

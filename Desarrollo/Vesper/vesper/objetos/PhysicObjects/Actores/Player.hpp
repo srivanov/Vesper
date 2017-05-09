@@ -30,7 +30,7 @@ protected:
     int vida;
 	HUDLayout hud;
 	states* estado;
-	tiempo t;
+	tiempo t, t2;
 	MyEventReceiver* input;
 public:
     void inicializar(int ID,int LLaves);

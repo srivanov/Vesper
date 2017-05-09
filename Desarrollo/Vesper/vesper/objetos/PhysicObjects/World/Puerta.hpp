@@ -31,7 +31,7 @@ public:
     void contacto(PhysicObject *g);
     void contactoEnd(PhysicObject *g){}
     const tipoPuerta getPuerta() {return pu;}
-    
+    bool abrir(int llave);
 private:
     tipoPuerta pu;
     void activarAlarma();

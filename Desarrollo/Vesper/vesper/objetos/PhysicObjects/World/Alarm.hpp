@@ -28,6 +28,7 @@ public:
     void update();
     virtual void contacto(PhysicObject*);
     virtual void contactoEnd(PhysicObject*){}
+    void romper(){eliminar=true;}
 };
 
 #endif /* Alarm_hpp */

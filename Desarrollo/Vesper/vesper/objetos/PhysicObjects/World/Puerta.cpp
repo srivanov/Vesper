@@ -27,10 +27,18 @@ void Puerta::activarAlarma(){
 }
 
 void Puerta::contacto(PhysicObject *g){
+    /*
     if(g && g->getObjectType()==PLAYER){
         if(static_cast<Player*>(g)->getActiveKey()==key){
             eliminar = true;
             if(pu==palarma) activarAlarma();
         }
     }
+     */
+}
+bool Puerta::abrir(int llave){
+    if(key!=llave)
+        return false;
+    eliminar = true;
+    return true;
 }
