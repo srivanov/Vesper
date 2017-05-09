@@ -21,9 +21,9 @@ enum tipoPuerta{
 };
 
 class Puerta : public PhysicObject {
-    
     int key;
 public:
+    bool EstaAbierta(){return abierta;}
 	void setKey(int k){key=k;}
     Puerta();
     ~Puerta(){}
@@ -33,6 +33,7 @@ public:
     const tipoPuerta getPuerta() {return pu;}
     bool abrir(int llave);
 private:
+    bool abierta;
     tipoPuerta pu;
     void activarAlarma();
 };

@@ -29,14 +29,14 @@ bool Level::inicializar(){
         if(!exportar_objetos(nivel)) throw EXPORTING_DATA;
     } catch (LEVEL_ERRORS e) {
         std::string ERROR = " ### ERROR ### ";
-        if(e==LOADING_LEVEL) ERROR+=" | LOADING LEVEL | ";
-        if(e==EXPORTING_DATA) ERROR+=" | EXPORTING DATA | ";
-        if(e==DELETE_DATA) ERROR+=" | DELETE DATA | ";
-        if(e==READING_LAYER_DATA) ERROR+=" | LAYER DATA | ";
-        if(e==READING_MURO_DATA) ERROR+=" | MURO DATA | ";
-        if(e==READING_GRAPH_DATA) ERROR+=" | GRAPH DATA | ";
-        if(e==GRAPH_NODO_CONNECTION) ERROR+=" | NODO CONNECTION | ";
-        if(e==FACTORY_ERROR) ERROR+=" | FACTORY CONSTRUCTION | ";
+        if(e==LOADING_LEVEL)        ERROR+=" | LOADING LEVEL | ";
+        if(e==EXPORTING_DATA)       ERROR+=" | EXPORTING DATA | ";
+        if(e==DELETE_DATA)          ERROR+=" | DELETE DATA | ";
+        if(e==READING_LAYER_DATA)   ERROR+=" | LAYER DATA | ";
+        if(e==READING_MURO_DATA)    ERROR+=" | MURO DATA | ";
+        if(e==READING_GRAPH_DATA)   ERROR+=" | GRAPH DATA | ";
+        if(e==GRAPH_NODO_CONNECTION)ERROR+=" | NODO CONNECTION | ";
+        if(e==FACTORY_ERROR)        ERROR+=" | FACTORY CONSTRUCTION | ";
         cout << ERROR << " ### ERROR ### " << endl;
         return iniciado;
     }

@@ -23,6 +23,7 @@ class Alarm : public PhysicObject {
     bool estaActivado();
     
 public:
+    bool EstaRota(){return rota;}
     Alarm();
     ~Alarm();
     void update();

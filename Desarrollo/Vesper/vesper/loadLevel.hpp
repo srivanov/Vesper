@@ -47,7 +47,7 @@ class loadLevel {
     Player* player;
     Camera* camara;
     Rehen* rehen;
-    dvector3D * pos_salida;
+    Salida * salida;
     void CreateWorld();
     int LLAVES, puerta;
 public:

@@ -13,14 +13,16 @@
 #include <vector>
 #include "../../../Arquitectura IA/LevelBlackBoard.hpp"
 #include "../../../Arquitectura IA/gestor_eventos.hpp"
+#include "../../../Arquitectura IA/ObjectsMemory.hpp"
 #include "../../../Sistema de Decision/Behaviour_tree2.hpp"
 
 class Bala;
 
 class Enemy : public PhysicObject {
 protected:
-     NpcBook * book;
-     Nodo_base * Arbol;
+    NpcBook * book;
+    Nodo_base * Arbol;
+    MemoryObjects * memory;
 private:
     float tiempo_vida, velocidad;
     dvector3D direccion;

@@ -9,18 +9,18 @@
 #include "RehenIA.hpp"
 #define VELOCIDAD 1.5f
 
-RehenIA::RehenIA(dvector3D * pos) : player(nullptr) , m_salida(nullptr){
+RehenIA::RehenIA(dvector3D * pos) : player(nullptr) , m_salida(nullptr) {
     actual = HIBERNANDO;
     posActual = pos;
     change = Fsalida = false;
     t.start();
 }
 
-
 void RehenIA::changeState(R_states sta){
     actual = sta;
     change = true;
 }
+
 RehenIA::~RehenIA(){}
 
 void RehenIA::inicializar(dvector3D * pos, dvector3D pos2){
@@ -49,9 +49,8 @@ void RehenIA::update(){
 }
 
 void RehenIA::calcularCamino(){
-    if(actual==ASUSTADO){
+    if(actual==ASUSTADO)
         camino = PathPlanning::instance()->obtenerCamino(posActual, &posInicial);
-    }
     change = false;
 }
 
@@ -88,14 +87,19 @@ vuelta:
     
     float aux = EasyMath::EucCalcularDistancia(*posActual,calculo);
     
-    if(EasyMath::EucCalcularDistancia(*m_salida, *posActual) < 4.0f && !Fsalida)
+    if(EasyMath::EucCalcularDistancia(*m_salida, *posActual) < 4.0f && !Fsalida && t.tTranscurrido(1)){
         Fsalida = true;
+        t.reset();
+    }
     
     if(actual==ASUSTADO && aux<1.0f){
             camino.erase(camino.begin());
             goto vuelta;
     }
-    else if(actual==SIGUIENDO && aux < 2.0f && !Fsalida) return;
+    else if(actual==SIGUIENDO){
+        if(aux > 8.0f){actual = HIBERNANDO;return;}
+        if(aux < 2.0f && !Fsalida) return;
+    }
     
     float xABS = calculo.x-(posActual->x);
     float yABS = calculo.y-(posActual->y);

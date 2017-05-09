@@ -60,13 +60,7 @@ void ContactListener::BeginContact(b2Contact* contact){
 	else if(fixB->IsSensor())
 		esSensor(g2, g1);
 	else{
-        /*
-		if ((isType(g1, REHEN)	||	isType(g2, REHEN))	&&
-			(isType(g1, PLAYER)	||	isType(g2, PLAYER))	)
-			atarlos(g1, fixB->GetBody());
-		else{*/
-			contacta(g1, g2); contacta(g2, g1);
-		//}
+        contacta(g1, g2); contacta(g2, g1);
 	}
 	
 	

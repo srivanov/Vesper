@@ -14,6 +14,9 @@
 #include "../PathFinding/PathPlanning.hpp"
 #include "../tiempo.h"
 #include <vector>
+#include <iostream>
+
+using namespace std;
 
 enum R_states {
         HIBERNANDO = 0
@@ -38,7 +41,10 @@ class RehenIA {
     bool Fsalida;
 public:
     bool inicializado();
-    void setSalida(dvector3D* salida){m_salida=salida;}
+    void setSalida(dvector3D* salida){
+        m_salida=salida;
+        cout << "SALIDA :" << m_salida->x << "|" << m_salida->y << "|" << m_salida->z << endl;
+    }
     RehenIA(dvector3D * pos);
     ~RehenIA();
     void changeState(R_states);

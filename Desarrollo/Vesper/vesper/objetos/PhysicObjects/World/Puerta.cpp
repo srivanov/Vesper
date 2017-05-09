@@ -13,6 +13,7 @@ Puerta::Puerta(){
     addNodo("3d/door.obj");
     setTexture("3d/Door_Diffuse.png");
 	key = 1;
+    abierta = false;
 }
 
 void Puerta::inicializar(int id, const tipoPuerta p){
@@ -39,6 +40,8 @@ void Puerta::contacto(PhysicObject *g){
 bool Puerta::abrir(int llave){
     if(key!=llave)
         return false;
+    
+    abierta = true;
     eliminar = true;
     return true;
 }

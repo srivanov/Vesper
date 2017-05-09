@@ -473,22 +473,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vesper/Arquitectura IA/RehenIA.cpp"
-            timestampString = "516038301.683535"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "RehenIA::update()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Rehen.cpp"
             timestampString = "514111338.375154"
             startingColumnNumber = "9223372036854775807"
@@ -569,13 +553,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vesper/Arquitectura IA/RehenIA.cpp"
-            timestampString = "516038444.96531"
+            filePath = "vesper/loadLevel.cpp"
+            timestampString = "516046666.572997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "RehenIA::calcularSiguiente()"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "loadLevel::CreateWorld()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Arquitectura IA/RehenIA.hpp"
+            timestampString = "516047121.472418"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setSalida(dvector3D* salida)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

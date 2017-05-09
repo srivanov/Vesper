@@ -12,7 +12,7 @@
 
 
 
-loadLevel::loadLevel() : m_tilemap(nullptr) , player(nullptr) , camara(nullptr) , rehen(nullptr) , pos_salida(nullptr){
+loadLevel::loadLevel() : m_tilemap(nullptr) , player(nullptr) , camara(nullptr) , rehen(nullptr) , salida(nullptr){
     m_width = m_height = m_numLayers = m_tileWidth = m_tileHeight = 0;
 }
 
@@ -254,8 +254,8 @@ void loadLevel::CreateWorld(){
         }
         else if(tipo==REHEN || tipo==ENEMIGOS){
             g = factory.Actores(it, pos, tipo);Mundo.push_back(g);
-            
-            rehen = static_cast<Rehen*>(g);
+            if(tipo == REHEN)
+                rehen = static_cast<Rehen*>(g);
         }
         else if(tipo==PLAYER){
             player->setPosition(pos);
@@ -265,16 +265,16 @@ void loadLevel::CreateWorld(){
 		else if(tipo==SALIDA){
 			g = factory.Escape(it, pos, tipo);Mundo.push_back(g);
             
-            if(!pos_salida)
-                pos_salida = new dvector3D;
-            *pos_salida = pos;
+            if(!salida)
+                salida = static_cast<Salida*>(g);
             
             
 		}
         if(!g) throw FACTORY_ERROR;
     }
    
-    if(rehen && pos_salida) rehen->setSalida(pos_salida);
+    if(rehen && salida)
+        rehen->setSalida(salida->getPosition());
     
 }
 

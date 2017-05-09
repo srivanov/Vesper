@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		631499E61E993A3400651E20 /* Nodo_APedir_Ayuda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631499E41E993A3400651E20 /* Nodo_APedir_Ayuda.cpp */; };
 		631499E91E99427000651E20 /* Nodo_APedir_Ayuda2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */; };
+		6380EC6A1EC2208D005EB5BA /* ObjectsMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6380EC681EC2208D005EB5BA /* ObjectsMemory.cpp */; };
 		63844FE01E98136800835938 /* Nodo_AAtacar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63844FDE1E98136800835938 /* Nodo_AAtacar.cpp */; };
 		63C4CE871E7060F1008295A1 /* EasyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE851E7060F1008295A1 /* EasyMath.cpp */; };
 		63C4CE901E706132008295A1 /* LevelBlackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63C4CE891E706132008295A1 /* LevelBlackBoard.cpp */; };
@@ -127,6 +128,11 @@
 		631499E51E993A3400651E20 /* Nodo_APedir_Ayuda.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_APedir_Ayuda.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda.hpp"; sourceTree = "<group>"; };
 		631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodo_APedir_Ayuda2.cpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda2.cpp"; sourceTree = "<group>"; };
 		631499E81E99427000651E20 /* Nodo_APedir_Ayuda2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_APedir_Ayuda2.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda2.hpp"; sourceTree = "<group>"; };
+		6380EC681EC2208D005EB5BA /* ObjectsMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectsMemory.cpp; path = "Arquitectura IA/ObjectsMemory.cpp"; sourceTree = "<group>"; };
+		6380EC691EC2208D005EB5BA /* ObjectsMemory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ObjectsMemory.hpp; path = "Arquitectura IA/ObjectsMemory.hpp"; sourceTree = "<group>"; };
+		6380EC6B1EC22272005EB5BA /* actores.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = actores.hpp; path = PhysicObjects/Actores/actores.hpp; sourceTree = "<group>"; };
+		6380EC6C1EC22315005EB5BA /* world.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = world.hpp; path = PhysicObjects/World/world.hpp; sourceTree = "<group>"; };
+		6380EC6D1EC22376005EB5BA /* AllPhysicsObjects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AllPhysicsObjects.hpp; path = PhysicObjects/AllPhysicsObjects.hpp; sourceTree = "<group>"; };
 		63844FDE1E98136800835938 /* Nodo_AAtacar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodo_AAtacar.cpp; path = "Sistema de Decision/Nodos de Accion/Nodo_AAtacar.cpp"; sourceTree = "<group>"; };
 		63844FDF1E98136800835938 /* Nodo_AAtacar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_AAtacar.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_AAtacar.hpp"; sourceTree = "<group>"; };
 		63C4CE851E7060F1008295A1 /* EasyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EasyMath.cpp; path = Tools/EasyMath.cpp; sourceTree = "<group>"; };
@@ -393,6 +399,8 @@
 				63E8B9151EA12E8B008DA4E3 /* RehenIA.hpp */,
 				63EA17AC1E8A8B0E00B17381 /* gestor_eventos.cpp */,
 				63EA17AD1E8A8B0E00B17381 /* gestor_eventos.hpp */,
+				6380EC681EC2208D005EB5BA /* ObjectsMemory.cpp */,
+				6380EC691EC2208D005EB5BA /* ObjectsMemory.hpp */,
 			);
 			name = "Arquitectura IA";
 			sourceTree = "<group>";
@@ -532,6 +540,7 @@
 				63D124031E84019E00D1B380 /* PhysicObject.hpp */,
 				63D124041E84019E00D1B380 /* PlayerObjects.cpp */,
 				63D124051E84019E00D1B380 /* PlayerObjects.hpp */,
+				6380EC6D1EC22376005EB5BA /* AllPhysicsObjects.hpp */,
 			);
 			name = PhysicObjects;
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 				63D124131E84030800D1B380 /* Muro.hpp */,
 				63D124141E84030800D1B380 /* Puerta.cpp */,
 				63D124151E84030800D1B380 /* Puerta.hpp */,
+				6380EC6C1EC22315005EB5BA /* world.hpp */,
 			);
 			name = World;
 			sourceTree = "<group>";
@@ -565,6 +575,7 @@
 				63D124201E84050C00D1B380 /* Player.hpp */,
 				63D124211E84050C00D1B380 /* Rehen.cpp */,
 				63D124221E84050C00D1B380 /* Rehen.hpp */,
+				6380EC6B1EC22272005EB5BA /* actores.hpp */,
 			);
 			name = Actores;
 			sourceTree = "<group>";
@@ -910,6 +921,7 @@
 				E9AC3AC51DF0AD2A00A91A97 /* tinyxml2.cpp in Sources */,
 				63D124191E84030800D1B380 /* Fuente.cpp in Sources */,
 				E9898FB81E5B757A0001A36A /* PausaLayout.cpp in Sources */,
+				6380EC6A1EC2208D005EB5BA /* ObjectsMemory.cpp in Sources */,
 				E9AC3A9B1DF0AA5000A91A97 /* bloqueada.cpp in Sources */,
 				E9AC3AA91DF0AA5000A91A97 /* physics.cpp in Sources */,
 				63D124291E840F1500D1B380 /* ObjectFactory.cpp in Sources */,
