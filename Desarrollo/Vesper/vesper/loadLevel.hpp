@@ -46,6 +46,8 @@ class loadLevel {
     vector<GameObject*> Mundo;
     Player* player;
     Camera* camara;
+    Rehen* rehen;
+    dvector3D * pos_salida;
     void CreateWorld();
     int LLAVES, puerta;
 public:

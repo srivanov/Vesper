@@ -55,6 +55,7 @@ bool Level::exportar_objetos(loadLevel& nivel){
     if(w.empty() || !p || !c)
         return false;
     end = w.size();
+    
     return true;
 }
 //TO DO: mirar por si se puede optimizar

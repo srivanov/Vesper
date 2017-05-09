@@ -14,7 +14,9 @@
 
 class Rehen : public PhysicObject {
     RehenIA * m_brain;
+    dvector3D lastM;
 public:
+    void setSalida(dvector3D* salida);
     void asustado();
     void update();
     Rehen();

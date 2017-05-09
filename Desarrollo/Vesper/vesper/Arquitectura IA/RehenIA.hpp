@@ -12,6 +12,7 @@
 #include "../Dvector.hpp"
 #include "../Tools/EasyMath.hpp"
 #include "../PathFinding/PathPlanning.hpp"
+#include "../tiempo.h"
 #include <vector>
 
 enum R_states {
@@ -25,6 +26,7 @@ class RehenIA {
     std::vector<dvector3D> camino;
     dvector3D * player;
     dvector3D * posActual;
+    dvector3D * m_salida;
     dvector3D movimiento;
     dvector3D posInicial;
     R_states actual;
@@ -32,8 +34,11 @@ class RehenIA {
     void calcularCamino();
     void resetMov();
     void evaluar();
+    tiempo t;
+    bool Fsalida;
 public:
     bool inicializado();
+    void setSalida(dvector3D* salida){m_salida=salida;}
     RehenIA(dvector3D * pos);
     ~RehenIA();
     void changeState(R_states);

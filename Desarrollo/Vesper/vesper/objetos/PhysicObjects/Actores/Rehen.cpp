@@ -27,11 +27,15 @@ void Rehen::contacto(PhysicObject * g){
         m_brain->changeState(SIGUIENDO);
     }
 }
-
+void Rehen::setSalida(dvector3D *salida){
+    m_brain->setSalida(salida);
+}
 void Rehen::update(){
     m_brain->update();
     dvector3D mov = m_brain->Vmover();
-    dvector3D rot = *getPosition() + mov;
+    if(mov.x!=0 && mov.y!=0)
+        lastM = mov;
+    dvector3D rot = *getPosition() + lastM;
     mover(mov);
     rotarConRaton(rot);
     PhysicObject::update();
