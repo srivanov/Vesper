@@ -1,0 +1,5 @@
+Prueba malla de la niña.
+Texturas (provisionales, pero están puestas para comprobar si esta vez Mudbox las pintaba según el unwrapping)
+Esqueleto asignado.
+--> NO pesado
+Prueba de meter animación andar.
