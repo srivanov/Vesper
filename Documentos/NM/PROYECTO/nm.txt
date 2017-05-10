@@ -1,0 +1,6 @@
+1. Hacemos un script para cada AMBITO que saquemos, con su correspondiente csv cada uno.
+    1.1 Modificar cada csv añadiendo el tabulador.
+2. Importamos cada csv en Excel (saltando la primera columna).
+3. Hacer gráficos dinámicos (añadiendo las columnas que nos plazca) los gráficos que podamos.
+
+4. MIRAR ENTREGABLES
