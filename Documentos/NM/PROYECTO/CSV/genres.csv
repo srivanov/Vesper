@@ -1,4 +1,4 @@
-"id" "name" "created_at" "updated_at" "slug" "url"
+	"id" "name" "created_at" "updated_at" "slug" "url"
 "1" 2 "Point-and-click" 1297639288000 1323382086000 "point-and-click" "https://www.igdb.com/genres/point-and-click"
 "2" 4 "Fighting" 1297639288000 1323289215000 "fighting" "https://www.igdb.com/genres/fighting"
 "3" 5 "Shooter" 1297639288000 1323289215000 "shooter" "https://www.igdb.com/genres/shooter"

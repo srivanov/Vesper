@@ -1,4 +1,4 @@
-"id" "name" "created_at" "updated_at" "slug" "url"
+	"id" "name" "created_at" "updated_at" "slug" "url"
 "1" 1 "Star Wars" 1301132282000 1323289212000 "star-wars" "https://www.igdb.com/franchises/star-wars"
 "2" 2 "Indiana Jones" 1301133404000 1323289212000 "indiana-jones" "https://www.igdb.com/franchises/indiana-jones"
 "3" 3 "Conan" 1301299735000 1323289212000 "conan" "https://www.igdb.com/franchises/conan"

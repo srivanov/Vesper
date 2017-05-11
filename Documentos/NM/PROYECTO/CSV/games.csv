@@ -1,4 +1,4 @@
-"id" "name" "slug" "url" "created_at" "updated_at" "collection" "popularity"
+	"id" "name" "slug" "url" "created_at" "updated_at" "collection" "popularity"
 "1" 531 "Ace Combat: Assault Horizon" "ace-combat-assault-horizon" "https://www.igdb.com/games/ace-combat-assault-horizon" 1317638156000 1486549314077 104 1.14285714285714
 "2" 532 "Hard Reset" "hard-reset" "https://www.igdb.com/games/hard-reset" 1317638510000 1481846983997 NA 1.28571428571429
 "3" 534 "The Legend of Zelda: Skyward Sword" "the-legend-of-zelda-skyward-sword" "https://www.igdb.com/games/the-legend-of-zelda-skyward-sword" 1317639159000 1493155978332 106 2.85714285714286
