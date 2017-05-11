@@ -78,12 +78,6 @@ void Player::update(){
 //    hud.getllaves(*llaves);
     
 	dvector3D vel;
-    /*
-    Keys aux;
-    for(aux=SKY_MOUSE_BUTTON_1;aux<SKY_KEY_RIGHT_CONTROL;aux++){
-        
-    }
-     */
 	
     if(obj_colisionado!=nullptr){
         float dist = EasyMath::EucCalcularDistancia(*obj_colisionado->getPosition(), *getPosition());

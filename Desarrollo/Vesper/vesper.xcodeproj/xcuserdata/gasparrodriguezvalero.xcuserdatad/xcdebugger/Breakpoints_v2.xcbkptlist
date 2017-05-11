@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/objetos/PhysicObjects/Actores/Player.cpp"
-            timestampString = "516034916.649616"
+            timestampString = "516204995.651785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "Player::update()"
             landmarkType = "7">
          </BreakpointContent>

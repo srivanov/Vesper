@@ -66,8 +66,8 @@ void gun::render(){
 void gun::atacar(dvector3D &pos, dvector3D &dir){
 	if(cualidad.municion > 0 || cualidad.cargador > 0)
 	{
-		if(cualidad.cargador>0 && temp.tTranscurrido(1.0f/cualidad.cadencia))
-		{
+		if(cualidad.cargador>0
+        && temp.tTranscurrido(1.0f/cualidad.cadencia)){
 			temp.reset();
             insertBala(pos, dir, 3.0f);
 			if(cualidad.tipo != tMARTILLO && cualidad.tipo != tPALA) {
@@ -115,7 +115,8 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
             bala_aux->addNodo("3d/bala.3ds");
             break;
         case tPIEDRA:
-            bala_aux->addNodo("3d/bala.3ds");
+            bala_aux->addNodo("3d/piedra.obj");
+            bala_aux->setTexture("3d/Piedra_Diffuse.png");
             break;
         case tMARTILLO:
             bala_aux->addNodo("3d/bala.3ds");
