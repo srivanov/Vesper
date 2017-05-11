@@ -55,7 +55,7 @@ public:
     bool TengoEsteEvento(const Prioridades p,int ID);
     int getMoral();
     void remove_EventsByType(const Prioridades&);
-    bool Enemigo , Aviso , Ruido, Alarma , Evento , Alerta , ATACAR, ACTalarma;
+    bool Enemigo , Aviso , Ruido, Alarma , Evento , Alerta , Patrullar, ACTalarma;
     int m_ID;
     void resetVectorMovimiento();
     NpcBook(const int&,dvector3D*);

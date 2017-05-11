@@ -90,7 +90,7 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion) : posPlayer(nullptr){
     PosicionPropia = posicion;
     VectorMovimiento = new dvector3D(0,0,0);
     Enemigo = Aviso = Ruido = Alarma = Evento = Alerta = false;
-    ATACAR = ACTalarma = false;
+    Patrullar = ACTalarma = false;
     pila.clear();
 }
 
@@ -164,6 +164,10 @@ void NpcBook::valueObjective(const Prioridades &tipo){
             changeObjective();
             break;
         case P_VOID: break;
+        case P_PATRULLAR:
+            Patrullar = true;
+            changeObjective();
+            break;
         default:changeObjective();break;
     }
 }

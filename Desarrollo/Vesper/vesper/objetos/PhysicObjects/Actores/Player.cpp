@@ -87,7 +87,7 @@ void Player::update(){
 	
     if(obj_colisionado!=nullptr){
         float dist = EasyMath::EucCalcularDistancia(*obj_colisionado->getPosition(), *getPosition());
-        if(dist>2.f)
+        if(dist>4.f)
             obj_colisionado = nullptr;
         else{
             if(obj_colisionado->getObjectType()==ENEMIGOS && t2.tTranscurrido(0.5)){

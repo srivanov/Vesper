@@ -18,11 +18,22 @@
 
 class Bala;
 
+struct patrulla {
+    dvector3D * getNextPosPatrulla();
+    patrulla(){}
+    ~patrulla(){}
+    void addPosPatrulla(dvector3D * pos);
+private:
+    vector<dvector3D*> posiciones;
+    size_t posicion_actual;
+};
+
 class Enemy : public PhysicObject {
 protected:
     NpcBook * book;
     Nodo_base * Arbol;
     MemoryObjects * memory;
+    patrulla * patrullar;
 private:
     float tiempo_vida, velocidad;
     dvector3D direccion;
@@ -33,7 +44,7 @@ public:
     bool activarAlarma() {return book->ACTalarma;}
     dvector3D* getDireccion();
     void update();
-    void inicializar(int& ID);
+    void inicializar(int& ID , bool pat = false, vector<dvector3D*> pos = vector<dvector3D*>());
     void contacto(PhysicObject *g);
     void contactoEnd(PhysicObject *g){}
 };
