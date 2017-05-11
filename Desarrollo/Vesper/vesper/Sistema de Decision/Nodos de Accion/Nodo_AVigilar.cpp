@@ -10,5 +10,9 @@
 
 short Nodo_AVigilar::run(const int &ID){
     //cout << "VIGILO" << endl;
-    return FUNCIONO;
+    if (t.tTranscurrido(4.f)) {
+        t.reset();
+        return FUNCIONO;
+    }
+    return RUNNING;
 }

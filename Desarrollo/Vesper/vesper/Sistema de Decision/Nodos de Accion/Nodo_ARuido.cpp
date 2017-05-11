@@ -9,7 +9,16 @@
 #include "Nodo_ARuido.hpp"
 
 short Nodo_ARudio::run(const int &ID){
-    //cout << "FUI AL RUIDO" << endl;
-    NpcLibrary::instancia()->recover_book(ID)->Ruido = false;
-    return FUNCIONO;
+    
+    if(!init){
+        init = true;
+        t.start();
+    }
+    else if(t.tTranscurrido(2.0f) && init){
+        init = false;
+        t.reset();
+        //cout << "FUI AL RUIDO" << endl;
+        return FUNCIONO;
+    }
+    return RUNNING;
 }

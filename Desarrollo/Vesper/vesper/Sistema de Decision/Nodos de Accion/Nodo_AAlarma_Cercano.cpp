@@ -9,8 +9,15 @@
 #include "Nodo_AAlarma_Cercano.hpp"
 
 short Nodo_AAlarma_Cercano::run(const int &ID){
-    //cout << "FUI A LA ALARMA" << endl;
-    NpcLibrary::instancia()->
-    recover_book(ID)->Alarma = false;
-    return FUNCIONO;
+    if(!init){
+        init = true;
+        t.start();
+    }
+    else if(t.tTranscurrido(2.0f) && init){
+        init = false;
+        t.reset();
+        //cout << "FUI A LA ALARMA" << endl;
+        return FUNCIONO;
+    }
+    return RUNNING;
 }

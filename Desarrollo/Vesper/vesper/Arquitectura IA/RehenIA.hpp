@@ -41,10 +41,7 @@ class RehenIA {
     bool Fsalida;
 public:
     bool inicializado();
-    void setSalida(dvector3D* salida){
-        m_salida=salida;
-        cout << "SALIDA :" << m_salida->x << "|" << m_salida->y << "|" << m_salida->z << endl;
-    }
+    void setSalida(dvector3D* salida){m_salida=salida;}
     RehenIA(dvector3D * pos);
     ~RehenIA();
     void changeState(R_states);

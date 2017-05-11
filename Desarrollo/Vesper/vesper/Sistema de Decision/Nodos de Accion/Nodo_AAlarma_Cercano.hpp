@@ -12,9 +12,11 @@
 #include "../Nodo_base.hpp"
 
 class Nodo_AAlarma_Cercano : public Nodo_base{
+    tiempo t;
+    bool init;
 public:
     short run(const int&);
-    Nodo_AAlarma_Cercano(){}
+    Nodo_AAlarma_Cercano(){t.start();init = false;}
     ~Nodo_AAlarma_Cercano(){}
 };
 

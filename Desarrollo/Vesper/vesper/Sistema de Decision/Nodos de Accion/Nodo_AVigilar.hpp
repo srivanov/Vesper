@@ -13,10 +13,12 @@
 #include <time.h>
 
 class Nodo_AVigilar : public Nodo_base {
+    tiempo t;
 public:
-    Nodo_AVigilar(){}
+    Nodo_AVigilar(){t.start();}
     ~Nodo_AVigilar(){}
     short run(const int&);
+    void reset(){t.reset();}
 };
 
 #endif /* Nodo_AVigilar_hpp */

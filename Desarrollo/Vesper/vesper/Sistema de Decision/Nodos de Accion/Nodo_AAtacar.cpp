@@ -12,10 +12,6 @@
 
 short Nodo_AAtacar::run(const int &ID){
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
-    /*
-    book->ATACAR = true;
-    return FUNCIONO;
-     */
     
     updatePosition(ID);
     

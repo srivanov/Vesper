@@ -17,6 +17,7 @@ Enemy::Enemy(){
     addNodo("3d/muro.3ds");
     setTexture("3d/naranja.jpg");
     t.start();
+    memory = new MemoryObjects;
 }
 
 Enemy::~Enemy(){
@@ -53,7 +54,7 @@ void Enemy::update(){
     rotarConRaton(aux);
     
     
-    
+    memory->update();
     GameObject::update();
 }
 
@@ -66,14 +67,15 @@ void Enemy::inicializar(int& ID){
 
 void Enemy::contacto(PhysicObject *g){
 	if(g){
-		if(g && g->getObjectType()==BALA){
-			 //Bala * bullet = static_cast<Bala*>(g);
+        //Bala * bullet = static_cast<Bala*>(g);
+		if(g && g->getObjectType()==BALA)
 			 book->salud-=20;
-		}
-        if(g->getObjectType() == PLAYER){
+        else if(g->getObjectType() == PLAYER)
             if(!book->ExistEventByType(P_ENEMIGO))
                 book->notify(m_ID, P_ENEMIGO, g->getPosition());
-        }
+        else if(memory->evalue(g) == CHANGED)
+            book->notify(m_ID, P_AVISO, g->getPosition());
+            
 	}
 }
 
