@@ -3,7 +3,7 @@ library("jsonlite")
 #query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=id&offset=2&limit=20"
 #query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/people/?fields=id&offset=2&limit=15"
 #query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/people/?fields=*"
-query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/genres/?fields=name&limit=50"
+query <- "https://igdbcom-internet-game-database-v1.p.mashape.com/themes/?fields=id,name,created_at,updated_at,slug,url&limit=50"
   
 
 
@@ -14,8 +14,8 @@ r <- GET(url=query,
 doc<-fromJSON(content(r,type="text"))
 print(doc)
 
-file.create("prueba.csv")
+file.create("themes.csv")
 #write.csv(r, 'miDoc.csv')
 #notas<-read.table(doc)
-write.table(doc, file = "prueba.csv")
+write.table(doc, file = "Desktop/themes.csv")
 
