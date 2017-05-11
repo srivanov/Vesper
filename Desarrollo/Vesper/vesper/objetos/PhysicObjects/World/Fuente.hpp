@@ -17,7 +17,9 @@ private:
     bool rota, NPCKnows;
 public:
     bool EstaRota(){return rota;}
-    void romper(){eliminar=true;}
+    void romper(){rota = true;
+        //eliminar=true;
+    }
     Fuente();
     ~Fuente();
     void update();

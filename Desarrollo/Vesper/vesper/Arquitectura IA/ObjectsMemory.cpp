@@ -46,7 +46,7 @@ void MemoryObjects::addObject(PhysicObject *m_new){
     nuevo->m_pos = *m_new->getPosition();
     nuevo->m_tipo = m_new->getObjectType();
     nuevo->state = ExtractState(m_new);
-    
+    Objectos.push_back(nuevo);
 }
 void MemoryObjects::update(){
     it = 0;

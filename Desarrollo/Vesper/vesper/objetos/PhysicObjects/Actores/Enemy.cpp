@@ -87,11 +87,13 @@ void Enemy::contacto(PhysicObject *g){
         //Bala * bullet = static_cast<Bala*>(g);
 		if(g && g->getObjectType()==BALA)
 			 book->salud-=20;
-        else if(g->getObjectType() == PLAYER)
+        else if(g->getObjectType() == PLAYER){
             if(!book->ExistEventByType(P_ENEMIGO))
                 book->notify(m_ID, P_ENEMIGO, g->getPosition());
-        else if(memory->evalue(g) == CHANGED)
-            book->notify(m_ID, P_AVISO, g->getPosition());
+        }else if(
+                 memory->evalue(g) == CHANGED
+                 )
+            book->notify(m_ID, P_RUIDO, g->getPosition());
 	}
 }
 

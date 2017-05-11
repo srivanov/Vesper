@@ -102,8 +102,8 @@ void ContactListener::atarlos(PhysicObject* p1, b2Body* bod){
 void ContactListener::esSensor(PhysicObject *g1s, PhysicObject *g2){
 	//TO DO: revisar si quito la linea de abajo
 	//para que el enemigo pueda ver la bala y que la IA la esquive
-	if(!isType(g2, BALA)){
-		contacta(g1s, g2);
+    if(!isType(g2, BALA)){
+        contacta(g1s, g2);
 		//no aviso al objeto que entra en el sensor porque
 		//no tiene que interactuar con el sensor sino con el enemigo
 	}

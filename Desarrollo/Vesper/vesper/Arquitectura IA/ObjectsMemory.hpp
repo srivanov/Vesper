@@ -12,7 +12,7 @@
 #include "../objetos/PhysicObjects/World/world.hpp"
 #include <vector>
 
-#define CADUCIDAD 4.f
+#define CADUCIDAD 30.f
 
 enum Evalue{
     NEW = 0,

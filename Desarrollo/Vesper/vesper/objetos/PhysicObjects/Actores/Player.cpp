@@ -103,8 +103,6 @@ void Player::update(){
     	hud.getCarga(arma->getCarga());
     	hud.getMunicion(arma->getMunicion());
     }
-    if(arma->getArmaActual()==tPALA)
-        printf("PALA \n");
 	if(t.tTranscurrido(0.5f)){
 		if(input->IsKeyDown(SKY_KEY_TAB)){
 		   	cambiarArma();
@@ -189,9 +187,9 @@ void Player::asignarLLave(int value){
 
 void Player::contacto(PhysicObject * g){
     if(g != nullptr){
-        if(g->getObjectType() == PALA){
+        /*if(g->getObjectType() == PALA){
             arma->insertarArma(9);
-        }
+        }*/
 		//if(g->getObjectType() == ENEMIGOS)
 			
 		
@@ -201,7 +199,7 @@ void Player::contacto(PhysicObject * g){
             hud.getMonedas(h->getActual());
         }
         if(g->getObjectType() == PIEDRA ||
-           (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS))
+           (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS) || g->getObjectType() == PALA)
             arma->insertarArma((int)g->getObjectType());
         
         if(g->getObjectType() == LLAVE)

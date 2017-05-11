@@ -31,7 +31,7 @@ void ObjectFactory::initRehen(int ID, dvector3D posicion, ObjectType tipo, const
     e->setObjectType(tipo);
     e->setPosition(posicion);
     e->createPhysicsBody(DYNAMIC_BODY);
-    e->attachSensor(3.0f);
+    e->attachSensor(6.0f);
     e->inicializar(ID);
 }
 
