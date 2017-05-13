@@ -49,7 +49,7 @@ GraphNode * Graph::getNode(int ID){
 GraphNode * Graph::getNearNode(dvector3D * pos){
     
     float distanciaLimite = -1.f;
-
+    size_t AllNodo = Grafo.size(), ContNodo = 0;
 reset:
     float MenorDistancia = -1.f, NuevaDistancia;
     it = Grafo.begin();
@@ -58,7 +58,7 @@ reset:
         NuevaDistancia = EasyMath::EucCalcularDistancia(*pos,*it->second->getPosition() );
         
         
-        if((MenorDistancia!=-1.f && MenorDistancia<NuevaDistancia)) {
+        if((MenorDistancia!=-1.f && MenorDistancia < NuevaDistancia)) {
             it++; continue;
         }
         if(distanciaLimite!=-1.f && NuevaDistancia <= distanciaLimite){
@@ -71,12 +71,20 @@ reset:
     }
     it = Grafo.find(IDfinal);
     
-    bool HayMuro = mundoBox2D::Instance()->raycastContact(*pos, *it->second->getPosition());
-    
-    if(HayMuro){
-        distanciaLimite = MenorDistancia;
+    if(ContNodo < AllNodo){
+        bool HayMuro = mundoBox2D::Instance()->raycastContact(*pos, *it->second->getPosition());
+        
+        if(HayMuro){
+            ContNodo++;
+            distanciaLimite = MenorDistancia;
+            goto reset;
+        }
+    }else if(ContNodo == AllNodo && distanciaLimite != -1.f){
+        distanciaLimite = -1.f;
         goto reset;
     }
+    
+    
     
     return it->second;
 }
