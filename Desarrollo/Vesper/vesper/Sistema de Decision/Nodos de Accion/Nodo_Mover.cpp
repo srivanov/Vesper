@@ -49,10 +49,11 @@ short Nodo_Mover::updatePosition(const int &id){
     xABS = posObjetivo.x-posPropia.x;
     yABS = posObjetivo.y-posPropia.y;
     
-    if(aux<0.5f){
-        book->updateObjetivo();
+    if(aux<0.1f && book->updateObjetivo())
         reset();
-    }
+    else if(aux<1.5f && !book->updateObjetivo())
+        reset();
+    
     return RUNNING;
 }
 

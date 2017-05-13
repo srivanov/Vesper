@@ -28,7 +28,6 @@ public:
 	void rotar(float anguloRotacion);
 private:
     b2Body *body, *ata;
-	
     float rotacion;
     b2Vec2 vel;
     dvector3D angulo_disparo;

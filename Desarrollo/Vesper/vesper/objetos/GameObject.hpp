@@ -69,6 +69,7 @@ protected:
     bool eliminar;
     ObjectType m_tipo;
 public:
+    int getObjectID() const {return m_ID;}
     void setObjectType(const ObjectType tipo){m_tipo=tipo;}
     ObjectType getObjectType() const {return m_tipo;}
     GameObject();

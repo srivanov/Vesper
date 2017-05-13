@@ -90,10 +90,17 @@ void Enemy::contacto(PhysicObject *g){
         else if(g->getObjectType() == PLAYER){
             if(!book->ExistEventByType(P_ENEMIGO))
                 book->notify(m_ID, P_ENEMIGO, g->getPosition());
-        }else if(
-                 memory->evalue(g) == CHANGED
-                 )
+        }else if(memory->evalue(g) == CHANGED){
             book->notify(m_ID, P_RUIDO, g->getPosition());
+            if(g->getObjectType()==FUENTE){
+                LevelBlackBoard::instance()->CreateRecord(g->getObjectID(), P_SED, g->getPosition());
+            }
+            else if(g->getObjectType()==ALARMA){
+                LevelBlackBoard::instance()->CreateRecord(g->getObjectID(), P_ALARMA, g->getPosition());
+            }else if(g->getObjectType()==PUERTA){
+                book->Aviso = true;
+            }
+        }
 	}
 }
 

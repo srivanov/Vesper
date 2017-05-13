@@ -7,13 +7,16 @@
 //
 
 #include "RehenIA.hpp"
+#include "mundoBox2D.hpp"
+
 #define VELOCIDAD 1.5f
 
 RehenIA::RehenIA(dvector3D * pos) : player(nullptr) , m_salida(nullptr) {
     actual = HIBERNANDO;
     posActual = pos;
-    change = Fsalida = false;
+    change = Fsalida = Player = false;
     t.start();
+    t2.start();
 }
 
 void RehenIA::changeState(R_states sta){
@@ -38,7 +41,8 @@ void RehenIA::update(){
     resetMov();
     
     if(change){
-        if(actual == ASUSTADO && Fsalida) Fsalida = false;
+        Fsalida = false;
+        Player = false;
         calcularCamino();
     }
     switch (actual) {
@@ -49,8 +53,11 @@ void RehenIA::update(){
 }
 
 void RehenIA::calcularCamino(){
-    if(actual==ASUSTADO)
+    
+    if(actual==ASUSTADO){
+        camino.clear();
         camino = PathPlanning::instance()->obtenerCamino(posActual, &posInicial);
+    }
     change = false;
 }
 
@@ -82,8 +89,14 @@ vuelta:
     }
     else if(Fsalida)
         calculo = *m_salida;
-    else
+    else if(Player)
         calculo = *player;
+    else if(t2.tTranscurrido(1.0f)){
+        t2.reset();
+        if(!mundoBox2D::Instance()->raycastContact(*posActual, *player))
+            Player = true;
+        return;
+    }
     
     float aux = EasyMath::EucCalcularDistancia(*posActual,calculo);
     

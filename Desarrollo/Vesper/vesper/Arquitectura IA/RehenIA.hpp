@@ -37,8 +37,9 @@ class RehenIA {
     void calcularCamino();
     void resetMov();
     void evaluar();
-    tiempo t;
+    tiempo t, t2;
     bool Fsalida;
+    bool Player;
 public:
     bool inicializado();
     void setSalida(dvector3D* salida){m_salida=salida;}

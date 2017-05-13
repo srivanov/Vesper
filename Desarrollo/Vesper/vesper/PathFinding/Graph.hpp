@@ -23,8 +23,7 @@ public:
     Graph(std::map<int,GraphNode*>&);
     ~Graph();
     bool add_node(int,GraphNode*);
-    GraphNode * getInitialNode(dvector3D * initialPosition);
-    GraphNode * getFinalNode(dvector3D * finalPosition);
+    GraphNode * getNearNode(dvector3D * pos);
     std::vector<conexos*> NextNodes();
     GraphNode * getNode(int ID);
 };

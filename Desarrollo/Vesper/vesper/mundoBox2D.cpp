@@ -63,22 +63,6 @@ void ContactListener::BeginContact(b2Contact* contact){
         contacta(g1, g2); contacta(g2, g1);
 	}
 	
-	
-//	if(g1 && g2){
-//		if(g1->getObjectType()==REHEN && g2->getObjectType()==PLAYER)
-//			g1->atarCuerda(contact->GetFixtureB()->GetBody());
-//		else if(g1->getObjectType()==PLAYER && g2->getObjectType()==REHEN)
-//			g2->atarCuerda(contact->GetFixtureA()->GetBody());
-//		else{}
-//	}
-//	if((g1 && g1->getObjectType()==BALA) || (g2 && g2->getObjectType()==BALA)){
-//		if(!contact->GetFixtureA()->IsSensor() && !contact->GetFixtureB()->IsSensor()){
-//			if(g1)
-//				g1->contacto(g2);
-//			if(g2)
-//				g2->contacto(g1);
-//		}
-//	}
 }
 
 void ContactListener::EndContact(b2Contact* contact) {
@@ -94,7 +78,27 @@ void ContactListener::contacta(PhysicObject* p1, PhysicObject* p2){
 	if(p1)
 		p1->contacto(p2);
 }
-
+bool mundoBox2D::raycastContact(dvector3D posIni, dvector3D posFin){
+    b2Vec2 point1(posIni.x,posIni.y);
+    b2Vec2 point2(posFin.x,posFin.y);
+    
+    if(point2 != point1){
+        MyRayCastCallback callback;
+        
+        world->RayCast(&callback, point1, point2);
+        
+        b2Fixture* aux = callback.m_fixture;
+        
+        while(aux)
+        {
+            if(aux->GetBody()->GetUserData() == nullptr)
+                return true;
+            aux = aux->GetNext();
+        }
+    }
+    
+    return false;
+}
 void ContactListener::atarlos(PhysicObject* p1, b2Body* bod){
 	p1->atarCuerda(bod);
 }

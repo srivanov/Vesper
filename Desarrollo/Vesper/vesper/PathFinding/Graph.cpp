@@ -7,6 +7,7 @@
 //
 
 #include "Graph.hpp"
+#include "mundoBox2D.hpp"
 
 //CONSTRUCTORES Y DESTRUCTORES
 
@@ -45,36 +46,37 @@ GraphNode * Graph::getNode(int ID){
     return it->second;
 }
 
-GraphNode * Graph::getInitialNode(dvector3D * initialPosition){
-    it = Grafo.begin();
+GraphNode * Graph::getNearNode(dvector3D * pos){
+    
+    float distanciaLimite = -1.f;
+
+reset:
     float MenorDistancia = -1.f, NuevaDistancia;
+    it = Grafo.begin();
     int IDfinal;
     while (it!=Grafo.end()) {
-        NuevaDistancia = EasyMath::EucCalcularDistancia(*initialPosition,*it->second->getPosition() );
-        if(MenorDistancia!=-1.f && MenorDistancia<NuevaDistancia) {
+        NuevaDistancia = EasyMath::EucCalcularDistancia(*pos,*it->second->getPosition() );
+        
+        
+        if((MenorDistancia!=-1.f && MenorDistancia<NuevaDistancia)) {
             it++; continue;
         }
-        MenorDistancia = NuevaDistancia;
-        IDfinal = it->first;
-        it++;
-    }
-    it = Grafo.find(IDfinal);
-    return it->second;
-}
-GraphNode * Graph::getFinalNode(dvector3D * finalPosition){
-    it = Grafo.begin();
-    float MenorDistancia = -1.f, NuevaDistancia;
-    int IDfinal;
-    while (it!=Grafo.end()) {
-        NuevaDistancia = EasyMath::CalcularDistancia(finalPosition,it->second->getPosition() );
-        if(MenorDistancia!=-1.f && MenorDistancia<NuevaDistancia){
-            it++;
-            continue;
+        if(distanciaLimite!=-1.f && NuevaDistancia <= distanciaLimite){
+            it++; continue;
         }
+        
         MenorDistancia = NuevaDistancia;
         IDfinal = it->first;
         it++;
     }
     it = Grafo.find(IDfinal);
+    
+    bool HayMuro = mundoBox2D::Instance()->raycastContact(*pos, *it->second->getPosition());
+    
+    if(HayMuro){
+        distanciaLimite = MenorDistancia;
+        goto reset;
+    }
+    
     return it->second;
 }

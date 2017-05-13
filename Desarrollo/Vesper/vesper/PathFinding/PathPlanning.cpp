@@ -9,7 +9,7 @@
 
 
 #include "PathPlanning.hpp"
-
+#include "../mundoBox2D.hpp"
 
 
 PathPlanning::PathPlanning(){}
@@ -53,39 +53,45 @@ bool PathPlanning::NeedCalculo(dvector3D *initialPosition,dvector3D * finalPosit
 }
 std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dvector3D * finalPosition){
     
+    bool HayMuro = mundoBox2D::Instance()->raycastContact(*initialPosition, *finalPosition);
+    
+    // CREA VARIABLE QUE CONTENDRA EL CAMINO
+    std::vector<dvector3D> camino;
+    
+    if(HayMuro){
+    
     // INICIALIZAR BOLSA DE NODOS
     inicializarBolsaNodos();
     // AÑADE NODO INICIAL
-    BolsaNodos->add_node(m_grafo->getInitialNode(initialPosition));
+    BolsaNodos->add_node(m_grafo->getNearNode(initialPosition));
     
     //GUARDA LA POSICION INICIAL EN LA VARIABLE AUX
     aux = initialPosition;
     
     //BUSCA NODO FINAL
-    final_camino = m_grafo->getFinalNode(finalPosition);
+    final_camino = m_grafo->getNearNode(finalPosition);
     
-    // CREA VARIABLE QUE CONTENDRA EL CAMINO
-    std::vector<dvector3D> camino;
+    
     
     //VALORA SI ES NECESARIO USAR PATHFINDING
-    if(NeedCalculo(initialPosition,finalPosition)){
-        try {
-            while(Pathbuilding());
-        } catch (N_Errores e) {
-            std::string ERROR = " ### ERROR ### ";
-            if(e==no_way)   ERROR+= " NO ENCONTRO CAMINO";
-            if(e==fail)     ERROR+= " FALLO AL CALCULAR";
-            cout << ERROR << " ### ERROR ### " << endl;
+        if(NeedCalculo(initialPosition,finalPosition)){
+            try {
+                while(Pathbuilding());
+            } catch (N_Errores e) {
+                std::string ERROR = " ### ERROR ### ";
+                if(e==no_way)   ERROR+= " NO ENCONTRO CAMINO";
+                if(e==fail)     ERROR+= " FALLO AL CALCULAR";
+                cout << ERROR << " ### ERROR ### " << endl;
             
-        }
+            }
         
         
-            // AÑADE NODO FINAL
-            BolsaNodos->add_node(final_camino);
-            final_camino = nullptr;
+                // AÑADE NODO FINAL
+                BolsaNodos->add_node(final_camino);
+                final_camino = nullptr;
         
-            // AÑADO TODOS LOS NODOS DE LA BOLSA AL CAMINO
-            camino = BolsaNodos->getCamino();
+                // AÑADO TODOS LOS NODOS DE LA BOLSA AL CAMINO
+                camino = BolsaNodos->getCamino();
         
         
             //DEBUG MOSTRAR CAMINO
@@ -97,6 +103,7 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
         */
         
         
+            }
     }
     
     // AÑADIR POSICION FINAL

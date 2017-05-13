@@ -18,6 +18,8 @@ Evalue MemoryObjects::evalue(PhysicObject *other){
     
     if(!FindObject(other)){
         addObject(other);
+        if(Objectos[Objectos.size()-1]->m_tipo == PUERTA && Objectos[Objectos.size()-1]->state)
+            return CHANGED;
         return NEW;
     }
     bool value = ExtractState(other);
