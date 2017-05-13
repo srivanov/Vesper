@@ -11,7 +11,6 @@
 #include "TRecursoMalla.hpp"
 #include "TGestorRecursos.hpp"
 #include "TRecursoTextura.hpp"
-#include "Dvector.hpp"
 
 TRecursoMalla::TRecursoMalla(){
 	gestor = TGestorRecursos::Instance();
@@ -78,17 +77,6 @@ Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 	GLuint *indices2 = new GLuint[numIndices];
 	Texture **texturas2 = new Texture*[numTexturas];
 	
-	glm::vec3 minBB, maxBB;
-	
-	if(mesh->mNumVertices>0){
-		minBB.x = mesh->mVertices[0].x;
-		minBB.y = mesh->mVertices[0].y;
-		minBB.z = mesh->mVertices[0].z;
-		maxBB.x = mesh->mVertices[0].x;
-		maxBB.y = mesh->mVertices[0].y;
-		maxBB.z = mesh->mVertices[0].z;
-	}
-	
 	for (GLuint i=0; i<mesh->mNumVertices; i++){
 		Vertex vertex;
 		
@@ -138,7 +126,6 @@ Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 	loadMaterialTextures(texturas2, material, aiTextureType_NORMALS, "texture_normal", llenado);
 	
 	Mesh* m = new Mesh(vertices2, indices2, texturas2, numVertices, numIndices, numTexturas);
-	m->asignarBB(&minBB, &maxBB);
 	return m;
 }
 
@@ -195,6 +182,11 @@ void TRecursoMalla::takeMax(glm::vec3 *d, float *p){
 		d->y = p[1];
 	if(d->z < p[2])
 		d->z = p[2];
+}
+
+void TRecursoMalla::initBB(){
+	minBB.x = 1000;		minBB.y = 1000;		minBB.z = 1000;
+	maxBB.x = -1000;	maxBB.y = -1000;	maxBB.z = -1000;
 }
 
 

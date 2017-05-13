@@ -17,7 +17,6 @@
 #include "Mesh.hpp"
 
 class TGestorRecursos;
-class dvector3D;
 
 class TRecursoMalla : public TRecurso{
 public:
@@ -27,7 +26,8 @@ public:
 	void Draw(Shader *shader, Texture* textura);
 	void setTexture(char* ruta);
 	void imprimirDatos();
-//	void asignarMatrix(glm::mat4 *m);
+	glm::vec3& getminBB(){ return minBB; }
+	glm::vec3& getmaxBB(){ return maxBB; }
 private:
 	
 	void processNode(aiNode* node, const aiScene* scene);
@@ -36,6 +36,7 @@ private:
 	void takeMin(glm::vec3 *d, float *p);
 	void takeMax(glm::vec3 *d, float *p);
 	Texture* pedirTextura(char* ruta);
+	void initBB();
 	
 	/*______VARIABLES_______*/
 	Mesh* meshes[10];
@@ -43,6 +44,7 @@ private:
 	//variables para imprimir por consola datos
 	unsigned int nVertices, nNormales, nCaras, nIndices, numMeshes;
 	bool bTex;
+	glm::vec3 minBB, maxBB;
 	TGestorRecursos* gestor;
 };
 

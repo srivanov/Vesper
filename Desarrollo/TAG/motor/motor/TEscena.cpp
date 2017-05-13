@@ -56,7 +56,7 @@ TEscena::TEscena(){
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
-	cubo->setMalla("../Models/zombi.fbx");
+	cubo->setMalla("../Models/cube.obj");
 	plano->setMalla("../Models/plano.obj");
 	cubo->escalar(s);
 	
