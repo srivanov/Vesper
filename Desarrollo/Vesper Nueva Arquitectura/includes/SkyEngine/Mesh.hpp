@@ -29,13 +29,11 @@ public:
 	Vertex *vertices;
 	GLuint *indices;
 	Texture* *texturas;
-	
 	GLint numVertices, numIndices, numTexturas;
 	
 	Mesh(Vertex *vertices, GLuint *indices, Texture **texturas, GLint numV, GLint numI, GLint numT);
 	~Mesh();
 	void Draw(Shader* shader, Texture* textura);
-	
 private:
 	GLuint VAO, VBO, EBO;
 	void setupMesh();

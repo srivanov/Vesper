@@ -26,23 +26,25 @@ public:
 	void Draw(Shader *shader, Texture* textura);
 	void setTexture(char* ruta);
 	void imprimirDatos();
-//	void asignarMatrix(glm::mat4 *m);
+	glm::vec3& getminBB(){ return minBB; }
+	glm::vec3& getmaxBB(){ return maxBB; }
 private:
 	
 	void processNode(aiNode* node, const aiScene* scene);
 	Mesh* processMesh(aiMesh* mesh, const aiScene* scene);
 	void loadMaterialTextures(Texture **tex, aiMaterial* mat, aiTextureType type, std::string typeName, int &index);
-	
+	void takeMin(glm::vec3 *d, float *p);
+	void takeMax(glm::vec3 *d, float *p);
 	Texture* pedirTextura(char* ruta);
+	void initBB();
 	
-//	std::vector<Mesh*> meshes;
+	/*______VARIABLES_______*/
 	Mesh* meshes[10];
 	std::string rFile, rTextura, directorio;
-//	glm::mat4 modelMatrix;
-//	glm::vec3 position, rotation;
-	//variables para imprimir por consolar datos
+	//variables para imprimir por consola datos
 	unsigned int nVertices, nNormales, nCaras, nIndices, numMeshes;
 	bool bTex;
+	glm::vec3 minBB, maxBB;
 	TGestorRecursos* gestor;
 };
 
