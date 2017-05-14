@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63E691F61EC8AB4900A023D9 /* SkyMallaAnimada.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63E691F41EC8AB4900A023D9 /* SkyMallaAnimada.cpp */; };
 		E907FC5C1E09F89F00C260C5 /* libassimp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC591E09F89F00C260C5 /* libassimp.a */; };
 		E907FC5D1E09F89F00C260C5 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5A1E09F89F00C260C5 /* libGLEW.a */; };
 		E907FC5E1E09F89F00C260C5 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E907FC5B1E09F89F00C260C5 /* libglfw3.a */; };
@@ -93,6 +94,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		63E691F41EC8AB4900A023D9 /* SkyMallaAnimada.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyMallaAnimada.cpp; sourceTree = "<group>"; };
+		63E691F51EC8AB4900A023D9 /* SkyMallaAnimada.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyMallaAnimada.hpp; sourceTree = "<group>"; };
 		E907FC591E09F89F00C260C5 /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = libs/libassimp.a; sourceTree = "<group>"; };
 		E907FC5A1E09F89F00C260C5 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = libs/libGLEW.a; sourceTree = "<group>"; };
 		E907FC5B1E09F89F00C260C5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = libs/libglfw3.a; sourceTree = "<group>"; };
@@ -641,6 +644,8 @@
 				E9AB33021E6C76CD006D8F9D /* SkyLuz.hpp */,
 				E9AB33041E6C76F5006D8F9D /* SkyCamara.cpp */,
 				E9AB33051E6C76F5006D8F9D /* SkyCamara.hpp */,
+				63E691F41EC8AB4900A023D9 /* SkyMallaAnimada.cpp */,
+				63E691F51EC8AB4900A023D9 /* SkyMallaAnimada.hpp */,
 			);
 			name = Interfaz;
 			sourceTree = "<group>";
@@ -1225,6 +1230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9488E4A1E7FEBE600C5D62A /* SkyWindow.cpp in Sources */,
+				63E691F61EC8AB4900A023D9 /* SkyMallaAnimada.cpp in Sources */,
 				E992F7821E4A53E1004D80EF /* TLuz.cpp in Sources */,
 				E9AB33031E6C76CD006D8F9D /* SkyLuz.cpp in Sources */,
 				E9B3EF851E1EE5E50039E88A /* textura.vs in Sources */,
