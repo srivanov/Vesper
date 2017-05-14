@@ -60,8 +60,6 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 		return -1;
 	}
 	
-	// definimos el viewport, sera el area en el que dibujamos
-	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
 	glViewport(0, 0, width, height);
 	
@@ -74,8 +72,7 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 }
 
 void SkyWindow::beginDraw(){
-//	if(window != glfwGetCurrentContext())
-		glfwMakeContextCurrent(window);
+	glfwMakeContextCurrent(window);
 	// comprueba los eventos de entrada (teclado, raton...)
 	glfwPollEvents();
 	//limpia la pantalla asignando un color de fondo

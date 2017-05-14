@@ -123,6 +123,10 @@
 		E99573AE1E16F49B00487446 /* basico.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.frag; sourceTree = "<group>"; };
 		E99573AF1E16F49B00487446 /* basico.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basico.vs; sourceTree = "<group>"; };
 		E997E4561E8049E50046EC33 /* Fps.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fps.hpp; sourceTree = "<group>"; };
+		E9A0E91B1EC7989400C2B6DA /* shadow_map.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shadow_map.vs; sourceTree = "<group>"; };
+		E9A0E91C1EC798B700C2B6DA /* shadow_map.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shadow_map.frag; sourceTree = "<group>"; };
+		E9A0E91D1EC8671F00C2B6DA /* debug_quad.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = debug_quad.vs; sourceTree = "<group>"; };
+		E9A0E91E1EC8672C00C2B6DA /* debug_quad.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = debug_quad.frag; sourceTree = "<group>"; };
 		E9AB32FC1E6C75BB006D8F9D /* SkyNodo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyNodo.hpp; sourceTree = "<group>"; };
 		E9AB32FE1E6C76BD006D8F9D /* SkyMalla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyMalla.cpp; sourceTree = "<group>"; };
 		E9AB32FF1E6C76BD006D8F9D /* SkyMalla.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyMalla.hpp; sourceTree = "<group>"; };
@@ -601,6 +605,10 @@
 				E9B3EF841E1EE5E50039E88A /* textura.frag */,
 				E9CC8D1A1E22D433005D1408 /* texLight.vs */,
 				E9CC8D191E22D433005D1408 /* texLight.frag */,
+				E9A0E91B1EC7989400C2B6DA /* shadow_map.vs */,
+				E9A0E91C1EC798B700C2B6DA /* shadow_map.frag */,
+				E9A0E91D1EC8671F00C2B6DA /* debug_quad.vs */,
+				E9A0E91E1EC8672C00C2B6DA /* debug_quad.frag */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";

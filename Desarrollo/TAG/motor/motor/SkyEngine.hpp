@@ -28,11 +28,20 @@ public:
 	int getActiveCam() { return active_cam; }
 	
 private:
-	SkyEngine() : num_c(0), num_l(0), active_cam(0) { root = new TNodo(); root->setEntidad(new TTransform()); }
+	SkyEngine() : num_c(0), num_l(0), active_cam(0) {
+		root = new TNodo();
+		root->setEntidad(new TTransform());
+		shMan = ShaderManager::Instance();
+		shMan->cargarShader("shadow_map", "../Shaders/shadow_map.vs", "../Shaders/shadow_map.frag");
+		shMan->cargarShader("debug_shadow", "../Shaders/debug_quad.vs", "../Shaders/debug_quad.frag");
+		shMan->cargarShader("render", "../Shaders/texLight.vs", "../Shaders/texLight.frag");
+		shMan->setActiveShader("render");
+	}
 	TNodo* root;
 	std::map<int, SkyCamara*> camaras;
 	std::map<int, SkyLuz*> luces;
 	int num_c, num_l, active_cam;
+	ShaderManager* shMan;
 };
 
 

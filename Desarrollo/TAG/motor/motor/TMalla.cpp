@@ -32,7 +32,7 @@ void TMalla::setTextura(char* fichero){
 }
 
 void TMalla::beginDraw(){
-	
+	sh = ShaderManager::Instance()->getActivo();
 	pila->calculaMVP();
 	pila->calculoFrustum();
 	bool control = pila->AABB_Frustum_Test(malla->getminBB(), malla->getmaxBB());
@@ -42,14 +42,16 @@ void TMalla::beginDraw(){
 	
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
-	if(control){
+//	if(control){
 		if(textura)
 			malla->Draw(sh, textura->getTexture());
 		else
 			malla->Draw(sh, nullptr);
-	}
+//	}
 }
 
 void TMalla::endDraw(){
 //	printf("END DRAW Malla\n");
 }
+
+

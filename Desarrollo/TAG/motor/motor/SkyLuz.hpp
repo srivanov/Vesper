@@ -18,6 +18,8 @@ public:
 	~SkyLuz();
 	
 	void Draw() { m_luz->Draw(nodo);}
+	void clearScreen() { m_luz->ClearScreen(); }
+	void debugDraw(Shader* s) { m_luz->DebugDraw(s); }
     
     void _setAmbient(float lamb){ m_luz->setAmbient(lamb);}
     float _getAmbient(){return m_luz->getAmbient();}

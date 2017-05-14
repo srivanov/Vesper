@@ -45,8 +45,6 @@ TEscena::TEscena(){
 //	
 //	trCam.trasladar(glm::vec3(0.0f, 0.0f, 5.0f));
 	motor = SkyEngine::Instance();
-	ShaderManager::Instance()->cargarShader("1", "../Shaders/texLight.vs", "../Shaders/texLight.frag");
-	ShaderManager::Instance()->setActiveShader("1");
 	cam = motor->crearCamara(NULL);
 	motor->setActiveCam(0);
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
@@ -80,7 +78,7 @@ TEscena::TEscena(){
 	cubo->transladar(n);
 	n = dvector3D(0,-2,0);
 	plano->transladar(n);
-	n = dvector3D(2,2,2);
+	n = dvector3D(0,5,0);
 	luz->setPosicion(n);
 	
 //	delete cubo2;

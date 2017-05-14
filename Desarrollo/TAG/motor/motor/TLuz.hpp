@@ -23,12 +23,12 @@ class TLuz : public TEntidad{
 public:
 	TLuz();
 	~TLuz();
-	void setIntensidad(glm::vec4 c);
-	glm::vec4 getIntensidad();
 	
-    
 	void setID(int id) { ID = id; }
 	int getID(){ return ID; }
+	
+	void setIntensidad(glm::vec4 c){ color = c; }
+	glm::vec4 getIntensidad(){ return color; }
     
     void setAmbient (float lamb) {lambient = lamb;}
 	void setSpecular(float spec) {lspecular = spec;}
@@ -39,6 +39,9 @@ public:
 	float getSpecular(){return lspecular;}
 
 	void Draw(TNodo* n);
+	void ClearScreen();
+	void DebugDraw(Shader* s);
+	
 	void beginDraw(){}
 	void endDraw(){}
 
@@ -48,8 +51,16 @@ private:
 	glm::vec4 color;
 	glm::vec3 pos;
 	std::stack<glm::mat4> trans;
-	glm::mat4 matriz;
+	glm::mat4 matriz, lightSpaceMatrix;
     float lambient, ldiffuse, lspecular;
+	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO;
+	bool control;
+	
+	void calcularTransformaciones(TNodo* n);
+	void dibujar_luz_puntual();
+	void dibujar_luz_direccional();
+	void configureMatrices();
+	void RenderQuad();
 };
 
 #endif /* TLuz_hpp */

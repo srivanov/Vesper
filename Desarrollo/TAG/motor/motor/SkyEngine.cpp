@@ -7,6 +7,7 @@
 //
 
 #include "SkyEngine.hpp"
+#include "SkyWindow.hpp"
 
 SkyEngine::~SkyEngine(){
 	delete root;
@@ -37,12 +38,19 @@ void SkyEngine::Draw(){
 	else
 		printf("SIN CAMARA\n");
 	
+//	shMan->setActiveShader("shadow_map");
 	std::map<int, SkyLuz*>::iterator it = luces.begin();
 	while(it != luces.end()){
 		it->second->Draw();
 		++it;
 	}
-	root->Draw();
+//	luces.begin()->second->Draw();
+//	root->Draw();
+//	luces.begin()->second->clearScreen();
+//	
+//	shMan->setActiveShader("debug_shadow");
+//	luces.begin()->second->debugDraw(shMan->getShaderbyName("debug_shadow"));
+	
 }
 
 bool SkyEngine::setActiveCam(int i){
