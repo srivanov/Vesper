@@ -44,6 +44,10 @@ void physics::crearBodyDinamico(dvector3D &dimension, dvector3D &posicion){
     }
 }
 
+bool physics::RayCastControl(dvector3D posIni,dvector3D posFin){
+    return mundoBox2D::Instance()->raycastContact(posIni, posFin);
+}
+
 void physics::crearBodyEstatico(dvector3D &dimension, dvector3D &posicion, float rotacion){
 	b2BodyDef myBodyDef;
 	b2PolygonShape polygonShape;
