@@ -58,6 +58,7 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
     // CREA VARIABLE QUE CONTENDRA EL CAMINO
     std::vector<dvector3D> camino;
     
+    // SI NO HAY OBSTACULOS ENTRE EL INICIO Y LA POSICION FINAL
     if(HayMuro){
     
     // INICIALIZAR BOLSA DE NODOS
@@ -72,7 +73,6 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
     final_camino = m_grafo->getNearNode(finalPosition);
     
     
-    
     //VALORA SI ES NECESARIO USAR PATHFINDING
         if(NeedCalculo(initialPosition,finalPosition)){
             try {
@@ -84,12 +84,11 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
                 cout << ERROR << " ### ERROR ### " << endl;
             
             }
-        
-        
                 // AÑADE NODO FINAL
                 BolsaNodos->add_node(final_camino);
+            
                 final_camino = nullptr;
-        
+            
                 // AÑADO TODOS LOS NODOS DE LA BOLSA AL CAMINO
                 camino = BolsaNodos->getCamino();
         
@@ -101,7 +100,6 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
             }
             cout << endl;
         */
-        
         
             }
     }

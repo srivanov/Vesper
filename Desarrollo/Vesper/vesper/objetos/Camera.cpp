@@ -11,7 +11,7 @@
 Camera::Camera(dvector3D speed) : m_objective(nullptr){
     m_speed = speed;
     autoCamera = false;
-    offSet = dvector3D(0,-5,-10);
+    offSet = dvector3D(0,-4,-9);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
     posCamara = dvector3D(0,0,0);
@@ -38,9 +38,9 @@ void Camera::setOffSet(dvector3D &vector){offSet = vector;}
 
 void Camera::EnableAutoCamera(dvector3D* position){
     if(autoCamera)
-        printf("| Camera Objective Changed |");
+        printf("| Camera Objective Changed |\n");
     else
-        printf("| AutoCamera - enabled |");
+        printf("| AutoCamera - enabled |\n");
     
     m_objective = position; ///////////////
     autoCamera = true;
@@ -56,7 +56,7 @@ void Camera::DisableAutoCamera(){
     autoCamera = !autoCamera;
     m_objective = nullptr;
     
-    printf("| AutoCamera - disabled |");
+    printf("| AutoCamera - disabled |\n");
     
 }
 
