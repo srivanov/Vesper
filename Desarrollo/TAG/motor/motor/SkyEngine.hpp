@@ -14,6 +14,7 @@
 #include "SkyMalla.hpp"
 #include "SkyCamara.hpp"
 #include "SkyLuz.hpp"
+#include "SkyMallaAnimada.hpp"
 #include <map>
 
 class SkyEngine {

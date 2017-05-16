@@ -43,6 +43,6 @@ bool SkyMallaAnimada::CambiarAnimacion(std::string cambio){
         answer = m_mallas->ChangeAnimacion(cambio);
     else
         return false;
-    return true;
+    return answer;
 }
 
