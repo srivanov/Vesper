@@ -24,24 +24,16 @@
  
  */
 
-Animacion::Animacion() : frames(nullptr) {
-    actual = NumFrames = 0 ;
-    TimePerFrame = 0.f;
-}
-Animacion::~Animacion(){}
-
-void Animacion::setFrames(std::vector<TRecursoMalla *> mallas){
-    if(NumFrames==0) NumFrames = mallas.size();
-    
-    frames = new TRecursoMalla*[NumFrames];
-    size_t cont = 0;
-    while (mallas.size()!=0) {
-        frames[cont] = mallas[0];
-        mallas.erase(mallas.begin());
-        cont++;
-    }
-    
-}
+//Animacion::Animacion() : frames(nullptr) {
+//
+//}
+//
+//Animacion::~Animacion(){}
+//
+//void Animacion::setFrames(std::vector<TRecursoMalla *> mallas){
+//	
+//    
+//}
 
 SkyMallaAnimada::SkyMallaAnimada(TNodo * padre) : animacion_activa(nullptr) {
     

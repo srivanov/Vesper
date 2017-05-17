@@ -18,9 +18,22 @@
 #include <stdio.h>
 
 struct Animacion {
-    Animacion();
-    ~Animacion();
-    void setFrames(std::vector<TRecursoMalla*> mallas);
+	Animacion(){
+		actual = NumFrames = 0 ;
+		TimePerFrame = 0.f;
+	}
+	~Animacion(){}
+	void setFrames(std::vector<TRecursoMalla*> mallas){
+		if(NumFrames==0) NumFrames = mallas.size();
+		
+		frames = new TRecursoMalla*[NumFrames];
+		size_t cont = 0;
+		while (mallas.size()!=0) {
+			frames[cont] = mallas[0];
+			mallas.erase(mallas.begin());
+			cont++;
+		}
+	}
     size_t NumFrames;
     unsigned int actual;
     float TimePerFrame;

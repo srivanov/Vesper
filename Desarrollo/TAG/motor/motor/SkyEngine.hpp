@@ -13,6 +13,7 @@
 #include "SkyNodo.hpp"
 #include "SkyMalla.hpp"
 #include "SkyCamara.hpp"
+#include "SkyMallaAnimada.hpp"
 #include "SkyLuz.hpp"
 #include <map>
 
