@@ -9,41 +9,45 @@
 #include "Decoracion.hpp"
 
 void Decoracion::inicializar(int &ID, ObjectType type){
+    class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
+    
     switch (type) {
         case ABETO:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
+            createPhysicsBody(STATIC_BODY,dvector3D(1.7,1.2,0));
             break;
         case ARBOL:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
             break;
         case BARRIL:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
             break;
         case PALE:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
             break;
         case PAPELERA:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/papelera.obj");
+            setTexture("3d/papelera_diffuse.png");
             break;
         case PARQUE:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
             break;
         case VALLA_METALICA:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
             break;
         case VALLA_MADERA:
-            setTexture("");
-            addNodo("");
+            addNodo("3d/abeto.obj");
+            setTexture("3d/abeto_diffuse.png");
             break;
         default:break;
     }
-    if(type!=PARQUE)
+    
+    if(type!=PARQUE && type!=ABETO)
         createPhysicsBody(STATIC_BODY);
 }

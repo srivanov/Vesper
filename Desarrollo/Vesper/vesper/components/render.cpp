@@ -46,7 +46,10 @@ void render::setNode(char *filename){
 		else
 			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
 		aux = NULL;
+        dvector3D rota = dvector3D(270,0,0);
 		nodo->_setNodePosition(*getFather()->getPosition());
+        nodo->_setNodeRotation(rota);
+        //*getFather()->getRotation()
 //		printf("cargado!\n");
     }
 }

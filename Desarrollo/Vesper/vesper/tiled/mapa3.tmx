@@ -9411,6 +9411,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="44"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -9515,8 +9516,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="44"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -9714,14 +9714,14 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="22"/>
-   <tile gid="23"/>
-   <tile gid="24"/>
-   <tile gid="25"/>
-   <tile gid="26"/>
-   <tile gid="27"/>
-   <tile gid="28"/>
-   <tile gid="29"/>
+   <tile gid="61"/>
+   <tile gid="61"/>
+   <tile gid="44"/>
+   <tile gid="61"/>
+   <tile gid="61"/>
+   <tile gid="61"/>
+   <tile gid="61"/>
+   <tile gid="61"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -9827,7 +9827,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="44"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10124,6 +10124,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="44"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10132,8 +10133,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="44"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10333,7 +10333,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="44"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10807,17 +10807,17 @@
   </object>
   <object id="197" name="24" type="nodo" x="1568" y="704" width="32" height="32">
    <properties>
-    <property name="conecta" value="44-51-23-21"/>
+    <property name="conecta" value="44-51-23-21-24"/>
    </properties>
   </object>
   <object id="198" name="22" type="nodo" x="1824" y="928" width="32" height="32">
    <properties>
-    <property name="conecta" value="19-21-26-25-23"/>
+    <property name="conecta" value="19-21-26-25-23-17"/>
    </properties>
   </object>
   <object id="199" name="23" type="nodo" x="1824" y="704" width="32" height="32">
    <properties>
-    <property name="conecta" value="24-39-22-25"/>
+    <property name="conecta" value="24-39-22-25-26"/>
    </properties>
   </object>
   <object id="200" name="25" type="nodo" x="2048" y="800" width="32" height="32">
