@@ -92,5 +92,14 @@ PhysicObject * ObjectFactory::WObject(int ID, dvector3D posicion, ObjectType tip
     return g;
 }
 
+PhysicObject * ObjectFactory::Decora(int ID, dvector3D posicion, ObjectType tipo){
+    g = new Decoracion;
+    g->setPosition(posicion);
+    Decoracion * d = static_cast<Decoracion*>(g);
+    d->inicializar(ID, tipo);
+    return g;
+}
+
+
 ObjectFactory::ObjectFactory() : g(nullptr){Valor_llaves=puerta=0;}
 

@@ -267,9 +267,10 @@ void loadLevel::CreateWorld(){
             
             if(!salida)
                 salida = static_cast<Salida*>(g);
-            
-            
-		}
+        }else if(tipo>SALIDA && tipo<BALA){
+            g = factory.Decora(it,pos,tipo);
+            Mundo.push_back(g);
+        }
         if(!g) throw FACTORY_ERROR;
     }
    

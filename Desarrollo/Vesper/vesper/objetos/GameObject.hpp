@@ -54,6 +54,14 @@ enum ObjectType {
     BOMBA_HUMO,
     ARBUSTOS,
 	SALIDA,
+    ABETO,
+    ARBOL,
+    BARRIL,
+    PALE,
+    PAPELERA,
+    PARQUE,
+    VALLA_METALICA,
+    VALLA_MADERA,
     BALA
 };
 

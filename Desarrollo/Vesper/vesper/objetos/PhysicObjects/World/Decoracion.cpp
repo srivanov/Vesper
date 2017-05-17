@@ -10,12 +10,40 @@
 
 void Decoracion::inicializar(int &ID, ObjectType type){
     switch (type) {
-        case ARBUSTOS:
+        case ABETO:
             setTexture("");
             addNodo("");
             break;
-            
+        case ARBOL:
+            setTexture("");
+            addNodo("");
+            break;
+        case BARRIL:
+            setTexture("");
+            addNodo("");
+            break;
+        case PALE:
+            setTexture("");
+            addNodo("");
+            break;
+        case PAPELERA:
+            setTexture("");
+            addNodo("");
+            break;
+        case PARQUE:
+            setTexture("");
+            addNodo("");
+            break;
+        case VALLA_METALICA:
+            setTexture("");
+            addNodo("");
+            break;
+        case VALLA_MADERA:
+            setTexture("");
+            addNodo("");
+            break;
         default:break;
     }
-    createPhysicsBody(STATIC_BODY);
+    if(type!=PARQUE)
+        createPhysicsBody(STATIC_BODY);
 }

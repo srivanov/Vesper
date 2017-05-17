@@ -15,5 +15,6 @@
 #include "Fuente.hpp"
 #include "Muro.hpp"
 #include "Puerta.hpp"
+#include "Decoracion.hpp"
 
 #endif /* world_h */
