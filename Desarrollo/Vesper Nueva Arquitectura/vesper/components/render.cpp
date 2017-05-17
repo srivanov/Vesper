@@ -28,6 +28,7 @@ void render::update(){
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	vent->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	setTexto();
+	engine->initShaders();
 }
 
 bool render::run(){
@@ -126,9 +127,9 @@ void render::addCamera(dvector3D &p, dvector3D &l){
     camara->setNearValue(1);
     camara->setFarValue(200);
 	SkyLuz* luz = engine->crearLuz(NULL);
-//	luz->_setAmbient(0.5);
-//	luz->_setDiffuse(20);
-	dvector3D c(25,25,-25);
+	luz->_setAmbient(0.4);
+	luz->_setDiffuse(0.5);
+	dvector3D c(200,200,-50);
 	luz->setPosicion(c);
 }
 

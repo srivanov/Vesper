@@ -56,7 +56,7 @@ void main()
 	
 	diffuse  *= attenuation;
 	diffuse2  *= attenuation;
-//	ambient  *= attenuation;
+	ambient  *= attenuation;
 	specular  *= attenuation;
 	specular2  *= attenuation;
 	
