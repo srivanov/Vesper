@@ -126,8 +126,8 @@ void render::addCamera(dvector3D &p, dvector3D &l){
     camara->setNearValue(1);
     camara->setFarValue(200);
 	SkyLuz* luz = engine->crearLuz(NULL);
-	luz->_setAmbient(0.5);
-	luz->_setDiffuse(20);
+//	luz->_setAmbient(0.5);
+//	luz->_setDiffuse(20);
 	dvector3D c(25,25,-25);
 	luz->setPosicion(c);
 }

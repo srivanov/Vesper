@@ -36,6 +36,12 @@ public:
 	Shader* getActivo() { return activo; }
 	const char* getActivoNombre() { return name.c_str(); }
 	void Usar(){ activo->Use(); }
+	Shader* getShaderbyName(char* nombre) {
+		auto s = shaders.find(nombre);
+		if(s != shaders.end())
+			return &s->second;
+		return nullptr;
+	}
 	
 protected:
 	ShaderManager(){ activo=NULL; }

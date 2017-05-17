@@ -9,7 +9,7 @@ ventana* ventana::Instance(){
 ventana::ventana(){
 //	receiver = MyEventReceiver::Instance();
 	window = SkyWindow::Instance();
-	sManager = ShaderManager::Instance();
+//	sManager = ShaderManager::Instance();
 }
 
 ventana::~ventana(){
@@ -23,8 +23,9 @@ void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fu
 //		device = createDevice(EDT_OPENGL, irr::core::dimension2d<u32>(ancho, alto), color, fullscreen, stencilbuffer, vsync, 0);
 	window->crearWindow(dvector2D(ancho,alto),vsync);
 	
-	sManager->cargarShader("67", "Shaders/texLight.vs", "Shaders/texLight.frag");
-	ShaderManager::Instance()->setActiveShader("67");
+//	sManager->cargarShader("67", "Shaders/texLight.vs", "Shaders/texLight.frag");
+//	ShaderManager::Instance()->setActiveShader("67");
+	
 //	driver = device->getVideoDriver();
 //	smgr = device->getSceneManager();
 //	device->setWindowCaption(L"Vesper");

@@ -47,9 +47,9 @@ public:
 	
 protected:
 	/*	
-	 	2 - Rotar
+	 	0 - Rotar
 		1 - Escalar
-		0 - Trasladar
+		2 - Trasladar
 	 */
 	TTransform *Trans[3];
 	TNodo *TransNodos[3], *nodo;

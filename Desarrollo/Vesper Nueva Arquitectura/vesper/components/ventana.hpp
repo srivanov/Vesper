@@ -6,7 +6,6 @@
 #include <SkyEngine/SkyWindow.hpp>
 //#include "../MyEventReceiver.hpp"
 #include "../Dvector.hpp"
-#include <SkyEngine/ShaderManager.hpp>
 
 class ventana {
 public:
@@ -29,7 +28,8 @@ protected:
 	ventana();
 private:
 	SkyWindow* window;
-	ShaderManager* sManager;
+//	ShaderManager* sManager;
+	
 //	IrrlichtDevice* device;
 //	IVideoDriver* driver;
 //	ISceneManager* smgr;

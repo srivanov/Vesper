@@ -24,14 +24,17 @@ public:
 	bool isRunning() { return !glfwWindowShouldClose(window); }
 	void beginDraw();
 	void endDraw();
-	void terminate() { // terminamos con GLFW y borramos todos los recursos asociados a el
-		glfwTerminate(); }
+	// terminamos con GLFW y borramos todos los recursos asociados a el
+	void terminate() { glfwTerminate(); }
 	void toggleVSync(bool t) { glfwSwapInterval(t); }
 	const dvector2D* getSIZE() { return &size; }
+	void resetViewport() { glViewport(0,0, width, height); }
 private:
 	SkyWindow();
 	GLFWwindow* window;
 	dvector2D size;
+	// definimos el viewport, sera el area en el que dibujamos
+	int width, height;
 	InputManager* i;
 };
 
