@@ -20,11 +20,12 @@ public:
 	void Draw() { m_camara->Draw(nodo); }
 	void setNearValue(float n);
 	void setFarValue(float f);
-	void rotateToTarget(dvector3D &tar);
 	void setCamTarget(dvector3D &tar);
 private:
 	TCamara* m_camara;
 	dvector3D camTarget, front;
+	
+	void rotateToTarget(dvector3D &tar);
 };
 
 #endif /* SkyCamara_hpp */

@@ -110,7 +110,8 @@ public:
 	}
 	
 	// Usar el programa
-	void Use(){ glUseProgram(this->Program); activo=true;}
+	void Use(){ glUseProgram(this->Program); activo=true; //printf("CAMBIO SHADER: %d\n", Program);
+	}
 	void activar(bool b) { activo=b; }
 };
 

@@ -50,11 +50,11 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,1,0), s(0.1, 0.1, 0.1);
+	dvector3D n(0,2,3), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
-	cubo->setMalla("../Models/cube.obj");
+	cubo->setMalla("../Models/zombi.fbx");
 	plano->setMalla("../Models/plano.obj");
 	cubo->escalar(s);
 	
@@ -74,12 +74,17 @@ TEscena::TEscena(){
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
 
-	n = dvector3D(3,0,-2);
+	n = dvector3D(0,0.2,-2);
 	cubo->transladar(n);
-	n = dvector3D(0,-2,0);
+	n = dvector3D(0.1,0.1,0.1);
+	cubo->escalar(n);
+	n = dvector3D(0,0,0.1);
 	plano->transladar(n);
-	n = dvector3D(0,5,0);
+	n = dvector3D(10,20,50);
 	luz->setPosicion(n);
+	
+	n = cubo->getPosicion();
+//	cam->setCamTarget(n);
 	
 //	delete cubo2;
 }
@@ -102,37 +107,35 @@ void TEscena::update(){
 	if(InputManager::Instance()->isPressed(SKY_KEY_UP)){
 		//cubo->rotar(dvector3D(0,-.1,0));
         float amb = luz->_getAmbient();
-        amb++;
+        amb+=0.01;
         luz->_setAmbient(amb);
         
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_DOWN)){
-		dvector3D n(0,.1,0);
-		cubo->rotar(n);
         float amb = luz->_getAmbient();
-        amb--;
+        amb-=0.01;
         luz->_setAmbient(amb);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_LEFT)){
 		//cubo->transladar(dvector3D(-.1,0,0));
         float dif = luz->_getDiffuse();
-        dif--;
+        dif-=0.1;
         luz->_setDiffuse(dif);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_RIGHT)){
 		//cubo->transladar(dvector3D(.1,0,0));
         float dif = luz->_getDiffuse();
-        dif++;
+        dif+=0.1;
         luz->_setDiffuse(dif);
 	}
     if(InputManager::Instance()->isPressed(SKY_KEY_M)){
         float spec = luz->_getSpecular();
-        spec++;
+        spec+=0.1;
         luz->_setSpecular(spec);
     }
     if(InputManager::Instance()->isPressed(SKY_KEY_N)){
         float spec = luz->_getSpecular();
-        spec--;
+        spec-=0.1;
         luz->_setSpecular(spec);
     }
 	dvector3D m(0,0,-.1);
@@ -151,8 +154,9 @@ void TEscena::update(){
 	if(InputManager::Instance()->isPressed(SKY_KEY_D)){
 		cam->transladar(m);
 	}
+	m = cubo->getPosicion();
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
-//		cam->setCamTarget(cubo->getPosicion());
+		cam->setCamTarget(m);
 	}
 //	mov = dvector3D(InputManager::Instance()->mousePos.x-400, 300-InputManager::Instance()->mousePos.y, 0);
 //	cam->setCamTarget(mov);

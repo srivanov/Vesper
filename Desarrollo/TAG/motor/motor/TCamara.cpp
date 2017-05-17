@@ -59,13 +59,15 @@ void TCamara::Draw(TNodo* n){
 		matriz = matriz * aux;
 		trans.pop();
 	}
-	
+	sh = ShaderManager::Instance()->getActivo();
+	glUniform3f(glGetUniformLocation(sh->Program, "viewPos"),matriz[3].x,matriz[3].y,matriz[3].z);
 	matriz = glm::inverse(matriz);
 //	glm::vec3 pos = glm::column(matriz, 3);
 //	matriz = glm::lookAt(pos, pos + glm::vec3(0,0,-1), glm::vec3(0,1,0));
 	
 	pila->mView = matriz;
 	pila->mProjection = projection;
+	
 	
 //	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "view"), 1, GL_FALSE, glm::value_ptr(matriz));
 //	

@@ -8,25 +8,30 @@
 
 #include "TLuz.hpp"
 #include "TNodo.hpp"
+#include "TGestorRecursos.hpp"
 
 TLuz::TLuz() : ID(0){
 	pos = glm::vec3();
 	sh = ShaderManager::Instance()->getActivo();
-    lambient = 0.15f;
+    lambient = 0.3f;
     ldiffuse = 2.5f;
     lspecular = 1.0f;
-	control = false;
-	GLuint SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
-	
-	glGenFramebuffers(1, &depthMapFBO);
+	setupLight();
+}
+
+TLuz::~TLuz(){
+	sh = nullptr;
+}
+
+void TLuz::setupLight(){
+	glGenFramebuffersEXT(1, &depthMapFBO);
 	glGenTextures(1, &depthMap);
-	
 	glBindTexture(GL_TEXTURE_2D, depthMap);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 	GLfloat borderColor[] = { 1.0, 1.0, 1.0, 1.0 };
 	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 	
@@ -35,20 +40,21 @@ TLuz::TLuz() : ID(0){
 	glDrawBuffer(GL_NONE);
 	glReadBuffer(GL_NONE);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	
-}
-
-TLuz::~TLuz(){
-	sh = nullptr;
+	Shader* s = ShaderManager::Instance()->getShaderbyName((char*)"debug_shadow");
+	s->Use();
+	glUniform1i(glGetUniformLocation(s->Program, "depthMap"), 0);
 }
 
 void TLuz::Draw(TNodo* n){
 	sh = ShaderManager::Instance()->getActivo();
 	calcularTransformaciones(n);
-	if(control)
-		dibujar_luz_direccional();
-	else
-		dibujar_luz_puntual();
+	dibujar_luz_puntual();
+}
+
+void TLuz::shadowDraw(TNodo* n){
+	sh = ShaderManager::Instance()->getActivo();
+	calcularTransformaciones(n);
+	dibujar_luz_direccional();
 }
 
 void TLuz::calcularTransformaciones(TNodo* n){
@@ -78,36 +84,46 @@ void TLuz::dibujar_luz_puntual(){
 	glUniform1f(glGetUniformLocation(sh->Program, "light.constant"),  1.0f);
 	glUniform1f(glGetUniformLocation(sh->Program, "light.linear"),    0.09);
 	glUniform1f(glGetUniformLocation(sh->Program, "light.quadratic"), 0.032);
+	glUniform3f(glGetUniformLocation(sh->Program, "light.color"), 1.0f, 1.0f, 1.0f);
+	glActiveTexture(GL_TEXTURE2);
+	glBindTexture(GL_TEXTURE_2D, depthMap);
+	
+	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "lightspaceMatrix"), 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
 }
 
 void TLuz::dibujar_luz_direccional(){
-	glViewport(0, 0, 1024, 1024);
-	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
 	configureMatrices();
 	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "lightSpaceMatrix"), 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
+	glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+	glClear(GL_DEPTH_BUFFER_BIT);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, depthMap);
 }
 
 void TLuz::configureMatrices(){
 	glm::mat4 lightProjection, lightView;
-	GLfloat near_plane = 0.1f, far_plane = 20.5f;
+	GLfloat near_plane = 0.1f, far_plane = 1000.5f;
 	lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+//	lightProjection = glm::perspective((GLfloat)65.0f, (GLfloat)800.0f/600.0f, near_plane, far_plane);
 	lightView = glm::lookAt(pos, glm::vec3(0.0f), glm::vec3(0.0, 1.0, 0.0));
 	lightSpaceMatrix = lightProjection * lightView;
 }
 
 void TLuz::ClearScreen(){
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-//	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glBindTexture(GL_TEXTURE_2D, depthMap);
 }
 
 void TLuz::DebugDraw(Shader* s){
 	glUniform1f(glGetUniformLocation(s->Program, "near_plane"), 0.1f);
 	glUniform1f(glGetUniformLocation(s->Program, "far_plane"), 20.5f);
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, depthMap);
+	TRecursoTextura* t = static_cast<TRecursoTextura*>(TGestorRecursos::Instance()->getRecurso("../Models/tex.png", tRTextura));
+	glBindTexture(GL_TEXTURE_2D, t->getTexture()->id);
+//	glBindTexture(GL_TEXTURE_2D, depthMap);
 	RenderQuad();
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void TLuz::RenderQuad() {

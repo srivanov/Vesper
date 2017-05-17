@@ -39,6 +39,7 @@ public:
 	float getSpecular(){return lspecular;}
 
 	void Draw(TNodo* n);
+	void shadowDraw(TNodo* n);
 	void ClearScreen();
 	void DebugDraw(Shader* s);
 	
@@ -53,9 +54,9 @@ private:
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz, lightSpaceMatrix;
     float lambient, ldiffuse, lspecular;
-	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO;
-	bool control;
+	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO, SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;
 	
+	void setupLight();
 	void calcularTransformaciones(TNodo* n);
 	void dibujar_luz_puntual();
 	void dibujar_luz_direccional();

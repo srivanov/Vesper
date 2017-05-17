@@ -17,7 +17,7 @@ public:
 	SkyLuz(TNodo* padre, int ID);
 	~SkyLuz();
 	
-	void Draw() { m_luz->Draw(nodo);}
+	void Draw(bool shadow_pass) { shadow_pass ? m_luz->shadowDraw(nodo) : m_luz->Draw(nodo);}
 	void clearScreen() { m_luz->ClearScreen(); }
 	void debugDraw(Shader* s) { m_luz->DebugDraw(s); }
     
