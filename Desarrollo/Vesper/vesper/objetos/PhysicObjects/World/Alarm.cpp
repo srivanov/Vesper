@@ -24,8 +24,8 @@ void Alarm::gestorTiempo(){
 
 Alarm::Alarm(){
     rota = NPCKnows = activado = false;
-    addNodo("3d/muro.3ds");
-    setTexture("3d/alarmita.jpg");
+    addNodo("3d/alarma.obj");
+    setTexture("3d/alarma_diffuse.png");
 }
 Alarm::~Alarm(){}
 void Alarm::update(){

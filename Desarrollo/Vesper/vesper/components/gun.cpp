@@ -106,13 +106,16 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
     switch(cualidad.tipo){
             // TIPOS DE MALLA Y TEXTURA
         case tPISTOLA:
-            bala_aux->addNodo("3d/bala.3ds");
+            bala_aux->addNodo("3d/bala_pistola_agua.obj");
+            bala_aux->setTexture("3d/bala_pistola_diffuse.png");
             break;
         case tESCOPETA:
-            bala_aux->addNodo("3d/bala.3ds");
+            bala_aux->addNodo("3d/bala_escopeta.obj");
+            bala_aux->setTexture("3d/bala_escopeta_diffuse.png");
             break;
         case tLANZACARAMELOS:
-            bala_aux->addNodo("3d/bala.3ds");
+            bala_aux->addNodo("3d/bala_lanza.obj");
+            bala_aux->setTexture("3d/bala_lanza_diffuse.png");
             break;
         case tPIEDRA:
             bala_aux->addNodo("3d/piedra.obj");
@@ -132,6 +135,8 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
             break;
         default:return;
     }
+    dvector3D rotar = dvector3D(0,0,90);
+    bala_aux->setRotation(rotar);
     
     balas.insert(balas.begin(), bala_aux);
    
