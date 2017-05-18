@@ -137,6 +137,7 @@ void TEscena::update(){
         float spec = luz->_getSpecular();
         spec-=0.1;
         luz->_setSpecular(spec);
+//		motor->debugON(true);
     }
 	dvector3D m(0,0,-.1);
 	if(InputManager::Instance()->isPressed(SKY_KEY_W)){

@@ -33,31 +33,47 @@ SkyLuz* SkyEngine::crearLuz(TNodo* padre){
 
 void SkyEngine::Draw(){
 	shMan->setActiveShader("shadow_map");
-	luces.begin()->second->Draw(true);
-	root->Draw();
-	SkyWindow::Instance()->resetViewport();
-	luces.begin()->second->clearScreen();
+	renderScene(true);
+	limpiar();
 	
-	shMan->setActiveShader("render");
-	std::map<int, SkyCamara*>::iterator iter = camaras.find(active_cam);
-	if(iter != camaras.end())
-		iter->second->Draw();
-	else
-		printf("SIN CAMARA\n");
-	
+	if(debug)
+		renderZbuffer();
+	else{
+		shMan->setActiveShader("render");
+		renderScene(false);
+	}
 //	std::map<int, SkyLuz*>::iterator it = luces.begin();
 //	while(it != luces.end()){
 //		it->second->Draw(TRUE);
 //		++it;
 //	}
 
-	
-//	shMan->setActiveShader("debug_shadow");
-//	luces.begin()->second->debugDraw(shMan->getShaderbyName("debug_shadow"));
-//	SkyWindow::Instance()->resetViewport();
-//	luces.begin()->second->clearScreen();
-	luces.begin()->second->Draw(false);
+}
+
+void SkyEngine::renderScene(bool pass){
+	if(!pass)
+		renderCamaras();
+	luces.begin()->second->Draw(pass);
 	root->Draw();
+}
+
+void SkyEngine::renderCamaras(){
+	std::map<int, SkyCamara*>::iterator iter = camaras.find(active_cam);
+	if(iter != camaras.end())
+		iter->second->Draw();
+	else
+		printf("SIN CAMARA\n");
+}
+
+void SkyEngine::renderZbuffer(){
+	shMan->setActiveShader("debug_shadow");
+	luces.begin()->second->debugDraw(shMan->getShaderbyName("debug_shadow"));
+	limpiar();
+}
+
+void SkyEngine::limpiar(){
+	SkyWindow::Instance()->resetViewport();
+	luces.begin()->second->clearScreen();
 }
 
 bool SkyEngine::setActiveCam(int i){
