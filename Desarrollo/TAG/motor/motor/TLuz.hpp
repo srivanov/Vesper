@@ -54,7 +54,7 @@ private:
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz, lightSpaceMatrix;
     float lambient, ldiffuse, lspecular;
-	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO, SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;
+	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO, SHADOW_WIDTH = 3072, SHADOW_HEIGHT = 3072;
 	
 	void setupLight();
 	void calcularTransformaciones(TNodo* n);

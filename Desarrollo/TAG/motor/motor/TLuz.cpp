@@ -104,9 +104,10 @@ void TLuz::dibujar_luz_direccional(){
 void TLuz::configureMatrices(){
 	glm::mat4 lightProjection, lightView;
 	GLfloat near_plane = 0.1f, far_plane = 1000.5f;
-	lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
-//	lightProjection = glm::perspective((GLfloat)65.0f, (GLfloat)800.0f/600.0f, near_plane, far_plane);
-	lightView = glm::lookAt(pos, glm::vec3(0.0f), glm::vec3(0.0, 1.0, 0.0));
+//	lightProjection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, near_plane, far_plane);
+	lightProjection = glm::perspective((GLfloat)18.0f, (GLfloat)800.0f/600.0f, near_plane, far_plane);
+    glm::vec3 target = glm::vec3(0.0,0.0,0.0);
+    lightView = glm::lookAt(pos, target, glm::vec3(0.0, 1.0, 0.0));
 	lightSpaceMatrix = lightProjection * lightView;
 }
 
@@ -119,9 +120,9 @@ void TLuz::DebugDraw(Shader* s){
 	glUniform1f(glGetUniformLocation(s->Program, "near_plane"), 0.1f);
 	glUniform1f(glGetUniformLocation(s->Program, "far_plane"), 20.5f);
 	glActiveTexture(GL_TEXTURE0);
-	TRecursoTextura* t = static_cast<TRecursoTextura*>(TGestorRecursos::Instance()->getRecurso("../Models/tex.png", tRTextura));
-	glBindTexture(GL_TEXTURE_2D, t->getTexture()->id);
-//	glBindTexture(GL_TEXTURE_2D, depthMap);
+//	TRecursoTextura* t = static_cast<TRecursoTextura*>(TGestorRecursos::Instance()->getRecurso("../Models/tex.png", tRTextura));
+//	glBindTexture(GL_TEXTURE_2D, t->getTexture()->id);
+	glBindTexture(GL_TEXTURE_2D, depthMap);
 	RenderQuad();
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

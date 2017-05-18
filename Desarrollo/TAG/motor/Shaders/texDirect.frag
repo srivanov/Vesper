@@ -43,9 +43,11 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 	vec3 normal = normalize(fs_in.Normal);
 	vec3 lightDir = normalize(light.position - fs_in.FragPos);
 	// Check whether current frag pos is in shadow
-	float bias = max(0.0005 * (dot(normal, lightDir)), 0.0005);
+//	float bias = max(0.0000001 * (dot(normal, lightDir)), 0.000001);
+    float bias = 0.000002;
 //	float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
-	// PCF
+	
+    // PCF
 	float shadow = 0.0;
 	vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
 	for(int x = -1; x <= 1; ++x)
@@ -57,7 +59,10 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 		}
 	}
 	shadow /= 9.0;
-	//si se sale del plano de proyeccion de la luz
+	
+//    float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
+    
+    //si se sale del plano de proyeccion de la luz
 	if(projCoords.z > 1.0)
 		shadow = 0.0;
 	
@@ -92,6 +97,5 @@ void main()
 	
 	FragColor = vec4(lighting, 1.0f);
 }
-
 
 

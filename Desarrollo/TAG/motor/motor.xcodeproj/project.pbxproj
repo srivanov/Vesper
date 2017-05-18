@@ -99,6 +99,8 @@
 		637A6E4D1ECB3781001AA85B /* TMallaAnimada.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TMallaAnimada.hpp; sourceTree = "<group>"; };
 		63E691F41EC8AB4900A023D9 /* SkyMallaAnimada.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyMallaAnimada.cpp; sourceTree = "<group>"; };
 		63E691F51EC8AB4900A023D9 /* SkyMallaAnimada.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyMallaAnimada.hpp; sourceTree = "<group>"; };
+		D2066CA11ECDEF43005606AB /* texDirect.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texDirect.frag; sourceTree = "<group>"; };
+		D2066CA21ECDEF43005606AB /* texDirect.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texDirect.vs; sourceTree = "<group>"; };
 		E907FC591E09F89F00C260C5 /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = libs/libassimp.a; sourceTree = "<group>"; };
 		E907FC5A1E09F89F00C260C5 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = libs/libGLEW.a; sourceTree = "<group>"; };
 		E907FC5B1E09F89F00C260C5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = libs/libglfw3.a; sourceTree = "<group>"; };
@@ -615,6 +617,8 @@
 				E9A0E91C1EC798B700C2B6DA /* shadow_map.frag */,
 				E9A0E91D1EC8671F00C2B6DA /* debug_quad.vs */,
 				E9A0E91E1EC8672C00C2B6DA /* debug_quad.frag */,
+				D2066CA21ECDEF43005606AB /* texDirect.vs */,
+				D2066CA11ECDEF43005606AB /* texDirect.frag */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";

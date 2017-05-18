@@ -80,7 +80,7 @@ TEscena::TEscena(){
 	cubo->escalar(n);
 	n = dvector3D(0,0,0.1);
 	plano->transladar(n);
-	n = dvector3D(10,20,50);
+	n = dvector3D(10,40,50);
 	luz->setPosicion(n);
 	
 	n = cubo->getPosicion();
