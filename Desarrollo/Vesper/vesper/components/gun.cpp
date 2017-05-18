@@ -7,7 +7,7 @@ cualidades valores[] = {
 //      TIPO             MUNI     ALC   RECARGA CADE CARGA
     { tMARTILLO         , 10    , 0.2f , 4.0f , 2 , 6 },
     { tPISTOLA          , 8     , 2.0f , 2.0f , 1 , 6 },
-    { tESCOPETA         , 8     , 0.2f , 4.0f , 1 , 2 },
+    { tESCOPETA         , 8     , 1.0f , 4.0f , 1 , 2 },
     { tLANZACARAMELOS   , 30    , 3.0f , 4.0f , 5 , 6 },
     { tGLOBOAGUA        , 3     , 2.5f , 4.0f , 1 , 6 },
     { tCHICLE           , 3     , 2.5f , 4.0f , 1 , 6 },
@@ -100,7 +100,7 @@ void gun::setMunicion(unsigned int n){
 }
 
 void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
-    //TO DO: Hacer la gestion de las balas en la clase bala
+    
     bala_aux = new Bala(pos, dir, vel,tiempo_vida);
     bala_aux->setObjectType(BALA);
     switch(cualidad.tipo){
@@ -135,7 +135,7 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
             break;
         default:return;
     }
-    dvector3D rotar = dvector3D(0,0,90);
+    dvector3D rotar = dvector3D(0,0,0);
     bala_aux->setRotation(rotar);
     
     balas.insert(balas.begin(), bala_aux);

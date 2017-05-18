@@ -18,6 +18,8 @@ public:
     void update(){}
     Decoracion(){}
     ~Decoracion(){}
+    void contacto(PhysicObject*){}
+    void contactoEnd(PhysicObject*){}
 };
 
 #endif /* Decoracion_hpp */

@@ -91,7 +91,8 @@ bool mundoBox2D::raycastContact(dvector3D posIni, dvector3D posFin){
         
         while(aux)
         {
-            if(aux->GetBody()->GetUserData() == nullptr)
+            PhysicObject* g = static_cast<PhysicObject*>(aux->GetBody()->GetUserData());
+            if((g == nullptr) || (g->getObjectType()<BALA && g->getObjectType()>SALIDA))
                 return true;
             aux = aux->GetNext();
         }
