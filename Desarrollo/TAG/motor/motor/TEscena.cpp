@@ -50,12 +50,12 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,2,3), s(0.1, 0.1, 0.1);
+	dvector3D n(0,6,3), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
 	cubo->setMalla("../Models/zombi.fbx");
-	plano->setMalla("../Models/plano.obj");
+	plano->setMalla("../Models/plano2.obj");
 	cubo->escalar(s);
 	
 //	cubo->setTextura("../Models/tex.png");
