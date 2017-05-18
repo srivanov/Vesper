@@ -22,6 +22,7 @@ public:
 	void setNodeTexture(char* filename);
 	bool setNodePosition(dvector3D &pos);
 	bool setNodeRotation(dvector3D &rot);
+    void changeNode(char* filename);
     void dropNode();
     void CreateGround(int alto, int ancho);
 	void deleteNode();

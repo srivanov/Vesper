@@ -54,6 +54,19 @@ void render::setNode(char *filename){
     }
 }
 
+void render::changeNode(char* filename){
+    if(nodo)
+        nodo->deleteMesh();
+    else
+        nodo = new nodeMesh();
+    IMesh* aux = ventana::Instance()->getSceneManager()->getMesh(filename);
+    if(aux)
+        nodo->_setNode(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
+    dvector3D rota = dvector3D(270,0,0);
+    nodo->_setNodePosition(*getFather()->getPosition());
+    nodo->_setNodeRotation(rota);
+}
+
 void render::anyadirArma(){
     if(nodo != NULL)
         nodo->setPortatil(ventana::Instance()->getSceneManager()->addCubeSceneNode(0.5f, nodo->_getNode(), -1, vector3df(1,1,-1), vector3df(0,0,0), vector3df(1,1,1)));

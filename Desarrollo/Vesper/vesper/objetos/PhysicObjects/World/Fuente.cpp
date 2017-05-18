@@ -14,8 +14,11 @@ void Fuente::update(){
     
     while(LevelBlackBoard::instance()->exist_record(m_ID, P_SED)){
         if(LevelBlackBoard::instance()->getRecord(m_ID, P_SED)->romper){
+            static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/fuente_rota.obj");
             rota = true;
-        }else if(rota) NPCKnows = true;
+        }else if(rota) {
+            NPCKnows = true;
+        }
         LevelBlackBoard::instance()->RemoveRecord(m_ID, P_SED);
     }
     if (!NPCKnows)

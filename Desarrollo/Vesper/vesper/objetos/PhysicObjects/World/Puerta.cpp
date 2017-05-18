@@ -10,8 +10,8 @@
 #include "Player.hpp"
 
 Puerta::Puerta(){
-    addNodo("3d/door.obj");
-    setTexture("3d/Door_Diffuse.png");
+    addNodo("3d/Puerta.obj");
+    setTexture("3d/Puerta_Diffuse.png");
 	key = 1;
     abierta = false;
 }
@@ -19,6 +19,8 @@ Puerta::Puerta(){
 void Puerta::inicializar(int id, const tipoPuerta p){
     pu = p;
     m_ID = id;
+    dvector3D rotar = dvector3D(90,90,0);
+    setRotation(rotar);
 }
 
 void Puerta::activarAlarma(){

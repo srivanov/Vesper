@@ -42,8 +42,8 @@ void PlayerObjects::inicializar(int ID){
             setTexture("3d/globoagua.png");
             break;
         case BUMMER_BOOM:
-            addNodo("3d/muro.3ds");
-            setTexture("3d/chicle.png");
+            addNodo("3d/chicle.obj");
+            setTexture("3d/chicle_diffuse.png");
             break;
         case BOMBA_HUMO:
             addNodo("3d/bomba_humo.obj");

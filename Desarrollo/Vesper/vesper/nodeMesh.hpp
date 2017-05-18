@@ -15,6 +15,7 @@ using namespace scene;
 
 class nodeMesh{
 public:
+    nodeMesh(){object=nullptr; gun=nullptr;}
     nodeMesh(ISceneNode* node);
     ~nodeMesh();
     ISceneNode* _getNode();
@@ -24,7 +25,7 @@ public:
 	void _setNodeRotation(dvector3D &rotacion);
 	void _setMaterialFlag(video::E_MATERIAL_FLAG flag, bool trigger);
     void setPortatil(ISceneNode* node);
-	
+    void deleteMesh(){ object->remove(); object=nullptr; }
 	dvector3D* _getNodePosition();
 	dvector3D* _getNodeRotation();
 	

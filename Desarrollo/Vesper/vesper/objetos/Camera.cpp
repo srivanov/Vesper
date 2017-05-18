@@ -11,7 +11,7 @@
 Camera::Camera(dvector3D speed) : m_objective(nullptr){
     m_speed = speed;
     autoCamera = false;
-    offSet = dvector3D(0,-4,-9);
+    offSet = dvector3D(0,-3,-7);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
     posCamara = dvector3D(0,0,0);
@@ -72,8 +72,8 @@ void Camera::calculateAutoPosition(){
     
     //LIMITACIONES CAMARA CON MAPA
     if(copy_objective.x > map_width-10) copy_objective.x = map_width-10; //DERECHA
-    if(copy_objective.y > map_height-13) copy_objective.y  = map_height-13;//arriba
-    if(copy_objective.y < 6) copy_objective.y = 6;//abajo
+    if(copy_objective.y > map_height-5) copy_objective.y  = map_height-5;//arriba
+    if(copy_objective.y < 4) copy_objective.y = 4;//abajo
     if(copy_objective.x < 10) copy_objective.x = 10; //izquierda
     
     

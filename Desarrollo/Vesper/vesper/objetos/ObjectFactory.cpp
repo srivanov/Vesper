@@ -21,7 +21,10 @@ void ObjectFactory::initEnemy(int ID, dvector3D posicion,ObjectType tipo,const B
 void ObjectFactory::initObject(int ID, dvector3D posicion,ObjectType tipo,const BodyObject body){
     g->setObjectType(tipo);
 	g->setPosition(posicion);
-	g->createPhysicsBody(body);
+    if(tipo!=PUERTA)
+        g->createPhysicsBody(body);
+    else
+        g->createPhysicsBody(STATIC_BODY,dvector3D(2,1,0));
     g->inicializar(ID);
 }
 
