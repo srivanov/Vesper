@@ -11,9 +11,10 @@
 TMalla::TMalla(){
 	pila = Pila::Instance();
 	gestor = TGestorRecursos::Instance();
+	sh = ShaderManager::Instance();
 	malla = NULL;
 	textura = nullptr;
-	sh = ShaderManager::Instance()->getActivo();
+	
 }
 
 TMalla::~TMalla(){
@@ -32,7 +33,7 @@ void TMalla::setTextura(char* fichero){
 }
 
 void TMalla::beginDraw(){
-	sh = ShaderManager::Instance()->getActivo();
+	Shader* s = sh->getActivo();
 	pila->calculaMVP();
 	pila->calculoFrustum();
 	bool control = pila->AABB_Frustum_Test(malla->getminBB(), malla->getmaxBB());
@@ -40,13 +41,13 @@ void TMalla::beginDraw(){
 //	if(control == false)
 //		printf("ESTOY FUERA %d\n", rand());
 	
-	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
-	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
+	glUniformMatrix4fv(glGetUniformLocation(s->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
+	glUniformMatrix4fv(glGetUniformLocation(s->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
 //	if(control){
 		if(textura)
-			malla->Draw(sh, textura->getTexture());
+			malla->Draw(s, textura->getTexture());
 		else
-			malla->Draw(sh, nullptr);
+			malla->Draw(s, nullptr);
 //	}
 }
 

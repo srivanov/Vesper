@@ -9,8 +9,26 @@
 #include "SkyEngine.hpp"
 #include "SkyWindow.hpp"
 
+SkyEngine::SkyEngine() : num_c(0), num_l(0), active_cam(0) {
+	root = new TNodo();
+	root->setEntidad(new TTransform());
+	debug = false;
+	shMan = ShaderManager::Instance();
+	window = SkyWindow::Instance();
+}
+
 SkyEngine::~SkyEngine(){
 	delete root;
+}
+
+void SkyEngine::init(){
+	shMan->cargarShader("shadow_map", "../Shaders/shadow_map.vs", "../Shaders/shadow_map.frag");
+	shMan->cargarShader("debug_shadow", "../Shaders/debug_quad.vs", "../Shaders/debug_quad.frag");
+	shMan->cargarShader("render", "../Shaders/texDirect.vs", "../Shaders/texDirect.frag");
+	shMan->setActiveShader("render");
+	Shader* s = shMan->getShaderbyName((char*)"render");
+	//		glUniform1i(glGetUniformLocation(s->Program, "texture_diffuse1"), 0);
+	glUniform1i(glGetUniformLocation(s->Program, "shadowMap"), 2);
 }
 
 SkyMalla* SkyEngine::crearMalla(TNodo* padre, tipoMalla t){
@@ -34,9 +52,11 @@ SkyLuz* SkyEngine::crearLuz(TNodo* padre){
 void SkyEngine::Draw(){
 	shMan->setActiveShader("render");
     renderCamaras();
+	glCullFace(GL_FRONT);
     shMan->setActiveShader("shadow_map");
 	renderScene(true);
 	limpiar();
+	glCullFace(GL_BACK);
 	
 	if(debug)
 		renderZbuffer();
@@ -100,7 +120,7 @@ void SkyEngine::renderZbuffer(){
 }
 
 void SkyEngine::limpiar(){
-	SkyWindow::Instance()->resetViewport();
+	window->resetViewport();
 	luces.begin()->second->clearScreen();
 }
 

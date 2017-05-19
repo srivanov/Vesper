@@ -13,7 +13,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-//#include "Fps.hpp"
+#include "Fps.hpp"
 #include "Dvector.hpp"
 #include "InputManager.h"
 

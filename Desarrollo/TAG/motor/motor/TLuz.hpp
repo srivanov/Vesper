@@ -48,13 +48,12 @@ public:
 
 private:
 	int ID;
-	Shader* sh;
 	glm::vec4 color;
 	glm::vec3 pos;
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz, lightSpaceMatrix;
     float lambient, ldiffuse, lspecular;
-	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO, SHADOW_WIDTH = 3072, SHADOW_HEIGHT = 3072;
+	GLuint depthMapFBO, depthMap, quadVAO = 0, quadVBO, SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;
 	
 	void setupLight();
 	void calcularTransformaciones(TNodo* n);

@@ -39,7 +39,7 @@ public:
 	int w, h;
 private:
 	int ID;
-	Shader* sh;
+	ShaderManager* sh;
 	Pila *pila;
 	bool esPerspectiva;
 	const dvector2D *tam;

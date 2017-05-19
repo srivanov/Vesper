@@ -22,6 +22,7 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+	glfwWindowHint(GLFW_SAMPLES, 4);
 	
 	// creamos una ventana con glfw
 	window = glfwCreateWindow(wh.x, wh.y, "TAGengine", nullptr, nullptr);
@@ -65,6 +66,8 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 	
 	// activamos el Z-buffer
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_MULTISAMPLE);
 	
 	toggleVSync(vsync);
 	
@@ -73,6 +76,7 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 
 void SkyWindow::beginDraw(){
 	glfwMakeContextCurrent(window);
+	Fps::Instance()->update();
 	// comprueba los eventos de entrada (teclado, raton...)
 	glfwPollEvents();
 	//limpia la pantalla asignando un color de fondo
@@ -82,9 +86,9 @@ void SkyWindow::beginDraw(){
 }
 
 void SkyWindow::endDraw(){
-//	char c[5];
-//	sprintf(c, "%d",Fps::Instance()->get());
-//	glfwSetWindowTitle(window, c);
+	char c[5];
+	sprintf(c, "%d",Fps::Instance()->get());
+	glfwSetWindowTitle(window, c);
 	// intercambiamos los buffers, sino no pinta NADA
 	glfwSwapBuffers(window);
 }

@@ -34,9 +34,8 @@ private:
 };
 
 class TMallaAnimada : public TEntidad {
-    
-    Shader* sh;
-    TRecursoTextura* textura;
+	
+	TRecursoTextura* textura;
     Pila* pila;
     TGestorRecursos* gestor;
     

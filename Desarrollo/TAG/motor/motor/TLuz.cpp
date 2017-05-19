@@ -12,7 +12,7 @@
 
 TLuz::TLuz() : ID(0){
 	pos = glm::vec3();
-	sh = ShaderManager::Instance()->getActivo();
+	sh = ShaderManager::Instance();
     lambient = 0.3f;
     ldiffuse = 2.5f;
     lspecular = 1.0f;
@@ -40,19 +40,17 @@ void TLuz::setupLight(){
 	glDrawBuffer(GL_NONE);
 	glReadBuffer(GL_NONE);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	Shader* s = ShaderManager::Instance()->getShaderbyName((char*)"debug_shadow");
+	Shader* s = sh->getShaderbyName((char*)"debug_shadow");
 	s->Use();
 	glUniform1i(glGetUniformLocation(s->Program, "depthMap"), 0);
 }
 
 void TLuz::Draw(TNodo* n){
-	sh = ShaderManager::Instance()->getActivo();
 	calcularTransformaciones(n);
 	dibujar_luz_puntual();
 }
 
 void TLuz::shadowDraw(TNodo* n){
-	sh = ShaderManager::Instance()->getActivo();
 	calcularTransformaciones(n);
 	dibujar_luz_direccional();
 }
@@ -76,24 +74,27 @@ void TLuz::calcularTransformaciones(TNodo* n){
 }
 
 void TLuz::dibujar_luz_puntual(){
-	glUniform3f(glGetUniformLocation(sh->Program, "light.position"), pos.x, pos.y, pos.z);
+	GLuint s = sh->getActivo()->Program;
+	glUniform3f(glGetUniformLocation(s, "light.position"), pos.x, pos.y, pos.z);
 	//propiedades de la luz
-	glUniform3f(glGetUniformLocation(sh->Program, "light.ambient"), lambient, lambient, lambient);
-	glUniform3f(glGetUniformLocation(sh->Program, "light.diffuse"), ldiffuse, ldiffuse, ldiffuse);
-	glUniform3f(glGetUniformLocation(sh->Program, "light.specular"), lspecular, lspecular, lspecular);
-	glUniform1f(glGetUniformLocation(sh->Program, "light.constant"),  1.0f);
-	glUniform1f(glGetUniformLocation(sh->Program, "light.linear"),    0.09);
-	glUniform1f(glGetUniformLocation(sh->Program, "light.quadratic"), 0.032);
-	glUniform3f(glGetUniformLocation(sh->Program, "light.color"), 1.0f, 1.0f, 1.0f);
+	glUniform3f(glGetUniformLocation(s, "light.ambient"), lambient, lambient, lambient);
+	glUniform3f(glGetUniformLocation(s, "light.diffuse"), ldiffuse, ldiffuse, ldiffuse);
+	glUniform3f(glGetUniformLocation(s, "light.specular"), lspecular, lspecular, lspecular);
+	glUniform1f(glGetUniformLocation(s, "light.constant"),  1.0f);
+	glUniform1f(glGetUniformLocation(s, "light.linear"),    0.09);
+	glUniform1f(glGetUniformLocation(s, "light.quadratic"), 0.032);
+	glUniform3f(glGetUniformLocation(s, "light.color"), 1.0f, 1.0f, 1.0f);
+	glUniform3f(glGetUniformLocation(s, "light.direction"), 0.2f, -0.5f, 0.0f);
 	glActiveTexture(GL_TEXTURE2);
 	glBindTexture(GL_TEXTURE_2D, depthMap);
 	
-	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "lightspaceMatrix"), 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
+	glUniformMatrix4fv(glGetUniformLocation(s, "lightspaceMatrix"), 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
 }
 
 void TLuz::dibujar_luz_direccional(){
+	GLuint s = sh->getActivo()->Program;
 	configureMatrices();
-	glUniformMatrix4fv(glGetUniformLocation(sh->Program, "lightSpaceMatrix"), 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
+	glUniformMatrix4fv(glGetUniformLocation(s, "lightSpaceMatrix"), 1, GL_FALSE, glm::value_ptr(lightSpaceMatrix));
 	glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
 	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
 	glClear(GL_DEPTH_BUFFER_BIT);
@@ -105,7 +106,7 @@ void TLuz::configureMatrices(){
 	glm::mat4 lightProjection, lightView;
 	GLfloat near_plane = 0.1f, far_plane = 1000.5f;
 //	lightProjection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, near_plane, far_plane);
-	lightProjection = glm::perspective((GLfloat)18.0f, (GLfloat)800.0f/600.0f, near_plane, far_plane);
+	lightProjection = glm::perspective(glm::radians(45.0f), (GLfloat)800.0f/600.0f, near_plane, far_plane);
     glm::vec3 target = glm::vec3(0.0,0.0,0.0);
     lightView = glm::lookAt(pos, target, glm::vec3(0.0, 1.0, 0.0));
 	lightSpaceMatrix = lightProjection * lightView;

@@ -12,7 +12,7 @@
 
 TCamara::TCamara() : ID(0), Zoom(ZOOM), nearV(0.1f), farV(20.0f){
 	esPerspectiva = true;
-	sh = ShaderManager::Instance()->getActivo();
+	sh = ShaderManager::Instance();
 	tam = SkyWindow::Instance()->getSIZE();
 	calcularProyection();
 	pila = Pila::Instance();
@@ -59,8 +59,7 @@ void TCamara::Draw(TNodo* n){
 		matriz = matriz * aux;
 		trans.pop();
 	}
-	sh = ShaderManager::Instance()->getActivo();
-	glUniform3f(glGetUniformLocation(sh->Program, "viewPos"),matriz[3].x,matriz[3].y,matriz[3].z);
+	glUniform3f(glGetUniformLocation(sh->getActivo()->Program, "viewPos"),matriz[3].x,matriz[3].y,matriz[3].z);
 	matriz = glm::inverse(matriz);
 //	glm::vec3 pos = glm::column(matriz, 3);
 //	matriz = glm::lookAt(pos, pos + glm::vec3(0,0,-1), glm::vec3(0,1,0));

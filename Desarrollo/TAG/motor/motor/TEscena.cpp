@@ -45,12 +45,13 @@ TEscena::TEscena(){
 //	
 //	trCam.trasladar(glm::vec3(0.0f, 0.0f, 5.0f));
 	motor = SkyEngine::Instance();
+	motor->init();
 	cam = motor->crearCamara(NULL);
 	motor->setActiveCam(0);
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,6,3), s(0.1, 0.1, 0.1);
+	dvector3D n(0,2,2), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
@@ -80,7 +81,7 @@ TEscena::TEscena(){
 	cubo->escalar(n);
 	n = dvector3D(0,0,0.1);
 	plano->transladar(n);
-	n = dvector3D(10,40,50);
+	n = dvector3D(2,10,10);
 	luz->setPosicion(n);
 	
 	n = cubo->getPosicion();

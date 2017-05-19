@@ -34,7 +34,7 @@ void Animacion::nextFrame(){
 TMallaAnimada::TMallaAnimada() : animacion_activa(nullptr) , textura(nullptr) {
     pila = Pila::Instance();
     gestor = TGestorRecursos::Instance();
-    sh = ShaderManager::Instance()->getActivo();
+    sh = ShaderManager::Instance();
     t.start();
 }
 
@@ -104,7 +104,7 @@ bool TMallaAnimada::FileExist(std::string ruta){
 }
 
 void TMallaAnimada::beginDraw(){
-    sh = ShaderManager::Instance()->getActivo();
+    Shader* s = sh->getActivo();
     
     pila->calculaMVP();
     pila->calculoFrustum();
@@ -114,14 +114,14 @@ void TMallaAnimada::beginDraw(){
     
     bool control = pila->AABB_Frustum_Test(malla->getminBB(), malla->getmaxBB());
     
-    glUniformMatrix4fv(glGetUniformLocation(sh->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
-    glUniformMatrix4fv(glGetUniformLocation(sh->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
+    glUniformMatrix4fv(glGetUniformLocation(s->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
+    glUniformMatrix4fv(glGetUniformLocation(s->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
     
     //if(control){
         if(textura)
-            malla->Draw(sh, textura->getTexture());
+            malla->Draw(s, textura->getTexture());
         else
-            malla->Draw(sh, nullptr);
+            malla->Draw(s, nullptr);
     //}
     
     
