@@ -11,7 +11,7 @@
 Camera::Camera(dvector3D speed) : m_objective(nullptr){
     m_speed = speed;
     autoCamera = false;
-    offSet = dvector3D(0,-3,-7);
+    offSet = dvector3D(0,-3,-6.5);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
     posCamara = dvector3D(0,0,0);
