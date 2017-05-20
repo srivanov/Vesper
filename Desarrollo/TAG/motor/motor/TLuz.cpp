@@ -43,6 +43,7 @@ void TLuz::setupLight(){
 	Shader* s = sh->getShaderbyName((char*)"debug_shadow");
 	s->Use();
 	glUniform1i(glGetUniformLocation(s->Program, "depthMap"), 0);
+	direction = glm::vec3(0.66,-0.66,0.66);
 }
 
 void TLuz::Draw(TNodo* n){
@@ -84,7 +85,7 @@ void TLuz::dibujar_luz_puntual(){
 	glUniform1f(glGetUniformLocation(s, "light.linear"),    0.09);
 	glUniform1f(glGetUniformLocation(s, "light.quadratic"), 0.032);
 	glUniform3f(glGetUniformLocation(s, "light.color"), 1.0f, 1.0f, 1.0f);
-	glUniform3f(glGetUniformLocation(s, "light.direction"), 0.2f, -0.5f, 0.0f);
+	glUniform3f(glGetUniformLocation(s, "light.direction"), direction.x, direction.y, direction.z);
 	glActiveTexture(GL_TEXTURE2);
 	glBindTexture(GL_TEXTURE_2D, depthMap);
 	
@@ -105,9 +106,9 @@ void TLuz::dibujar_luz_direccional(){
 void TLuz::configureMatrices(){
 	glm::mat4 lightProjection, lightView;
 	GLfloat near_plane = 0.1f, far_plane = 1000.5f;
-//	lightProjection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, near_plane, far_plane);
-	lightProjection = glm::perspective(glm::radians(45.0f), (GLfloat)800.0f/600.0f, near_plane, far_plane);
-    glm::vec3 target = glm::vec3(0.0,0.0,0.0);
+	lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+//	lightProjection = glm::perspective(glm::radians(45.0f), (GLfloat)800.0f/600.0f, near_plane, far_plane);
+    target = pos + direction;
     lightView = glm::lookAt(pos, target, glm::vec3(0.0, 1.0, 0.0));
 	lightSpaceMatrix = lightProjection * lightView;
 }

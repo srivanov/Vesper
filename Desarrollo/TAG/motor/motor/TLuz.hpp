@@ -40,8 +40,11 @@ public:
 
 	void Draw(TNodo* n);
 	void shadowDraw(TNodo* n);
-	void ClearScreen();
 	void DebugDraw(Shader* s);
+	void ClearScreen();
+	
+	void setLightDirection(glm::vec3 d) { direction = d; }
+	glm::vec3 getLightDirection() { return direction; }
 	
 	void beginDraw(){}
 	void endDraw(){}
@@ -49,7 +52,7 @@ public:
 private:
 	int ID;
 	glm::vec4 color;
-	glm::vec3 pos;
+	glm::vec3 pos, target, direction;
 	std::stack<glm::mat4> trans;
 	glm::mat4 matriz, lightSpaceMatrix;
     float lambient, ldiffuse, lspecular;

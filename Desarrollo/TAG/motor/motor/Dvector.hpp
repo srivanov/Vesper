@@ -90,6 +90,27 @@ struct dvector3D {
 	void operator++() {this->x++; this->y++; this->z++;};
 	void operator--() {this->x--; this->y--; this->z--;};
 	
+	dvector3D normalize() {
+		float length = raiz(x*x + y*y + z*z);
+		dvector3D s;
+		if(length != 0){
+			s.x = x/length;
+			s.y = y/length;
+			s.z = z/length;
+		}
+		return s;
+	}
+private:
+	float raiz(float num){
+		float x = num;
+		if(num > 0){
+			int i;
+			for(i=0; i<5; i++)
+				x = (((x*x) + num) / (2 * x));
+			return x;
+		}
+		return 0;
+	}
 };
 
 #endif /* DVECTOR_HPP */

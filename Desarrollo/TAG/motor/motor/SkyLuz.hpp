@@ -21,17 +21,20 @@ public:
 	void clearScreen() { m_luz->ClearScreen(); }
 	void debugDraw(Shader* s) { m_luz->DebugDraw(s); }
     
-    void _setAmbient(float lamb){ m_luz->setAmbient(lamb);}
-    float _getAmbient(){return m_luz->getAmbient();}
-    
-    void _setDiffuse(float ldif){m_luz->setDiffuse(ldif);}
-    float _getDiffuse(){return m_luz->getDiffuse();}
-    
-    void _setSpecular(float lspec){ m_luz->setSpecular(lspec);}
-    float _getSpecular(){return m_luz->getSpecular();}
+    void setAmbient(float lamb){ m_luz->setAmbient(lamb);}
+	void setDiffuse(float ldif){m_luz->setDiffuse(ldif);}
+	void setSpecular(float lspec){ m_luz->setSpecular(lspec);}
+	
+	float getAmbient(){return m_luz->getAmbient();}
+    float getDiffuse(){return m_luz->getDiffuse();}
+    float getSpecular(){return m_luz->getSpecular();}
+	
+	void setLightDirection(dvector3D d) {lightDir = d.normalize(); m_luz->setLightDirection(glmConv::v3d2glm(&lightDir)); }
+	dvector3D getLightDirection() { return lightDir; }
     
 private:
 	TLuz *m_luz;
+	dvector3D lightDir;
 };
 
 #endif /* SkyLuz_hpp */

@@ -28,7 +28,7 @@ void main()
 	//posicion en coordenadas del mundo del fragment
 	vs_out.FragPos = vec3(model * vec4(position, 1.0f));
 	
-	//	Normal = normalize(transpose(inverse(mat3(model))) * normal);
+//		vs_out.Normal = normalize(transpose(inverse(mat3(model))) * normal);
 	vs_out.Normal = normal;
 	
 	vs_out.FragPosLightSpace = lightspaceMatrix * vec4(vs_out.FragPos, 1.0);

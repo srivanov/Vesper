@@ -27,6 +27,7 @@ struct Light {
 	float linear;
 	float quadratic;
 };
+
 uniform Light light;
 uniform float shininess;
 uniform vec3 viewPos;
@@ -43,12 +44,14 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 	float currentDepth = projCoords.z;
 	vec3 normal = normalize(fs_in.Normal);
 	vec3 lightDir = normalize(-light.direction);
-	float bias = 0.0002 * tan(acos(dot(normal, lightDir)));
+	float bias = 0.0001 * tan(acos(dot(normal, lightDir)));
 	bias = clamp(bias, 0, 0.01);
 	// Check whether current frag pos is in shadow
 //	float bias = max(0.000005 * (dot(normal, lightDir)), 0.000002);
 //    float bias = 0.00000002;
 //	float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
+	
+	
 	
     // PCF
 	float shadow = 0.0;
@@ -58,7 +61,7 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 		for(int y = -1; y <= 1; ++y)
 		{
 			float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r;
-			shadow += currentDepth - bias > pcfDepth  ? 1.0 : 0.0;
+			shadow += currentDepth > pcfDepth  ? 1.0 : 0.0;
 		}
 	}
 	shadow /= 9.0;

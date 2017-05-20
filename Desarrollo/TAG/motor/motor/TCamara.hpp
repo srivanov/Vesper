@@ -48,7 +48,9 @@ private:
 	glm::mat4 matriz, projection;
 	GLfloat Zoom;
 	
-	void calcularProyection() { projection = glm::perspective(glm::radians(Zoom), (GLfloat)tam->x/(GLfloat)tam->y, nearV, farV); }
+	void calcularProyection() { projection = glm::perspective(glm::radians(Zoom), (GLfloat)tam->x/(GLfloat)tam->y, nearV, farV);
+// 		projection = glm::ortho(-100.0f, 100.0f, -100.0f, 100.0f, nearV, farV);
+	}
 };
 
 #endif /* TCamara_hpp */
