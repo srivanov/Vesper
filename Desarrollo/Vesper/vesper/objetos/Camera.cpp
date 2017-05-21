@@ -71,10 +71,10 @@ void Camera::calculateAutoPosition(){
     copy_objective=*m_objective;
     
     //LIMITACIONES CAMARA CON MAPA
-    if(copy_objective.x > map_width-10) copy_objective.x = map_width-10; //DERECHA
-    if(copy_objective.y > map_height-5) copy_objective.y  = map_height-5;//arriba
+    if(copy_objective.x > map_width-8) copy_objective.x = map_width-8; //DERECHA
+    if(copy_objective.y > map_height-8) copy_objective.y  = map_height-8;//arriba
     if(copy_objective.y < 4) copy_objective.y = 4;//abajo
-    if(copy_objective.x < 10) copy_objective.x = 10; //izquierda
+    if(copy_objective.x < 8) copy_objective.x = 8; //izquierda
     
     
     dvector3D * renderPos = render_component->getCamPos();
