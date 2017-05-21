@@ -41,6 +41,7 @@ struct Animacion {
 };
 
 class SkyMallaAnimada : public SkyNodo {
+	friend class SkyEngine;
     std::map<std::string,Animacion*> animaciones;
     std::map<std::string,Animacion*>::iterator it;
     tiempo t;

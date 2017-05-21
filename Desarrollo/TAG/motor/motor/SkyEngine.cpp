@@ -31,19 +31,19 @@ void SkyEngine::init(){
 	glUniform1i(glGetUniformLocation(s->Program, "shadowMap"), 2);
 }
 
-SkyMalla* SkyEngine::crearMalla(TNodo* padre, tipoMalla t){
-	return new SkyMalla(padre ? padre : root, t);
+SkyMalla* SkyEngine::crearMalla(SkyNodo* padre, tipoMalla t){
+	return new SkyMalla(padre ? padre->TransNodos[0] : root, t);;
 }
 
-SkyCamara* SkyEngine::crearCamara(TNodo* padre){
-	SkyCamara* c = new SkyCamara(padre ? padre : root, num_c);
+SkyCamara* SkyEngine::crearCamara(SkyNodo* padre){
+	SkyCamara* c = new SkyCamara(padre ? padre->TransNodos[0] : root, num_c);
 	camaras.insert(std::pair<int, SkyCamara*>(num_c, c));
 	num_c++;
 	return c;
 }
 
-SkyLuz* SkyEngine::crearLuz(TNodo* padre){
-	SkyLuz* c = new SkyLuz(padre ? padre : root, num_l);
+SkyLuz* SkyEngine::crearLuz(SkyNodo* padre){
+	SkyLuz* c = new SkyLuz(padre ? padre->TransNodos[0] : root, num_l);
 	luces.insert(std::pair<int, SkyLuz*>(num_l, c));
 	num_l++;
 	return c;

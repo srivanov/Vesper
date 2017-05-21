@@ -1,6 +1,7 @@
 
 #include "TEscena.hpp"
 #include "InputManager.h"
+#include "SkyWindow.hpp"
 
 TEscena::TEscena(){
 
@@ -11,7 +12,7 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,1,5), s(0.1, 0.1, 0.1);
+	dvector3D n(0,4,5), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
@@ -34,7 +35,7 @@ TEscena::TEscena(){
 //	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
-
+	
 	n = dvector3D(0,0.0,-2);
 	cubo->transladar(n);
 	n = dvector3D(0.1,0.1,0.1);
@@ -123,8 +124,9 @@ void TEscena::update(){
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
 		cam->setCamTarget(m);
 	}
-//	mov = dvector3D(InputManager::Instance()->mousePos.x-400, 300-InputManager::Instance()->mousePos.y, 0);
+//	mov = dvector3D(0, InputManager::Instance()->mousePos.y, 0);
 //	cam->setCamTarget(mov);
+//	cubo->setRotacion(mov);
 	
 //	cam->transladar(mov);
 	

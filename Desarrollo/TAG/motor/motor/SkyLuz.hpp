@@ -13,6 +13,7 @@
 #include "TLuz.hpp"
 
 class SkyLuz : public SkyNodo{
+	friend class SkyEngine;
 public:
 	SkyLuz(TNodo* padre, int ID);
 	~SkyLuz();

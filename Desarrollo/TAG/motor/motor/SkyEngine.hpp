@@ -23,9 +23,9 @@ class SkyEngine {
 public:
 	static SkyEngine* Instance() { static SkyEngine p; return &p; }
 	~SkyEngine();
-	SkyMalla* crearMalla(TNodo* padre, tipoMalla t);
-	SkyCamara* crearCamara(TNodo* padre);
-	SkyLuz* crearLuz(TNodo* padre);
+	SkyMalla* crearMalla(SkyNodo* padre, tipoMalla t);
+	SkyCamara* crearCamara(SkyNodo* padre);
+	SkyLuz* crearLuz(SkyNodo* padre);
 	void Draw();
 	bool setActiveCam(int i);
 	int getActiveCam() { return active_cam; }

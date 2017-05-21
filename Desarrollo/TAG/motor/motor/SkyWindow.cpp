@@ -49,9 +49,6 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 	glfwSetScrollCallback(window, scroll_callback);
 	*/
 	
-	//ocultamos el raton en la aplicacion
-//	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	
 	// activamos esto para que GLEW pueda trabajar con punteros de forma moderna, algo asi
 	glewExperimental = GL_TRUE;
 	
@@ -119,6 +116,8 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 //	mov_cursor = glm::vec3(yoffset, xoffset, 0);
 
 	//guardar la posicion en el inputManager
-	InputManager::Instance()->mousePos = dvector2D(xpos,ypos);
+	int w,h;
+	glfwGetWindowSize(window, &w, &h);
+	InputManager::Instance()->mousePos = dvector2D(xpos-w*0.5,h*0.5-ypos);
 }
 
