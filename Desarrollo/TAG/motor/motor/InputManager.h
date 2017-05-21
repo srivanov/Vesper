@@ -11,6 +11,7 @@
 
 #include <GLFW/glfw3.h>
 #include "SkyKeysDef.h"
+#include "Dvector.hpp"
 
 class InputManager {
 public:
