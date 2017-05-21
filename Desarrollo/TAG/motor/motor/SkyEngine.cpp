@@ -49,6 +49,10 @@ SkyLuz* SkyEngine::crearLuz(SkyNodo* padre){
 	return c;
 }
 
+SkyMallaAnimada * SkyEngine::crearMallaAnimada(SkyNodo *padre){
+    return new SkyMallaAnimada(padre ? padre->TransNodos[0] : root);
+}
+
 void SkyEngine::Draw(){
 	shMan->setActiveShader("render");
     renderCamaras();
@@ -96,6 +100,10 @@ void SkyEngine::Draw(){
 //    luces.begin()->second->Draw(false);
 //    root->Draw();
 
+}
+
+void SkyEngine::setAntiAliasing(bool set){
+    AntiAliasing = set;
 }
 
 void SkyEngine::renderScene(bool pass){

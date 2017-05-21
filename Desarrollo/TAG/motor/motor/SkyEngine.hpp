@@ -26,19 +26,20 @@ public:
 	SkyMalla* crearMalla(SkyNodo* padre, tipoMalla t);
 	SkyCamara* crearCamara(SkyNodo* padre);
 	SkyLuz* crearLuz(SkyNodo* padre);
+    SkyMallaAnimada * crearMallaAnimada(SkyNodo* padre);
 	void Draw();
 	bool setActiveCam(int i);
 	int getActiveCam() { return active_cam; }
 	void debugON(bool p) { debug = p; }
 	void init();
-	
+    void setAntiAliasing(bool set);
 private:
 	SkyEngine();
 	TNodo* root;
 	std::map<int, SkyCamara*> camaras;
 	std::map<int, SkyLuz*> luces;
 	int num_c, num_l, active_cam;
-	bool debug;
+	bool debug, AntiAliasing;
 	ShaderManager* shMan;
 	SkyWindow* window;
 	void renderScene(bool pass);

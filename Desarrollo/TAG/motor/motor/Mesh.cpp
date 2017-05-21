@@ -14,7 +14,7 @@ Mesh::Mesh(Vertex *verts, GLuint *inds, Texture **texs, GLint numV, GLint numI, 
 
 Mesh::~Mesh(){
 	delete[] vertices;
-	delete [] indices;
+	delete[] indices;
 	delete[] texturas;
 }
 
