@@ -10,6 +10,8 @@
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 SkyWindow::SkyWindow(){
 	i = InputManager::Instance();
@@ -43,11 +45,12 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 	
 	//definimos la funcion que llamaremos cuando se mueva el raton
 	glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetMouseButtonCallback(window, mouse_button_callback);
 	
-	/*
+	
 	//definimos la funcion cuando hacemos scroll
 	glfwSetScrollCallback(window, scroll_callback);
-	*/
+	
 	
 	// activamos esto para que GLEW pueda trabajar con punteros de forma moderna, algo asi
 	glewExperimental = GL_TRUE;
@@ -97,7 +100,13 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	else // GLFW_RELEASE
 		InputManager::Instance()->keys[key] = false;
 }
-
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods){
+    if(action != GLFW_RELEASE)
+        InputManager::Instance()->keys[button] = true;
+    else // GLFW_RELEASE
+        InputManager::Instance()->keys[button] = false;
+    
+}
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 	
 //	//inicialmente es TRUE
@@ -121,3 +130,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 	InputManager::Instance()->mousePos = dvector2D(xpos-w*0.5,h*0.5-ypos);
 }
 
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+
+}

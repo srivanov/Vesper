@@ -9,12 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motor/TMallaAnimada.hpp"
-            timestampString = "516635142.406468"
+            filePath = "motor/SkyWindow.cpp"
+            timestampString = "517081184.287309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15">
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "scroll_callback(GLFWwindow* window, double xoffset, double yoffset)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
