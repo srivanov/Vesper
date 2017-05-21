@@ -21,11 +21,13 @@ struct Light {
 	vec3 diffuse;
 	vec3 specular;
 	vec3 color;
+	vec3 direction;
 	
 	float constant;
 	float linear;
 	float quadratic;
 };
+
 uniform Light light;
 uniform float shininess;
 uniform vec3 viewPos;
@@ -41,11 +43,17 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 	// Get depth of current fragment from light's perspective
 	float currentDepth = projCoords.z;
 	vec3 normal = normalize(fs_in.Normal);
-	vec3 lightDir = normalize(light.position - fs_in.FragPos);
+	vec3 lightDir = normalize(-light.direction);
+	float bias = 0.0001 * tan(acos(dot(normal, lightDir)));
+	bias = clamp(bias, 0, 0.01);
 	// Check whether current frag pos is in shadow
-	float bias = max(0.0005 * (dot(normal, lightDir)), 0.0005);
+//	float bias = max(0.000005 * (dot(normal, lightDir)), 0.000002);
+//    float bias = 0.00000002;
 //	float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
-	// PCF
+	
+	
+	
+    // PCF
 	float shadow = 0.0;
 	vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
 	for(int x = -1; x <= 1; ++x)
@@ -53,11 +61,14 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 		for(int y = -1; y <= 1; ++y)
 		{
 			float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r;
-			shadow += currentDepth - bias > pcfDepth  ? 1.0 : 0.0;
+			shadow += currentDepth > pcfDepth  ? 1.0 : 0.0;
 		}
 	}
 	shadow /= 9.0;
-	//si se sale del plano de proyeccion de la luz
+	
+//    float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
+	
+    //si se sale del plano de proyeccion de la luz
 	if(projCoords.z > 1.0)
 		shadow = 0.0;
 	
@@ -74,7 +85,7 @@ void main()
 	vec3 ambient = light.ambient * tex;
 	
 	// luz difusa
-	vec3 lightDir = normalize(light.position - fs_in.FragPos);
+	vec3 lightDir = normalize(-light.direction);
 	float diff = max(dot(normal, lightDir), 0.0);
 	vec3 diffuse = light.diffuse * diff * tex;
 	
@@ -92,6 +103,5 @@ void main()
 	
 	FragColor = vec4(lighting, 1.0f);
 }
-
 
 

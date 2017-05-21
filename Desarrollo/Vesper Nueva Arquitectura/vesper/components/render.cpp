@@ -9,6 +9,7 @@
 render::render(){
 	nodo = NULL;
 	camara = NULL;
+	luz = NULL;
 //	texto = NULL;
 	vent = ventana::Instance();
 	engine = SkyEngine::Instance();
@@ -17,6 +18,8 @@ render::render(){
 render::~render(){
 	delete nodo;
 	nodo = NULL;
+	delete luz;
+	delete camara;
 }
 
 void render::update(){
@@ -28,7 +31,7 @@ void render::update(){
 void render::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fullscreen, bool stencilbuffer, bool vsync, bool receiver){
 	vent->crearWindow(ancho, alto, color, fullscreen, stencilbuffer, vsync, receiver);
 //	setTexto();
-	engine->initShaders();
+	engine->init();
 }
 
 bool render::run(){
@@ -126,11 +129,12 @@ void render::addCamera(dvector3D &p, dvector3D &l){
 	camara->setCamTarget(l);
     camara->setNearValue(1);
     camara->setFarValue(200);
-	SkyLuz* luz = engine->crearLuz(NULL);
-	luz->_setAmbient(0.4);
-	luz->_setDiffuse(0.5);
-	dvector3D c(200,200,-50);
+	luz = engine->crearLuz(camara);
+	luz->setAmbient(0.4);
+	luz->setDiffuse(0.5);
+	dvector3D c(-10,20,0);
 	luz->setPosicion(c);
+	luz->setLightDirection(dvector3D(-2.5,-2,5));
 }
 
 void render::closeWindow(){

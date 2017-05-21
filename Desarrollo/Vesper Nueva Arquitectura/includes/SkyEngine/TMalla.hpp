@@ -28,7 +28,6 @@ public:
 	void endDraw();
 	
 private:
-	Shader* sh;
 	TRecursoMalla* malla;
 	TRecursoTextura* textura;
 	Pila* pila;

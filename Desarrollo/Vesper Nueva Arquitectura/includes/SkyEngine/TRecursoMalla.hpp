@@ -12,7 +12,6 @@
 #include <assimp/scene.h>
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
-
 #include "TRecurso.hpp"
 #include "Mesh.hpp"
 

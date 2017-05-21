@@ -13,6 +13,7 @@
 #include "TCamara.hpp"
 
 class SkyCamara : public SkyNodo{
+	friend class SkyEngine;
 public:
 	SkyCamara(TNodo* padre, int ID);
 	~SkyCamara();

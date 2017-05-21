@@ -12,6 +12,7 @@
 Puerta::Puerta(){
     addNodo("3d/muro.obj");
     setTexture("3d/puerta.png");
+	key = -1;
 }
 
 void Puerta::inicializar(int id, const tipoPuerta p){

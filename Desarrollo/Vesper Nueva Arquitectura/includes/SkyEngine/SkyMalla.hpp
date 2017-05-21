@@ -18,14 +18,14 @@ enum tipoMalla{
 };
 
 class SkyMalla : public SkyNodo{
+	friend class SkyEngine;
 public:
-	SkyMalla(TNodo* padre, tipoMalla t);
 	~SkyMalla();
 	
 	void setMalla(char* fichero);
 	void setTextura(char* fichero);
-	
 private:
+	SkyMalla(TNodo* padre, tipoMalla t);
 	TMalla* m_malla;
 };
 

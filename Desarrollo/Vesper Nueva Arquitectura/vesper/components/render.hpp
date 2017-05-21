@@ -49,6 +49,7 @@ private:
 	SkyMalla *nodo, *nodo_suelo;
 //	ICameraSceneNode* camara;
 	SkyCamara* camara;
+	SkyLuz* luz;
 //    ISceneNode* nodo_suelo;
 //	irr::gui::IGUIStaticText* texto;
 };

@@ -13,7 +13,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-//#include "Fps.hpp"
+#include "Fps.hpp"
 #include "Dvector.hpp"
 #include "InputManager.h"
 
@@ -29,6 +29,12 @@ public:
 	void toggleVSync(bool t) { glfwSwapInterval(t); }
 	const dvector2D* getSIZE() { return &size; }
 	void resetViewport() { glViewport(0,0, width, height); }
+	void ocultarRaton(bool p) {
+		if(p) //ocultamos el raton en la aplicacion
+			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		else
+			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+	}
 private:
 	SkyWindow();
 	GLFWwindow* window;

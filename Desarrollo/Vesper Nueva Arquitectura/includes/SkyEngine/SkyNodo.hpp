@@ -13,8 +13,8 @@
 #include "TTransform.hpp"
 #include "Dvector.hpp"
 
-
 class SkyNodo {
+	friend class SkyEngine;
 public:
 	virtual void rotar(dvector3D &vector) { Trans[0]->rotar(vector); }
 	virtual void escalar(dvector3D &vector) { Trans[1]->escalar(vector); }

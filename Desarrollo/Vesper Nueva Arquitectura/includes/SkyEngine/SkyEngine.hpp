@@ -13,40 +13,38 @@
 #include "SkyNodo.hpp"
 #include "SkyMalla.hpp"
 #include "SkyCamara.hpp"
+#include "SkyMallaAnimada.hpp"
 #include "SkyLuz.hpp"
 #include <map>
+
+class SkyWindow;
 
 class SkyEngine {
 public:
 	static SkyEngine* Instance() { static SkyEngine p; return &p; }
 	~SkyEngine();
-	SkyMalla* crearMalla(TNodo* padre, tipoMalla t);
-	SkyCamara* crearCamara(TNodo* padre);
-	SkyLuz* crearLuz(TNodo* padre);
+	SkyMalla* crearMalla(SkyNodo* padre, tipoMalla t);
+	SkyCamara* crearCamara(SkyNodo* padre);
+	SkyLuz* crearLuz(SkyNodo* padre);
 	void Draw();
 	bool setActiveCam(int i);
 	int getActiveCam() { return active_cam; }
-	void initShaders(){
-		shMan->cargarShader("shadow_map", "../Shaders/shadow_map.vs", "../Shaders/shadow_map.frag");
-		shMan->cargarShader("debug_shadow", "../Shaders/debug_quad.vs", "../Shaders/debug_quad.frag");
-		shMan->cargarShader("render", "../Shaders/texDirect.vs", "../Shaders/texDirect.frag");
-		shMan->setActiveShader("render");
-		Shader* s = shMan->getShaderbyName((char*)"render");
-		//		glUniform1i(glGetUniformLocation(s->Program, "texture_diffuse1"), 0);
-		glUniform1i(glGetUniformLocation(s->Program, "shadowMap"), 2);
-	}
+	void debugON(bool p) { debug = p; }
+	void init();
 	
 private:
-	SkyEngine() : num_c(0), num_l(0), active_cam(0) {
-		root = new TNodo();
-		root->setEntidad(new TTransform());
-		shMan = ShaderManager::Instance();
-	}
+	SkyEngine();
 	TNodo* root;
 	std::map<int, SkyCamara*> camaras;
 	std::map<int, SkyLuz*> luces;
 	int num_c, num_l, active_cam;
+	bool debug;
 	ShaderManager* shMan;
+	SkyWindow* window;
+	void renderScene(bool pass);
+	void renderCamaras();
+	void limpiar();
+	void renderZbuffer();
 };
 
 

@@ -16,6 +16,8 @@
 #include "Pila.h"
 #include "glmConverter.h"
 
+class ShaderManager;
+
 class TEntidad{
 public:
 	TEntidad(){}
@@ -23,7 +25,8 @@ public:
 	virtual void beginDraw()=0;
 	virtual void endDraw()=0;
 	virtual glm::mat4 getMT(){return glm::mat4();};
-	
+protected:
+	ShaderManager* sh;
 };
 
 #endif /* TEntidad_hpp */
