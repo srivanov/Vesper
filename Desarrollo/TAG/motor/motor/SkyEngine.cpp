@@ -68,38 +68,6 @@ void SkyEngine::Draw(){
 		shMan->setActiveShader("render");
 		renderScene(false);
 	}
-//	std::map<int, SkyLuz*>::iterator it = luces.begin();
-//	while(it != luces.end()){
-//		it->second->Draw(TRUE);
-//		++it;
-//	}
-//    shMan->setActiveShader("shadow_map");
-//    luces.begin()->second->Draw(true);
-//    root->Draw();
-//    SkyWindow::Instance()->resetViewport();
-//    luces.begin()->second->clearScreen();
-    
-//    shMan->setActiveShader("render");
-//    std::map<int, SkyCamara*>::iterator iter = camaras.find(active_cam);
-//    if(iter != camaras.end())
-//        iter->second->Draw();
-//    else
-//        printf("SIN CAMARA\n");
-    
-    //	std::map<int, SkyLuz*>::iterator it = luces.begin();
-    //	while(it != luces.end()){
-    //		it->second->Draw(TRUE);
-    //		++it;
-    //	}
-    
-    
-//    shMan->setActiveShader("debug_shadow");
-//    luces.begin()->second->debugDraw(shMan->getShaderbyName("debug_shadow"));
-//    SkyWindow::Instance()->resetViewport();
-//    luces.begin()->second->clearScreen();
-//    luces.begin()->second->Draw(false);
-//    root->Draw();
-
 }
 
 void SkyEngine::setAntiAliasing(bool set){

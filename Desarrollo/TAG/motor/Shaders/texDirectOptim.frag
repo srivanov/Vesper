@@ -6,7 +6,9 @@ in VS_OUT {
 	vec3 FragPos;
 	vec3 Normal;
 	vec4 FragPosLightSpace;
-	mat3 TBN;
+	vec3 TangentLightPos;
+	vec3 TangentViewPos;
+	vec3 TangentFragPos;
 } fs_in;
 
 out vec4 FragColor;
@@ -32,8 +34,6 @@ struct Light {
 
 uniform Light light;
 uniform float shininess;
-uniform vec3 viewPos;
-uniform int normales;
 
 float ShadowCalculation(vec4 fragPosLightSpace)
 {
@@ -79,26 +79,24 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 void main()
 {
 	vec3 tex = vec3(texture(texture_diffuse1, fs_in.TexCoord));
-	
-	vec3 normal = vec3(0,0,0);
-	if(normales == 1){
-		normal = texture(texture_normal1, fs_in.TexCoord).rgb;
-		normal = normalize(normal * 2.0 - 1.0);
-		normal = normalize(fs_in.TBN * normal);
-	}else
-		normal = normalize(fs_in.Normal);
+
+	vec3 normal = texture(texture_normal1, fs_in.TexCoord).rgb;
+	normal = normalize(normal * 2.0 - 1.0);
 	
 	// luz ambiente
 	vec3 ambient = light.ambient * tex;
+	
 	// luz difusa
-	vec3 lightDir = normalize(-light.direction);
+	vec3 lightDir = normalize(fs_in.TangentLightPos - fs_in.TangentFragPos);
 	float diff = max(dot(normal, lightDir), 0.0);
 	vec3 diffuse = light.diffuse * diff * tex;
 	
 	// luz specular
-	vec3 viewDir = normalize(viewPos - fs_in.FragPos);
+	vec3 viewDir = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
 	vec3 reflectDir = reflect(-lightDir, normal);
-	float spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
+	float spec = 0.0;
+	
+	spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
 	vec3 specular = light.specular * spec * tex;
 	
 	// Sombras

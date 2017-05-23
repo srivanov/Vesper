@@ -43,12 +43,12 @@ void TMalla::beginDraw(){
 	
 	glUniformMatrix4fv(glGetUniformLocation(s->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
 	glUniformMatrix4fv(glGetUniformLocation(s->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
-//	if(control){
+	if(control){
 		if(textura)
 			malla->Draw(s, textura->getTexture());
 		else
 			malla->Draw(s, nullptr);
-//	}
+	}
 }
 
 void TMalla::endDraw(){

@@ -30,7 +30,7 @@ TRecursoMalla::~TRecursoMalla(){
 
 void TRecursoMalla::cargarFichero(std::string &ruta){
 	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile(ruta, aiProcess_Triangulate);
+	const aiScene* scene = importer.ReadFile(ruta, aiProcess_Triangulate | aiProcess_CalcTangentSpace);
 	
 	if(!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode){
 		std::cout << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
@@ -52,7 +52,7 @@ void TRecursoMalla::Draw(Shader *shader, Texture* textura){
 }
 
 void TRecursoMalla::processNode(aiNode *node, const aiScene *scene){
-	
+	initBB();
 	for (GLuint i=0; i<node->mNumMeshes; i++) {
 		//cojo de la escena entera los meshes del nodo
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
@@ -65,12 +65,14 @@ void TRecursoMalla::processNode(aiNode *node, const aiScene *scene){
 }
 
 Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
+
 	
 	aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
 	GLint numVertices = mesh->mNumVertices,
 		numIndices = mesh->mNumFaces * mesh->mFaces->mNumIndices,
 		numTexturas = material->GetTextureCount(aiTextureType_DIFFUSE)+
 					  material->GetTextureCount(aiTextureType_SPECULAR)+
+					  material->GetTextureCount(aiTextureType_HEIGHT)+
 					  material->GetTextureCount(aiTextureType_NORMALS);
 	
 	Vertex *vertices2 = new Vertex[numVertices];
@@ -88,6 +90,14 @@ Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 		takeMin(&minBB, vertex.Position);
 		takeMax(&maxBB, vertex.Position);
 		
+		if(mesh->HasTangentsAndBitangents()){
+			vertex.Tangents[0] = mesh->mTangents[i].x;
+			vertex.Tangents[1] = mesh->mTangents[i].y;
+			vertex.Tangents[2] = mesh->mTangents[i].z;
+			vertex.Bitangents[0] = mesh->mBitangents[i].x;
+			vertex.Bitangents[1] = mesh->mBitangents[i].y;
+			vertex.Bitangents[2] = mesh->mBitangents[i].z;
+		}
 		
 		if(mesh->mNormals != NULL){
 			vertex.Normal[0] = mesh->mNormals[i].x;
@@ -123,6 +133,7 @@ Mesh* TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene){
 	loadMaterialTextures(texturas2, material, aiTextureType_SPECULAR, "texture_specular", llenado);
 	
 	//3. Normal maps
+	loadMaterialTextures(texturas2, material, aiTextureType_HEIGHT, "texture_normal", llenado);
 	loadMaterialTextures(texturas2, material, aiTextureType_NORMALS, "texture_normal", llenado);
 	
 	Mesh* m = new Mesh(vertices2, indices2, texturas2, numVertices, numIndices, numTexturas);
@@ -135,6 +146,7 @@ void TRecursoMalla::loadMaterialTextures(Texture **tex, aiMaterial *mat, aiTextu
 		mat->GetTexture(type, i, &str);
 		std::string dir = directorio+'/'+str.C_Str();
 		tex[index] = pedirTextura((char*)dir.c_str());
+		tex[index]->type = typeName;
 		index++;
 	}
 }
@@ -185,8 +197,8 @@ void TRecursoMalla::takeMax(glm::vec3 *d, float *p){
 }
 
 void TRecursoMalla::initBB(){
-	minBB.x = 1000;		minBB.y = 1000;		minBB.z = 1000;
-	maxBB.x = -1000;	maxBB.y = -1000;	maxBB.z = -1000;
+	minBB.x = INT_MAX;	minBB.y = INT_MAX;	minBB.z = INT_MAX;
+	maxBB.x = INT_MIN;	maxBB.y = INT_MIN;	maxBB.z = INT_MIN;
 }
 
 

@@ -77,6 +77,7 @@ void TLuz::calcularTransformaciones(TNodo* n){
 void TLuz::dibujar_luz_puntual(){
 	GLuint s = sh->getActivo()->Program;
 	glUniform3f(glGetUniformLocation(s, "light.position"), pos.x, pos.y, pos.z);
+	
 	//propiedades de la luz
 	glUniform3f(glGetUniformLocation(s, "light.ambient"), lambient, lambient, lambient);
 	glUniform3f(glGetUniformLocation(s, "light.diffuse"), ldiffuse, ldiffuse, ldiffuse);

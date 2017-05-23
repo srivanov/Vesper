@@ -22,9 +22,11 @@ void Mesh::Draw(Shader* shader, Texture* textura){
 	
 	//TO DO: provisional
 	glUniform1f(glGetUniformLocation(shader->Program, "shininess"), 1.0f);
+	glUniform1i(glGetUniformLocation(shader->Program, "normales"), 0);
 	
 	GLuint diffuseNr = 1;
 	GLuint specularNr = 1;
+	GLuint normalNr = 1;
 	
 	if(textura != nullptr){
 		glActiveTexture(GL_TEXTURE0);
@@ -36,7 +38,7 @@ void Mesh::Draw(Shader* shader, Texture* textura){
 		
 			// activamos la textura antes de linkarla
 			glActiveTexture(GL_TEXTURE0 + i);
-			glActiveTexture(GL_TEXTURE0);
+//			glActiveTexture(GL_TEXTURE0);
 		
 			// recogemos el numero de la textura
 			std::stringstream ss;
@@ -49,10 +51,12 @@ void Mesh::Draw(Shader* shader, Texture* textura){
 			else if(name == "texture_specular")
 				// cambiamos de GLuint a stream
 				ss << specularNr++;
-			
+			else if(name == "texture_normal"){
+				ss << normalNr++;
+				glUniform1i(glGetUniformLocation(shader->Program, "normales"), 1);
+			}
 			number = ss.str();
-			
-			glUniform1f(glGetUniformLocation(shader->Program, (name + number).c_str()), i);
+			glUniform1i(glGetUniformLocation(shader->Program,(name + number).c_str()), i);
 			glBindTexture(GL_TEXTURE_2D, texturas[i]->id);
 		}
 	}
@@ -93,8 +97,6 @@ void Mesh::setupMesh(){
 	//copiamos los indices en el array de elementos
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(GLuint), &indices[0], GL_STATIC_DRAW);
 	
-	glEnableVertexAttribArray(0);
-	
 	/*
 	 * aqui le decimos a OpenGL como interpretar el buffer de vertices cuando tenga que dibujar
 	 * el primer parametro es el indice del vertice que queremos configurar
@@ -105,6 +107,7 @@ void Mesh::setupMesh(){
 	 * el sexto es un puntero a la posicion que queremos empezar la figura, esto sirve para cuando tengamos mas de uno
 	 * en la otra funcion activamos los atributos de vertices ya que estan desactivados por defecto
 	 */
+	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)0);
 	
 	//aqui pasamos las normales
@@ -114,6 +117,14 @@ void Mesh::setupMesh(){
 	// atributos de las texturas
 	glEnableVertexAttribArray(2);
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, TexCoords));
+	
+	//atributos de las tangentes
+	glEnableVertexAttribArray(3);
+	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, Tangents));
+	
+	//atributos de las bitangentes
+	glEnableVertexAttribArray(4);
+	glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, Bitangents));
 	
 	//deslinkamos el VAO por seguridad
 	glBindVertexArray(0);

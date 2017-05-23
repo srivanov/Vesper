@@ -12,7 +12,7 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(NULL);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,4,5), s(0.1, 0.1, 0.1);
+	dvector3D n(0,3,5), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
@@ -21,14 +21,18 @@ TEscena::TEscena(){
 	cubo->escalar(s);
 	
 //	cubo->setTextura("../Models/tex.png");
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
-//
-//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-//	mallas.back()->setMalla("../Models/microwave.obj");
+	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+	mallas.back()->setMalla("../Models/cubo.obj");
+	n = dvector3D(2,0.5,2);
+	mallas.back()->setPosicion(n);
+//	n = dvector3D(0.1,0.1,0.1);
+//	mallas.back()->escalar(n);
+
+	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+	mallas.back()->setMalla("../Models/microwave.obj");
 //	mallas.back()->setTextura("../Models/zil.png");
-//	n = dvector3D(3,0,-2);
-//	mallas.back()->setPosicion(n);
+	n = dvector3D(-8,0,1);
+	mallas.back()->setPosicion(n);
 	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
@@ -36,13 +40,14 @@ TEscena::TEscena(){
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
 	
-	n = dvector3D(0,0.0,-2);
+	n = dvector3D(0,0,-2);
 	cubo->transladar(n);
 	n = dvector3D(0.1,0.1,0.1);
 	cubo->escalar(n);
 	n = dvector3D(0.0,0.0,0.1);
 	plano->transladar(n);
 	n = dvector3D(-2,10,-10);
+//	n = dvector3D(2,0,8);
 	luz->setPosicion(n);
 	luz->setLightDirection(dvector3D(10,-20,10));
 	n = cubo->getPosicion();
