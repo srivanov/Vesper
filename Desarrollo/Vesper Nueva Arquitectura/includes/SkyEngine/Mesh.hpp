@@ -15,6 +15,8 @@ struct Vertex {
 	float Position[3];
 	float Normal[3];
 	float TexCoords[2];
+	float Tangents[3];
+	float Bitangents[3];
 };
 
 struct Texture {

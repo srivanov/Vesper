@@ -105,7 +105,7 @@ private:
 		float x = num;
 		if(num > 0){
 			int i;
-			for(i=0; i<20; i++)
+			for(i=0; i<5; i++)
 				x = (((x*x) + num) / (2 * x));
 			return x;
 		}

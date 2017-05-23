@@ -6,12 +6,14 @@ in VS_OUT {
 	vec3 FragPos;
 	vec3 Normal;
 	vec4 FragPosLightSpace;
+	mat3 TBN;
 } fs_in;
 
 out vec4 FragColor;
 
 uniform sampler2D texture_diffuse1;
 uniform sampler2D texture_specular1;
+uniform sampler2D texture_normal1;
 uniform sampler2D shadowMap;
 
 struct Light {
@@ -31,6 +33,7 @@ struct Light {
 uniform Light light;
 uniform float shininess;
 uniform vec3 viewPos;
+uniform int normales;
 
 float ShadowCalculation(vec4 fragPosLightSpace)
 {
@@ -50,8 +53,6 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 //	float bias = max(0.000005 * (dot(normal, lightDir)), 0.000002);
 //    float bias = 0.00000002;
 //	float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
-	
-	
 	
     // PCF
 	float shadow = 0.0;
@@ -78,12 +79,17 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 void main()
 {
 	vec3 tex = vec3(texture(texture_diffuse1, fs_in.TexCoord));
-//	vec3 color = texture(texture_diffuse1, fs_in.TexCoord).rgb;
-	vec3 normal = normalize(fs_in.Normal);
+	
+	vec3 normal = vec3(0,0,0);
+	if(normales == 1){
+		normal = texture(texture_normal1, fs_in.TexCoord).rgb;
+		normal = normalize(normal * 2.0 - 1.0);
+		normal = normalize(fs_in.TBN * normal);
+	}else
+		normal = normalize(fs_in.Normal);
 	
 	// luz ambiente
 	vec3 ambient = light.ambient * tex;
-	
 	// luz difusa
 	vec3 lightDir = normalize(-light.direction);
 	float diff = max(dot(normal, lightDir), 0.0);
@@ -92,9 +98,7 @@ void main()
 	// luz specular
 	vec3 viewDir = normalize(viewPos - fs_in.FragPos);
 	vec3 reflectDir = reflect(-lightDir, normal);
-	float spec = 0.0;
-//	vec3 halfwayDir = normalize(lightDir + viewDir);
-	spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
+	float spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
 	vec3 specular = light.specular * spec * tex;
 	
 	// Sombras
