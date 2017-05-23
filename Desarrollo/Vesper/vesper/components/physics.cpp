@@ -161,7 +161,7 @@ void physics::update(){
             body->SetLinearVelocity( vel );
         }
         dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
-        getFather()->setPosition(aux);
+        static_cast<GameObject*>(getFather())->setPosition(aux);
     }
 	if(atar){atarP(); atar = false;}
 }

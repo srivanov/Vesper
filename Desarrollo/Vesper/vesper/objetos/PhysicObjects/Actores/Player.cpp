@@ -13,7 +13,7 @@
 #include "../World/Alarm.hpp"
 #include "../World/Fuente.hpp"
 
-#define VELOCIDADN 2.f
+#define VELOCIDADN 4.f
 
 
 

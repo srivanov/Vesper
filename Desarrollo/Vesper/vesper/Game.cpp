@@ -53,10 +53,10 @@ void Game::render(float &interpolation){
 //		nivelazo->render();
 //	}
     renderizador->beginDraw();
+    maquina.render(interpolation);
 	if(*maquina.actualState->getState() == PLAYING)
 		renderizador->dibujar();
-    maquina.render(interpolation);
-    renderizador->endDraw();
+	renderizador->endDraw();
 }
 
 bool Game::isRunning(){
@@ -74,7 +74,7 @@ void Game::update(const long &timePerFrame){
 //		layoutPrueba->update();
 	}
     running = maquina.update(timePerFrame);
-    Fps::Instance()->update();
+	Fps::Instance()->update();
 }
 
 

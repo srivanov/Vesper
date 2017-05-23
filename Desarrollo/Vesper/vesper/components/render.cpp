@@ -106,7 +106,8 @@ void render::deleteNode(){
 }
 
 void render::setTexto(){
-	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(10,10,34,22), true);
+	texto = ventana::Instance()->getDevice()->getGUIEnvironment()->addStaticText(irr::core::stringw(Fps::Instance()->get()).c_str(), core::rect<s32>(100,100,34,22), true);
+	
     texto->setBackgroundColor(SColor(255,255,0,255));
     texto->setOverrideColor(SColor(255,255,255,255));
 }
@@ -117,7 +118,7 @@ void render::beginDraw() {
 
 void render::dibujar(){
 //	texto->setText(irr::core::stringw(Fps::Instance()->get()).c_str());
-	
+	ventana::Instance()->getDevice()->setWindowCaption(irr::core::stringw(Fps::Instance()->get()).c_str());
 //    GUIManager::i().drawAllGuis();
 	ventana::Instance()->getSceneManager()->drawAll();
 	
@@ -136,14 +137,17 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 		if(next_rot.z < 90.0f && prev_rot.z > 270.0f)
 			r2d2 = 360.0f;
 		
-		act = dvector3D(0,0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
+		act = dvector3D(nodo->_getNodeRotation()->x, 0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
 		nodo->_setNodeRotation(act);
 		
+//		if(getFather()->getObjectType() == BALA){
+//			printf("%.1f - %.1f\n", prev_pos.x, next_pos.x);
+//		}
 	}
 	if(camara != NULL){
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, (next_pos.z - prev_pos.z) * interpolation + prev_pos.z);
 		setCamPos(act);
-		setCamTarget(act+dvector3D(0,5,10));
+		setCamTarget(act+dvector3D(0,3,6.5));
 	}
 }
 
