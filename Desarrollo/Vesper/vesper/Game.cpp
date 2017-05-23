@@ -48,14 +48,14 @@ void Game::stop(){
 	running = false;
 }
 
-void Game::render(){
+void Game::render(float &interpolation){
 //	if(!pausa){
 //		nivelazo->render();
 //	}
     renderizador->beginDraw();
 	if(*maquina.actualState->getState() == PLAYING)
 		renderizador->dibujar();
-    maquina.render();
+    maquina.render(interpolation);
     renderizador->endDraw();
 }
 
@@ -65,7 +65,7 @@ bool Game::isRunning(){
 	return false;
 }
 
-void Game::update(){
+void Game::update(const long &timePerFrame){
 	if(!pausa){
 //		nivelazo->update();
 		entrada->update();
@@ -73,7 +73,7 @@ void Game::update(){
 //		processEvents();
 //		layoutPrueba->update();
 	}
-    running = maquina.update();
+    running = maquina.update(timePerFrame);
     Fps::Instance()->update();
 }
 

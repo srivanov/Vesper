@@ -13,8 +13,8 @@ class states;
 
 class state {
 public:
-	virtual void update() = 0;
-	virtual void render() = 0;
+	virtual void update(const long &timePerFrame) = 0;
+	virtual void render(float &interpolation) = 0;
 protected:
 	states* actualState;
 };

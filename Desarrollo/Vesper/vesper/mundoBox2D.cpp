@@ -15,7 +15,7 @@ mundoBox2D::mundoBox2D()
 {
 	world = new b2World(b2Vec2(0.0f, 0.0f)); //mundo sin gravedad
 	world->SetAllowSleeping(true);
-	timeStep = 1/20.0;      //the length of time passed to simulate (seconds)
+	
 	velocityIterations = 8;   //how strongly to correct velocity
 	positionIterations = 3;   //how strongly to correct position
 	
@@ -43,7 +43,8 @@ b2World* mundoBox2D::getWorld(){
     return world;
 }
 
-void mundoBox2D::update(){
+void mundoBox2D::update(const long &timePerFrame){
+	float32 timeStep = (float)(timePerFrame/1000.0f);
 	world->Step(timeStep, velocityIterations, positionIterations);
 }
 

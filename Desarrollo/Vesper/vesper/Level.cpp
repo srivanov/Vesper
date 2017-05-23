@@ -69,7 +69,7 @@ void Level::clear(){
     end = w.size();
 }
 
-void Level::update(){
+void Level::update(const long &timePerFrame){
 	if(!iniciado){
 		inicializar();
 	}
@@ -87,16 +87,16 @@ void Level::update(){
     for (it=0; it<end; it++)
         w[it]->update();
         
-    mundoBox2D::Instance()->update();
+    mundoBox2D::Instance()->update(timePerFrame);
     gestor_eventos::instance()->update();
 }
 
-void Level::render(){
-    c->render();
-    p->render();
+void Level::render(float &interpolation){
+    c->render(interpolation);
+    p->render(interpolation);
     
     for (it=0; it<end; it++)
-        w[it]->render();
+        w[it]->render(interpolation);
 }
 
 void Level::destroy(){

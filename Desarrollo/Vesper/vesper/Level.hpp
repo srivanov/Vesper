@@ -29,8 +29,8 @@ public:
     ~Level();
     bool lvlActivo() const {return iniciado;}
     bool inicializar();
-    void render();
-    void update();
+    void render(float &interpolation);
+    void update(const long &timePerFrame);
     void destroy();
 };
 

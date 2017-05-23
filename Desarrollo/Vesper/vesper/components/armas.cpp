@@ -55,8 +55,8 @@ void armas::update(){
     }
 }
 
-void armas::render(){
-    (*seleccionada)->render();
+void armas::render(float &interpolation){
+    (*seleccionada)->render(interpolation);
 }
 
 void armas::shoot(){

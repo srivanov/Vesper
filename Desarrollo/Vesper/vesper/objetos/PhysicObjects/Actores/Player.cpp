@@ -129,9 +129,9 @@ void Player::update(){
 
 }
 
-void Player::render(){
-    PhysicObject::render();
-    arma->render();
+void Player::render(float &interpolation){
+    PhysicObject::render(interpolation);
+    arma->render(interpolation);
 	hud.beginRender();
 	hud.render();
 	hud.endRender();

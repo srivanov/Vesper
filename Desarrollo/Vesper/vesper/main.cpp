@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]) {
 		//Llevamos control en las actualizaciones por frame
 		while (timeSinceLastUpdate > timePerFrame) {	// 15 veces/segundo
 			
-//			game->update(timePerFrame);
+			game->update(timePerFrame);
 			
 			timeSinceLastUpdate -= timePerFrame;
 		}
@@ -44,9 +44,7 @@ int main(int argc, const char * argv[]) {
 		interpolation = aux<1.0f ? aux : 1.0f;
 		
 		//TO DO: interpolacion
-//		game->render(interpolation);
-		game->update();
-		game->render();
+		game->render(interpolation);
 	}
     return 0;
 }

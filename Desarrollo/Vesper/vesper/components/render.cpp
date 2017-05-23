@@ -120,7 +120,7 @@ void render::dibujar(){
 	
 //    GUIManager::i().drawAllGuis();
 	ventana::Instance()->getSceneManager()->drawAll();
-	
+	falta esta parte de la interpolacion
 //	ventana::Instance()->getDevice()->getGUIEnvironment()->drawAll();
 }
 

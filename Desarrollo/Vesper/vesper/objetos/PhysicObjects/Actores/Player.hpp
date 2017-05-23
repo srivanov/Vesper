@@ -43,7 +43,7 @@ public:
     void contacto(PhysicObject*);
 	void contactoEnd(PhysicObject*){ obj_colisionado = nullptr; }
     void update();
-    void render();
+    void render(float &interpolation);
     void atacar();
     void cambiarArma();
     void cuerpoacuerpo();

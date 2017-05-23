@@ -31,7 +31,7 @@ menuManager::~menuManager(){
 	menus.clear();
 }
 
-void menuManager::update(){
+void menuManager::update(const long &timePerFrame){
 //	printf("Menu: %d\n",seleccionado->getID());
 
 	seleccionado = menus.at(actualState->menu);
@@ -39,7 +39,7 @@ void menuManager::update(){
 	seleccionado->update();
 }
 
-void menuManager::render(){
+void menuManager::render(float &interpolation){
 	seleccionado->beginRender();
 	seleccionado->render();
 	seleccionado->endRender();

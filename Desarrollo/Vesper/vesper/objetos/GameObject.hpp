@@ -90,7 +90,7 @@ public:
     virtual void setPosition(dvector3D&);
     virtual void setRotation(dvector3D&);
     virtual void update();
-    virtual void render();
+    virtual void render(float &interpolation);
     bool Eliminable() const {return eliminar;}
 };
 

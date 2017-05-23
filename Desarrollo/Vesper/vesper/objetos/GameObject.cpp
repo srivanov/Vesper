@@ -57,7 +57,7 @@ void GameObject::setTexture(char* filename){
     }
 }
 
-void GameObject::render(){
+void GameObject::render(float &interpolation){
     /*
      TO DO: RENDER
      */

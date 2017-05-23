@@ -21,7 +21,7 @@ public:
 	b2World* getWorld();
 	static mundoBox2D* Instance();
 	~mundoBox2D();
-	void update();
+	void update(const long &timePerFrame);
 	void cleanWorld();
     bool raycastContact(dvector3D posIni, dvector3D posFin);
 protected:
@@ -29,7 +29,6 @@ protected:
 
 private:
 	b2World* world;
-	float32 timeStep;      //the length of time passed to simulate (seconds)
 	int32 velocityIterations;   //how strongly to correct velocity
 	int32 positionIterations;   //how strongly to correct position
 	ContactListener contacto;

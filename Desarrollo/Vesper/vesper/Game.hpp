@@ -29,8 +29,8 @@ public:
 	void stop();
 	
 	virtual ~Game();
-	void update();
-	void render();
+	void update(const long &timePerFrame);
+	void render(float &interpolation);
 	bool isRunning();
     void setPausa(bool p){
         pausa = p;

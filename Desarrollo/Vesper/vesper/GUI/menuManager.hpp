@@ -19,8 +19,8 @@ class menuManager : public state{
 public:
 	menuManager();
 	~menuManager();
-	void update();
-	void render();
+	void update(const long &timePerFrame);
+	void render(float &interpolation);
     void InitRenderer();
     void Init();
 	
