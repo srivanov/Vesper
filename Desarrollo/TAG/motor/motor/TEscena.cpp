@@ -23,7 +23,7 @@ TEscena::TEscena(){
 //	cubo->setTextura("../Models/tex.png");
 	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 	mallas.back()->setMalla("../Models/cubo.obj");
-	n = dvector3D(2,0.5,2);
+	n = dvector3D(2,1,2);
 	mallas.back()->setPosicion(n);
 //	n = dvector3D(0.1,0.1,0.1);
 //	mallas.back()->escalar(n);

@@ -17,7 +17,7 @@ class InputManager {
 public:
 	static InputManager* Instance() { static InputManager inst; return &inst; }
 	bool isPressed(int key) { return keys[key]; }
-	bool keys[SKY_KEY_LAST], firstMouse=true;
+	bool keys[SKY_KEY_LAST];
 	dvector2D mousePos;
 private:
 	InputManager(){}

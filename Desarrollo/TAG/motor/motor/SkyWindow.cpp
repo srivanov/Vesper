@@ -76,7 +76,6 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 
 void SkyWindow::beginDraw(){
 	glfwMakeContextCurrent(window);
-	Fps::Instance()->update();
 	// comprueba los eventos de entrada (teclado, raton...)
 	glfwPollEvents();
 	//limpia la pantalla asignando un color de fondo
@@ -86,9 +85,6 @@ void SkyWindow::beginDraw(){
 }
 
 void SkyWindow::endDraw(){
-	char c[5];
-	sprintf(c, "%d",Fps::Instance()->get());
-	glfwSetWindowTitle(window, c);
 	// intercambiamos los buffers, sino no pinta NADA
 	glfwSwapBuffers(window);
 }
@@ -108,29 +104,19 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
     
 }
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
-	
-//	//inicialmente es TRUE
-//	if(firstMouse){
-//		lastX = xpos;
-//		lastY = ypos;
-//		firstMouse = false;
-//	}
-//	
-//	GLfloat xoffset = xpos - lastX;
-//	
-//	//le damos la vuelta ya que el eje Y empieza desde abajo
-//	GLfloat yoffset = lastY - ypos;
-//	lastX = xpos;
-//	lastY = ypos;
-//	mov_cursor = glm::vec3(yoffset, xoffset, 0);
-
 	//guardar la posicion en el inputManager
 	int w,h;
 	glfwGetWindowSize(window, &w, &h);
 	InputManager::Instance()->mousePos = dvector2D(xpos-w*0.5,h*0.5-ypos);
 }
 
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
-{
-
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset){
+//	if(yoffset < 0)
+//		printf("ABAJO ");
+//	else if (yoffset > 0)
+//		printf("ARRIBA ");
+//	else
+//		printf("___");
+// NO SE EJECUTA SI NO HAY SCROLL, se descarta la opcion de guardar el scroll porque no se quitara nunca
 }
+

@@ -13,7 +13,6 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include "Fps.hpp"
 #include "Dvector.hpp"
 #include "InputManager.h"
 
@@ -35,6 +34,7 @@ public:
 		else
 			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	}
+	void setWindowTitle(char* c) { glfwSetWindowTitle(window, c); }
 private:
 	SkyWindow();
 	GLFWwindow* window;
