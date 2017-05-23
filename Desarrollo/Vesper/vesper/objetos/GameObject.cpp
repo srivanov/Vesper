@@ -12,6 +12,7 @@ GameObject::GameObject(){
      component * componente = new class render();
      componentes.insert(std::pair<const ComponentType,component*>(RENDER,componente));
      componente->setFather(this);
+	first = true;
 }
 
 void GameObject::inicializar(int ID){ //que reciba tb el tipo de la puerta
@@ -24,18 +25,25 @@ GameObject::~GameObject(){
 }
 
 void GameObject::setPosition(dvector3D &position){
-    m_pos = position;
-	
+    prev_pos = m_pos;
+	m_pos = position;
+	if(first){
+		prev_pos = posicion;
+		first = false;
+	}
     class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
     if(ren != NULL)
         ren->setNodePosition(position);
 }
 
 void GameObject::setRotation(dvector3D& rotation){
-    m_rot = rotation;
+	
 	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
-	if(ren != NULL)
+	if(ren != NULL){
+		prev_rot = m_rot;
+		m_rot = rotation;
 		ren->setNodeRotation(rotation);
+	}
 }
 
 void GameObject::update(){
@@ -58,7 +66,12 @@ void GameObject::setTexture(char* filename){
 }
 
 void GameObject::render(float &interpolation){
-    /*
-     TO DO: RENDER
-     */
+	class render* ren = (class render*)findComponent("render");
+	if(ren != NULL){
+		//		ren->setNodeRotation(rotacion);
+		ren->DrawNode(prev_pos, m_pos, prev_rot, m_rot, interpolation);
+	}
 }
+
+
+

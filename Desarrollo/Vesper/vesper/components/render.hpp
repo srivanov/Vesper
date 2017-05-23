@@ -29,13 +29,14 @@ public:
 	void setTexto();
     void dibujar();
     void beginDraw();
+	void DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_rot, dvector3D &next_rot, float &interpolation);
     void endDraw();
 	void addCamera(dvector3D &p, dvector3D &l);
 	void closeWindow();
 	void dibujarMuro(int*tilemap,int anchoMapa, int altoMapa);
-	void setCamPos(dvector3D &pos);
+	void setCamPos(dvector3D &spos);
 	dvector3D* getCamPos();
-	void setCamTarget(dvector3D &pos);
+	void setCamTarget(dvector3D pos);
     void anyadirArma();
 	
 private:
