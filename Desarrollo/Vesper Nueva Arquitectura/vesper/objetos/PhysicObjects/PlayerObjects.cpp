@@ -50,5 +50,8 @@ void PlayerObjects::inicializar(int ID){
             break;
         default:
             break;
+            dvector3D m = *getPosition();
+            m.z = 2;
+            setPosition(m);
     }
 }
