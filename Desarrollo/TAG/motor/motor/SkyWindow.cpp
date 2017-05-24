@@ -17,7 +17,7 @@ SkyWindow::SkyWindow(){
 	i = InputManager::Instance();
 }
 
-int SkyWindow::crearWindow(dvector2D wh, bool vsync){
+int SkyWindow::crearWindow(dvector2D wh, bool vsync, bool fullscreen){
 	glfwInit();
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -27,7 +27,10 @@ int SkyWindow::crearWindow(dvector2D wh, bool vsync){
 	glfwWindowHint(GLFW_SAMPLES, 4);
 	
 	// creamos una ventana con glfw
-	window = glfwCreateWindow(wh.x, wh.y, "TAGengine", nullptr, nullptr);
+    if(fullscreen)
+        window = glfwCreateWindow(wh.x, wh.y, "TAGengine", glfwGetPrimaryMonitor(), nullptr);
+    else
+        window = glfwCreateWindow(wh.x, wh.y, "TAGengine", nullptr, nullptr);
 	if (window == nullptr){
 		std::cout << "Failed to create GLFW window" << std::endl;
 //		glfwTerminate();

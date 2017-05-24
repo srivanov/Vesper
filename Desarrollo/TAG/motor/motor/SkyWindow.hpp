@@ -19,7 +19,7 @@
 class SkyWindow {
 public:
 	static SkyWindow* Instance(){ static SkyWindow pinstance; return &pinstance; }
-	int crearWindow(dvector2D wh = dvector2D(800,600), bool vsync = true);
+	int crearWindow(dvector2D wh = dvector2D(800,600), bool vsync = true, bool fullscreen = false);
 	bool isRunning() { return !glfwWindowShouldClose(window); }
 	void beginDraw();
 	void endDraw();
