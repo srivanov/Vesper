@@ -17,15 +17,15 @@ void Alarm::gestorTiempo(){
         if(_time.tTranscurrido(TIEMPOALARMA)){
             activado = false;
             printf("| se ha desactivado |");
-            setTexture("3d/alarmita.png");
+            setTexture("3d/alarma_diffuse.png");
         }
     }
 }
 
 Alarm::Alarm(){
     rota = NPCKnows = activado = false;
-    addNodo("3d/muro.obj");
-    setTexture("3d/alarmita.png");
+    addNodo("3d/alarma.obj");
+//    setTexture("3d/alarma_diffuse.png");
 }
 Alarm::~Alarm(){}
 void Alarm::update(){

@@ -130,7 +130,7 @@ void render::addCamera(dvector3D &p, dvector3D &l){
     camara->setNearValue(1);
     camara->setFarValue(200);
 	luz = engine->crearLuz(camara);
-	luz->setAmbient(0.4);
+	luz->setAmbient(1.4);
 	luz->setDiffuse(0.5);
 	dvector3D c(-10,20,0);
 	luz->setPosicion(c);

@@ -25,8 +25,8 @@ Player::Player(){
 	((habilidadEspecial*)componente)->setTipo(tHabINVISIBLE);
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
     componente->setFather(this);
-    addNodo("3d/sphere.obj");
-    setTexture("3d/texture.png");
+    addNodo("3d/player1.obj");
+//    setTexture("3d/Player1_Diffuse.png");
 	
     vida = 100;
 	input = InputManager::Instance();
@@ -38,6 +38,8 @@ Player::~Player(){
 }
 
 void Player::update(){
+    
+    printf("pos(%.1f, %.1f, %.1f)\n", m_pos.x, m_pos.y, m_pos.z);
     
     if(vida <= 0){
         eliminar = true;

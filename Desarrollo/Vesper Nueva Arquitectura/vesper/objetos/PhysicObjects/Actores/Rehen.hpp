@@ -14,7 +14,9 @@
 class Rehen : public PhysicObject {
     
 public:
-    Rehen(){addNodo("3d/muro.obj");setTexture("3d/rehen.png");}
+    Rehen(){addNodo("3d/player2.obj");
+//        setTexture("3d/Player2_Diffuse.png");
+    }
     ~Rehen(){}
     void contacto(PhysicObject *){}
     void contactoEnd(PhysicObject*){}

@@ -10,7 +10,7 @@
 #include "Player.hpp"
 
 Puerta::Puerta(){
-    addNodo("3d/muro.obj");
+    addNodo("3d/puerta.obj");
     setTexture("3d/puerta.png");
 	key = -1;
 }

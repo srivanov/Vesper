@@ -157,7 +157,7 @@ void physics::update(){
             body->SetLinearVelocity( vel );
         }
 //	getFather()->setPosicion(new float[3]{body->GetPosition().x, body->GetPosition().y, 0});
-        dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
+        dvector3D aux(body->GetPosition().x, body->GetPosition().y, getFather()->getPosition()->z);
     
         getFather()->setPosition(aux);
     }

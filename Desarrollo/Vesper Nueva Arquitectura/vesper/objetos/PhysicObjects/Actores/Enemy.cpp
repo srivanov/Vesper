@@ -17,8 +17,8 @@ Enemy::Enemy(){
      componente->setFather(this);
      
     Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
-    addNodo("3d/muro.obj");
-    setTexture("3d/naranja.png");
+    addNodo("3d/enemigo1.obj");
+//    setTexture("3d/Monstruo1_Diffuse.png");
     t.start();
 }
 
