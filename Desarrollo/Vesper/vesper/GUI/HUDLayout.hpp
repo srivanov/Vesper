@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "GUI.h"
-#include "../MyEventReceiver.hpp"
 #include "../components/typeArma.hpp"
 
 class HUDLayout : public GUI {

@@ -23,7 +23,7 @@ class Level  : public state{
     size_t it,end;
     bool iniciado;
     void clear();
-    MyEventReceiver* input;
+    InputManager* input;
 public:
     Level();
     ~Level();

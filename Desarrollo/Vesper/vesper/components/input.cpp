@@ -5,8 +5,7 @@
 #include "../Game.hpp"
 
 input::input(){
-	r = MyEventReceiver::Instance();
-    intervalo = clock();
+	
     cadenciaDisparo = 5.0;
 }
 
@@ -19,7 +18,7 @@ void input::update(){
     //TO DO: reducir las llamadas para mover el objeto del jugador usando aux para guardar la ultima velocidad
     
     //Camera* cam = Game::Instance()->getCamara();
-    dvector3D velocidad;
+//    dvector3D velocidad;
     /*
     if(MyEventReceiver::Instance()->IsKeyDown('W')){
         velocidad.y =  1;

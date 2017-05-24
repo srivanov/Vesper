@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-               BuildableName = "vesper.app"
-               BlueprintName = "vesper"
+               BlueprintIdentifier = "E9AD51831ED4EDA8009F3723"
+               BuildableName = "Vesper"
+               BlueprintName = "Vesper"
                ReferencedContainer = "container:vesper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-            BuildableName = "vesper.app"
-            BlueprintName = "vesper"
+            BlueprintIdentifier = "E9AD51831ED4EDA8009F3723"
+            BuildableName = "Vesper"
+            BlueprintName = "Vesper"
             ReferencedContainer = "container:vesper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -50,15 +50,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      consoleMode = "1">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-            BuildableName = "vesper.app"
-            BlueprintName = "vesper"
+            BlueprintIdentifier = "E9AD51831ED4EDA8009F3723"
+            BuildableName = "Vesper"
+            BlueprintName = "Vesper"
             ReferencedContainer = "container:vesper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E9AC3A361DF0A9C100A91A97"
-            BuildableName = "vesper.app"
-            BlueprintName = "vesper"
+            BlueprintIdentifier = "E9AD51831ED4EDA8009F3723"
+            BuildableName = "Vesper"
+            BlueprintName = "Vesper"
             ReferencedContainer = "container:vesper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

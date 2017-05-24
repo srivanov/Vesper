@@ -5,10 +5,9 @@
 
 #include "CEGUI/CEGUI.h"
 #include "CEGUI/RendererModules/OpenGL/GL3Renderer.h"
-#include "CEGUI/RendererModules/Irrlicht/Renderer.h"
 
 #include "../estados/estados.h"
-#include "../MyEventReceiver.hpp"
+#include <SkyEngine/InputManager.h>
 
 struct vec4f{
 	float x, y, z, w;
@@ -16,7 +15,7 @@ struct vec4f{
 
 class GUI {
 public:
-    GUI(){ eventManager = MyEventReceiver::Instance(); actualState = states::Instance(); }
+    GUI(){ eventManager = InputManager::Instance(); actualState = states::Instance(); }
     virtual void init(CEGUI::RenderTarget* target);
     void destroy();
     void draw();
@@ -25,9 +24,9 @@ public:
     virtual void update();
     virtual void render();
 	
-	void beginRender() { m_rendererIrrlicht->beginRendering(); }
-	void endRender() { m_rendererIrrlicht->endRendering(); }
-    
+	void beginRender() { m_renderer->beginRendering(); }
+	void endRender() { m_renderer->endRendering(); }
+	
     void loadScheme(const std::string& schemeFile);
     void setFont(const std::string& fontFile);
     
@@ -38,13 +37,13 @@ public:
     void showMouseCursor(bool show);
     void setMouseCursor(const std::string& mouse);
     
-    CEGUI::Key::Scan irrlichtToCeguiKey(irr::EKEY_CODE key);
+//    CEGUI::Key::Scan irrlichtToCeguiKey(irr::EKEY_CODE key);
     
-    void injectKeyDown(irr::EKEY_CODE key);
-    
-    void injectKeyUp(irr::EKEY_CODE key);
-    
-    void injectMousePosition(const dvector2D *pos);
+//    void injectKeyDown(irr::EKEY_CODE key);
+//    
+//    void injectKeyUp(irr::EKEY_CODE key);
+	
+    void injectMousePosition(dvector2D pos);
     
     void injectLeftMouseButton() {
         m_context->injectMouseButtonDown(CEGUI::MouseButton::LeftButton);
@@ -74,9 +73,9 @@ public:
 protected:
     bool activo;
     states* actualState;
-    MyEventReceiver* eventManager;
+    InputManager* eventManager;
 	CEGUI::OpenGL3Renderer* m_renderer;
-	CEGUI::IrrlichtRenderer* m_rendererIrrlicht;
+//	CEGUI::IrrlichtRenderer* m_rendererIrrlicht;
 private:
 	
     CEGUI::GUIContext* m_context = nullptr;

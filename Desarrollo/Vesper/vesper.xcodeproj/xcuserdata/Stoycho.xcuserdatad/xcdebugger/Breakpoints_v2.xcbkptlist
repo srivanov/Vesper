@@ -138,28 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/components/render.cpp"
-            timestampString = "517247919.332125"
+            timestampString = "517277201.283192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "render::DrawNode(dvector3D &amp;prev_pos, dvector3D &amp;next_pos, dvector3D &amp;prev_rot, dvector3D &amp;next_rot, float &amp;interpolation)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vesper/components/render.cpp"
-            timestampString = "517247617.507437"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "render::dibujar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/components/render.cpp"
-            timestampString = "517267952.966016"
+            timestampString = "517277201.283192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "render::DrawNode(dvector3D &amp;prev_pos, dvector3D &amp;next_pos, dvector3D &amp;prev_rot, dvector3D &amp;next_rot, float &amp;interpolation)"
             landmarkType = "7">
          </BreakpointContent>
@@ -240,6 +224,22 @@
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "Bala::update()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/components/render.cpp"
+            timestampString = "517277723.460062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "render::~render()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
