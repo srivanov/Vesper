@@ -40,9 +40,11 @@ void menuManager::update(const long &timePerFrame){
 }
 
 void menuManager::render(float &interpolation){
+    glDisable(GL_DEPTH_TEST);
 	m_IrrlichtRenderer->beginRendering();
 	seleccionado->render();
 	m_IrrlichtRenderer->endRendering();
+    glEnable(GL_DEPTH_TEST);
 }
 
 void menuManager::InitRenderer(){
