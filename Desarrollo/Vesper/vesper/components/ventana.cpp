@@ -25,6 +25,7 @@ void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fu
 //	device->setWindowCaption(L"Vesper");
 	window->crearWindow(dvector2D(ancho,alto),vsync);
 	window->setWindowTitle("Vesper");
+    window->ocultarRaton(true);
 }
 
 //IrrlichtDevice* ventana::getDevice(){

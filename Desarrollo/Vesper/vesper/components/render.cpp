@@ -19,7 +19,7 @@ render::~render(){
 	delete camara;
 	std::vector<SkyMalla*>::iterator it = all_nodos.begin();
 	while(it != all_nodos.end()){
-		delete (*it);
+//		delete (*it); // GALLEGO
 		++it;
 	}
 	all_nodos.clear();

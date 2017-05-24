@@ -93,7 +93,7 @@ void GUI::setMouseCursor(const std::string & mouse) {
 //}
 
 void GUI::injectMousePosition(dvector2D pos) {
-	m_context->injectMousePosition(pos.x/2, (m_renderer->getDisplaySize().d_height-pos.y/2)); kjhgjh
+	m_context->injectMousePosition(pos.x*2, (m_renderer->getDisplaySize().d_height-pos.y*2));
 }
 
 void GUI::setWidgetDestRect(CEGUI::Window* widget, const vec4f& destRectPerc, const vec4f& destRectPix) {
