@@ -23,7 +23,7 @@ void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fu
 //	driver = device->getVideoDriver();
 //	smgr = device->getSceneManager();
 //	device->setWindowCaption(L"Vesper");
-	window->crearWindow(dvector2D(ancho,alto),vsync);
+	window->crearWindow(dvector2D(ancho,alto),vsync, fullscreen);
 	window->setWindowTitle("Vesper");
     window->ocultarRaton(true);
 }
