@@ -53,12 +53,12 @@ void gun::update(){
     }
 }
 
-void gun::render(){
+void gun::render(float &interpolation){
     iter = balas.begin();
     while (iter != balas.end())
 	{
         bala_aux = *iter;
-        bala_aux->render();
+        bala_aux->render(interpolation);
         iter++;
     }
 }

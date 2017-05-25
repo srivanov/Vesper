@@ -19,15 +19,15 @@ class menuManager : public state{
 public:
 	menuManager();
 	~menuManager();
-	void update();
-	void render();
+	void update(const long &timePerFrame);
+	void render(float &interpolation);
     void InitRenderer();
     void Init();
 	
 private:
 	std::map<tipoMenu,GUI*> menus;
 	GUI* seleccionado;
-    CEGUI::IrrlichtRenderer *m_IrrlichtRenderer; //TO DO: CAMBIAR A OPENGL3RENDERER CUANDO CAMBIEMOS A NUESTRO MOTOR
+    CEGUI::OpenGL3Renderer *m_IrrlichtRenderer; //TO DO: CAMBIAR A OPENGL3RENDERER CUANDO CAMBIEMOS A NUESTRO MOTOR
     CEGUI::RenderTarget* m_target;
 };
 

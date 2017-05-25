@@ -23,8 +23,8 @@ include lvl
 class stateMachine {
 public:
 	stateMachine();
-	bool update();
-	void render();
+	bool update(const long &timePerFrame);
+	void render(float &interpolation);
     void Init();
 	
 	states* actualState;

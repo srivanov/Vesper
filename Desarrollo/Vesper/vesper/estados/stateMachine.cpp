@@ -21,7 +21,7 @@ void stateMachine::Init() {
 //		exit(0);
 }
 
-bool stateMachine::update(){
+bool stateMachine::update(const long &timePerFrame){
 	actualState->update();
 	
 	if(actualState->destruir){
@@ -30,17 +30,17 @@ bool stateMachine::update(){
 	}
 	
 	if(*actualState->getState() == PLAYING)
-		nivelazo.update();
+		nivelazo.update(timePerFrame);
 	else if(*actualState->getState() == MENU)
-		menusManager.update();
+		menusManager.update(timePerFrame);
 	else if(*actualState->getState() == STOP)
 		stop();
 	return running;
 }
 
-void stateMachine::render(){
+void stateMachine::render(float &interpolation){
 	if(*actualState->getState() == PLAYING)
-		nivelazo.render();
+		nivelazo.render(interpolation);
 	else if(*actualState->getState() == MENU)
-		menusManager.render();
+		menusManager.render(interpolation);
 }

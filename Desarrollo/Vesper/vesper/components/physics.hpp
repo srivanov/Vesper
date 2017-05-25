@@ -24,7 +24,7 @@ public:
 	
 	void setPosition(dvector3D &pos);
 	void setVelocity(dvector3D &veloc);
-	float rotarConRaton(dvector3D &posRaton);
+	float rotarAposicion(dvector3D &posRaton, bool d2 = true);
 	void rotar(float anguloRotacion);
     bool RayCastControl(dvector3D posIni,dvector3D posFin);
 private:

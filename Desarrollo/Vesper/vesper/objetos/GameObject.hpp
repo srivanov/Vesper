@@ -16,7 +16,7 @@
 #include "../components/Physics.hpp"
 #include "../components/render.hpp"
 #include "../components/salud.hpp"
-#include "../components/sed.hpp"
+//#include "../components/sed.hpp"
 #include "../Dvector.hpp"
 #include "../Tools/EasyMath.hpp"
 #include <vector>
@@ -70,11 +70,11 @@ enum ObjectType {
 class GameObject {
     GameObject(const GameObject&) = delete;
 protected:
-    dvector3D m_pos , m_rot ;
+    dvector3D m_pos , m_rot , prev_pos, prev_rot;
     std::map<const ComponentType,component*> componentes;
     std::map<const ComponentType,component*>::iterator it;
     int m_ID;
-    bool eliminar;
+    bool eliminar, first, control;
     ObjectType m_tipo;
 public:
     int getObjectID() const {return m_ID;}
@@ -85,12 +85,12 @@ public:
     void addNodo(char* filename);
     void setTexture(char* filename);
     virtual void inicializar(int ID);
-    virtual dvector3D * getPosition() {return &m_pos;}
+	virtual dvector3D * getPosition() { return &m_pos; }
     virtual dvector3D * getRotation() {return &m_rot;}
     virtual void setPosition(dvector3D&);
     virtual void setRotation(dvector3D&);
     virtual void update();
-    virtual void render();
+    virtual void render(float &interpolation);
     bool Eliminable() const {return eliminar;}
 };
 

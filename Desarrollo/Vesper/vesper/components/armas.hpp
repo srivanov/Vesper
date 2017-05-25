@@ -13,7 +13,7 @@ public:
     armas();
     ~armas();
 	void update() override;
-    void render();
+    void render(float &interpolation);
 	void shoot();
 	void changeGun();
     void insertarArma(int a);

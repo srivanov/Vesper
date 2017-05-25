@@ -13,7 +13,6 @@
 #include "../../../components/armas.hpp"
 #include "../../../components/gun.hpp"
 #include "../../../GUI/HUDLayout.hpp"
-#include <buttons.hpp>
 
 class Player : public PhysicObject {
 private:
@@ -31,7 +30,8 @@ protected:
 	HUDLayout hud;
 	states* estado;
 	tiempo t, t2;
-	MyEventReceiver* input;
+	InputManager* input;
+	ventana* vent;
 public:
     void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}
@@ -43,7 +43,7 @@ public:
     void contacto(PhysicObject*);
 	void contactoEnd(PhysicObject*){ obj_colisionado = nullptr; }
     void update();
-    void render();
+    void render(float &interpolation);
     void atacar();
     void cambiarArma();
     void cuerpoacuerpo();

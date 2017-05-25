@@ -13,7 +13,7 @@
 #include "../World/Alarm.hpp"
 #include "../World/Fuente.hpp"
 
-#define VELOCIDADN 2.f
+#define VELOCIDADN 4.f
 
 
 
@@ -43,10 +43,11 @@ Player::Player() : obj_colisionado(nullptr){
     
     setTexture("3d/naranja.jpg");
 	
-	input = MyEventReceiver::Instance();
+	input = InputManager::Instance();
     vida = 100;
 	hud.init();
     t.start();t2.start();
+	vent = ventana::Instance();
 }
 
 void Player::inicializar(int ID, int numL){
@@ -55,7 +56,11 @@ void Player::inicializar(int ID, int numL){
 	m_ID = ID; activa = 0;
 	for(size_t a=0;a<numLlaves;a++)
 		llaves[a]=-1;
-    
+	
+//	dvector3D m = *getRotation();
+//	m.z = -m.z;
+//	setRotation(m);
+	
     hud.getVida(vida);
     hud.getCarga(arma->getCarga());
     hud.getMunicion(arma->getMunicion());
@@ -89,49 +94,53 @@ void Player::update(){
             }
         }
     }
-    if(input->IsKeyDown(SKY_KEY_W))
+    if(input->isPressed(SKY_KEY_W))
 		vel.y += VELOCIDADN;
-    if(input->IsKeyDown(SKY_KEY_S))
+    if(input->isPressed(SKY_KEY_S))
 		vel.y += -VELOCIDADN;
-    if(input->IsKeyDown(SKY_KEY_A))
+    if(input->isPressed(SKY_KEY_A))
 		vel.x += -VELOCIDADN;
-	if(input->IsKeyDown(SKY_KEY_D))
+	if(input->isPressed(SKY_KEY_D))
 		vel.x += VELOCIDADN;
 	
-    if(input->getLeftClick()){
+    if(input->isPressed(SKY_MOUSE_BUTTON_LEFT)){
         atacar();
     	hud.getCarga(arma->getCarga());
     	hud.getMunicion(arma->getMunicion());
     }
 	if(t.tTranscurrido(0.5f)){
-		if(input->IsKeyDown(SKY_KEY_TAB)){
+		if(input->isPressed(SKY_KEY_TAB)){
 		   	cambiarArma();
 			t.reset();
 		}
-		if(input->IsKeyDown(SKY_KEY_Q)){
+		if(input->isPressed(SKY_KEY_Q)){
 			changeActiveKey();
 			t.reset();
 		}
-        if(input->IsKeyDown(SKY_KEY_E)){
+        if(input->isPressed(SKY_KEY_E)){
             accionar();
             t.reset();
         }
 	}
-    if(input->IsKeyDown(SKY_KEY_SPACE))
+    if(input->isPressed(SKY_KEY_SPACE))
         vel*=2;
 	
 	mover(vel);
 	
-    m_rot = ventana::Instance()->posicionRaton(m_pos);
-    rotarConRaton(m_rot);
+//    m_rot = ventana::Instance()->posicionRaton(m_pos);
+	dvector3D m, v;
+ 	m = input->mousePos;
+	m = m.normalize();
+	m.invertir();
+    rotarAraton(m);
     GameObject::update();
     arma->update();
 
 }
 
-void Player::render(){
-    PhysicObject::render();
-    arma->render();
+void Player::render(float &interpolation){
+    PhysicObject::render(interpolation);
+    arma->render(interpolation);
 	hud.beginRender();
 	hud.render();
 	hud.endRender();

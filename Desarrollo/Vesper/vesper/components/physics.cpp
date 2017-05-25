@@ -160,8 +160,8 @@ void physics::update(){
         if(body->GetType() != b2_staticBody){
             body->SetLinearVelocity( vel );
         }
-        dvector3D aux(body->GetPosition().x, body->GetPosition().y, 0);
-        getFather()->setPosition(aux);
+        dvector3D aux(body->GetPosition().x, body->GetPosition().y, getFather()->getPosition()->z);
+        static_cast<GameObject*>(getFather())->setPosition(aux);
     }
 	if(atar){atarP(); atar = false;}
 }
@@ -190,22 +190,29 @@ void physics::setVelocity(dvector3D &veloc){
 	vel.y = veloc.y;
 }
 
-float physics::rotarConRaton(dvector3D &posRaton){
+float physics::rotarAposicion(dvector3D &posRaton, bool d2){
 	if(body != NULL){
 		
         b2Vec2 aux;
-        //TO DO: Mirar si se puede hacer en una linea
-        aux.x = posRaton.x - body->GetPosition().x;
-        aux.y = posRaton.y - body->GetPosition().y;
-        
+		if(d2){
+			aux.x = posRaton.x - body->GetPosition().x;
+			aux.y = posRaton.y - body->GetPosition().y;
+		}else{
+			aux.x = posRaton.x;
+			aux.y = posRaton.y;
+		}
         rotacion = atan2f(-aux.x, aux.y)* 180 / 3.14159265 + 90;
         
         //paso el coseno y seno de la rotacion a unitario
         float length = sqrt((aux.x*aux.x)+(aux.y*aux.y));
-        angulo_disparo.x = aux.x / length;
-        angulo_disparo.y = aux.y / length;
-        
-        
+		if(d2){
+			angulo_disparo.x = aux.x / length;
+			angulo_disparo.y = aux.y / length;
+		}else{
+			angulo_disparo.x = -aux.x / length;
+			angulo_disparo.y = -aux.y / length;
+		}
+		
         PhysicObject * ph = static_cast<PhysicObject*>(getFather());
         ph->setDirDisparo(angulo_disparo);
     

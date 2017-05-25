@@ -21,7 +21,8 @@ class PhysicObject : public GameObject {
 protected:
     dvector3D anguloDisparo;
 public:
-    void rotarConRaton(dvector3D &posRaton);
+    void rotarAposicion(dvector3D &posRaton);
+	void rotarAraton(dvector3D &posRaton);
     void mover(dvector3D &vel);
     void setDirDisparo(dvector3D &dir);
     dvector3D * getDirDisparo() {return &anguloDisparo;}

@@ -31,7 +31,7 @@ public:
 	void update();
     typeArma getType(){return cualidad.tipo;}
     void insertBala(dvector3D &pos, dvector3D &dir, float vel);
-    void render();
+    void render(float &interpolation);
     
 private:
 	float tiempo_vida;

@@ -23,14 +23,14 @@ class Level  : public state{
     size_t it,end;
     bool iniciado;
     void clear();
-    MyEventReceiver* input;
+    InputManager* input;
 public:
     Level();
     ~Level();
     bool lvlActivo() const {return iniciado;}
     bool inicializar();
-    void render();
-    void update();
+    void render(float &interpolation);
+    void update(const long &timePerFrame);
     void destroy();
 };
 

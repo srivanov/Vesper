@@ -28,38 +28,53 @@ PhysicObject::~PhysicObject(){
 }
 
 void PhysicObject::setPosition(dvector3D &pos){
-    m_pos = pos;
 	
 	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
 	if(go != NULL)
 		go->setPosition(pos);
-	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
-	if(ren != NULL)
-		ren->setNodePosition(pos);
+//	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
+//	if(ren != NULL)
+//		ren->setNodePosition(pos);
+	GameObject::setPosition(pos);
 }
 
 void PhysicObject::setDirDisparo(dvector3D &dir){
     anguloDisparo = dir;
 }
 
-void PhysicObject::rotarConRaton(dvector3D &posRaton){
+void PhysicObject::rotarAposicion(dvector3D &posRaton){
     physics* go = static_cast<physics*>(componentes.at(PHYSICS));
-    if(go != NULL)
-        m_rot.z = go->rotarConRaton(posRaton);
-    class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
-    if(ren != NULL)
-        ren->setNodeRotation(m_rot);
+	if(go != NULL){
+		prev_rot = m_rot;
+		m_rot.z = go->rotarAposicion(posRaton);
+	}
+//    class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
+//    if(ren != NULL)
+//        ren->setNodeRotation(m_rot);
+	GameObject::setRotation(m_rot);
+}
+
+void PhysicObject::rotarAraton(dvector3D &posRaton){
+	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
+	if(go != NULL){
+		prev_rot = m_rot;
+		m_rot.z = go->rotarAposicion(posRaton,false);
+	}
+	GameObject::setRotation(m_rot);
 }
 
 void PhysicObject::setRotation(dvector3D &rot){
-    m_rot = rot;
-	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
-	if(go != NULL)
-		go->rotar(m_rot.z);
-	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
-	if(ren != NULL)
-		ren->setNodeRotation(m_rot);
 	
+	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
+	if(go != NULL){
+		prev_rot = m_rot;
+		m_rot.z = rot.z;
+		go->rotar(rot.z);
+	}
+//	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
+//	if(ren != NULL)
+//		ren->setNodeRotation(m_rot);
+	GameObject::setRotation(m_rot);
 }
 
 void PhysicObject::createPhysicsBody(const BodyObject body, dvector3D dim){

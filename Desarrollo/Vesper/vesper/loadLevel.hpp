@@ -14,7 +14,6 @@
 #include "objetos/Objects.hpp"
 #include "objetos/ObjectFactory.hpp"
 #include "components/ventana.hpp"
-#include "nodeMesh.hpp"
 #include "tinyxml2.h"
 #include <iostream>
 #include <stdio.h>

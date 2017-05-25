@@ -6,7 +6,7 @@
 #include "component.hpp"
 #include "ventana.hpp"
 #include <vector>
-#include "../nodeMesh.hpp"
+#include <SkyEngine/SkyEngine.hpp>
 #include "../Fps.hpp"
 #include "../Dvector.hpp"
 
@@ -23,28 +23,30 @@ public:
 	bool setNodePosition(dvector3D &pos);
 	bool setNodeRotation(dvector3D &rot);
     void changeNode(char* filename);
-    void dropNode();
     void CreateGround(int alto, int ancho);
 	void deleteNode();
-	void setTexto();
     void dibujar();
     void beginDraw();
+	void DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_rot, dvector3D &next_rot, float &interpolation);
     void endDraw();
 	void addCamera(dvector3D &p, dvector3D &l);
 	void closeWindow();
 	void dibujarMuro(int*tilemap,int anchoMapa, int altoMapa);
-	void setCamPos(dvector3D &pos);
+	void setCamPos(dvector3D &spos);
 	dvector3D* getCamPos();
-	void setCamTarget(dvector3D &pos);
+	void setCamTarget(dvector3D pos);
     void anyadirArma();
 	
 private:
-    std::vector<ISceneNode*> all_nodos;
-	nodeMesh* nodo;
-	ICameraSceneNode* camara;
-    ISceneNode* nodo_suelo;
-	irr::gui::IGUIStaticText* texto;
-	ISceneNode* creaNodo(char* malla, char* textura);
+	SkyEngine* engine;
+    std::vector<SkyMalla*> all_nodos;
+	ventana* vent;
+	SkyMalla *nodo, *nodo_suelo;
+	SkyCamara* camara;
+	SkyLuz* luz;
+	dvector3D cam_pos;
+//	irr::gui::IGUIStaticText* texto;
+	SkyMalla* creaNodo(char* malla, char* textura, tipoMalla t, SkyNodo* padre);
 };
 
 #endif /* render_hpp */

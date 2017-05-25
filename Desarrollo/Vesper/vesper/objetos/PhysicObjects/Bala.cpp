@@ -43,13 +43,13 @@ Bala::~Bala(){
 void Bala::update(){
     
     //std::cout << "POS: X " << m_pos.x << " Y " << m_pos.y << std::endl;
-    PhysicObject::update();
-    
+	
+	
     if(temp.tTranscurrido(tiempo_vida) && eliminar == false)
         eliminar = true;
     else
         mover(direccion);
-
+	GameObject::update();
 }
 
 void Bala::contacto(PhysicObject *g){

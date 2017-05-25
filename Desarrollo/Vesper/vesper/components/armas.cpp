@@ -46,8 +46,7 @@ armas::~armas(){
 }
 
 void armas::update(){
-	//TO DO: Hacer la gestion de las balas aqui y en la clase bala
-//    (*seleccionada)->update();
+
     aux = interfaz.begin();
     while(aux != interfaz.end()){
         (*aux)->update();
@@ -55,8 +54,13 @@ void armas::update(){
     }
 }
 
-void armas::render(){
-    (*seleccionada)->render();
+void armas::render(float &interpolation){
+//    (*seleccionada)->render(interpolation);
+	aux = interfaz.begin();
+	while(aux != interfaz.end()){
+		(*aux)->render(interpolation);
+		aux++;
+	}
 }
 
 void armas::shoot(){

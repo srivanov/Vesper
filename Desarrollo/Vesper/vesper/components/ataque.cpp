@@ -30,7 +30,7 @@ void ataque::atacarDistancia(){
     }
 }
 
-void ataque::render(){
+void ataque::render(float &interpolation){
     if(attack)
-        attack->render();
+        attack->render(interpolation);
 }

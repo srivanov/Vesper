@@ -64,7 +64,7 @@ void Enemy::update(){
     
     mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + *book->VectorMovimiento;
-    rotarConRaton(aux);
+    rotarAposicion(aux);
     
     GameObject::update();
 }
