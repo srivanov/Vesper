@@ -36,8 +36,8 @@ protected:
     patrulla * patrullar;
 private:
     float tiempo_vida, velocidad;
-    dvector3D direccion;
-    tiempo temp,t;
+    dvector3D direccion , lastMov;
+    tiempo t;
 public:
     Enemy();
     ~Enemy();

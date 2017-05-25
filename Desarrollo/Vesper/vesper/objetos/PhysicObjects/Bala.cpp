@@ -11,7 +11,7 @@
 Bala::Bala(dvector3D &pos, dvector3D &dir, float vel, float tVida){
     velocidad = vel;
     
-    
+    damage = 0;
     
     createPhysicsBody(DYNAMIC_BODY,dvector3D(0.1,0.1,0));
     
@@ -33,6 +33,8 @@ Bala::Bala(dvector3D &pos, dvector3D &dir, float vel, float tVida){
     gestor_eventos::instance()->addEvento(m_ID, P_RUIDO, *getPosition());
     
 }
+
+void Bala::setDamage(int u){damage = u;}
 
 Bala::~Bala(){
     class render * r = static_cast<class render*>(componentes.find(RENDER)->second);

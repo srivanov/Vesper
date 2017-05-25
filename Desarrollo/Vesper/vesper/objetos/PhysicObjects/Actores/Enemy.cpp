@@ -7,6 +7,7 @@
 //
 
 #include "Enemy.hpp"
+#include "../Bala.hpp"
 
 dvector3D * patrulla::getNextPosPatrulla(){
     if(posicion_actual++>posiciones.size())
@@ -54,16 +55,21 @@ void Enemy::update(){
         Arbol->reset();
         book->Evento = false;
     }
-    if(!book->Patrullar && patrullar){
+    if(!book->Patrullar && patrullar)
         book->notify(m_ID, P_PATRULLAR, patrullar->getNextPosPatrulla());
-    }
+    
     book->updateBook();
     memory->update();
     Arbol->run(m_ID);
     
     
-    mover(*book->VectorMovimiento);
-    dvector3D aux = *getPosition() + *book->VectorMovimiento;
+    
+    if(   book->VectorMovimiento->x != 0
+       || book->VectorMovimiento->y != 0 ){
+        mover(*book->VectorMovimiento);
+        lastMov = *book->VectorMovimiento;
+    }
+    dvector3D aux = *getPosition() + lastMov;
     rotarAposicion(aux);
     
     GameObject::update();
@@ -85,8 +91,9 @@ void Enemy::inicializar(int& ID , bool pat, vector<dvector3D*> pos){
 void Enemy::contacto(PhysicObject *g){
 	if(g){
         //Bala * bullet = static_cast<Bala*>(g);
-		if(g && g->getObjectType()==BALA)
-			 book->salud-=20;
+        if(g && g->getObjectType()==BALA){
+			 book->salud -= static_cast<Bala*>(g)->getDamage();
+        }
         else if(g->getObjectType() == PLAYER){
             physics * ph = static_cast<physics*>(componentes.find(PHYSICS)->second);
             if(ph->RayCastControl(*getPosition(), *g->getPosition()))

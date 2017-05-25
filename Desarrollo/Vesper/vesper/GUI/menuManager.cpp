@@ -36,10 +36,11 @@ void menuManager::update(const long &timePerFrame){
 
 	seleccionado = menus.at(actualState->menu);
 	
-	seleccionado->update();
+	
 }
 
 void menuManager::render(float &interpolation){
+    seleccionado->update();
     glDisable(GL_DEPTH_TEST);
 	m_IrrlichtRenderer->beginRendering();
 	seleccionado->render();

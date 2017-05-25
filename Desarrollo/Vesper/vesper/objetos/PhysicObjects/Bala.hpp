@@ -16,8 +16,11 @@ class Bala : public PhysicObject {
     float velocidad, tiempo_vida;
     dvector3D direccion;
     tiempo temp;
+    int damage;
 public:
     void update();
+    void setDamage(int u);
+    int getDamage(){return damage;}
     dvector3D& getDireccion() {return direccion;}
     void contacto(PhysicObject* g);
     void contactoEnd(PhysicObject* g){}

@@ -8,12 +8,11 @@
 
 #include "Nodo_Mover.hpp"
 
-#define VELOCIDAD 2
+#define VELOCIDAD 4
 
 
 Nodo_Mover::~Nodo_Mover(){}
 short Nodo_Mover::run(const int &id){
-    //cout << "NODO MOVER" << endl;
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     
@@ -21,10 +20,10 @@ short Nodo_Mover::run(const int &id){
     dvector3D pos = book->lastPosition();
     
     if(pos.x!=-1){
-        if(aux==-1)
+        if(aux==-1){
+            updateVMovement(id);
             return updatePosition(id);
-        else
-            return updateVMovement(id);
+        }
     }
     return FUNCIONO;
 }

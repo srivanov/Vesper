@@ -9,14 +9,13 @@
 #include "RehenIA.hpp"
 #include "mundoBox2D.hpp"
 
-#define VELOCIDAD 1.5f
+#define VELOCIDAD 3.f
 
 RehenIA::RehenIA(dvector3D * pos) : player(nullptr) , m_salida(nullptr) {
     actual = HIBERNANDO;
     posActual = pos;
     change = Fsalida = Player = false;
     t.start();
-    t2.start();
 }
 
 void RehenIA::changeState(R_states sta){
@@ -91,10 +90,8 @@ vuelta:
         calculo = *m_salida;
     else if(Player)
         calculo = *player;
-    else if(t2.tTranscurrido(1.0f)){
-        t2.reset();
-        if(!mundoBox2D::Instance()->raycastContact(*posActual, *player))
-            Player = true;
+    else if(!mundoBox2D::Instance()->raycastContact(*posActual, *player)){
+        Player = true;
         return;
     }
     
