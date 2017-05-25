@@ -34,6 +34,12 @@ TEscena::TEscena(){
 	n = dvector3D(-8,0,1);
 	mallas.back()->setPosicion(n);
 	
+	animacion = motor->crearMallaAnimada(NULL);
+	animacion->AnyadirAnimacion("../Models/box/", "box.obj", 3.0f);
+	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
+	n = dvector3D(8,1,3);
+	animacion->setPosicion(n);
+	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
 //	
@@ -125,10 +131,12 @@ void TEscena::update(){
 		cam->transladar(m);
 		luz->transladar(m);
 	}
-	m = cubo->getPosicion();
+	m = animacion->getPosicion();
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
 		cam->setCamTarget(m);
 	}
+	if(InputManager::Instance()->isPressed(SKY_KEY_K))
+		printf("%d\n",animacion->CambiarAnimacion("cil"));
 //	mov = dvector3D(0, InputManager::Instance()->mousePos.y, 0);
 //	cam->setCamTarget(mov);
 //	cubo->setRotacion(mov);

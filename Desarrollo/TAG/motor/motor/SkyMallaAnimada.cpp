@@ -22,8 +22,6 @@ SkyMallaAnimada::SkyMallaAnimada(TNodo * padre) {
     
     padre->addHijo(TransNodos[2]);
     
-    t.start();
-    
 }
 
 SkyMallaAnimada::~SkyMallaAnimada(){}

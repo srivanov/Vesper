@@ -57,20 +57,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motor/main.cpp"
-            timestampString = "512726603.070187"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "motor/TGestorRecursos.cpp"
             timestampString = "512728640.836304"
             startingColumnNumber = "9223372036854775807"
@@ -87,29 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motor/TLuz.hpp"
-            timestampString = "516990350.109545"
+            filePath = "motor/TEscena.cpp"
+            timestampString = "517426276.672834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "class TLuz"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "motor/TRecursoMalla.cpp"
-            timestampString = "517185855.687387"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "TRecursoMalla::processMesh(aiMesh *mesh, const aiScene *scene)"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "TEscena::update()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -119,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "motor/Mesh.cpp"
-            timestampString = "517189726.457893"
+            filePath = "motor/TEscena.cpp"
+            timestampString = "517426310.46257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "Mesh::Draw(Shader* shader, Texture* textura)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "TEscena::TEscena()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -33,8 +33,8 @@ public:
 	
 	void Draw(TNodo* n);
 	
-	void beginDraw(){}
-	void endDraw(){}
+	void beginDraw(bool pass){}
+	void endDraw(bool pass){}
 	
 	int w, h;
 private:

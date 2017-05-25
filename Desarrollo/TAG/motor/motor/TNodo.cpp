@@ -51,16 +51,16 @@ void TNodo::setPadre(TNodo* p){
 	padre = p;
 }
 
-void TNodo::Draw(){
+void TNodo::Draw(bool pass){
 	if(entidad != NULL)
-		entidad->beginDraw();
+		entidad->beginDraw(pass);
 	
 	for (auto it = hijos.begin(); it != hijos.end(); ++it) {
-		(*it)->Draw();
+		(*it)->Draw(pass);
 	}
 	
 	if(entidad != NULL)
-		entidad->endDraw();
+		entidad->endDraw(pass);
 }
 
 

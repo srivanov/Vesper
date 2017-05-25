@@ -65,14 +65,14 @@ void TTransform::escalar(dvector3D &esc){
 	matriz = glm::scale(matriz, e);
 }
 
-void TTransform::beginDraw(){
+void TTransform::beginDraw(bool pass){
 	//IMPORTANTE: siempre postorden
 	pila->push(pila->actual);
 	pila->actual = pila->actual * matriz;
 //	printf("BEGIN DRAW Transform\n");
 }
 
-void TTransform::endDraw(){
+void TTransform::endDraw(bool pass){
 	pila->actual = *pila->pop();
 //	printf("END DRAW Transform\n");
 }

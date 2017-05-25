@@ -22,6 +22,7 @@ TMalla::~TMalla(){
 	pila = nullptr;
 	malla = nullptr;
 	gestor = nullptr;
+	textura = nullptr;
 }
 
 void TMalla::cargarMalla(char* fichero){
@@ -32,7 +33,7 @@ void TMalla::setTextura(char* fichero){
 	textura = static_cast<TRecursoTextura*>(gestor->getRecurso(fichero, tRTextura));
 }
 
-void TMalla::beginDraw(){
+void TMalla::beginDraw(bool pass){
 	Shader* s = sh->getActivo();
 	pila->calculaMVP();
 	pila->calculoFrustum();
@@ -52,7 +53,7 @@ void TMalla::beginDraw(){
 	}
 }
 
-void TMalla::endDraw(){
+void TMalla::endDraw(bool pass){
 //	printf("END DRAW Malla\n");
 }
 

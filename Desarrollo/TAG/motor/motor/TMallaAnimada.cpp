@@ -8,34 +8,39 @@
 
 #include "TMallaAnimada.hpp"
 
-Animacion::Animacion() : frames(nullptr) {
+Animacion::Animacion() {
     actual = NumFrames = 0 ;
     AnimationTime = 0.f;
 }
 Animacion::~Animacion(){}
 
-void Animacion::setFrames(std::vector<TRecursoMalla *> mallas){
+void Animacion::setFrames(std::vector<TRecursoMalla *> &mallas){
     if(NumFrames==0) NumFrames = mallas.size();
-    
-    frames = new TRecursoMalla*[NumFrames];
-    size_t cont = 0;
-    while (mallas.size()!=0) {
-        frames[cont] = mallas[0];
-        mallas.erase(mallas.begin());
-        cont++;
-    }
-    
+	
+//	frames = new TRecursoMalla*[NumFrames];
+	frames.swap(mallas);
+	
+//	size_t cont = 0;
+//    while (mallas.size()!=0) {
+//		frames[cont] = mallas[0];
+//        mallas.erase(mallas.begin());
+//        cont++;
+//    }
+	
 }
 
 void Animacion::nextFrame(){
-    actual = ((actual++) == NumFrames ? 0 : actual);
+    actual = ((actual++) == NumFrames-1 ? 0 : actual);
 }
+
+//_______________________________________________________________________________//
 
 TMallaAnimada::TMallaAnimada() : animacion_activa(nullptr) , textura(nullptr) {
     pila = Pila::Instance();
     gestor = TGestorRecursos::Instance();
     sh = ShaderManager::Instance();
-    t.start();
+	malla = nullptr;
+	t.start();
 }
 
 void TMallaAnimada::setTextura(char *fichero){
@@ -47,18 +52,18 @@ TMallaAnimada::~TMallaAnimada(){}
 bool TMallaAnimada::setAnimacion(std::string ruta, std::string nombre, float time, unsigned int NumberFrames){
     
     Animacion * anim = new Animacion;
+	std::vector<TRecursoMalla*> mallas;
+	
+	anim->AnimationTime = time;
+	
+	size_t punto = nombre.find_first_of('.');
+	std::string archivo = ruta + nombre.substr(0, punto), rutaF, ext = nombre.substr(punto, nombre.length());
     
-    anim->AnimationTime = time;
-    
-    std::string archivo = ruta + nombre;
-    
-    std::vector<TRecursoMalla*> mallas;
-    
-    char* buffer;
+    char buffer[3];
     int n = 0;
     sprintf(buffer, "%d",n);
-    std::string rutaF = archivo+ '(' + buffer + ')';
-    
+    rutaF = archivo + ext;
+	// Lectura de las mallas
     while(FileExist(rutaF)){
         
         
@@ -67,7 +72,7 @@ bool TMallaAnimada::setAnimacion(std::string ruta, std::string nombre, float tim
         mallas.push_back(malla);
         
         sprintf(buffer, "%d",n);
-        rutaF = archivo+ '(' + buffer + ')';
+        rutaF = archivo + '(' + buffer + ')' + ext;
         n++;
         
     }
@@ -87,10 +92,12 @@ bool TMallaAnimada::setAnimacion(std::string ruta, std::string nombre, float tim
         n++;
     }
     
-    if(!animacion_activa)
+	if(!animacion_activa){
         animacion_activa = anim;
-    
-    animaciones.insert(std::pair<std::string, Animacion*>(nombre,anim));
+		malla = animacion_activa->frameActivo();
+	}
+	
+    animaciones.insert(std::pair<std::string, Animacion*>(nombre.substr(0, punto),anim));
     return true;
 }
 
@@ -103,28 +110,23 @@ bool TMallaAnimada::FileExist(std::string ruta){
     return false;
 }
 
-void TMallaAnimada::beginDraw(){
+void TMallaAnimada::beginDraw(bool pass){
     Shader* s = sh->getActivo();
     
     pila->calculaMVP();
     pila->calculoFrustum();
-    
-    
-    TRecursoMalla * malla = animacion_activa->frameActivo();
     
     bool control = pila->AABB_Frustum_Test(malla->getminBB(), malla->getmaxBB());
     
     glUniformMatrix4fv(glGetUniformLocation(s->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
     glUniformMatrix4fv(glGetUniformLocation(s->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
     
-    //if(control){
+    if(control){
         if(textura)
             malla->Draw(s, textura->getTexture());
         else
             malla->Draw(s, nullptr);
-    //}
-    
-    
+    }
 }
 
 bool TMallaAnimada::ChangeAnimacion(std::string nombre){
@@ -138,18 +140,21 @@ bool TMallaAnimada::ChangeAnimacion(std::string nombre){
     return true;
 }
 
-void TMallaAnimada::endDraw(){
-    // CALCULA EL TIEMPO POR FRAME
-    float tPf = animacion_activa->AnimationTime / animacion_activa->NumFrames;
-    // CONTADOR PARA PROXIMOS FRAMES
-    unsigned int nextF = 1;
-    // TIEMPO TRANSCURRIDO
-    long tt = t.getTiempo();
-    // MIENSTRAS EL TIEMPO TRANSCURRIDO SEA SUPERIOR A
-    // EL TIEMPO ENTRE FRAMES POR NUMERO DE FRAMES
-    while(tt > nextF*tPf*MILI){
-        animacion_activa->nextFrame();
-        nextF++;
-    }
-    t.reset();
+void TMallaAnimada::endDraw(bool pass){
+	if(!pass){
+		// CALCULA EL TIEMPO POR FRAME
+		float tPf = animacion_activa->AnimationTime / animacion_activa->NumFrames;
+		// CONTADOR PARA PROXIMOS FRAMES
+		unsigned int nextF = 1;
+		// TIEMPO TRANSCURRIDO
+		long tt = t.getTiempo();
+		// MIENSTRAS EL TIEMPO TRANSCURRIDO SEA SUPERIOR A
+		// EL TIEMPO ENTRE FRAMES POR NUMERO DE FRAMES
+		while(tt > nextF*tPf*MILI){
+			animacion_activa->nextFrame();
+			nextF++;
+			t.reset();
+		}
+		malla = animacion_activa->frameActivo();
+	}
 }

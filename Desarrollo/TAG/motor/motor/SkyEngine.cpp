@@ -78,7 +78,7 @@ void SkyEngine::renderScene(bool pass){
 	if(!pass)
 		renderCamaras();
 	luces.begin()->second->Draw(pass);
-	root->Draw();
+	root->Draw(pass);
 }
 
 void SkyEngine::renderCamaras(){
