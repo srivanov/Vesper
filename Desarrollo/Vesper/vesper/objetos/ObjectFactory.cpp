@@ -14,7 +14,7 @@ void ObjectFactory::initEnemy(int ID, dvector3D posicion,ObjectType tipo,const B
 	e->setObjectType(tipo);
 	e->setPosition(posicion);
 	e->createPhysicsBody(DYNAMIC_BODY);
-	e->attachSensor(6.0f);
+	e->attachSensor(4.0f);
 	e->inicializar(ID);
 }
 

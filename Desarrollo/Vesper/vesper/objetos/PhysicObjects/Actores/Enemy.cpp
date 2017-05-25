@@ -7,7 +7,6 @@
 //
 
 #include "Enemy.hpp"
-#include "../Bala.hpp"
 
 dvector3D * patrulla::getNextPosPatrulla(){
     if(posicion_actual++>posiciones.size())
@@ -19,7 +18,7 @@ void patrulla::addPosPatrulla(dvector3D * pos){
     posiciones.push_back(pos);
 }
 
-Enemy::Enemy() : patrullar(nullptr){
+Enemy::Enemy() : patrullar(nullptr) , posP(nullptr) {
 	component * componente = new ataque();
 	componentes.insert(std::pair<const ComponentType,component*>(ATAQUE,componente));
 	componente->setFather(this);
@@ -40,6 +39,27 @@ Enemy::~Enemy(){
 
 void Enemy::update(){
     
+    updateStats();
+    comprobar_vision();
+    STD();
+    
+    
+    if(!book->Patrullar && patrullar){
+        book->notify(m_ID, P_PATRULLAR, patrullar->getNextPosPatrulla());
+    }
+    book->updateBook();
+    memory->update();
+    
+    
+    
+    mover(*book->VectorMovimiento);
+    dvector3D aux = *getPosition() + *book->VectorMovimiento;
+    rotarAposicion(aux);
+    
+    GameObject::update();
+}
+
+void Enemy::updateStats(){
     if(t.tTranscurrido(6.f)){
         book->sed+=2;
         book->hambre++;
@@ -50,29 +70,13 @@ void Enemy::update(){
         eliminar = true;
         return;
     }
-    
+}
+void Enemy::STD(){
     if (book->Evento) {
         Arbol->reset();
         book->Evento = false;
     }
-    if(!book->Patrullar && patrullar)
-        book->notify(m_ID, P_PATRULLAR, patrullar->getNextPosPatrulla());
-    
-    book->updateBook();
-    memory->update();
     Arbol->run(m_ID);
-    
-    
-    
-    if(   book->VectorMovimiento->x != 0
-       || book->VectorMovimiento->y != 0 ){
-        mover(*book->VectorMovimiento);
-        lastMov = *book->VectorMovimiento;
-    }
-    dvector3D aux = *getPosition() + lastMov;
-    rotarAposicion(aux);
-    
-    GameObject::update();
 }
 
 void Enemy::inicializar(int& ID , bool pat, vector<dvector3D*> pos){
@@ -91,15 +95,10 @@ void Enemy::inicializar(int& ID , bool pat, vector<dvector3D*> pos){
 void Enemy::contacto(PhysicObject *g){
 	if(g){
         //Bala * bullet = static_cast<Bala*>(g);
-        if(g && g->getObjectType()==BALA){
-			 book->salud -= static_cast<Bala*>(g)->getDamage();
-        }
+		if(g && g->getObjectType()==BALA)
+			 book->salud-=20;
         else if(g->getObjectType() == PLAYER){
-            physics * ph = static_cast<physics*>(componentes.find(PHYSICS)->second);
-            if(ph->RayCastControl(*getPosition(), *g->getPosition()))
-                return;
-            else if(!book->ExistEventByType(P_ENEMIGO))
-                book->notify(m_ID, P_ENEMIGO, g->getPosition());
+            posP = g->getPosition();
         }else if(memory->evalue(g) == CHANGED){
             book->notify(m_ID, P_RUIDO, g->getPosition());
             if(g->getObjectType()==FUENTE){
@@ -114,4 +113,14 @@ void Enemy::contacto(PhysicObject *g){
 	}
 }
 
-
+void Enemy::comprobar_vision(){
+    if(posP){
+        if(EasyMath::EucCalcularDistancia(*getPosition(), *posP) < 6.0f){
+            physics * ph = static_cast<physics*>(componentes.find(PHYSICS)->second);
+            if(!ph->RayCastControl(*getPosition(), posP) && !book->ExistEventByType(P_ENEMIGO))
+                book->notify(m_ID, P_ENEMIGO, posP);
+        }else
+            posP = nullptr;
+        
+    }
+}

@@ -34,10 +34,14 @@ protected:
     Nodo_base * Arbol;
     MemoryObjects * memory;
     patrulla * patrullar;
+    dvector3D * posP;
+    void comprobar_vision();
+    void updateStats();
+    void STD();
 private:
     float tiempo_vida, velocidad;
-    dvector3D direccion , lastMov;
-    tiempo t;
+    dvector3D direccion;
+    tiempo temp,t;
 public:
     Enemy();
     ~Enemy();

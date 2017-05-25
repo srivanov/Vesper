@@ -8,7 +8,7 @@
 
 #include "Nodo_AAtacar.hpp"
 
-#define VELOCIDAD 2
+#define VELOCIDAD 4
 
 short Nodo_AAtacar::run(const int &ID){
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
@@ -17,7 +17,7 @@ short Nodo_AAtacar::run(const int &ID){
     
     book->resetVectorMovimiento();
     
-    if(aux<8.0f){
+    if(aux<6.0f){
         
         return updateVMovement(ID);
         
