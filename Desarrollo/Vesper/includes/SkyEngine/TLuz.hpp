@@ -46,8 +46,8 @@ public:
 	void setLightDirection(glm::vec3 d) { direction = d; }
 	glm::vec3 getLightDirection() { return direction; }
 	
-	void beginDraw(){}
-	void endDraw(){}
+	void beginDraw(bool pass){}
+	void endDraw(bool pass){}
 
 private:
 	int ID;

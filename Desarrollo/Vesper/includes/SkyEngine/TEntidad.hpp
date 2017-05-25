@@ -22,8 +22,8 @@ class TEntidad{
 public:
 	TEntidad(){}
 	virtual ~TEntidad(){}
-	virtual void beginDraw()=0;
-	virtual void endDraw()=0;
+	virtual void beginDraw(bool pass)=0;
+	virtual void endDraw(bool pass)=0;
 	virtual glm::mat4 getMT(){return glm::mat4();};
 protected:
 	ShaderManager* sh;

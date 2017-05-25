@@ -24,6 +24,7 @@ private:
 	std::vector<SkyMalla*> mallas;
 	SkyMalla *cubo, *plano;
     SkyLuz* luz;
+	SkyMallaAnimada* animacion;
 };
 
 #endif /* TEscena_hpp */

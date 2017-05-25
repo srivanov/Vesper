@@ -24,8 +24,8 @@ public:
 	void setTextura(char* fichero);
 	
 	
-	void beginDraw();
-	void endDraw();
+	void beginDraw(bool pass);
+	void endDraw(bool pass);
 	
 private:
 	TRecursoMalla* malla;

@@ -24,7 +24,7 @@ public:
 	TEntidad* getEntidad(){ return entidad; }
 	void setPadre(TNodo* p);
 	TNodo* getPadre(){ return padre; }
-	void Draw();
+	void Draw(bool pass);
 	
 private:
 	TEntidad* entidad;

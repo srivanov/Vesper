@@ -26,8 +26,8 @@ public:
 	void escalar(dvector3D &esc);
 	
 	glm::mat4 getMT() { return matriz; }
-	void beginDraw();
-	void endDraw();
+	void beginDraw(bool pass);
+	void endDraw(bool pass);
 private:
 	void aplicarRotacion(const glm::mat4 &m, glm::vec3 &rot);
 	glm::mat4 matriz;

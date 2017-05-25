@@ -22,7 +22,7 @@
 struct Animacion {
     Animacion();
     ~Animacion();
-    void setFrames(std::vector<TRecursoMalla*> mallas);
+    void setFrames(std::vector<TRecursoMalla*> &mallas);
     TRecursoMalla * frameActivo(){return frames[actual];}
     void nextFrame();
     void resetAnimacion(){actual=0;}
@@ -30,7 +30,8 @@ struct Animacion {
     size_t NumFrames;
 private:
     unsigned int actual;
-    TRecursoMalla **frames;
+//    TRecursoMalla **arr;
+	std::vector<TRecursoMalla*> frames;
 };
 
 class TMallaAnimada : public TEntidad {
@@ -38,6 +39,7 @@ class TMallaAnimada : public TEntidad {
 	TRecursoTextura* textura;
     Pila* pila;
     TGestorRecursos* gestor;
+	TRecursoMalla* malla;
     
     std::map<std::string,Animacion*> animaciones;
     std::map<std::string,Animacion*>::iterator it;
@@ -55,8 +57,8 @@ public:
     bool setAnimacion(std::string ruta,std::string nombre,float time, unsigned int NumberFrames = 0);
     bool ChangeAnimacion(std::string nombre);
     
-    void beginDraw();
-    void endDraw();
+    void beginDraw(bool pass);
+    void endDraw(bool pass);
     
     
     
