@@ -1,9 +1,26 @@
-newmtl puerta:blinn1SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Material.002
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
 map_Kd Door_Diffuse.png
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 0.06
+map_Bump Door_Diffuse.png
+
+newmtl puerta:blinn1SG
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.100000 0.100000 0.100000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Door_Diffuse.png
+map_Bump Door_Diffuse.png

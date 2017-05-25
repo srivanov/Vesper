@@ -11,7 +11,7 @@
 
 Puerta::Puerta(){
     addNodo("3d/puerta.obj");
-    setTexture("3d/puerta.png");
+//    setTexture("3d/puerta.png");
 	key = -1;
 }
 

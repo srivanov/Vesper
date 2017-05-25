@@ -152,7 +152,7 @@ void render::CreateGround(int alto, int ancho){
 	nodo_suelo->setTextura("3d/colorverde.png");
 //    nodo_suelo->setMaterialFlag(EMF_LIGHTING, false);
 //    nodo_suelo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/colorverde.png"));
-	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5);
+	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, 1.3);
     nodo_suelo->setPosicion(m);
 //    nodo_suelo->setRotacion(dvector3D(90,0,90));
 	m = dvector3D(ancho,alto/4.f, 0.1);
@@ -187,7 +187,7 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 			nodo->setTextura(s);
 //            nodo->setMaterialFlag(EMF_LIGHTING, false);
 //            nodo->setMaterialTexture(0, ventana::Instance()->getDriver()->getTexture("3d/rocas.png"));
-			dvector3D m(x,y,0);
+			dvector3D m(x,y,0.8);
 			nodo->setPosicion(m);
             //std::cout << x << "|" << y << std::endl;
         }
