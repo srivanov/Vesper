@@ -1,0 +1,6 @@
+	"id" "name" "created_at" "updated_at" "slug" "url"
+"1" 1 "Single player" 1298968834000 1323289216000 "single-player" "https://www.igdb.com/game_modes/single-player"
+"2" 2 "Multiplayer" 1298968853000 1323289216000 "multiplayer" "https://www.igdb.com/game_modes/multiplayer"
+"3" 3 "Co-operative" 1298968887000 1323289216000 "co-operative" "https://www.igdb.com/game_modes/co-operative"
+"4" 4 "Split screen" 1298968900000 1323289216000 "split-screen" "https://www.igdb.com/game_modes/split-screen"
+"5" 5 "Massively Multiplayer Online (MMO)" 1298969041000 1323289216000 "massively-multiplayer-online-mmo" "https://www.igdb.com/game_modes/massively-multiplayer-online-mmo"
