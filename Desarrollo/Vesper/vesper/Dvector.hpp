@@ -2,6 +2,8 @@
 #ifndef DVECTOR_HPP
 #define DVECTOR_HPP
 
+#include <iostream>
+
 struct dvector3D;
 
 struct dvector2D {
@@ -100,6 +102,11 @@ struct dvector3D {
 		}
 		return s;
 	}
+	
+	void invertir(){ x = -x; y = -y; z = -z; }
+	
+	void imprimir() { printf("%.1f - %.1f - %.1f\n",x,y,z); }
+	
 private:
 	float raiz(float num){
 		float x = num;

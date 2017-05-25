@@ -47,6 +47,7 @@ Player::Player() : obj_colisionado(nullptr){
     vida = 100;
 	hud.init();
     t.start();t2.start();
+	vent = ventana::Instance();
 }
 
 void Player::inicializar(int ID, int numL){
@@ -55,7 +56,11 @@ void Player::inicializar(int ID, int numL){
 	m_ID = ID; activa = 0;
 	for(size_t a=0;a<numLlaves;a++)
 		llaves[a]=-1;
-    
+	
+//	dvector3D m = *getRotation();
+//	m.z = -m.z;
+//	setRotation(m);
+	
     hud.getVida(vida);
     hud.getCarga(arma->getCarga());
     hud.getMunicion(arma->getMunicion());
@@ -122,8 +127,12 @@ void Player::update(){
 	
 	mover(vel);
 	
-    m_rot = ventana::Instance()->posicionRaton(m_pos);
-    rotarConRaton(m_rot);
+//    m_rot = ventana::Instance()->posicionRaton(m_pos);
+	dvector3D m, v;
+ 	m = input->mousePos;
+	m = m.normalize();
+	m.invertir();
+    rotarAraton(m);
     GameObject::update();
     arma->update();
 

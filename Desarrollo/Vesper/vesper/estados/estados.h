@@ -57,10 +57,10 @@ private:
 	states() {
 		estado = MENU;
 		destruir = false;
-		nextState = MENU;
-//		nextState = PLAYING;
+//		nextState = MENU;
+		nextState = PLAYING;
         character = -1;
-		nivel = 3;
+		nivel = 1;
 	}
 	estados estado;
     

@@ -42,15 +42,24 @@ void PhysicObject::setDirDisparo(dvector3D &dir){
     anguloDisparo = dir;
 }
 
-void PhysicObject::rotarConRaton(dvector3D &posRaton){
+void PhysicObject::rotarAposicion(dvector3D &posRaton){
     physics* go = static_cast<physics*>(componentes.at(PHYSICS));
 	if(go != NULL){
 		prev_rot = m_rot;
-		m_rot.z = go->rotarConRaton(posRaton);
+		m_rot.z = go->rotarAposicion(posRaton);
 	}
 //    class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
 //    if(ren != NULL)
 //        ren->setNodeRotation(m_rot);
+	GameObject::setRotation(m_rot);
+}
+
+void PhysicObject::rotarAraton(dvector3D &posRaton){
+	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
+	if(go != NULL){
+		prev_rot = m_rot;
+		m_rot.z = go->rotarAposicion(posRaton,false);
+	}
 	GameObject::setRotation(m_rot);
 }
 

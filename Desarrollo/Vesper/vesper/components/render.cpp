@@ -2,6 +2,7 @@
 #include "render.hpp"
 #include "../objetos/GameObject.hpp"
 #include <iostream>
+#include "../objetos/Camera.hpp"
 //#include <string>
 
 render::render(){
@@ -49,12 +50,13 @@ void render::setNode(char *filename){
 //		else
 //			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
 //		aux = NULL;
-//        dvector3D rota = dvector3D(270,0,0);
+        dvector3D rota = dvector3D(90,0,0);
 //		nodo->_setNodePosition(*getFather()->getPosition());
 //        nodo->_setNodeRotation(rota);
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
 		nodo->setMalla(filename);
 		nodo->setPosicion(*getFather()->getPosition());
+		nodo->setRotacion(rota);
     }
 }
 
@@ -113,7 +115,7 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 	if(nodo != nullptr){
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, 0 );
 		nodo->setPosicion(act);
-		
+
 		float r2d2 = 0.0f;
 		if(next_rot.z > 270.0f && prev_rot.z < 90.0f)
 			r2d2 = -360.0f;
@@ -129,8 +131,9 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 	}
 	if(camara != nullptr){
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, (next_pos.z - prev_pos.z) * interpolation + prev_pos.z);
+		
 		setCamPos(act);
-		setCamTarget(act+dvector3D(0,3,6.5));
+		setCamTarget(act+dvector3D(0,3,-6.5));
 	}
 }
 
@@ -147,9 +150,9 @@ void render::addCamera(dvector3D &p, dvector3D &l){
 	luz = engine->crearLuz(camara);
 	luz->setAmbient(0.5);
 	luz->setDiffuse(0.8);
-	dvector3D c(-10,20,0);
+	dvector3D c(-3,1,-1);
 	luz->setPosicion(c);
-	luz->setLightDirection(dvector3D(-2.5,-2,5));
+	luz->setLightDirection(dvector3D(5,-1,0));
 }
 
 void render::closeWindow(){
@@ -161,13 +164,13 @@ void render::CreateGround(int alto, int ancho){
 //    nodo_suelo->setPosition(vector3df((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
 //    nodo_suelo->setRotation(vector3df(90,180,180));
 	
-	nodo_suelo = creaNodo("3d/muro.3ds", "3d/colorverde.png", tMallaEstatica, nullptr);
-	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5);
+	nodo_suelo = creaNodo("3d/muro.obj", "3d/rocas.png", tMallaEstatica, nullptr);
+	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, -0.5);
 	nodo_suelo->setPosicion(m);
-	m = dvector3D(ancho,alto/4.f, 0.1);
+	m = dvector3D(alto, ancho, 0.1);
 	nodo_suelo->escalar(m);
-	m = dvector3D(90,180,180);
-	nodo_suelo->rotar(m);
+//	m = dvector3D(90,180,180);
+//	nodo_suelo->rotar(m);
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
@@ -184,11 +187,9 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 			int x = (int) it % (anchoMapa);
 			
 			if(tilemap[it] == 1)
-				tex = "3d/rocas.png";
+				nodo = creaNodo("3d/muro.obj", "3d/rocas.png", tMallaEstatica, NULL);
 			else
-				tex = "3d/Arbusto_Diffuse.png";
-			
-			nodo = creaNodo("3d/muro.3ds", tex, tMallaEstatica, NULL);
+				nodo = creaNodo("3d/arbusto.obj", "", tMallaEstatica, NULL);
 			dvector3D m(x,y,0);
 			nodo->setPosicion(m);
 			all_nodos.push_back(nodo);

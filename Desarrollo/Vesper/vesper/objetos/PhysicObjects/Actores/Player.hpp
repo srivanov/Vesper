@@ -13,7 +13,6 @@
 #include "../../../components/armas.hpp"
 #include "../../../components/gun.hpp"
 #include "../../../GUI/HUDLayout.hpp"
-//#include <buttons.hpp>
 
 class Player : public PhysicObject {
 private:
@@ -32,6 +31,7 @@ protected:
 	states* estado;
 	tiempo t, t2;
 	InputManager* input;
+	ventana* vent;
 public:
     void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}

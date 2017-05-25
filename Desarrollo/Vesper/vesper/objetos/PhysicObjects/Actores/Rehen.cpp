@@ -10,7 +10,7 @@
 #include "../../../Arquitectura IA/gestor_eventos.hpp"
 
 Rehen::Rehen(){
-	addNodo("3d/muro.3ds");
+	addNodo("3d/muro.obj");
 	setTexture("3d/rehen.jpg");
     m_brain = new RehenIA(getPosition());
     gestor_eventos::instance()->subscribirse(this);
@@ -37,7 +37,7 @@ void Rehen::update(){
         lastM = mov;
     dvector3D rot = *getPosition() + lastM;
     mover(mov);
-    rotarConRaton(rot);
+    rotarAposicion(rot);
     PhysicObject::update();
     
 }

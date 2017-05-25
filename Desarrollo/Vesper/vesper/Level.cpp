@@ -58,7 +58,7 @@ bool Level::exportar_objetos(loadLevel& nivel){
     
     return true;
 }
-//TO DO: mirar por si se puede optimizar
+
 void Level::clear(){
     for (it=0; it<w.size(); it++)
         if(w[it]->Eliminable()){
@@ -79,7 +79,6 @@ void Level::update(const long &timePerFrame){
         actualState->nextState = MENU;
         actualState->menu = tmPAUSE;
     }
-    //TO DO: poner el resto para elegir personajes
     
     c->update();
     p->update();

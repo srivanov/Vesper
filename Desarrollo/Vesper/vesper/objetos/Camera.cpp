@@ -11,7 +11,7 @@
 Camera::Camera(dvector3D speed) : m_objective(nullptr){
     m_speed = speed;
     autoCamera = false;
-    offSet = dvector3D(0,-3,-6.5);
+    offSet = dvector3D(0,-3,10);
     m_scale = 1;
     render_component = static_cast<class render*>(componentes.find(RENDER)->second) ;
     posCamara = dvector3D(0,0,0);
@@ -45,6 +45,7 @@ void Camera::EnableAutoCamera(dvector3D* position){
     m_objective = position; ///////////////
     autoCamera = true;
     calculateAutoPosition();
+	render_component->setCamTarget(*m_objective);
     
 }
 void Camera::DisableAutoCamera(){
@@ -66,18 +67,18 @@ dvector3D * Camera::getCameraPosition(){
 
 void Camera::calculateAutoPosition(){
     
-    if(*m_objective==copy_objective) return;
-    
-    copy_objective=*m_objective;
+//    if(*m_objective==copy_objective) return;
+	
+	copy_objective=*m_objective;
     
     //LIMITACIONES CAMARA CON MAPA
     if(copy_objective.x > map_width-8) copy_objective.x = map_width-8; 	//derecha
     if(copy_objective.y > map_height-8) copy_objective.y = map_height-8;//arriba
     if(copy_objective.y < 4) copy_objective.y = 4;						//abajo
     if(copy_objective.x < 8) copy_objective.x = 8; 						//izquierda
+	
     
-    
-    dvector3D * renderPos = render_component->getCamPos();
+//    dvector3D * renderPos = render_component->getCamPos();
 //    incremento = ((*m_objective+offSet*m_scale) - renderPos)/ (m_speed*60.0);
 	
     
@@ -91,7 +92,7 @@ void Camera::calculateAutoPosition(){
 //    printf("\n Targ_cam: %.1f, YYYY: %.1f", copy_objective.x, copy_objective.y );
 //    printf("\n offsetXYZ: %.1f,%.1f,%.1f", offSet.x,offSet.y,offSet.z);
 
-    render_component->setCamTarget(copy_objective);
+//    render_component->setCamTarget(copy_objective);
 }
 
 void Camera::setCoordsMap(float m_width, float m_height){
@@ -104,5 +105,5 @@ void Camera::update(){
         calculateAutoPosition();
     }
     GameObject::update();
-    
 }
+

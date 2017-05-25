@@ -35,6 +35,8 @@ public:
     void setOffSet(float x,float y, float z);
     void setCameraSpeed(dvector3D&);
     void setOffSet(dvector3D&);
+	dvector3D getOffset() { return offSet; }
+	dvector3D getObjective() { return *m_objective; }
     void setCoordsMap(float x, float y);
     void update();
     
