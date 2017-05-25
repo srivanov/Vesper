@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
 	ventana::Instance();
 	Game* game = Game::Instance();
 	tiempo t;
-	const long timePerFrame = 66;
+	const long timePerFrame = 33;
 	long timeSinceLastUpdate = 0;
 	float interpolation;
 	

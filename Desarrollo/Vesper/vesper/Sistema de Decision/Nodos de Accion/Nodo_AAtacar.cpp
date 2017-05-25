@@ -8,7 +8,7 @@
 
 #include "Nodo_AAtacar.hpp"
 
-#define VELOCIDAD 4
+#define VELOCIDAD 2
 
 short Nodo_AAtacar::run(const int &ID){
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
