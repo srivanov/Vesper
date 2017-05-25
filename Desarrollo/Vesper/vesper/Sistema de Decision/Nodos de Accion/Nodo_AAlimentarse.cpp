@@ -9,7 +9,7 @@
 #include "Nodo_AAlimentarse.hpp"
 
 short Nodo_AAlimentarse::run(const int &ID){
-    //cout << "ME ALIMENTO" << endl;
+    cout << "ME ALIMENTO" << endl;
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     book->remove_EventsByType(P_HAMBRE);
     book->hambre-=ALIMENTACION;

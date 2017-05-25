@@ -9,7 +9,7 @@
 #include "Nodo_AVigilar.hpp"
 
 short Nodo_AVigilar::run(const int &ID){
-    //cout << "VIGILO" << endl;
+    cout << "VIGILO" << endl;
     if (t.tTranscurrido(4.f)) {
         t.reset();
         return FUNCIONO;

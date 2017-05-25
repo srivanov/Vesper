@@ -17,7 +17,7 @@ short Nodo_AAtacar::run(const int &ID){
     
     book->resetVectorMovimiento();
     
-    if(aux<6.0f){
+    if(aux<8.0f){
         
         return updateVMovement(ID);
         

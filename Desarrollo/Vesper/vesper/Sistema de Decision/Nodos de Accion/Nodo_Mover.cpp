@@ -13,6 +13,7 @@
 
 Nodo_Mover::~Nodo_Mover(){}
 short Nodo_Mover::run(const int &id){
+    cout << "NODO MOVER" << endl;
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     
@@ -20,10 +21,10 @@ short Nodo_Mover::run(const int &id){
     dvector3D pos = book->lastPosition();
     
     if(pos.x!=-1){
-        if(aux==-1){
-            updateVMovement(id);
+        if(aux==-1)
             return updatePosition(id);
-        }
+        else
+            return updateVMovement(id);
     }
     return FUNCIONO;
 }
@@ -50,8 +51,14 @@ short Nodo_Mover::updatePosition(const int &id){
     
     if(aux<0.5f && book->updateObjetivo())
         reset();
-    else if(aux<1.5f && !book->updateObjetivo())
-        reset();
+    else if(aux<1.5f){
+        
+        if(!book->updateObjetivo()){
+            reset();
+            return FUNCIONO;
+        }
+    }
+    
     
     return RUNNING;
 }

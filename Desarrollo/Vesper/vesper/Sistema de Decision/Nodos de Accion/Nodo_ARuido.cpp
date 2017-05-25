@@ -17,7 +17,7 @@ short Nodo_ARudio::run(const int &ID){
     else if(t.tTranscurrido(2.0f) && init){
         init = false;
         t.reset();
-        //cout << "FUI AL RUIDO" << endl;
+        cout << "FUI AL RUIDO" << endl;
         return FUNCIONO;
     }
     return RUNNING;

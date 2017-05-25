@@ -9,7 +9,7 @@
 #include "Nodo_QHidratarse.hpp"
 
 short Nodo_QHidratarse::run(const int &ID){
-    //cout << "BEBER?" << endl;
+    cout << "BEBER?" << endl;
     if(activado)
         return runHijos(ID);
     

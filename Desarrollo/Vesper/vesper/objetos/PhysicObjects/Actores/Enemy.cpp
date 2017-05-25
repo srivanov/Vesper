@@ -42,20 +42,22 @@ void Enemy::update(){
     updateStats();
     comprobar_vision();
     STD();
-    
-    
-    if(!book->Patrullar && patrullar){
-        book->notify(m_ID, P_PATRULLAR, patrullar->getNextPosPatrulla());
-    }
     book->updateBook();
     memory->update();
     
+    if(!book->Patrullar && patrullar)
+        book->notify(m_ID, P_PATRULLAR, patrullar->getNextPosPatrulla());
     
     
-    mover(*book->VectorMovimiento);
-    dvector3D aux = *getPosition() + *book->VectorMovimiento;
+    
+    if(book->VectorMovimiento->x != 0.f || book->VectorMovimiento->y != 0.f){
+        lastView = *book->VectorMovimiento;
+        mover(lastView);
+    }
+    
+    
+    dvector3D aux = *getPosition() + lastView;
     rotarAposicion(aux);
-    
     GameObject::update();
 }
 
@@ -120,7 +122,7 @@ void Enemy::comprobar_vision(){
             if(!ph->RayCastControl(*getPosition(), posP) && !book->ExistEventByType(P_ENEMIGO))
                 book->notify(m_ID, P_ENEMIGO, posP);
         }else
-            posP = nullptr;
+            return;
         
     }
 }

@@ -35,13 +35,14 @@ protected:
     MemoryObjects * memory;
     patrulla * patrullar;
     dvector3D * posP;
+    dvector3D lastView;
     void comprobar_vision();
     void updateStats();
     void STD();
 private:
     float tiempo_vida, velocidad;
     dvector3D direccion;
-    tiempo temp,t;
+    tiempo t;
 public:
     Enemy();
     ~Enemy();

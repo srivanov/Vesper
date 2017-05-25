@@ -9,7 +9,7 @@
 #include "Nodo_QCombatir.hpp"
 
 short Nodo_QCombatir::run(const int &ID){
-    //cout << "LUCHAR?" << endl;
+    cout << "LUCHAR?" << endl;
     if(activado)
         return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);

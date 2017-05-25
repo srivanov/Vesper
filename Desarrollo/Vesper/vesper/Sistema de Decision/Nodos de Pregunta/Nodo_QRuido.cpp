@@ -10,13 +10,13 @@
 
 short Nodo_QRuido::run(const int &ID){
     
-    //cout << "RUIDO?" << endl;
+    cout << "RUIDO?" << endl;
     
     if(activado)
         return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->Ruido){
-        //cout << "HAY RUIDO" << endl;
+        cout << "HAY RUIDO" << endl;
         activado = true;
         return RUNNING;
     }

@@ -9,7 +9,7 @@
 #include "Nodo_QVigilar.hpp"
 
 short Nodo_QVigilar::run(const int &ID){
-    //cout << "VIGILAR?" << endl;
+    cout << "VIGILAR?" << endl;
     if(activado)
         return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);

@@ -9,6 +9,6 @@
 #include "Nodo_AAyudar.hpp"
 
 short Nodo_AAyudar::run(const int &ID){
-    //cout << "AYUDE" << endl;
+    cout << "AYUDE" << endl;
     return FUNCIONO;
 }
