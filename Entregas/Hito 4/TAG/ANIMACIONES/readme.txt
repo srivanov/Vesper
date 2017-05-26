@@ -13,3 +13,5 @@ izquierda: disminuye la luz difusa
 derecha: aumenta la luz difusa
 n: aumenta la luz especular
 m: disminuye la luz especular
+
+El ZIP “source_motor” es el código fuente del motor.
