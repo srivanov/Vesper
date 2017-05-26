@@ -14,12 +14,37 @@
         </Window>
         <Window type="Generic/Image" name="contenedor" >
             <Property name="ID" value="3" />
-            <Property name="Area" value="{{0,470},{0,200},{0,840},{0,610}}" />
-            <Property name="Image" value="OgreTrayImages/TrayM" />
+            <Property name="Area" value="{{0,240},{0,135},{0,1050},{0,675}}" />
+            <Property name="Image" value="Menu/madera" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Window type="Generic/Label" name="Label" >
-                <Property name="Area" value="{{0,20},{0,20},{0,350},{0,260}}" />
-                <Property name="Text" value="SKYSCRAPERS" />
+            <Window type="Generic/Image" name="nerea" >
+                <Property name="Area" value="{{0,90},{0,90},{0,705},{0,140}}" />
+                <Property name="Image" value="Menu/n_nerea" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="cath" >
+                <Property name="Area" value="{{0,90},{0,145},{0,715},{0,195}}" />
+                <Property name="Image" value="Menu/n_cath" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="stoycho" >
+                <Property name="Area" value="{{0,90},{0,260},{0,620},{0,310}}" />
+                <Property name="Image" value="Menu/n_stoycho" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="sandra" >
+                <Property name="Area" value="{{0,90},{0,205},{0,550},{0,255}}" />
+                <Property name="Image" value="Menu/n_sandra" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="julia" >
+                <Property name="Area" value="{{0,90},{0,315},{0,525},{0,365}}" />
+                <Property name="Image" value="Menu/n_julia" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="stoycho2" >
+                <Property name="Area" value="{{0,90},{0,375},{0,620},{0,425}}" />
+                <Property name="Image" value="Menu/n_gaspar" />
                 <Property name="MaxSize" value="{{1,0},{1,0}}" />
             </Window>
         </Window>

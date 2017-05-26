@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		631499E61E993A3400651E20 /* Nodo_APedir_Ayuda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631499E41E993A3400651E20 /* Nodo_APedir_Ayuda.cpp */; };
 		631499E91E99427000651E20 /* Nodo_APedir_Ayuda2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */; };
+		633386E61ED8A44F009F9A4A /* Final_layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 633386E41ED8A44F009F9A4A /* Final_layout.cpp */; };
 		6380EC6A1EC2208D005EB5BA /* ObjectsMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6380EC681EC2208D005EB5BA /* ObjectsMemory.cpp */; };
 		63844FE01E98136800835938 /* Nodo_AAtacar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63844FDE1E98136800835938 /* Nodo_AAtacar.cpp */; };
 		63B137E11ECC8A44004A3AD6 /* Decoracion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B137DF1ECC8A44004A3AD6 /* Decoracion.cpp */; };
@@ -254,6 +255,8 @@
 		631499E51E993A3400651E20 /* Nodo_APedir_Ayuda.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_APedir_Ayuda.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda.hpp"; sourceTree = "<group>"; };
 		631499E71E99427000651E20 /* Nodo_APedir_Ayuda2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Nodo_APedir_Ayuda2.cpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda2.cpp"; sourceTree = "<group>"; };
 		631499E81E99427000651E20 /* Nodo_APedir_Ayuda2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Nodo_APedir_Ayuda2.hpp; path = "Sistema de Decision/Nodos de Accion/Nodo_APedir_Ayuda2.hpp"; sourceTree = "<group>"; };
+		633386E41ED8A44F009F9A4A /* Final_layout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Final_layout.cpp; sourceTree = "<group>"; };
+		633386E51ED8A44F009F9A4A /* Final_layout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Final_layout.hpp; sourceTree = "<group>"; };
 		6380EC681EC2208D005EB5BA /* ObjectsMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectsMemory.cpp; path = "Arquitectura IA/ObjectsMemory.cpp"; sourceTree = "<group>"; };
 		6380EC691EC2208D005EB5BA /* ObjectsMemory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ObjectsMemory.hpp; path = "Arquitectura IA/ObjectsMemory.hpp"; sourceTree = "<group>"; };
 		6380EC6B1EC22272005EB5BA /* actores.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = actores.hpp; path = PhysicObjects/Actores/actores.hpp; sourceTree = "<group>"; };
@@ -758,6 +761,8 @@
 		E9898F991E5B757A0001A36A /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				633386E41ED8A44F009F9A4A /* Final_layout.cpp */,
+				633386E51ED8A44F009F9A4A /* Final_layout.hpp */,
 				C1DF66C01E8BCAB200542BB8 /* menuManager.cpp */,
 				C1DF66C11E8BCAB200542BB8 /* menuManager.hpp */,
 				E9898F9E1E5B757A0001A36A /* GUI.cpp */,
@@ -1107,6 +1112,7 @@
 				63C4CEC21E70620E008295A1 /* Nodo_AHablar.cpp in Sources */,
 				63C4CEF11E706249008295A1 /* Nodo_QRuido.cpp in Sources */,
 				E9A346371E0416FC00E6EC25 /* gun.cpp in Sources */,
+				633386E61ED8A44F009F9A4A /* Final_layout.cpp in Sources */,
 				63C4CEF01E706249008295A1 /* Nodo_QPedir_Ayuda.cpp in Sources */,
 				63C4CEFA1E70625E008295A1 /* Nodo_RAvisado.cpp in Sources */,
 				E9AC3A9C1DF0AA5000A91A97 /* chirriante.cpp in Sources */,

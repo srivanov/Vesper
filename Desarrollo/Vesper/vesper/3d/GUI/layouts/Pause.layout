@@ -7,7 +7,7 @@
         <Window type="Generic/Image" name="background" >
             <Property name="ID" value="1" />
             <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
-            <Property name="Image" value="Menu/fondo_colores" />
+            <Property name="Image" value="Menu/fondo4" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="Disabled" value="true" />
         </Window>

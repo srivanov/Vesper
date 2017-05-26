@@ -40,6 +40,12 @@ void HUDLayout::init(){
 //    
 //    llave3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(21));
     
+    //    llavesil1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(50));
+    //
+    //    llavesil2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(51));
+    //
+    //    llavesil3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(52));
+    
     label = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(22));
     
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPISTOLA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11))));
@@ -100,25 +106,25 @@ void HUDLayout::getCarga(unsigned int carga){
 
 void HUDLayout::getMonedas(int v){
     if(v == 1){
-        moneda0->hide();
+        //moneda0->show();
         moneda1->show();
         moneda2->hide();
         moneda3->hide();
     }else if(v == 2){
-        moneda0->hide();
-        moneda1->hide();
+        //moneda0->show();
+        moneda1->show();
         moneda2->show();
         moneda3->hide();
     }else if(v == 3){
-        moneda0->hide();
-        moneda1->hide();
-        moneda2->hide();
+        //moneda0->show();
+        moneda1->show();
+        moneda2->show();
         moneda3->show();
     }else{
-        moneda0->hide();
+        moneda0->show();
     	moneda1->hide();
     	moneda2->hide();
-    	moneda3->show();
+    	moneda3->hide();
     }
 }
 

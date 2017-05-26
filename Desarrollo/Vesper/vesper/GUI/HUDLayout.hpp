@@ -38,6 +38,9 @@ private:
 //    CEGUI::DefaultWindow *llave1;
 //    CEGUI::DefaultWindow *llave2;
 //    CEGUI::DefaultWindow *llave3;
+//    CEGUI::DefaultWindow *llavesil1;
+//    CEGUI::DefaultWindow *llavesil2;
+//    CEGUI::DefaultWindow *llavesil3;
     CEGUI::ProgressBar *vida;
     CEGUI::DefaultWindow* actual;
     CEGUI::DefaultWindow* label;

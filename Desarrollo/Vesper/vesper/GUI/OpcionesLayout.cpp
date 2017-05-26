@@ -33,20 +33,10 @@ void OpcionesLayout::init(CEGUI::RenderTarget* target){
     button_sonido = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(4));
     button_sonido->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickSonido, this));
     
-    button_pantalla = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(5));
-    button_pantalla->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickPantalla, this));
+    
     
     button_volver = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(6));
     button_volver->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickVolver, this));
-    
-    button_resol1 = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(8)->getChild(9));
-    button_resol1->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickResol1, this));
-    
-    button_resol3 = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(8)->getChild(16));
-    button_resol3->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&OpcionesLayout::onClickResol3, this));
-    
-    contenedor_pantalla = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(8));
-    contenedor_pantalla->hide();
     
     contenedor_sonido = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11));
     contenedor_sonido->hide();
@@ -69,7 +59,6 @@ void OpcionesLayout::init(CEGUI::RenderTarget* target){
 
 void OpcionesLayout::onClickControles(const CEGUI::EventArgs &e) {
     printf("Pulsado boton controles");
-    contenedor_pantalla->hide();
     contenedor_sonido->hide();
     contenedor_controles->show();
 	button_guardar->hide();
@@ -77,31 +66,17 @@ void OpcionesLayout::onClickControles(const CEGUI::EventArgs &e) {
 
 void OpcionesLayout::onClickSonido(const CEGUI::EventArgs &e) {
     printf("Pulsado boton sonido");
-    contenedor_pantalla->hide();
     contenedor_sonido->show();
     contenedor_controles->hide();
     button_guardar->show();
 }
 
-void OpcionesLayout::onClickPantalla(const CEGUI::EventArgs &e) {
-    printf("Pulsado boton pantalla");
-    contenedor_pantalla->show();
-    contenedor_sonido->hide();
-    contenedor_controles->hide();
-	button_guardar->show();
-}
 
 void OpcionesLayout::onClickVolver(const CEGUI::EventArgs &e) {
     actualState->menu = tmMENUPRINCIPAL;
 }
 
-void OpcionesLayout::onClickResol1(const CEGUI::EventArgs &e){
-    printf("pulsado resol1");
-}
 
-void OpcionesLayout::onClickResol3(const CEGUI::EventArgs &e){
-    printf("pulsado resol3");
-}
 
 void OpcionesLayout::onClickGuardar(const CEGUI::EventArgs &e) {
     std::map<char*, char*> valores;
