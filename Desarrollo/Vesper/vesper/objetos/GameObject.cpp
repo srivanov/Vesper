@@ -14,6 +14,7 @@ GameObject::GameObject(){
 	componente->setFather(this);
 	first = true;
 	control = true;
+    eliminar = false;
 }
 
 void GameObject::inicializar(int ID){ //que reciba tb el tipo de la puerta

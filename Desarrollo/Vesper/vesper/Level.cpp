@@ -8,7 +8,7 @@
 
 #include "Level.hpp"
 
-Level::Level(){
+Level::Level() : p(nullptr) , c(nullptr){
     iniciado=false;
     actualState = states::Instance();
     input = InputManager::Instance();
@@ -60,6 +60,7 @@ bool Level::exportar_objetos(loadLevel& nivel){
 }
 
 void Level::clear(){
+    printf("");
     for (it=0; it<w.size(); it++)
         if(w[it]->Eliminable()){
             delete w[it];

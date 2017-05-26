@@ -17,14 +17,18 @@ render::~render(){
 	delete nodo;
 	nodo = NULL;
 	delete luz;
-    if(camara != NULL)
-        delete camara;
-	std::vector<SkyMalla*>::iterator it = all_nodos.begin();
-	while(it != all_nodos.end()){
-//		delete (*it); // GALLEGO
-		++it;
+    if(camara != NULL){
+        // GALLEGO
+        //camara = engine->removeCam(camara);
+    }
+    //size_t it;
+	//std::vector<SkyMalla*>::iterator it = all_nodos.begin();
+	while(!all_nodos.empty()){ //GALLEGO
+        SkyNodo * n = all_nodos[0];
+        delete n;
+        all_nodos.erase(all_nodos.begin());
 	}
-	all_nodos.clear();
+	//all_nodos.clear();
 }
 
 void render::update(){
@@ -144,6 +148,8 @@ void render::endDraw() {
 
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = engine->crearCamara(NULL);
+    // GALLEGO
+    //engine->setActiveCam(camara->getID());
 	camara->setPosicion(p);
 	camara->setCamTarget(l);
 	camara->setNearValue(1);
@@ -175,7 +181,7 @@ void render::CreateGround(int alto, int ancho){
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
-	SkyMalla* node;
+	SkyMalla* aux;
 	char* tex = "3d/rocas.png";
 	int h1 = altoMapa;
 	int w1 = anchoMapa;
@@ -188,12 +194,12 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 			int x = (int) it % (anchoMapa);
 			
 			if(tilemap[it] == 1)
-				nodo = creaNodo("3d/muro.obj", "3d/rocas.png", tMallaEstatica, NULL);
+				aux = creaNodo("3d/muro.obj", "3d/rocas.png", tMallaEstatica, NULL);
 			else
-				nodo = creaNodo("3d/arbusto.obj", "", tMallaEstatica, NULL);
+				aux = creaNodo("3d/arbusto.obj", "", tMallaEstatica, NULL);
 			dvector3D m(x,y,0);
-			nodo->setPosicion(m);
-			all_nodos.push_back(nodo);
+			aux->setPosicion(m);
+			all_nodos.push_back(aux);
 		}
 	}
 }
