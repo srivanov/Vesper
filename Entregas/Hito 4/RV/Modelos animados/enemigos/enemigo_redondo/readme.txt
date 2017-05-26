@@ -1,0 +1,3 @@
+Este enemigo tiene las animaciones humanoides, por lo que están hechas pero 
+no vamos a incluirlo en el juego porque como no tiene un cuerpo humanoide, no sirven
+y por falta de tiempo, no hemos podido modificarlas.
