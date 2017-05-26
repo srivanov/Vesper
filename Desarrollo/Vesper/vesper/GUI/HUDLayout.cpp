@@ -7,6 +7,7 @@
 //
 
 #include "HUDLayout.hpp"
+#include "../estados/estados.h"
 
 HUDLayout::HUDLayout() {
     
@@ -64,6 +65,19 @@ void HUDLayout::init(){
     
     vida = static_cast<CEGUI::ProgressBar*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
     vida->setProgress(0.5);
+    estado = states::Instance();
+}
+
+void HUDLayout::update(){
+    if(estado->datos.update){
+        getVida(estado->datos.vida);
+        getMunicion(estado->datos.municion);
+        getCarga(estado->datos.carga);
+        //getllaves(estado->datos.llaves);
+        getMonedas(estado->datos.monedas);
+        mostrarArma(estado->datos.arma);
+        estado->datos.update = false;
+    }
 }
 
 void HUDLayout::getVida(int v){

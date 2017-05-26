@@ -14,6 +14,7 @@
 #include "CreditosLayout.hpp"
 #include "OpcionesLayout.hpp"
 #include "ElegirPersonaje.hpp"
+#include "HUDLayout.hpp"
 
 
 #endif /* listaMenus_h */

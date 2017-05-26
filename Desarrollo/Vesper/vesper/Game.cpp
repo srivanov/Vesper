@@ -54,8 +54,10 @@ void Game::render(float &interpolation){
 //	}
     renderizador->beginDraw();
     maquina.render(interpolation);
-	if(*maquina.actualState->getState() == PLAYING)
+    if(*maquina.actualState->getState() == PLAYING){
 		renderizador->dibujar();
+        maquina.renderHUD();
+    }
 	renderizador->endDraw();
 }
 

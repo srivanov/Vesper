@@ -10,6 +10,15 @@
 #define estados_h
 
 #include "../JSONParser.hpp"
+#include "../components/typeArma.hpp"
+
+struct datosPlayer {
+    datosPlayer() { vida=monedas=llaves=0; municion=carga=0; update=true;}
+    int vida, monedas, llaves;
+    unsigned int municion, carga;
+    typeArma arma;
+    bool update;
+};
 
 enum estados{
 	MENU = 0,
@@ -22,7 +31,8 @@ enum tipoMenu {
 	tmELEGIR_PERSONAJE,
 	tmOPCIONES,
 	tmCREDITOS,
-	tmPAUSE
+	tmPAUSE,
+    tmHUD
 };
 
 struct states{
@@ -38,10 +48,11 @@ public:
         char buf_nivel[2];
         sprintf(buf_nivel,"%d", nivel);
         
-        valores.insert(std::pair<char *, char *>("nivel", buf_nivel));
+        valores.insert(std::pair<char *, char *>((char*)"nivel", buf_nivel));
         
         JSONParser::guardar(filename, valores);
     }
+    
     void cargarPartida() {
         std::map<std::string, std::string> valores = JSONParser::leer(filename);
         
@@ -52,6 +63,7 @@ public:
 	tipoMenu menu;
 	bool destruir;
 	int character, nivel;
+    datosPlayer datos;
 	void* renderTarget, *renderer;
 private:
 	states() {

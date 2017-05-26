@@ -1382,6 +1382,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1394,6 +1395,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1426,6 +1428,7 @@
 				E9AD518A1ED4EDA8009F3723 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

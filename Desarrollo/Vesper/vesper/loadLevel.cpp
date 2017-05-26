@@ -234,7 +234,7 @@ void loadLevel::CreateWorld(){
     for (; it<end; it++) {
         
         ObjectType tipo = (ObjectType)m_obj[it].z;
-        dvector3D pos(m_obj[it].x,m_obj[it].y,0);
+        dvector3D pos(m_obj[it].x,m_obj[it].y,1);
         GameObject * g;
         
         

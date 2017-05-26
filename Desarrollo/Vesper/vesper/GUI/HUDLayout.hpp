@@ -13,6 +13,8 @@
 #include "GUI.h"
 #include "../components/typeArma.hpp"
 
+class states;
+
 class HUDLayout : public GUI {
 public:
     HUDLayout();
@@ -26,6 +28,7 @@ public:
     void getCarga(unsigned int carga);
     void ocultarArmas();
     void mostrarArma(typeArma tipo);
+    void update();
     
 private:
     CEGUI::DefaultWindow *moneda0;
@@ -41,7 +44,7 @@ private:
     std::string carga_muni, aux;
     
     std::map<typeArma,CEGUI::DefaultWindow*> armas;
-    
+    states* estado;
 };
 
 #endif /* HUDLayout_hpp */

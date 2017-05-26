@@ -12,7 +12,7 @@
 
 class render : public component {
 public:
-    render();
+    render(bool animada = false);
     ~render();
 	void update() override;
 	
@@ -36,12 +36,13 @@ public:
 	dvector3D* getCamPos();
 	void setCamTarget(dvector3D pos);
     void anyadirArma();
-	
 private:
 	SkyEngine* engine;
+    bool type;
     std::vector<SkyMalla*> all_nodos;
 	ventana* vent;
-	SkyMalla *nodo, *nodo_suelo;
+	SkyMalla *nodo_suelo;
+    SkyNodo * nodo;
 	SkyCamara* camara;
 	SkyLuz* luz;
 	dvector3D cam_pos;

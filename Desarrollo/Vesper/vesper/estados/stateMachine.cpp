@@ -29,9 +29,10 @@ bool stateMachine::update(const long &timePerFrame){
 		actualState->destruir = false;
 	}
 	
-	if(*actualState->getState() == PLAYING)
+    if(*actualState->getState() == PLAYING){
 		nivelazo.update(timePerFrame);
-	else if(*actualState->getState() == MENU)
+        menusManager.updateHUD();
+    }else if(*actualState->getState() == MENU)
 		menusManager.update(timePerFrame);
 	else if(*actualState->getState() == STOP)
 		stop();

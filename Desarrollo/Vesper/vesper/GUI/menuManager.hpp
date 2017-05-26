@@ -14,6 +14,7 @@
 #include "estados.h"
 #include "state.hpp"
 #include "GUI.h"
+#include "listaMenus.h"
 
 class menuManager : public state{
 public:
@@ -21,6 +22,8 @@ public:
 	~menuManager();
 	void update(const long &timePerFrame);
 	void render(float &interpolation);
+    void renderHUD() { glDisable(GL_DEPTH_TEST); hud.beginRender(); hud.render(); hud.endRender(); glEnable(GL_DEPTH_TEST); }
+    void updateHUD() { hud.update(); }
     void InitRenderer();
     void Init();
 	
@@ -29,6 +32,7 @@ private:
 	GUI* seleccionado;
     CEGUI::OpenGL3Renderer *m_IrrlichtRenderer; //TO DO: CAMBIAR A OPENGL3RENDERER CUANDO CAMBIEMOS A NUESTRO MOTOR
     CEGUI::RenderTarget* m_target;
+    HUDLayout hud;
 };
 
 #endif /* menuManager_hpp */

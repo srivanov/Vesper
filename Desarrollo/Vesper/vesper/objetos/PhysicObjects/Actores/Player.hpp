@@ -12,7 +12,7 @@
 #include "../PhysicObject.hpp"
 #include "../../../components/armas.hpp"
 #include "../../../components/gun.hpp"
-#include "../../../GUI/HUDLayout.hpp"
+#include "../../../estados/estados.h"
 
 enum Action_Priority {
     QUIETO = 0,
@@ -33,7 +33,6 @@ protected:
     size_t numLlaves,activa;
     void changeActiveKey();
     int vida;
-	HUDLayout hud;
 	states* estado;
 	tiempo t, t2;
 	InputManager* input;

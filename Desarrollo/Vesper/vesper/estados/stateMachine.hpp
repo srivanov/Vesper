@@ -25,6 +25,7 @@ public:
 	stateMachine();
 	bool update(const long &timePerFrame);
 	void render(float &interpolation);
+    void renderHUD() { menusManager.renderHUD(); }
     void Init();
 	
 	states* actualState;

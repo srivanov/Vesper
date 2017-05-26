@@ -15,9 +15,6 @@
 
 #define VELOCIDADN 4.f
 
-
-
-
 Player::Player() : obj_colisionado(nullptr){
     action = true;
     arma = new armas;
@@ -45,8 +42,7 @@ Player::Player() : obj_colisionado(nullptr){
 	
 	input = InputManager::Instance();
     vida = 100;
-	hud.init();
-    t.start();t2.start();
+    t.start(); t2.start();
 	vent = ventana::Instance();
 }
 
@@ -60,10 +56,17 @@ void Player::inicializar(int ID, int numL){
 //	dvector3D m = *getRotation();
 //	m.z = -m.z;
 //	setRotation(m);
-	
+    
+    // HUD
+    /*
     hud.getVida(vida);
     hud.getCarga(arma->getCarga());
     hud.getMunicion(arma->getMunicion());
+     */
+    estado->datos.vida = vida;
+    estado->datos.carga = arma->getCarga();
+    estado->datos.municion = arma->getMunicion();
+    estado->datos.update = true;
 }
 
 Player::~Player(){
@@ -72,11 +75,14 @@ Player::~Player(){
 }
 
 void Player::update(){
-    
-    
 	
-    hud.getVida(vida);
+    //hud.getVida(vida); // HUD
 //    hud.getllaves(*llaves);
+    estado->datos.vida = vida;
+    estado->datos.update = true;
+    
+    isDead();
+    actions();
     
     object_colision_update();
     
@@ -122,8 +128,13 @@ void Player::actions(){
     }
     if(input->isPressed(SKY_MOUSE_BUTTON_LEFT)){
         atacar();
-        hud.getCarga(arma->getCarga());
-        hud.getMunicion(arma->getMunicion());
+        // HUD
+        //hud.getCarga(arma->getCarga());
+        //hud.getMunicion(arma->getMunicion());
+        estado->datos.carga = arma->getCarga();
+        estado->datos.municion = arma->getMunicion();
+        estado->datos.update = true;
+        
         action = true;
         if(arma->getArmaActual() != tPALA
            || arma->getArmaActual() != tMARTILLO)
@@ -153,6 +164,7 @@ void Player::actions(){
         prior = QUIETO;
     
     mover(vel);
+    Animaciones();
 }
 
 void Player::Animaciones(){
@@ -189,9 +201,6 @@ void Player::object_colision_update(){
 void Player::render(float &interpolation){
     PhysicObject::render(interpolation);
     arma->render(interpolation);
-	hud.beginRender();
-	hud.render();
-	hud.endRender();
 }
 
 void Player::atacar(){
@@ -204,9 +213,17 @@ void Player::atacar(){
 
 void Player::cambiarArma(){
     arma->changeGun();
+    // HUD
+    /*
     hud.mostrarArma(arma->getArmaActual());
     hud.getCarga(arma->getCarga());
     hud.getMunicion(arma->getMunicion());
+     */
+    estado->datos.arma = arma->getArmaActual();
+    estado->datos.carga = arma->getCarga();
+    estado->datos.municion = arma->getMunicion();
+    estado->datos.update = true;
+    
     std::cout << arma->getArmaActual() << std::endl;
 }
 
@@ -253,7 +270,10 @@ void Player::contacto(PhysicObject * g){
         if(g->getObjectType() == MONEDAS){
             habilidadEspecial * h = static_cast<habilidadEspecial*>(componentes.find(HABESPECIAL)->second);
             h->aumentarMoneda();
-            hud.getMonedas(h->getActual());
+            // HUD
+            //hud.getMonedas(h->getActual());
+            estado->datos.monedas = h->getActual();
+            estado->datos.update = true;
         }
         if(g->getObjectType() == PIEDRA ||
            (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS) || g->getObjectType() == PALA)

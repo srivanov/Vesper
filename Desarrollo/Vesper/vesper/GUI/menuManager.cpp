@@ -7,7 +7,7 @@
 //
 
 #include "menuManager.hpp"
-#include "listaMenus.h"
+
 #include "../components/ventana.hpp"
 
 menuManager::menuManager(){
@@ -35,8 +35,6 @@ void menuManager::update(const long &timePerFrame){
 //	printf("Menu: %d\n",seleccionado->getID());
 
 	seleccionado = menus.at(actualState->menu);
-	
-	
 }
 
 void menuManager::render(float &interpolation){
@@ -86,5 +84,6 @@ void menuManager::Init() {
         
         ++iter;
     }
+    hud.init();
 }
 

@@ -5,7 +5,8 @@
 #include "../objetos/Camera.hpp"
 //#include <string>
 
-render::render(){
+render::render(bool animada){
+    type = animada;
 	nodo = NULL;
 	camara = NULL;
 	luz = NULL;
@@ -50,7 +51,7 @@ bool render::run(){
 }
 
 void render::setNode(char *filename){
-    if(nodo == NULL){
+    if(nodo == NULL && !type){
 //		IMesh* aux = ventana::Instance()->getSceneManager()->getMesh(filename);
 //		// si no consigue cargar la malla 3D cargamos un cubo de irrlicht
 //		if(aux == NULL)
@@ -62,16 +63,18 @@ void render::setNode(char *filename){
 //		nodo->_setNodePosition(*getFather()->getPosition());
 //        nodo->_setNodeRotation(rota);
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
-		nodo->setMalla(filename);
+		static_cast<SkyMalla*>(nodo)->setMalla(filename);
 		nodo->setPosicion(*getFather()->getPosition());
 		nodo->setRotacion(rota);
     }
 }
 
 void render::changeNode(char* filename){
+    if(type) return;
+    
 	if(nodo != nullptr)
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
-	nodo->setMalla(filename);
+	static_cast<SkyMalla*>(nodo)->setMalla(filename);
 	dvector3D rota = dvector3D(270,0,0);
 	nodo->setPosicion(*getFather()->getPosition());
 	nodo->setRotacion(rota);
@@ -83,8 +86,14 @@ void render::anyadirArma(){
 }
 
 void render::setNodeTexture(char* filename){
-	if(nodo != nullptr)
-		nodo->setTextura(filename);
+    if(nodo != nullptr){
+        if(type){
+            static_cast<SkyMallaAnimada*>(nodo)->setTextura(filename);
+        }else{
+            static_cast<SkyMalla*>(nodo)->setTextura(filename);
+        }
+        //nodo->setTextura(filename);
+    }
 }
 
 bool render::setNodePosition(dvector3D &pos){
@@ -105,8 +114,12 @@ bool render::setNodeRotation(dvector3D &rot){
 }
 
 void render::deleteNode(){
-	delete nodo;
-	nodo = NULL;
+    if(type){
+        delete static_cast<SkyMallaAnimada*>(nodo);
+    }else{
+        delete static_cast<SkyMalla*>(nodo);
+    }
+    nodo = nullptr;
 }
 
 void render::beginDraw() {
@@ -141,7 +154,7 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, (next_pos.z - prev_pos.z) * interpolation + prev_pos.z);
 		
 		setCamPos(act);
-		setCamTarget(act+dvector3D(0,3,-6.5));
+		setCamTarget(act-static_cast<Camera*>(getFather())->getOffset());
 	}
 }
 
@@ -158,11 +171,11 @@ void render::addCamera(dvector3D &p, dvector3D &l){
 	camara->setNearValue(1);
 	camara->setFarValue(100);
 	luz = engine->crearLuz(camara);
-	luz->setAmbient(0.5);
-	luz->setDiffuse(0.8);
-	dvector3D c(-3,1,-1);
+	luz->setAmbient(0.7);
+	luz->setDiffuse(1.0);
+	dvector3D c(-10,18,10);
 	luz->setPosicion(c);
-	luz->setLightDirection(dvector3D(5,-1,0));
+	luz->setLightDirection(dvector3D(7,-5,-20));
 }
 
 void render::closeWindow(){
@@ -174,13 +187,13 @@ void render::CreateGround(int alto, int ancho){
 //    nodo_suelo->setPosition(vector3df((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
 //    nodo_suelo->setRotation(vector3df(90,180,180));
 	
-	nodo_suelo = creaNodo("3d/muro.obj", "3d/rocas.png", tMallaEstatica, nullptr);
-	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, -0.5);
+	nodo_suelo = creaNodo("3d/plano.obj", "", tMallaEstatica, nullptr);
+	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, -0.1);
 	nodo_suelo->setPosicion(m);
-	m = dvector3D(alto, ancho, 0.1);
+	m = dvector3D(alto, ancho, 0);
 	nodo_suelo->escalar(m);
-//	m = dvector3D(90,180,180);
-//	nodo_suelo->rotar(m);
+	m = dvector3D(90,0,0);
+	nodo_suelo->rotar(m);
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
@@ -188,6 +201,7 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 	char* tex = "3d/rocas.png";
 	int h1 = altoMapa;
 	int w1 = anchoMapa;
+    dvector3D m;
 	
 	size_t size = altoMapa*anchoMapa,it;
 	
@@ -196,11 +210,11 @@ void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){
 			int y = (int) it / (anchoMapa);
 			int x = (int) it % (anchoMapa);
 			
-			if(tilemap[it] == 1)
-				aux = creaNodo("3d/muro.obj", "3d/rocas.png", tMallaEstatica, NULL);
-			else
+            if(tilemap[it] == 1)
+				aux = creaNodo("3d/muros.obj", "", tMallaEstatica, NULL);
+            else
 				aux = creaNodo("3d/arbusto.obj", "", tMallaEstatica, NULL);
-			dvector3D m(x,y,0);
+			m = dvector3D(x,y,-0.1);
 			aux->setPosicion(m);
 			all_nodos.push_back(aux);
 		}
