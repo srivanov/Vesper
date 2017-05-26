@@ -1,1 +1,0 @@
-Este entregable no se ha podido realizar por falta de tiempo.
