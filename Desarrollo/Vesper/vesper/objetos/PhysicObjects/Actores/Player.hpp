@@ -14,8 +14,14 @@
 #include "../../../components/gun.hpp"
 #include "../../../GUI/HUDLayout.hpp"
 
+enum Action_Priority {
+    QUIETO = 0,
+    ANDANDO,
+    ATACANDO,
+    DISTANCIA
+};
+
 class Player : public PhysicObject {
-private:
 //    std::map<const Keys,int> keyFunction;
 protected:
     void asignarLLave(int value);
@@ -31,7 +37,13 @@ protected:
 	states* estado;
 	tiempo t, t2;
 	InputManager* input;
+    Action_Priority prior;
 	ventana* vent;
+    bool action;
+    void object_colision_update();
+    bool isDead();
+    void actions();
+    void Animaciones();
 public:
     void inicializar(int ID,int LLaves);
     unsigned int * getVel() {return &velocidad;}

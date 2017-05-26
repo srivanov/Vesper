@@ -19,7 +19,7 @@
 
 
 Player::Player() : obj_colisionado(nullptr){
-    
+    action = true;
     arma = new armas;
     componentes.insert(std::pair<ComponentType, component*>(ARMAS,arma));
     arma->setFather(this);
@@ -73,59 +73,14 @@ Player::~Player(){
 
 void Player::update(){
     
-    if(vida <= 0){
-		estado->nextState = MENU;
-		estado->menu = tmMENUPRINCIPAL;
-		estado->destruir = true;
-    }
+    
 	
     hud.getVida(vida);
 //    hud.getllaves(*llaves);
     
-	dvector3D vel;
-	
-    if(obj_colisionado!=nullptr){
-        float dist = EasyMath::EucCalcularDistancia(*obj_colisionado->getPosition(), *getPosition());
-        if(dist>4.f)
-            obj_colisionado = nullptr;
-        else{
-            if(obj_colisionado->getObjectType()==ENEMIGOS && t2.tTranscurrido(0.5)){
-                vida-=5;t2.reset();
-            }
-        }
-    }
-    if(input->isPressed(SKY_KEY_W))
-		vel.y += VELOCIDADN;
-    if(input->isPressed(SKY_KEY_S))
-		vel.y += -VELOCIDADN;
-    if(input->isPressed(SKY_KEY_A))
-		vel.x += -VELOCIDADN;
-	if(input->isPressed(SKY_KEY_D))
-		vel.x += VELOCIDADN;
-	
-    if(input->isPressed(SKY_MOUSE_BUTTON_LEFT)){
-        atacar();
-    	hud.getCarga(arma->getCarga());
-    	hud.getMunicion(arma->getMunicion());
-    }
-	if(t.tTranscurrido(0.5f)){
-		if(input->isPressed(SKY_KEY_TAB)){
-		   	cambiarArma();
-			t.reset();
-		}
-		if(input->isPressed(SKY_KEY_Q)){
-			changeActiveKey();
-			t.reset();
-		}
-        if(input->isPressed(SKY_KEY_E)){
-            accionar();
-            t.reset();
-        }
-	}
-    if(input->isPressed(SKY_KEY_SPACE))
-        vel*=2;
-	
-	mover(vel);
+    object_colision_update();
+    
+    
 	
 //    m_rot = ventana::Instance()->posicionRaton(m_pos);
 	dvector3D m, v;
@@ -136,6 +91,99 @@ void Player::update(){
     GameObject::update();
     arma->update();
 
+}
+
+bool Player::isDead(){
+    if(vida <= 0){
+        estado->nextState = MENU;
+        estado->menu = tmMENUPRINCIPAL;
+        estado->destruir = true;
+        return true;
+    }
+    return false;
+}
+
+void Player::actions(){
+    dvector3D vel;
+    
+    if(input->isPressed(SKY_KEY_W))
+        vel.y += VELOCIDADN;
+    if(input->isPressed(SKY_KEY_S))
+        vel.y += -VELOCIDADN;
+    if(input->isPressed(SKY_KEY_A))
+        vel.x += -VELOCIDADN;
+    if(input->isPressed(SKY_KEY_D))
+        vel.x += VELOCIDADN;
+    
+    
+    if(vel.x != 0 || vel.y != 0){
+        prior = ANDANDO;
+        action = true;
+    }
+    if(input->isPressed(SKY_MOUSE_BUTTON_LEFT)){
+        atacar();
+        hud.getCarga(arma->getCarga());
+        hud.getMunicion(arma->getMunicion());
+        action = true;
+        if(arma->getArmaActual() != tPALA
+           || arma->getArmaActual() != tMARTILLO)
+            prior = ATACANDO;
+        else
+            prior = DISTANCIA;
+    }
+    if(t.tTranscurrido(0.5f)){
+        if(input->isPressed(SKY_KEY_TAB)){
+            cambiarArma();
+            t.reset();
+        }
+        if(input->isPressed(SKY_KEY_Q)){
+            changeActiveKey();
+            t.reset();
+        }
+        if(input->isPressed(SKY_KEY_E)){
+            accionar();
+            t.reset();
+            
+        }
+    }
+    if(input->isPressed(SKY_KEY_SPACE))
+        vel*=2;
+    
+    if(!action)
+        prior = QUIETO;
+    
+    mover(vel);
+}
+
+void Player::Animaciones(){
+    class render * ren = static_cast<class render*>(componentes.find(RENDER)->second);
+    switch(prior){
+        case QUIETO:
+            //ren->cambiarAnimacion("");
+            break;
+        case ANDANDO:
+            //ren->cambiarAnimacion("");
+            break;
+        case ATACANDO:
+            //ren->cambiarAnimacion("");
+            break;
+        case DISTANCIA:
+            //ren->cambiarAnimacion("");
+            break;
+    }
+}
+
+void Player::object_colision_update(){
+    if(obj_colisionado!=nullptr){
+        float dist = EasyMath::EucCalcularDistancia(*obj_colisionado->getPosition(), *getPosition());
+        
+        if(dist>4.f)
+            obj_colisionado = nullptr;
+        else if(obj_colisionado->getObjectType()==ENEMIGOS
+                && t2.tTranscurrido(0.5)){
+            vida-=5;t2.reset();
+        }
+    }
 }
 
 void Player::render(float &interpolation){
