@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actores>
+	<object name="ENEMY" type="0">
+		<textura data="dirEnemy0T" />
+		<modelo data="dirEnemy0M" />
+	</object>
+	<object name="ENEMY" type="1">
+		<textura data="dirEnemy1T" />
+		<modelo data="dirEnemy1M" />
+	</object>
+	<object name="ENEMY" type="2">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="ENEMY" type="3">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="REHEN" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PLAYER" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PLAYER" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PLAYER" type="2">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PLAYER" type="3">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+</actores>
+<player_objects>
+	<object name="PALA" type="0" >
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PISTOLA" type="0" >
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="ESCOPETA" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="LANZACARAMELOS" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="CHICLE" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="HUMO" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="GLOBO_AGUA" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="MONEDAS" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="LLAVE" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="LLAVE" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="LLAVE" type="2">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="LLAVE" type="3">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+</player_objects>
+<world_objects>
+	<object name="ALARMA" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="ALARMA" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="FUENTE" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="COMIDA" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="COMIDA" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="BOTIQUIN" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="BOTIQUIN" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PUERTA" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PUERTA" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PUERTA" type="2">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="PUERTA" type="3">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="MURO" type="0">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="MURO" type="1">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="MURO" type="2">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+	<object name="MURO" type="3">
+		<textura data="dir" />
+		<modelo data="dir" />
+	</object>
+</world_objects>
+
+
+
