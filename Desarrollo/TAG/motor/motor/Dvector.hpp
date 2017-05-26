@@ -2,6 +2,8 @@
 #ifndef DVECTOR_HPP
 #define DVECTOR_HPP
 
+#include <iostream>
+
 struct dvector3D;
 
 struct dvector2D {
@@ -41,32 +43,32 @@ struct dvector2D {
 };
 
 struct dvector3D {
-	float x,y,z;
+    float x,y,z;
 	
 	dvector3D() : x(0), y(0), z(0){};
 	dvector3D(float _x, float _y, float _z) { x = _x; y = _y; z = _z; }
 	dvector3D(const dvector3D &p) { x = p.x; y = p.y; z = p.z; }
-	dvector3D(const dvector3D *p) { x = p->x; y = p->y; z = p->z; }
+    dvector3D(const dvector3D *p) { x = p->x; y = p->y; z = p->z; }
 	
 	virtual ~dvector3D() {}
 	
 	dvector3D& operator=(const dvector3D &p) { if(&p!=this){ x = p.x; y = p.y; z = p.z; } return *this; }
-	dvector3D& operator=(const dvector2D &p) { x = p.x; y = p.y; return *this; }
+    dvector3D& operator=(const dvector2D &p) { x = p.x; y = p.y; return *this; }
 	dvector3D& operator=(const float &p) { x = y = z = p; return *this; }
 	dvector3D operator+(const dvector3D &p) const { dvector3D aux; aux.x = x+p.x; aux.y = y+p.y; aux.z = z+p.z; return aux; }
 	dvector3D operator+(const dvector2D &p) const { dvector3D aux; aux.x = x+p.x; aux.y = y+p.y; return aux; }
 	dvector3D operator+(const float &p) const { dvector3D aux; aux.x = x+p; aux.y = y+p; aux.z = z+p; return aux; }
-	dvector3D operator-(const dvector3D &p) const { dvector3D aux; aux.x = x-p.x; aux.y = y-p.y; aux.z = z-p.z; return aux; }
+    dvector3D operator-(const dvector3D &p) const { dvector3D aux; aux.x = x-p.x; aux.y = y-p.y; aux.z = z-p.z; return aux; }
 	dvector3D operator-(const dvector2D &p) const { dvector3D aux; aux.x = x-p.x; aux.y = y-p.y; return aux; }
 	dvector3D operator-(const float &p) const { dvector3D aux; aux.x = x-p; aux.y = y-p; aux.z = z-p; return aux; }
-	dvector3D operator*(const dvector3D &p) const { dvector3D aux; aux.x = x*p.x; aux.y = y*p.y; aux.z = z*p.z; return aux; }
+    dvector3D operator*(const dvector3D &p) const { dvector3D aux; aux.x = x*p.x; aux.y = y*p.y; aux.z = z*p.z; return aux; }
 	dvector3D operator*(const dvector2D &p) const { dvector3D aux; aux.x = x*p.x; aux.y = y*p.y; return aux; }
-	dvector3D operator*(const float &p) const { dvector3D aux; aux.x = x*p; aux.y = y*p; aux.z = z*p; return aux; }
-	dvector3D operator/(const dvector3D &p) const { dvector3D aux; aux.x = x/p.x; aux.y = y/p.y; aux.z = z/p.z; return aux; }
+    dvector3D operator*(const float &p) const { dvector3D aux; aux.x = x*p; aux.y = y*p; aux.z = z*p; return aux; }
+    dvector3D operator/(const dvector3D &p) const { dvector3D aux; aux.x = x/p.x; aux.y = y/p.y; aux.z = z/p.z; return aux; }
 	dvector3D operator/(const dvector2D &p) const { dvector3D aux; aux.x = x/p.x; aux.y = y/p.y; return aux; }
 	dvector3D operator/(const float &p) const { dvector3D aux; aux.x = x/p; aux.y = y/p; aux.z = z/p; return aux; }
 	
-	bool operator==(const dvector3D &p) const {return this->x == p.x && this->y == p.y && this->z == p.z;};
+    bool operator==(const dvector3D &p) const {return this->x == p.x && this->y == p.y && this->z == p.z;};
 	bool operator==(const dvector2D &p) const {return this->x == p.x && this->y == p.y;};
 	bool operator==(const float &p) const {return this->x == p && this->y == p && this->z == p;};
 	
@@ -100,12 +102,17 @@ struct dvector3D {
 		}
 		return s;
 	}
+	
+	void invertir(){ x = -x; y = -y; z = -z; }
+	
+	void imprimir() { printf("%.1f - %.1f - %.1f\n",x,y,z); }
+	
 private:
 	float raiz(float num){
 		float x = num;
 		if(num > 0){
 			int i;
-			for(i=0; i<5; i++)
+			for(i=0; i<20; i++)
 				x = (((x*x) + num) / (2 * x));
 			return x;
 		}

@@ -60,7 +60,7 @@ bool TMallaAnimada::setAnimacion(std::string ruta, std::string nombre, float tim
 	std::string archivo = ruta + nombre.substr(0, punto), rutaF, ext = nombre.substr(punto, nombre.length());
     
     char buffer[3];
-    int n = 0;
+    int n = 1;
     sprintf(buffer, "%d",n);
     rutaF = archivo + ext;
 	// Lectura de las mallas

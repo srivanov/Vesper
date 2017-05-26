@@ -70,6 +70,22 @@ void SkyEngine::Draw(){
 	}
 }
 
+SkyCamara* SkyEngine::removeCam(SkyCamara *cam){
+	auto it = camaras.find(cam->getID());
+	if(it == camaras.end())
+		return cam;
+	camaras.erase(it);
+	return nullptr;
+}
+
+SkyLuz* SkyEngine::removeLight(SkyLuz *luz){
+	auto it = luces.find(luz->getID());
+	if(it == luces.end())
+		return luz;
+	luces.erase(it);
+	return nullptr;
+}
+
 void SkyEngine::setAntiAliasing(bool set){
     AntiAliasing = set;
 }

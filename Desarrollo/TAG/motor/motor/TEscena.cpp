@@ -10,34 +10,36 @@ TEscena::TEscena(){
 	cam = motor->crearCamara(NULL);
 	motor->setActiveCam(0);
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
-	luz = motor->crearLuz(NULL);
+	luz = motor->crearLuz(cam);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,3,5), s(0.1, 0.1, 0.1);
+	dvector3D n(0,1,5), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
-	cubo->setMalla("../Models/zombi.fbx");
+	cubo->setMalla("../Models/atacarZarpazo.obj");
+	
 	plano->setMalla("../Models/plano2.obj");
-	cubo->escalar(s);
+//	cubo->escalar(s);
 	
 //	cubo->setTextura("../Models/tex.png");
-	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-	mallas.back()->setMalla("../Models/cubo.obj");
-	n = dvector3D(2,1,2);
-	mallas.back()->setPosicion(n);
+//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+//	mallas.back()->setMalla("../Models/wall.obj");
+//	n = dvector3D(2,1,2);
+//	mallas.back()->setPosicion(n);
 //	n = dvector3D(0.1,0.1,0.1);
 //	mallas.back()->escalar(n);
 
-	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
-	mallas.back()->setMalla("../Models/microwave.obj");
-//	mallas.back()->setTextura("../Models/zil.png");
-	n = dvector3D(-8,0,1);
-	mallas.back()->setPosicion(n);
+//	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
+//	mallas.back()->setMalla("../Models/microwave.obj");
+////	mallas.back()->setTextura("../Models/zil.png");
+//	n = dvector3D(-8,0,1);
+//	mallas.back()->setPosicion(n);
 	
 	animacion = motor->crearMallaAnimada(NULL);
-	animacion->AnyadirAnimacion("../Models/box/", "box.obj", 3.0f);
-	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
-	n = dvector3D(8,1,3);
+	animacion->AnyadirAnimacion("../Models/Andar/", "andar.obj", 0.2f);
+	animacion->setTextura("../Models/Andar/Player1_Diffuse.png");
+//	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
+	n = dvector3D(6,-0.04,3);
 	animacion->setPosicion(n);
 	
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
@@ -48,7 +50,7 @@ TEscena::TEscena(){
 	
 	n = dvector3D(0,0,-2);
 	cubo->transladar(n);
-	n = dvector3D(0.1,0.1,0.1);
+	n = dvector3D(2.1,2.1,2.1);
 	cubo->escalar(n);
 	n = dvector3D(0.0,0.0,0.1);
 	plano->transladar(n);
@@ -65,8 +67,8 @@ TEscena::TEscena(){
 TEscena::~TEscena(){
 	delete cubo;
 	delete plano;
-	delete cam;
 	delete luz;
+	delete cam;
 }
 
 void TEscena::Draw(){
@@ -131,12 +133,22 @@ void TEscena::update(){
 		cam->transladar(m);
 		luz->transladar(m);
 	}
-	m = animacion->getPosicion();
+	m = cubo->getPosicion();
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
 		cam->setCamTarget(m);
 	}
 	if(InputManager::Instance()->isPressed(SKY_KEY_K))
 		printf("%d\n",animacion->CambiarAnimacion("cil"));
+	if(InputManager::Instance()->isPressed(SKY_KEY_8)){
+		cam = motor->removeCam(cam);
+		if(cam == nullptr)
+			printf("");
+		cam = motor->crearCamara(NULL);
+		motor->setActiveCam(cam->getID());
+		luz = motor->removeLight(luz);
+		luz = motor->crearLuz(cam);
+	}
+	
 //	mov = dvector3D(0, InputManager::Instance()->mousePos.y, 0);
 //	cam->setCamTarget(mov);
 //	cubo->setRotacion(mov);
