@@ -1,6 +1,7 @@
 
 #include "TEscena.hpp"
 #include "SkyWindow.hpp"
+#include <iostream>
 
 //// dimensiones de la ventana
 //const GLuint WIDTH = 800, HEIGHT = 600;
@@ -22,7 +23,19 @@ glm::vec3 mov_cursor;
 int main(int argc, const char * argv[]) {
 	SkyWindow* window = SkyWindow::Instance();
 	dvector2D wh(800,600);
-	window->crearWindow(wh,true);
+	int n=0;
+	bool vsync = true, fullscreen = false;
+	std::cout << "Sincronizacion vertical: 0 o 1";
+	std::cin >> n;
+	if(n == 0)
+		vsync = false;
+	
+	std::cout << "Fullscreen: 0 o 1";
+	std::cin >> n;
+	if(n != 0)
+		fullscreen = true;
+	
+	window->crearWindow(wh, vsync, fullscreen);
 	
 	TEscena escena;
 	
