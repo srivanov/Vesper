@@ -7,6 +7,7 @@
 //
 
 #include "Enemy.hpp"
+#include "../Bala.hpp"
 
 dvector3D * patrulla::getNextPosPatrulla(){
     if(posicion_actual++>posiciones.size())
@@ -97,7 +98,7 @@ void Enemy::contacto(PhysicObject *g){
 	if(g){
         //Bala * bullet = static_cast<Bala*>(g);
 		if(g && g->getObjectType()==BALA)
-			 book->salud-=20;
+			 book->salud-=static_cast<Bala*>(g)->getDamage();
         else if(g->getObjectType() == PLAYER){
             posP = g->getPosition();
         }else if(memory->evalue(g) == CHANGED){
