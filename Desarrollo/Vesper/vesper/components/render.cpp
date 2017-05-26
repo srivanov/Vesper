@@ -17,7 +17,8 @@ render::~render(){
 	delete nodo;
 	nodo = NULL;
 	delete luz;
-	delete camara;
+    if(camara != NULL)
+        delete camara;
 	std::vector<SkyMalla*>::iterator it = all_nodos.begin();
 	while(it != all_nodos.end()){
 //		delete (*it); // GALLEGO
@@ -115,7 +116,7 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 	if(nodo != nullptr){
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, 0 );
 		nodo->setPosicion(act);
-/*
+
 		float r2d2 = 0.0f;
 		if(next_rot.z > 270.0f && prev_rot.z < 90.0f)
 			r2d2 = -360.0f;
@@ -124,7 +125,7 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 		
 		act = dvector3D(nodo->getRotacion().x, 0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
 		nodo->setRotacion(act);
-		*/
+ 
 //		if(getFather()->getObjectType() == BALA){
 //			printf("%.1f - %.1f\n", prev_pos.x, next_pos.x);
 //		}

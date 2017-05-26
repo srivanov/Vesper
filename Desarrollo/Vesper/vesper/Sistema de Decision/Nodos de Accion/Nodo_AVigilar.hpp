@@ -14,6 +14,7 @@
 
 class Nodo_AVigilar : public Nodo_base {
     tiempo t;
+    bool init;
 public:
     Nodo_AVigilar(){t.start();}
     ~Nodo_AVigilar(){}

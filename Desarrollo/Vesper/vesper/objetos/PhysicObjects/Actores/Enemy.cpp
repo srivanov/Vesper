@@ -50,12 +50,11 @@ void Enemy::update(){
     
     
     
-    if(book->VectorMovimiento->x != 0.f || book->VectorMovimiento->y != 0.f){
+    if(book->VectorMovimiento->x != 0.f || book->VectorMovimiento->y != 0.f)
         lastView = *book->VectorMovimiento;
-        mover(lastView);
-    }
     
     
+    mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + lastView;
     rotarAposicion(aux);
     GameObject::update();

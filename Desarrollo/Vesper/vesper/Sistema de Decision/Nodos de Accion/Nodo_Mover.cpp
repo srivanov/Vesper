@@ -21,11 +21,12 @@ short Nodo_Mover::run(const int &id){
     dvector3D pos = book->lastPosition();
     
     if(pos.x!=-1){
-        if(aux==-1)
-            return updatePosition(id);
-        else
+        if(aux==-1){
+            updatePosition(id);
             return updateVMovement(id);
+        }
     }
+    book->resetVectorMovimiento();
     return FUNCIONO;
 }
 
@@ -49,16 +50,10 @@ short Nodo_Mover::updatePosition(const int &id){
     xABS = posObjetivo.x-posPropia.x;
     yABS = posObjetivo.y-posPropia.y;
     
-    if(aux<0.5f && book->updateObjetivo())
+    if(aux<0.5f){
+        book->updateObjetivo();
         reset();
-    else if(aux<1.5f){
-        
-        if(!book->updateObjetivo()){
-            reset();
-            return FUNCIONO;
-        }
     }
-    
     
     return RUNNING;
 }
