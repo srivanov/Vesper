@@ -8,7 +8,6 @@
 
 #include "PausaLayout.hpp"
 #include "../components/ventana.hpp"
-#include "Game.hpp"
 
 PausaLayout::PausaLayout() {
     

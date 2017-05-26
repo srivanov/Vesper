@@ -6,9 +6,9 @@
 #include <string>
 #include "../tiempo.h"
 #include "../objetos/GameObject.hpp"
-#include "Dvector.hpp"
+#include "../Dvector.hpp"
 #include <vector>
-#include "bala.hpp"
+#include "../objetos/PhysicObjects/Bala.hpp"
 #include "typeArma.hpp"
 
 struct cualidades {

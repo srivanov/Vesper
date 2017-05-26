@@ -8,7 +8,6 @@
 
 #include "CreditosLayout.hpp"
 #include "../components/ventana.hpp"
-#include "Game.hpp"
 
 CreditosLayout::CreditosLayout(){
 

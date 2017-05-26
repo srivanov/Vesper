@@ -98,10 +98,13 @@
     <Image height="242" name="h_halo" width="122" xPos="3105" yPos="95" />
     <Image height="162" name="h_llaves" width="148" xPos="2877" yPos="363" />
     <Image height="376" name="madera" width="598" xPos="3553" yPos="61" />
-    <Image height="106" name="n_nerea" width="1264" xPos="3533" yPos="505" />
+    <Image height="102" name="n_nerea" width="1264" xPos="3533" yPos="509" />
     <Image height="106" name="n_cath" width="1264" xPos="3531" yPos="637" />
     <Image height="106" name="n_stoycho" width="1144" xPos="3529" yPos="783" />
     <Image height="106" name="n_julia" width="938" xPos="3529" yPos="933" />
     <Image height="106" name="n_gaspar" width="1108" xPos="3533" yPos="1083" />
     <Image height="106" name="n_sandra" width="940" xPos="3531" yPos="1227" />
+    <Image height="454" name="p_gordo" width="392" xPos="4721" yPos="53" />
+    <Image height="494" name="p_boy" width="296" xPos="4823" yPos="519" />
+    <Image height="470" name="p_girl" width="236" xPos="4829" yPos="1051" />
 </Imageset>

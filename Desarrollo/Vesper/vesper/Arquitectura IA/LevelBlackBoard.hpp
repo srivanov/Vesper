@@ -9,8 +9,8 @@
 #ifndef LevelBlackBoard_hpp
 #define LevelBlackBoard_hpp
 
-#include "Dvector.hpp"
-#include "EasyMath.hpp"
+#include "../Dvector.hpp"
+#include "../Tools/EasyMath.hpp"
 #include <map>
 #include <stdlib.h>
 #include <string>

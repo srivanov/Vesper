@@ -24,10 +24,10 @@
 #define HIDRATACION 50
 #define ALIMENTACION 70
 
-#include "NpcLibrary.hpp"
-#include "LevelBlackBoard.hpp"
-#include "EasyMath.hpp"
-#include "Types.h"
+#include "../Arquitectura IA/NpcLibrary.hpp"
+#include "../Arquitectura IA/LevelBlackBoard.hpp"
+#include "../Tools/EasyMath.hpp"
+#include "../Arquitectura IA/Types.h"
 
 //TO DO : BORRAR (DEBUG)
 #include <iostream>

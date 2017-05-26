@@ -17,8 +17,9 @@ private:
     bool rota, NPCKnows;
 public:
     bool EstaRota(){return rota;}
-    void romper(){rota = true;
-        //eliminar=true;
+    void romper(){
+        rota = true;
+        static_cast<class render*>(componentes.find(RENDER)->second)->setNode("3d/fuenteRota.obj");
     }
     Fuente();
     ~Fuente();

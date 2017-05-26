@@ -52,7 +52,7 @@ bool loadLevel::load(char* fichero) {
     strcat(ruta, fichero);
     strcat(ruta, ".tmx");
     printf("\n%s\n", ruta);
-    XMLDocument doc;
+    tinyxml2::XMLDocument doc;
     doc.LoadFile(ruta);
     if(doc.NoChildren())
         return false;
@@ -233,7 +233,7 @@ void loadLevel::CreateWorld(){
     
     for (; it<end; it++) {
         
-        ObjectType tipo = (ObjectType)m_obj[it].z;
+        ObjectType tipo = static_cast<ObjectType>((int)m_obj[it].z);
         dvector3D pos(m_obj[it].x,m_obj[it].y,1);
         GameObject * g;
         

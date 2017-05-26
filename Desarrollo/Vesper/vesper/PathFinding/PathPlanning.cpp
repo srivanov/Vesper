@@ -81,7 +81,7 @@ std::vector<dvector3D> PathPlanning::obtenerCamino(dvector3D *initialPosition,dv
                 std::string ERROR = " ### ERROR ### ";
                 if(e==no_way)   ERROR+= " NO ENCONTRO CAMINO";
                 if(e==fail)     ERROR+= " FALLO AL CALCULAR";
-                cout << ERROR << " ### ERROR ### " << endl;
+                std::cout << ERROR << " ### ERROR ### " << std::endl;
             
             }
                 // AÑADE NODO FINAL

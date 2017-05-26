@@ -21,9 +21,7 @@ void HUDLayout::init(){
     loadLayout("HUD.layout");
     setMouseCursor("OgreTrayImages/MouseArrow");
     
-
-    moneda0 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(2));
-//    moneda0->hide();
+    
     
     moneda1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(3));
 //    moneda1->show();
@@ -34,21 +32,13 @@ void HUDLayout::init(){
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
 //    moneda3->hide();
     
-//    llave1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
-//    
-//    llave2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(20));
-//    
-//    llave3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(21));
-    
-    //    llavesil1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(50));
-    //
-    //    llavesil2 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(51));
-    //
-    //    llavesil3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(52));
+    llave1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
     
     label = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(22));
     
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPISTOLA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(11))));
+    
+    armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tPALA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(50))));
     
     armas.insert(std::pair<typeArma, CEGUI::DefaultWindow*>(tESCOPETA, static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(12))));
     
@@ -105,48 +95,33 @@ void HUDLayout::getCarga(unsigned int carga){
 }
 
 void HUDLayout::getMonedas(int v){
+    printf("");
     if(v == 1){
-        //moneda0->show();
         moneda1->show();
         moneda2->hide();
         moneda3->hide();
     }else if(v == 2){
-        //moneda0->show();
         moneda1->show();
         moneda2->show();
         moneda3->hide();
-    }else if(v == 3){
-        //moneda0->show();
+    }else if(v>=3){
         moneda1->show();
         moneda2->show();
         moneda3->show();
     }else{
-        moneda0->show();
     	moneda1->hide();
     	moneda2->hide();
     	moneda3->hide();
     }
 }
 
-//void HUDLayout::getllaves(int v){
-//    if(v == 1){
-//        llave1->show();
-//        llave2->hide();
-//        llave3->hide();
-//    }else if(v == 2){
-//        llave1->show();
-//        llave2->show();
-//        llave3->hide();
-//    }else if(v == 3){
-//        llave1->show();
-//        llave2->show();
-//        llave3->show();
-//    }else{
-//        llave1->hide();
-//        llave2->hide();
-//        llave3->hide();
-//    }
-//}
+void HUDLayout::getllaves(int v){
+    if(v == 1){
+        llave1->show();
+    }else{
+        llave1->hide();
+    }
+}
 
 void HUDLayout::ocultarArmas(){
     for(auto it = armas.begin(); it !=armas.end(); ++it){

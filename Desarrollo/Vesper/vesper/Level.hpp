@@ -11,8 +11,8 @@
 
 #include <string>
 #include "loadLevel.hpp"
-#include "estados.h"
-#include "state.hpp"
+#include "estados/estados.h"
+#include "estados/state.hpp"
 
 
 class Level  : public state{

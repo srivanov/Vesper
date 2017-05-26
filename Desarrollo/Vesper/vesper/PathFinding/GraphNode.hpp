@@ -9,9 +9,9 @@
 #ifndef GraphNode_hpp
 #define GraphNode_hpp
 
-#include "Dvector.hpp"
+#include "../Dvector.hpp"
 #include <vector>
-#include "EasyMath.hpp"
+#include "../Tools/EasyMath.hpp"
 
 
 struct conexos {

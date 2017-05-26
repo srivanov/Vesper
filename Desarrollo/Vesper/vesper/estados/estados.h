@@ -40,7 +40,20 @@ public:
 	static states* Instance() { static states pinstance; return &pinstance; }
 	void update() { estado = nextState; }
 	const estados* getState() { return &estado; }
-	void empezar(){ nivel=1; }
+    
+    /*
+     ###################################################################
+                        <CAMBIAR NIVEL INICIAL>
+     ###################################################################
+     */
+    
+	void empezar(){ nivel=3; }
+    
+    /*
+     ###################################################################
+                        </CAMBIAR NIVEL INICIAL>
+     ###################################################################
+     */
     
     void guardarPartida() {
         std::map<char *, char *> valores;
@@ -69,8 +82,8 @@ private:
 	states() {
 		estado = MENU;
 		destruir = false;
-//		nextState = MENU;
-		nextState = PLAYING;
+        nextState = MENU;
+		//nextState = PLAYING;
         character = -1;
 		nivel = 1;
 	}

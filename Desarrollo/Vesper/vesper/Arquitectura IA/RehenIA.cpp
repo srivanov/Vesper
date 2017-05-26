@@ -7,7 +7,7 @@
 //
 
 #include "RehenIA.hpp"
-#include "mundoBox2D.hpp"
+#include "../mundoBox2D.hpp"
 
 #define VELOCIDAD 3.f
 

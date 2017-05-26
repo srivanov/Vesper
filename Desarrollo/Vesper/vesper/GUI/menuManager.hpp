@@ -11,8 +11,8 @@
 
 #include <map>
 #include <iostream>
-#include "estados.h"
-#include "state.hpp"
+#include "../estados/estados.h"
+#include "../estados/state.hpp"
 #include "GUI.h"
 #include "listaMenus.h"
 

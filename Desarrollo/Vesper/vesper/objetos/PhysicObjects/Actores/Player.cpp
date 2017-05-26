@@ -82,34 +82,6 @@ void Player::update(){
     estado->datos.update = true;
     
     isDead();
-    actions();
-    
-    object_colision_update();
-    
-    
-	
-//    m_rot = ventana::Instance()->posicionRaton(m_pos);
-	dvector3D m, v;
- 	m = input->mousePos;
-	m = m.normalize();
-	m.invertir();
-    rotarAraton(m);
-    GameObject::update();
-    arma->update();
-
-}
-
-bool Player::isDead(){
-    if(vida <= 0){
-        estado->nextState = MENU;
-        estado->menu = tmMENUPRINCIPAL;
-        estado->destruir = true;
-        return true;
-    }
-    return false;
-}
-
-void Player::actions(){
     dvector3D vel;
     
     if(input->isPressed(SKY_KEY_W))
@@ -164,8 +136,32 @@ void Player::actions(){
         prior = QUIETO;
     
     mover(vel);
-    Animaciones();
+    
+    object_colision_update();
+    
+    
+	
+//    m_rot = ventana::Instance()->posicionRaton(m_pos);
+	dvector3D m, v;
+ 	m = input->mousePos;
+	m = m.normalize();
+	m.invertir();
+    rotarAraton(m);
+    GameObject::update();
+    arma->update();
+
 }
+
+bool Player::isDead(){
+    if(vida <= 0){
+        estado->nextState = MENU;
+        estado->menu = tmMENUPRINCIPAL;
+        estado->destruir = true;
+        return true;
+    }
+    return false;
+}
+
 
 void Player::Animaciones(){
     class render * ren = static_cast<class render*>(componentes.find(RENDER)->second);
@@ -275,11 +271,11 @@ void Player::contacto(PhysicObject * g){
             estado->datos.monedas = h->getActual();
             estado->datos.update = true;
         }
-        if(g->getObjectType() == PIEDRA ||
+        else if(g->getObjectType() == PIEDRA ||
            (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS) || g->getObjectType() == PALA)
             arma->insertarArma((int)g->getObjectType());
         
-        if(g->getObjectType() == LLAVE)
+        else if(g->getObjectType() == LLAVE)
             asignarLLave(static_cast<PlayerObjects*>(g)->Llave());
             
         

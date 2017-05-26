@@ -10,7 +10,7 @@
 #define EasyMath_hpp
 
 #include <stdio.h>
-#include "Dvector.hpp"
+#include "../Dvector.hpp"
 
 
 struct EasyMath{

@@ -84,7 +84,8 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion) : posPlayer(nullptr){
     m_ID = ID;
     salud = 100;
     estado = 0;
-    srand(time(NULL));
+    tiempo t;
+    srand(t.getActual());
     sed = rand()%20 + 1;
     hambre = rand()%20 + 1;
     PosicionPropia = posicion;

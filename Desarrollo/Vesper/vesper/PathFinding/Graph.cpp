@@ -7,7 +7,7 @@
 //
 
 #include "Graph.hpp"
-#include "mundoBox2D.hpp"
+#include "../mundoBox2D.hpp"
 
 //CONSTRUCTORES Y DESTRUCTORES
 

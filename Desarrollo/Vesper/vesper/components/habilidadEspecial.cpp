@@ -2,7 +2,7 @@
 #include "habilidadEspecial.hpp"
 #include "../objetos/PhysicObjects/Actores/Player.hpp"
 
-habilidadEspecial::habilidadEspecial() : numMonedas(3){
+habilidadEspecial::habilidadEspecial() : numMonedas(4){
     actual = 0;
     numUsos = 0;
 	activada = false;

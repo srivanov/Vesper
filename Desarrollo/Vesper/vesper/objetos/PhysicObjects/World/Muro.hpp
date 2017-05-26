@@ -9,7 +9,7 @@
 #ifndef Muro_hpp
 #define Muro_hpp
 
-#include "PhysicObject.hpp"
+#include "../PhysicObject.hpp"
 
 class Muro : public PhysicObject {
 public:

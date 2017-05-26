@@ -41,7 +41,6 @@ protected:
     bool action;
     void object_colision_update();
     bool isDead();
-    void actions();
     void Animaciones();
 public:
     void inicializar(int ID,int LLaves);

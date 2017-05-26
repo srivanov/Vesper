@@ -26,7 +26,6 @@ short Nodo_Mover::run(const int &id){
             return updateVMovement(id);
         }
     }
-    book->resetVectorMovimiento();
     return FUNCIONO;
 }
 
@@ -50,7 +49,7 @@ short Nodo_Mover::updatePosition(const int &id){
     xABS = posObjetivo.x-posPropia.x;
     yABS = posObjetivo.y-posPropia.y;
     
-    if(aux<0.5f){
+    if(aux<1.5f){
         book->updateObjetivo();
         reset();
     }

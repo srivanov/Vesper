@@ -98,18 +98,6 @@
             <Property name="Image" value="Menu/h_llave" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
-        <Window type="Generic/Image" name="llave2" >
-            <Property name="ID" value="20" />
-            <Property name="Area" value="{{0,100},{0,131},{0,128},{0,174}}" />
-            <Property name="Image" value="Menu/h_llave" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
-        <Window type="Generic/Image" name="llave3" >
-            <Property name="ID" value="21" />
-            <Property name="Area" value="{{0,125},{0,131},{0,153},{0,174}}" />
-            <Property name="Image" value="Menu/h_llave" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
         <Window type="Generic/Label" name="Label" >
             <Property name="ID" value="22" />
             <Property name="Area" value="{{0,2},{0,679},{0,130},{0,711}}" />
@@ -135,23 +123,12 @@
             <Property name="Image" value="Menu/h_llaves" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
-        <Window type="Generic/Image" name="llavehalo1" >
+        <Window type="Generic/Image" name="pala" >
             <Property name="ID" value="50" />
-            <Property name="Area" value="{{0,76},{0,131},{0,104},{0,174}}" />
-            <Property name="Image" value="Menu/h_halo" />
+            <Property name="Area" value="{{0,30},{0,596},{0,113},{0,684}}" />
+            <Property name="Image" value="Menu/arma_pala" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
-        <Window type="Generic/Image" name="llavehalo2" >
-            <Property name="ID" value="51" />
-            <Property name="Area" value="{{0,100},{0,131},{0,128},{0,174}}" />
-            <Property name="Image" value="Menu/h_halo" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-        </Window>
-        <Window type="Generic/Image" name="llavehalo3" >
-            <Property name="ID" value="52" />
-            <Property name="Area" value="{{0,125},{0,131},{0,153},{0,174}}" />
-            <Property name="Image" value="Menu/h_halo" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
         </Window>
     </Window>
 </GUILayout>

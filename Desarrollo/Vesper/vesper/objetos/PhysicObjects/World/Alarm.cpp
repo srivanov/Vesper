@@ -37,7 +37,7 @@ void Alarm::update(){
     if(LevelBlackBoard::instance()->exist_record(m_ID, P_ALARMA)){
         if (LevelBlackBoard::instance()->getRecord(m_ID, P_ALARMA)->romper) {
             rota=true;
-            static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/alarma_rota.obj");
+            static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/alarmarota.obj");
         }
         else if(rota)NPCKnows=true;
         else if(estaActivado())

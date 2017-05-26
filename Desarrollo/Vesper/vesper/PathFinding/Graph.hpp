@@ -10,7 +10,7 @@
 #define Graph_hpp
 
 #include <map>
-#include "EasyMath.hpp"
+#include "../Tools/EasyMath.hpp"
 #include "GraphNode.hpp"
 
 class Graph{

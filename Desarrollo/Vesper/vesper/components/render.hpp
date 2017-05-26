@@ -38,11 +38,10 @@ public:
     void anyadirArma();
 private:
 	SkyEngine* engine;
-    bool type;
     std::vector<SkyMalla*> all_nodos;
 	ventana* vent;
-	SkyMalla *nodo_suelo;
-    SkyNodo * nodo;
+	SkyMalla *nodo_suelo , *nodo;
+    //SkyNodo * nodo;
 	SkyCamara* camara;
 	SkyLuz* luz;
 	dvector3D cam_pos;

@@ -25,9 +25,11 @@ Enemy::Enemy() : patrullar(nullptr) , posP(nullptr) {
 	componente->setFather(this);
 	
 	Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
-    addNodo("3d/muro.3ds");
-    setTexture("3d/naranja.jpg");
+    addNodo("3d/m1/andarZombie/m1_andarZombie.obj");
+    setTexture("3d/m1/Monstruo1_Diffuse.png");
     t.start();
+    dvector3D rota = dvector3D(90,0,270);
+    setRotation(rota);
     memory = new MemoryObjects;
 }
 

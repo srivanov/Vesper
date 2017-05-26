@@ -6,7 +6,6 @@
 //#include <string>
 
 render::render(bool animada){
-    type = animada;
 	nodo = NULL;
 	camara = NULL;
 	luz = NULL;
@@ -51,31 +50,21 @@ bool render::run(){
 }
 
 void render::setNode(char *filename){
-    if(nodo == NULL && !type){
-//		IMesh* aux = ventana::Instance()->getSceneManager()->getMesh(filename);
-//		// si no consigue cargar la malla 3D cargamos un cubo de irrlicht
-//		if(aux == NULL)
-//			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addCubeSceneNode(1.0f, 0, -1, vector3df(0,0,0), vector3df(0,0,0), vector3df(1,1,1)));
-//		else
-//			nodo = new nodeMesh(ventana::Instance()->getSceneManager()->addMeshSceneNode(aux));
-//		aux = NULL;
+    if(nodo == NULL){
+        
         dvector3D rota = dvector3D(90,0,0);
-//		nodo->_setNodePosition(*getFather()->getPosition());
-//        nodo->_setNodeRotation(rota);
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
-		static_cast<SkyMalla*>(nodo)->setMalla(filename);
+		nodo->setMalla(filename);
 		nodo->setPosicion(*getFather()->getPosition());
 		nodo->setRotacion(rota);
     }
 }
 
 void render::changeNode(char* filename){
-    if(type) return;
-    
 	if(nodo != nullptr)
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
-	static_cast<SkyMalla*>(nodo)->setMalla(filename);
-	dvector3D rota = dvector3D(270,0,0);
+	nodo->setMalla(filename);
+	dvector3D rota = dvector3D(90,0,0);
 	nodo->setPosicion(*getFather()->getPosition());
 	nodo->setRotacion(rota);
 }
@@ -87,12 +76,7 @@ void render::anyadirArma(){
 
 void render::setNodeTexture(char* filename){
     if(nodo != nullptr){
-        if(type){
-            static_cast<SkyMallaAnimada*>(nodo)->setTextura(filename);
-        }else{
-            static_cast<SkyMalla*>(nodo)->setTextura(filename);
-        }
-        //nodo->setTextura(filename);
+         nodo->setTextura(filename);
     }
 }
 
@@ -114,11 +98,8 @@ bool render::setNodeRotation(dvector3D &rot){
 }
 
 void render::deleteNode(){
-    if(type){
-        delete static_cast<SkyMallaAnimada*>(nodo);
-    }else{
-        delete static_cast<SkyMalla*>(nodo);
-    }
+   
+    delete nodo;
     nodo = nullptr;
 }
 
@@ -146,9 +127,7 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 		act = dvector3D(nodo->getRotacion().x, 0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
 		nodo->setRotacion(act);
  
-//		if(getFather()->getObjectType() == BALA){
-//			printf("%.1f - %.1f\n", prev_pos.x, next_pos.x);
-//		}
+        
 	}
 	if(camara != nullptr){
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, (next_pos.z - prev_pos.z) * interpolation + prev_pos.z);
@@ -164,7 +143,6 @@ void render::endDraw() {
 
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = engine->crearCamara(NULL);
-    // GALLEGO
     engine->setActiveCam(camara->getID());
 	camara->setPosicion(p);
 	camara->setCamTarget(l);
@@ -183,17 +161,15 @@ void render::closeWindow(){
 }
 
 void render::CreateGround(int alto, int ancho){
-
-//    nodo_suelo->setPosition(vector3df((alto/2.f)-0.5, (ancho/2.f)-0.5, 0.5));
-//    nodo_suelo->setRotation(vector3df(90,180,180));
 	
-	nodo_suelo = creaNodo("3d/plano.obj", "", tMallaEstatica, nullptr);
+	nodo_suelo = creaNodo("3d/cesped.obj", "", tMallaEstatica, nullptr);
 	dvector3D m((alto/2.f)-0.5, (ancho/2.f)-0.5, -0.1);
 	nodo_suelo->setPosicion(m);
 	m = dvector3D(alto, ancho, 0);
 	nodo_suelo->escalar(m);
 	m = dvector3D(90,0,0);
 	nodo_suelo->rotar(m);
+     
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){

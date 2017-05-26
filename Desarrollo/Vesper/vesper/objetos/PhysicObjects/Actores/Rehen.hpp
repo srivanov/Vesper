@@ -9,7 +9,7 @@
 #ifndef Rehen_hpp
 #define Rehen_hpp
 
-#include "PhysicObject.hpp"
+#include "../PhysicObject.hpp"
 #include "../../../Arquitectura IA/RehenIA.hpp"
 
 class Rehen : public PhysicObject {

@@ -13,17 +13,16 @@ void Fuente::update(){
     
     
     while(LevelBlackBoard::instance()->exist_record(m_ID, P_SED)){
-        if(LevelBlackBoard::instance()->getRecord(m_ID, P_SED)->romper){
-            static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/fuente_rota.obj");
-            rota = true;
-        }else if(rota) {
+        if(rota) {
             NPCKnows = true;
         }
         LevelBlackBoard::instance()->RemoveRecord(m_ID, P_SED);
     }
     if (!NPCKnows)
         LevelBlackBoard::instance()->AnswerRecord(P_SED, m_ID, getPosition());
-    
+    /*
+    if(rota){
+            }*/
 }
 
 Fuente::~Fuente(){
@@ -31,6 +30,6 @@ Fuente::~Fuente(){
 }
 Fuente::Fuente(){
     rota = NPCKnows = false;
-    addNodo("3d/fuente.obj");
-    setTexture("3d/Fuente_Diffuse.png");
+    addNodo("3d/fuenteprueba.obj");
+    //setTexture("3d/Fuente_Diffuse.png");
 }

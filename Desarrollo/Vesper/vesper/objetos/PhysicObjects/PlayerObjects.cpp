@@ -23,23 +23,27 @@ void PlayerObjects::inicializar(int ID){
     m_ID = ID;
     
     switch (m_tipo) {
-        case PALA:          addNodo("3d/pala.obj");setTexture("3d/pala_Diffuse.png");break;
-        case MONEDAS:       addNodo("3d/moneda.obj");setTexture("3d/moneda_Diffuse.png");break;
+        case PALA:          addNodo("3d/pala.obj");
+            //setTexture("3d/pala_Diffuse.png");
+            break;
+        case MONEDAS:       addNodo("3d/moneda.obj");
+            //setTexture("3d/moneda_Diffuse.png");
+            break;
         case PIEDRA:
             addNodo("3d/Piedra.obj");
             setTexture("3d/Piedra_Diffuse.png");
             break;
         case ESCOPETA:
             addNodo("3d/escopeta.obj");
-            setTexture("3d/escopeta_diffuse.png");
+            //setTexture("3d/escopeta_diffuse.png");
             break;
         case SWEET_SHOOTER:
             addNodo("3d/lanzacaramelos.obj");
             setTexture("3d/lanzacaramelos_Diffuse.png");
             break;
         case GLOBO_AGUA:
-            addNodo("3d/muro.3ds");
-            setTexture("3d/globoagua.png");
+            addNodo("3d/globo_agua.obj");
+            //setTexture("3d/globoagua.png");
             break;
         case BUMMER_BOOM:
             addNodo("3d/chicle.obj");

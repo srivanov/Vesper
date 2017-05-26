@@ -18,13 +18,17 @@ void Decoracion::inicializar(int &ID, ObjectType type){
             createPhysicsBody(STATIC_BODY,dvector3D(1.7,1.2,0));
             break;
         case ARBOL:
-            addNodo("3d/arbol.obj");
-            setTexture("3d/arbol_diffuse.png");
+            addNodo("3d/arbolprueba.obj");
+            //setTexture("3d/arbol_diffuse.png");
             createPhysicsBody(STATIC_BODY);
             break;
         case BARRIL:
-            addNodo("3d/barril.obj");
-            setTexture("3d/barril_diffuse.png");
+            
+            addNodo("3d/barrilprueba.obj");
+            //setTexture("3d/barril_diffuse.png");
+            
+            //addNodo("3d/arbolprueba.obj");
+            //setTexture("3d/arbol_diffuse.png");
             createPhysicsBody(STATIC_BODY);
             break;
         case PALE:
@@ -33,8 +37,8 @@ void Decoracion::inicializar(int &ID, ObjectType type){
             createPhysicsBody(STATIC_BODY,dvector3D(2,1,0));
             break;
         case PAPELERA:
-            addNodo("3d/papelera.obj");
-            setTexture("3d/papelera_diffuse.png");
+            addNodo("3d/papeleraprueba.obj");
+            //setTexture("3d/papelera_diffuse.png");
             createPhysicsBody(STATIC_BODY);
             break;
         case PARQUE:

@@ -11,16 +11,17 @@
 #define TIEMPO 5.f
 
 Comida::Comida(){
-    addNodo("3d/muro.3ds");
-    setTexture("3d/pizza.jpg");
+    addNodo("3d/comida_entera.obj");
+    //setTexture("3d/pizza.jpg");
     consumido = false;
 }
 Comida::~Comida(){}
 
 void Comida::gestorTiempo(){
     
-    if(time.tTranscurrido(TIEMPO)){
+    if(time.tTranscurrido(TIEMPO) && consumido){
         consumido = false;
+        static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/comida_entera.obj");
     }
 }
 
@@ -33,7 +34,9 @@ void Comida::update() {
         time.start();
         return;
     }
-    if(!consumido)
+    if(!consumido){
         LevelBlackBoard::instance()->AnswerRecord(P_HAMBRE, m_ID, getPosition());
+        static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/comida_gastada.obj");
+    }
     
 }

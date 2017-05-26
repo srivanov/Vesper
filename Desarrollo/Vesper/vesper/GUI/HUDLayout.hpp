@@ -31,16 +31,10 @@ public:
     void update();
     
 private:
-    CEGUI::DefaultWindow *moneda0;
    	CEGUI::DefaultWindow *moneda1;
     CEGUI::DefaultWindow *moneda2;
     CEGUI::DefaultWindow *moneda3;
-//    CEGUI::DefaultWindow *llave1;
-//    CEGUI::DefaultWindow *llave2;
-//    CEGUI::DefaultWindow *llave3;
-//    CEGUI::DefaultWindow *llavesil1;
-//    CEGUI::DefaultWindow *llavesil2;
-//    CEGUI::DefaultWindow *llavesil3;
+    CEGUI::DefaultWindow *llave1;
     CEGUI::ProgressBar *vida;
     CEGUI::DefaultWindow* actual;
     CEGUI::DefaultWindow* label;
