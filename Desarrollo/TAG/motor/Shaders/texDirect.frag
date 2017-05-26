@@ -36,8 +36,8 @@ uniform vec3 viewPos;
 uniform int normales;
 
 // COLORES
-float colores[5] = float[](0.3,0.4,0.5,0.6,0.7);
-float intensidad[5] = float[](0.05,0.25,0.5,0.75,0.9);
+//float colores[5] = float[](0.3,0.4,0.5,0.6,0.7);
+//float intensidad[5] = float[](0.05,0.25,0.5,0.75,0.9);
 
 float ShadowCalculation(vec4 fragPosLightSpace)
 {
@@ -80,31 +80,31 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 	return shadow;
 }
 
-float toon(float c){
-//	if(c < colores[0])
-//		return colores[0];
-//	else if(c < colores[1])
-//		return colores[1];
-//	else if(c < colores[2])
-//		return colores[2];
-//	else if(c < colores[3])
-//		return colores[3];
-//	else if(c < colores[4])
-//		return colores[4];
-	for (int i=0; i<5; i++) {
-		if (c < intensidad[i])
-			return colores[i];
-	}
-	return colores[4];
-}
-
-vec3 cartoonColor(float intensity, vec3 prevColor){
-	vec3 color;
-	
-	color = vec3(toon(prevColor.r), toon(prevColor.g), toon(prevColor.b));
-	
-	return color;
-}
+//float toon(float c){
+////	if(c < colores[0])
+////		return colores[0];
+////	else if(c < colores[1])
+////		return colores[1];
+////	else if(c < colores[2])
+////		return colores[2];
+////	else if(c < colores[3])
+////		return colores[3];
+////	else if(c < colores[4])
+////		return colores[4];
+//	for (int i=0; i<5; i++) {
+//		if (c < intensidad[i])
+//			return colores[i];
+//	}
+//	return colores[4];
+//}
+//
+//vec3 cartoonColor(float intensity, vec3 prevColor){
+//	vec3 color;
+//	
+//	color = vec3(toon(prevColor.r), toon(prevColor.g), toon(prevColor.b));
+//	
+//	return color;
+//}
 
 void main()
 {

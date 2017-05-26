@@ -12,7 +12,7 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(cam);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,1,5), s(0.1, 0.1, 0.1);
+	dvector3D n(0,1,0), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
@@ -36,12 +36,27 @@ TEscena::TEscena(){
 //	mallas.back()->setPosicion(n);
 	
 	animacion = motor->crearMallaAnimada(NULL);
-	animacion->AnyadirAnimacion("../Models/Andar/", "andar.obj", 0.2f);
-	animacion->setTextura("../Models/Andar/Player1_Diffuse.png");
+	animacion->AnyadirAnimacion("../Models/Reposo/", "p1_reposo.obj", 1.0f);
+	animacion->setTextura("../Models/Player1_Diffuse.png");
 //	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
-	n = dvector3D(6,-0.04,3);
+	n = dvector3D(6,-0.04,5);
 	animacion->setPosicion(n);
-	
+
+    animacion = motor->crearMallaAnimada(NULL);
+    animacion->AnyadirAnimacion("../Models/p2_andarArma/", "p2_andar.obj", 0.5f);
+    animacion->setTextura("../Models/Player2_Diffuse.png");
+    //	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
+    n = dvector3D(3,-0.04,5);
+    animacion->setPosicion(n);
+    
+    animacion = motor->crearMallaAnimada(NULL);
+    animacion->AnyadirAnimacion("../Models/m1_zarpazo/", "m1_zarpazo.obj", 1.f);
+    animacion->setTextura("../Models/Monstruo1_Diffuse.png");
+    //	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
+    n = dvector3D(0,-0.04,5);
+    animacion->setPosicion(n);
+    n = animacion->getPosicion();
+    cam->setCamTarget(n);
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));
 //	mallas.back()->setMalla("../Models/microwave.obj");
 //	
@@ -57,7 +72,7 @@ TEscena::TEscena(){
 	n = dvector3D(-2,10,-10);
 //	n = dvector3D(2,0,8);
 	luz->setPosicion(n);
-	luz->setLightDirection(dvector3D(10,-20,10));
+	luz->setLightDirection(dvector3D(10,-20,2));
 	n = cubo->getPosicion();
 //	cam->setCamTarget(n);
 	
@@ -113,27 +128,27 @@ void TEscena::update(){
         luz->setSpecular(spec);
 //		motor->debugON(true);
     }
-	dvector3D m(0,0,-.1);
+	dvector3D m(0,0,.1);
 	if(InputManager::Instance()->isPressed(SKY_KEY_W)){
 		cam->transladar(m);
 		luz->transladar(m);
 	}
-	m = dvector3D(0,0,.1);
+	m = dvector3D(0,0,-.1);
 	if(InputManager::Instance()->isPressed(SKY_KEY_S)){
 		cam->transladar(m);
 		luz->transladar(m);
 	}
-	m = dvector3D(-.1,0,0);
+	m = dvector3D(.1,0,0);
 	if(InputManager::Instance()->isPressed(SKY_KEY_A)){
 		cam->transladar(m);
 		luz->transladar(m);
 	}
-	m = dvector3D(.1,0,0);
+	m = dvector3D(-.1,0,0);
 	if(InputManager::Instance()->isPressed(SKY_KEY_D)){
 		cam->transladar(m);
 		luz->transladar(m);
 	}
-	m = cubo->getPosicion();
+	m = animacion->getPosicion();
 	if(InputManager::Instance()->isPressed(SKY_KEY_0)){
 		cam->setCamTarget(m);
 	}
