@@ -22,6 +22,7 @@ public:
 	void setNearValue(float n);
 	void setFarValue(float f);
 	void setCamTarget(dvector3D &tar);
+	int getID() { return m_camara->getID(); }
 private:
 	TCamara* m_camara;
 	dvector3D camTarget, front;

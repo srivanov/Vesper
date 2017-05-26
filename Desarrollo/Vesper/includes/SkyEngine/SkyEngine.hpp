@@ -30,6 +30,8 @@ public:
 	void Draw();
 	bool setActiveCam(int i);
 	int getActiveCam() { return active_cam; }
+	SkyCamara* removeCam(SkyCamara* cam);
+	SkyLuz* removeLight(SkyLuz* luz);
 	void debugON(bool p) { debug = p; }
 	void init();
     void setAntiAliasing(bool set);

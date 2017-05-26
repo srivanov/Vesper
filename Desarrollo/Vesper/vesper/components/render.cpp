@@ -9,6 +9,7 @@ render::render(){
 	nodo = NULL;
 	camara = NULL;
 	luz = NULL;
+    nodo_suelo = nullptr;
 	vent = ventana::Instance();
 	engine = SkyEngine::Instance();
 }
@@ -16,19 +17,21 @@ render::render(){
 render::~render(){
 	delete nodo;
 	nodo = NULL;
-	delete luz;
-    if(camara != NULL){
-        // GALLEGO
-        //camara = engine->removeCam(camara);
+    if(nodo_suelo){
+        delete nodo_suelo;
+        nodo_suelo = nullptr;
     }
-    //size_t it;
-	//std::vector<SkyMalla*>::iterator it = all_nodos.begin();
-	while(!all_nodos.empty()){ //GALLEGO
+    if(luz)
+        luz = engine->removeLight(luz);
+	//delete luz;
+    if(camara != NULL)
+        camara = engine->removeCam(camara);
+
+	while(!all_nodos.empty()){
         SkyNodo * n = all_nodos[0];
         delete n;
         all_nodos.erase(all_nodos.begin());
 	}
-	//all_nodos.clear();
 }
 
 void render::update(){
@@ -69,7 +72,7 @@ void render::changeNode(char* filename){
 	if(nodo != nullptr)
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
 	nodo->setMalla(filename);
-	dvector3D rota = dvector3D(270,0,0); // GALLEGO
+	dvector3D rota = dvector3D(270,0,0);
 	nodo->setPosicion(*getFather()->getPosition());
 	nodo->setRotacion(rota);
 }
@@ -149,7 +152,7 @@ void render::endDraw() {
 void render::addCamera(dvector3D &p, dvector3D &l){
 	camara = engine->crearCamara(NULL);
     // GALLEGO
-    //engine->setActiveCam(camara->getID());
+    engine->setActiveCam(camara->getID());
 	camara->setPosicion(p);
 	camara->setCamTarget(l);
 	camara->setNearValue(1);

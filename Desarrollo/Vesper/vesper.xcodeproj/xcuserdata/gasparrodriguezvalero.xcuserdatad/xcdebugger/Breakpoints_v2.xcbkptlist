@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/components/render.cpp"
-            timestampString = "517489024.628742"
+            timestampString = "517492650.687012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "render::~render()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,60 +58,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vesper/components/render.cpp"
-            timestampString = "517489087.860677"
+            timestampString = "517492650.687012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "render::~render()"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "render::CreateGround(int alto, int ancho)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/objetos/Ground.hpp"
+            timestampString = "517492345.472509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "class Ground"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "render::~render()"
+                  symbolName = "Ground::~Ground()"
                   moduleName = "Vesper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Vesper/vesper/components/render.cpp"
-                  timestampString = "517489087.866845"
+                  urlString = "file:///Users/gasparrodriguezvalero/Desktop/Vesper/vesper/objetos/Ground.hpp"
+                  timestampString = "517492651.283629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "1499">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "render::~render()"
+                  symbolName = "Ground::~Ground()"
                   moduleName = "Vesper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Vesper/vesper/components/render.cpp"
-                  timestampString = "517489087.869891"
+                  urlString = "file:///Users/gasparrodriguezvalero/Desktop/Vesper/vesper/objetos/Ground.hpp"
+                  timestampString = "517492651.287042"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "21">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "render::~render()"
+                  symbolName = "Ground::~Ground()"
                   moduleName = "Vesper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gasparrodriguezvalero/GitHub/Vesper/Desarrollo/Vesper/vesper/components/render.cpp"
-                  timestampString = "517489087.872383"
+                  urlString = "file:///Users/gasparrodriguezvalero/Desktop/Vesper/vesper/objetos/Ground.hpp"
+                  timestampString = "517492651.290825"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "34">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vesper/Level.cpp"
+            timestampString = "517492515.007882"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "Level::clear()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
