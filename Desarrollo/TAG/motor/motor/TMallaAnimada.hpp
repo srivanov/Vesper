@@ -40,15 +40,15 @@ class TMallaAnimada : public TEntidad {
     Pila* pila;
     TGestorRecursos* gestor;
 	TRecursoMalla* malla;
-    
+	bool clip;
+	
     std::map<std::string,Animacion*> animaciones;
     std::map<std::string,Animacion*>::iterator it;
     tiempo t;
     bool FileExist(std::string ruta);
     
     Animacion * animacion_activa;
-    
-    
+	
 public:
     TMallaAnimada();
     ~TMallaAnimada();
@@ -60,7 +60,7 @@ public:
     void beginDraw(bool pass);
     void endDraw(bool pass);
     
-    
+	void setVisible(){clip=false;}
     
 };
 

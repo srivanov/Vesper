@@ -12,7 +12,7 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(cam);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,10,0), s(0.1, 0.1, 0.1);
+	dvector3D n(0,1,0), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
@@ -55,6 +55,7 @@ TEscena::TEscena(){
     //	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
     n = dvector3D(0,-0.04,5);
     animacion->setPosicion(n);
+	animacion->setVisibleAlways();
     n = animacion->getPosicion();
     cam->setCamTarget(n);
 //	mallas.push_back(motor->crearMalla(NULL, tMallaEstatica));

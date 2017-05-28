@@ -139,35 +139,38 @@ public:
 		
 		//____________________________
 		
-//		bool inside = true;
-//		//test all 6 frustum planes
-//		for (int i = 0; i<6; i++)
-//		{
-//			//pick closest point to plane and check if it behind the plane
-//			//if yes - object outside frustum
-//			float d = glm::max(mMin.x * frustum_planes[i].x, mMax.x * frustum_planes[i].x) + glm::max(mMin.y * frustum_planes[i].y, mMax.y * frustum_planes[i].y) + glm::max(mMin.z * frustum_planes[i].z, mMax.z * frustum_planes[i].z) + frustum_planes[i].w;
-//			inside &= d > 0;
-//			//return false; //with flag works faster
-//		}
-//		return inside;
+		bool inside = true;
+		//test all 6 frustum planes
+		for (int i = 0; i<6; i++)
+		{
+			//pick closest point to plane and check if it behind the plane
+			//if yes - object outside frustum
+			float d = glm::max(mMin.x * frustum_planes[i].x, mMax.x * frustum_planes[i].x) + glm::max(mMin.y * frustum_planes[i].y, mMax.y * frustum_planes[i].y) + glm::max(mMin.z * frustum_planes[i].z, mMax.z * frustum_planes[i].z) + frustum_planes[i].w;
+			inside &= d > 0;
+			//return false; //with flag works faster
+		}
+		return inside;
 		
 		//____________________________
 		
-		float distance, radius;
-		glm::vec4 centro;
-		int result = true;
-		
-		radius = glm::distance(mMax, mMin);
-		centro = mMin - mMax;
-		
-		for(int i=0; i < 6; i++) {
-			distance = glm::distance(frustum_planes[i], centro);
-			if (distance < -radius)
-				return false;
-			else if (distance < radius)
-				result = true;
-		}
-		return result;
+//		float distance, radius;
+//		glm::vec4 centro;
+//		int result = true;
+//		
+//		radius = glm::distance(mMax, mMin)/2;
+//		centro = mMax - mMin;
+//		centro.x = mMin.x/2;
+//		centro.y = mMin.y/2;
+//		centro.z = mMin.z/2;
+//		
+//		for(int i=0; i < 6; i++) {
+//			distance = glm::distance(frustum_planes[i], centro);
+//			if (distance < -radius)
+//				return false;
+//			else if (distance < radius)
+//				result = true;
+//		}
+//		return result;
 	}
 	
 	glm::mat4 actual, mView, mProjection, MVP;

@@ -26,12 +26,14 @@ public:
 	
 	void beginDraw(bool pass);
 	void endDraw(bool pass);
+	void setVisible(){clip=false;}
 	
 private:
 	TRecursoMalla* malla;
 	TRecursoTextura* textura;
 	Pila* pila;
 	TGestorRecursos* gestor;
+	bool clip;
 };
 
 #endif /* TMalla_hpp */

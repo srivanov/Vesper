@@ -14,7 +14,7 @@ TMalla::TMalla(){
 	sh = ShaderManager::Instance();
 	malla = NULL;
 	textura = nullptr;
-	
+	clip = true;
 }
 
 TMalla::~TMalla(){
@@ -36,13 +36,16 @@ void TMalla::setTextura(char* fichero){
 void TMalla::beginDraw(bool pass){
 	Shader* s = sh->getActivo();
 	pila->calculaMVP();
-	pila->calculoFrustum();
-	glm::vec4 min, max;
-	
-	min = malla->getminBB() * pila->actual;
-	max = malla->getmaxBB() * pila->actual;
-	
-	bool control = pila->AABB_Frustum_Test(min, max);
+	bool control = true;
+	if(clip){
+		pila->calculoFrustum();
+		glm::vec4 min, max;
+		
+		min = malla->getminBB() * pila->MVP;
+		max = malla->getmaxBB() * pila->MVP;
+		
+		control = pila->AABB_Frustum_Test(min, max);
+	}
 	
 //	if(control == false)
 //		printf("ESTOY FUERA %d\n", rand());

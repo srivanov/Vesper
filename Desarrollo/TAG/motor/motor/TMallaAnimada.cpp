@@ -41,6 +41,7 @@ TMallaAnimada::TMallaAnimada() : animacion_activa(nullptr) , textura(nullptr) {
     sh = ShaderManager::Instance();
 	malla = nullptr;
 	t.start();
+	clip = true;
 }
 
 void TMallaAnimada::setTextura(char *fichero){
@@ -114,14 +115,16 @@ void TMallaAnimada::beginDraw(bool pass){
     Shader* s = sh->getActivo();
     
     pila->calculaMVP();
-    pila->calculoFrustum();
-	glm::vec4 min, max;
-	
-	min = malla->getminBB() * pila->actual;
-	max = malla->getmaxBB() * pila->actual;
-	
-	bool control = pila->AABB_Frustum_Test(min, max);
-	
+	bool control = true;
+	if(clip){
+		pila->calculoFrustum();
+		glm::vec4 min, max;
+		
+		min = malla->getminBB() * pila->MVP;
+		max = malla->getmaxBB() * pila->MVP;
+		
+		control = pila->AABB_Frustum_Test(min, max);
+	}
     glUniformMatrix4fv(glGetUniformLocation(s->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
     glUniformMatrix4fv(glGetUniformLocation(s->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
     
@@ -130,7 +133,7 @@ void TMallaAnimada::beginDraw(bool pass){
             malla->Draw(s, textura->getTexture());
         else
             malla->Draw(s, nullptr);
-    }
+	}
 }
 
 bool TMallaAnimada::ChangeAnimacion(std::string nombre){
