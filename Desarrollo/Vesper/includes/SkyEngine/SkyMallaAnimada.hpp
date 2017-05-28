@@ -27,6 +27,7 @@ public:
     bool AnyadirAnimacion(std::string ruta,std::string nombre,float time,unsigned int NumberFrames = 0);
     bool CambiarAnimacion(std::string cambio);
 	void setTextura(char* fichero) { m_mallas->setTextura(fichero); }
+	void setVisibleAlways(){m_mallas->setVisible();}
     
 };
 

@@ -199,7 +199,7 @@ void render::CreateGround(int alto, int ancho){
 	nodo_suelo->escalar(m);
 	m = dvector3D(90,0,0);
 	nodo_suelo->rotar(m);
-     
+    nodo_suelo->setVisibleAlways();
 }
 
 void render::dibujarMuro(int *tilemap,int anchoMapa, int altoMapa){

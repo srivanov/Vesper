@@ -62,5 +62,17 @@
             <Property name="NormalImage" value="Menu/boton_jugar" />
             <Property name="PushedImage" value="Menu/boton_jugar" />
         </Window>
+        <Window type="Generic/Label" name="num_mision" >
+            <Property name="ID" value="80" />
+            <Property name="Area" value="{{0,720},{0,645},{0,774},{0,695}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="mision" >
+            <Property name="ID" value="50" />
+            <Property name="Area" value="{{0,500},{0,645},{0,694},{0,699}}" />
+            <Property name="Image" value="Menu/mision" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
     </Window>
 </GUILayout>

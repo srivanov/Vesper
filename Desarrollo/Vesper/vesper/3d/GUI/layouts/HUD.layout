@@ -88,12 +88,12 @@
         </Window>
         <Window type="Generic/Image" name="Image" >
             <Property name="ID" value="1" />
-            <Property name="Area" value="{{0,1},{0,12},{0,1281},{0,732}}" />
+            <Property name="Area" value="{{0,1},{0,11},{0,1281},{0,731}}" />
             <Property name="Image" value="Menu/hud_fondo" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
         </Window>
         <Window type="Generic/Image" name="llave1" >
-            <Property name="ID" value="19" />
+            <Property name="ID" value="80" />
             <Property name="Area" value="{{0,76},{0,131},{0,104},{0,174}}" />
             <Property name="Image" value="Menu/h_llave" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />

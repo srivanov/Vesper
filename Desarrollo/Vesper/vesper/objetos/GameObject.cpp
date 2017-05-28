@@ -53,7 +53,7 @@ void GameObject::setRotation(dvector3D& rotation){
 	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
 	if(ren != NULL){
 		prev_rot = m_rot;
-		m_rot.z = rotation.z;
+		m_rot = rotation;
 		ren->setNodeRotation(m_rot);
 	}
 }

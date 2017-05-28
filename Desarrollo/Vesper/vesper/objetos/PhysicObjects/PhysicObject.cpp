@@ -66,8 +66,8 @@ void PhysicObject::setRotation(dvector3D &rot){
 	
 	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
 	if(go != NULL){
-		prev_rot = m_rot;
-		m_rot.z = rot.z;
+		prev_rot.z = m_rot.z;
+		m_rot = rot;
 		go->rotar(rot.z);
 	}
 //	class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));

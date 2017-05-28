@@ -116,26 +116,28 @@ public:
 //		for( int i=0; i<6; i++ )
 //		{
 //			int out = 0;
-//			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-//			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
 //			if( out==8 ) return false;
 //		}
 //
 //		// check frustum outside/inside box
 //		int out;
-//		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].x > mMax.x) ? 1:0); if( out==8 ) return false;
-//		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].x < mMin.x) ? 1:0); if( out==8 ) return false;
-//		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].y > mMax.y) ? 1:0); if( out==8 ) return false;
-//		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].y < mMin.y) ? 1:0); if( out==8 ) return false;
-//		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].z > mMax.z) ? 1:0); if( out==8 ) return false;
-//		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].z < mMin.z) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].x > mMax.x) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].x < mMin.x) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].y > mMax.y) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].y < mMin.y) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].z > mMax.z) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].z < mMin.z) ? 1:0); if( out==8 ) return false;
 //		return true;
+		
+		//____________________________
 		
 		bool inside = true;
 		//test all 6 frustum planes
@@ -148,6 +150,27 @@ public:
 			//return false; //with flag works faster
 		}
 		return inside;
+		
+		//____________________________
+		
+//		float distance, radius;
+//		glm::vec4 centro;
+//		int result = true;
+//		
+//		radius = glm::distance(mMax, mMin)/2;
+//		centro = mMax - mMin;
+//		centro.x = mMin.x/2;
+//		centro.y = mMin.y/2;
+//		centro.z = mMin.z/2;
+//		
+//		for(int i=0; i < 6; i++) {
+//			distance = glm::distance(frustum_planes[i], centro);
+//			if (distance < -radius)
+//				return false;
+//			else if (distance < radius)
+//				result = true;
+//		}
+//		return result;
 	}
 	
 	glm::mat4 actual, mView, mProjection, MVP;

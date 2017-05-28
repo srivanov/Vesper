@@ -24,6 +24,7 @@ public:
 	
 	void setMalla(char* fichero);
 	void setTextura(char* fichero);
+	void setVisibleAlways(){m_malla->setVisible();}
 private:
 	SkyMalla(TNodo* padre, tipoMalla t);
 	TMalla* m_malla;

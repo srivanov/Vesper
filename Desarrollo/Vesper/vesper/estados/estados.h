@@ -86,7 +86,7 @@ private:
         //nextState = MENU;
 		nextState = PLAYING;
         character = 1;
-		nivel = 1;
+		nivel = 3;
 	}
 	estados estado;
     

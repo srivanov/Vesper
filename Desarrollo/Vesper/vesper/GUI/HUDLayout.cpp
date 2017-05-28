@@ -32,7 +32,7 @@ void HUDLayout::init(){
     moneda3 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(5));
 //    moneda3->hide();
     
-    llave1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(19));
+    llave1 = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(80));
     
     label = static_cast<CEGUI::DefaultWindow*>(getContext()->getRootWindow()->getChild(0)->getChild(22));
     
@@ -67,9 +67,9 @@ void HUDLayout::init(){
 void HUDLayout::update(){
     if(estado->datos.update){
         getVida(estado->datos.vida);
-        getMunicion(estado->datos.municion);
         getCarga(estado->datos.carga);
-        //getllaves(estado->datos.llaves);
+        getMunicion(estado->datos.municion);
+        getllaves(estado->datos.llaves);
         getMonedas(estado->datos.monedas);
         mostrarArma(estado->datos.arma);
         estado->datos.update = false;

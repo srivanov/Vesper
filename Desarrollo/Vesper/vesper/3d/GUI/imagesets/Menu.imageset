@@ -107,4 +107,5 @@
     <Image height="454" name="p_gordo" width="392" xPos="4721" yPos="53" />
     <Image height="494" name="p_boy" width="296" xPos="4823" yPos="519" />
     <Image height="470" name="p_girl" width="236" xPos="4829" yPos="1051" />
+    <Image height="78" name="mision" width="308" xPos="4281" yPos="117" />
 </Imageset>

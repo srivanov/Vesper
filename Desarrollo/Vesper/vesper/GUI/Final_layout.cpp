@@ -23,16 +23,16 @@ void Final_layout::init(CEGUI::RenderTarget* target){
     setMouseCursor("OgreTrayImages/MouseArrow");
     
     button_salir = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(4));
-    button_salir->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickSalir, this));
+    button_salir->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&Final_layout::onClickSalir, this));
     
     button_salir2 = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(1)->getChild(6));
-    button_salir2->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickSalir, this));
+    button_salir2->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&Final_layout::onClickSalir, this));
     
     button_continuar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(1)->getChild(5));
-    button_continuar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickContinuar, this));
+    button_continuar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&Final_layout::onClickContinuar, this));
     
     button_reintentar = static_cast<CEGUI::PushButton*>(getContext()->getRootWindow()->getChild(0)->getChild(2)->getChild(3));
-    button_reintentar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&PausaLayout::onClickReintentar, this));
+    button_reintentar->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&Final_layout::onClickReintentar, this));
     
 }
 
