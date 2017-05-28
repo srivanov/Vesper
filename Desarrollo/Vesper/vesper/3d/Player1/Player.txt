@@ -1,0 +1,7 @@
+Andar: 0.5f
+AndarApuntando: 0.5f
+Correr: 0.5f
+CorrerArma: 0.5f
+Golpear: 0.4f
+LanzarGranada: 1.0f
+Reposo: 0.7f

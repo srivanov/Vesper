@@ -12905,7 +12905,7 @@
    <tile gid="13"/>
    <tile gid="13"/>
    <tile gid="13"/>
-   <tile gid="13"/>
+   <tile gid="0"/>
    <tile gid="13"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -19026,7 +19026,7 @@
    <tile gid="29"/>
    <tile gid="29"/>
    <tile gid="0"/>
-   <tile gid="8"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="29"/>
    <tile gid="29"/>
@@ -24205,7 +24205,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="8"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -30505,7 +30505,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="8"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -35386,7 +35386,7 @@
    <polyline points="0,0 0,-384 -4800,-384 -4800,2816 0,2816 0,32 32,32 32,2848 -4832,2848 -4832,-416 32,-416 32,0 0,0"/>
   </object>
  </objectgroup>
- <objectgroup name="nodos">
+ <objectgroup name="nodos" visible="0">
   <object id="71" name="1" type="nodo" x="576" y="2912" width="32" height="32">
    <properties>
     <property name="conecta" value="2"/>

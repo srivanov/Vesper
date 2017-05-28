@@ -7973,7 +7973,7 @@
    <polyline points="0,0 0,192 96,192 96,64 32,64 32,32 224,32 224,96 160,96 160,160 256,160 256,0 0,0"/>
   </object>
  </objectgroup>
- <objectgroup name="nodos">
+ <objectgroup name="nodos" visible="0">
   <object id="180" name="2" type="nodo" x="1152" y="192">
    <properties>
     <property name="conecta" value="3-6-5-4"/>

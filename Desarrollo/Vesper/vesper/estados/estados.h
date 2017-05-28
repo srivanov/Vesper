@@ -75,7 +75,8 @@ public:
 	estados nextState;
 	tipoMenu menu;
 	bool destruir;
-	int character, nivel;
+    int character;
+    int nivel;
     datosPlayer datos;
 	void* renderTarget, *renderer;
 private:
@@ -84,7 +85,7 @@ private:
 		destruir = false;
         //nextState = MENU;
 		nextState = PLAYING;
-        character = -1;
+        character = 1;
 		nivel = 1;
 	}
 	estados estado;

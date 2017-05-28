@@ -15,6 +15,7 @@ GameObject::GameObject(){
 	first = true;
 	control = true;
     eliminar = false;
+    m_pos = m_rot = prev_pos = prev_rot = dvector3D(0,0,0);
 }
 
 void GameObject::inicializar(int ID){ //que reciba tb el tipo de la puerta

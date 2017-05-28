@@ -25,18 +25,29 @@ Player::Player() : obj_colisionado(nullptr){
     componentes.insert(std::pair<ComponentType, component*>(HABESPECIAL,componente));
     componente->setFather(this);
     
-    char buffer[2], ruta[50] = "";
     estado = states::Instance();
-    if(estado->character > 0 && estado->character <= 3) {
-        sprintf(buffer, "%d", estado->character);
+    
         
-        strcat(ruta, "3d/player");
-        strcat(ruta, buffer);
-        strcat(ruta, ".obj");
-    } else {
-        strcat(ruta, "3d/player1.obj");
-    }
-    addNodo(ruta);
+        
+        std::string ruta = "3d/";
+        
+        ruta += "Player"+to_string(estado->character)+"/";
+        
+        class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
+        r->AnimateNode(true);
+        
+        r->addAnimation(ruta+"Reposo/","reposo.obj", 0.5f);
+        r->addAnimation(ruta+"Golpear/","golpear.obj", 0.7f);
+        r->addAnimation(ruta+"Correr/","correr.obj", 0.5f);
+        r->addAnimation(ruta+"AndarApuntando/","andarApuntando.obj", 0.7f);
+        r->addAnimation(ruta+"Andar/","andar.obj", 0.1f);
+        r->addAnimation(ruta+"CorrerApuntando/","CorrerApuntando.obj", 0.1f);
+        r->addAnimation(ruta+"LanzarGranada/","lanzarGranada.obj", 0.7f);
+        
+        char* text = (char*)(ruta+"Player"+to_string(estado->character)+"_Diffuse.png").c_str();
+        setTexture(text);
+        
+    
     
     setTexture("3d/naranja.jpg");
 	
@@ -67,6 +78,7 @@ void Player::inicializar(int ID, int numL){
     estado->datos.carga = arma->getCarga();
     estado->datos.municion = arma->getMunicion();
     estado->datos.update = true;
+    m_rot.x+=90;
 }
 
 Player::~Player(){

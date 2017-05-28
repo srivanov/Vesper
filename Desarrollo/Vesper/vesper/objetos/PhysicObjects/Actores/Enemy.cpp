@@ -33,17 +33,17 @@ Enemy::Enemy() : patrullar(nullptr) , posP(nullptr) {
     srand(t.getActual());
     
     unsigned int monster = rand() % 4 + 1 ;
-    monster = 1;
+    monster = 3;
     std::string ruta = "3d/";
     
     ruta += "m"+to_string(monster)+"/";
     
-    r->addAnimation(ruta+"reposo/","reposo.obj", 1.0f);
-    r->addAnimation(ruta+"muerte/","muerte.obj", 1.0f);
-    r->addAnimation(ruta+"comer/","comer.obj", 1.0f);
-    r->addAnimation(ruta+"disparo/","disparo.obj", 1.0f);
-    r->addAnimation(ruta+"andar/","andar.obj", 1.0f);
-    r->addAnimation(ruta+"zarpazo/","zarpazo.obj", 1.0f);
+    r->addAnimation(ruta+"reposo/","reposo.obj", 0.5f);
+    r->addAnimation(ruta+"muerte/","muerte.obj", 0.7f);
+    r->addAnimation(ruta+"comer/","comer.obj", 0.5f);
+    r->addAnimation(ruta+"recibirDisparo/","recibirDisparo.obj", 0.7f);
+    r->addAnimation(ruta+"andar/","andar.obj", 0.1f);
+    r->addAnimation(ruta+"zarpazo/","zarpazo.obj", 0.7f);
     
     char* text = (char*)(ruta+"Monstruo"+to_string(monster)+"_Diffuse.png").c_str();
     setTexture(text);
