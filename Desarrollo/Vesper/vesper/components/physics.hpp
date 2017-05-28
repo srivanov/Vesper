@@ -27,6 +27,7 @@ public:
 	float rotarAposicion(dvector3D &posRaton, bool d2 = true);
 	void rotar(float anguloRotacion);
     bool RayCastControl(dvector3D posIni,dvector3D posFin);
+    bool DeleteBody();
 private:
     b2Body *body, *ata;
     float rotacion;

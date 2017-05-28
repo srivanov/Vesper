@@ -19,7 +19,6 @@ Rehen::Rehen(){
     r->AnimateNode(true);
     
     r->addAnimation(ruta+"Reposo/","reposo.obj", 0.5f);
-    //r->addAnimation(ruta+"Correr/","correr.obj", 0.5f);
     r->addAnimation(ruta+"Andar/","andar.obj", 1.f);
     
     char* text = (char*)(ruta+"Player3_Diffuse.png").c_str();

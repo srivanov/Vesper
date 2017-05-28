@@ -88,7 +88,7 @@ void Enemy::update(){
 }
 
 void Enemy::updateStats(){
-    if(t.tTranscurrido(6.f) && !dead){
+    if(t.tTranscurrido(5.f) && !dead){
         book->sed+=2;
         book->hambre++;
         t.reset();

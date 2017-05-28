@@ -44,7 +44,7 @@ void PhysicObject::setDirDisparo(dvector3D &dir){
 void PhysicObject::rotarAposicion(dvector3D &posRaton){
     physics* go = static_cast<physics*>(componentes.at(PHYSICS));
 	if(go != NULL){
-		prev_rot = m_rot;
+		prev_rot.z = m_rot.z;
 		m_rot.z = go->rotarAposicion(posRaton);
 	}
 //    class render* ren = (static_cast<class render*>(componentes.find(RENDER)->second));
@@ -56,7 +56,7 @@ void PhysicObject::rotarAposicion(dvector3D &posRaton){
 void PhysicObject::rotarAraton(dvector3D &posRaton){
 	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
 	if(go != NULL){
-		prev_rot = m_rot;
+		prev_rot.z = m_rot.z;
 		m_rot.z = go->rotarAposicion(posRaton,false);
 	}
 	GameObject::setRotation(m_rot);
@@ -66,7 +66,7 @@ void PhysicObject::setRotation(dvector3D &rot){
 	
 	physics* go = static_cast<physics*>(componentes.at(PHYSICS));
 	if(go != NULL){
-		prev_rot.z = m_rot.z;
+		prev_rot = m_rot;
 		m_rot = rot;
 		go->rotar(rot.z);
 	}

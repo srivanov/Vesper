@@ -154,7 +154,7 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 		if(next_rot.z < 90.0f && prev_rot.z > 270.0f)
 			r2d2 = 360.0f;
 		
-		act = dvector3D(next_rot.x, 0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
+		act = dvector3D((next_rot.x - prev_rot.x + r2d2)*interpolation + prev_rot.x, (next_rot.y - prev_rot.y + r2d2)*interpolation + prev_rot.y, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
 		nodo->setRotacion(act);
  
         

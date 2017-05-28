@@ -223,6 +223,15 @@ float physics::rotarAposicion(dvector3D &posRaton, bool d2){
 	return 0.0f;
 }
 
+bool physics::DeleteBody(){
+    if(body!=NULL){
+        mundoBox2D::Instance()->getWorld()->DestroyBody(body);
+        body = NULL;
+        return true;
+    }
+    return false;
+}
+
 void physics::rotar(float anguloRotacion){
     if(body)
         body->SetTransform(body->GetPosition(), anguloRotacion);
