@@ -40,16 +40,15 @@ Player::Player() : obj_colisionado(nullptr){
         r->addAnimation(ruta+"Golpear/","golpear.obj", 0.7f);
         r->addAnimation(ruta+"Correr/","correr.obj", 0.5f);
         r->addAnimation(ruta+"AndarApuntando/","andarApuntando.obj", 0.7f);
-        r->addAnimation(ruta+"Andar/","andar.obj", 0.1f);
-        r->addAnimation(ruta+"CorrerApuntando/","CorrerApuntando.obj", 0.1f);
-        r->addAnimation(ruta+"LanzarGranada/","lanzarGranada.obj", 0.7f);
+        r->addAnimation(ruta+"Andar/","andar.obj", 0.3f);
+        r->addAnimation(ruta+"CorrerApuntando/","CorrerApuntando.obj", 0.3f);
+        //r->addAnimation(ruta+"LanzarGranada/","lanzarGranada.obj", 0.7f);
         
         char* text = (char*)(ruta+"Player"+to_string(estado->character)+"_Diffuse.png").c_str();
         setTexture(text);
         
     
     
-    setTexture("3d/naranja.jpg");
 	
 	input = InputManager::Instance();
     vida = 100;
@@ -95,7 +94,7 @@ void Player::update(){
     estado->datos.update = true;
     
     isDead();
-    dvector3D vel;
+    dvector3D vel = dvector3D(0,0,0);
     
     if(input->isPressed(SKY_KEY_W))
         vel.y += VELOCIDADN;
@@ -110,6 +109,9 @@ void Player::update(){
     if(vel.x != 0 || vel.y != 0){
         prior = ANDANDO;
         action = true;
+    }else{
+        prior = QUIETO;
+        action = false;
     }
     if(input->isPressed(SKY_MOUSE_BUTTON_LEFT)){
         atacar();
@@ -145,8 +147,6 @@ void Player::update(){
     if(input->isPressed(SKY_KEY_SPACE))
         vel*=2;
     
-    if(!action)
-        prior = QUIETO;
     
     mover(vel);
     
@@ -162,7 +162,7 @@ void Player::update(){
     rotarAraton(m);
     PhysicObject::update();
     arma->update();
-
+    Animaciones();
 }
 
 bool Player::isDead(){
@@ -180,16 +180,16 @@ void Player::Animaciones(){
     class render * ren = static_cast<class render*>(componentes.find(RENDER)->second);
     switch(prior){
         case QUIETO:
-            //ren->cambiarAnimacion("");
+            ren->changeAnimation("reposo");
             break;
         case ANDANDO:
-            //ren->cambiarAnimacion("");
+            ren->changeAnimation("andar");
             break;
         case ATACANDO:
-            //ren->cambiarAnimacion("");
+            ren->changeAnimation("golpear");
             break;
         case DISTANCIA:
-            //ren->cambiarAnimacion("");
+            ren->changeAnimation("andarApuntando");
             break;
     }
 }
@@ -288,9 +288,13 @@ void Player::contacto(PhysicObject * g){
            (g->getObjectType() > REHEN && g->getObjectType() < ARBUSTOS) || g->getObjectType() == PALA)
             arma->insertarArma((int)g->getObjectType());
         
-        else if(g->getObjectType() == LLAVE)
+        else if(g->getObjectType() == LLAVE){
             asignarLLave(static_cast<PlayerObjects*>(g)->Llave());
+            estado->datos.llaves = numLlaves;
+            estado->datos.update = true;
             
+        }
+        
         
     }
     obj_colisionado = g;

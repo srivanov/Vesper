@@ -12,9 +12,17 @@
 #include "../PhysicObject.hpp"
 #include "../../../Arquitectura IA/RehenIA.hpp"
 
+
+enum Anims {
+    reposo = 0,
+    andar,
+    correr
+};
+
 class Rehen : public PhysicObject {
     RehenIA * m_brain;
     dvector3D lastM;
+    void Animaciones(Anims e);
 public:
     void setSalida(dvector3D* salida);
     void asustado();

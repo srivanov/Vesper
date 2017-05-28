@@ -26,6 +26,7 @@ void ventana::crearWindow(uint32_t ancho, uint32_t alto, uint32_t color, bool fu
 	window->crearWindow(dvector2D(ancho,alto),vsync, fullscreen);
 	window->setWindowTitle("Vesper");
     window->ocultarRaton(true);
+    //window->activateClipping(false);
 }
 
 //IrrlichtDevice* ventana::getDevice(){

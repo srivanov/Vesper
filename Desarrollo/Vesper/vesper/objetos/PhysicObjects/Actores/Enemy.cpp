@@ -32,8 +32,7 @@ Enemy::Enemy() : patrullar(nullptr) , posP(nullptr) {
     
     srand(t.getActual());
     
-    unsigned int monster = rand() % 4 + 1 ;
-    monster = 3;
+    unsigned int monster = rand() % 3 + 1 ;
     std::string ruta = "3d/";
     
     ruta += "m"+to_string(monster)+"/";

@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "GUI.h"
-#include "../MyEventReceiver.hpp"
 
 class Final_layout : public GUI {
 public:

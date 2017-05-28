@@ -8,7 +8,7 @@
 
 #include "Final_layout.hpp"
 #include "../components/ventana.hpp"
-#include "Game.hpp"
+
 
 Final_layout::Final_layout() {
     

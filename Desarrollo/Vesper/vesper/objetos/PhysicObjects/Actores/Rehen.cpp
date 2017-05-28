@@ -10,8 +10,23 @@
 #include "../../../Arquitectura IA/gestor_eventos.hpp"
 
 Rehen::Rehen(){
-	addNodo("3d/muro.obj");
-	setTexture("3d/rehen.jpg");
+	
+    std::string ruta = "3d/";
+    
+    ruta += "Player3/";
+    
+    class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
+    r->AnimateNode(true);
+    
+    r->addAnimation(ruta+"Reposo/","reposo.obj", 0.5f);
+    //r->addAnimation(ruta+"Correr/","correr.obj", 0.5f);
+    r->addAnimation(ruta+"Andar/","andar.obj", 1.f);
+    
+    char* text = (char*)(ruta+"Player3_Diffuse.png").c_str();
+    setTexture(text);
+
+    m_rot.x+=90;
+    
     m_brain = new RehenIA(getPosition());
     gestor_eventos::instance()->subscribirse(this);
 }
@@ -34,13 +49,27 @@ void Rehen::update(){
     
     m_brain->update();
     dvector3D mov = m_brain->Vmover();
-    if(mov.x!=0 && mov.y!=0)
+    if(mov.x!=0 && mov.y!=0){
         lastM = mov;
+        Animaciones(andar);
+    }else{
+        Animaciones(reposo);
+    }
     dvector3D rot = *getPosition() + lastM;
     mover(mov);
     rotarAposicion(rot);
     PhysicObject::update();
     
+}
+
+void Rehen::Animaciones(Anims e){
+    class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
+    switch (e) {
+        case reposo:r->changeAnimation("reposo");break;
+        case andar:r->changeAnimation("andar");break;
+        default:
+            break;
+    }
 }
 
 void Rehen::asustado(){m_brain->changeState(ASUSTADO);}
