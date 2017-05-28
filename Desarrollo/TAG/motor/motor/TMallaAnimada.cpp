@@ -115,9 +115,13 @@ void TMallaAnimada::beginDraw(bool pass){
     
     pila->calculaMVP();
     pila->calculoFrustum();
-    
-    bool control = pila->AABB_Frustum_Test(malla->getminBB(), malla->getmaxBB());
-    
+	glm::vec4 min, max;
+	
+	min = malla->getminBB() * pila->actual;
+	max = malla->getmaxBB() * pila->actual;
+	
+	bool control = pila->AABB_Frustum_Test(min, max);
+	
     glUniformMatrix4fv(glGetUniformLocation(s->Program, "model"), 1, GL_FALSE, glm::value_ptr(pila->actual));
     glUniformMatrix4fv(glGetUniformLocation(s->Program, "MVP"), 1, GL_FALSE, glm::value_ptr(pila->MVP));
     

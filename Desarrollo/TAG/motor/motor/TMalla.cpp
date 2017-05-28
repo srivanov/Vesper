@@ -37,7 +37,12 @@ void TMalla::beginDraw(bool pass){
 	Shader* s = sh->getActivo();
 	pila->calculaMVP();
 	pila->calculoFrustum();
-	bool control = pila->AABB_Frustum_Test(malla->getminBB(), malla->getmaxBB());
+	glm::vec4 min, max;
+	
+	min = malla->getminBB() * pila->actual;
+	max = malla->getmaxBB() * pila->actual;
+	
+	bool control = pila->AABB_Frustum_Test(min, max);
 	
 //	if(control == false)
 //		printf("ESTOY FUERA %d\n", rand());

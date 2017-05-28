@@ -12,7 +12,7 @@ TEscena::TEscena(){
 	cubo = motor->crearMalla(NULL, tMallaDinamica);
 	luz = motor->crearLuz(cam);
 	plano = motor->crearMalla(NULL, tMallaEstatica);
-	dvector3D n(0,1,0), s(0.1, 0.1, 0.1);
+	dvector3D n(0,10,0), s(0.1, 0.1, 0.1);
 	cam->setPosicion(n);
 	cam->setFarValue(100);
 //	cam->rotar(dvector3D(-40,0,0));
@@ -50,8 +50,8 @@ TEscena::TEscena(){
     animacion->setPosicion(n);
     
     animacion = motor->crearMallaAnimada(NULL);
-    animacion->AnyadirAnimacion("../Models/m1_zarpazo/", "m1_zarpazo.obj", 1.f);
-    animacion->setTextura("../Models/Monstruo1_Diffuse.png");
+    animacion->AnyadirAnimacion("../Models/Golpear/", "golpear.obj", 1.f);
+    animacion->setTextura("../Models/Golpear/Player2_Diffuse.png");
     //	animacion->AnyadirAnimacion("../Models/cil/", "cil.obj", 1.0f);
     n = dvector3D(0,-0.04,5);
     animacion->setPosicion(n);
@@ -66,7 +66,7 @@ TEscena::TEscena(){
 	n = dvector3D(0,0,-2);
 	cubo->transladar(n);
 	n = dvector3D(2.1,2.1,2.1);
-	cubo->escalar(n);
+//	cubo->escalar(n);
 	n = dvector3D(0.0,0.0,0.1);
 	plano->transladar(n);
 	n = dvector3D(-2,10,-10);

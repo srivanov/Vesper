@@ -102,40 +102,72 @@ public:
 			f.z = mat[11] - mat[10];
 			f.w = mat[15] - mat[14];
 			
-			frustum[0] = l; frustum[1] = r; frustum[2] = b;
-			frustum[3] = t;	frustum[4] = n;	frustum[5] = f;
+			frustum_planes[0] = l; frustum_planes[1] = r; frustum_planes[2] = b;
+			frustum_planes[3] = t;	frustum_planes[4] = n;	frustum_planes[5] = f;
 		}
 	}
 	
 	// false if fully outside, true if inside or intersects
-	bool AABB_Frustum_Test(glm::vec3 const & mMin, glm::vec3 const & mMax)
+	bool AABB_Frustum_Test(glm::vec4 const & mMin, glm::vec4 const & mMax)
 	{
 		if(!clipping)
 			return true;
-		// check box outside/inside of frustum
-		for( int i=0; i<6; i++ )
-		{
-			int out = 0;
-			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMin.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-			out += ((glm::dot( frustum[i], glm::vec4(mMax.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
-			if( out==8 ) return false;
+//		// check box outside/inside of frustum
+//		for( int i=0; i<6; i++ )
+//		{
+//			int out = 0;
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMin.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMax.y, mMin.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMin.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMin.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			out += ((glm::dot( frustum_planes[i], glm::vec4(mMax.x, mMax.y, mMax.z, 1.0f) ) < 0.0 ) ? 1:0);
+//			if( out==8 ) return false;
+//		}
+//
+//		// check frustum outside/inside box
+//		int out;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].x > mMax.x) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].x < mMin.x) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].y > mMax.y) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].y < mMin.y) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].z > mMax.z) ? 1:0); if( out==8 ) return false;
+//		out=0; for( int i=0; i<8; i++ ) out += ((frustum_planes[i].z < mMin.z) ? 1:0); if( out==8 ) return false;
+//		return true;
+		
+		//____________________________
+		
+//		bool inside = true;
+//		//test all 6 frustum planes
+//		for (int i = 0; i<6; i++)
+//		{
+//			//pick closest point to plane and check if it behind the plane
+//			//if yes - object outside frustum
+//			float d = glm::max(mMin.x * frustum_planes[i].x, mMax.x * frustum_planes[i].x) + glm::max(mMin.y * frustum_planes[i].y, mMax.y * frustum_planes[i].y) + glm::max(mMin.z * frustum_planes[i].z, mMax.z * frustum_planes[i].z) + frustum_planes[i].w;
+//			inside &= d > 0;
+//			//return false; //with flag works faster
+//		}
+//		return inside;
+		
+		//____________________________
+		
+		float distance, radius;
+		glm::vec4 centro;
+		int result = true;
+		
+		radius = glm::distance(mMax, mMin);
+		centro = mMin - mMax;
+		
+		for(int i=0; i < 6; i++) {
+			distance = glm::distance(frustum_planes[i], centro);
+			if (distance < -radius)
+				return false;
+			else if (distance < radius)
+				result = true;
 		}
-
-		// check frustum outside/inside box
-		int out;
-		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].x > mMax.x) ? 1:0); if( out==8 ) return false;
-		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].x < mMin.x) ? 1:0); if( out==8 ) return false;
-		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].y > mMax.y) ? 1:0); if( out==8 ) return false;
-		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].y < mMin.y) ? 1:0); if( out==8 ) return false;
-		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].z > mMax.z) ? 1:0); if( out==8 ) return false;
-		out=0; for( int i=0; i<8; i++ ) out += ((frustum[i].z < mMin.z) ? 1:0); if( out==8 ) return false;
-		return true;
+		return result;
 	}
 	
 	glm::mat4 actual, mView, mProjection, MVP;
@@ -143,7 +175,7 @@ protected:
 	Pila(){ clipping = true; }
 private:
 	std::stack<glm::mat4> pila;
-	glm::vec4 frustum[6]; // Frustum-planes
+	glm::vec4 frustum_planes[6]; // Frustum-planes
 	bool clipping;
 };
 

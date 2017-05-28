@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
 //		fullscreen = true;
 	
 	window->crearWindow(wh, true);
-	window->activateClipping(false);
+	window->activateClipping(true);
 	
 	TEscena escena;
 	

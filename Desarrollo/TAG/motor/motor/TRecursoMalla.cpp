@@ -38,6 +38,7 @@ void TRecursoMalla::cargarFichero(std::string &ruta){
 	this->directorio = ruta.substr(0, ruta.find_last_of('/'));
 	this->rFile = ruta.substr(ruta.find_last_of('/')+1, ruta.size());
 	this->processNode(scene->mRootNode, scene);
+//	crearBoundingBox();
 }
 
 void TRecursoMalla::Draw(Shader *shader, Texture* textura){
@@ -49,6 +50,7 @@ void TRecursoMalla::Draw(Shader *shader, Texture* textura){
 	for (int i=0; i<numMeshes; ++i) {
 		meshes[i]->Draw(shader, textura);
 	}
+//	drawBoundingBox();
 }
 
 void TRecursoMalla::processNode(aiNode *node, const aiScene *scene){
@@ -178,7 +180,7 @@ Texture* TRecursoMalla::pedirTextura(char* ruta){
 	return static_cast<TRecursoTextura*>(gestor->getRecurso(ruta, tRTextura))->getTexture();
 }
 
-void TRecursoMalla::takeMin(glm::vec3 *d, float *p){
+void TRecursoMalla::takeMin(glm::vec4 *d, float *p){
 	if(d->x > p[0])
 		d->x = p[0];
 	if(d->y > p[1])
@@ -187,7 +189,7 @@ void TRecursoMalla::takeMin(glm::vec3 *d, float *p){
 		d->z = p[2];
 }
 
-void TRecursoMalla::takeMax(glm::vec3 *d, float *p){
+void TRecursoMalla::takeMax(glm::vec4 *d, float *p){
 	if(d->x < p[0])
 		d->x = p[0];
 	if(d->y < p[1])
@@ -197,8 +199,81 @@ void TRecursoMalla::takeMax(glm::vec3 *d, float *p){
 }
 
 void TRecursoMalla::initBB(){
-	minBB.x = INT_MAX;	minBB.y = INT_MAX;	minBB.z = INT_MAX;
-	maxBB.x = INT_MIN;	maxBB.y = INT_MIN;	maxBB.z = INT_MIN;
+	minBB.x = INT_MAX;	minBB.y = INT_MAX;	minBB.z = INT_MAX; minBB.w = 1.0f;
+	maxBB.x = INT_MIN;	maxBB.y = INT_MIN;	maxBB.z = INT_MIN; maxBB.w = 1.0f;
 }
+
+void TRecursoMalla::crearBoundingBox(){
+	
+	// parte inferior
+	
+	vert[0] = minBB.x;
+	vert[1] = minBB.y;
+	vert[2] = minBB.z;
+	
+	vert[3] = minBB.x;
+	vert[4] = minBB.y;
+	vert[5] = maxBB.z;
+	
+	vert[6] = maxBB.x;
+	vert[7] = minBB.y;
+	vert[8] = maxBB.z;
+	
+	vert[9] = maxBB.x;
+	vert[10] = minBB.y;
+	vert[11] = minBB.z;
+	
+	// parte superior
+	
+	vert[12] = minBB.x;
+	vert[13] = maxBB.y;
+	vert[14] = minBB.z;
+	
+	vert[15] = minBB.x;
+	vert[16] = maxBB.y;
+	vert[17] = maxBB.z;
+	
+	vert[18] = maxBB.x;
+	vert[19] = minBB.y;
+	vert[20] = maxBB.z;
+	
+	vert[21] = maxBB.x;
+	vert[22] = maxBB.y;
+	vert[23] = minBB.z;
+	
+	glGenVertexArrays(1, &BB_VAO);
+	glGenBuffers(1, &BB_VBO);
+	glGenBuffers(1, &BB_EBO);
+	
+	//linkamos el VAO
+	glBindVertexArray(BB_VAO);
+	
+	//linkamos el buffer GL_ARRAY_BUFFER al puntero VBO
+	glBindBuffer(GL_ARRAY_BUFFER, BB_VBO);
+	
+	//copiamos los datos de los vertices a buffer GL_ARRAY_BUFFER
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vert), vert, GL_STATIC_DRAW);
+	
+	//linkamos el array de elementos al EBO
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, BB_EBO);
+	
+	//copiamos los indices en el array de elementos
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 12 * sizeof(GLuint), indices, GL_STATIC_DRAW);
+	
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(vert), (GLvoid*)0);
+	glBindVertexArray(0);
+}
+
+void TRecursoMalla::drawBoundingBox(){
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	
+	glBindVertexArray(BB_VAO);
+	glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
+	
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+}
+
 
 
