@@ -44,7 +44,6 @@ Bala::~Bala(){
 
 void Bala::update(){
     
-    //std::cout << "POS: X " << m_pos.x << " Y " << m_pos.y << std::endl;
 	
 	
     if(temp.tTranscurrido(tiempo_vida) && eliminar == false)

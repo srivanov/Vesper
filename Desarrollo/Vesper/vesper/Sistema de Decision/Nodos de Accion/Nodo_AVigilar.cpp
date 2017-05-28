@@ -9,7 +9,6 @@
 #include "Nodo_AVigilar.hpp"
 
 short Nodo_AVigilar::run(const int &ID){
-    cout << "VIGILO" << endl;
     if(!init){
         t.start();
         init = true;

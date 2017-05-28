@@ -9,7 +9,6 @@
 #include "Nodo_APatrullar.hpp"
 
 short Nodo_APatrullar::run(const int &ID){
-    cout << "HE PATRULLADO" << endl;
     
     NpcLibrary::instancia()->recover_book(ID)->Patrullar = false;
     

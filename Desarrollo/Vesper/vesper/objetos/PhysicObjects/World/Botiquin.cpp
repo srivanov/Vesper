@@ -22,5 +22,5 @@ void Botiquin::update(){
     }
     if(!gastado)
         LevelBlackBoard::instance()->AnswerRecord(P_VIDA,m_ID, getPosition());
-    
+    PhysicObject::update();
 }

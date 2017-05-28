@@ -6,13 +6,14 @@
 #include "component.hpp"
 #include "ventana.hpp"
 #include <vector>
+#include <string>
 #include <SkyEngine/SkyEngine.hpp>
 #include "../Fps.hpp"
 #include "../Dvector.hpp"
 
 class render : public component {
 public:
-    render(bool animada = false);
+    render();
     ~render();
 	void update() override;
 	
@@ -36,16 +37,20 @@ public:
 	dvector3D* getCamPos();
 	void setCamTarget(dvector3D pos);
     void anyadirArma();
+    bool m_animada;
+    void addAnimation(std::string ruta, std::string nombre, float time);
+    void changeAnimation(std::string anim);
+    void AnimateNode(bool r){m_animada=r;}
 private:
+    std::string actual;
 	SkyEngine* engine;
     std::vector<SkyMalla*> all_nodos;
 	ventana* vent;
-	SkyMalla *nodo_suelo , *nodo;
-    //SkyNodo * nodo;
+	SkyMalla *nodo_suelo;
+    SkyNodo *nodo;
 	SkyCamara* camara;
 	SkyLuz* luz;
 	dvector3D cam_pos;
-//	irr::gui::IGUIStaticText* texto;
 	SkyMalla* creaNodo(char* malla, char* textura, tipoMalla t, SkyNodo* padre);
 };
 

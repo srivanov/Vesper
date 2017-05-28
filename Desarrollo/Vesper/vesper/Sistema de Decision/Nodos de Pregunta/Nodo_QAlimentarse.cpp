@@ -9,7 +9,6 @@
 #include "Nodo_QAlimentarse.hpp"
 
 short Nodo_QAlimentarse::run(const int &ID){
-    cout << "ALIMENTARSE?" << endl;
     
     
     // BUSCA SI EXISTE PETICION SI NO LA CREA

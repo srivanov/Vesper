@@ -84,6 +84,7 @@ void Level::update(const long &timePerFrame){
     c->update();
     p->update();
     
+    
     for (it=0; it<end; it++)
         w[it]->update();
         

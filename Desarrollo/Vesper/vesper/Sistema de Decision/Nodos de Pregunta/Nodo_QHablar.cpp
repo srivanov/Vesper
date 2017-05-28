@@ -14,6 +14,5 @@ short Nodo_QHablar::run(const int &ID){
      if()
         return runHijos(ID);
      */
-    cout << "HABLAR?" << endl;
     return FALLO;
 }

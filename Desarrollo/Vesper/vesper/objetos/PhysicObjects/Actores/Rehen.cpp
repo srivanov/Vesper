@@ -31,6 +31,7 @@ void Rehen::setSalida(dvector3D *salida){
     m_brain->setSalida(salida);
 }
 void Rehen::update(){
+    
     m_brain->update();
     dvector3D mov = m_brain->Vmover();
     if(mov.x!=0 && mov.y!=0)

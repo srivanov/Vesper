@@ -9,7 +9,7 @@
 #include "Nodo_QPatrullar.hpp"
 
 short Nodo_QPatrullar::run(const int &ID){
-    cout << "PATRULLAR?" << endl;
+    //cout << "PATRULLAR?" << endl;
     if(activado)
         return runHijos(ID);
     

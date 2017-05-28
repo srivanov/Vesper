@@ -25,11 +25,30 @@ Enemy::Enemy() : patrullar(nullptr) , posP(nullptr) {
 	componente->setFather(this);
 	
 	Arbol = Behaviour_tree2::instancia()->ArbolPorDefecto();
-    addNodo("3d/m1/andarZombie/m1_andarZombie.obj");
-    setTexture("3d/m1/Monstruo1_Diffuse.png");
+    class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
+    r->AnimateNode(true);
+    dead = false;
+    //addNodo("3d/m1/andar/andar.obj");
+    
+    srand(t.getActual());
+    
+    unsigned int monster = rand() % 4 + 1 ;
+    monster = 1;
+    std::string ruta = "3d/";
+    
+    ruta += "m"+to_string(monster)+"/";
+    
+    r->addAnimation(ruta+"reposo/","reposo.obj", 1.0f);
+    r->addAnimation(ruta+"muerte/","muerte.obj", 1.0f);
+    r->addAnimation(ruta+"comer/","comer.obj", 1.0f);
+    r->addAnimation(ruta+"disparo/","disparo.obj", 1.0f);
+    r->addAnimation(ruta+"andar/","andar.obj", 1.0f);
+    r->addAnimation(ruta+"zarpazo/","zarpazo.obj", 1.0f);
+    
+    char* text = (char*)(ruta+"Monstruo"+to_string(monster)+"_Diffuse.png").c_str();
+    setTexture(text);
     t.start();
-    dvector3D rota = dvector3D(90,0,270);
-    setRotation(rota);
+    
     memory = new MemoryObjects;
 }
 
@@ -42,6 +61,7 @@ Enemy::~Enemy(){
 
 void Enemy::update(){
     
+    
     updateStats();
     comprobar_vision();
     STD();
@@ -53,28 +73,56 @@ void Enemy::update(){
     
     
     
-    if(book->VectorMovimiento->x != 0.f || book->VectorMovimiento->y != 0.f)
+    if(book->VectorMovimiento->x != 0.f || book->VectorMovimiento->y != 0.f){
         lastView = *book->VectorMovimiento;
+        NextAnimation(ANDAR);
+    }else{
+        NextAnimation(REPOSO);
+    }
+    
     
     
     mover(*book->VectorMovimiento);
     dvector3D aux = *getPosition() + lastView;
     rotarAposicion(aux);
-    GameObject::update();
+    PhysicObject::update();
 }
 
 void Enemy::updateStats(){
-    if(t.tTranscurrido(6.f)){
+    if(t.tTranscurrido(6.f) && !dead){
         book->sed+=2;
         book->hambre++;
         t.reset();
     }
     
     if(book->salud <= 0){
-        eliminar = true;
+        if(!dead) {
+            t.reset();
+            dead = true;
+            
+        }
+        NextAnimation(MUERTE);
+        if(t.tTranscurrido(2.0f)){
+            eliminar = true;
+        }
         return;
     }
 }
+
+void Enemy::NextAnimation(EEnemyAnimations e){
+    class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
+    std::string anim;
+    switch (e) {
+        case ANDAR:     anim="andar";   break;
+        case COMER:     anim="comer";   break;
+        case REP_DISP:  anim="disparo"; break;
+        case ZARPAZO:   anim="zarpazo"; break;
+        case MUERTE:    anim="muerte";  break;
+        default:        anim="reposo";  break;
+    }
+    r->changeAnimation(anim);
+}
+
 void Enemy::STD(){
     if (book->Evento) {
         Arbol->reset();
@@ -94,25 +142,26 @@ void Enemy::inicializar(int& ID , bool pat, vector<dvector3D*> pos){
             patrullar->addPosPatrulla(pos[i]);
         }
     }
+    m_rot.x+=90;
 }
 
 void Enemy::contacto(PhysicObject *g){
+    
 	if(g){
-        //Bala * bullet = static_cast<Bala*>(g);
-		if(g && g->getObjectType()==BALA)
+        if(g->getObjectType()>SALIDA && g->getObjectType()!=BALA)
+            return;
+		if(g->getObjectType()==BALA)
 			 book->salud-=static_cast<Bala*>(g)->getDamage();
-        else if(g->getObjectType() == PLAYER){
+        else if(g->getObjectType() == PLAYER)
             posP = g->getPosition();
-        }else if(memory->evalue(g) == CHANGED){
+        else if(memory->evalue(g) == CHANGED){
             book->notify(m_ID, P_RUIDO, g->getPosition());
-            if(g->getObjectType()==FUENTE){
+            if(g->getObjectType()==FUENTE)
                 LevelBlackBoard::instance()->CreateRecord(g->getObjectID(), P_SED, g->getPosition());
-            }
-            else if(g->getObjectType()==ALARMA){
+            else if(g->getObjectType()==ALARMA)
                 LevelBlackBoard::instance()->CreateRecord(g->getObjectID(), P_ALARMA, g->getPosition());
-            }else if(g->getObjectType()==PUERTA){
+            else if(g->getObjectType()==PUERTA)
                 book->Aviso = true;
-            }
         }
 	}
 }

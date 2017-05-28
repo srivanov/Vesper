@@ -13,7 +13,6 @@
 
 Nodo_Mover::~Nodo_Mover(){}
 short Nodo_Mover::run(const int &id){
-    cout << "NODO MOVER" << endl;
     
     NpcBook * book = NpcLibrary::instancia()->recover_book(id);
     

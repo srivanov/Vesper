@@ -78,6 +78,7 @@ void Player::update(){
 	
     //hud.getVida(vida); // HUD
 //    hud.getllaves(*llaves);
+    
     estado->datos.vida = vida;
     estado->datos.update = true;
     
@@ -147,7 +148,7 @@ void Player::update(){
 	m = m.normalize();
 	m.invertir();
     rotarAraton(m);
-    GameObject::update();
+    PhysicObject::update();
     arma->update();
 
 }
@@ -220,7 +221,7 @@ void Player::cambiarArma(){
     estado->datos.municion = arma->getMunicion();
     estado->datos.update = true;
     
-    std::cout << arma->getArmaActual() << std::endl;
+    //std::cout << arma->getArmaActual() << std::endl;
 }
 
 void Player::changeActiveKey(){

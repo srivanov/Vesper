@@ -32,11 +32,11 @@ void Comida::update() {
         LevelBlackBoard::instance()->RemoveRecord(m_ID, P_HAMBRE);
         consumido = true;
         time.start();
+        static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/comida_gastada.obj");
         return;
     }
     if(!consumido){
         LevelBlackBoard::instance()->AnswerRecord(P_HAMBRE, m_ID, getPosition());
-        static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/comida_gastada.obj");
     }
-    
+    PhysicObject::update();
 }

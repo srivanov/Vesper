@@ -26,7 +26,7 @@ void Puerta::inicializar(int id, const tipoPuerta p){
 void Puerta::activarAlarma(){
     gestor_eventos::instance()->addEvento(m_ID, P_ALERTA, getPosition());
     gestor_eventos::instance()->addEvento(m_ID, P_ALARMA, getPosition());
-    cout << "alarma activada" << endl;
+    //cout << "alarma activada" << endl;
 }
 
 void Puerta::contacto(PhysicObject *g){

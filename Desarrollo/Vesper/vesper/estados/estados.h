@@ -47,7 +47,7 @@ public:
      ###################################################################
      */
     
-	void empezar(){ nivel=3; }
+	void empezar(){ nivel=1; }
     
     /*
      ###################################################################
@@ -82,8 +82,8 @@ private:
 	states() {
 		estado = MENU;
 		destruir = false;
-        nextState = MENU;
-		//nextState = PLAYING;
+        //nextState = MENU;
+		nextState = PLAYING;
         character = -1;
 		nivel = 1;
 	}

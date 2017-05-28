@@ -3,9 +3,10 @@
 #include "../objetos/GameObject.hpp"
 #include <iostream>
 #include "../objetos/Camera.hpp"
-//#include <string>
 
-render::render(bool animada){
+render::render(){
+    actual = "";
+    m_animada = false;
 	nodo = NULL;
 	camara = NULL;
 	luz = NULL;
@@ -23,7 +24,6 @@ render::~render(){
     }
     if(luz)
         luz = engine->removeLight(luz);
-	//delete luz;
     if(camara != NULL)
         camara = engine->removeCam(camara);
 
@@ -50,20 +50,20 @@ bool render::run(){
 }
 
 void render::setNode(char *filename){
-    if(nodo == NULL){
-        
+    if(nodo == NULL && !m_animada){
         dvector3D rota = dvector3D(90,0,0);
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
-		nodo->setMalla(filename);
+		static_cast<SkyMalla*>(nodo)->setMalla(filename);
 		nodo->setPosicion(*getFather()->getPosition());
 		nodo->setRotacion(rota);
     }
 }
 
 void render::changeNode(char* filename){
+    if(m_animada) return;
 	if(nodo != nullptr)
 		nodo = engine->crearMalla(NULL, tMallaDinamica);
-	nodo->setMalla(filename);
+	static_cast<SkyMalla*>(nodo)->setMalla(filename);
 	dvector3D rota = dvector3D(90,0,0);
 	nodo->setPosicion(*getFather()->getPosition());
 	nodo->setRotacion(rota);
@@ -76,7 +76,10 @@ void render::anyadirArma(){
 
 void render::setNodeTexture(char* filename){
     if(nodo != nullptr){
-         nodo->setTextura(filename);
+        if(!m_animada)
+            static_cast<SkyMalla*>(nodo)->setTextura(filename);
+        else
+            static_cast<SkyMallaAnimada*>(nodo)->setTextura(filename);
     }
 }
 
@@ -88,9 +91,36 @@ bool render::setNodePosition(dvector3D &pos){
 	return false;
 }
 
+void render::addAnimation(std::string ruta, std::string nombre, float time){
+    bool answer = false;
+    if(m_animada){
+        if(nodo)
+         answer = static_cast<SkyMallaAnimada*>(nodo)->AnyadirAnimacion(ruta, nombre, time);
+        else{
+            nodo = engine->crearMallaAnimada(NULL);
+            dvector3D ro = dvector3D(90,0,0);
+            nodo->setRotacion(ro);
+        answer = static_cast<SkyMallaAnimada*>(nodo)->AnyadirAnimacion(ruta, nombre, time);
+        }
+        
+        if(answer && actual == "")
+            actual = nombre;
+    }
+}
+
+void render::changeAnimation(std::string anim){
+    bool answer = false;
+    if(m_animada && actual!=anim){
+        answer = static_cast<SkyMallaAnimada*>(nodo)->CambiarAnimacion(anim);
+        if(answer)
+            actual = anim;
+    }
+}
+
+
 bool render::setNodeRotation(dvector3D &rot){
 	if(nodo != nullptr){
-        dvector3D r(0,0,rot.z);
+        dvector3D r(rot.x,rot.y,rot.z);
         nodo->setRotacion(r);
 		return true;
 	}
@@ -117,14 +147,14 @@ void render::DrawNode(dvector3D &prev_pos, dvector3D &next_pos, dvector3D &prev_
 	if(nodo != nullptr){
 		dvector3D act( (next_pos.x - prev_pos.x) * interpolation + prev_pos.x, (next_pos.y - prev_pos.y) * interpolation + prev_pos.y, 0 );
 		nodo->setPosicion(act);
-
+        
 		float r2d2 = 0.0f;
 		if(next_rot.z > 270.0f && prev_rot.z < 90.0f)
 			r2d2 = -360.0f;
 		if(next_rot.z < 90.0f && prev_rot.z > 270.0f)
 			r2d2 = 360.0f;
 		
-		act = dvector3D(nodo->getRotacion().x, 0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
+		act = dvector3D(next_rot.x, 0, (next_rot.z - prev_rot.z + r2d2)*interpolation + prev_rot.z);
 		nodo->setRotacion(act);
  
         

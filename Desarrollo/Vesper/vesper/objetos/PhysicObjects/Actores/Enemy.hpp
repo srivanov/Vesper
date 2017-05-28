@@ -28,6 +28,17 @@ private:
     size_t posicion_actual;
 };
 
+enum EEnemyAnimations {
+    REPOSO = 0,
+    ANDAR,
+    COMER,
+    REP_DISP,
+    ZARPAZO,
+    MUERTE
+};
+
+
+
 class Enemy : public PhysicObject {
 protected:
     NpcBook * book;
@@ -39,10 +50,11 @@ protected:
     void comprobar_vision();
     void updateStats();
     void STD();
+    void NextAnimation(EEnemyAnimations e);
 private:
-    float tiempo_vida, velocidad;
     dvector3D direccion;
     tiempo t;
+    bool dead;
 public:
     Enemy();
     ~Enemy();

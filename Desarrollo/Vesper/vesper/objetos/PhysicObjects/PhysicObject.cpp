@@ -23,7 +23,6 @@ PhysicObject::~PhysicObject(){
     if(it!=componentes.end()){
         delete it->second;
         it->second = NULL;
-        //componentes.erase(it);
     }
 }
 

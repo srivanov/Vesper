@@ -9,7 +9,6 @@
 #include "Nodo_QEnemigo_QAlarma.hpp"
 
 short Nodo_QEnemigo_QAlarma::run(const int &ID){
-    cout << "ENEMIGO O ALARMA?" << endl;
     if(activado)
         return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);

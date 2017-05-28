@@ -35,11 +35,7 @@ void Alarm::update(){
     
     
     if(LevelBlackBoard::instance()->exist_record(m_ID, P_ALARMA)){
-        if (LevelBlackBoard::instance()->getRecord(m_ID, P_ALARMA)->romper) {
-            rota=true;
-            static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/alarmarota.obj");
-        }
-        else if(rota)NPCKnows=true;
+        if(rota)NPCKnows=true;
         else if(estaActivado())
             activar();
         
@@ -48,7 +44,7 @@ void Alarm::update(){
         LevelBlackBoard::instance()->AnswerRecord(P_ALARMA, m_ID, getPosition());
     }
     
-    GameObject::update();
+    PhysicObject::update();
 }
 
 void Alarm::activar(){

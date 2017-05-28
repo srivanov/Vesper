@@ -95,13 +95,11 @@ bool loadLevel::load(char* fichero) {
                 int y = (int) k / (m_width) ;
                 int x = (int) k % (m_width) ;
                 if(query==LLAVE) LLAVES++;
-                //std::cout << x << "|" << y <<"|"<< query <<std::endl;
                 m_obj.push_back(dvector3D(x,y,query));
                 
             }
             data = data->NextSiblingElement("tile");
         }
-        cout << endl;
         
         m_numLayers++;
         layer = layer->NextSiblingElement("layer");
@@ -267,7 +265,7 @@ void loadLevel::CreateWorld(){
             
             if(!salida)
                 salida = static_cast<Salida*>(g);
-        }else if(tipo>SALIDA && tipo<BALA){
+        }else if(tipo>SALIDA && tipo!=BALA){
             g = factory.Decora(it,pos,tipo);
             Mundo.push_back(g);
         }

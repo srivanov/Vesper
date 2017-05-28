@@ -20,13 +20,11 @@ short Nodo_APedir_Ayuda::run(const int &ID){
     
     if(!primera_ayuda){
         primera_ayuda=true;
-        cout << "PRIMERA AYUDA" << endl;
         gestor->addEvento(ID, P_AVISO, book->getPosition());
     }
     
     if((primera_ayuda && !segunda_ayuda) && !gestor->existeEvento(P_AVISO, ID)){
         segunda_ayuda=true;
-        cout << "SEGUNDA AYUDA" << endl;
         gestor->addEvento(ID, P_AYUDA, book->getPosition());
     }
     

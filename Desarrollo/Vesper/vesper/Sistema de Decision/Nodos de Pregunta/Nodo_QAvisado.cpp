@@ -9,7 +9,6 @@
 #include "Nodo_QAvisado.hpp"
 
 short Nodo_QAvisado::run(const int &ID){
-    cout << "AVISADO?" << endl;
     if(activado)
         return runHijos(ID);
     if(NpcLibrary::instancia()->recover_book(ID)->Aviso){

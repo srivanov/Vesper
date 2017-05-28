@@ -9,7 +9,6 @@
 #include "Nodo_QAyudar.hpp"
 
 short Nodo_QAyudar::run(const int &ID){
-    cout << "AYUDAR?" << endl;
     if(activado){
        
         return runHijos(ID);

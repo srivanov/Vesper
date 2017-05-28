@@ -9,7 +9,7 @@
 #include "Nodo_Qhuir.hpp"
 
 short Nodo_Qhuir::run(const int &ID){
-    cout << "HUIR?" << endl;
+    //cout << "HUIR?" << endl;
     if(activado)
         return runHijos(ID);
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);

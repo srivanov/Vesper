@@ -9,10 +9,10 @@
 #include "Nodo_QPedir_Ayuda.hpp"
 
 short Nodo_QPedir_Ayuda::run(const int &ID){
-    cout << "PEDIR AYUDA?" << endl;
+    //cout << "PEDIR AYUDA?" << endl;
     //TO DO: POR DEFINIR FUNCION
     if(activado && !CONGELADO){
-         cout << "NECESITO AYUDA" << endl;
+         //cout << "NECESITO AYUDA" << endl;
         short answer = runHijos(ID);
         if(!activado)
             CONGELADO=true;
@@ -20,7 +20,7 @@ short Nodo_QPedir_Ayuda::run(const int &ID){
     }
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
     if(book->getMoral()<NEEDHELP && !CONGELADO){
-        cout << "MORAL: " << book->getMoral() << endl;
+        //cout << "MORAL: " << book->getMoral() << endl;
         activado = true;
         return RUNNING;
     }

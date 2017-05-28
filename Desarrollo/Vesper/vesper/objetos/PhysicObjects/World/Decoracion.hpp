@@ -15,7 +15,6 @@ class Decoracion : public PhysicObject {
     
 public:
     void inicializar(int& ID,ObjectType type);
-    void update(){}
     Decoracion(){}
     ~Decoracion(){}
     void contacto(PhysicObject*){}

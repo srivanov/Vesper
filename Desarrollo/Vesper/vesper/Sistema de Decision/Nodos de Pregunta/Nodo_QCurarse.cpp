@@ -9,7 +9,6 @@
 #include "Nodo_QCurarse.hpp"
 
 short Nodo_QCurarse::run(const int &ID){
-    cout << "CURARSE?" << endl;
     if(activado)
         return runHijos(ID);
     

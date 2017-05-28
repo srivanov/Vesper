@@ -29,7 +29,7 @@ public:
     void update();
     virtual void contacto(PhysicObject*);
     virtual void contactoEnd(PhysicObject*){}
-    void romper(){eliminar=true;}
+    void romper(){rota=true;static_cast<class render*>(componentes.find(RENDER)->second)->changeNode("3d/alarmarota.obj");}
 };
 
 #endif /* Alarm_hpp */

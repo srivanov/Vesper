@@ -9,7 +9,7 @@
 #include "Fuente.hpp"
 
 void Fuente::update(){
-    GameObject::update();
+    PhysicObject::update();
     
     
     while(LevelBlackBoard::instance()->exist_record(m_ID, P_SED)){
@@ -20,9 +20,7 @@ void Fuente::update(){
     }
     if (!NPCKnows)
         LevelBlackBoard::instance()->AnswerRecord(P_SED, m_ID, getPosition());
-    /*
-    if(rota){
-            }*/
+    
 }
 
 Fuente::~Fuente(){
