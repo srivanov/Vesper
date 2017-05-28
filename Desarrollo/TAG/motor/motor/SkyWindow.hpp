@@ -35,6 +35,8 @@ public:
 			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	}
 	void setWindowTitle(char* c) { glfwSetWindowTitle(window, c); }
+	void activateClipping(bool p);
+	bool getClippingState();
 private:
 	SkyWindow();
 	GLFWwindow* window;

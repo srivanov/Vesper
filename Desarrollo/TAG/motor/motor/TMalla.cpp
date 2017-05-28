@@ -50,7 +50,8 @@ void TMalla::beginDraw(bool pass){
 			malla->Draw(s, textura->getTexture());
 		else
 			malla->Draw(s, nullptr);
-	}
+	}else
+		printf("CLIPPING");
 }
 
 void TMalla::endDraw(bool pass){

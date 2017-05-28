@@ -7,6 +7,7 @@
 //
 
 #include "SkyWindow.hpp"
+#include "Pila.h"
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -90,6 +91,14 @@ void SkyWindow::beginDraw(){
 void SkyWindow::endDraw(){
 	// intercambiamos los buffers, sino no pinta NADA
 	glfwSwapBuffers(window);
+}
+
+void SkyWindow::activateClipping(bool p){
+	Pila::Instance()->activateClipping(p);
+}
+
+bool SkyWindow::getClippingState(){
+	return Pila::Instance()->getClippingState();
 }
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
