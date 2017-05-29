@@ -10,9 +10,9 @@
 #include "../Actores/Player.hpp"
 
 Puerta::Puerta(){
-    /*
+    
     addNodo("3d/door.obj");
-    setTexture("3d/Door_Diffuse.png");*/
+    setTexture("3d/Door_Diffuse.png");
 	key = 1;
     abierta = false;
 }
@@ -20,7 +20,7 @@ Puerta::Puerta(){
 void Puerta::inicializar(int id, const tipoPuerta p){
     pu = p;
     m_ID = id;
-    
+    /*
     std::string ruta = "3d/Puerta/";
     
     class render * r = static_cast<class render*>(componentes.find(RENDER)->second);
@@ -33,18 +33,20 @@ void Puerta::inicializar(int id, const tipoPuerta p){
     
     char* text = (char*)(ruta+"Door_Diffuse.png").c_str();
     setTexture(text);
-    
-    dvector3D rotar = dvector3D(180,0,90);
+    */
+    dvector3D rotar = dvector3D(0,180,0);
     setRotation(rotar);
     //dvector3D posicion = dvector3D(0,0,4);
     //mover(posicion);
 }
 
 void Puerta::update(){
+    /*
     if(abierta && t.tTranscurrido(1.f)){
         static_cast<class render*>(componentes.find(RENDER)->second)->changeAnimation("abierta");
         static_cast<physics*>(componentes.find(PHYSICS)->second)->DeleteBody();
-    }
+    }*/
+    PhysicObject::update();
 }
 
 void Puerta::activarAlarma(){
@@ -67,8 +69,8 @@ bool Puerta::abrir(int llave){
     
     if(!abierta && llave==key){
         abierta = true;
-        static_cast<class render*>(componentes.find(RENDER)->second)->changeAnimation("abrir");
-    //eliminar = true;
+        //static_cast<class render*>(componentes.find(RENDER)->second)->changeAnimation("abrir");
+        eliminar = true;
         t.start();
     }
     return true;

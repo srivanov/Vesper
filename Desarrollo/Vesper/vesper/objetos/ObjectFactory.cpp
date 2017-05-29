@@ -24,7 +24,7 @@ void ObjectFactory::initObject(int ID, dvector3D posicion,ObjectType tipo,const 
     if(tipo!=PUERTA)
         g->createPhysicsBody(body);
     else
-        g->createPhysicsBody(STATIC_BODY,dvector3D(2,1,0));
+        g->createPhysicsBody(STATIC_BODY,dvector3D(1,2,0));
     g->inicializar(ID);
 }
 
