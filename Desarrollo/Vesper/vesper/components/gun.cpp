@@ -108,22 +108,22 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
         case tPISTOLA:
             bala_aux->addNodo("3d/bala_pistola_agua.obj");
             bala_aux->setTexture("3d/bala_pistola_diffuse.png");
-            bala_aux->setDamage(20);
+            bala_aux->setDamage(50);
             break;
         case tESCOPETA:
             bala_aux->addNodo("3d/bala_escopeta.obj");
             bala_aux->setTexture("3d/bala_escopeta_diffuse.png");
-            bala_aux->setDamage(40);
+            bala_aux->setDamage(80);
             break;
         case tLANZACARAMELOS:
             bala_aux->addNodo("3d/bala_lanza.obj");
             bala_aux->setTexture("3d/bala_lanza_diffuse.png");
-            bala_aux->setDamage(15);
+            bala_aux->setDamage(40);
             break;
         case tPIEDRA:
             bala_aux->addNodo("3d/piedra.obj");
             bala_aux->setTexture("3d/Piedra_Diffuse.png");
-            bala_aux->setDamage(5);
+            bala_aux->setDamage(60);
             break;
         case tMARTILLO:
             bala_aux->addNodo("3d/bala.3ds");
@@ -139,7 +139,7 @@ void gun::insertBala(dvector3D &pos, dvector3D &dir, float vel){
             break;
         case tGLOBOAGUA:
             bala_aux->addNodo("3d/bala.3ds");
-            bala_aux->setDamage(20);
+            bala_aux->setDamage(100);
             break;
         default:return;
     }

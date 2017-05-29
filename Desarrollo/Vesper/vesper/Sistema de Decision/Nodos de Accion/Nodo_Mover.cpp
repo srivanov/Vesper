@@ -8,7 +8,7 @@
 
 #include "Nodo_Mover.hpp"
 
-#define VELOCIDAD 4
+#define VELOCIDAD 2
 
 
 Nodo_Mover::~Nodo_Mover(){}
@@ -18,7 +18,7 @@ short Nodo_Mover::run(const int &id){
     
     book->resetVectorMovimiento();
     dvector3D pos = book->lastPosition();
-    
+    cout << "MOVER" << endl;
     if(pos.x!=-1){
         if(aux==-1){
             updatePosition(id);
@@ -48,7 +48,7 @@ short Nodo_Mover::updatePosition(const int &id){
     xABS = posObjetivo.x-posPropia.x;
     yABS = posObjetivo.y-posPropia.y;
     
-    if(aux<1.5f){
+    if(aux<1.15f){
         book->updateObjetivo();
         reset();
     }

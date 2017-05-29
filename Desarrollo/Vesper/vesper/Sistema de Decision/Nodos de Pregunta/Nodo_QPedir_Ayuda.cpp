@@ -11,6 +11,7 @@
 short Nodo_QPedir_Ayuda::run(const int &ID){
     //cout << "PEDIR AYUDA?" << endl;
     //TO DO: POR DEFINIR FUNCION
+    /*
     if(activado && !CONGELADO){
          //cout << "NECESITO AYUDA" << endl;
         short answer = runHijos(ID);
@@ -24,5 +25,6 @@ short Nodo_QPedir_Ayuda::run(const int &ID){
         activado = true;
         return RUNNING;
     }
+     */
     return FALLO;
 }

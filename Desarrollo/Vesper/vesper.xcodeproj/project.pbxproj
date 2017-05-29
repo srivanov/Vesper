@@ -1335,7 +1335,6 @@
 		E9AC3A491DF0A9C100A91A97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(PROJECT_NAME)";
 				GCC_ENABLE_CPP_RTTI = YES;
@@ -1359,7 +1358,6 @@
 		E9AC3A4A1DF0A9C100A91A97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				HEADER_SEARCH_PATHS = (

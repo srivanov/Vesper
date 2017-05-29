@@ -11,7 +11,8 @@
 short Nodo_APedir_Ayuda2::run(const int &ID){
     LevelBlackBoard * black = LevelBlackBoard::instance();
     NpcBook * book = NpcLibrary::instancia()->recover_book(ID);
-    if(black->exist_record(ID, P_ALARMA)){
+    if(book->ExistEventByType(P_ALARMA)){
+        /*
         Record * rec =  black->getRecord(ID, P_ALARMA);
         t.start();
         if(rec->HasAnswer()){
@@ -23,7 +24,8 @@ short Nodo_APedir_Ayuda2::run(const int &ID){
             no_alarmas = true;
         if(no_alarmas)
             return FALLO;
-        return RUNNING;
+        return RUNNING;*/
+        return FUNCIONO;
     }
     return FALLO;
 }

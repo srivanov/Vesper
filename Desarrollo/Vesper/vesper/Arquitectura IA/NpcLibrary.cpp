@@ -86,8 +86,8 @@ NpcBook::NpcBook(const int& ID,dvector3D* posicion) : posPlayer(nullptr){
     estado = 0;
     tiempo t;
     srand(t.getActual());
-    sed = rand()%20 + 1;
-    hambre = rand()%20 + 1;
+    sed = rand()%60 + 10;
+    hambre = rand()%40 + 10;
     PosicionPropia = posicion;
     VectorMovimiento = new dvector3D(0,0,0);
     Enemigo = Aviso = Ruido = Alarma = Evento = Alerta = false;
