@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="86" height="46" tilewidth="32" tileheight="32" nextobjectid="295">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="86" height="46" tilewidth="32" tileheight="32" nextobjectid="301">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="tileset.png" width="256" height="256"/>
  </tileset>
@@ -7973,7 +7973,7 @@
    <polyline points="0,0 0,192 96,192 96,64 32,64 32,32 224,32 224,96 160,96 160,160 256,160 256,0 0,0"/>
   </object>
  </objectgroup>
- <objectgroup name="nodos" visible="0">
+ <objectgroup name="nodos">
   <object id="180" name="2" type="nodo" x="1152" y="192">
    <properties>
     <property name="conecta" value="3-6-5-4"/>
@@ -8392,6 +8392,36 @@
   <object id="294" name="84" type="nodo" x="320" y="96" width="32" height="32">
    <properties>
     <property name="conecta" value="83"/>
+   </properties>
+  </object>
+  <object id="295" name="85" type="nodo" x="1760" y="384" width="32" height="32">
+   <properties>
+    <property name="conecta" value="27"/>
+   </properties>
+  </object>
+  <object id="296" name="86" type="nodo" x="1760" y="480" width="32" height="32">
+   <properties>
+    <property name="conecta" value="85-26"/>
+   </properties>
+  </object>
+  <object id="297" name="87" type="nodo" x="800" y="1152" width="32" height="32">
+   <properties>
+    <property name="conecta" value="29"/>
+   </properties>
+  </object>
+  <object id="298" name="88" type="nodo" x="768" y="1280" width="32" height="32">
+   <properties>
+    <property name="conecta" value="87-68-30-74"/>
+   </properties>
+  </object>
+  <object id="299" name="89" type="nodo" x="960" y="992" width="32" height="32">
+   <properties>
+    <property name="conecta" value="29-79"/>
+   </properties>
+  </object>
+  <object id="300" name="90" type="nodo" x="800" y="928" width="32" height="32">
+   <properties>
+    <property name="conecta" value="79-89-78-87"/>
    </properties>
   </object>
  </objectgroup>
