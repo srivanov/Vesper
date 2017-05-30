@@ -1,0 +1,2 @@
+Abrir: 0.7f
+Cerrar: 0.7f

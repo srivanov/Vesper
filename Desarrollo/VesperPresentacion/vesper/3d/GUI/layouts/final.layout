@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="DefaultWindow" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/Image" name="gameover" >
+            <Property name="ID" value="1" />
+            <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
+            <Property name="Image" value="Menu/fondo_byn" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Window type="Generic/Image" name="foto_game" >
+                <Property name="ID" value="3" />
+                <Property name="Area" value="{{0,315},{0,105},{0,1035},{0,555}}" />
+                <Property name="Image" value="Menu/fondo_gameover" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/ImageButton" name="reintentar" >
+                <Property name="ID" value="4" />
+                <Property name="Area" value="{{0,215},{0,610},{0,490},{0,655}}" />
+                <Property name="HoverImage" value="Menu/h_reintentar" />
+                <Property name="NormalImage" value="Menu/b_reintentae" />
+            </Window>
+        </Window>
+        <Window type="Generic/Image" name="mision cpmpletada" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,0},{0,0},{0,1280},{0,720}}" />
+            <Property name="Image" value="Menu/fondo_mision" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Window type="Generic/ImageButton" name="continuar" >
+                <Property name="ID" value="5" />
+                <Property name="Area" value="{{0,215},{0,610},{0,490},{0,655}}" />
+                <Property name="NormalImage" value="Menu/boton_continuar" />
+            </Window>
+        </Window>
+        <Window type="Generic/ImageButton" name="salir" >
+            <Property name="ID" value="6" />
+            <Property name="Area" value="{{0,890},{0,610},{0,1035},{0,655}}" />
+            <Property name="HoverImage" value="Menu/h_salir" />
+            <Property name="NormalImage" value="Menu/boton_salir" />
+        </Window>
+    </Window>
+</GUILayout>

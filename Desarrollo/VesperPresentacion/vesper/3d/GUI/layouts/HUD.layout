@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="DefaultWindow" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/Image" name="moneda1" >
+            <Property name="ID" value="3" />
+            <Property name="Area" value="{{0,86},{0,78},{0,114},{0,104}}" />
+            <Property name="Image" value="Menu/moneda" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="moneda2" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,121},{0,78},{0,149},{0,104}}" />
+            <Property name="Image" value="Menu/moneda" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="moneda3" >
+            <Property name="ID" value="5" />
+            <Property name="Area" value="{{0,157},{0,78},{0,185},{0,104}}" />
+            <Property name="Image" value="Menu/moneda" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="pistola" >
+            <Property name="ID" value="11" />
+            <Property name="Area" value="{{0,-4},{0,596},{0,124},{0,688}}" />
+            <Property name="Image" value="Menu/arma_pistola" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="lanzacaramelos" >
+            <Property name="ID" value="13" />
+            <Property name="Area" value="{{0,2},{0,608},{0,126},{0,682}}" />
+            <Property name="Image" value="Menu/arma_lanzacaramelos" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="supersocker" >
+            <Property name="ID" value="12" />
+            <Property name="Area" value="{{0,-1},{0,617},{0,125},{0,679}}" />
+            <Property name="Image" value="Menu/arma_supersocker" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="bombahumo" >
+            <Property name="ID" value="14" />
+            <Property name="Area" value="{{0,18},{0,590},{0,119},{0,686}}" />
+            <Property name="Image" value="Menu/arma_bomba" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="chicle" >
+            <Property name="ID" value="15" />
+            <Property name="Area" value="{{0,13},{0,609},{0,110},{0,685}}" />
+            <Property name="Image" value="Menu/arma_chicle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="globo" >
+            <Property name="ID" value="16" />
+            <Property name="Area" value="{{0,17},{0,591},{0,112},{0,691}}" />
+            <Property name="Image" value="Menu/arma_globo" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="martillo" >
+            <Property name="ID" value="17" />
+            <Property name="Area" value="{{0,15},{0,597},{0,108},{0,688}}" />
+            <Property name="Image" value="Menu/arma_martillo" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="piedra" >
+            <Property name="ID" value="18" />
+            <Property name="Area" value="{{0,28},{0,605},{0,113},{0,675}}" />
+            <Property name="Image" value="Menu/arma_piedra" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+        <Window type="OgreTray/ProgressBar" name="vida" >
+            <Property name="ID" value="19" />
+            <Property name="Area" value="{{0,66},{0,25},{0,322},{0,57}}" />
+            <Property name="StepSize" value="0.01" />
+            <Property name="AlwaysOnTop" value="true" />
+            <Property name="CurrentProgress" value="1" />
+            <Property name="ZOrderingEnabled" value="false" />
+        </Window>
+        <Window type="Generic/Image" name="Image" >
+            <Property name="ID" value="1" />
+            <Property name="Area" value="{{0,1},{0,11},{0,1281},{0,731}}" />
+            <Property name="Image" value="Menu/hud_fondo" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="llave1" >
+            <Property name="ID" value="80" />
+            <Property name="Area" value="{{0,76},{0,131},{0,104},{0,174}}" />
+            <Property name="Image" value="Menu/h_llave" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Label" name="Label" >
+            <Property name="ID" value="22" />
+            <Property name="Area" value="{{0,2},{0,679},{0,130},{0,711}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="moneda0" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,86},{0,78},{0,114},{0,104}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="corazon" >
+            <Property name="Area" value="{{0,4},{0,18},{0,56},{0,66}}" />
+            <Property name="Image" value="Menu/hud_cor" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="monedas" >
+            <Property name="Area" value="{{0,0},{0,76},{0,77},{0,109}}" />
+            <Property name="Image" value="Menu/hud_monedas" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="llaves" >
+            <Property name="Area" value="{{0,8},{0,131},{0,58},{0,175}}" />
+            <Property name="Image" value="Menu/h_llaves" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        </Window>
+        <Window type="Generic/Image" name="pala" >
+            <Property name="ID" value="50" />
+            <Property name="Area" value="{{0,30},{0,596},{0,113},{0,684}}" />
+            <Property name="Image" value="Menu/arma_pala" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="AlwaysOnTop" value="true" />
+        </Window>
+    </Window>
+</GUILayout>
