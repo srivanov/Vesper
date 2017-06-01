@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
 	long timeSinceLastUpdate = 0;
 	float interpolation;
 	
-	game->start(1280,720,32,true,false,true,true);
+	game->start(1280,720,32,false,false,true,true);
 	t.start();
 	
 	while (game->isRunning()) {
