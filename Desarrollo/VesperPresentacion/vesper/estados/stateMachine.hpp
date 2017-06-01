@@ -9,12 +9,7 @@
 #ifndef stateMachine_hpp
 #define stateMachine_hpp
 
-/*
-include lvl
- include mprin
- include mpause
- 
-*/
+
 
 #include "estados.h"
 #include "../Level.hpp"

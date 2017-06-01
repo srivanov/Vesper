@@ -1,0 +1,1 @@
+El juego debe inicarse desde terminal

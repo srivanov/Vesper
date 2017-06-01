@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="DefaultWindow" >
+        <Property name="Area" value="{{0,0},{0,0},{1,6},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="Generic/Image" name="fondo" >
+            <Property name="ID" value="2" />
+            <Property name="Area" value="{{0,0},{0,1},{0,1288},{0,725}}" />
+            <Property name="Text" value="Créditos" />
+            <Property name="Image" value="Menu/fondo4" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="Disabled" value="true" />
+        </Window>
+        <Window type="Generic/Image" name="contenedor" >
+            <Property name="ID" value="3" />
+            <Property name="Area" value="{{0,240},{0,135},{0,1050},{0,675}}" />
+            <Property name="Image" value="Menu/madera" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Window type="Generic/Image" name="nerea" >
+                <Property name="Area" value="{{0,90},{0,90},{0,705},{0,140}}" />
+                <Property name="Image" value="Menu/n_nerea" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="cath" >
+                <Property name="Area" value="{{0,90},{0,145},{0,715},{0,195}}" />
+                <Property name="Image" value="Menu/n_cath" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="stoycho" >
+                <Property name="Area" value="{{0,90},{0,260},{0,620},{0,310}}" />
+                <Property name="Image" value="Menu/n_stoycho" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="sandra" >
+                <Property name="Area" value="{{0,90},{0,205},{0,550},{0,255}}" />
+                <Property name="Image" value="Menu/n_sandra" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="julia" >
+                <Property name="Area" value="{{0,90},{0,315},{0,525},{0,365}}" />
+                <Property name="Image" value="Menu/n_julia" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+            <Window type="Generic/Image" name="stoycho2" >
+                <Property name="Area" value="{{0,90},{0,375},{0,620},{0,425}}" />
+                <Property name="Image" value="Menu/n_gaspar" />
+                <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            </Window>
+        </Window>
+        <Window type="Generic/ImageButton" name="volver" >
+            <Property name="ID" value="4" />
+            <Property name="Area" value="{{0,26},{0,665},{0,118},{0,686}}" />
+            <Property name="HoverImage" value="Menu/h_volver" />
+            <Property name="NormalImage" value="Menu/boton_volver" />
+            <Property name="PushedImage" value="Menu/boton_volver" />
+        </Window>
+        <Window type="Generic/Image" name="titulo" >
+            <Property name="Area" value="{{0,0},{0,24},{0,434},{0,126}}" />
+            <Property name="Image" value="Menu/titulo_creditos" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+    </Window>
+</GUILayout>

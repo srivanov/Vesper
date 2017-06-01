@@ -36,8 +36,6 @@ void Puerta::inicializar(int id, const tipoPuerta p){
     */
     dvector3D rotar = dvector3D(0,180,0);
     setRotation(rotar);
-    //dvector3D posicion = dvector3D(0,0,4);
-    //mover(posicion);
 }
 
 void Puerta::update(){
